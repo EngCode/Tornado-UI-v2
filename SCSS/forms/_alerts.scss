@@ -1,0 +1,40 @@
+.alert{
+    position: relative;
+    padding:1.3rem 1.875rem;
+    background:$gray-bg;
+    color:$black-color;
+    font-size:15px;
+    margin-bottom: $gutterSize/2;
+    /* Alert Text Reset */
+    p {margin: 0;padding: 0;} 
+    /* Dismissal Button Style */
+    .close-btn {
+        position: absolute;
+        #{$directionReverse}:0.5rem;
+        top:50%;
+        width:50px;
+        height: 50px;
+        -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+        line-break: 50px;
+        color:rgba(0,0,0,.30);
+        font-size:15px;
+        text-align: center;
+        background: inherit;
+        border: 0 none;
+        cursor: pointer;
+    } 
+    /* Dark background style */
+    &.dark {background:$dark-bg;color:$light-color;
+        /* Dismissal Button Style Reverse */
+        .close-btn {color:$light-color;} 
+    } 
+    /* Success background Style */
+    &.success {background:$success-bg;} 
+    /* Danger and Error background Style */
+    &.danger {background:$danger-bg;} 
+    /* Warning background Style */
+    &.warning {background:$warning-bg;}
+    /* information background style */
+    &.info {background:$info-bg;}
+}

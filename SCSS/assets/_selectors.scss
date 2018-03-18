@@ -1,0 +1,21 @@
+//========== Transitions Effects ==========//
+%slow-motion{
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+%normal-motion{
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+%fast-motion{
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+%reset{
+    padding:0;
+    margin:0;
+    list-style: none;
+}

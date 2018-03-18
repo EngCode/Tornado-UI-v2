@@ -1,0 +1,57 @@
+%container{
+    margin:auto;
+    display: block;
+    position: relative;
+}
+
+.container {
+    @extend %container;
+    padding:0 $gutterSize/2;
+    max-width: 1200px;
+}
+
+.container-fluid {
+    @extend %container;
+    padding:0 $gutterSize/2;
+    width:100%;
+}
+
+.container-xl {
+    @extend %container;
+    padding:0 $gutterSize;
+    max-width: 1400px;
+}
+
+.row {
+    margin: 0 -#{$gutterMath};
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    /* Reverse row Dircetion */
+    &.row-reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+    }
+    /* Masonry Mode 
+        &.masonry{
+            display: block;
+            word-spacing: -0.65rem;
+            vertical-align:top;
+            > [class*="col-"], > [class*="box-"] {
+                display:inline-block;
+                vertical-align:top;
+                word-spacing: normal;
+            }
+        }
+    */
+
+    /* set gutters space for all columns */
+    [class*="col-"],[class*="box-"] {padding:0 $gutterSize/2;}
+}
+
+@import 'grid-columns'; // Columns Sizes and Responsive
+@import 'grid-utilities'; // Grid System Assets and Features

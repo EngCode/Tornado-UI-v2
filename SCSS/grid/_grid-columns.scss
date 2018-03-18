@@ -1,0 +1,42 @@
+/*======== Extra Small Screen ========*/
+@for $i from 1 through $grid-columns { 
+    .col-#{$i} {width: percentage($i / $grid-columns);} // Normal Grid
+    // Dynamic Grid Loop
+    .box-#{$i}x1{width: 100%;}
+}
+
+/*=== Small Screen ===*/
+@include small(true) {
+    @for $i from 1 through $grid-columns {
+        .col-s-#{$i} {width: percentage($i / $grid-columns);} // Normal Grid Loop
+    }
+    // Dynamic Grid
+    .box-5x1,.box-7x1,.box-8x1 {width: 50%;}
+    .box-9x1,.box-10x1,.box-11x1{width:33.333%;}
+} 
+
+/*=== Medium Screen ===*/
+@include medium(true) {
+    @for $i from 1 through $grid-columns {
+        .col-m-#{$i} {width: percentage($i / $grid-columns);} // Normal Grid Loop
+    }
+    // Dynamic Grid
+    .box-5x1 {width: 33.333%;}
+    .box-7x1,.box-8x1{width:25%;}
+    .box-9x1,.box-10x1,.box-11x1{width:20%;}
+}
+
+/*=== Large Screen ===*/
+@include large(true) {
+    @for $i from 1 through $grid-columns {
+        .col-l-#{$i} {width: percentage($i / $grid-columns);} // Normal Grid Loop
+        .box-#{$i}x1 {width: 100%/$i;} // Dynamic Grid Loop
+    }
+}
+
+/*=== Extra Large Screen ===*/
+@include xlarge(true) {
+    @for $i from 1 through $grid-columns {
+        .col-xl-#{$i} { width: percentage($i / $grid-columns);} // Normal Grid Loop
+    }
+}

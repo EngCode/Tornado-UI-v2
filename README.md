@@ -1,2 +1,2 @@
 # Tornado-v2
-Tornado v2 | Userinterface Frontend Framework
+Tornado v2 | Frontend Framework

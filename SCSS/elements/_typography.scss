@@ -1,0 +1,88 @@
+/*==== Typography ====*/
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: $base-s-size;
+    line-height: $base-line-height;
+    /*=== Medium Screen ===*/
+    @include medium(true){
+        font-size: $base-m-size;
+        line-height: $base-line-height;
+    }
+    /*=== Large Screen ===*/
+    @include large(true) {
+        font-size: $base-l-size;
+        line-height: $base-line-height;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $secondary-font;
+    direction: $page-dir;
+    background: #FFF;
+    color: $dark-color;
+    position: relative;
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+    font-family: $primary-font;
+    font-weight: $strong-weight;
+    margin:0 auto;
+}
+
+/*==== Typography Text Elements ====*/
+h1,.h1 {font-size: 2rem;}
+h2,.h2 {font-size: 1.813rem;}
+h3,.h3 {font-size: 1.563rem;}
+h4,.h4 {font-size: 1.375rem;}
+h5,.h5 {font-size: 1.25rem;}
+h6,.h6 {font-size: 1.125rem;}
+.large-text {font-size: 1.125rem;}
+.medium-text {font-size: 1rem;}
+.small-text {font-size: 0.875rem;}
+p{padding:0;margin:0;margin-bottom: $gutterSize/2}
+/*==== Typography Utilities ====*/
+.tx-uppercase{text-transform: uppercase;}
+.tx-capitalize{text-transform: capitalize;}
+.tx-line-through{text-decoration:line-through;}
+/*==== Alignment ====*/
+.tx-align-start{text-align: start;}
+.tx-align-end{text-align:end;}
+.tx-align-right{text-align: right;}
+.tx-align-left{text-align: left;}
+.tx-align-center{text-align: center;}
+.tx-align-justify{text-align:justify;}
+/*==== Default Lists ====*/
+ul,ol,dl{
+    &.tornado-ui{
+        display:block;
+        padding:0;
+        margin:auto;
+        padding-#{$direction}:15px;
+        margin-bottom:$gutterSize;
+        ul,ol{
+            padding: 0;
+            margin: 0;
+            padding-#{$direction}:15px;
+        }
+    }
+}
+
+dl.tornado-ui{
+    dt{
+        font-weight: $strong-weight;
+        &:not(:first-child){margin-top:$gutterSize/2;}
+    }
+    dd{
+        padding:0;margin:0;padding-#{$direction}:10px;
+        &:before{content:'_';display: inline-block;margin-#{$directionReverse}:5px;vertical-align:middle;position: relative;top:-7px;}
+    }
+}
+
+ul.tornado-ui,ol.tornado-ui{
+    li{font-size: 0.9375rem;margin-bottom: 10px;}
+}
+
+/*==== Blocks Quotes ====*/

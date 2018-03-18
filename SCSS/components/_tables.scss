@@ -1,0 +1,30 @@
+.responsive-table{
+    overflow: auto;
+    margin-bottom: $gutterSize;
+    // Table Style
+    .table {
+        width:100%;
+        border-collapse: collapse;
+        @include medium(false) { width:970px; }
+        
+        thead {
+            td,th{font-weight: $strong-weight;background:rgba(0,0,0,.03);}
+        }
+        
+        tr{
+            td,th{
+                padding:$gutterSize/2;
+                border-bottom: 1px solid rgba($color: #000000, $alpha: 0.10);
+                text-align: inherit;
+            }
+        }
+
+        // Assets
+        &.bordered{border:1px solid rgba(0,0,0,.10);}
+
+        &.striped tr:nth-child(even){
+            td,th {background:rgba(0,0,0,.03);}
+        }
+        
+    }
+}

@@ -1,0 +1,32 @@
+//========== Media Query Mixins ==========//
+@mixin small($up) {
+    @if ($up) {
+        @media (min-width: $small-query) { @content; }
+    } @else {
+        @media (max-width: $small-query) { @content; }
+    };
+}
+
+@mixin medium($up) {
+    @if ($up) {
+        @media (min-width: $medium-query) { @content; }
+    } @else {
+        @media (max-width: $medium-query) { @content; }
+    };
+}
+
+@mixin large($up) {
+    @if ($up) {
+        @media (min-width: $large-query) { @content; }
+    } @else {
+        @media (max-width: $large-query) { @content; }
+    };
+}
+
+@mixin xlarge($up) {
+    @if ($up) {
+        @media (min-width: $xlarge-query) { @content; }
+    } @else {
+        @media (max-width: $xlarge-query) { @content; }
+    };
+}

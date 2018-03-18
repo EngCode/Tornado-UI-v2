@@ -1,0 +1,169 @@
+/*=== Grid Utilities ===*/
+.col-auto{
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+} /* column takes the remaining space of the row */
+
+.align-center-z{ 
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+} /* Align Columns Centered Vertical and Horizontal */
+
+.align-center-x{
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+} /* Horizontaly Align Columns to the Center */
+
+.align-start-x{
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+} /* Horizontaly Align Columns to the Direction start point */
+
+.align-end-x{
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+} /* Horizontaly Align Columns to the Direction end point */
+
+.align-around{
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+} /* Horizontaly Align and spliting the space around Columns */
+
+.align-between{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+} /* Horizontaly Align and spliting the space between Columns */
+
+.align-start-y{
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+} /* Vertical Align Columns to the top */
+
+.align-center-y{
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+} /* Vertical Align Columns to the Center */
+
+.align-end-y{
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+} /* Vertical Align Columns to the bottom */
+
+.align-self-start{
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+} /* Vertical Align item to the top */
+
+.align-self-center{
+    -ms-flex-item-align: center;
+        align-self: center;
+} /* Vertical Align item to the Center */
+
+.align-self-end{
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+} /* Vertical Align item to the bottom */
+
+/*========== Display Settings =========*/
+.hidden{display: none;}
+/*=== Small Screen ===*/
+@include small(true) { 
+    .hidden-s-up{display: none;} 
+    .show-s-up{display: show;} 
+}
+
+@include small(false) { 
+    .hidden-s-down{display: none;} 
+    .show-s-down{display: block;} 
+}
+
+/*=== Medium Screen ===*/
+@include medium(true) { 
+    .hidden-m-up{display: none;} 
+    .show-m-up{display: block;} 
+}
+
+@include medium(false) { 
+    .hidden-m-down{display: none;}
+    .show-m-down{display: block;}
+}
+/*=== Large Screen ===*/
+@include large(true) { 
+    .hidden-l-up{display: none;} 
+    .show-l-up{display: block;} 
+}
+
+@include large(false) { 
+    .hidden-l-down{display: none;}
+    .show-l-down{display: block;}
+}
+
+/*=== Extra Large Screen ===*/
+@include xlarge(true) { 
+    .hidden-xl-up{display: none;} 
+    .show-xl-up{display: block;} 
+}
+
+@include xlarge(false) { 
+    .hidden-xl-down{display: none;} 
+    .show-xl-down{display: block;} 
+}
+
+/*==== Gutters ====*/
+.no-gutter{
+    margin:0 0;
+    [class*="col-"],[class*="box-"] {
+        padding:0 0;
+    }
+} // Decrease Columns Gutter To 0 
+
+.gutter-small > [class*="col-"],.gutter-small > [class*="box-"] ,.wrap-gutter-s{
+    padding:0 $gutterSize/4;
+} // Decrease Columns Gutter To 50% 
+
+.gutter-medium > [class*="col-"],.gutter-medium > [class*="box-"] ,.wrap-gutter-m{
+    padding:0 $gutterSize/1.5;
+} // Increase Columns Gutter To 150% */
+
+.gutter-large > [class*="col-"],.gutter-large > [class*="box-"] ,.wrap-gutter-l{
+    padding:0 $gutterSize*2;
+} // Increase Columns Gutter 200%
+
+/*=== Fix Gutters ===*/
+.gutter-small{
+    margin-#{$direction}:-$gutterSize/4;
+    margin-#{$directionReverse}:-$gutterSize/4;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.gutter-medium{
+    margin-#{$direction}:-$gutterSize/1.5;
+    margin-#{$directionReverse}:-$gutterSize/1.5;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.gutter-large{
+    margin-#{$direction}:-$gutterSize*2;
+    margin-#{$directionReverse}:-$gutterSize*2;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.line-break,.block-lvl {
+    display:block;
+    width:100%;
+}

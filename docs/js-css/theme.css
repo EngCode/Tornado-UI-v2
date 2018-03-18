@@ -374,6 +374,6 @@ body::after {
 
 ul.tornado-ui, ol.tornado-ui, dl.tornado-ui{margin-top: 15px;}
 
-.blocks-quotes {
+.blocks-quotes .col-12 {
     margin-bottom: 30px;
 }

@@ -86,3 +86,85 @@ ul.tornado-ui,ol.tornado-ui{
 }
 
 /*==== Blocks Quotes ====*/
+blockquote {
+    //==== Default Theme ====//
+    margin:0;
+    position: relative;
+    padding-#{$direction}:3rem;
+    margin-bottom: 30px;
+    font-size:1rem;
+    color:$typo-color;
+    @extend %minus-indexing;
+    // icon
+    &:before { 
+        font-family: $font-icon;
+        @extend .ti-quote-#{$direction}:before;
+        position: absolute;
+        font-size:2.125rem;
+        color:rgba(0,0,0,.10);
+        #{$direction}:0;
+        top:0;
+        font-style:normal;
+        line-height: 1;
+        z-index: -1;
+    }
+    // Source Name
+    .quote-name {
+        font-size:14px;
+        font-weight: $strong-weight;
+        display: block;
+        color:$black-color;
+        margin-top: 10px;
+        &:before { content:'-'; display: inline-block; margin-right: 5px;z-index: -1;}
+    }
+
+    // Theme 2
+    &.theme-2 {
+        padding:2rem;
+        background:#FFF;
+        border: 1px solid rgba(0,0,0,.10);
+        -webkit-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+                box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+        &:before{
+            top:auto;
+            bottom: 1.563rem;
+            font-size:2.875rem;
+            #{$direction}:auto;
+            #{$directionReverse}:1.563rem;
+            color:#FFF;
+            text-shadow:-2px -2px 0 rgba(0,0,0,.10),  2px -2px 0 rgba(0,0,0,.10),-2px 2px 0 rgba(0,0,0,.10),2px 2px 0 rgba(0,0,0,.10);
+        }
+    }
+
+    // Theme 3
+    &.theme-3 {
+        padding:0 1.25rem;
+        background:#FFF;
+        border-left: 5px solid rgba(0,0,0,.10);
+        &:before{
+            top:50%;
+            font-size:6rem;
+            #{$direction}:auto;
+            #{$directionReverse}:1.563rem;
+            @extend %position-center-y;
+            color:#FFF;
+            text-shadow:-2px -2px 0 rgba(0,0,0,.05),  2px -2px 0 rgba(0,0,0,.05),-2px 2px 0 rgba(0,0,0,.05),2px 2px 0 rgba(0,0,0,.05);
+        }
+    }
+
+    // Theme 4
+    &.theme-4 {
+        padding:2rem;
+        padding-#{$directionReverse}:3rem;
+        background:#e7e8ea;
+        border: 1px solid rgba(0,0,0,.10);
+        -webkit-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+                box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+        &:before{
+            top:1rem;
+            #{$direction}:auto;
+            #{$directionReverse}:1rem;
+            font-size:2rem;
+        }
+    }
+}

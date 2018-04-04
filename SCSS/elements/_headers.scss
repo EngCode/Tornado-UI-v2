@@ -23,21 +23,23 @@
         }
     }
     //=== Navigation Menu ===//
-    @include navigation-main();
-    @include navigation-custom-theme (
-        $thisHeight,// Height
-        15px, // Font-size
-        $medium-weight, // Font Weight
-        #868e96, // Text Color
-        $black-color, // Hover Color
-        transparent, // Hover Background
-        $black-color, // Submenu Color
-        #FFF,// Submenu Background
-        14px, // Submenu Font-size
-        40px, // Submenu Height
-        rgba(0, 0, 0, 0.05), // Submenu Hover Background
-        $black-color // Submenu Hover Color
-    );
+    .navigation-menu {
+        @include navigation-custom-theme (
+            $thisHeight,// Height
+            15px, // Font-size
+            $medium-weight, // Font Weight
+            #868e96, // Text Color
+            $black-color, // Hover Color
+            transparent, // Hover Background
+            $black-color, // Submenu Color
+            #FFF,// Submenu Background
+            14px, // Submenu Font-size
+            40px, // Submenu Height
+            rgba(0, 0, 0, 0.05), // Submenu Hover Background
+            $black-color // Submenu Hover Color
+        );
+    }
+    
     //=== Actions Buttons ===*/
     .action-btns {
         .icon-btn {
@@ -76,20 +78,22 @@
         background:$primary-color;
         border:0 none;
         .logo h1,.action-btns .icon-btn{ color:#FFF; }
-        @include navigation-custom-theme (
-            $thisHeight,// Height
-            15px, // Font-size
-            $medium-weight, // Font Weight
-            #FFF, // Text Color
-            $primary-color, // Hover Color
-            #FFF, // Hover Background
-            $primary-color, // Submenu Color
-            #FFF,// Submenu Background
-            14px, // Submenu Font-size
-            40px, // Submenu Height
-            rgba(0, 0, 0, 0.05), // Submenu Hover Background
-            $black-color // Submenu Hover Color
-        );
+        .navigation-menu {
+            @include navigation-custom-theme (
+                $thisHeight,// Height
+                15px, // Font-size
+                $medium-weight, // Font Weight
+                #FFF, // Text Color
+                $primary-color, // Hover Color
+                #FFF, // Hover Background
+                $primary-color, // Submenu Color
+                #FFF,// Submenu Background
+                14px, // Submenu Font-size
+                40px, // Submenu Height
+                rgba(0, 0, 0, 0.05), // Submenu Hover Background
+                $black-color // Submenu Hover Color
+            );
+        }
     }
     
     //=== Secondary Colored ===//
@@ -97,20 +101,22 @@
         background:$dark-color;
         border:0 none;
         .logo h1,.action-btns .icon-btn{ color:#FFF; }
-        @include navigation-custom-theme (
-            $thisHeight,// Height
-            15px, // Font-size
-            $medium-weight, // Font Weight
-            #FFF, // Text Color
-            $dark-color, // Hover Color
-            #FFF, // Hover Background
-            $dark-color, // Submenu Color
-            #FFF,// Submenu Background
-            14px, // Submenu Font-size
-            40px, // Submenu Height
-            rgba(0, 0, 0, 0.05), // Submenu Hover Background
-            $black-color // Submenu Hover Color
-        );
+        .navigation-menu {
+            @include navigation-custom-theme (
+                $thisHeight,// Height
+                15px, // Font-size
+                $medium-weight, // Font Weight
+                #FFF, // Text Color
+                $dark-color, // Hover Color
+                #FFF, // Hover Background
+                $dark-color, // Submenu Color
+                #FFF,// Submenu Background
+                14px, // Submenu Font-size
+                40px, // Submenu Height
+                rgba(0, 0, 0, 0.05), // Submenu Hover Background
+                $black-color // Submenu Hover Color
+            );
+        }
     }
 
     //=== Sticky Header ===//
@@ -121,5 +127,4 @@
         left:0;
         z-index: 9999;
     }
-
 }

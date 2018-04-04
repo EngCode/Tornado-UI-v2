@@ -133,6 +133,7 @@
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
                     <h4>Standard Header</h4>
+                    <p>a Standard Design off Responsive Progressive App Like Header With Useful Elements [ Logo, Responsive Navigation Menu , Action Buttons ].</p>
                 </div>
 
                 <!-- Header v1 -->
@@ -218,15 +219,16 @@
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Standard Header With Collapsed Menu</h4>
+                    <h4>Sticky Header With Collapsed Menu</h4>
+                    <p>Sticky Header Mode With Collapsed Theme Of The Responsive Navigation Menu in Order To Change The Menu Theme Just Add Class <span>collapsed</span>. to both Menu and its Related Button</p>
                 </div>
                 <!-- Header v1 Collapsed Menu -->
-                <header class="tornado-header collapsed-menu">
+                <header class="tornado-header" data-sticky>
                     <div class="container">
                         <!-- Logo -->
                         <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
                         <!-- Main Menu -->
-                        <div class="navigation-menu" data-id="main-menu-1">
+                        <div class="navigation-menu collapsed" data-id="main-menu-1">
                             <ul>
                                 <li><a href="#">Home Page</a></li>
                                 <li><a href="#">About US</a></li>
@@ -252,7 +254,7 @@
                             <!-- Contact Button -->
                             <a href="#" class="icon-btn ti-phone"></a>
                             <!-- Main Menu Mobile Button -->
-                            <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu-1"></a>
+                            <a href="#" class="menu-btn collapsed icon-btn ti-menu-round" data-id="main-menu-1"></a>
                         </div>
                     </div>
                 </header>
@@ -262,12 +264,12 @@
 <pre class="code-viewer">
 <button class="copy-btn" data-clipboard-target="#header2">Copy Code</button>
 <code class="markup" id="header2">&lt;!-- Header Collapsed Menu -->
-&lt;header class="tornado-header collapsed-menu">
+&lt;header class="tornado-header" data-sticky>
     &lt;div class="container">
         &lt;!-- Logo -->
         &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
         &lt;!-- Main Menu -->
-        &lt;div class="navigation-menu" data-id="main-menu">
+        &lt;div class="navigation-menu collapsed" data-id="main-menu">
             &lt;ul>
                 &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
                 &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
@@ -293,7 +295,7 @@
             &lt;!-- Contact Button -->
             &lt;a href="#" class="icon-btn ti-phone">&lt;/a>
             &lt;!-- Main Menu Mobile Button -->
-            &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+            &lt;a href="#" class="menu-btn collapsed icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
         &lt;/div>
     &lt;/div>
 &lt;/header>

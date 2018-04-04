@@ -3,6 +3,8 @@
     $thisHeight:76px;
     border:1px solid rgba(0,0,0,0.10);
     padding:0 15px;
+    background: #FFF;
+    @extend %fast-motion;
     //=== Container Layout ===//
     .container,.container-fluid,.container-xl {
         @extend %flexbox;
@@ -45,16 +47,13 @@
             @extend %fast-motion;
             &:hover { color:$black-color; }
         }
-        @include medium(true) { .menu-btn {display: none; } }
     }
     //=== Search Box ===*/
     .search-box {
         display: inline-block;
         position: relative;
-        @include medium(true) {
-            width:270px;
-        }
-        input {margin-bottom: 0!important;}
+        @include medium(true) { width:270px; }
+        &.form-ui { input { margin-bottom: 0; } }
         .search-btn {
             position: absolute;
             #{$directionReverse}:0;
@@ -72,14 +71,6 @@
         margin-#{$direction}: 15px;
     }
     
-    //=== Collapsed Menu ===//
-    &.collapsed-menu {
-        .navigation-menu { display: none; }
-        .action-btns {
-            @include medium(true) { .menu-btn { display: inline-block; } }
-        }
-    }
-
     //=== Primary Colored ===//
     &.primary {
         background:$primary-color;
@@ -120,6 +111,15 @@
             rgba(0, 0, 0, 0.05), // Submenu Hover Background
             $black-color // Submenu Hover Color
         );
+    }
+
+    //=== Sticky Header ===//
+    &.is-sticky {
+        position: fixed;
+        top:0;
+        right:0;
+        left:0;
+        z-index: 9999;
     }
 
 }

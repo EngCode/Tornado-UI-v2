@@ -5,6 +5,7 @@
         position: relative;
         @extend %fast-motion;
         @include medium(false) { display: none; }
+        &.collapsed { display: none; }
         //=== Menu Main CSS ===//
         > ul {
             word-spacing: -5px;
@@ -67,6 +68,11 @@
                 }
             }
         }
+    }
+    
+    //=== Menu Button Mode ===//
+    .menu-btn[data-id] { 
+        @include medium(true) { &:not(.collapsed) { display: none; }  }
     }
 }
 

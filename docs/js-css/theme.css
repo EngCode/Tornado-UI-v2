@@ -377,3 +377,5 @@ ul.tornado-ui, ol.tornado-ui, dl.tornado-ui{margin-top: 15px;}
 .blocks-quotes .col-12 {
     margin-bottom: 30px;
 }
+
+.tornado-header .container { max-width: none; }

@@ -1,0 +1,26 @@
+/*======== Global ========*/
+.no-padding {padding: 0;}
+
+.right {
+    float: right;
+    margin-left: 15px;
+}
+
+.fluid,.block-lvl {
+    width: 100%;
+}
+
+.left {
+    float: left;
+    margin-right: 15px;
+}
+
+iframe {
+    max-width: 100%;
+    border: 0 none;
+}
+
+[data-src] {
+    display: block;
+    background-size: cover;
+}

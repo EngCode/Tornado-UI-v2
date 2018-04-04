@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
+        <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
+        <title>Tornado CSS v2 | Getting Started</title>
+        <!-- Required CSS Files -->
+        <link rel="stylesheet" href="../dist/css/tornado.min.css">
+        <link rel="stylesheet" href="js-css/github.css">
+        <link rel="stylesheet" href="js-css/Theme.css">
+        <!-- Fevicon -->
+        <link rel="icon" type="image/png" href="img/Fevicon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/Fevicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/Fevicon.png">
+        <link rel="apple-touch-icon-precomposed" href="img/Fevicon.png">
+    <body>
+        <!-- Sidebar -->
+        <div class="side-menu">
+            <a href="#" class="logo-l"><img src="img/logo-white-v.png" alt="Tornado Logo"></a>
+            <ul>
+                <li><a href="index.html">Getting Start</a>
+                    <ul>
+                        <li><a href="index.html">Quick Start</a></li>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="support.html">Browsers Support</a></li>
+                        <li><a href="accessibility.html">Accessibility</a></li>
+                        <li><a href="javascript.html">Javascript</a></li>
+                    </ul>
+                </li>
+                <li><a href="grid.html">Grid System</a>
+                    <ul>
+                        <li><a href="grid.html">Standard Grid</a></li>
+                        <li><a href="dynamic-grid.html">Dynamic Grid</a></li>
+                        <li><a href="masonry-grid.html">Masonry Grid</a></li>
+                        <li><a href="grid-utilities.html">Grid Utilities</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="#">Elements</a>
+                    <ul>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li class="active"><a href="navbar.html">Navbar/Header</a></li>
+                        <li><a href="menu.html">Menus</a></li>
+                        <li><a href="breadcrumb.html">Breadcrumb</a></li>
+                        <li><a href="media-object.html">Media Objects</a></li>
+                        <li><a href="jumbotron.html">Hero Area</a></li>
+                        <li><a href="card.html">Card Blocks</a></li>
+                        <li><a href="budgs.html">Tags and Badges</a></li>
+                        <li><a href="footer.html">Footer</a></li>
+                    </ul>
+                </li>
+                <li><a href="form.html">Forms</a>
+                    <ul>
+                        <li><a href="form.html">Standard Controls</a></li>
+                        <li><a href="form-progress.html">Progress Elements</a></li>
+                        <li><a href="form-upload.html">Upload Files</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="alert.html">Alerts</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Components</a>
+                    <ul>
+                        <li><a href="slider.html">Carousel</a></li>
+                        <li><a href="table.html">Tables</a></li>
+                        <li><a href="tooltip.html">Tooltips</a></li>
+                        <li><a href="tabs.html">Tabs System</a></li>
+                        <li><a href="accourdion.html">Accourdion System</a></li>
+                        <li><a href="modals.html">Popup Modals</a></li>
+                        <li><a href="dropdowns.html">Dropdowns</a></li>
+                        <li><a href="pagination.html">Pagination</a></li>
+                        <li><a href="messages.html">Message</a></li>
+                        <li><a href="responsive-elements.html">Responsive Elements</a></li>
+                        <li><a href="effects.html">Effects Tricks</a></li>
+                        <li><a href="scrollspy.html">Scrollspy</a></li>
+                        <li><a href="animations.html">Animations</a></li>
+                        <li><a href="icons.html">Tornado icons</a></li>
+                        <li><a href="colors.html">Colors Palette</a></li>
+                    </ul>
+                </li>
+                <li><a href="utilities.html">Utilities</a>
+                    <ul>
+                        <li><a href="utilities.html">Helpers</a></li>
+                        <li><a href="responsive.html">Responsive</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SASS Customizing</a>
+                    <ul>
+                        <li><a href="sass-vars.html">Theme Variables</a></li>
+                        <li><a href="sass-mixins.html">Mixins</a></li>
+                        <li><a href="build-tools.html">Build Tools</a></li>
+                    </ul>
+                </li>
+                <li><a href="builder.html">Custom Builder</a></li>
+                <li><a href="vuejs/index.html">Vue.js Version</a></li>
+            </ul>
+        </div>
+        
+        <!-- Content Side -->
+        <div class="content-side">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="container-fluid">
+                    <a href="index.html" class="logo"><img src="img/tornado-icon-white.png" alt="tornado logo"></a>
+
+                    <div class="navigation-menu" data-id="header-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li class="active"><a href="#">Documentation</a></li>
+                            <li><a href="#">Examples</a></li>
+                            <li><a href="#">Themes</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="#" class="ti-npm"></a>
+                        <a href="#" class="ti-github"></a>
+                        <a href="#" class="btn primary">Download</a>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="page-head">
+                    <h1>Navbar/Header</h1>
+                    <p>Tornado Provides Predesigned Navigation Bars and Header's With Useful Elements Thats fit Alomst All Your Needs.</p>
+                </div>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Standard Header</h4>
+                </div>
+
+                <!-- Header v1 -->
+                <header class="tornado-header">
+                    <div class="container">
+                        <!-- Logo -->
+                        <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
+                        <!-- Main Menu -->
+                        <div class="navigation-menu" data-id="main-menu-3">
+                            <ul>
+                                <li><a href="#">Home Page</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Github</a></li>
+                                <li><a href="#">Download</a>
+                                    <!-- Dropdown List -->
+                                    <ul>
+                                        <li><a href="#">Production Version</a></li>
+                                        <li><a href="#">Development Version</a></li>
+                                        <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="action-btns">
+                            <!-- Cart Button -->
+                            <a href="#" class="icon-btn ti-cart"></a>
+                            <!-- Search Button -->
+                            <a href="#" class="icon-btn ti-search"></a>
+                            <!-- Contact Button -->
+                            <a href="#" class="icon-btn ti-phone"></a>
+                            <!-- Main Menu Mobile Button -->
+                            <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu-3"></a>
+                        </div>
+                    </div>
+                </header>
+                <!-- // Header v1 -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#header1">Copy Code</button>
+<code class="markup" id="header1">&lt;!-- Header -->
+&lt;header class="tornado-header">
+    &lt;div class="container">
+        &lt;!-- Logo -->
+        &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
+        &lt;!-- Main Menu -->
+        &lt;div class="navigation-menu" data-id="main-menu">
+            &lt;ul>
+                &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Download&lt;/a>
+                    &lt;!-- Dropdown List -->
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+        &lt;!-- Action Buttons -->
+        &lt;div class="action-btns">
+            &lt;!-- Cart Button -->
+            &lt;a href="#" class="icon-btn ti-cart">&lt;/a>
+            &lt;!-- Search Button -->
+            &lt;a href="#" class="icon-btn ti-search">&lt;/a>
+            &lt;!-- Contact Button -->
+            &lt;a href="#" class="icon-btn ti-phone">&lt;/a>
+            &lt;!-- Main Menu Mobile Button -->
+            &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/header>
+&lt;!-- // Header -->
+</code>
+</pre>    
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Standard Header With Collapsed Menu</h4>
+                </div>
+                <!-- Header v1 Collapsed Menu -->
+                <header class="tornado-header collapsed-menu">
+                    <div class="container">
+                        <!-- Logo -->
+                        <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
+                        <!-- Main Menu -->
+                        <div class="navigation-menu" data-id="main-menu-1">
+                            <ul>
+                                <li><a href="#">Home Page</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Github</a></li>
+                                <li><a href="#">Download</a>
+                                    <!-- Dropdown List -->
+                                    <ul>
+                                        <li><a href="#">Production Version</a></li>
+                                        <li><a href="#">Development Version</a></li>
+                                        <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="action-btns">
+                            <!-- Cart Button -->
+                            <a href="#" class="icon-btn ti-cart"></a>
+                            <!-- Search Button -->
+                            <a href="#" class="icon-btn ti-search"></a>
+                            <!-- Contact Button -->
+                            <a href="#" class="icon-btn ti-phone"></a>
+                            <!-- Main Menu Mobile Button -->
+                            <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu-1"></a>
+                        </div>
+                    </div>
+                </header>
+                <!-- // Header v1 Collapsed Menu -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#header2">Copy Code</button>
+<code class="markup" id="header2">&lt;!-- Header Collapsed Menu -->
+&lt;header class="tornado-header collapsed-menu">
+    &lt;div class="container">
+        &lt;!-- Logo -->
+        &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
+        &lt;!-- Main Menu -->
+        &lt;div class="navigation-menu" data-id="main-menu">
+            &lt;ul>
+                &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Download&lt;/a>
+                    &lt;!-- Dropdown List -->
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+        &lt;!-- Action Buttons -->
+        &lt;div class="action-btns">
+            &lt;!-- Cart Button -->
+            &lt;a href="#" class="icon-btn ti-cart">&lt;/a>
+            &lt;!-- Search Button -->
+            &lt;a href="#" class="icon-btn ti-search">&lt;/a>
+            &lt;!-- Contact Button -->
+            &lt;a href="#" class="icon-btn ti-phone">&lt;/a>
+            &lt;!-- Main Menu Mobile Button -->
+            &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/header>
+&lt;!-- // Header Collapsed Menu -->
+</code>
+</pre>    
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Standard Header Search Box and Button</h4>
+                </div>
+                <!-- Header -->
+                <header class="tornado-header">
+                    <div class="container">
+                        <!-- Logo -->
+                        <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
+                        <!-- Action Area -->
+                        <div class="action-btns">
+                            <!-- Search Box -->
+                            <form class="form-ui small search-box">
+                                <input type="text" placeholder="search keywords">
+                                <button class="search-btn ti-search"></button>
+                            </form>
+                            <!-- Button -->
+                            <a href="#" class="btn primary tx-uppercase">Button</a>
+                        </div>
+                    </div>
+                </header>
+                <!-- // Header -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#header3">Copy Code</button>
+<code class="markup" id="header3">&lt;!-- Header -->
+&lt;header class="tornado-header">
+    &lt;div class="container">
+        &lt;!-- Logo -->
+        &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
+        &lt;!-- Action Area -->
+        &lt;div class="action-btns">
+            &lt;!-- Search Box -->
+            &lt;form class="form-ui small search-box">
+                &lt;input type="text" placeholder="search keywords">
+                &lt;button class="search-btn ti-search">&lt;/button>
+            &lt;/form>
+            &lt;!-- Button -->
+            &lt;a href="#" class="btn primary tx-uppercase">Button&lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/header>
+&lt;!-- // Header -->
+</code>
+</pre>    
+
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Primary Colored Header</h4>
+                </div>
+
+                <!-- Header -->
+                <header class="tornado-header primary">
+                    <div class="container">
+                        <!-- Logo -->
+                        <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
+                        <!-- Main Menu -->
+                        <div class="navigation-menu" data-id="main-menu-2">
+                            <ul>
+                                <li><a href="#">Home Page</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Github</a></li>
+                                <li><a href="#">Download</a>
+                                    <!-- Dropdown List -->
+                                    <ul>
+                                        <li><a href="#">Production Version</a></li>
+                                        <li><a href="#">Development Version</a></li>
+                                        <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="action-btns">
+                            <!-- Cart Button -->
+                            <a href="#" class="icon-btn ti-cart"></a>
+                            <!-- Search Button -->
+                            <a href="#" class="icon-btn ti-search"></a>
+                            <!-- Contact Button -->
+                            <a href="#" class="icon-btn ti-phone"></a>
+                            <!-- Main Menu Mobile Button -->
+                            <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu-2"></a>
+                        </div>
+                    </div>
+                </header>
+                <!-- // Header -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#header1">Copy Code</button>
+<code class="markup" id="header1">&lt;!-- Header -->
+&lt;header class="tornado-header primary">
+    &lt;div class="container">
+        &lt;!-- Logo -->
+        &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
+        &lt;!-- Main Menu -->
+        &lt;div class="navigation-menu" data-id="main-menu">
+            &lt;ul>
+                &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Download&lt;/a>
+                    &lt;!-- Dropdown List -->
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+        &lt;!-- Action Buttons -->
+        &lt;div class="action-btns">
+            &lt;!-- Cart Button -->
+            &lt;a href="#" class="icon-btn ti-cart">&lt;/a>
+            &lt;!-- Search Button -->
+            &lt;a href="#" class="icon-btn ti-search">&lt;/a>
+            &lt;!-- Contact Button -->
+            &lt;a href="#" class="icon-btn ti-phone">&lt;/a>
+            &lt;!-- Main Menu Mobile Button -->
+            &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/header>
+&lt;!-- // Header -->
+</code>
+</pre> 
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Secondary Colored Header</h4>
+                </div>
+
+                <!-- Header -->
+                <header class="tornado-header secondary">
+                    <div class="container">
+                        <!-- Logo -->
+                        <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
+                        <!-- Main Menu -->
+                        <div class="navigation-menu" data-id="main-menu-4">
+                            <ul>
+                                <li><a href="#">Home Page</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Github</a></li>
+                                <li><a href="#">Download</a>
+                                    <!-- Dropdown List -->
+                                    <ul>
+                                        <li><a href="#">Production Version</a></li>
+                                        <li><a href="#">Development Version</a></li>
+                                        <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- Action Buttons -->
+                        <div class="action-btns">
+                            <!-- Cart Button -->
+                            <a href="#" class="icon-btn ti-cart"></a>
+                            <!-- Search Button -->
+                            <a href="#" class="icon-btn ti-search"></a>
+                            <!-- Contact Button -->
+                            <a href="#" class="icon-btn ti-phone"></a>
+                            <!-- Main Menu Mobile Button -->
+                            <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu-4"></a>
+                        </div>
+                    </div>
+                </header>
+                <!-- // Header -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#header1">Copy Code</button>
+<code class="markup" id="header1">&lt;!-- Header -->
+&lt;header class="tornado-header secondary">
+    &lt;div class="container">
+        &lt;!-- Logo -->
+        &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
+        &lt;!-- Main Menu -->
+        &lt;div class="navigation-menu" data-id="main-menu">
+            &lt;ul>
+                &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Download&lt;/a>
+                    &lt;!-- Dropdown List -->
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+        &lt;!-- Action Buttons -->
+        &lt;div class="action-btns">
+            &lt;!-- Cart Button -->
+            &lt;a href="#" class="icon-btn ti-cart">&lt;/a>
+            &lt;!-- Search Button -->
+            &lt;a href="#" class="icon-btn ti-search">&lt;/a>
+            &lt;!-- Contact Button -->
+            &lt;a href="#" class="icon-btn ti-phone">&lt;/a>
+            &lt;!-- Main Menu Mobile Button -->
+            &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+        &lt;/div>
+    &lt;/div>
+&lt;/header>
+&lt;!-- // Header -->
+</code>
+</pre> 
+
+                <!-- Pagination Buttons -->
+                <div class="pagi-buttons">
+                    <a href="menu.html" class="btn">Next <span>Responsive Menus</span></a>
+                    <a href="typography.html" class="btn">Previous <span>Typography</span></a>
+                </div>
+            </div>
+            <!-- // Page Content -->
+        </div>
+        
+        <!-- Required JS Files (Always in Footer) -->
+        <script src="../dist/js/jquery-3.3.1.min.js"></script>
+        <script src="../dist/js/tornado.min.js"></script>
+        <script src="js-css/clipboard.min.js"></script>
+        <script src="js-css/highlight.pack.js"></script>
+        <script src="js-css/script.js"></script>
+    </body>
+</html>

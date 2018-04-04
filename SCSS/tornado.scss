@@ -46,7 +46,7 @@ $base-m-size:15px; // Base Font Size For Medium Screens
 $base-s-size:14px; // Base Font Size For Small Screens
 $base-line-height:1.625; // Base Line Height
 $normal-weight:400; // Normal Font Weight
-$meduim-weight:500; // Medium Font Weight
+$medium-weight:500; // Medium Font Weight
 $strong-weight:700; // Bold/Bolder Font Weight
 //========== Grid System ==========//
 $grid-columns:12; // Numbers of Gride Columns
@@ -59,19 +59,28 @@ $xlarge-query:1360px; // Big Desktop Screen Size to start from
 //========== Global Sass ==========//
 @import 'assets/selectors';
 @import 'assets/mixins';
+@import 'assets/navigation-mixins';
 /*========== Loading Fonts ==========*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@font-face{font-family:"tornado-icons";font-style:normal;font-weight:normal;src:url('../fonts/tornado-icons.woff') format('woff');}
-/*========== Reset and Typography CSS ==========*/
+@font-face {
+    font-family: "tornado-icons";
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/tornado-icons.woff') format('woff');
+}
+/*========== Global Sass ==========*/
 @import 'assets/reset';
-@import 'elements/typography';
-/*========== Grid System ==========*/
+@import 'tornado-icons';
 @import 'grid/grid-system';
+@import 'assets/utilities';
+/*========== Elements ==========*/
+@import 'elements/typography';
+@import 'elements/headers';
+@import 'elements/mobile-menu';
 /*========== Forms ==========*/
 @import 'forms/form-themes';
 @import 'forms/alerts';
 /*========== Components ==========*/
 @import 'components/tables';
 @import 'components/tabs-system';
-/*========== Icons Font CSS ==========*/
-@import 'tornado-icons';
+@import 'components/slick-slider';

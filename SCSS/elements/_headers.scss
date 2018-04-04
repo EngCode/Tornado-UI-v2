@@ -1,0 +1,125 @@
+/*======== Standard Header ========*/
+.tornado-header {
+    $thisHeight:76px;
+    border:1px solid rgba(0,0,0,0.10);
+    padding:0 15px;
+    //=== Container Layout ===//
+    .container,.container-fluid,.container-xl {
+        @extend %flexbox;
+        @extend .align-between;
+        @extend .align-center-y;
+        min-height:$thisHeight;
+        &::after{ display: none; }
+    }
+    //=== Logo ===//
+    .logo {
+        h1 {
+            font-size: 24px;
+            font-weight: $medium-weight;
+            color:$primary-color;
+            text-transform: uppercase;
+        }
+    }
+    //=== Navigation Menu ===//
+    @include navigation-main();
+    @include navigation-custom-theme (
+        $thisHeight,// Height
+        15px, // Font-size
+        $medium-weight, // Font Weight
+        #868e96, // Text Color
+        $black-color, // Hover Color
+        transparent, // Hover Background
+        $black-color, // Submenu Color
+        #FFF,// Submenu Background
+        14px, // Submenu Font-size
+        40px, // Submenu Height
+        rgba(0, 0, 0, 0.05), // Submenu Hover Background
+        $black-color // Submenu Hover Color
+    );
+    //=== Actions Buttons ===*/
+    .action-btns {
+        .icon-btn {
+            padding:10px;
+            font-size:23px;
+            color:#868e96;
+            @extend %fast-motion;
+            &:hover { color:$black-color; }
+        }
+        @include medium(true) { .menu-btn {display: none; } }
+    }
+    //=== Search Box ===*/
+    .search-box {
+        display: inline-block;
+        position: relative;
+        @include medium(true) {
+            width:270px;
+        }
+        input {margin-bottom: 0!important;}
+        .search-btn {
+            position: absolute;
+            #{$directionReverse}:0;
+            top:0;
+            bottom: 0;
+            background:transparent;
+            color:$gray-color;
+            width:38px;
+            border:0 none;
+            cursor: pointer;
+        }
+    }
+
+    .btn {
+        margin-#{$direction}: 15px;
+    }
+    
+    //=== Collapsed Menu ===//
+    &.collapsed-menu {
+        .navigation-menu { display: none; }
+        .action-btns {
+            @include medium(true) { .menu-btn { display: inline-block; } }
+        }
+    }
+
+    //=== Primary Colored ===//
+    &.primary {
+        background:$primary-color;
+        border:0 none;
+        .logo h1,.action-btns .icon-btn{ color:#FFF; }
+        @include navigation-custom-theme (
+            $thisHeight,// Height
+            15px, // Font-size
+            $medium-weight, // Font Weight
+            #FFF, // Text Color
+            $primary-color, // Hover Color
+            #FFF, // Hover Background
+            $primary-color, // Submenu Color
+            #FFF,// Submenu Background
+            14px, // Submenu Font-size
+            40px, // Submenu Height
+            rgba(0, 0, 0, 0.05), // Submenu Hover Background
+            $black-color // Submenu Hover Color
+        );
+    }
+    
+    //=== Secondary Colored ===//
+    &.secondary {
+        background:$dark-color;
+        border:0 none;
+        .logo h1,.action-btns .icon-btn{ color:#FFF; }
+        @include navigation-custom-theme (
+            $thisHeight,// Height
+            15px, // Font-size
+            $medium-weight, // Font Weight
+            #FFF, // Text Color
+            $dark-color, // Hover Color
+            #FFF, // Hover Background
+            $dark-color, // Submenu Color
+            #FFF,// Submenu Background
+            14px, // Submenu Font-size
+            40px, // Submenu Height
+            rgba(0, 0, 0, 0.05), // Submenu Hover Background
+            $black-color // Submenu Hover Color
+        );
+    }
+
+}

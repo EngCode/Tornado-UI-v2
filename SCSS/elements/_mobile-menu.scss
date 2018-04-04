@@ -1,0 +1,97 @@
+//==== Mobile Menu =====//
+.mobile-menu {
+    position:fixed;
+    top:0;
+    #{$directionReverse}:-100%;
+    width:100%;
+    height:100vh;
+    -webkit-transition: all 0.5s;
+    transition:all 0.5s;
+    z-index:999999;
+    .menu-content {
+        width:280px;
+        height:100vh;
+        -webkit-box-shadow:0 5px 5px 2px rgba(0,0,0,.15);
+        box-shadow:0 5px 5px 2px rgba(0,0,0,.15);
+        background:#FFF;
+        overflow-x:hidden;
+        overflow-y:visible;
+        -webkit-transition: all 0.5s;
+        transition:all 0.5s;
+        z-index:102;
+        margin-#{$direction}: auto;
+    }
+    
+    // Overlay
+    .overlay-close{position:fixed;visibility:hidden;}
+    //==== Activation =====//
+    &.active{
+        #{$directionReverse}:0;
+        .overlay-close {
+            display:block;
+            position:fixed;
+            visibility:visible;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            content:'';
+            background:rgba(0,0,0,.80);
+            z-index:101;
+            font-size:0;
+            width:100%;
+            height:100%;
+            -webkit-transition: all 0.5s;
+            transition:all 0.5s;
+            z-index: -1;
+        }
+        .menu-content{z-index: 2;}
+    }
+    // List 
+    .submenu:before {
+        float:$directionReverse;
+        margin-#{$direction}:5px;
+        margin-top:-2px;
+        position:relative;
+        top:3px;
+        line-height:inherit;
+        font-size:0.7em;
+        padding:0 10px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding:0;
+        margin:0;
+        background:#FFF;
+        li{
+            padding:15px 20px;
+            float:none;
+            border-bottom:1px solid rgba(0, 0, 0, .10);
+            a{color:#2b2b2b;}
+            > ul li{padding:12px 30px;}
+            &.active{background:rgba(0,0,0,.05);}
+        }
+    }
+
+    .megamenu{
+        padding:0 15px;
+        ul {
+            padding: 15px;
+            line-height: normal !important;
+            font-size: 15px;
+            li{margin-top:0;padding:10px 15px;}
+        }
+    }
+    
+
+    li > ul,.megamenu {
+        position: static !important;
+        display: none;
+        margin: 0 -15px;
+        width: auto !important;
+        margin-top: 15px;
+    }
+
+    *[calss*="col-"],*[calss*="box-"] {width: 100% !important;}
+}

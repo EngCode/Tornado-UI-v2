@@ -1,4 +1,4 @@
-//=== Responsive Navigation Menu ===//
+/*======== Navigation Menu ========*/
 .navigation-menu {
     @include navigation-main();
     @include navigation-custom-theme (
@@ -16,7 +16,9 @@
         $black-color // Submenu Hover Color
     );
 }
-
+/*=== Navigation Menu Button ===*/
 .menu-btn[data-id] { 
     @include medium(true) { &:not(.collapsed) { display: none; }  }
 }
+/*=== Navigation Menu Mobile Theme ===*/
+@import 'mobile-menu';

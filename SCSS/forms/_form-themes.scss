@@ -80,6 +80,9 @@ button,input,optgroup,select,textarea {
         border: 1px solid rgba(0, 0, 0, .10);
         background-color: #fefcfc;
         line-height: 1.2;
+        &.success{border-color: $success-color;}
+        &.error{border-color: $danger-color;}
+        &.warning{border-color: $warning-color;}
     }
 
     textarea{min-height:140px;padding:15px;}
@@ -110,6 +113,9 @@ button,input,optgroup,select,textarea {
         font-weight:$strong-weight;
         margin-top:15px;
         margin-bottom:15px;
+        &.success{border-color: $success-color;}
+        &.error{border-color: $danger-color;}
+        &.warning{border-color: $warning-color;}
     }
 
     //==== Select ====//

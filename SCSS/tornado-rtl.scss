@@ -52,14 +52,19 @@ $strong-weight:700; // Bold/Bolder Font Weight
 $grid-columns:12; // Numbers of Gride Columns
 $gutterSize:30px; // the Space Between Columns
 $gutterMath:$gutterSize/2; // the Space Between Columns Divided
+//====== Media Query Minimum Size =======//
 $small-query:576px; //  Mobile Screen Size to start from
 $medium-query:768px; // Tablet Screen Size to start from
 $large-query:1024px; // Desktop Screen Size to start from
 $xlarge-query:1360px; // Big Desktop Screen Size to start from
+//====== Media Query Maximum Size =======//
+$small-query-down:640px; //  Mobile Screen Size to start from
+$medium-query-down:980px; // Tablet Screen Size to start from
+$large-query-down:1200px; // Desktop Screen Size to start from
+$xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 //========== Global Sass ==========//
 @import 'assets/selectors';
 @import 'assets/mixins';
-@import 'assets/navigation-mixins';
 /*========== Loading Fonts ==========*/
 @font-face {
     font-family: 'Helvetica';

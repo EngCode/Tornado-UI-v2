@@ -1,24 +1,158 @@
 /*======== Navigation Menu ========*/
 .navigation-menu {
     @include navigation-main();
-    @include navigation-custom-theme (
-        48px,// Height
-        15px, // Font-size
-        $medium-weight, // Font Weight
-        #868e96, // Text Color
-        $black-color, // Hover Color
-        transparent, // Hover Background
-        $black-color, // Submenu Color
-        #FFF,// Submenu Background
-        14px, // Submenu Font-size
-        40px, // Submenu Height
-        rgba(0, 0, 0, 0.05), // Submenu Hover Background
-        $black-color // Submenu Hover Color
-    );
+    @include navigation-custom-theme();
 }
+
 /*=== Navigation Menu Button ===*/
 .menu-btn[data-id] { 
-    @include medium(true) { &:not(.collapsed) { display: none; }  }
+    @media screen and (min-width:$medium-query-down+1) {
+        &:not(.collapsed) {
+            display: none;
+        }
+    }
 }
+
+/*=== Navigation Wraper ===*/
+.navigation-wraper {
+    /*==== Default Theme ====*/
+    background: #FFF;
+    border:1px solid rgba(0,0,0,0.10);
+    padding:0 15px;
+    position: relative;
+    z-index: 100;
+    margin-bottom: 30px;
+    .navigation-menu {
+        > ul > li > a { text-transform: uppercase; }
+    }
+    .menu-btn {
+        font-size:23px;
+        line-height: 58px;
+        color:$gray-color;
+        display: inline-block;
+        padding:0 10px;
+    }    
+    /*==== Gray Theme ====*/
+    &.gray {
+        background-color:$gray-bg;
+        .navigation-menu {
+            @include navigation-custom-theme (
+                $color:darken($color: $gray-color, $amount: 20),// Text Color
+                $hvr-color:$reverse-color,// Hover Color
+                $hvr-bg:$gray-color,// Hover Background
+                $sub-color:$reverse-color,// Submenu Color
+                $sub-bg:$gray-color,// Submenu Background
+                $sub-hvr-bg:$dark-color,// Submenu Hover Background
+                $sub-hvr-color:$reverse-color// Submenu Hover Color
+            );
+        }
+    }
+    /*==== Primary Theme ====*/
+    &.primary {
+        background-color:$primary-color;
+        border: 0 none;
+        .navigation-menu {
+            @include navigation-custom-theme (
+                $color:$reverse-color,// Text Color
+                $hvr-color:$reverse-color,// Hover Color
+                $hvr-bg:$dark-color,// Hover Background
+                $sub-color:$reverse-color,// Submenu Color
+                $sub-bg:$dark-color,// Submenu Background
+                $sub-hvr-bg:$primary-color,// Submenu Hover Background
+                $sub-hvr-color:$reverse-color// Submenu Hover Color
+            );
+        }
+    }
+    /*==== Black Theme ====*/
+    &.dark {
+        background-color:$black-color;
+        border: 0 none;
+        .navigation-menu {
+            @include navigation-custom-theme (
+                $color:$reverse-color,// Text Color
+                $hvr-color:$reverse-color,// Hover Color
+                $hvr-bg:$primary-color,// Hover Background
+                $sub-color:$reverse-color,// Submenu Color
+                $sub-bg:$primary-color,// Submenu Background
+                $sub-hvr-bg:$dark-color,// Submenu Hover Background
+                $sub-hvr-color:$reverse-color// Submenu Hover Color
+            );
+        }
+    }
+}
+
 /*=== Navigation Menu Mobile Theme ===*/
 @import 'mobile-menu';
+
+/*======== Nested Menus ========*/
+.nested-menu {
+    background:#fff;
+    $border:1px solid rgba(0,0,0,0.10);
+    border:$border;
+    //==== Title ====//
+    .title {
+        margin: 0;
+        padding:0 25px;
+        font-size:15px;
+        font-weight: $medium-weight;
+        background: rgba(0,0,0,0.03);
+        border-bottom: $border;
+        line-height: 52px;
+        text-transform: uppercase;
+        color:$primary-color;
+    }
+    //==== Menu ====//
+    ul {
+        @extend %reset;
+        li {
+            @extend %fast-motion;
+            a { @extend %fast-motion; }
+            ul {
+                display: none;
+                padding: 0;
+                li::before { content:'-';padding-#{$directionReverse}:5px; }
+            }
+            .submenu::before{float: $directionReverse;}
+        }
+    }
+    >ul{padding: 15px 0;}
+    @include nested-menu ();
+    //==== Primary Theme ====//
+    &.primary {
+        background: $primary-color;
+        .title{color:$reverse-color;}
+        @include nested-menu (
+            $color:$reverse-color, // Text Color
+            $hvr-color:$reverse-color, // Hover Color
+            // submenu
+            $sub-color:$reverse-color, // Submenu Color
+            $sub-hvr-color:$reverse-color // Submenu Hover Color
+        );
+    }
+
+    //==== Dark Theme ====//
+    &.dark {
+        background: #3a3a3a;
+        .title{color:$reverse-color;}
+        @include nested-menu (
+            $color:$reverse-color, // Text Color
+            $hvr-color:$reverse-color, // Hover Color
+            // submenu
+            $sub-color:$reverse-color, // Submenu Color
+            $sub-hvr-color:$reverse-color // Submenu Hover Color
+        );
+    }
+
+    //==== Gray Theme ====//
+    &.gray {
+        background: #eaebec;
+        .title{color:$black-color;}
+        @include nested-menu (
+            $color:rgba(0,0,0,0.75), // Text Color
+            $hvr-color:$black-color, // Hover Color
+            // submenu
+            $sub-color:$black-color, // Submenu Color
+            $sub-hvr-color:$black-color // Submenu Hover Color
+        );
+    }
+}

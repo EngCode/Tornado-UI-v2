@@ -1,32 +1,232 @@
 //========== Media Query Mixins ==========//
 @mixin small($up) {
     @if ($up) {
-        @media (min-width: $small-query) { @content; }
-    } @else {
-        @media (max-width: $small-query) { @content; }
+        @media (min-width: $small-query) {
+            @content;
+        }
+    } 
+    @else {
+        @media (max-width: $small-query-down) {
+            @content;
+        }
     };
 }
 
 @mixin medium($up) {
     @if ($up) {
-        @media (min-width: $medium-query) { @content; }
-    } @else {
-        @media (max-width: $medium-query) { @content; }
+        @media (min-width: $medium-query) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $medium-query-down) {
+            @content;
+        }
     };
 }
 
 @mixin large($up) {
     @if ($up) {
-        @media (min-width: $large-query) { @content; }
-    } @else {
-        @media (max-width: $large-query) { @content; }
+        @media (min-width: $large-query) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $large-query-down) {
+            @content;
+        }
     };
 }
 
 @mixin xlarge($up) {
     @if ($up) {
-        @media (min-width: $xlarge-query) { @content; }
-    } @else {
-        @media (max-width: $xlarge-query) { @content; }
+        @media (min-width: $xlarge-query) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $xlarge-query-down) {
+            @content;
+        }
     };
+}
+
+/*===== Navigation Menu =====*/
+@mixin navigation-main() {
+    //=== Menu Wraper ===//
+    position: relative;
+    @extend %fast-motion;
+    @include medium(false) { display: none; }
+    &.collapsed { display: none; }
+    ul { @extend %reset; }
+    //=== Menu Main CSS ===//
+    > ul {
+        word-spacing: -5px;
+        //=== Transition ===//
+        li {
+            @extend %fast-motion;
+            a { @extend %fast-motion; }
+        }
+        //== item ==//
+        > li {
+            word-spacing: normal;
+            display: inline-block;
+            position: relative;
+            padding: 0 15px;
+            //== Submenu Item Arrow ==//
+            .submenu:before {
+                float:$directionReverse;
+                margin-#{$direction}:5px;
+                position:relative;
+                line-height:inherit;
+                @extend %fast-motion;
+                font-size:0.7em;
+            }
+            //=== Nested List ===//
+            > ul {
+                display: none;
+                position: absolute;
+                top:100%;
+                border:1px solid rgba(0,0,0,.15);
+                #{$direction}:0;
+                > li {
+                    position: relative;
+                    border-bottom:1px solid rgba(0,0,0,.15);
+                    font-weight:normal;
+                    padding:0 15px;
+                    ul {
+                        display: none;
+                        position: absolute;
+                        top: 0;
+                        #{$direction}: 100%;
+                    }
+                    //=== Fixing Last Item Overflow
+                    &:last-child {
+                        > ul {
+                            #{$direction}:auto;
+                            #{$directionReverse}:0;
+                            li ul {
+                                #{$direction}:auto;
+                                #{$directionReverse}:100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        //==== Hover Dropdown ====//
+        li:hover > ul { display: block;width:220px; }
+    }
+}
+
+/*======= Custome Theme ========*/
+@mixin navigation-custom-theme (
+    $height:58px,// Height
+    $font-size:14px,// Font-size
+    $font-weight:$normal-weight,// Font Weight
+    $color:$gray-color,// Text Color
+    $hvr-color:$primary-color,// Hover Color
+    $hvr-bg:transparent,// Hover Background
+    // submenu
+    $sub-color:$black-color,// Submenu Color
+    $sub-bg:#FFF,// Submenu Background
+    $sub-font-size:14px,// Submenu Font-size
+    $sub-height:40px,// Submenu Height
+    $sub-hvr-bg:$primary-color,// Submenu Hover Background
+    $sub-hvr-color:#FFF// Submenu Hover Color
+    ) {
+    //=== Menu Theme ===//
+    > ul {
+        //=== Item ===//
+        > li {
+            font-size:$font-size;
+            font-weight: $font-weight;
+            color:$color;
+            line-height: $height;
+            //=== List item Link ===//
+            > a {
+                color:$color;
+                font-weight: $font-weight;
+                font-family: $primary-font;
+            }
+            
+            &:hover,&.active { 
+                color:$hvr-color;
+                background:$hvr-bg;
+                > a {color:$hvr-color;}
+                }
+            //=== Nested List ===//
+            > ul {
+                background: $sub-bg;
+                ul { background: $sub-bg; }
+            }
+        }
+    }
+    
+    //==== Submenus Theme ====//
+    @include large(true) {
+        li > ul{
+            li {
+                font-size:$sub-font-size;
+                line-height:$sub-height;
+                color:$sub-color;
+                a {color:$sub-color;}
+                &:hover,&.active {
+                    background:$sub-hvr-bg;
+                    > a { color:$sub-hvr-color; }
+                }
+            }
+        }
+    }
+}
+
+@mixin nested-menu (
+    $height:35px,// Height
+    $font-size:15px,// Font-size
+    $font-weight:$normal-weight,// Font Weight
+    $color:$black-color,// Text Color
+    $hvr-color:$primary-color,// Hover Color
+    $hvr-bg:transparent,// Hover Background
+    $space-size:25px, // Gutter Size
+    // submenu
+    $sub-color:$black-color,// Submenu Color
+    $sub-bg:rgba(0,0,0,0.05),// Submenu Background
+    $sub-font-size:14px,// Submenu Font-size
+    $sub-height:30px,// Submenu Height
+    $sub-hvr-bg:rgba(0,0,0,0.05),// Submenu Hover Background
+    $sub-hvr-color:$black-color// Submenu Hover Color
+) {
+    > ul {
+        > li {
+            font-size:$font-size;
+            line-height:$height;
+            color:$color;
+            padding:0 $space-size;
+            > a { color:$color; }
+            .submenu::before{line-height: $height;font-size:0.8em;}
+            &:hover {
+                color:$hvr-color;
+                background:$hvr-bg;
+                > a { color:$hvr-color;}
+            }
+            ul {
+                background-color:$sub-bg;
+                margin:0 -#{$space-size};
+                padding:10px 0;
+                li {
+                    color:$sub-color;
+                    padding:0 $space-size+10;
+                    font-size:$sub-font-size;
+                    line-height: $sub-height;
+                    a { color:$sub-color }
+                    &:hover {
+                        color:$sub-hvr-color;
+                        background:$sub-hvr-bg;
+                        > a { color:$sub-hvr-color;}
+                    }
+                }
+            }
+        }
+    }
 }

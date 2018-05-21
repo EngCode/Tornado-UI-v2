@@ -9,7 +9,9 @@ button,input,optgroup,select,textarea {
 /*=== Default Clean Buttons ===*/
 .btn {
     display: inline-block;
-    padding:11px 25px;
+    padding:0 25px;
+    height:48px;
+    line-height: 48px;
     font-size: 14px;
     border: 1px solid rgba(0,0,0,.10);
     color:$dark-color;
@@ -17,13 +19,29 @@ button,input,optgroup,select,textarea {
     background:#FFF;
     @extend %normal-motion;
     text-align: center;
-    line-height:1;
-    font-weight:$normal-weight;
+    font-weight:$medium-weight;
     &:hover{background: #f7f7f7;}
+    &.rounded-corner { border-radius: 80px; }
+    &.rounde-corner { border-radius: 6px; }
     //===== Buttons Sizes ====//
-    &.tiny{font-size: 11px;padding:10px 20px;}
-    &.small{font-size:13px;padding:10px 30px;}
-    &.large{font-size:16px;padding:13px 30px;}
+    &.tiny {
+        font-size: 11px;
+        padding: 0 20px;
+        height: 27px;
+        line-height: 27px;
+    }
+    &.small {
+        font-size: 13px;
+        padding: 0 30px;
+        height: 36px;
+        line-height: 36px;
+    }
+    &.large {
+        font-size: 16px;
+        padding: 0 30px;
+        height:58px;
+        line-height: 58px;
+    }
     //==== Coloring Buttons ====//
     &.primary{
         background: $primary-color;color:$reverse-color;border: 0 none;
@@ -76,24 +94,48 @@ button,input,optgroup,select,textarea {
         width: 100%;
         margin-bottom: 25px;
         font-size: 14px;
-        padding: 13px 15px;
+        padding: 0 15px;
         border: 1px solid rgba(0, 0, 0, .10);
         background-color: #fefcfc;
-        line-height: 1.2;
+        line-height: 1;
+        height:48px;
+        &.rounded-corner:not(textarea) { border-radius: 80px; }
+        &.rounde-corner { border-radius: 6px; }
+        /*==== Validation ====*/
         &.success{border-color: $success-color;}
         &.error{border-color: $danger-color;}
         &.warning{border-color: $warning-color;}
     }
 
-    textarea{min-height:140px;padding:15px;}
+    textarea{min-height:120px;padding:15px;}
 
+    /*==== Sizes ====*/
+    &.tiny {
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
+            font-size: 11px;
+            padding: 0 20px;
+            height: 27px;
+        }
+        textarea{min-height:50px;}
+    }
     &.small {
         input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
-            padding: 10px 15px;
             font-size: 13px;
+            padding: 0 30px;
+            height: 36px;
+            line-height: 36px;
         }
+        textarea{height:90px;}
     }
-    
+    &.large {
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
+            font-size: 16px;
+            padding: 0 30px;
+            height:58px;
+            line-height: 58px;
+        }
+        textarea{height:140px;}
+    }
     //=== Reset Inputs ===//
     input {
         // Checkboxs and Radio Buttons
@@ -149,10 +191,10 @@ button,input,optgroup,select,textarea {
             opacity:0;
             cursor:pointer;
             margin:0;
-            top:-60px;
-            bottom:-60px;
+            top:0;
             $direction:0;
             width:100%;
+            height: 100%;
             z-index:1;
         }
         

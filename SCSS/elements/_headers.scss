@@ -25,19 +25,20 @@
     //=== Navigation Menu ===//
     .navigation-menu {
         @include navigation-custom-theme (
-            $thisHeight,// Height
-            15px, // Font-size
-            $medium-weight, // Font Weight
-            #868e96, // Text Color
-            $black-color, // Hover Color
-            transparent, // Hover Background
-            $black-color, // Submenu Color
-            #FFF,// Submenu Background
-            14px, // Submenu Font-size
-            40px, // Submenu Height
-            rgba(0, 0, 0, 0.05), // Submenu Hover Background
-            $black-color // Submenu Hover Color
+            $height:$thisHeight,// Height
+            $font-size:15px, // Font-size
+            $font-weight:$medium-weight, // Font Weight
+            $color:$gray-color, // Text Color
+            $hvr-color:$black-color, // Hover Color
+            $hvr-bg:transparent, // Hover Background
+            $sub-color:$black-color, // Submenu Color
+            $sub-bg:#FFF,// Submenu Background
+            $sub-font-size:14px, // Submenu Font-size
+            $sub-height:40px, // Submenu Height
+            $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
+            $sub-hvr-color:$black-color // Submenu Hover Color
         );
+        > ul > li > a { text-transform: uppercase; }
     }
     
     //=== Actions Buttons ===*/
@@ -45,7 +46,7 @@
         .icon-btn {
             padding:10px;
             font-size:23px;
-            color:#868e96;
+            color:$gray-color;
             @extend %fast-motion;
             &:hover { color:$black-color; }
         }
@@ -80,18 +81,18 @@
         .logo h1,.action-btns .icon-btn{ color:#FFF; }
         .navigation-menu {
             @include navigation-custom-theme (
-                $thisHeight,// Height
-                15px, // Font-size
-                $medium-weight, // Font Weight
-                #FFF, // Text Color
-                $primary-color, // Hover Color
-                #FFF, // Hover Background
-                $primary-color, // Submenu Color
-                #FFF,// Submenu Background
-                14px, // Submenu Font-size
-                40px, // Submenu Height
-                rgba(0, 0, 0, 0.05), // Submenu Hover Background
-                $black-color // Submenu Hover Color
+                $height:$thisHeight,// Height
+                $font-size:15px, // Font-size
+                $font-weight:$medium-weight, // Font Weight
+                $color:#FFF, // Text Color
+                $hvr-color:$primary-color, // Hover Color
+                $hvr-bg:#FFF, // Hover Background
+                $sub-color:$primary-color, // Submenu Color
+                $sub-bg:#FFF,// Submenu Background
+                $sub-font-size:14px, // Submenu Font-size
+                $sub-height:40px, // Submenu Height
+                $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
+                $sub-hvr-color:$black-color // Submenu Hover Color
             );
         }
     }
@@ -103,18 +104,18 @@
         .logo h1,.action-btns .icon-btn{ color:#FFF; }
         .navigation-menu {
             @include navigation-custom-theme (
-                $thisHeight,// Height
-                15px, // Font-size
-                $medium-weight, // Font Weight
-                #FFF, // Text Color
-                $dark-color, // Hover Color
-                #FFF, // Hover Background
-                $dark-color, // Submenu Color
-                #FFF,// Submenu Background
-                14px, // Submenu Font-size
-                40px, // Submenu Height
-                rgba(0, 0, 0, 0.05), // Submenu Hover Background
-                $black-color // Submenu Hover Color
+                $height:$thisHeight,// Height
+                $font-size:15px, // Font-size
+                $font-weight:$medium-weight, // Font Weight
+                $color:#FFF, // Text Color
+                $hvr-color:$dark-color, // Hover Color
+                $hvr-bg:#FFF, // Hover Background
+                $sub-color:$dark-color, // Submenu Color
+                $sub-bg:#FFF,// Submenu Background
+                $sub-font-size:14px, // Submenu Font-size
+                $sub-height:40px, // Submenu Height
+                $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
+                $sub-hvr-color:$black-color // Submenu Hover Color
             );
         }
     }

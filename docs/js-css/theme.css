@@ -152,6 +152,7 @@ body::after {
     padding:0;
     font-size:13px;
     text-transform: uppercase;
+    height: 34px;
     line-height: 34px;
     width:140px;
     display: inline-block;
@@ -253,7 +254,7 @@ body::after {
     margin-bottom: -30px;
     padding:20px 30px;
     background: #ebeef1;
-    max-height:300px;
+    max-height:200px;
     overflow: auto;
     font-family:'Courier New', Courier, monospace;
     font-weight: 700;

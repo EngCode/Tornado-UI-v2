@@ -87,7 +87,7 @@
                         <li><a href="responsive.html">Responsive</a></li>
                     </ul>
                 </li>
-                <li><a href="#">SASS Customizing</a>
+                <li><a href="#">SASS Customizeing</a>
                     <ul>
                         <li><a href="sass-vars.html">Theme Variables</a></li>
                         <li><a href="sass-mixins.html">Mixins</a></li>
@@ -127,22 +127,511 @@
             <div class="page-content">
                 <div class="page-head">
                     <h1>Responsive Menu's</h1>
-                    <p>Tornado Provides Predesigned Navigation Bars and Header's With Useful Elements Thats fit Alomst All Your Needs.</p>
+                    <p>Tornado v2 Provides A Bunch Of Responsive Menu's With Muliple Themes Horizontally and vertically With Easy To Customize With Sass.</p>
                 </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
                     <h4>Navigation Menu</h4>
-                    <p>a Pre Designed Standard Navigation Menu With Multi Lvl Dropdown Lists.</p>
+                    <p>
+                        The Navigation Menu Comes With Multiple Theme Mode's The Default Mode , The Functionality Menu Can Be Used by Just 
+                        Making a <span>Div Wrapper</span> With Class Named <span>navigation-menu</span> and Marking The Menu With Attribute Named 
+                        <span>data-id="menu-name"</span> For Responsive Function , Then Structure Your List By Using <span>ul</span> 
+                        List Element With Nested <span>ul</span> for Drop-Down Menus After You Done With Menu Structure Add a Button or A Hyperlink
+                        Beside The Menu Wrapper or any Where else With Class Named <span>menu-btn</span> and Mark That Button With The Same Data Id 
+                        Attribute in order to connect the button with the menu See The Code Example Below.
+                    </p>
                 </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#func-menu">Copy Code</button>
+<code class="markup" id="func-menu">&lt;!-- Main Menu -->
+&lt;div class="navigation-menu" data-id="main-menu">
+    &lt;ul>
+        &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Download&lt;/a>
+            &lt;!-- Dropdown List -->
+            &lt;ul>
+                &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/li>
+        &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+&lt;!-- Main Menu Mobile Button -->
+&lt;a href="#" class="menu-btn ti-menu-round" data-id="main-menu">&lt;/a>
+
+</code>
+</pre>    
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Navigation Menu Themes</h4>
+                    <p>
+                        The Other Mode For The Navigation Menu is A Styled Navigation With Multiple Coloring Theme and That Also Can Be Done Easily Be Putin
+                        The Default Menu Structure Inside A Wrapper Div With Class Name <span> navigation-wraper </span> and The Coloring Themes Applied By Adding
+                        One More Class of 3x Class's <span>gray</span> , <span>primary</span> , <span>dark</span> See The Examples Below With Their code.
+                    </p>
+                </div>
+
+                <!-- Navigation wraper -->
+                <div class="navigation-wraper">
+                    <!-- Main Menu -->
+                    <div class="navigation-menu" data-id="menu-1">
+                        <ul>
+                            <li><a href="#">Menu Theme</a></li>
+                            <li><a href="#">About US</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Download</a>
+                                <!-- Dropdown List -->
+                                <ul>
+                                    <li><a href="#">Production Version</a></li>
+                                    <li><a href="#">Development Version</a></li>
+                                    <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Main Menu Mobile Button -->
+                    <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="menu-1"></a>
+                </div>
+                <!-- // Navigation wraper -->
 
 <!-- Code Viewer -->
 <pre class="code-viewer">
-<button class="copy-btn" data-clipboard-target="#header1">Copy Code</button>
-<code class="markup" id="header1">
-    
+<button class="copy-btn" data-clipboard-target="#menu-1">Copy Code</button>
+<code class="markup" id="menu-1">&lt;!-- Navigation wraper -->
+&lt;div class="navigation-wraper">
+    &lt;!-- Main Menu -->
+    &lt;div class="navigation-menu" data-id="main-menu">
+        &lt;ul>
+            &lt;li>&lt;a href="#">Menu Theme&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Download&lt;/a>
+                &lt;!-- Dropdown List -->
+                &lt;ul>
+                    &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/li>
+            &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;!-- Main Menu Mobile Button -->
+    &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+&lt;/div>
+&lt;!-- // Navigation wraper -->
 </code>
 </pre>    
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Navigation Menu Primary</h4>
+                </div>
+
+                <!-- Navigation wraper -->
+                <div class="navigation-wraper primary">
+                    <!-- Main Menu -->
+                    <div class="navigation-menu" data-id="menu-2">
+                        <ul>
+                            <li><a href="#">Menu Theme</a></li>
+                            <li><a href="#">About US</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Download</a>
+                                <!-- Dropdown List -->
+                                <ul>
+                                    <li><a href="#">Production Version</a></li>
+                                    <li><a href="#">Development Version</a></li>
+                                    <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Main Menu Mobile Button -->
+                    <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="menu-2"></a>
+                </div>
+                <!-- // Navigation wraper -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#menu-2">Copy Code</button>
+<code class="markup" id="menu-2">&lt;!-- Navigation wraper -->
+&lt;div class="navigation-wraper primary">
+    &lt;!-- Main Menu -->
+    &lt;div class="navigation-menu" data-id="main-menu">
+        &lt;ul>
+            &lt;li>&lt;a href="#">Menu Theme&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Download&lt;/a>
+                &lt;!-- Dropdown List -->
+                &lt;ul>
+                    &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/li>
+            &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;!-- Main Menu Mobile Button -->
+    &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+&lt;/div>
+&lt;!-- // Navigation wraper -->
+</code>
+</pre>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Navigation Menu Gray</h4>
+                </div>
+
+                <!-- Navigation wraper -->
+                <div class="navigation-wraper gray">
+                    <!-- Main Menu -->
+                    <div class="navigation-menu" data-id="menu-3">
+                        <ul>
+                            <li><a href="#">Menu Theme</a></li>
+                            <li><a href="#">About US</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Download</a>
+                                <!-- Dropdown List -->
+                                <ul>
+                                    <li><a href="#">Production Version</a></li>
+                                    <li><a href="#">Development Version</a></li>
+                                    <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Main Menu Mobile Button -->
+                    <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="menu-3"></a>
+                </div>
+                <!-- // Navigation wraper -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#menu-3">Copy Code</button>
+<code class="markup" id="menu-3">&lt;!-- Navigation wraper -->
+&lt;div class="navigation-wraper gray">
+    &lt;!-- Main Menu -->
+    &lt;div class="navigation-menu" data-id="main-menu">
+        &lt;ul>
+            &lt;li>&lt;a href="#">Menu Theme&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Download&lt;/a>
+                &lt;!-- Dropdown List -->
+                &lt;ul>
+                    &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/li>
+            &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;!-- Main Menu Mobile Button -->
+    &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+&lt;/div>
+&lt;!-- // Navigation wraper -->
+</code>
+</pre>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Navigation Menu dark</h4>
+                </div>
+
+                <!-- Navigation wraper -->
+                <div class="navigation-wraper dark">
+                    <!-- Main Menu -->
+                    <div class="navigation-menu" data-id="menu-4">
+                        <ul>
+                            <li><a href="#">Menu Theme</a></li>
+                            <li><a href="#">About US</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Download</a>
+                                <!-- Dropdown List -->
+                                <ul>
+                                    <li><a href="#">Production Version</a></li>
+                                    <li><a href="#">Development Version</a></li>
+                                    <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Main Menu Mobile Button -->
+                    <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="menu-4"></a>
+                </div>
+                <!-- // Navigation wraper -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#menu-4">Copy Code</button>
+<code class="markup" id="menu-4">&lt;!-- Navigation wraper -->
+&lt;div class="navigation-wraper dark">
+    &lt;!-- Main Menu -->
+    &lt;div class="navigation-menu" data-id="main-menu">
+        &lt;ul>
+            &lt;li>&lt;a href="#">Menu Theme&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Download&lt;/a>
+                &lt;!-- Dropdown List -->
+                &lt;ul>
+                    &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/li>
+            &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;!-- Main Menu Mobile Button -->
+    &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+&lt;/div>
+&lt;!-- // Navigation wraper -->
+</code>
+</pre>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Navigation Customize</h4>
+                    <p> in order to Customize the Navigation Menu Themes it's pretty much easy as piece of cake , You Can Override The Default Style in
+                        <span>tornado-folder/scss/elements/responsive-menus.scss</span> or Creating in Extra Custom Style By Using The Sass
+                        Mixin Function First You Will Define Your Menu Selector Lets Say For in Example You Want To Style a Menu Inside a Header So You Will Select it
+                        Like That <Span> .header-class .navigation-menu { @mixin navigation-custom-theme ( options ); } </Span> as Showing in Code Below.
+                    </p>
+                </div>
+                
+                <!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#menu-custom">Copy Code</button>
+<code class="css" id="menu-custom">.navigation-menu {
+    @mixin navigation-custom-theme (
+        $height:58px,                      // Height
+        $font-size:14px,                  // Font-size
+        $font-weight:500,                // Font Weight
+        $color:#2b2b2b,                 // Text Color
+        $hvr-color:blue,               // Hover Color
+        $hvr-bg:transparent,          // Hover Background
+        $sub-color:#1c1c1c,          // Submenu Color
+        $sub-bg:#FFF,               // Submenu Background
+        $sub-font-size:14px,       // Submenu Font-size
+        $sub-height:40px,         // Submenu Height
+        $sub-hvr-bg:#2b2b2b,     // Submenu Hover Background
+        $sub-hvr-color:#FFF     // Submenu Hover Color
+    );
+}
+</code>
+</pre>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Multi Level Wideget Menus</h4>
+                    <p> 
+                        The Multi Lvl Menus is Nested Menus Inside Each Other For Making A Side Bar Menu  or Some Wideget Menus, and its works as a Structure like 
+                        navigation menu you created a <span> div wrapper </span> and give it a class with name <span>nested-menu</span> then adding a title element
+                        recommended to be an <span>h2 to h4</span> with class name <span>title</span> and you can remove it if no need for it , after the title you 
+                        add your list <span>ul</span> elements nested inside each other.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-m-6 col-l-3">
+                        <div class="nested-menu">
+                            <h2 class="title">Standard Menu Theme</h2>
+                            <ul>
+                                <li><a href="#">WebDesign</a></li>
+                                <li><a href="#">Web Front End Dropdown</a>
+                                    <ul>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                        <li><a href="#">Front Sub Category</a></li>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PHP Programing</a></li>
+                                <li><a href="#">Javascript</a></li>
+                                <li><a href="#">jQuery Tuturials</a></li>
+                                <li><a href="#">UI/UX Inspiration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-m-6 col-l-3">
+                        <div class="nested-menu primary">
+                            <h2 class="title">Primary Menu Theme</h2>
+                            <ul>
+                                <li><a href="#">WebDesign</a></li>
+                                <li><a href="#">Web Front End Dropdown</a>
+                                    <ul>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                        <li><a href="#">Front Sub Category</a></li>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PHP Programing</a></li>
+                                <li><a href="#">Javascript</a></li>
+                                <li><a href="#">jQuery Tuturials</a></li>
+                                <li><a href="#">UI/UX Inspiration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-m-6 col-l-3">
+                        <div class="nested-menu dark">
+                            <h2 class="title">Dark Menu Theme</h2>
+                            <ul>
+                                <li><a href="#">WebDesign</a></li>
+                                <li><a href="#">Web Front End Dropdown</a>
+                                    <ul>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                        <li><a href="#">Front Sub Category</a></li>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PHP Programing</a></li>
+                                <li><a href="#">Javascript</a></li>
+                                <li><a href="#">jQuery Tuturials</a></li>
+                                <li><a href="#">UI/UX Inspiration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-m-6 col-l-3">
+                        <div class="nested-menu gray">
+                            <h2 class="title">Gray Menu Theme</h2>
+                            <ul>
+                                <li><a href="#">WebDesign</a></li>
+                                <li><a href="#">Web Front End Dropdown</a>
+                                    <ul>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                        <li><a href="#">Front Sub Category</a></li>
+                                        <li><a href="#">Tutorials</a></li>
+                                        <li><a href="#">FE Tips & Tricks</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">PHP Programing</a></li>
+                                <li><a href="#">Javascript</a></li>
+                                <li><a href="#">jQuery Tuturials</a></li>
+                                <li><a href="#">UI/UX Inspiration</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Menus -->
+
+                <!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#nested-menu">Copy Code</button>
+<code class="markup" id="nested-menu">&lt;div class="nested-menu">
+    &lt;h2 class="title">Standard Menu Theme&lt;/h2>
+    &lt;ul>
+        &lt;li>&lt;a href="#">WebDesign&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Web Front End Dropdown&lt;/a>
+            &lt;ul>
+                &lt;li>&lt;a href="#">Tutorials&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">FE Tips & Tricks&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Front Sub Category&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Tutorials&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">FE Tips & Tricks&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/li>
+        &lt;li>&lt;a href="#">PHP Programing&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">Javascript&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">jQuery Tuturials&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="#">UI/UX Inspiration&lt;/a>&lt;/li>
+    &lt;/ul>
+&lt;/div>
+</code>
+</pre>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Nested Menu Customize</h4>
+                    <p> in order to Customize the Nested Menu Themes it's Just Like Navigation Menu , You Can Override The Default Style in
+                        <span>tornado-folder/scss/elements/responsive-menus.scss</span> or Creating Your Own Custom Style By Using The Sass
+                        Mixin Function <Span> .ul-parent { @mixin nested-menu ( options ); } </Span> as Showing in Code Below.
+                    </p>
+                </div>
+                
+                <!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#nested-custom">Copy Code</button>
+<code class="css" id="nested-custom">.nested-menu {
+    @mixin nested-menu (
+        $height:35px,             // Height
+        $font-size:15px,         // Font-size
+        $font-weight:400,       // Font Weight
+        $color:#1c1c1c,        // Text Color
+        $hvr-color:#4166d6,   // Hover Color
+        $hvr-bg:transparent, // Hover Background
+        $space-size:25px,   // Gutter Size
+        // submenu
+        $sub-color:#1c1c1c,         // Submenu Color
+        $sub-bg:rgba(0,0,0,0.05),  // Submenu Background
+        $sub-font-size:14px,      // Submenu Font-size
+        $sub-height:30px,        // Submenu Height
+        $sub-hvr-bg:rgba(0,0,0,0.05),   // Submenu Hover Background
+        $sub-hvr-color:$black-color    // Submenu Hover Color
+    );
+}
+</code>
+</pre>
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Themes Class's</h4>
+                </div>
+
+                <div class="responsive-table">
+                    <table class="table bordered striped">
+                        <Thead>
+                            <tr>
+                                <th class="col-3">Class Name</th>
+                                <th class="col-9">Description</th>
+                            </tr>
+                        </Thead>
+                        <tbody>
+                            <tr>
+                                <th class="col-3">primary</th>
+                                <td class="col-9">goes to the menu wrapper div</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">dark</th>
+                                <td class="col-9">goes to the menu wrapper div</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">gray</th>
+                                <td class="col-9">goes to the menu wrapper div</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">
                     <a href="navbar.html" class="btn">Next <span>Navbar/Headers</span></a>

@@ -1,89 +1,12 @@
+//==== Import Buttons ====//
+@import 'buttons';
+
 /*==== Standard Form ====*/
 button,input,optgroup,select,textarea {
     font-family: $secondary-font;
     font-size: 0.875rem;
     line-height: 1;
     margin: 0;
-}
-
-/*=== Default Clean Buttons ===*/
-.btn {
-    display: inline-block;
-    padding:0 25px;
-    height:48px;
-    line-height: 48px;
-    font-size: 14px;
-    border: 1px solid rgba(0,0,0,.10);
-    color:$dark-color;
-    cursor: pointer;
-    background:#FFF;
-    @extend %normal-motion;
-    text-align: center;
-    font-weight:$medium-weight;
-    &:hover{background: #f7f7f7;}
-    &.rounded-corner { border-radius: 80px; }
-    &.rounde-corner { border-radius: 6px; }
-    //===== Buttons Sizes ====//
-    &.tiny {
-        font-size: 11px;
-        padding: 0 20px;
-        height: 27px;
-        line-height: 27px;
-    }
-    &.small {
-        font-size: 13px;
-        padding: 0 30px;
-        height: 36px;
-        line-height: 36px;
-    }
-    &.large {
-        font-size: 16px;
-        padding: 0 30px;
-        height:58px;
-        line-height: 58px;
-    }
-    //==== Coloring Buttons ====//
-    &.primary{
-        background: $primary-color;color:$reverse-color;border: 0 none;
-        &:hover{background:$primary-color-hover;}
-    }
-
-    &.secondary{
-        background: $secondary-color;color:$reverse-color;border: 0 none;
-        &:hover{background:$secondary-color-hover;}
-    }
-
-    &.success{
-        background: $success-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $success-color, 05% );}
-    }
-
-    &.danger{
-        background: $danger-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $danger-color, 05% );}
-    }
-
-    &.warning{
-        background: $warning-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $warning-color, 05% );}
-    }
-
-    &.info{
-        background: $info-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $info-color, 05% );}
-    }
-
-    &.gray{
-        background: $gray-color;color:$reverse-color-dark;
-        &:hover{background:darken( $gray-color, 05% );}
-    }
-    
-    &.dark{
-        background: $dark-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $dark-color, 05% );}
-    }
-
-    &.rounded{border-radius:100px;}
 }
 
 /*=== Forms ===*/
@@ -113,7 +36,7 @@ button,input,optgroup,select,textarea {
     &.tiny {
         input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
             font-size: 11px;
-            padding: 0 20px;
+            padding: 0 10px;
             height: 27px;
         }
         textarea{min-height:50px;}
@@ -121,7 +44,6 @@ button,input,optgroup,select,textarea {
     &.small {
         input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
             font-size: 13px;
-            padding: 0 30px;
             height: 36px;
             line-height: 36px;
         }
@@ -130,7 +52,7 @@ button,input,optgroup,select,textarea {
     &.large {
         input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
             font-size: 16px;
-            padding: 0 30px;
+            padding: 0 20px;
             height:58px;
             line-height: 58px;
         }

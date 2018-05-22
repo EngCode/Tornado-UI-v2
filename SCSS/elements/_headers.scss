@@ -51,11 +51,45 @@
             &:hover { color:$black-color; }
         }
     }
+
+    //=== Actions Buttons ===*/
+    .dropdown {
+        .dropdown-list {
+            #{$direction}:auto;
+            #{$directionReverse}:0;
+            &::after,&::before { 
+                #{$direction}:auto;
+                #{$directionReverse}:12px;
+             }
+        }
+
+        &:hover {
+            .dropdown-list{display: block;}
+        }
+        
+        @include small(false) {
+            position: static;
+            .dropdown-list {
+                margin-top: -18px;
+                width:100%;
+                &::before{display: none;}
+                &::after{display: none;}
+            }
+
+            .contact {
+                margin-top: -18px;
+                width:100%;
+                &::before{display: none;}
+                &::after{display: none;}
+            }
+        };
+    }
+
     //=== Search Box ===*/
     .search-box {
         display: inline-block;
         position: relative;
-        @include medium(true) { width:270px; }
+        @include medium(true) { width:230px; }
         &.form-ui { input { margin-bottom: 0; } }
         .search-btn {
             position: absolute;

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
         <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
-        <title>Tornado CSS v2 | Getting Started</title>
+        <title>Tornado CSS v2 | Navbar | Header</title>
         <!-- Required CSS Files -->
         <link rel="stylesheet" href="../dist/css/tornado.min.css">
         <link rel="stylesheet" href="js-css/github.css">
@@ -219,11 +219,17 @@
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Sticky Header With Collapsed Menu</h4>
-                    <p>Sticky Header Mode With Collapsed Theme Of The Responsive Navigation Menu in Order To Change The Menu Theme Just Add Class <span>collapsed</span>. to both Menu and its Related Button</p>
+                    <h4>Collapsed Menu and Dropdown Buttons</h4>
+                    <p>
+                        Collapsed Menu Mode Of The Responsive Navigation Menu in Order To Change The Menu Mode Just Add Class
+                        <span>collapsed</span>. to both Menu and its Related Button , and for Making an Action Button With a Dropdown Component You Have
+                        to Put The Button Inside a Div and Give it a Class Name <span>dropdown</span> then add a class for the button named <span>dropdown-btn</span>,
+                        after that you create your dropdown component with class name <span>dropdown-list</span> whether its a list or other dropdown style like products cart,
+                        see the example's below.
+                    </p>
                 </div>
                 <!-- Header v1 Collapsed Menu -->
-                <header class="tornado-header" data-sticky>
+                <header class="tornado-header">
                     <div class="container">
                         <!-- Logo -->
                         <a href="#" class="logo"> <h1>Tornado v2</h1> </a>
@@ -234,25 +240,67 @@
                                 <li><a href="#">About US</a></li>
                                 <li><a href="#">Support</a></li>
                                 <li><a href="#">Github</a></li>
-                                <li><a href="#">Download</a>
-                                    <!-- Dropdown List -->
-                                    <ul>
-                                        <li><a href="#">Production Version</a></li>
-                                        <li><a href="#">Development Version</a></li>
-                                        <li><a href="quick-start.html">Quick Start CDN</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="#">Download</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
                         </div>
                         <!-- Action Buttons -->
                         <div class="action-btns">
                             <!-- Cart Button -->
-                            <a href="#" class="icon-btn ti-cart"></a>
+                            <div class="dropdown">
+                                <a href="#" class="icon-btn ti-cart dropdown-btn"></a>
+                                <ul class="dropdown-list cart-list">
+                                    <!-- small cart -->
+                                    <li class="cart-item">
+                                        <a href="#" class="image"><img src="http://via.placeholder.com/75x75" alt=""></a>
+                                        <div class="info">
+                                            <a href="#"><h3>Lorem Ipsum is simply dummy text of the printing</h3></a>
+                                            <h4 class="count">count <input type="number" value="5"></h4>
+                                            <h5 class="price">Price : 325$</h5>
+                                        </div>
+                                        <a href="#" class="ti-close remove-button"></a>
+                                    </li>
+                                    <!-- info item -->
+                                    <li class="info-item">Sub Total : 352$</li>
+                                    <!-- info item -->
+                                    <li class="info-item">Total : 375$</li>
+                                    <!-- buttons item -->
+                                    <li class="btns-item">
+                                        <a href="#" class="btn small primary">Checkout</a>
+                                        <a href="#" class="btn small secondary">Cart Items</a>
+                                    </li>
+                                </ul>
+                            </div>
                             <!-- Search Button -->
                             <a href="#" class="icon-btn ti-search"></a>
                             <!-- Contact Button -->
-                            <a href="#" class="icon-btn ti-phone"></a>
+                            <div class="dropdown">
+                                <a href="#" class="icon-btn ti-phone dropdown-btn"></a>
+                                <ul class="dropdown-list contact-us">
+                                    <li><h3>Contact US</h3></li>
+                                    <li class="contact-item ti-mail">
+                                        <span class="title">Email</span>
+                                        <a href="mailto:emailname@sitename.com">emailname@sitename.co</a>
+                                        <p>Responding in 24 Hours</p>
+                                    </li>
+                                    <li class="contact-item ti-whatsapp">
+                                        <span class="title">Whatsapp</span>
+                                        <a href="https://api.whatsapp.com/send?phone=0025-5567-3364-336">0025-5567-3364-336</a>
+                                        <p>Available 24h a day</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- User Button -->
+                            <div class="dropdown">
+                                <a href="#" class="icon-btn ti-businessman dropdown-btn"></a>
+                                <ul class="dropdown-list">
+                                    <li><a href="#">User Profile</a></li>
+                                    <li><a href="#">Shopping Cart</a></li>
+                                    <li><a href="#">My Wishlist</a></li>
+                                    <li><a href="#">Edit Account</a></li>
+                                    <li><a href="#">Signout</a></li>
+                                </ul>
+                            </div>
                             <!-- Main Menu Mobile Button -->
                             <a href="#" class="menu-btn collapsed icon-btn ti-menu-round" data-id="main-menu-1"></a>
                         </div>
@@ -263,43 +311,85 @@
 <!-- Code Viewer -->
 <pre class="code-viewer">
 <button class="copy-btn" data-clipboard-target="#header2">Copy Code</button>
-<code class="markup" id="header2">&lt;!-- Header Collapsed Menu -->
-&lt;header class="tornado-header" data-sticky>
+<code class="markup" id="header2">&lt;!-- Header v1 Collapsed Menu -->
+&lt;header class="tornado-header">
     &lt;div class="container">
         &lt;!-- Logo -->
         &lt;a href="#" class="logo"> &lt;h1>Tornado v2&lt;/h1> &lt;/a>
         &lt;!-- Main Menu -->
-        &lt;div class="navigation-menu collapsed" data-id="main-menu">
+        &lt;div class="navigation-menu collapsed" data-id="main-menu-1">
             &lt;ul>
                 &lt;li>&lt;a href="#">Home Page&lt;/a>&lt;/li>
                 &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
                 &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
                 &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
-                &lt;li>&lt;a href="#">Download&lt;/a>
-                    &lt;!-- Dropdown List -->
-                    &lt;ul>
-                        &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
-                        &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
-                        &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
-                    &lt;/ul>
-                &lt;/li>
+                &lt;li>&lt;a href="#">Download&lt;/a>&lt;/li>
                 &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
             &lt;/ul>
         &lt;/div>
         &lt;!-- Action Buttons -->
         &lt;div class="action-btns">
             &lt;!-- Cart Button -->
-            &lt;a href="#" class="icon-btn ti-cart">&lt;/a>
+            &lt;div class="dropdown">
+                &lt;a href="#" class="icon-btn ti-cart dropdown-btn">&lt;/a>
+                &lt;ul class="dropdown-list cart-list">
+                    &lt;!-- small cart -->
+                    &lt;li class="cart-item">
+                        &lt;a href="#" class="image">&lt;img src="http://via.placeholder.com/75x75" alt="">&lt;/a>
+                        &lt;div class="info">
+                            &lt;a href="#">&lt;h3>Lorem Ipsum is simply dummy text of the printing&lt;/h3>&lt;/a>
+                            &lt;h4 class="count">count &lt;input type="number" value="5">&lt;/h4>
+                            &lt;h5 class="price">Price : 325$&lt;/h5>
+                        &lt;/div>
+                        &lt;a href="#" class="ti-close remove-button">&lt;/a>
+                    &lt;/li>
+                    &lt;!-- info item -->
+                    &lt;li class="info-item">Sub Total : 352$&lt;/li>
+                    &lt;!-- info item -->
+                    &lt;li class="info-item">Total : 375$&lt;/li>
+                    &lt;!-- buttons item -->
+                    &lt;li class="btns-item">
+                        &lt;a href="#" class="btn small primary">Checkout&lt;/a>
+                        &lt;a href="#" class="btn small secondary">Cart Items&lt;/a>
+                    &lt;/li>
+                &lt;/ul>
+            &lt;/div>
             &lt;!-- Search Button -->
             &lt;a href="#" class="icon-btn ti-search">&lt;/a>
             &lt;!-- Contact Button -->
-            &lt;a href="#" class="icon-btn ti-phone">&lt;/a>
+            &lt;div class="dropdown">
+                &lt;a href="#" class="icon-btn ti-phone dropdown-btn">&lt;/a>
+                &lt;ul class="dropdown-list contact-us">
+                    &lt;li>&lt;h3>Contact US&lt;/h3>&lt;/li>
+                    &lt;li class="contact-item ti-mail">
+                        &lt;span class="title">Email&lt;/span>
+                        &lt;a href="mailto:emailname@sitename.com">emailname@sitename.co&lt;/a>
+                        &lt;p>Responding in 24 Hours&lt;/p>
+                    &lt;/li>
+                    &lt;li class="contact-item ti-whatsapp">
+                        &lt;span class="title">Whatsapp&lt;/span>
+                        &lt;a href="https://api.whatsapp.com/send?phone=0025-5567-3364-336">0025-5567-3364-336&lt;/a>
+                        &lt;p>Available 24h a day&lt;/p>
+                    &lt;/li>
+                &lt;/ul>
+            &lt;/div>
+            &lt;!-- User Button -->
+            &lt;div class="dropdown">
+                &lt;a href="#" class="icon-btn ti-businessman dropdown-btn">&lt;/a>
+                &lt;ul class="dropdown-list">
+                    &lt;li>&lt;a href="#">User Profile&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Shopping Cart&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">My Wishlist&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Edit Account&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Signout&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/div>
             &lt;!-- Main Menu Mobile Button -->
-            &lt;a href="#" class="menu-btn collapsed icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+            &lt;a href="#" class="menu-btn collapsed icon-btn ti-menu-round" data-id="main-menu-1">&lt;/a>
         &lt;/div>
     &lt;/div>
 &lt;/header>
-&lt;!-- // Header Collapsed Menu -->
+&lt;!-- // Header v1 Collapsed Menu -->
 </code>
 </pre>    
                 <!-- Text Paragraph -->
@@ -319,7 +409,7 @@
                                 <button class="search-btn ti-search"></button>
                             </form>
                             <!-- Button -->
-                            <a href="#" class="btn primary tx-uppercase">Button</a>
+                            <a href="#" class="btn small primary tx-uppercase">Button</a>
                         </div>
                     </div>
                 </header>
@@ -341,7 +431,7 @@
                 &lt;button class="search-btn ti-search">&lt;/button>
             &lt;/form>
             &lt;!-- Button -->
-            &lt;a href="#" class="btn primary tx-uppercase">Button&lt;/a>
+            &lt;a href="#" class="btn small primary tx-uppercase">Button&lt;/a>
         &lt;/div>
     &lt;/div>
 &lt;/header>
@@ -521,6 +611,79 @@
 &lt;!-- // Header -->
 </code>
 </pre> 
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Utilities</h4>
+                </div>
+
+                <div class="responsive-table">
+                    <table class="table bordered striped">
+                        <Thead>
+                            <tr>
+                                <th class="col-3">Class Name</th>
+                                <th class="col-3">Element</th>
+                                <th class="col-6">Description</th>
+                            </tr>
+                        </Thead>
+                        <tbody>
+                            <tr>
+                                <th class="col-3">tornado-header</th>
+                                <td class="col-3">header wrapper</td>
+                                <td class="col-6">The Main Class For The Header Component.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">logo</th>
+                                <td class="col-3">logo image or text wrapper</td>
+                                <td class="col-6"> The Class For Making The Logo Align With The Rest of the Elements. </td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">action-btns</th>
+                                <td class="col-3">Buttons and Icons Wrapper.</td>
+                                <td class="col-6">Define The Buttons or Action Area and Align Them With The Rest of The Elements.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">icon-btn</th>
+                                <td class="col-3">icon button element.</td>
+                                <td class="col-6">Define The Buttons Element to style it.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">dropdown</th>
+                                <td class="col-3">wrapper for a dropdown component.</td>
+                                <td class="col-6">Define a wrapper for an icon button with dropdown component.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">dropdown-btn</th>
+                                <td class="col-3">Dropdown List Toggle button element.</td>
+                                <td class="col-6">Define a button for the dropdown component.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">dropdown-list</th>
+                                <td class="col-3">dropdown list element <span>ul or div</span></td>
+                                <td class="col-6">Define a Dropdown list component.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">search-box</th>
+                                <td class="col-3">search form element.</td>
+                                <td class="col-6">Define and Style The Search To Fit Tornado Headeer Style</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">data-sticky</th>
+                                <td class="col-3">header wrapper <span>Attribute</span> not class</td>
+                                <td class="col-6">Creating a Sticky Header On Scroll.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">primary</th>
+                                <td class="col-3">header wrapper</td>
+                                <td class="col-6">Coloring Header with The Primary Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">secondary</th>
+                                <td class="col-3">header wrapper</td>
+                                <td class="col-6">Coloring Header with The Dark Theme Color.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

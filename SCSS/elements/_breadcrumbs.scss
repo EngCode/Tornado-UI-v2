@@ -1,0 +1,281 @@
+.breadcrumb {
+    //==== Breadcrumb Box ====//
+    font-size:15px;
+    line-height: 30px;
+    color:$dark-color;
+    background: #f7f7f7;
+    border:1px solid rgba(0,0,0,.10);
+    padding:11px 20px;
+    margin-bottom: 30px;
+    [class*="ti-"] {
+        &::before {
+            font-size:18px;
+            margin-#{$directionReverse}:5px;
+            position: relative;
+        }
+        &.ti-home::before { top:-2px; }
+    }
+    //==== Breadcrumb Elements ====//
+    a {
+        display: inline-block;
+        @extend %desc-index ;
+        &:not(:last-child)::after {
+            padding:0 5px;
+            @if $page-dir == 'ltr' { content:'/'; } @else { content:'\\'; }
+        }
+
+        &:last-child { color:$dark-color; }
+    }
+    //==== Pointing ====//
+    &.pointing {
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        height: 52px;
+        word-spacing: -5px;
+        a {
+            word-spacing: normal;
+            color:$black-color;
+            padding:0 20px;
+            line-height: 50px;
+            position: relative;
+            &:last-child {
+                color: $gray-color;
+                padding-#{$direction}:35px;
+            }
+            &::after,&::before {
+                content: '';
+                position: absolute;
+                border:25px solid transparent;
+                border-#{$direction}-color:#f7f7f7;
+                #{$direction}:100%;
+                -webkit-transform: translateX(-14px);transform: translateX(-14px);
+                top:0;
+            }
+
+            &::before {
+                border-#{$direction}-color: rgba(0, 0, 0, 0.25);
+                -webkit-transform: translateX(-13px);transform: translateX(-13px);
+            }
+            &:nth-last-child(2) {
+                padding-#{$directionReverse}:5px;
+                &::after {-webkit-transform: translateX(0);transform: translateX(0);}
+                &::before {-webkit-transform: translateX(1px);transform: translateX(1px);}
+            }
+            &:last-child::before,&:last-child::after{display: none;}
+        }
+    }
+    //==== Curving ====//
+    &.curving {
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        height: 52px;
+        word-spacing: -5px;
+        a {
+            word-spacing: normal;
+            color:$black-color;
+            padding-#{$directionReverse}:10px;
+            padding-#{$direction}:20px;
+            &:not(:first-child) { padding-#{$direction}:30px; }
+            line-height: 50px;
+            position: relative;
+            @extend %minus-indexing;
+            &:not(:last-child){
+                background: darken($color: #f7f7f7, $amount: 05);
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width:100px;
+                    height: 100px;
+                    #{$directionReverse}:-10px;
+                    top:50%;
+                    @extend %position-center-y;
+                    border-radius: 50%;
+                    z-index: -1;
+                    background: darken($color: #f7f7f7, $amount: 05);
+                    border-#{$directionReverse}:1px solid rgba(0,0,0,.20);
+                }
+            }
+        }
+    }
+    //==== Skewed ====//
+    &.skewed {
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        height: 52px;
+        word-spacing: -5px;
+        a {
+            word-spacing: normal;
+            color:$black-color;
+            padding-#{$directionReverse}:10px;
+            padding-#{$direction}:20px;
+            &:not(:first-child) { padding-#{$direction}:30px; }
+            line-height: 50px;
+            position: relative;
+            @extend %minus-indexing;
+            &:not(:last-child){
+                background: darken($color: #f7f7f7, $amount: 05);
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width:100%;
+                    height: 100%;
+                    #{$directionReverse}:-10px;
+                    top:0;
+                    @if $page-dir == 'ltr' {
+                        -webkit-transform: skew(-10deg);transform: skew(-10deg);
+                    } @else { -webkit-transform: skew(10deg);transform: skew(10deg); }
+                    z-index: -1;
+                    background: darken($color: #f7f7f7, $amount: 05);
+                    border-#{$directionReverse}:1px solid rgba(0,0,0,.20);
+                }
+            }
+        }
+    }
+    //==== Dotted ====//
+    &.dotted {
+        background:transparent;
+        border:0 none;
+        padding:0;
+        border-bottom: 1px solid rgba(0,0,0,.10);
+        word-spacing: -5px;
+        a {
+            word-spacing: normal;
+            padding-#{$directionReverse}:25px;
+            position: relative;
+            line-height: 50px;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                #{$direction}:0;
+                width:100%;
+                background: $primary-color;
+                height: 1px;
+            }
+            &::before {
+                content:'';
+                position: absolute;
+                width:11px;
+                height: 11px;
+                bottom:-5px;
+                left:50%;
+                margin-left:-14px;
+                background: $primary-color;
+                border-radius: 50%;
+            }
+            &:last-child {
+                color:$gray-color;
+                &::after,&::before { background: $gray-color; }
+            }
+        }
+    }
+    
+    //==== Coloring Themes ====//
+    &.dark {
+        background: $dark-color;
+        color:#FFFF;
+        border: 0 none;
+        a {color: #FFF; &:last-child{color:#FFF;} }
+    }
+    
+    &.primary {
+        background: $primary-color;
+        color:#FFFF;
+        border: 0 none;
+        a { color:#FFF; }
+        //==== Pointing ====//
+        &.pointing {
+            &:not(.dark) { background: #f7f7f7; }
+            &.dark {background: $dark-color;}
+            a {
+                color:$reverse-color;
+                background: $primary-color;
+                &:last-child {
+                    color: $dark-color;
+                    background: transparent;
+                }
+                &::after {border-#{$direction}-color: $primary-color;}
+            }
+        }
+        //==== Curving ====//
+        &.curving {
+            &:not(.dark) { background: #f7f7f7; }
+            &.dark {background: $dark-color;}
+            a {
+                word-spacing: normal;
+                color:$black-color;
+                line-height: 52px;
+                &:not(:last-child){
+                    color:$reverse-color;
+                    background: $primary-color;
+                    &::after {background: $primary-color;}
+                }
+            }
+            &.dark a:last-child {color: $reverse-color;}
+        }
+        //==== Skewed ====//
+        &.skewed {
+            &:not(.dark) { background: #f7f7f7; }
+            &.dark {background: $dark-color;}
+            a {
+                word-spacing: normal;
+                color:$black-color;
+                line-height: 52px;
+                &:not(:last-child){
+                    color:$reverse-color;
+                    background: $primary-color;
+                    &::after {background: $primary-color;}
+                }
+            }
+            &.dark a:last-child {color: $reverse-color;}
+        }
+    }
+
+    &.secondary {
+        //==== Pointing ====//
+        &.pointing {
+            &.dark {height: 50px;}
+            a {
+                color:$reverse-color;
+                background: $secondary-color;
+                &:last-child {color: $reverse-color;background: transparent;}
+                &::after {border-#{$direction}-color: $secondary-color;}
+            }
+        }
+        //==== Curving ====//
+        &.curving {
+            border:0 none;
+            a {
+                word-spacing: normal;
+                color:$black-color;
+                line-height: 52px;
+                &:not(:last-child){
+                    color:$reverse-color;
+                    background: $secondary-color;
+                    &::after {background: $secondary-color;}
+                }
+            }
+            &.dark a:last-child {color: $reverse-color;}
+        }
+        //==== Skewed ====//
+        &.skewed {
+            border:0 none;
+            a {
+                word-spacing: normal;
+                color:$black-color;
+                line-height: 52px;
+                &:not(:last-child){
+                    color:$reverse-color;
+                    background: $secondary-color;
+                    &::after {background: $secondary-color;}
+                }
+            }
+            &.dark a:last-child {color: $reverse-color;}
+        }
+    }
+}

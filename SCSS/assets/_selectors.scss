@@ -72,3 +72,17 @@
     -webkit-transform: translateX(0) translateY(0);
             transform: translateX(0) translateY(0);
 }
+
+//========== Indexing ==========//
+%desc-index {
+    &:nth-child(1){z-index: 25;}
+    &:nth-child(2){z-index: 24;}
+    &:nth-child(3){z-index: 23;}
+    &:nth-child(4){z-index: 22;}
+    &:nth-child(5){z-index: 21;}
+    &:nth-child(6){z-index: 20;}
+    &:nth-child(7){z-index: 19;}
+    &:nth-child(8){z-index: 18;}
+    &:nth-child(9){z-index: 17;}
+    &:nth-child(10){z-index: 16;}
+}

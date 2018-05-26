@@ -38,15 +38,15 @@ $info-bg:#a6eaf5;
 $gray-bg:#d9dde1;
 $dark-bg:#343a40;
 //==== Social Colors ====//
-$facebook-color:#3b5998;
+$facebook-color:#505cd6;
 $twitter-color:#1da1f2;
 $google-plus-color:#ea4335;
 $youtube-color:#e43e3c;
 $tumblr-color:#35465c;
-$instagram-color:#c1b668;
+$instagram-color:#d43f8d;
 $android-color:#a4c639;
 $snapchat-color:#d1d327;
-$whatsapp-color:#25d366;
+$whatsapp-color:#10d058;
 $pinterest-color:#bd081c;
 $linkedin-color:#0077b5;
 $behance-color:#1769ff;
@@ -101,6 +101,7 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'elements/typography';
 @import 'elements/responsive-menus';
 @import 'elements/headers';
+@import 'elements/breadcrumbs';
 /*========== Forms ==========*/
 @import 'forms/form-themes';
 @import 'forms/alerts';

@@ -16,8 +16,8 @@ $directionReverse:right;
 //========== Colors Variables ==========//
 $primary-color:#4166d6;
 $primary-color-hover:#2e4dc9;
-$secondary-color:#eaa711;
-$secondary-color-hover:#de670f;
+$secondary-color:#de670f;
+$secondary-color-hover:#eaa711;
 $reverse-color:#FFF;
 $reverse-color-dark:#1c1c1c;
 $light-color:#cad0e0;
@@ -103,6 +103,7 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'elements/headers';
 @import 'elements/breadcrumbs';
 @import 'elements/media-objects';
+@import 'elements/jumbtron';
 /*========== Forms ==========*/
 @import 'forms/form-themes';
 @import 'forms/alerts';

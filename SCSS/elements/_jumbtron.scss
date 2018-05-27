@@ -1,0 +1,75 @@
+.jumbtron {
+    padding:$gutterSize*2;
+    background:#fcfcfc;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    //=== Action Area ===//
+    .action-area {
+        @extend %flexbox;
+        @extend .align-center-y ;
+        @extend .align-between ;
+        width:100%;
+        padding: 15px 0;
+        border-top:1px solid rgba(0, 0, 0, 0.1);
+    }
+    //=== Multiple Buttons ===//
+    .btn {
+        min-width:150px;
+        &:nth-child(even) { 
+            margin-#{$direction}:15px;
+        }
+    }
+     //==== Coloring Buttons ====//
+    &.primary {
+        background: $primary-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $primary-color;
+                box-shadow: 0px 0px 8px 0px $primary-color;
+        color:$reverse-color;
+    }
+
+    &.secondary{
+        background: $secondary-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $secondary-color;
+                box-shadow: 0px 0px 8px 0px $secondary-color;
+        color:$reverse-color;
+    }
+
+    &.success{
+        background: $success-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $success-color;
+                box-shadow: 0px 0px 8px 0px $success-color;
+        color:$reverse-color;
+    }
+
+    &.danger{
+        background: $danger-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $danger-color;
+                box-shadow: 0px 0px 8px 0px $danger-color;
+        color:$reverse-color;
+    }
+
+    &.warning{
+        background: $warning-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $warning-color;
+                box-shadow: 0px 0px 8px 0px $warning-color;
+        color:$reverse-color;
+    }
+
+    &.info{
+        background: $info-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $info-color;
+                box-shadow: 0px 0px 8px 0px $info-color;
+        color:$reverse-color;
+    }
+    
+    &.dark {
+        background: $dark-color;
+        -webkit-box-shadow: 0px 0px 8px 0px $dark-color;
+                box-shadow: 0px 0px 8px 0px $dark-color;
+        color: $reverse-color;
+    }
+    //=== Responsive ===//
+    @include small(false) {
+        padding:$gutterSize 0;
+    }
+}

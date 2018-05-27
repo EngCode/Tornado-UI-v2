@@ -66,13 +66,18 @@
     }
 
     &.gray{
-        background: $gray-color;color:$reverse-color-dark;
+        background: $gray-color;color:$reverse-color;
         &:hover{background:darken( $gray-color, 05% );}
     }
     
     &.dark{
         background: $dark-color;color:$reverse-color;border: 0 none;
         &:hover{background:darken( $dark-color, 05% );}
+    }
+
+    &.light{
+        background: $light-color;color:$dark-color;border: 0 none;
+        &:hover{background:darken( $light-color, 05% );}
     }
 
     &.rounded{border-radius:100px;}

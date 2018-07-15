@@ -1,0 +1,62 @@
+/*======== badges ========*/
+.badge {
+    display: inline-block;
+    padding:0 15px;
+    height:27px;
+    line-height: 27px;
+    font-size: 12px;
+    color:$dark-color;
+    cursor: pointer;
+    background:$gray-bg;
+    @extend %normal-motion;
+    text-align: center;
+    border-radius: 5px;
+    &:hover{background: #f7f7f7;}
+    &.rounded { border-radius: 80px; }
+    &.circle { border-radius: 100%; }
+    //==== Coloring ====//
+    &.primary{
+        background: $primary-color;color:$reverse-color;border: 0 none;
+        &:hover{background:$primary-color-hover;}
+    }
+
+    &.secondary{
+        background: $secondary-color;color:$reverse-color;border: 0 none;
+        &:hover{background:$secondary-color-hover;}
+    }
+
+    &.success{
+        background: $success-color;color:$reverse-color;border: 0 none;
+        &:hover{background:darken( $success-color, 05% );}
+    }
+
+    &.danger{
+        background: $danger-color;color:$reverse-color;border: 0 none;
+        &:hover{background:darken( $danger-color, 05% );}
+    }
+
+    &.warning{
+        background: $warning-color;color:$reverse-color;border: 0 none;
+        &:hover{background:darken( $warning-color, 05% );}
+    }
+
+    &.info{
+        background: $info-color;color:$reverse-color;border: 0 none;
+        &:hover{background:darken( $info-color, 05% );}
+    }
+
+    &.gray{
+        background: $gray-color;color:$reverse-color;
+        &:hover{background:darken( $gray-color, 05% );}
+    }
+    
+    &.dark{
+        background: $dark-color;color:$reverse-color;border: 0 none;
+        &:hover{background:darken( $dark-color, 05% );}
+    }
+
+    &.light{
+        background: $light-color;color:$dark-color;border: 0 none;
+        &:hover{background:darken( $light-color, 05% );}
+    }
+}

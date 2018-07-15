@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
+        <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
+        <title>Tornado CSS v2 | Card's Blocks</title>
+        <!-- Required CSS Files -->
+        <link rel="stylesheet" href="../dist/css/tornado.min.css">
+        <link rel="stylesheet" href="js-css/github.css">
+        <link rel="stylesheet" href="js-css/Theme.css">
+        <!-- Fevicon -->
+        <link rel="icon" type="image/png" href="img/Fevicon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/Fevicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/Fevicon.png">
+        <link rel="apple-touch-icon-precomposed" href="img/Fevicon.png">
+    <body>
+        <!-- Sidebar -->
+        <div class="side-menu">
+            <a href="#" class="logo-l"><img src="img/logo-white-v.png" alt="Tornado Logo"></a>
+            <ul>
+                <li><a href="index.html">Getting Start</a>
+                    <ul>
+                        <li><a href="index.html">Quick Start</a></li>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="support.html">Browsers Support</a></li>
+                        <li><a href="accessibility.html">Accessibility</a></li>
+                        <li><a href="javascript.html">Javascript</a></li>
+                    </ul>
+                </li>
+                <li><a href="grid.html">Grid System</a>
+                    <ul>
+                        <li><a href="grid.html">Standard Grid</a></li>
+                        <li><a href="dynamic-grid.html">Dynamic Grid</a></li>
+                        <li><a href="masonry-grid.html">Masonry Grid</a></li>
+                        <li><a href="grid-utilities.html">Grid Utilities</a></li>
+                    </ul>
+                </li>
+                <li class="active"><a href="#">Elements</a>
+                    <ul>
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="menu.html">Responsive Menus</a></li>
+                        <li><a href="navbar.html">Navbar/Header</a></li>
+                        <li><a href="breadcrumb.html">Breadcrumb</a></li>
+                        <li><a href="media-object.html">Media Objects</a></li>
+                        <li><a href="jumbotron.html">Hero Area</a></li>
+                        <li class="active"><a href="card.html">Card Blocks</a></li>
+                        <li><a href="budgs.html">Tags and Badges</a></li>
+                    </ul>
+                </li>
+                <li><a href="form.html">Forms</a>
+                    <ul>
+                        <li><a href="form.html">Standard Controls</a></li>
+                        <li><a href="form-progress.html">Progress Elements</a></li>
+                        <li><a href="form-upload.html">Upload Files</a></li>
+                        <li><a href="buttons.html">Buttons</a></li>
+                        <li><a href="alert.html">Alerts</a></li>
+                        <li><a href="notifications.html">Notifications</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Components</a>
+                    <ul>
+                        <li><a href="slider.html">Carousel</a></li>
+                        <li><a href="table.html">Tables</a></li>
+                        <li><a href="tooltip.html">Tooltips</a></li>
+                        <li><a href="tabs.html">Tabs System</a></li>
+                        <li><a href="accourdion.html">Accourdion System</a></li>
+                        <li><a href="modals.html">Popup Modals</a></li>
+                        <li><a href="dropdowns.html">Dropdowns</a></li>
+                        <li><a href="pagination.html">Pagination</a></li>
+                        <li><a href="messages.html">Message</a></li>
+                        <li><a href="responsive-elements.html">Responsive Elements</a></li>
+                        <li><a href="effects.html">Effects Tricks</a></li>
+                        <li><a href="scrollspy.html">Scrollspy</a></li>
+                        <li><a href="animations.html">Animations</a></li>
+                        <li><a href="icons.html">Tornado icons</a></li>
+                        <li><a href="colors.html">Colors Palette</a></li>
+                    </ul>
+                </li>
+                <li><a href="utilities.html">Utilities</a>
+                    <ul>
+                        <li><a href="utilities.html">Helpers</a></li>
+                        <li><a href="responsive.html">Responsive</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SASS Customizing</a>
+                    <ul>
+                        <li><a href="sass-vars.html">Theme Variables</a></li>
+                        <li><a href="sass-mixins.html">Mixins</a></li>
+                        <li><a href="build-tools.html">Build Tools</a></li>
+                    </ul>
+                </li>
+                <li><a href="builder.html">Custom Builder</a></li>
+                <li><a href="vuejs/index.html">Vue.js Version</a></li>
+            </ul>
+        </div>
+        
+        <!-- Content Side -->
+        <div class="content-side">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="container-fluid">
+                    <a href="index.html" class="logo"><img src="img/tornado-icon-white.png" alt="tornado logo"></a>
+
+                    <div class="navigation-menu" data-id="header-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li class="active"><a href="#">Documentation</a></li>
+                            <li><a href="#">Examples</a></li>
+                            <li><a href="#">Themes</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="#" class="ti-npm"></a>
+                        <a href="#" class="ti-github"></a>
+                        <a href="#" class="btn primary">Download</a>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <div class="page-content">
+                <div class="page-head">
+                    <h1>Cards Blocks</h1>
+                    <p>Cards provide a flexible and extensible content container with multiple variants and options that can be used for creating a blocks for new,products,user card...etc.</p>
+                </div>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Standard Card</h4>
+                    <p>
+                        in order to use the card componenet first we create a <span> &lt;div> </span> tag with class <span>card-block</span> this will be
+                        the card wrapper ( the container ) wich you can use it for layout sort with the grid system so he accepte he grid columns class
+                        then creating the content wrapper element with class <span> content-box </span>, now you got the basic container of the card what 
+                        is left is building the content conponenets you can create an responsive aspect ratio Images without streatching and a title for 
+                        the card a description action btns footer and more see the example below to know and understand what you can put and use in 
+                        the card component.
+                        <br><br>
+                        the standard card content contains a responsive <span>media</span> element and a <span>title</span> element with description <span>paragraph</span> 
+                        then goes the <span>footer</span> element with a read more <span>button/link</span> and baisc <span>posting info</span> ,,
+                        there is a lot of card content components and each one will be explained as showing in the examples below.
+                    </p>
+                </div>
+
+                <!-- Card Example -->
+                <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Image -->
+                            <a href="#" class="card-media" data-src="http://via.placeholder.com/320x250"></a>
+                            <!-- Title -->
+                            <a href="#"><h3 class="title">The Card Title Goes Right Here For Contetn Below</h3></a>
+                            <!-- Description -->
+                            <p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.</p>
+                            <!-- Action Footer -->
+                            <div class="action-footer">
+                                <!-- Action Link -->
+                                <a href="#" class="ti-arrow-left-c more-btn">Read More</a>
+                                <!-- Card Info -->
+                                <div class="info">
+                                    <span class="ti-heart">153</span>
+                                    <span class="ti-chatbubbles">250</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card">Copy Code</button>
+<code class="markup" id="card">&lt;!-- Card Wrapper -->
+&lt;div class="card-block">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Image -->
+        &lt;a href="#" class="card-media" data-src="http://via.placeholder.com/320x250">&lt;/a>
+        &lt;!-- Title -->
+        &lt;a href="#">&lt;h3 class="title">The Card Title Goes Right Here For Contetn Below&lt;/h3>&lt;/a>
+        &lt;!-- Description -->
+        &lt;p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.&lt;/p>
+        &lt;!-- Action Footer -->
+        &lt;div class="action-footer">
+            &lt;!-- Action Link -->
+            &lt;a href="#" class="ti-arrow-left-c more-btn">Read More&lt;/a>
+            &lt;!-- Card Info -->
+            &lt;div class="info">
+                &lt;span class="ti-heart">153&lt;/span>
+                &lt;span class="ti-chatbubbles">250&lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Head Bar and Full Width Media</h4>
+                    <p>
+                        first component is a heading bar contains a username with avatar and a date element and for an order to use them just create the head wrapper div with class
+                        <span>card-head</span> then put inside of it an a username or title element with class <span>title</span> and inside that title element
+                        you can put an image tag for avatar and the second element is for some info like date and goes with class <span>date</span> <br><br>
+
+                        and for the second component the <span>Media Component</span> it can be any sort of this data <span>images,videos,iframes</span> and for order to use it
+                        create a wrapper <span>div</span> with class name <span>card-media</span> if you wanna put a responsive aspect ratio image
+                        use the <span>data-src="imageURL"</span> attribute and if you want to use another media tag just put the media tag whatever it is inside
+                        the <span>card-media</span> wrapper tag and for the full width media component add the class name <span>full</span> to the card media tag element.
+                    </p>
+                </div>
+
+                 <!-- Card Example -->
+                 <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Head -->
+                            <div class="card-head">
+                                <h3 class="title"><img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan</h3>
+                                <span class="date">15 oct 2018 16:20PM</span>
+                            </div>
+                            <!-- Image -->
+                            <a href="#" class="card-media full" data-src="http://via.placeholder.com/320x250"></a>
+                            <!-- Title -->
+                            <a href="#"><h3 class="title">Summary Head Line</h3></a>
+                            <!-- Description -->
+                            <p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.</p>
+                            <!-- Action Footer -->
+                            <div class="action-footer">
+                                <!-- Action Link -->
+                                <a href="#" class="ti-arrow-left-c more-btn">Read More</a>
+                                <!-- Card Info -->
+                                <div class="info">
+                                    <span class="ti-heart">153</span>
+                                    <span class="ti-chatbubbles">250</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-2">Copy Code</button>
+<code class="markup" id="card-2">&lt;!-- Card Wrapper -->
+&lt;div class="card-block">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Head -->
+        &lt;div class="card-head">
+            &lt;h3 class="title">&lt;img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan&lt;/h3>
+            &lt;span class="date">15 oct 2018 16:20PM&lt;/span>
+        &lt;/div>
+        &lt;!-- Image -->
+        &lt;a href="#" class="card-media full" data-src="http://via.placeholder.com/320x250">&lt;/a>
+        &lt;!-- Title -->
+        &lt;a href="#">&lt;h3 class="title">Summary Head Line&lt;/h3>&lt;/a>
+        &lt;!-- Description -->
+        &lt;p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.&lt;/p>
+        &lt;!-- Action Footer -->
+        &lt;div class="action-footer">
+            &lt;!-- Action Link -->
+            &lt;a href="#" class="ti-arrow-left-c more-btn">Read More&lt;/a>
+            &lt;!-- Card Info -->
+            &lt;div class="info">
+                &lt;span class="ti-heart">153&lt;/span>
+                &lt;span class="ti-chatbubbles">250&lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Horizontally Mode</h4>
+                    <p>
+                        The Card Can Be Horizontally Media Object Style Mode and to use this feature in the card is adding class for the Content Wrapper 
+                        <span>content-box</span> a class name <span>horizontal</span> and right inside of it pu a media components then after 
+                        setting up the media component create a div container with class nam <span>content-wrap</span> for 
+                        the other card components elements.
+                    </p>
+                </div>
+
+                 <!-- Card Example -->
+                 <div class="row align-center-z">
+                    <!-- Card Wrapper -->
+                    <div class="card-block col-12 col-l-6">
+                        <!-- Card Content -->
+                        <div class="content-box horizontal">
+                            <!-- Image -->
+                            <a href="#" class="card-media" data-src="http://via.placeholder.com/320x250"></a>
+                            <!-- Content -->
+                            <div class="content-wrap">
+                                <!-- Head -->
+                                <div class="card-head">
+                                    <h3 class="title"><img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan</h3>
+                                    <span class="date">15 oct 2018 16:20PM</span>
+                                </div>
+                                <!-- Title -->
+                                <a href="#"><h3 class="title">Summary Head Line</h3></a>
+                                <!-- Description -->
+                                <p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.</p>
+                                <!-- Action Footer -->
+                                <div class="action-footer">
+                                    <!-- Action Link -->
+                                    <a href="#" class="ti-arrow-left-c more-btn">Read More</a>
+                                    <!-- Card Info -->
+                                    <div class="info">
+                                        <span class="ti-heart">153</span>
+                                        <span class="ti-chatbubbles">250</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-l-6">
+<button class="copy-btn" data-clipboard-target="#card-3">Copy Code</button>
+<code class="markup" id="card-3">&lt;!-- Card Wrapper -->
+&lt;div class="card-block">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box horizontal">
+        &lt;!-- Image -->
+        &lt;a href="#" class="card-media" data-src="http://via.placeholder.com/320x250">&lt;/a>
+        &lt;!-- Content -->
+        &lt;div class="content-wrap">
+            &lt;!-- Head -->
+            &lt;div class="card-head">
+                &lt;h3 class="title">&lt;img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan&lt;/h3>
+                &lt;span class="date">15 oct 2018 16:20PM&lt;/span>
+            &lt;/div>
+            &lt;!-- Title -->
+            &lt;a href="#">&lt;h3 class="title">Summary Head Line&lt;/h3>&lt;/a>
+            &lt;!-- Description -->
+            &lt;p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.&lt;/p>
+            &lt;!-- Action Footer -->
+            &lt;div class="action-footer">
+                &lt;!-- Action Link -->
+                &lt;a href="#" class="ti-arrow-left-c more-btn">Read More&lt;/a>
+                &lt;!-- Card Info -->
+                &lt;div class="info">
+                    &lt;span class="ti-heart">153&lt;/span>
+                    &lt;span class="ti-chatbubbles">250&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Overlay Content Mode</h4>
+                    <p>
+                        there is another cool mode for the card that is the overlayed content mode you can see the example below ,, and for order to use this mode
+                        add to the <span>Media Component</span> a class name <span>overlayed</span> then create a div with class name <span>content</span>
+                        inside of it after doing that you can move the title and the description paragraph elements in it.
+                    </p>
+                </div>
+
+                 <!-- Card Example -->
+                 <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Head -->
+                            <div class="card-head">
+                                <h3 class="title"><img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan</h3>
+                                <span class="date">15 oct 2018 16:20PM</span>
+                            </div>
+                            <!-- Background Image -->
+                            <div href="#" class="card-media full overlayed" data-src="http://via.placeholder.com/320x250">
+                                <!-- Overlay -->
+                                <div class="content">
+                                    <!-- Title -->
+                                    <a href="#"><h3 class="title">Summary Head Line</h3></a>
+                                    <!-- Description -->
+                                    <p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.</p>
+                                </div>
+                            </div>
+                            <!-- Action Footer -->
+                            <div class="action-footer">
+                                <!-- Action Link -->
+                                <a href="#" class="ti-arrow-left-c more-btn">Read More</a>
+                                <!-- Card Info -->
+                                <div class="info">
+                                    <span class="ti-heart">153</span>
+                                    <span class="ti-chatbubbles">250</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-4">Copy Code</button>
+<code class="markup" id="card-4">&lt;!-- Card Wrapper -->
+&lt;div class="card-block">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Head -->
+        &lt;div class="card-head">
+            &lt;h3 class="title">&lt;img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan&lt;/h3>
+            &lt;span class="date">15 oct 2018 16:20PM&lt;/span>
+        &lt;/div>
+        &lt;!-- Background Image -->
+        &lt;div class="card-media full overlayed" data-src="http://via.placeholder.com/320x250">
+            &lt;!-- Overlay -->
+            &lt;div class="content">
+                &lt;!-- Title -->
+                &lt;a href="#">&lt;h3 class="title">Summary Head Line&lt;/h3>&lt;/a>
+                &lt;!-- Description -->
+                &lt;p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.&lt;/p>
+            &lt;/div>
+        &lt;/div>
+        &lt;!-- Action Footer -->
+        &lt;div class="action-footer">
+            &lt;!-- Action Link -->
+            &lt;a href="#" class="ti-arrow-left-c more-btn">Read More&lt;/a>
+            &lt;!-- Card Info -->
+            &lt;div class="info">
+                &lt;span class="ti-heart">153&lt;/span>
+                &lt;span class="ti-chatbubbles">250&lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Removable Components</h4>
+                    <p> all of the card components are Optional and can be removed without affecting the card theme at all as the example below shows a card without media component.</p>
+                </div>
+
+                 <!-- Card Example -->
+                 <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Head -->
+                            <div class="card-head">
+                                <h3 class="title"><img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan</h3>
+                                <span class="date">15 oct 2018 16:20PM</span>
+                            </div>
+                            <!-- Title -->
+                            <a href="#"><h3 class="title">Summary Head Line</h3></a>
+                            <!-- Description -->
+                            <p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.</p>
+                            <!-- Action Footer -->
+                            <div class="action-footer">
+                                <!-- Action Link -->
+                                <a href="#" class="ti-arrow-left-c more-btn">Read More</a>
+                                <!-- Card Info -->
+                                <div class="info">
+                                    <span class="ti-heart">153</span>
+                                    <span class="ti-chatbubbles">250</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-5">Copy Code</button>
+<code class="markup" id="card-5">&lt;!-- Card Wrapper -->
+&lt;div class="card-block">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Head -->
+        &lt;div class="card-head">
+            &lt;h3 class="title">&lt;img src="http://via.placeholder.com/50x50" alt="avatar"> Abdullah Ramadan&lt;/h3>
+            &lt;span class="date">15 oct 2018 16:20PM&lt;/span>
+        &lt;/div>
+        &lt;!-- Title -->
+        &lt;a href="#">&lt;h3 class="title">Summary Head Line&lt;/h3>&lt;/a>
+        &lt;!-- Description -->
+        &lt;p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam , Proin mattis lacinia justo.&lt;/p>
+        &lt;!-- Action Footer -->
+        &lt;div class="action-footer">
+            &lt;!-- Action Link -->
+            &lt;a href="#" class="ti-arrow-left-c more-btn">Read More&lt;/a>
+            &lt;!-- Card Info -->
+            &lt;div class="info">
+                &lt;span class="ti-heart">153&lt;/span>
+                &lt;span class="ti-chatbubbles">250&lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Product Card Example</h4>
+                    <p>in order to use the card </p>
+                </div>
+
+                 <!-- Card Example -->
+                 <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block product-card col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Media Component -->
+                            <div class="card-media full" data-src="img/product-full.png">
+                                <!-- Floating Over Wrapper -->
+                                <div class="floating-content">
+                                    <!-- Floating Badge Element -->
+                                    <a href="#" class="badge primary floating-drt">Category Name</a>
+                                    <!-- Floating Group -->
+                                    <div class="floating-dt">
+                                        <!-- Rating Stars -->
+                                        <a href="#" class="stars">
+                                            <span class="ti-star active"></span><span class="ti-star active"></span><span class="ti-star active"></span><span class="ti-star active"></span><span class="ti-star"></span>
+                                        </a>
+                                        <!-- Badge Element -->
+                                        <a href="#" class="badge danger">15% Discount</a>
+                                    </div>
+                                </div>
+                                <!-- Hover Component -->
+                                <div class="hvr-component">
+                                    <!-- Linked Overlay -->
+                                    <a href="#" class="overlay-link"></a>
+                                    <!-- Icon Button -->
+                                    <a href="#" class="icon-btn ti-search"></a>
+                                    <!-- Icon Button -->
+                                    <a href="#" class="icon-btn ti-heart"></a>
+                                </div>
+                            </div>
+                            <!-- Title -->
+                            <a href="#"><h3 class="title">Product Summary Head Line</h3></a>
+                            <!-- Description -->
+                            <p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, </p>
+                            <!-- Buttons Group -->
+                            <div class="btns-group">
+                                <span class="btn primary outline price">510$  <i>600$</i></span>
+                                <a href="#" class="btn primary ti-cart-add">Add To Cart</a>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-6">Copy Code</button>
+<code class="markup" id="card-6">&lt;!-- Card Wrapper -->
+&lt;div class="card-block product-card col-12 col-m-5 col-l-4 col-xl-3">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Media Component -->
+        &lt;div class="card-media full" data-src="img/product-full.png">
+            &lt;!-- Floating Over Wrapper -->
+            &lt;div class="floating-content">
+                &lt;!-- Floating Badge Element -->
+                &lt;a href="#" class="badge primary floating-drt">Category Name&lt;/a>
+                &lt;!-- Floating Group -->
+                &lt;div class="floating-dt">
+                    &lt;!-- Rating Stars -->
+                    &lt;a href="#" class="stars">
+                        &lt;span class="ti-star active">&lt;/span>&lt;span class="ti-star active">&lt;/span>&lt;span class="ti-star active">&lt;/span>&lt;span class="ti-star active">&lt;/span>&lt;span class="ti-star">&lt;/span>
+                    &lt;/a>
+                    &lt;!-- Badge Element -->
+                    &lt;a href="#" class="badge danger">15% Discount&lt;/a>
+                &lt;/div>
+            &lt;/div>
+            &lt;!-- Hover Component -->
+            &lt;div class="hvr-component">
+                &lt;!-- Linked Overlay -->
+                &lt;a href="#" class="overlay-link">&lt;/a>
+                &lt;!-- Icon Button -->
+                &lt;a href="#" class="icon-btn ti-search">&lt;/a>
+                &lt;!-- Icon Button -->
+                &lt;a href="#" class="icon-btn ti-heart">&lt;/a>
+            &lt;/div>
+        &lt;/div>
+        &lt;!-- Title -->
+        &lt;a href="#">&lt;h3 class="title">Product Summary Head Line&lt;/h3>&lt;/a>
+        &lt;!-- Description -->
+        &lt;p>Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, &lt;/p>
+        &lt;!-- Buttons Group -->
+        &lt;div class="btns-group">
+            &lt;span class="btn primary outline price">510$  &lt;i>600$&lt;/i>&lt;/span>
+            &lt;a href="#" class="btn primary ti-cart-add">Add To Cart&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+    
+                <!-- Pagination Buttons -->
+                <div class="pagi-buttons">
+                    <a href="budgs.html" class="btn">Next <span>Tags and Badges</span></a>
+                    <a href="jumbotron.html" class="btn">Previous <span>Hero Area</span></a>
+                </div>
+            </div>
+            <!-- // Page Content -->
+        </div>
+        
+        <!-- Required JS Files (Always in Footer) -->
+        <script src="../dist/js/jquery-3.3.1.min.js"></script>
+        <script src="../dist/js/tornado.min.js"></script>
+        <script src="js-css/clipboard.min.js"></script>
+        <script src="js-css/highlight.pack.js"></script>
+        <script src="js-css/script.js"></script>
+    </body>
+</html>

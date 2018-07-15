@@ -1,9 +1,13 @@
 /*=== Default Clean Buttons ===*/
+.btns-group {
+    @extend %flexbox;
+}
+
 .btn {
     display: inline-block;
     padding:0 25px;
-    height:48px;
-    line-height: 48px;
+    height:44px;
+    line-height: 44px;
     font-size: 14px;
     border: 1px solid rgba(0,0,0,.10);
     color:$dark-color;
@@ -15,69 +19,132 @@
     &:hover{background: #f7f7f7;}
     &.rounded-corner { border-radius: 80px; }
     &.rounde-corner { border-radius: 6px; }
+    &.outline{ 
+        background: transparent;
+        color:$dark-color;
+        border:2px solid $dark-bg;
+        line-height: 40px;
+    }
     //===== Buttons Sizes ====//
     &.tiny {
         font-size: 12px;
         padding: 0 15px;
         height: 27px;
         line-height: 27px;
+        &.outline{line-height: 25px;border-width:1px;}
     }
     &.small {
         font-size: 13px;
         padding: 0 20px;
         height: 36px;
         line-height: 36px;
+        &.outline{line-height: 34px;border-width:1px;}
     }
     &.large {
         font-size: 16px;
         padding: 0 30px;
         height:58px;
         line-height: 58px;
+        &.outline{line-height: 52px;border-width:3px;}
     }
     //==== Coloring Buttons ====//
     &.primary{
-        background: $primary-color;color:$reverse-color;border: 0 none;
+        background: $primary-color;color:$reverse-color;
         &:hover{background:$primary-color-hover;}
+        &.outline {
+            background: transparent;
+            border-color: $primary-color;
+            color:$primary-color;
+            &:hover{background:$primary-color;color:$reverse-color;}
+        }
     }
 
     &.secondary{
-        background: $secondary-color;color:$reverse-color;border: 0 none;
+        background: $secondary-color;color:$reverse-color;
         &:hover{background:$secondary-color-hover;}
+        &.outline {
+            background: transparent;
+            border-color: $secondary-color;
+            color:$secondary-color;
+            &:hover{background:$secondary-color;color:$reverse-color;}
+        }
     }
 
     &.success{
-        background: $success-color;color:$reverse-color;border: 0 none;
+        background: $success-color;color:$reverse-color;
         &:hover{background:darken( $success-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $success-color;
+            color:$success-color;
+            &:hover{background:$success-color;color:$reverse-color;}
+        }
     }
 
     &.danger{
-        background: $danger-color;color:$reverse-color;border: 0 none;
+        background: $danger-color;color:$reverse-color;
         &:hover{background:darken( $danger-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $danger-color;
+            color:$danger-color;
+            &:hover{background:$danger-color;color:$reverse-color;}
+        }
     }
 
     &.warning{
-        background: $warning-color;color:$reverse-color;border: 0 none;
+        background: $warning-color;color:$reverse-color;
         &:hover{background:darken( $warning-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $warning-color;
+            color:$warning-color;
+            &:hover{background:$warning-color;color:$reverse-color;}
+        }
     }
 
     &.info{
-        background: $info-color;color:$reverse-color;border: 0 none;
+        background: $info-color;color:$reverse-color;
         &:hover{background:darken( $info-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $info-color;
+            color:$info-color;
+            &:hover{background:$info-color;color:$reverse-color;}
+        }
     }
 
     &.gray{
         background: $gray-color;color:$reverse-color;
         &:hover{background:darken( $gray-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $gray-color;
+            color:$gray-color;
+            &:hover{background:$gray-color;color:$reverse-color;}
+        }
     }
     
     &.dark{
-        background: $dark-color;color:$reverse-color;border: 0 none;
+        background: $dark-color;color:$reverse-color;
         &:hover{background:darken( $dark-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $dark-color;
+            color:$dark-color;
+            &:hover{background:$dark-color;color:$reverse-color;}
+        }
     }
 
     &.light{
-        background: $light-color;color:$dark-color;border: 0 none;
+        background: $light-color;color:$dark-color;
         &:hover{background:darken( $light-color, 05% );}
+        &.outline {
+            background: transparent;
+            border-color: $light-color;
+            color:$dark-color;
+            &:hover{background:$light-color;color:$dark-color;}
+        }
     }
 
     &.rounded{border-radius:100px;}

@@ -240,7 +240,7 @@ body::after {
     font-size:15px;
 }
 
-.code-viewer{
+.code-viewer {
     margin-top: 25px;
 }
 
@@ -258,6 +258,13 @@ body::after {
     overflow: auto;
     font-family:'Courier New', Courier, monospace;
     font-weight: 700;
+}
+
+
+.full-height{margin-top: 0;}
+
+.full-height code {
+    min-height: calc(100% - 50px);
 }
 
 .code-viewer .copy-btn{

@@ -1,0 +1,256 @@
+/*======== Cards Blocks ========*/
+.card-block {
+    margin-bottom: $gutterSize;
+    //===== Content Box ======//
+    .content-box {
+        $thisPadding : 25px;
+        padding:$thisPadding;
+        background:#FFF;
+        border:1px solid rgba(0,0,0,0.10);
+        -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+                box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+        height: 100%;
+        //===== Media Element =====//
+        .card-media {
+            display: block;
+            position: relative;
+            padding-bottom: 78.13%;
+            iframe,video,audio,embed,img {
+                position: absolute;
+                top:0;
+                left: 0;
+                width:100%;
+                height: 100%;
+                border:0 none;
+                margin: 0;
+                padding: 0;
+            }
+            margin-bottom: $thisPadding - 5;
+            &.full{ margin:-$thisPadding;margin-bottom: $thisPadding - 5; }
+            //===== Overlayed Content =====//
+            &.overlayed {
+                margin-bottom: 0;
+                overflow: hidden;
+                & + .action-footer { margin-top: 0; }
+                
+                &::after {
+                    content:'';
+                    position: absolute;
+                    display: block;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 0;
+                    top:0;
+                    left: 0;
+                    right:0;
+                    bottom:0;
+                    @extend %fast-motion;
+                    -webkit-transform:scaleY(0);
+                            transform:scaleY(0);
+                    opacity: 0;
+                }
+
+                .content {
+                    position: absolute;
+                    top:50%;
+                    width:100%;
+                    #{$direction}:-50%;
+                    opacity: 0;
+                    @extend %position-center-y;
+                    text-align: center;
+                    padding:0 $thisPadding;
+                    color:#FFF;
+                    @extend %fast-motion;
+                    .title,p{ color:#FFF; }
+                    z-index: 5;
+                }
+
+                &:hover {
+                    .content { 
+                        #{$direction}:0;
+                        opacity: 1;
+                    }
+                    &::after {
+                        -webkit-transform:scaleY(1);
+                                transform:scaleY(1);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            //====== Hover Elements =======//
+            .hvr-component {
+                @extend %flexbox;
+                @extend .align-center-z ;
+                opacity: 0;
+                @extend %fast-motion;
+                z-index: 5;
+                background: rgba(0, 0, 0, 0.75);
+                .icon-btn {
+                    font-size:20px;
+                    background: #FFF;
+                    width:45px;
+                    height: 45px;
+                    border-radius:50%;
+                    line-height: 43px;
+                    color:$danger-color;
+                    text-align: center;
+                    margin: 0 10px;
+                }
+            }
+
+            &:hover {
+                .hvr-component{opacity: 1;}
+            }
+        }
+        //===== Content =====//
+        .title {
+            font-size:1.125rem;
+            color:$dark-color;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1.6;
+            &.overflow-text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        p {
+            font-size:0.9375rem;
+            margin: 0;
+            margin-bottom: 15px;
+            color:#6e6d6d;
+            line-height: 1.6;
+        }
+        //===== Footer =====//
+        .action-footer {
+            margin:-$thisPadding;
+            @extend %flexbox;
+            @extend .align-between ;
+            margin-top: $thisPadding - 5;
+            padding:0 $thisPadding;
+            font-size:14px;
+            line-height: 50px;
+            font-weight: $medium-weight;
+            color:$gray-color;
+            border-top:1px solid rgba(0,0,0,0.10);
+            [class*="ti-"]::before { 
+                font-size:16px;
+                margin-#{$directionReverse}:5px;
+            }
+            .info span {margin-#{$direction}:15px;}
+            .more-btn {
+                text-transform: uppercase;
+                &.ti-arrow-left-c::before { position: relative;top:-2px; }
+            }
+        }
+        //===== Card Header =====//
+        .card-head {
+            margin:-$thisPadding;
+            margin-bottom: 0;
+            padding:0 15px;
+            background: rgba(0, 0, 0, 0.02);
+            border-bottom: 1px solid rgba(0,0,0,0.10);
+            margin-bottom: $thisPadding;
+            @extend %flexbox;
+            @extend .align-between ;
+            @extend .align-center-y ;
+            height: 50px;
+            .title {
+                margin: 0;
+                font-size:14px;
+                color:$primary-color;
+                text-transform:none;
+                font-weight: normal;
+            }
+
+            img {
+                max-width: 30px;
+                max-height: 30px;
+                width:auto;
+                height: auto;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 50%;
+                margin-#{$directionReverse}:5px;
+            }
+            .date { font-size:13px;color:$gray-color; }
+        }
+        
+        //===== Horizontal Mode =====//
+        &.horizontal {
+            @extend %flexbox;
+            @extend .align-between ;
+            padding:0;
+            .card-media { 
+                width:33.333%;
+                min-height: 100%;
+                margin: 0;
+                @media screen and (max-width:480px) { width:100%;margin-bottom: $thisPadding - 5; }
+            }
+            
+            .content-wrap {
+                padding:$thisPadding;
+                width:66.666%;
+                @media screen and (max-width:480px) { width:100%; }
+             }
+        }
+        //===== Buttons Mode =====//
+        .btns-group {
+            .btn {
+                width:50%;
+                padding:0 15px;
+                text-transform: uppercase;
+            }
+            [class*="ti-"]::before{margin-#{$directionReverse}:5px;font-size:1.2em; }
+        }
+    }
+    //======== Product Components ========//
+    &.product-card {
+        $ContainerGutter : 20px;
+        //====== Floating Elements =======//
+        .floating-content,.hvr-component {
+            padding:$ContainerGutter;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            //==== Floating Modes ====//
+            .floating-drt {position: absolute;top:$ContainerGutter;#{$directionReverse}:$ContainerGutter;} // Floating To The Page Direction Reverse [ Right ] Top
+            .floating-dt {position: absolute;top:$ContainerGutter;#{$direction}:$ContainerGutter;} // Floating To The Page Direction [ Left ] Top
+            .floating-drb {position: absolute;bottom:$ContainerGutter;#{$directionReverse}:$ContainerGutter;} // Floating To The Page Direction Reverse [ Right ] Bottom
+            .floating-db {position: absolute;bottom:$ContainerGutter;#{$direction}:$ContainerGutter;} // Floating To The Page Direction [ Left ] Bottom
+            .badge {
+                line-height: 30px;
+                height:30px;
+                margin-bottom: 15px;
+            }
+        }
+
+        .stars { 
+            display: block;
+            color:$gray-color;
+            line-height: 30px;
+            font-size:15px;
+            .active{ color:$warning-color; }
+        }
+        
+        .btn.price{
+            font-size:18px;
+            i {
+                color:#7d7f81;
+                text-decoration: line-through;
+                font-size: 17px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-#{$direction}:5px;
+                font-weight: normal;
+                position: relative;
+                top:-3px;
+            }
+            &:hover i{color:#FFF;}
+        }
+    }
+}

@@ -117,6 +117,8 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'elements/breadcrumbs';
 @import 'elements/media-objects';
 @import 'elements/jumbtron';
+@import 'elements/labels';
+@import 'elements/cards';
 /*========== Forms ==========*/
 @import 'forms/form-themes';
 @import 'forms/alerts';
@@ -124,3 +126,5 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'components/tables';
 @import 'components/tabs-system';
 @import 'components/slick-slider';
+/*========== Blank Project Theme ==========*/
+@import 'theme';

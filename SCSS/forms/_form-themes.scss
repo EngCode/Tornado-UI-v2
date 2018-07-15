@@ -21,7 +21,7 @@ button,input,optgroup,select,textarea {
         border: 1px solid rgba(0, 0, 0, .10);
         background-color: #fefcfc;
         line-height: 1;
-        height:48px;
+        height:44px;
         &.rounded-corner:not(textarea) { border-radius: 80px; }
         &.rounde-corner { border-radius: 6px; }
         /*==== Validation ====*/
@@ -30,7 +30,7 @@ button,input,optgroup,select,textarea {
         &.warning{border-color: $warning-color;}
     }
 
-    textarea{min-height:120px;padding:15px;}
+    textarea{min-height:110px;padding:15px;}
 
     /*==== Sizes ====*/
     &.tiny {
@@ -53,8 +53,8 @@ button,input,optgroup,select,textarea {
         input:not(.btn),textarea,select,keygen,.tagsinput,.form-control {
             font-size: 16px;
             padding: 0 20px;
-            height:58px;
-            line-height: 58px;
+            height:52px;
+            line-height: 52px;
         }
         textarea{height:140px;}
     }

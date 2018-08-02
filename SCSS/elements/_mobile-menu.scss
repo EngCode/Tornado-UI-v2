@@ -21,6 +21,19 @@
         z-index:102;
         margin-#{$direction}: auto;
     }
+
+    &.has-logo .logo {
+        display: block;
+        width:100%;
+        line-height: 100px;
+        height: 100px;
+        text-align: center;
+        border-bottom: 1px solid rgba(0, 0, 0, .10);
+        img {
+            max-width: 80%;
+            max-height: 75px;
+        }
+    }
     
     // Overlay
     .overlay-close{position:fixed;visibility:hidden;}

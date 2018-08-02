@@ -157,7 +157,7 @@
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Navigation Menu Themes</h4>
+                    <h4>Navigation Menu Theme</h4>
                     <p>
                         The Other Mode For The Navigation Menu is A Styled Navigation With Multiple Coloring Theme and That Also Can Be Done Easily Be Putin
                         The Default Menu Structure Inside A Wrapper Div With Class Name <span> navigation-wraper </span> and The Coloring Themes Applied By Adding
@@ -197,6 +197,72 @@
 &lt;div class="navigation-wraper">
     &lt;!-- Main Menu -->
     &lt;div class="navigation-menu" data-id="main-menu">
+        &lt;ul>
+            &lt;li>&lt;a href="#">Menu Theme&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Support&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Github&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Download&lt;/a>
+                &lt;!-- Dropdown List -->
+                &lt;ul>
+                    &lt;li>&lt;a href="#">Production Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Development Version&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="quick-start.html">Quick Start CDN&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/li>
+            &lt;li>&lt;a href="#">Contact&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+    &lt;!-- Main Menu Mobile Button -->
+    &lt;a href="#" class="menu-btn icon-btn ti-menu-round" data-id="main-menu">&lt;/a>
+&lt;/div>
+&lt;!-- // Navigation wraper -->
+</code>
+</pre>    
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Collapsed Mobile Menu Theme</h4>
+                    <p>
+                        in order to use the collapsed mode just add class <span>collapsed</span> to The Navigation Menu Wrapper and if You
+                        Want To Add a Logo For it Just Giv an Attribute Named <span>data-logo</span> to the Navigation Menu Wrapper Tag and inside of it put the logo url , 
+                        and to Customize the Navigation Menu Mobile Theme it's pretty much easy as piece of cake , You Can Overide The Default Style in 
+                        <span>tornado-folder/scss/elements/_mobile-menu.scss</span>
+                    </p>
+                </div>
+
+                <!-- Navigation wraper -->
+                <div class="navigation-wraper collapsed">
+                    <!-- Main Menu -->
+                    <div class="navigation-menu" data-id="menu-0" data-logo="img/logo.png">
+                        <ul>
+                            <li><a href="#">Menu Theme</a></li>
+                            <li><a href="#">About US</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Github</a></li>
+                            <li><a href="#">Download</a>
+                                <!-- Dropdown List -->
+                                <ul>
+                                    <li><a href="#">Production Version</a></li>
+                                    <li><a href="#">Development Version</a></li>
+                                    <li><a href="quick-start.html">Quick Start CDN</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- Main Menu Mobile Button -->
+                    <a href="#" class="menu-btn icon-btn ti-menu-round" data-id="menu-0"></a>
+                </div>
+                <!-- // Navigation wraper -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#menu-1x">Copy Code</button>
+<code class="markup" id="menu-1x">&lt;!-- Navigation wraper -->
+&lt;div class="navigation-wraper collapsed">
+    &lt;!-- Main Menu -->
+    &lt;div class="navigation-menu" data-id="main-menu" data-logo="img/logo.png">
         &lt;ul>
             &lt;li>&lt;a href="#">Menu Theme&lt;/a>&lt;/li>
             &lt;li>&lt;a href="#">About US&lt;/a>&lt;/li>

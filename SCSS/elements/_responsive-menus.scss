@@ -31,7 +31,11 @@
         color:$gray-color;
         display: inline-block;
         padding:0 10px;
-    }    
+    }
+    &.collapsed {
+        .navigation-menu {display: none;}
+        .menu-btn {display: block;}
+    }
     /*==== Gray Theme ====*/
     &.gray {
         background-color:$gray-bg;

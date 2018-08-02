@@ -339,7 +339,6 @@ body::after {
 }
 
 .grid-theme .badge,.grid-theme-col .badge{
-    padding:5px 15px;
     background:rgba(0,0,0,0.10);
     color:rgba(0,0,0,0.85);
     font-size:11px;

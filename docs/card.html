@@ -71,7 +71,6 @@
                         <li><a href="modals.html">Popup Modals</a></li>
                         <li><a href="dropdowns.html">Dropdowns</a></li>
                         <li><a href="pagination.html">Pagination</a></li>
-                        <li><a href="messages.html">Message</a></li>
                         <li><a href="responsive-elements.html">Responsive Elements</a></li>
                         <li><a href="effects.html">Effects Tricks</a></li>
                         <li><a href="scrollspy.html">Scrollspy</a></li>
@@ -80,20 +79,7 @@
                         <li><a href="colors.html">Colors Palette</a></li>
                     </ul>
                 </li>
-                <li><a href="utilities.html">Utilities</a>
-                    <ul>
-                        <li><a href="utilities.html">Helpers</a></li>
-                        <li><a href="responsive.html">Responsive</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">SASS Customizing</a>
-                    <ul>
-                        <li><a href="sass-vars.html">Theme Variables</a></li>
-                        <li><a href="sass-mixins.html">Mixins</a></li>
-                        <li><a href="build-tools.html">Build Tools</a></li>
-                    </ul>
-                </li>
-                <li><a href="builder.html">Custom Builder</a></li>
+                <li><a href="sass-customizing.html">SASS Customizing</a></li>
                 <li><a href="vuejs/index.html">Vue.js Version</a></li>
             </ul>
         </div>
@@ -129,12 +115,22 @@
                     <p>Cards provide a flexible and extensible content container with multiple variants and options that can be used for creating a blocks for new,products,user card...etc.</p>
                 </div>
 
+                <!-- Sass File Path -->
+                <div class="sass-path alert">
+                    <h5 class="tx-uppercase">Sass Customize</h5>
+                    <p> 
+                        in order to edit the cards you can use the css class to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/elements/_cards.scss</span> and do not forget to compile the main files of the framework
+                        <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
+                    </p>
+                </div>
+
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
                     <h4>Standard Card</h4>
                     <p>
-                        in order to use the card componenet first we create a <span> &lt;div> </span> tag with class <span>card-block</span> this will be
-                        the card wrapper ( the container ) wich you can use it for layout sort with the grid system so he accepte he grid columns class
+                        in order to use the card component first we create a <span> &lt;div> </span> tag with class <span>card-block</span> this will be
+                        the card wrapper ( the container ) wich you can use it for sorting the layout with the grid system columns class's
                         then creating the content wrapper element with class <span> content-box </span>, now you got the basic container of the card what 
                         is left is building the content conponenets you can create an responsive aspect ratio Images without streatching and a title for 
                         the card a description action btns footer and more see the example below to know and understand what you can put and use in 
@@ -541,7 +537,11 @@
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
                     <h4>Product Card Example</h4>
-                    <p>in order to use the card </p>
+                    <p>
+                        in order to use the product card add the class <span>product-card</span> to the Card Wrapper Element after that you will have an extra
+                        card content components such as <span>floating components</span>,<span>price</span>,<span>buttons hover effect</span>
+                        with other general tornado predesigned elements ,, you can see the code example and learn how the new components work.
+                    </p>
                 </div>
 
                  <!-- Card Example -->
@@ -641,7 +641,441 @@
 <!-- // Code Viewer -->
                 </div>
                 <!-- // Card Example -->
-    
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>User Card Example</h4>
+                    <p>
+                        in order to use the user card add the class <span>user-card</span> to the Card Wrapper Element after that you will have an extra
+                        card content components for the user like <span>avatar</span>,<span>user name and job title</span>,<span>social-btns</span>
+                        take a look to the example code below to see the new componenets ad how it works.
+                    </p>
+                </div>
+
+                <!-- Card Example -->
+                <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block user-card col-12 col-m-5 col-l-4 col-xl-3">
+                            <!-- Card Content -->
+                            <div class="content-box">
+                                <!-- Cover -->
+                                <div class="card-media full" data-src="http://via.placeholder.com/370x200/52575b/52575b">
+                                    <!-- Floating Over Wrapper -->
+                                    <div class="floating-dt">
+                                        <span class="info-span ti-person">153</span>
+                                        <span class="info-span ti-comment-bubble">250</span>
+                                    </div>
+                                </div>
+                                <!-- Avatar Image -->
+                                <a href="#" class="avatar"><img src="http://via.placeholder.com/120x120" alt=""></a>
+                                <!-- Title -->
+                                <a href="#"><h3 class="title">Abdullah Ramadan</h3></a>
+                                <h4 class="subtitle">Full Stack Designer</h4>
+                                <!-- Social Media -->
+                                <div class="social-btns">
+                                    <a href="#" class="circle ti-facebook"></a>
+                                    <a href="#" class="circle ti-twitter"></a>
+                                    <a href="#" class="circle ti-google-plus"></a>
+                                    <a href="#" class="circle ti-instagram"></a>
+                                    <a href="#" class="circle ti-linkedin"></a>
+                                </div>
+                                <!-- Buttons Group -->
+                                <div class="btns-group gutter-on">
+                                    <a href="#" class="btn primary small outline tx-uppercase">Add Freind</a>
+                                    <a href="#" class="btn secondary small outline tx-uppercase">Follow ME</a>
+                                </div>
+                            </div>
+                            <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-8">Copy Code</button>
+<code class="markup" id="card-8">&lt;!-- Card Wrapper -->
+&lt;div class="card-block user-card col-12 col-m-5 col-l-4 col-xl-3">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Cover -->
+        &lt;div class="card-media full" data-src="http://via.placeholder.com/370x200/52575b/52575b">
+            &lt;!-- Floating Over Wrapper -->
+            &lt;div class="floating-dt">
+                &lt;span class="info-span ti-person">153&lt;/span>
+                &lt;span class="info-span ti-comment-bubble">250&lt;/span>
+            &lt;/div>
+        &lt;/div>
+        &lt;!-- Avatar Image -->
+        &lt;a href="#" class="avatar">&lt;img src="http://via.placeholder.com/120x120" alt="">&lt;/a>
+        &lt;!-- Title -->
+        &lt;a href="#">&lt;h3 class="title">Abdullah Ramadan&lt;/h3>&lt;/a>
+        &lt;h4 class="subtitle">Full Stack Designer&lt;/h4>
+        &lt;!-- Social Media -->
+        &lt;div class="social-btns">
+            &lt;a href="#" class="circle ti-facebook">&lt;/a>
+            &lt;a href="#" class="circle ti-twitter">&lt;/a>
+            &lt;a href="#" class="circle ti-google-plus">&lt;/a>
+            &lt;a href="#" class="circle ti-instagram">&lt;/a>
+            &lt;a href="#" class="circle ti-linkedin">&lt;/a>
+        &lt;/div>
+        &lt;!-- Buttons Group -->
+        &lt;div class="btns-group gutter-on">
+            &lt;a href="#" class="btn primary outline small tx-uppercase">Add Freind&lt;/a>
+            &lt;a href="#" class="btn secondary outline small tx-uppercase">Follow ME&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Card Widget Mode</h4>
+                    <p> 
+                        The Widget Theme Mode With Small Content Elements Can Be Used For Making Almost all The Other Cards Theme's as You See
+                        The Example Below Shows Card Widget With Product Content and you can easly use the widget mode by adding the class <span>widget</span>
+                        to The Card Wrapper and inside the Content Box Element You Can Use The Class <span>widget-image</span> for the media element and the class
+                        <span>widget-content</span> for information content wrapper.
+                    </p>
+                </div>
+
+                 <!-- Card Example -->
+                 <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block widget col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Widget Image -->
+                            <a href="#" class="widget-image"><img src="img/product-full.png" alt=""></a>
+                            <!-- Widget Content -->
+                            <div class="widget-content">
+                                <a href="#"><h3>Product Title Goes Here</h3></a>
+                                <p>Morbi scelerisque luctus velit. Etiam dui sem,fermentum vitae, sagittis</p>
+                            </div>
+                            <!-- Action Footer -->
+                            <div class="action-footer">
+                                <!-- Action Link -->
+                                <a href="#" class="ti-cart more-btn">Add To Cart</a>
+                                <!-- Price -->
+                                <h4 class="price">510$  <i>600$</i></h4>
+                                <!-- Floating Button -->
+                                <a href="#" class="icon-btn floating-drt ti-heart"></a>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-7">Copy Code</button>
+<code class="markup" id="card-7">&lt;!-- Card Wrapper -->
+&lt;div class="card-block widget col-12 col-m-5 col-l-4 col-xl-3">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Widget Image -->
+        &lt;a href="#" class="widget-image">&lt;img src="img/product-full.png" alt="">&lt;/a>
+        &lt;!-- Widget Content -->
+        &lt;div class="widget-content">
+            &lt;a href="#">&lt;h3>Product Title Goes Here&lt;/h3>&lt;/a>
+            &lt;p>Morbi scelerisque luctus velit. Etiam dui sem,fermentum vitae, sagittis&lt;/p>
+        &lt;/div>
+        &lt;!-- Action Footer -->
+        &lt;div class="action-footer">
+            &lt;!-- Action Link -->
+            &lt;a href="#" class="ti-cart more-btn">Add To Cart&lt;/a>
+            &lt;!-- Price -->
+            &lt;h4 class="price">510$  &lt;i>600$&lt;/i>&lt;/h4>
+            &lt;!-- Floating Button -->
+            &lt;a href="#" class="icon-btn floating-drt ti-heart">&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Another Widget Example as User Card Widget</h4>
+                </div>
+
+                <!-- Card Example -->
+                <div class="row">
+                    <!-- Card Wrapper -->
+                    <div class="card-block widget col-12 col-m-5 col-l-4 col-xl-3">
+                        <!-- Card Content -->
+                        <div class="content-box">
+                            <!-- Widget Image -->
+                            <a href="#" class="widget-image circle"><img src="http://via.placeholder.com/70x70" alt=""></a>
+                            <!-- Widget Content -->
+                            <div class="widget-content">
+                                <a href="#"><h2>Abdullah Ramadan  <span>Full Stack Designer</span></h2></a>
+                            </div>
+                            <!-- Action Footer -->
+                            <div class="action-footer">
+                                <!-- Action Link -->
+                                <a href="#" class="ti-arrow-left-c more-btn">Visit Profile</a>
+                                <!-- Card Info -->
+                                <div class="info">
+                                    <span class="ti-person">153</span>
+                                    <span class="ti-comment-bubble">250</span>
+                                </div>
+                                <!-- Floating Button -->
+                                <a href="#" class="icon-btn primary floating-drt ti-plus"></a>
+                            </div>
+                        </div>
+                        <!-- // Card Content -->
+                    </div>
+                    <!-- // Card Wrapper -->
+
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height col-12 col-m-7 col-l-8 col-xl-9">
+<button class="copy-btn" data-clipboard-target="#card-9">Copy Code</button>
+<code class="markup" id="card-9">&lt;!-- Card Wrapper -->
+&lt;div class="card-block widget col-12 col-m-5 col-l-4 col-xl-3">
+    &lt;!-- Card Content -->
+    &lt;div class="content-box">
+        &lt;!-- Widget Image -->
+        &lt;a href="#" class="widget-image circle">&lt;img src="http://via.placeholder.com/70x70" alt="">&lt;/a>
+        &lt;!-- Widget Content -->
+        &lt;div class="widget-content">
+            &lt;a href="#">&lt;h2>Abdullah Ramadan  &lt;span>Full Stack Designer&lt;/span>&lt;/h2>&lt;/a>
+        &lt;/div>
+        &lt;!-- Action Footer -->
+        &lt;div class="action-footer">
+            &lt;!-- Action Link -->
+            &lt;a href="#" class="ti-arrow-left-c more-btn">Visit Profile&lt;/a>
+            &lt;!-- Card Info -->
+            &lt;div class="info">
+                &lt;span class="ti-person">153&lt;/span>
+                &lt;span class="ti-comment-bubble">250&lt;/span>
+            &lt;/div>
+            &lt;!-- Floating Button -->
+            &lt;a href="#" class="icon-btn primary floating-drt ti-plus">&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- // Card Content -->
+&lt;/div>
+&lt;!-- // Card Wrapper -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                </div>
+                <!-- // Card Example -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                        <h4>Utilities</h4>
+                        <p>Cards Class Name's Utilities for Layout and Content Components.</p>
+                    </div>
+                    
+                    <div class="responsive-table">
+                        <table class="table bordered striped">
+                            <Thead>
+                                <tr>
+                                    <th class="col-2">Class Name</th>
+                                    <th class="col-3">element</th>
+                                    <th class="col-7">description</th>
+                                </tr>
+                            </Thead>
+                            <tbody>
+                                <tr>
+                                    <th class="col-2">card-block</th>
+                                    <td class="col-3"><span>Card wrapper</span></td>
+                                    <td class="col-7">Class of The Main Wrapper of The Card</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">content-box</th>
+                                    <td class="col-3"><span>Card Content wrapper</span></td>
+                                    <td class="col-7">Class of The Content Wrapper Container Tag</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">horizontal</th>
+                                    <td class="col-3"><span>Card Content wrapper</span></td>
+                                    <td class="col-7">Class of The Content Wrapper Horizontal Mode.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">content-wrap</th>
+                                    <td class="col-3"><span>Card Second Content wrapper</span></td>
+                                    <td class="col-7">Class of The Content Information Wrapper Only In Horizontal Mode.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">card-media</th>
+                                    <td class="col-3"><span>Card Media Object</span></td>
+                                    <td class="col-7">Class Of The Card Media Object Element Tag for images</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">[data-src]</th>
+                                    <td class="col-3"><span>Card Media Object</span></td>
+                                    <td class="col-7">Source URL Path <span>Attribute</span> for responsive flexible images</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">full</th>
+                                    <td class="col-3"><span>Card Media Object</span></td>
+                                    <td class="col-7">Class of The Card Media Object Full Width Mode</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">overlayed</th>
+                                    <td class="col-3"><span>Card Media Object</span></td>
+                                    <td class="col-7">Class of The Card Media Object Overlayed Content Effect Mode</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">content</th>
+                                    <td class="col-3"><span>Media Object Overlayed</span></td>
+                                    <td class="col-7">Class of The Card Media Object Overlayed Content Wrapper Only in Overlayed Mode.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">title</th>
+                                    <td class="col-3"><span>Card Summary Headline Tag</span></td>
+                                    <td class="col-7">the class of the card title/headline for all Headings tags</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">card-head</th>
+                                    <td class="col-3"><span>Card Head Bar</span></td>
+                                    <td class="col-7">class for the card Head Bar Wrapper.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">title</th>
+                                    <td class="col-3"><span>The Title of Head Bar Class</span></td>
+                                    <td class="col-7">class for the card Head Bar Title Goes inside the <span>card-head</span> Tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">date</th>
+                                    <td class="col-3"><span>The Extra Info of Head Bar Class</span></td>
+                                    <td class="col-7">class for the card Head Bar Extra Information like Date/PostingTime Goes inside the <span>card-head</span> Tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">action-footer</th>
+                                    <td class="col-3"><span>Card Footer</span></td>
+                                    <td class="col-7">class for the card footer wrapper html tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">more-btn</th>
+                                    <td class="col-3"><span>Card Footer Button</span></td>
+                                    <td class="col-7">class for the card Read More Button inside the action footer.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">info</th>
+                                    <td class="col-3"><span>Card Footer Information</span></td>
+                                    <td class="col-7">class for the card extra statics information like comments/views inside the action footer</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3"><span>Product Card Class's</span></th>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">product-card</th>
+                                    <td class="col-3"><span>Card wrapper</span></td>
+                                    <td class="col-7">Class of The Main Wrapper of The Card</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">price</th>
+                                    <td class="col-3"><span>Product Price</span></td>
+                                    <td class="col-7">Class of The Product Price Tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">floating-content</th>
+                                    <td class="col-3"><span>Card Floating Content</span></td>
+                                    <td class="col-7">Class of The Product Floating Content Wrapper Inside The Media Object Tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">stars</th>
+                                    <td class="col-3"><span>Floating Content Rating</span></td>
+                                    <td class="col-7">Class of The Product Rating inside Floating Content Wrapper Tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">floating-dt</th>
+                                    <td class="col-3"><span>Floating Content Position</span></td>
+                                    <td class="col-7">Class of The Floating Content Postion Wrapper <span>Page Direction [Left] Top</span>.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">floating-drt</th>
+                                    <td class="col-3"><span>Floating Content Position</span></td>
+                                    <td class="col-7">Class of The Floating Content Postion Wrapper <span>Page Direction Reverese [Right] Top</span>.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">floating-db</th>
+                                    <td class="col-3"><span>Floating Content Position</span></td>
+                                    <td class="col-7">Class of The Floating Content Postion Wrapper <span>Page Direction [Left] Bottom</span>.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">floating-drb</th>
+                                    <td class="col-3"><span>Floating Content Position</span></td>
+                                    <td class="col-7">Class of The Floating Content Postion Wrapper <span>Page Direction Reverese [Right] Bottom</span>.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">hvr-component</th>
+                                    <td class="col-3"><span>Card Hover Effect</span></td>
+                                    <td class="col-7">Class of The Product Hover Content Wrapper Inside The Media Object Tag.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">icon-btn</th>
+                                    <td class="col-3"><span>Hover Component Button</span></td>
+                                    <td class="col-7">Class of The Buttons Inside The Product Hover Component.</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">overlay-link</th>
+                                    <td class="col-3"><span>Hover Component Link</span></td>
+                                    <td class="col-7">Class of The Overlay Area Link Inside The Product Hover Component.</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3"><span>User Card Class's</span></th>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">user-card</th>
+                                    <td class="col-3"><span>Card wrapper</span></td>
+                                    <td class="col-7">Class of The Main Wrapper of The Card</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">avatar</th>
+                                    <td class="col-3"><span>User Card Avatar</span></td>
+                                    <td class="col-7">Class of The User Avatar Image inside the Card Content Wrapper After The Media Component</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">subtitle</th>
+                                    <td class="col-3"><span>User Card Job Title</span></td>
+                                    <td class="col-7">Class of The User Card Job Title inside the Card Content Wrapper</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">social-btns</th>
+                                    <td class="col-3"><span>Social Media Wrapper</span></td>
+                                    <td class="col-7">Class of The User Card Social Media Links Wrapper inside the Card Content Wrapper</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">circle</th>
+                                    <td class="col-3"><span>Social Media Link</span></td>
+                                    <td class="col-7">Class of The User Card Social Media Links Circle Mode.</td>
+                                </tr>
+                                <tr>
+                                    <th colspan="3"><span>Card Widget Class's</span></th>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">widget</th>
+                                    <td class="col-3"><span>Card wrapper</span></td>
+                                    <td class="col-7">Class of The Main Wrapper of The Card</td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">widget-image</th>
+                                    <td class="col-3"><span>Image Component</span></td>
+                                    <td class="col-7">Class of The Widget Image Component inside the Card Content Wrapper <span>content-box</span></td>
+                                </tr>
+                                <tr>
+                                    <th class="col-2">widget-content</th>
+                                    <td class="col-3"><span>Information Component</span></td>
+                                    <td class="col-7">Class of The Widget Information Component inside the Card Content Wrapper <span>content-box</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">
                     <a href="budgs.html" class="btn">Next <span>Tags and Badges</span></a>

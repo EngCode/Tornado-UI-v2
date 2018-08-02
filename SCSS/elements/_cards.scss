@@ -142,7 +142,16 @@
             .info span {margin-#{$direction}:15px;}
             .more-btn {
                 text-transform: uppercase;
-                &.ti-arrow-left-c::before { position: relative;top:-2px; }
+                &::before { position: relative;top:-2px; }
+            }
+            .price {
+                margin: 0;
+                margin-#{$direction}:15px;
+                //float: $directionReverse;
+                font-size:16px;
+                font-weight: $medium-weight;
+                color:$primary-color;
+                i{ font-size:15px;font-weight: normal;color:#b8b8b8;text-decoration: line-through; }
             }
         }
         //===== Card Header =====//
@@ -185,8 +194,8 @@
             padding:0;
             .card-media { 
                 width:33.333%;
-                min-height: 100%;
                 margin: 0;
+                @media screen and (min-width:500px) { padding: 0; }
                 @media screen and (max-width:480px) { width:100%;margin-bottom: $thisPadding - 5; }
             }
             
@@ -203,6 +212,7 @@
                 padding:0 15px;
                 text-transform: uppercase;
             }
+            &.gutter-on{ .btn{ width:calc(50% - 20px); } }
             [class*="ti-"]::before{margin-#{$directionReverse}:5px;font-size:1.2em; }
         }
     }
@@ -217,6 +227,15 @@
             left:0;
             right:0;
             bottom: 0;
+            .overlay-link {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                top:0;
+                right: 0;
+                z-index: 1;
+                ~ * {position: relative;z-index: 2;}
+            }
             //==== Floating Modes ====//
             .floating-drt {position: absolute;top:$ContainerGutter;#{$directionReverse}:$ContainerGutter;} // Floating To The Page Direction Reverse [ Right ] Top
             .floating-dt {position: absolute;top:$ContainerGutter;#{$direction}:$ContainerGutter;} // Floating To The Page Direction [ Left ] Top
@@ -232,8 +251,10 @@
         .stars { 
             display: block;
             color:$gray-color;
-            line-height: 30px;
+            height: 30px;
+            line-height: 1;
             font-size:15px;
+            padding-top: 2px;
             .active{ color:$warning-color; }
         }
         
@@ -251,6 +272,176 @@
                 top:-3px;
             }
             &:hover i{color:#FFF;}
+        }
+    }
+    /*======== User Card ========*/
+    &.user-card {
+        .content-box {
+            .card-media {
+                padding-bottom: 50%;
+                margin-bottom: 0;
+                [class*="floating-"]{padding:10px 20px;}
+            }
+
+            .info-span { 
+                font-size:14px;
+                line-height: 20px;
+                font-weight: $medium-weight;
+                margin-#{$directionReverse}:15px;
+                color:#FFF;
+                &::before {
+                    margin-#{$directionReverse}:5px;
+                }
+            }
+            
+            .avatar {
+                margin: auto;
+                margin-top: -60px;
+                width:120px;
+                height: 120px;
+                display: block;
+                border-radius: 50%;
+                border:1px solid rgba(0, 0, 0, 0.1);
+                position: relative;
+                z-index: 2;
+                img{ width:120px;height: 120px;border-radius: 50%; }
+            }
+
+            .title {
+                margin-top: 20px;
+                color:$primary-color;
+                text-align: center;
+            }
+
+            .subtitle{
+                font-size:15px;
+                font-weight: normal;
+                margin: 0;
+                margin-top: -5px;
+                color:#868e96;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .social-btns {
+                text-align: center;
+                word-spacing: -5px;
+                margin-top: -5px;
+                a {
+                    display: inline-block;
+                    font-size:14px;
+                    color:#7d7f81;
+                    width:30px;
+                    height: 30px;
+                    line-height: 27px;
+                    margin:5px;
+                    background: #eaeaea;
+                    @extend %fast-motion;
+                    &.circle{border-radius: 50%;}
+                }
+            }
+
+            .btns-group .btn{margin-bottom: 0;}
+        }
+    }
+    /*======== Card Widget ========*/
+    &.widget {
+        .content-box {
+            @extend %flexbox;
+            @extend .align-center-y ;
+            padding:20px;
+            height: auto;
+            position: relative;
+            .icon-btn{ 
+                width:30px;
+                height: 30px;
+                color:#6e6d6d;
+                text-align: center;
+                line-height: 27px;
+                &::before{font-size:14px;display: inline;margin: 0;}
+                border-radius: 50%;
+                display: inline-block;
+                padding:0;
+                &.ti-heart{color:$danger-color;}
+                &.primary{background: $primary-color;color:$reverse-color;}
+                &.secondary{background: $secondary-color;color:$reverse-color;}
+            }
+            .widget-image {
+                display: block;
+                width:70px;
+                height: 70px;
+                img { width:70px;height: 70px; }
+                &.circle{
+                    border-radius: 50%;
+                    img{ border-radius: 50%; }
+                }
+            }
+            .widget-content {
+                width:calc(100% - 70px);
+                padding-#{$direction}:15px;
+                h3 {
+                    font-size:16px;
+                    line-height: 1;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color:$primary-color;
+                    margin: 0;
+                    padding: 0;
+                }
+                h2 {
+                    font-size:16px;
+                    line-height: 1;
+                    color:$primary-color;
+                    margin: 0;
+                    padding: 0;
+                    span {
+                        display: block;
+                        font-size:13px;
+                        line-height: 20px;
+                        color:#6e6d6d;
+                        font-weight: normal;
+                    }
+                }
+                p {
+                    font-size:13px;
+                    line-height: 20px;
+                    color:#6e6d6d;
+                    margin: 0;
+                    padding: 0;
+                    margin-top: 8px;
+                }
+            }
+            .action-footer {
+                width:calc(100% + 40px);
+                margin:-20px;
+                margin-top: 20px;
+            }
+            //==== Floating Modes ====//
+            .floating-drt {
+                position: absolute;
+                top:5px;
+                #{$directionReverse}:5px;
+                &.primary,&.secondary{top:15px;#{$directionReverse}:15px;}
+            } // Floating To The Page Direction Reverse [ Right ] Top
+            .floating-dt {
+                position: absolute;
+                top: 5px;
+                #{$direction}: 5px;
+                &.primary,&.secondary{top:15px;#{$directionReverse}:15px;}
+            } // Floating To The Page Direction [ Left ] Top
+            .floating-drb {
+                position: absolute;
+                bottom: 5px;
+                #{$directionReverse}: 5px;
+                &.primary,&.secondary{bottom:15px;#{$directionReverse}:15px;}
+            } // Floating To The Page Direction Reverse [ Right ] Bottom
+            .floating-db {
+                position: absolute;
+                bottom: 5px;
+                #{$direction}: 5px;
+                &.primary,&.secondary{bottom:15px;#{$directionReverse}:15px;}
+            } // Floating To The Page Direction [ Left ] Bottom
         }
     }
 }

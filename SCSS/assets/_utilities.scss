@@ -1,19 +1,12 @@
 /*======== Global ========*/
 .no-padding {padding: 0;}
 
-.right {
-    float: right;
-    margin-left: 15px;
-}
-
 .fluid,.block-lvl {
     width: 100%;
 }
 
-.left {
-    float: left;
-    margin-right: 15px;
-}
+.float-start {float: $direction;}
+.float-end {float: $directionReverse;}
 
 iframe {
     max-width: 100%;

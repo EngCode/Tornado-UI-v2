@@ -1,8 +1,8 @@
 /*======== badges ========*/
 .badge {
     display: inline-block;
-    padding:0 15px;
-    height:27px;
+    padding:0 12px;
+    height:28px;
     line-height: 27px;
     font-size: 12px;
     color:$dark-color;
@@ -11,52 +11,550 @@
     @extend %normal-motion;
     text-align: center;
     border-radius: 5px;
+    vertical-align: middle;
+    position: relative;
+    &.outline {
+        background:transparent;
+        color:$dark-color;
+        border:1px solid $gray-bg;
+        height: 29px;
+        &:hover{background: $gray-bg;color:$dark-color;}
+    }
+    
+    &.flexible {
+        height: auto;
+        line-height: inherit;
+        font-size: 0.6em;
+        padding: 0.3em 0.8em;
+    }
+
+    &.tag {
+        height:30px;
+        line-height: 28px;
+        font-size: 13px;
+        border-radius: 0;
+        margin-#{$direction}:25px;
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            width:0;
+            height: 0;
+            border: 15px solid transparent;
+            border-#{$directionReverse}-color:$gray-bg;
+            top:50%;
+            @extend %position-center-y;
+            @extend %fast-motion;
+            #{$directionReverse}:100%;
+        }
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top:calc(50% - 1px);
+            background: #FFF;
+            border-radius: 50%;
+            @extend %position-center-y;
+            #{$directionReverse}:calc(100%);
+            z-index: 1;
+        }
+    }
+
     &:hover{background: #f7f7f7;}
-    &.rounded { border-radius: 80px; }
-    &.circle { border-radius: 100%; }
+    &.rounded { border-radius: 150px; }
+    &.circle {
+        border-radius: 100%;
+        padding: 0;
+        width:27px;
+    }
+    &.dismiss {
+        i {
+            font-style: normal;
+            font-size:0.7em;
+            line-height: inherit;
+            float: $directionReverse;
+            margin-#{$direction}:8px;
+            position: relative;
+            top: -2px;
+        }
+    }
+    /*==== Pointing ====*/
+    &[class*="pointing"] {
+        &.outline{background: #FFF;}
+        &::after {
+            @extend %fast-motion;
+            content: '';
+            position: absolute;
+            width:0;
+            height: 0;
+            border:0.5em solid transparent;
+        }
+        &.outline::before {
+            @extend %fast-motion;
+            content: '';
+            position: absolute;
+            width:0;
+            height: 0;
+            border:0.5em solid transparent;
+        }
+    }
+    
+    &.pointing-top {
+        &::after {
+            @extend %position-center-x;
+            bottom: 100%;
+            left:50%;
+            border-bottom-color:$gray-bg;
+        }
+        &.outline::after{ border-bottom-color:#FFF; }
+        &.outline::before {
+            @extend %position-center-x;
+            bottom: 100%;
+            left:50%;
+            margin-bottom:1px;
+            border-bottom-color:$gray-bg;
+        }
+        &:hover::after{border-bottom-color:#f7f7f7;}
+    }
+    
+    &.pointing-bottom {
+        &::after {
+            @extend %position-center-x;
+            top: 100%;
+            left:50%;
+            border-top-color:$gray-bg;
+        }
+        &:hover::after{border-top-color:#f7f7f7;}
+        &.outline::after{ border-top-color:#FFF; }
+        &.outline::before {
+            @extend %position-center-x;
+            top: 100%;
+            left:50%;
+            margin-top:1px;
+            border-top-color:$gray-bg;
+        }
+    }
+
+    &.pointing-start {
+        &::after {
+            @extend %position-center-y;
+            top: 50%;
+            #{$directionReverse}:100%;
+            border-#{$directionReverse}-color:$gray-bg;
+        }
+        &:hover::after{border-#{$directionReverse}-color:#f7f7f7;}
+        &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+        &.outline::before {
+            @extend %position-center-y;
+            top: 50%;
+            #{$directionReverse}:calc(100% + 1px);
+            border-#{$directionReverse}-color:$gray-bg;
+        }
+    }
+
+    &.pointing-end {
+        &::after {
+            @extend %position-center-y;
+            top: 50%;
+            #{$direction}:100%;
+            border-#{$direction}-color:$gray-bg;
+        }
+        &:hover::after{border-#{$direction}-color:#f7f7f7;}
+        &.outline::after{ border-#{$direction}-color:#FFF; }
+        &.outline::before {
+            @extend %position-center-y;
+            top: 50%;
+            #{$direction}:calc(100% + 1px);
+            border-#{$direction}-color:$gray-bg;
+        }
+    }
+
     //==== Coloring ====//
     &.primary{
         background: $primary-color;color:$reverse-color;border: 0 none;
         &:hover{background:$primary-color-hover;}
+        &.tag::after{border-#{$directionReverse}-color:$primary-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:$primary-color-hover;}
+        &.outline {
+            background:transparent;
+            color:$primary-color;
+            border:1px solid $primary-color;
+            &:hover{background: $primary-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$primary-color;}
+            &:hover::after{border-bottom-color:$primary-color-hover;}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$primary-color;}
+            &.outline:hover::after{ border-bottom-color:$primary-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$primary-color;}
+            &:hover::after{border-top-color:$primary-color-hover;}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$primary-color;}
+            &.outline:hover::after{ border-top-color:$primary-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$primary-color;}
+            &:hover::after{border-#{$directionReverse}-color:$primary-color-hover;}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$primary-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$primary-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$primary-color;}
+            &:hover::after{border-#{$direction}-color:$primary-color-hover;}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$primary-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$primary-color; }
+        }
     }
 
     &.secondary{
         background: $secondary-color;color:$reverse-color;border: 0 none;
         &:hover{background:$secondary-color-hover;}
+        &.tag::after{border-#{$directionReverse}-color:$secondary-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:$secondary-color-hover;}
+        &.outline {
+            background:transparent;
+            color:$secondary-color;
+            border:1px solid $secondary-color;
+            &:hover{background: $secondary-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$secondary-color;}
+            &:hover::after{border-bottom-color:$secondary-color-hover;}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$secondary-color;}
+            &.outline:hover::after{ border-bottom-color:$secondary-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$secondary-color;}
+            &:hover::after{border-top-color:$secondary-color-hover;}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$secondary-color;}
+            &.outline:hover::after{ border-top-color:$secondary-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$secondary-color;}
+            &:hover::after{border-#{$directionReverse}-color:$secondary-color-hover;}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$secondary-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$secondary-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$secondary-color;}
+            &:hover::after{border-#{$direction}-color:$secondary-color-hover;}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$secondary-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$secondary-color; }
+        }
     }
 
     &.success{
         background: $success-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $success-color, 05% );}
+        &:hover{background:darken( $success-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$success-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($success-color,10% );}
+        &.outline {
+            background:transparent;
+            color:$success-color;
+            border:1px solid $success-color;
+            &:hover{background: $success-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$success-color;}
+            &:hover::after{border-bottom-color:darken( $success-color,10% );}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$success-color;}
+            &.outline:hover::after{ border-bottom-color:$success-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$success-color;}
+            &:hover::after{border-top-color:darken( $success-color,10% );}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$success-color;}
+            &.outline:hover::after{ border-top-color:$success-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$success-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $success-color,10% );}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$success-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$success-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$success-color;}
+            &:hover::after{border-#{$direction}-color:darken( $success-color,10% );}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$success-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$success-color; }
+        }
     }
 
     &.danger{
         background: $danger-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $danger-color, 05% );}
+        &:hover{background:darken( $danger-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$danger-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($danger-color,10% );}
+        &.outline {
+            background:transparent;
+            color:$danger-color;
+            border:1px solid $danger-color;
+            &:hover{background: $danger-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$danger-color;}
+            &:hover::after{border-bottom-color:darken( $danger-color,10% );}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$danger-color;}
+            &.outline:hover::after{ border-bottom-color:$danger-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$danger-color;}
+            &:hover::after{border-top-color:darken( $danger-color,10% );}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$danger-color;}
+            &.outline:hover::after{ border-top-color:$danger-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$danger-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $danger-color,10% );}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$danger-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$danger-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$danger-color;}
+            &:hover::after{border-#{$direction}-color:darken( $danger-color,10% );}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$danger-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$danger-color; }
+        }
     }
 
     &.warning{
-        background: $warning-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $warning-color, 05% );}
+        background: $warning-color;
+        color:$dark-color;
+        border: 0 none;
+        &:hover{background:darken( $warning-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$warning-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($warning-color,10% );}
+        &.outline {
+            background:transparent;
+            color:$warning-color;
+            border:1px solid $warning-color;
+            &:hover{background: $warning-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$warning-color;}
+            &:hover::after{border-bottom-color:darken( $warning-color,10% );}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$warning-color;}
+            &.outline:hover::after{ border-bottom-color:$warning-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$warning-color;}
+            &:hover::after{border-top-color:darken( $warning-color,10% );}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$warning-color;}
+            &.outline:hover::after{ border-top-color:$warning-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$warning-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $warning-color,10% );}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$warning-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$warning-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$warning-color;}
+            &:hover::after{border-#{$direction}-color:darken( $warning-color,10% );}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$warning-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$warning-color; }
+        }
     }
 
     &.info{
         background: $info-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $info-color, 05% );}
+        &:hover{background:darken( $info-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$info-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($info-color,10% );}
+        &.outline {
+            background:transparent;
+            color:$info-color;
+            border:1px solid $info-color;
+            &:hover{background: $info-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$info-color;}
+            &:hover::after{border-bottom-color:darken( $info-color,10% );}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$info-color;}
+            &.outline:hover::after{ border-bottom-color:$info-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$info-color;}
+            &:hover::after{border-top-color:darken( $info-color,10% );}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$info-color;}
+            &.outline:hover::after{ border-top-color:$info-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$info-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $info-color,10% );}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$info-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$info-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$info-color;}
+            &:hover::after{border-#{$direction}-color:darken( $info-color,10% );}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$info-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$info-color; }
+        }
     }
 
     &.gray{
         background: $gray-color;color:$reverse-color;
-        &:hover{background:darken( $gray-color, 05% );}
+        &:hover{background:darken( $gray-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$gray-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($gray-color,10% );}
+        &.outline {
+            background:transparent;
+            color:$gray-color;
+            border:1px solid $gray-color;
+            &:hover{background: $gray-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$gray-color;}
+            &:hover::after{border-bottom-color:darken( $gray-color,10% );}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$gray-color;}
+            &.outline:hover::after{ border-bottom-color:$gray-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$gray-color;}
+            &:hover::after{border-top-color:darken( $gray-color,10% );}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$gray-color;}
+            &.outline:hover::after{ border-top-color:$gray-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$gray-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $gray-color,10% );}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$gray-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$gray-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$gray-color;}
+            &:hover::after{border-#{$direction}-color:darken( $gray-color,10% );}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$gray-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$gray-color; }
+        }
     }
     
     &.dark{
         background: $dark-color;color:$reverse-color;border: 0 none;
-        &:hover{background:darken( $dark-color, 05% );}
+        &:hover{background:darken( $dark-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$dark-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($dark-color,10% );}
+        &.outline {
+            background:transparent;
+            color:$dark-color;
+            border:1px solid $dark-color;
+            &:hover{background: $dark-color;color:#FFF;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:$dark-color;}
+            &:hover::after{border-bottom-color:darken( $dark-color,10% );}
+            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::before {border-bottom-color:$dark-color;}
+            &.outline:hover::after{ border-bottom-color:$dark-color; }
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:$dark-color;}
+            &:hover::after{border-top-color:darken( $dark-color,10% );}
+            &.outline::after{ border-top-color:#FFF; }
+            &.outline::before {border-top-color:$dark-color;}
+            &.outline:hover::after{ border-top-color:$dark-color; }
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:$dark-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $dark-color,10% );}
+            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::before {border-#{$directionReverse}-color:$dark-color;}
+            &.outline:hover::after{ border-#{$directionReverse}-color:$dark-color; }
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:$dark-color;}
+            &:hover::after{border-#{$direction}-color:darken( $dark-color,10% );}
+            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::before {border-#{$direction}-color:$dark-color;}
+            &.outline:hover::after{ border-#{$direction}-color:$dark-color; }
+        }
     }
 
     &.light{
-        background: $light-color;color:$dark-color;border: 0 none;
-        &:hover{background:darken( $light-color, 05% );}
+        background: #FFF;color:$dark-color;border: 0 none;
+        &:hover{background:darken( #FFF,10% );}
+        &.tag::after{border-#{$directionReverse}-color:#FFF;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken(#FFF,10% );}
+        &.outline {
+            background:transparent;
+            color:#FFF;
+            border:1px solid #FFF;
+            &:hover{background: #FFF;color:$dark-color;}
+        }
+        &.pointing-top {
+            &::after {border-bottom-color:#FFF;}
+            &:hover::after{border-bottom-color:darken( #FFF,10% );}
+        }
+        
+        &.pointing-bottom {
+            &::after {border-top-color:#FFF;}
+            &:hover::after{border-top-color:darken( #FFF,10% );}
+        }
+    
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:#FFF;}
+            &:hover::after{border-#{$directionReverse}-color:darken( #FFF,10% );}
+        }
+    
+        &.pointing-end {
+            &::after{border-#{$direction}-color:#FFF;}
+            &:hover::after{border-#{$direction}-color:darken( #FFF,10% );}
+        }
     }
 }

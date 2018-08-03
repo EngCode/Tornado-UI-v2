@@ -12,7 +12,7 @@
     display: inline-block;
     padding:0 25px;
     height:44px;
-    line-height: 44px;
+    line-height: 42px;
     font-size: 14px;
     border: 1px solid rgba(0,0,0,.10);
     color:$dark-color;
@@ -21,9 +21,14 @@
     @extend %normal-motion;
     text-align: center;
     font-weight:$medium-weight;
+    .badge {
+        margin-top: -3px;
+        margin-#{$direction}:10px;
+        &[class*="float-"] {margin:7px 0;}
+    }
     &:hover{background: #f7f7f7;}
     &.rounded-corner { border-radius: 80px; }
-    &.rounde-corner { border-radius: 6px; }
+    &.rounde-corner { border-radius: 5px; }
     &.outline{ 
         background: transparent;
         color:$dark-color;
@@ -98,13 +103,13 @@
     }
 
     &.warning{
-        background: $warning-color;color:$reverse-color;
+        background: $warning-color;color:$dark-color;
         &:hover{background:darken( $warning-color, 05% );}
         &.outline {
             background: transparent;
             border-color: $warning-color;
             color:$warning-color;
-            &:hover{background:$warning-color;color:$reverse-color;}
+            &:hover{background:$warning-color;color:$dark-color;}
         }
     }
 

@@ -21,11 +21,6 @@ jQuery(function ($) {
     $('.gutter-small').parent().addClass('wrap-gutter-s');
     $('.gutter-medium').parent().addClass('wrap-gutter-m');
     $('.gutter-large').parent().addClass('wrap-gutter-l');
-    /*===== Remove Parent Button ======*/
-    $('body').on('click','.remove-parent', function(e){
-        e.preventDefault();
-        $(this).parent().remove();
-    });
 
     /*===== Tabs System =====*/
     $('.tabs-menu [data-tab]:first-child,.tab-content:first-child').addClass('active'); // Activate First tab and its Content Box

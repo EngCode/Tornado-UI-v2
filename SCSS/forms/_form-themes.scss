@@ -218,8 +218,10 @@ label {
     }
 
     &.floating-end { 
-        #{$direction}:auto;
-        #{$directionReverse}:0;
+        &::before {
+            #{$direction}:auto;
+            #{$directionReverse}:0;
+        }
         &.labeled::before {
             border-#{$directionReverse}:0 none;
             border-#{$direction}:1px solid rgba(0,0,0,.15);

@@ -218,9 +218,11 @@ label {
     }
 
     &.floating-end { 
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:15px; }
         &::before {
             #{$direction}:auto;
             #{$directionReverse}:0;
+            text-align: $direction;
         }
         &.labeled::before {
             border-#{$directionReverse}:0 none;

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
         <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
-        <title>Tornado CSS v2 | Masonry Grid</title>
+        <title>Tornado CSS v2 | Progress Components</title>
         <!-- Required CSS Files -->
         <link rel="stylesheet" href="assets/tornado.min.css">
         <link rel="stylesheet" href="assets/github.css">
@@ -15,7 +15,7 @@
         <!-- Fevicon -->
         <link rel="icon" type="image/png" href="img/Fevicon.png" />
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/Fevicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="7x272" href="img/Fevicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/Fevicon.png">
         <link rel="apple-touch-icon-precomposed" href="img/Fevicon.png">
     <body>
         <!-- Sidebar -->
@@ -31,11 +31,11 @@
                         <li><a href="javascript.html">Javascript</a></li>
                     </ul>
                 </li>
-                <li class="active"><a href="grid.html">Grid System</a>
+                <li><a href="grid.html">Grid System</a>
                     <ul>
                         <li><a href="grid.html">Standard Grid</a></li>
                         <li><a href="dynamic-grid.html">Dynamic Grid</a></li>
-                        <li class="active"><a href="masonry-grid.html">Masonry Grid</a></li>
+                        <li><a href="masonry-grid.html">Masonry Grid</a></li>
                         <li><a href="grid-utilities.html">Grid Utilities</a></li>
                     </ul>
                 </li>
@@ -51,10 +51,10 @@
                         <li><a href="budgs.html">Tags and Badges</a></li>
                     </ul>
                 </li>
-                <li><a href="form.html">Forms</a>
+                <li class="active"><a href="form.html">Forms</a>
                     <ul>
                         <li><a href="form.html">Standard Controls</a></li>
-                        <li><a href="form-progress.html">Progress Components</a></li>
+                        <li class="active"><a href="form-progress.html">Progress Components</a></li>
                         <li><a href="form-upload.html">Upload Components</a></li>
                         <li><a href="buttons.html">Buttons</a></li>
                         <li><a href="alert.html">Alerts</a></li>
@@ -91,7 +91,7 @@
                 <div class="container-fluid">
                     <a href="index.html" class="logo"><img src="img/tornado-icon-white.png" alt="tornado logo"></a>
 
-                    <div class="navigation-menu">
+                    <div class="navigation-menu" data-id="header-menu">
                         <ul>
                             <li><a href="#">Home</a></li>
                             <li class="active"><a href="#">Documentation</a></li>
@@ -111,62 +111,58 @@
             <!-- Page Content -->
             <div class="page-content">
                 <div class="page-head">
-                    <h1>Dynamic Grid</h1>
-                    <p>Dynamic Grid is equal width columns that scales down from desktop to mobile Dynamicly With one Class of How Match Columns in a Row Line.</p>
-                </div>    
+                    <h1>Progress Components</h1>
+                    <p>Tornado Provide a Predesigned Standard Form Controls With Support for Multiple Themes Style and Many Other Useful Features.</p>
+                </div>
 
-                <!-- Text Paragraph -->
-                <div class="pargraph-area">
-                    <h4>Why Dynamic Grid ?</h4>
-                    <p>
-                        This feature allows you to create columns may not created with the standard grid for example if you wanna create a 5 or 7 equal columns etc. you will not be able 
-                        to do it with the standard grid layout see the example below and try to resize your browser to see how it responds and changing its width to fit the device.
+                <!-- Sass File Path -->
+                <div class="sass-path alert">
+                    <h5 class="tx-uppercase">Sass Customize</h5>
+                    <p> 
+                        in order to edit the Progress Components you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/forms/_progress.scss</span> and do not forget to compile the main files of the framework
+                        <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
                 </div>
 
-                <div class="row masonry">
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-4.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-2.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-3.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-1.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-4.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-3.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-1.png" alt="" class="fluid-width">
-                    </div>
-
-                    <div class="col-12 col-m-6 col-l-3">
-                        <img src="img/img-2.png" alt="" class="fluid-width">
-                    </div>
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Standard Progress Bars</h4>
+                    <p>
+                        in order to 
+                    </p>
                 </div>
 
+                <!-- Progress Example -->
+                <div class="progress-example row">
+                    <div class="col-12 col-m-6 col-xl-4">
+                        <!-- Progress Component -->
+                        <div class="progress-bar" data-value="49%" data-title="Default Progress Bar"></div>
+                    </div>
+                    <div class="col-12 col-m-6 col-xl-4">
+                        <!-- Progress Component -->
+                        <div class="progress-bar primary" data-value="60%" data-title="Primary Progress Bar"></div>
+                    </div>
+                </div>
+                <!-- // Progress Example -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#standard-progress">Copy Code</button>
+<code class="markup" id="standard-progress">
+
+</code>
+</pre> 
+<!-- // Code Viewer -->
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">
-                    <a href="grid-utilities.html" class="btn">Next <span>Grid Utilities</span></a>
-                    <a href="dynamic-grid.html" class="btn">Previous <span>Dynamic Grid</span></a>
+                    <a href="form-upload.html" class="btn">Next <span>Upload Components</span></a>
+                    <a href="form.html" class="btn">Previous <span>Standard Controls</span></a>
                 </div>
             </div>
+            <!-- // Page Content -->
         </div>
-        
         
         <!-- Required JS Files (Always in Footer) -->
         <script src="assets/jquery-3.3.1.min.js"></script>

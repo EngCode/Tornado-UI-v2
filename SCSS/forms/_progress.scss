@@ -1,0 +1,98 @@
+/*======== Progress Bar ========*/
+.progress-bar {
+    //*==== Colors For SVG DATA ====*/
+    $default_color:rgba($gray-color,0.99);
+    $primary_bar:rgba($primary-color,0.99);
+    $secondary_bar:rgba($secondary-color,0.99);
+    $success_bar:rgba($success-color,0.99);
+    $danger_bar:rgba($danger-color,0.99);
+    $warning_bar:rgba($warning-color,0.99);
+    $info_bar:rgba($info-color,0.99);
+    //*==== Default ====*/
+    display: block;
+    height: 24px;
+    background-color:#ebebeb;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-image:url('data:image/svg+xml,\
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+        <rect fill="'+ $default_color +'" width="100" height="24"/>\
+    </svg>');
+    @extend %fast-motion;
+    font-size:14px;
+    line-height: 23px;
+    /*==== Progress Title ====*/
+    &::before {
+        content: attr(data-title);
+        display: block;
+        height: 25px;
+        font-size:14px;
+        line-height: 25px;
+        position: absolute;
+        #{$direction}:0;
+        width:100%;
+        bottom: 100%;
+    }
+    
+    .progress-num {
+        position: absolute;
+        color:#FFF;
+        display: block;
+        height: 25px;
+        top:0;
+        bottom: 0;
+        padding:0 15px;
+        @if ( $page-dir == 'ltr' ) {
+            -webkit-transform: translateX(-100%);
+                    transform: translateX(-100%);
+        } @else {
+            -webkit-transform: translateX(100%);
+                    transform: translateX(100%);
+        }
+    }
+    /*======== Coloring ========*/
+    &.primary{
+        background-image:url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+            <rect fill="'+ $primary_bar +'" width="100" height="24"/>\
+        </svg>');
+    }
+
+    &.secondary{
+        background-image:url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+            <rect fill="'+ $secondary_bar +'" width="100" height="24"/>\
+        </svg>');
+    }
+
+    &.success{
+        background-image:url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+            <rect fill="'+ $success_bar +'" width="100" height="24"/>\
+        </svg>');
+    }
+
+    &.danger{
+        background-image:url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+            <rect fill="'+ $danger_bar +'" width="100" height="24"/>\
+        </svg>');
+    }
+
+    &.warning{
+        background-image:url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+            <rect fill="'+ $warning_bar +'" width="100" height="24"/>\
+        </svg>');
+    }
+
+    &.info{
+        background-image:url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="24" style="transition:all 0.3s;-webkit-transition:all 0.3s;">\
+            <rect fill="'+ $info_bar +'" width="100" height="24"/>\
+        </svg>');
+    }
+}
+

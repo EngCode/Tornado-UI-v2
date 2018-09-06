@@ -129,19 +129,25 @@
                 <div class="pargraph-area">
                     <h4>Standard Progress Bars</h4>
                     <p>
-                        in order to 
+                        in order to use the progress bar simply create an html element and name it <span>progress-bar</span> then add a data attribute
+                        for the value <span>data-value="50%"</span> and you can add a title to it by using the data title attribute <span>data-title="Title"</span>
+                        and for the colors theme you can use the colors class like <span>primary</span>,<span>secondary</span>,<span>primary</span>..etc.
                     </p>
                 </div>
 
                 <!-- Progress Example -->
                 <div class="progress-example row">
-                    <div class="col-12 col-m-6 col-xl-4">
+                    <div class="col-12 col-m-6 col-l-4">
                         <!-- Progress Component -->
                         <div class="progress-bar" data-value="49%" data-title="Default Progress Bar"></div>
                     </div>
-                    <div class="col-12 col-m-6 col-xl-4">
+                    <div class="col-12 col-m-6 col-l-4">
                         <!-- Progress Component -->
                         <div class="progress-bar primary" data-value="60%" data-title="Primary Progress Bar"></div>
+                    </div>
+                    <div class="hidden-m-down col-l-4">
+                        <!-- Progress Component -->
+                        <div class="progress-bar success" data-value="70%" data-title="Success Progress Bar"></div>
                     </div>
                 </div>
                 <!-- // Progress Example -->
@@ -149,7 +155,14 @@
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
 <button class="copy-btn" data-clipboard-target="#standard-progress">Copy Code</button>
-<code class="markup" id="standard-progress">
+<code class="markup" id="standard-progress">&lt;!-- Progress Component -->
+&lt;div class="progress-bar" data-value="49%" data-title="Default Progress Bar">&lt;/div>
+
+&lt;!-- Progress Component -->
+&lt;div class="progress-bar primary" data-value="60%" data-title="Primary Progress Bar">&lt;/div>
+
+&lt;!-- Progress Component -->
+&lt;div class="progress-bar success" data-value="70%" data-title="Success Progress Bar">&lt;/div>
 
 </code>
 </pre> 

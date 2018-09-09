@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
         <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
-        <title>Tornado CSS v2 | Progress Components</title>
+        <title>Tornado CSS v2 | File Upload Component</title>
         <!-- Required CSS Files -->
         <link rel="stylesheet" href="assets/tornado.min.css">
         <link rel="stylesheet" href="assets/github.css">
@@ -54,8 +54,8 @@
                 <li class="active"><a href="form.html">Forms</a>
                     <ul>
                         <li><a href="form.html">Standard Controls</a></li>
-                        <li class="active"><a href="form-progress.html">Progress Components</a></li>
-                        <li><a href="form-upload.html">Upload Components</a></li>
+                        <li><a href="form-progress.html">Progress Components</a></li>
+                        <li class="active"><a href="form-upload.html">Upload Components</a></li>
                         <li><a href="buttons.html">Buttons</a></li>
                         <li><a href="alert.html">Alerts</a></li>
                         <li><a href="notifications.html">Notifications</a></li>
@@ -111,7 +111,7 @@
             <!-- Page Content -->
             <div class="page-content">
                 <div class="page-head">
-                    <h1>Form | Progress Components</h1>
+                    <h1>Form | File Upload Component</h1>
                     <p>Tornado Provide a Predesigned Standard Form Controls With Support for Multiple Themes Style and Many Other Useful Features.</p>
                 </div>
 
@@ -119,51 +119,42 @@
                 <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Progress Components you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_progress.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Uploading Components you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/forms/_fileupload.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
                 </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Standard Progress Bars</h4>
+                    <h4>Standard File Upload Control</h4>
                     <p>
-                        in order to use the progress bar simply create an html element and name it <span>progress-bar</span> then add a data attribute
-                        for the value <span>data-value="50%"</span> and you can add a title to it by using the data title attribute <span>data-title="Title"</span>
-                        and for the colors theme you can use the colors class like <span>primary</span>,<span>secondary</span>,<span>primary</span>..etc.
+                        in order to use the Tornado Standard File Control simply put your <span>file</span> input inside a wrapper tag and give it a class Name
+                        <span>file-input</span> and for the placeholder text you can use the attribute <span>data-text</span> and for the button text use the
+                        attribute <span>data-btn</span> for changing the text thats it now you got file upload with input theme.
                     </p>
                 </div>
 
                 <!-- Progress Example -->
                 <div class="progress-example row">
-                    <div class="col-12 col-m-6 col-l-4">
-                        <!-- Progress Component -->
-                        <div class="progress-bar" data-value="49%" data-title="Default Progress Bar"></div>
-                    </div>
-                    <div class="col-12 col-m-6 col-l-4">
-                        <!-- Progress Component -->
-                        <div class="progress-bar primary" data-value="60%" data-title="Primary Progress Bar"></div>
-                    </div>
-                    <div class="hidden-m-down col-l-4">
-                        <!-- Progress Component -->
-                        <div class="progress-bar success" data-value="70%" data-title="Success Progress Bar"></div>
+                    <div class="col-12 col-m-6">
+                        <!-- Standard Uploader -->
+                        <div class="file-input" data-text="File Upload" data-btn="Browse">
+                            <input type="file">
+                        </div>
+                        <!-- // Standard Uploader -->
                     </div>
                 </div>
                 <!-- // Progress Example -->
 
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-progress">Copy Code</button>
-<code class="markup" id="standard-progress">&lt;!-- Progress Component -->
-&lt;div class="progress-bar" data-value="49%" data-title="Default Progress Bar">&lt;/div>
-
-&lt;!-- Progress Component -->
-&lt;div class="progress-bar primary" data-value="60%" data-title="Primary Progress Bar">&lt;/div>
-
-&lt;!-- Progress Component -->
-&lt;div class="progress-bar success" data-value="70%" data-title="Success Progress Bar">&lt;/div>
-
+<button class="copy-btn" data-clipboard-target="#standard-file">Copy Code</button>
+<code class="markup" id="standard-file">&lt;!-- Standard Uploader -->
+&lt;div class="file-input" data-text="File Upload" data-btn="Browse">
+    &lt;input type="file">
+&lt;/div>
+&lt;!-- // Standard Uploader -->
 </code>
 </pre> 
 <!-- // Code Viewer -->
@@ -177,7 +168,7 @@
                     <table class="table bordered striped">
                         <Thead>
                             <tr>
-                                <th class="col-3">Class/Attribute Name</th>
+                                <th class="col-3">Class Name</th>
                                 <th class="col-3">Element</th>
                                 <th class="col-6">Description</th>
                             </tr>
@@ -188,49 +179,14 @@
                                 <td class="col-3">Progress Bar</td>
                                 <td class="col-6">Coloring Progress Bar with The Primary Theme Color.</td>
                             </tr>
-                            <tr>
-                                <th class="col-3">secondary</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">Coloring Progress Bar with The Secondary Theme Color.</td>
-                            </tr>
-                            <tr>
-                                <th class="col-3">success</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">Coloring Progress Bar with The Success Theme Color.</td>
-                            </tr>
-                            <tr>
-                                <th class="col-3">danger</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">Coloring Progress Bar with The Danger/Error Theme Color.</td>
-                            </tr>
-                            <tr>
-                                <th class="col-3">warning</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">Coloring Progress Bar with The Warning Theme Color.</td>
-                            </tr>
-                            <tr>
-                                <th class="col-3">info</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">Coloring Progress Bar with The Information Theme Color.</td>
-                            </tr>
-                            <tr>
-                                <th class="col-3">data-value</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">The Progress Value Attribute.</td>
-                            </tr>
-                            <tr>
-                                <th class="col-3">data-title</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">The Progress Title Showing Above The Progress Bar.</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">
-                    <a href="form-upload.html" class="btn">Next <span>Upload Components</span></a>
-                    <a href="form.html" class="btn">Previous <span>Standard Controls</span></a>
+                    <a href="form-upload.html" class="btn">Next <span>Progress Bar</span></a>
+                    <a href="buttons.html" class="btn">Previous <span>Buttons</span></a>
                 </div>
             </div>
             <!-- // Page Content -->

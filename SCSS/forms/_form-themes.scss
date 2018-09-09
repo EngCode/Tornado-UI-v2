@@ -1,5 +1,3 @@
-//==== Import Buttons ====//
-@import 'buttons';
 //==== Global SASS Control Selector ====//
 %form-control {
     display: block;
@@ -232,41 +230,6 @@ label {
     }
 }
 
-/*==== File Uploade Input ====*/
-.file-input{
-    position:relative;
-    overflow:hidden;
-    margin-bottom:15px;
-    &:after{@extend %clear-after;}
-    // Upload Input
-    input[type="file"] {
-        position:absolute;
-        opacity:0;
-        cursor:pointer;
-        margin:0;
-        top:0;
-        $direction:0;
-        width:100%;
-        height: 100%;
-        z-index:1;
-    }
-    
-    // Fake Path Input
-    .file-path {
-        float:$direction;
-        width:80%;
-        margin:auto;
-    }
-
-    // Upload Button
-    .btn {
-        float:$directionReverse;
-        margin:0;
-        text-align:center;
-        width:20%;
-    }
-}
-
 /*==== Checkboxs and Radio Buttons ====*/
 .checkbox,.switch-control,.radio-button,.tag-check{
     display:inline-block;
@@ -412,3 +375,9 @@ label {
         }
     }
 }
+
+//==== Form Parts ====//
+@import 'buttons';
+@import 'progress';
+@import 'fileupload';
+@import 'alerts';

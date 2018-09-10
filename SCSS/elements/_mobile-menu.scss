@@ -20,6 +20,7 @@
         transition:all 0.5s;
         z-index:102;
         margin-#{$direction}: auto;
+        position: relative;
     }
 
     &.has-logo .logo {
@@ -78,6 +79,7 @@
         margin:0;
         background:#FFF;
         li{
+            position: relative;
             padding:15px 20px;
             float:none;
             border-bottom:1px solid rgba(0, 0, 0, .10);
@@ -99,11 +101,40 @@
     
 
     li > ul,.megamenu {
-        position: static !important;
-        display: none;
-        margin: 0 -15px;
-        width: auto !important;
-        margin-top: 15px;
+        position: absolute;
+        #{$directionReverse}:-100%;
+        width:90%;
+        top:0;
+        height: 100%;
+        overflow-x:hidden;
+        overflow-y:visible;
+        -webkit-transition: $directionReverse 0.3s;
+        transition: $directionReverse 0.3s;
+
+    }
+
+    .toggle-display {
+        position: absolute;
+        width:48px;
+        height:53px;
+        display: block;
+        cursor: pointer;
+        #{$directionReverse}:0;
+        top:0;
+        @extend %fast-motion;
+    }
+
+    li.active {
+        position: static;
+        > ul,.megamenu {#{$directionReverse}:0;z-index: 100;}
+        .toggle-display {
+            #{$directionReverse}:90%;
+            width:10%;
+            top:0;
+            height: 100%;
+            background: rgba(0,0,0,.80);
+            z-index: 100;
+        }
     }
 
     *[calss*="col-"],*[calss*="box-"] {width: 100% !important;}

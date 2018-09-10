@@ -55,10 +55,8 @@
                     <ul>
                         <li><a href="form.html">Standard Controls</a></li>
                         <li><a href="form-progress.html">Progress Components</a></li>
-                        <li class="active"><a href="form-upload.html">Upload Components</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
+                        <li class="active"><a href="buttons.html">Buttons</a></li>
                         <li><a href="alert.html">Alerts</a></li>
-                        <li><a href="notifications.html">Notifications</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Components</a>
@@ -111,7 +109,7 @@
             <!-- Page Content -->
             <div class="page-content">
                 <div class="page-head">
-                    <h1>Form | File Upload Component</h1>
+                    <h1>Form | Buttons</h1>
                     <p>Tornado Provide a Predesigned Standard Form Controls With Support for Multiple Themes Style and Many Other Useful Features.</p>
                 </div>
 
@@ -119,42 +117,48 @@
                 <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Uploading Components you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_fileupload.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Buttons you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/forms/_buttons.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
                 </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Standard File Upload Control</h4>
+                    <h4>Standard Buttons</h4>
                     <p>
-                        in order to use the Tornado Standard File Control simply put your <span>file</span> input inside a wrapper tag and give it a class Name
-                        <span>file-input</span> and for the placeholder text you can use the attribute <span>data-text</span> and for the button text use the
-                        attribute <span>data-btn</span> for changing the text thats it now you got file upload with input theme.
+                        in order to use the button theme simply you can add the class <span>btn</span> to your element tag and for coloring the button
+                        you can use the tornado color's class and you can switch between many sizes lets see the example of every button style we have below.
                     </p>
                 </div>
 
                 <!-- Progress Example -->
-                <div class="progress-example row">
-                    <div class="col-12 col-m-6">
-                        <!-- Standard Uploader -->
-                        <div class="file-input" data-text="File Upload" data-btn="Browse">
-                            <input type="file">
-                        </div>
-                        <!-- // Standard Uploader -->
-                    </div>
+                <div class="progress-example">
+                    <a href="#" class="btn">Default Button</a>
+                    <a href="#" class="btn primary">Primary</a>
+                    <a href="#" class="btn secondary">Secondary</a>
+                    <a href="#" class="btn info">Info</a>
+                    <a href="#" class="btn success">Success</a>
+                    <a href="#" class="btn danger">Danger</a>
+                    <a href="#" class="btn warning">Warning</a>
+                    <a href="#" class="btn gray">Gray</a>
+                    <a href="#" class="btn dark">Dark</a>
                 </div>
                 <!-- // Progress Example -->
 
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-file">Copy Code</button>
-<code class="markup" id="standard-file">&lt;!-- Standard Uploader -->
-&lt;div class="file-input" data-text="File Upload" data-btn="Browse">
-    &lt;input type="file">
-&lt;/div>
-&lt;!-- // Standard Uploader -->
+<button class="copy-btn" data-clipboard-target="#standard-btns">Copy Code</button>
+<code class="markup" id="standard-btns">&lt;a href="#" class="btn">Default Button&lt;/a>
+&lt;a href="#" class="btn primary">Primary&lt;/a>
+&lt;a href="#" class="btn secondary">Secondary&lt;/a>
+&lt;a href="#" class="btn info">Info&lt;/a>
+&lt;a href="#" class="btn success">Success&lt;/a>
+&lt;a href="#" class="btn danger">Danger&lt;/a>
+&lt;a href="#" class="btn warning">Warning&lt;/a>
+&lt;a href="#" class="btn gray">Gray&lt;/a>
+&lt;a href="#" class="btn dark">Dark&lt;/a>
+    
 </code>
 </pre> 
 <!-- // Code Viewer -->
@@ -176,8 +180,43 @@
                         <tbody>
                             <tr>
                                 <th class="col-3">primary</th>
-                                <td class="col-3">Progress Bar</td>
-                                <td class="col-6">Coloring Progress Bar with The Primary Theme Color.</td>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Primary Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">secondary</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Secondary Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">info</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Info Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">success</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Success Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">danger</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Danger Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">warning</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Warning Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">gray</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Gray Theme Color.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">dark</th>
+                                <td class="col-3">Button</td>
+                                <td class="col-6">Coloring Button with The Dark Theme Color.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -185,8 +224,8 @@
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">
-                    <a href="form-upload.html" class="btn">Next <span>Progress Bar</span></a>
-                    <a href="buttons.html" class="btn">Previous <span>Buttons</span></a>
+                    <a href="alert.html" class="btn">Next <span>Alerts</span></a>
+                    <a href="form-upload.html" class="btn">Previous <span>Progress Bar</span></a>
                 </div>
             </div>
             <!-- // Page Content -->

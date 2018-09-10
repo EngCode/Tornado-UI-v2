@@ -388,3 +388,4 @@ ul.tornado-ui, ol.tornado-ui, dl.tornado-ui{margin-top: 15px;}
 .tornado-header .container { max-width: none; }
 .badges-example{margin-bottom: 30px;}
 .badges-example .badge:not(.tag),.badges .badge:not(.tag){margin: 5px;}
+.progress-example .btn {margin-right: 15px;margin-bottom: 15px;}

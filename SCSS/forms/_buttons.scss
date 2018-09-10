@@ -146,17 +146,6 @@
         }
     }
 
-    &.light{
-        background: $light-color;color:$dark-color;
-        &:hover{background:darken( $light-color, 05% );}
-        &.outline {
-            background: transparent;
-            border-color: $light-color;
-            color:$dark-color;
-            &:hover{background:$light-color;color:$dark-color;}
-        }
-    }
-
     &.rounded{border-radius:100px;}
 }
 

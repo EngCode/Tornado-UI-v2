@@ -11,8 +11,8 @@
 .btn {
     display: inline-block;
     padding:0 25px;
-    height:44px;
-    line-height: 42px;
+    height:42px;
+    line-height: 40px;
     font-size: 14px;
     border: 1px solid rgba(0,0,0,.10);
     color:$dark-color;
@@ -27,8 +27,7 @@
         &[class*="float-"] {margin:7px 0;}
     }
     &:hover{background: #f7f7f7;}
-    &.rounded-corner { border-radius: 80px; }
-    &.rounde-corner { border-radius: 5px; }
+    &.round-corner { border-radius: 5px; }
     &.outline{ 
         background: transparent;
         color:$dark-color;
@@ -40,7 +39,7 @@
         font-size: 12px;
         padding: 0 15px;
         height: 27px;
-        line-height: 27px;
+        line-height: 25px;
         &.outline{line-height: 25px;border-width:1px;}
     }
     &.small {
@@ -53,9 +52,9 @@
     &.large {
         font-size: 16px;
         padding: 0 30px;
-        height:58px;
-        line-height: 58px;
-        &.outline{line-height: 52px;border-width:3px;}
+        height:50px;
+        line-height: 50px;
+        &.outline{line-height: 48px;border-width:3px;}
     }
     //==== Coloring Buttons ====//
     &.primary{

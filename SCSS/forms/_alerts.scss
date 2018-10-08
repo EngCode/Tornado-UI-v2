@@ -1,6 +1,6 @@
 .alert{
     position: relative;
-    padding:1.3rem 1.875rem;
+    padding:15px 20px;
     background:$gray-bg;
     color:$black-color;
     font-size:15px;
@@ -8,15 +8,13 @@
     /* Alert Text Reset */
     p {margin: 0;padding: 0;} 
     /* Dismissal Button Style */
-    .close-btn {
+    .remove-parent {
         position: absolute;
-        #{$directionReverse}:0.5rem;
-        top:50%;
+        #{$directionReverse}:0;
+        top:0;
         width:50px;
         height: 50px;
-        -webkit-transform: translateY(-50%);
-                transform: translateY(-50%);
-        line-break: 50px;
+        line-height: 50px;
         color:rgba(0,0,0,.30);
         font-size:15px;
         text-align: center;
@@ -27,7 +25,7 @@
     /* Dark background style */
     &.dark {background:$dark-bg;color:$light-color;
         /* Dismissal Button Style Reverse */
-        .close-btn {color:$light-color;} 
+        .remove-parent {color:$light-color;} 
     } 
     /* Success background Style */
     &.success {background:$success-bg;} 

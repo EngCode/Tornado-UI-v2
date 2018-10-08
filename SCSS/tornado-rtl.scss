@@ -81,9 +81,6 @@ $small-query-down:640px; //  Mobile Screen Size to start from
 $medium-query-down:980px; // Tablet Screen Size to start from
 $large-query-down:1200px; // Desktop Screen Size to start from
 $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
-//========== Global Sass ==========//
-@import 'assets/selectors';
-@import 'assets/mixins';
 /*========== Loading Fonts ==========*/
 @font-face {
     font-family: 'Helvetica';
@@ -105,11 +102,14 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
     font-weight: normal;
     src: url('../fonts/tornado-icons.woff') format('woff');
 }
-/*========== Global Sass ==========*/
+//========== Global Sass ==========//
+@import 'assets/selectors';
+@import 'assets/mixins';
 @import 'assets/reset';
+@import 'assets/utilities';
+/*========== Global Sass ==========*/
 @import 'tornado-icons';
 @import 'grid/grid-system';
-@import 'assets/utilities';
 /*========== Elements ==========*/
 @import 'elements/typography';
 @import 'elements/responsive-menus';
@@ -125,5 +125,6 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'components/tables';
 @import 'components/tabs-system';
 @import 'components/slick-slider';
+@import 'components/modals';
 /*========== Blank Project Theme ==========*/
 @import 'theme';

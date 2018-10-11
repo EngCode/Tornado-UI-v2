@@ -2,12 +2,12 @@
   "name": "tornado-v2",
   "version": "0.7.0",
   "description": "Tornado v2 Frontend Framework",
-  "main": "tornado.js",
+  "main": "/javascript/tornado.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "dev" : "webpack"
+    "tornado-v2": "webpack"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/EngCode/Tornado-v2#readme",
   "devDependencies": {
-    "webpack": "^4.20.2"
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   }
 }

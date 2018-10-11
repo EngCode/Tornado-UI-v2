@@ -10,27 +10,21 @@
 /*jslint browser:true */
 
 //===== Dependency Includes ======//
-var jquery = require('components/includes/jquery.3.3.1.min.js'); //=== jQuery Include ===//
-var slickSlider = require('components/includes/slick.slider.1.8.0.js'); //=== Slick Slider Include ===//
-
-
-/*=== Tornado jQuery ===*/
-jQuery(function ($) {
-    'use strict';
-    //=== Grid Fix Include ===//
-    var grid = require('components/grid-gutter.js'); 
-    //=== Tabs Include ===//
-    var tabs = require('components/tabs-system.js');
-    //=== Accordion Include ===//
-    var accordion = require('components/accordion.js');
-    //=== Components Include ===//
-    var components = require('components/components.js');
-    //=== Forms Include ===//
-    var forms = require('components/forms.js');
-    //=== Responsive Menus Include ===//
-    var responsiveMenus = require('components/responsive-menus.js');
-    //=== Navigation Menu Include ===//
-    var navigationMenu = require('components/navigation-menu.js');
-    //=== Popup Modals Include ===//
-    var popupModals = require('components/popup-modals.js');
-});
+import './components/includes/jquery.js'; //=== jQuery Include ===//
+import './components/includes/slick.slider.js'; //=== Slick Slider Include ===//
+//=== Components Include ===//
+import './components/utlities.js';
+/*=== Tornado Components ===*/
+import './components/grid-gutter.js';
+//=== Tabs Include ===//
+import './components/tabs-system.js';
+//=== Accordion Include ===//
+import './components/accordion.js';
+//=== Forms Include ===//
+import './components/forms.js';
+//=== Responsive Menus Include ===//
+import './components/responsive-menus.js';
+//=== Navigation Menu Include ===//
+import './components/navigation-menu.js';
+//=== Popup Modals Include ===//
+import './components/popup-modals.js';

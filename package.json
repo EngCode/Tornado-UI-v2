@@ -1,0 +1,36 @@
+{
+  "name": "tornado-v2",
+  "version": "0.7.0",
+  "description": "Tornado v2 Frontend Framework",
+  "main": "tornado.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev" : "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EngCode/Tornado-v2.git"
+  },
+  "keywords": [
+    "ui",
+    "frontend",
+    "frame",
+    "framework",
+    "js",
+    "css",
+    "sass",
+    "design",
+    "ux"
+  ],
+  "author": "Abdullah.Ramadan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EngCode/Tornado-v2/issues"
+  },
+  "homepage": "https://github.com/EngCode/Tornado-v2#readme",
+  "devDependencies": {
+    "webpack": "^4.20.2"
+  }
+}

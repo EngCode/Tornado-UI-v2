@@ -50,7 +50,7 @@
     */
 
     /* set gutters space for all columns */
-    [class*="col-"],[class*="box-"] {padding:0 $gutterSize/2;}
+    [class*="col-"],[class*="box-"]{padding:0 $gutterSize/2;}
 }
 
 @import 'grid-columns'; // Columns Sizes and Responsive

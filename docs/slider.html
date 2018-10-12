@@ -77,6 +77,7 @@
                         <li><a href="colors.html">Colors Palette</a></li>
                     </ul>
                 </li>
+                <li><a href="utilities.html">Utilities</a></li>
             </ul>
         </div>
         
@@ -108,36 +109,502 @@
             <div class="page-content">
                 <div class="page-head">
                     <h1>Tornado | Carousel</h1>
-                    <p>This Page is Under Construction</p>
+                    <p>Tornado Using a 3rd Party Plugins for Carousel Components and tha is  <span>Slick-Slider</span> Because its the Best.</p>
                 </div>
 
-                <div class="alert danger">This Page is Under Construction</div>
-
                 <!-- Sass File Path -->
-                <!-- <div class="sass-path alert">
+                <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Alerts you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_alerts.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Slick Slider Themes and Baisc CSS you can use the css class's to overide the themes or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/components/_slick-slider.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
-                </div> -->
+                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Carousel</h4>
+                    <h4>Baisc Usage and Documentation</h4>
                     <p>
-                        
+                        for <a href="http://kenwheeler.github.io/slick/" target="_blank"><span>Slick Slider Documentation</span></a> and Offical Webpage
+                        <a href="http://kenwheeler.github.io/slick/" target="_blank">Click Here</a>,
+                        and for usage you can simply use the plugin so easly you create a container element for you'r slides and give any class name
+                        you want lets say for example we name it <span>slider-component</span> and inside that container you can create your slides
+                        html an any way you want its fit any type of content then you initialize the plugin options for the slides container see 
+                        the code below.
                     </p>
                 </div>
 
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-alert">Copy Code</button>
-<code class="markup" id="standard-alert">
+<button class="copy-btn" data-clipboard-target="#slick-basic-struct">Copy Code</button>
+<code class="markup" id="slick-basic-struct">&lt;div class="slider-component">
+    &lt;div class="slide-1">&lt;/div>
+    &lt;div class="slide-2">&lt;/div>
+    &lt;div class="slide-3">&lt;/div>
+    &lt;div class="slide-4">&lt;/div>
+&lt;/div>
 </code>
 </pre> 
 <!-- // Code Viewer -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#slick-basic">Copy Code</button>
+<code class="javascript" id="slick-basic">$('.slider-component').slick({ Options });
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Slick Options</h4>
+                    <p>
+                        in the Table below you will see The Most Important Options That Will Serve and Cover all you'r needs.
+                    </p>
+                </div>
+
+                <div class="responsive-table">
+                    <table class="table bordered striped">
+                        <Thead>
+                            <tr>
+                                <th class="col-3">Option</th>
+                                <th class="col-3">Default</th>
+                                <th class="col-3">Type</th>
+                                <th class="col-3">Discription</th>
+                            </tr>
+                        </Thead>
+                        <tbody>
+                            <tr>
+                                <th class="col-3">rtl</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enable/Disable RTL Mode.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">infinite</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Infinite looping.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">initialSlide</th>
+                                <td class="col-3">0</td>
+                                <td class="col-3">integer</td>
+                                <td class="col-3">Slide to start on.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">autoplay</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enable/Disable Autoplay.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">autoplaySpeed</th>
+                                <td class="col-3">3000</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3">Autoplay Delay Speed.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">speed</th>
+                                <td class="col-3">300</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3">Sliding Animation Speed.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">slidesToShow</th>
+                                <td class="col-3">1</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3"># of slides to show at a time.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">slidesToScroll</th>
+                                <td class="col-3">1</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3"># of slides to scroll at a time.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">rows</th>
+                                <td class="col-3">1</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3">initializes grid mode for more then 1 row.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">slidesPerRow</th>
+                                <td class="col-3">1</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3">this sets how many slides are in each grid row.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">dots</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enable/Disable Bullet Pagination.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">appendDots</th>
+                                <td class="col-3">$(element)</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">Change where the navigation dots are attached (Selector, htmlString, Array, Element, jQuery object).</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">customPaging</th>
+                                <td class="col-3">n/a</td>
+                                <td class="col-3">function</td>
+                                <td class="col-3">Custom paging templates.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">arrows</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enable/Disable Next/Previous Buttons.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">prevArrow</th>
+                                <td class="col-3">&lt;button type="button" class="slick-prev">Previous&lt;/button></td>
+                                <td class="col-3">string (html | jQuery selector) | object (DOM node | jQuery object)</td>
+                                <td class="col-3">Previous Button Element</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">nextArrow</th>
+                                <td class="col-3">&lt;button type="button" class="slick-next">Next&lt;/button></td>
+                                <td class="col-3">string (html | jQuery selector) | object (DOM node | jQuery object)</td>
+                                <td class="col-3">Next Button Element</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">appendArrows</th>
+                                <td class="col-3">$(element)</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">Change where the navigation arrows are attached (Selector, htmlString, Array, Element, jQuery object).</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">variableWidth</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Disables automatic slide width calculation.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">adaptiveHeight</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Adapts slider height to the current slide.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">centerMode</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enables centered view with partial prev/next slides. Use with odd numbered slidesToShow counts.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">centerPadding</th>
+                                <td class="col-3">'50px'</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">Side padding when in center mode. (px or %).</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">vertical</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Vertical slide direction.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">verticalSwiping</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Changes swipe direction to vertical.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">asNavFor</th>
+                                <td class="col-3">$(element)</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">Enables syncing of multiple sliders.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">focusOnSelect</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enable focus on selected element (click).</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">focusOnChange</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Puts focus on slide after change.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">fade</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enables fade Effect.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">waitForAnimate</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Ignores requests to advance the slide while animating.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">cssEase</th>
+                                <td class="col-3">'ease'</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">CSS3 easing.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">easing</th>
+                                <td class="col-3">'linear'</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">animate() fallback easing.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">pauseOnDotsHover</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Pauses autoplay when a dot is hovered.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">pauseOnFocus</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Pauses autoplay when slider is focussed.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">pauseOnHover</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Pauses autoplay on hover.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">draggable</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enables desktop dragging.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">swipe</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enables touch swipe.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">swipeToSlide</th>
+                                <td class="col-3">false</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Swipe to slide irrespective of slidesToScroll.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">edgeFriction</th>
+                                <td class="col-3">0.15</td>
+                                <td class="col-3">integer</td>
+                                <td class="col-3">Resistance when swiping edges of non-infinite carousels.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">touchMove</th>
+                                <td class="col-3">true</td>
+                                <td class="col-3">boolean</td>
+                                <td class="col-3">Enables slide moving with touch.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">touchThreshold</th>
+                                <td class="col-3">5</td>
+                                <td class="col-3">int</td>
+                                <td class="col-3">To advance slides, the user must swipe a length of (1/touchThreshold) * the width of the slider.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">zIndex</th>
+                                <td class="col-3">1000</td>
+                                <td class="col-3">number</td>
+                                <td class="col-3">Set the zIndex values for slides, useful for IE9 and lower.</td>
+                            </tr>
+                            <tr>
+                                <th class="col-3">lazyLoad</th>
+                                <td class="col-3">'ondemand'</td>
+                                <td class="col-3">string</td>
+                                <td class="col-3">lazy load technique. 'ondemand' loads the image when you slide to it, 'progressive' loads one image after the other when the page loads.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Slick Responsive</h4>
+                    <p>
+                        for the responsive technique it works simply like That you activate the option <span>responsive: [{ Responsive Settings }]</span> the settings value type
+                        is Array of objects in it you Enables settings at given <span>breakpoint</span>. Set <span>settings</span> to "unslick" instead of an object to disable 
+                        slick at a given <span>breakpoint</span> you can see the example below
+                    </p>
+                </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#slick-responsive">Copy Code</button>
+<code class="javascript" id="slick-responsive">$('.slider-component').slick({ 
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        dots: true
+      }
+    }, {
+      breakpoint: 300,
+      settings: "unslick" // destroys slick
+    }]
+});
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tornado Single Slider Theme</h4>
+                    <p>
+                        tornado provide predeisnged theme and example for quick usage for activating the default tornado theme add class name
+                        <span>slider-component</span> to the slider element see the example below.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-l-6">
+                        <!-- Slider Container -->
+                        <div class="slider-component">
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x840.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x840.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x840.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x840.png" alt="" class="block-lvl"> </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-l-6">
+<!-- Code Viewer -->
+<pre class="code-viewer half-height">
+<button class="copy-btn" data-clipboard-target="#single-slider">Copy Code</button>
+<code class="javascript" id="single-slider">$('.slider-component').slick({
+    rtl: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 500,
+    dots: true,
+    arrows:true,
+    prevArrow: '&lt;a href="javascript:void(0)" class="slick-prev ti-arrow-left-chevron">&lt;/a>',
+    nextArrow: '&lt;a href="javascript:void(0)" class="slick-next ti-arrow-right-chevron">&lt;/a>',
+});
+</code>
+</pre> 
+<!-- // Code Viewer -->
+<!-- Code Viewer -->
+<pre class="code-viewer half-height">
+<button class="copy-btn" data-clipboard-target="#single-slider-html">Copy Code</button>
+<code class="markup" id="single-slider-html">&lt;!-- Slider Container -->
+&lt;div class="slider-component">
+    &lt;!-- Item -->
+    &lt;div class="item"> &lt;img src="https://via.placeholder.com/940x840" alt="" class="block-lvl"> &lt;/div>
+    &lt;!-- Item -->
+    &lt;div class="item"> &lt;img src="https://via.placeholder.com/940x840" alt="" class="block-lvl"> &lt;/div>
+    &lt;!-- Item -->
+    &lt;div class="item"> &lt;img src="https://via.placeholder.com/940x840" alt="" class="block-lvl"> &lt;/div>
+    &lt;!-- Item -->
+    &lt;div class="item"> &lt;img src="https://via.placeholder.com/940x840" alt="" class="block-lvl"> &lt;/div>
+&lt;/div>
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                    </div>
+                </div>
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tornado Gallery Slider Theme</h4>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-l-8 col-xl-6">
+                        <!-- Gallery Slider -->
+                        <div class="gallery-slider">
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                        </div>
+                        <!-- Thumbnails Slider -->
+                        <div class="gallery-thumbnails row">
+                            <!-- Item -->
+                            <div class="item col-12"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item col-12"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item col-12"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item col-12"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                            <!-- Item -->
+                            <div class="item col-12"> <img src="img/940x740.png" alt="" class="block-lvl"> </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-l-4 col-xl-6">
+                        <!-- Code Viewer -->
+<pre class="code-viewer half-height">
+<button class="copy-btn" data-clipboard-target="#gallery-slider">Copy Code</button>
+<code class="javascript" id="gallery-slider">/*==== Gallery Slider ====*/
+$('.gallery-slider').slick({
+    rtl: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 500,
+    arrows:true,
+    prevArrow: '&lt;a href="javascript:void(0)" class="slick-prev ti-arrow-left-chevron">&lt;/a>',
+    nextArrow: '&lt;a href="javascript:void(0)" class="slick-next ti-arrow-right-chevron">&lt;/a>',
+    asNavFor:'.gallery-thumbnails'
+});
+/*==== Gallery Thumbnails ====*/
+$('.gallery-thumbnails').slick({
+    rtl: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 500,
+    arrows:false,
+    dots: true,
+    slidesToShow:4,
+    asNavFor:'.gallery-slider',
+    focusOnSelect:true,
+});
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer half-height">
+<button class="copy-btn" data-clipboard-target="#gallery-slider-html">Copy Code</button>
+<code class="markup" id="gallery-slider-html">&lt;!-- Gallery Slider -->
+&lt;div class="gallery-slider">
+    &lt;!-- Item -->
+    &lt;div class="item" data-thumbnail="https://via.placeholder.com/940x740"> &lt;img src="https://via.placeholder.com/940x740" alt="" class="block-lvl"> &lt;/div>
+    &lt;!-- Item -->
+    &lt;div class="item" data-thumbnail="https://via.placeholder.com/940x740"> &lt;img src="https://via.placeholder.com/940x740 alt="" class="block-lvl"> &lt;/div>
+    &lt;!-- Item -->
+    &lt;div class="item" data-thumbnail="https://via.placeholder.com/940x740"> &lt;img src="https://via.placeholder.com/940x740" alt="" class="block-lvl"> &lt;/div>
+    &lt;!-- Item -->
+    &lt;div class="item" data-thumbnail="https://via.placeholder.com/940x740"> &lt;img src="https://via.placeholder.com/940x740" alt="" class="block-lvl"> &lt;/div>
+&lt;/div>
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                    </div>
+                </div>
+
+
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

@@ -163,7 +163,7 @@
     .slick-next{ right:30px; }
 }
 
-.slider-component,.gallery-thumbnails {
+.slider-component,.gallery-thumbnails,.vertical-slider {
     position: relative;
     .slick-dots{
         position: absolute;
@@ -183,6 +183,7 @@
             margin: 5px;
             background: rgba(3,3,3,0.3);
             @extend %fast-motion;
+            vertical-align: middle;
             &.slick-active{ background: $primary-color; }
         }
     }
@@ -202,4 +203,38 @@
         bottom: -30px;
         text-align: start;
     }
+}
+
+.vertical-slider {
+    position: relative;
+    padding-bottom: 30px;
+    .item {margin-bottom: 30px;}
+    .slick-dots{
+        left:15px;
+        right:15px;
+        -webkit-transform: translate(0);
+                transform: translate(0);
+        bottom: 0;
+        line-height: 40px;
+        background: #f7f7f7;
+    }
+    /*==== Arrows Buttons Theme ====*/
+    .slick-prev,.slick-next {
+        position: absolute;
+        bottom:0;
+        width:45px;
+        height: 40px;
+        cursor: pointer;
+        font-size:15px;
+        line-height: 36px;
+        background: $primary-color;
+        border:2px solid $primary-color;
+        color:$reverse-color;
+        @extend %fast-motion;
+        text-align: center;
+        &:hover { background: $reverse-color;color:$primary-color; }
+        z-index: 99;
+    }
+    .slick-prev{ left:0; }
+    .slick-next{ right:0; }
 }

@@ -136,6 +136,6 @@
             z-index: 100;
         }
     }
-
+    .submenu.ti-arrow-down-chevron::before{display: none;}
     *[calss*="col-"],*[calss*="box-"] {width: 100% !important;}
 }

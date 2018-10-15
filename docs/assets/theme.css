@@ -263,11 +263,13 @@ body::after {
 }
 
 
-.full-height{margin-top: 0;height: 100%;}
-.half-height{height: calc(50% - 15px);margin-top: 0;}
+@media screen and (min-width:1024px) {
+    .full-height{margin-top: 0;height: 100%;}
+    .half-height{height: calc(50% - 15px);margin-top: 0;}
 
-.full-height code,.half-height code {
-    min-height: calc(100% - 50px);
+    .full-height code,.half-height code {
+        min-height: calc(100% - 50px);
+    }
 }
 
 .code-viewer .copy-btn{

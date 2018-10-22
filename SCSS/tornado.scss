@@ -109,9 +109,10 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 /*========== Forms ==========*/
 @import 'forms/form-themes';
 /*========== Components ==========*/
+@import 'components/slick-slider';
 @import 'components/tables';
 @import 'components/tabs-system';
-@import 'components/slick-slider';
+@import 'components/accordion';
 @import 'components/modals';
 @import 'components/coloring';
 /*========== Blank Project Theme ==========*/

@@ -1,0 +1,70 @@
+/*======= Accourdions =======*/
+.accordion {
+    @extend %reset;
+    margin-bottom: 30px;
+    .accordion-item {
+        /*======== Accourdion List ========*/
+        .accordion-title{
+            font-size:1rem;
+            line-height:2.2;
+            cursor: pointer;
+            &::before{
+                font-size:10px;
+                margin-#{$directionReverse}:5px;
+                display: inline-block;
+                @extend %fast-motion;
+                vertical-align: middle;
+                @if ( $page-dir == 'ltr' ) {
+                    -webkit-transform: rotate(-90deg);
+                        transform: rotate(-90deg);
+                } @else {
+                    -webkit-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                }
+            }
+        }
+        .accordion-content {
+            display: none;
+            font-size:14px;
+        }
+        /*==== Active ====*/
+        &.active {
+            .accordion-title::before {-webkit-transform: rotate(0);transform: rotate(0);}
+            .accordion-content{display: block;}
+        }
+    }
+
+    /*======== Torando Theme ========*/
+    &.tornado-accordion {
+        border:1px solid rgba(0,0,0,0.10);
+        .accordion-item {
+            .accordion-title{
+                padding:0 20px;
+                font-size:15px;
+                line-height:46px;
+                border-bottom: 1px solid rgba(0,0,0,0.10);
+                &::before{
+                    float:$directionReverse;
+                    line-height:46px;
+                    font-size:14px;
+                    -webkit-transform: rotate(0deg);
+                            transform: rotate(0deg);
+                }
+            }
+
+            .accordion-content {
+                padding:20px;
+                border-bottom: 1px solid rgba(0,0,0,0.10);
+            }
+
+            &.active .accordion-title {
+                background: #f9f9f9;
+                &::before{
+                    @extend .ti-minus:before;
+                    -webkit-transform: rotate(360deg);
+                            transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}

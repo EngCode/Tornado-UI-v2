@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
         <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
-        <title>Tornado CSS v2 | Accourdions</title>
+        <title>Tornado CSS v2 | Accordions</title>
         <!-- Required CSS Files -->
         <link rel="stylesheet" href="assets/tornado.min.css">
         <link rel="stylesheet" href="assets/github.css">
@@ -65,7 +65,7 @@
                         <li><a href="table.html">Tables</a></li>
                         <li><a href="tooltip.html">Tooltips</a></li>
                         <li><a href="tabs.html">Tabs System</a></li>
-                        <li class="active"><a href="accourdion.html">Accourdion System</a></li>
+                        <li class="active"><a href="Accordion.html">Accordion System</a></li>
                         <li><a href="modals.html">Popup Modals</a></li>
                         <li><a href="dropdowns.html">Dropdowns</a></li>
                         <li><a href="pagination.html">Pagination</a></li>
@@ -108,37 +108,162 @@
             <!-- Page Content -->
             <div class="page-content">
                 <div class="page-head">
-                    <h1>Tornado | Accourdions</h1>
-                    <p>This Page is Under Construction</p>
+                    <h1>Tornado | Accordions</h1>
+                    <p>An accordion is Collapsible List of Content that allow user to toggle display its hidden content.</p>
                 </div>
 
-                <div class="alert danger">This Page is Under Construction</div>
-
                 <!-- Sass File Path -->
-                <!-- <div class="sass-path alert">
+                <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Alerts you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_alerts.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Accordions you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/components/_accordion.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
-                </div> -->
+                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Accourdions</h4>
+                    <h4>Baisc Accordions</h4>
                     <p>
-                        
+                        in order to build an accordion list first you create a <span>ul</span> html and give it a class name <span>accordion</span>,
+                        then you ceate the <span>li</span> items and give it a class name <span>accordion-item</span> and inside of your list item
+                        goes 2 more elements the clickable element wich can be any tag with class name <span>accordion-title</span> with the arrow icon class
+                        <span>ti-arrow-down-b</span> or any other arrow icon from the <a href="icons.html">icon list here</a> and the second element is your hidden
+                        content element with class name <span>accordion-content</span> and for activate one of the items give you'r list item <span>accordion-item</span>
+                        a class name <span>active</span> see the Example Below.
                     </p>
                 </div>
 
+                <!-- Accordion List -->
+                <ul class="accordion col-12 col-l-6">
+                    <!-- Accordion Item -->
+                    <li class="accordion-item">
+                        <!-- Accordion Title -->
+                        <h3 class="accordion-title ti-arrow-down-b">The #1 Designer's Dummy Text </h3>
+                        <!-- Accordion Content -->
+                        <div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.</div>
+                    </li>
+                    <!-- Accordion Item -->
+                    <li class="accordion-item active">
+                        <!-- Accordion Title -->
+                        <h3 class="accordion-title ti-arrow-down-b">The #2 Designer's Dummy Text </h3>
+                        <!-- Accordion Content -->
+                        <div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.</div>
+                    </li>
+                    <!-- Accordion Item -->
+                    <li class="accordion-item">
+                        <!-- Accordion Title -->
+                        <h3 class="accordion-title ti-arrow-down-b">The #3 Designer's Dummy Text </h3>
+                        <!-- Accordion Content -->
+                        <div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.</div>
+                    </li>
+                </ul>
+                <!-- // Accordion List -->
+
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-alert">Copy Code</button>
-<code class="markup" id="standard-alert">
+<button class="copy-btn" data-clipboard-target="#standard-Accordions">Copy Code</button>
+<code class="markup" id="standard-Accordions">&lt;!-- Accordion List -->
+&lt;ul class="accordion">
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b">The #1 Designer's Dummy Text &lt;/h3>
+        &lt;!-- Accordion Content -->
+        &lt;div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.&lt;/div>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item active">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b">The #2 Designer's Dummy Text &lt;/h3>
+        &lt;!-- Accordion Content -->
+        &lt;div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.&lt;/div>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b">The #3 Designer's Dummy Text &lt;/h3>
+        &lt;!-- Accordion Content -->
+        &lt;div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.&lt;/div>
+    &lt;/li>
+&lt;/ul>
+&lt;!-- // Accordion List -->
 </code>
 </pre> 
 <!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Accordions Styled</h4>
+                    <p>
+                        Tornado Accordion has More one themed mode wich you can switch to it by adding class name <span>tornado-accordion</span> see the example below.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-m-6 col-l-4">
+                        <!-- Accordion List -->
+                        <ul class="accordion tornado-accordion">
+                            <!-- Accordion Item -->
+                            <li class="accordion-item">
+                                <!-- Accordion Title -->
+                                <h3 class="accordion-title ti-plus">The #1 Designer's Dummy Text </h3>
+                                <!-- Accordion Content -->
+                                <div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.</div>
+                            </li>
+                            <!-- Accordion Item -->
+                            <li class="accordion-item active">
+                                <!-- Accordion Title -->
+                                <h3 class="accordion-title ti-plus">The #2 Designer's Dummy Text </h3>
+                                <!-- Accordion Content -->
+                                <div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.</div>
+                            </li>
+                            <!-- Accordion Item -->
+                            <li class="accordion-item">
+                                <!-- Accordion Title -->
+                                <h3 class="accordion-title ti-plus">The #3 Designer's Dummy Text </h3>
+                                <!-- Accordion Content -->
+                                <div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.</div>
+                            </li>
+                        </ul>
+                        <!-- // Accordion List -->
+                    </div>
+
+                    <div class="col-12 col-m-6 col-l-8">
+                    <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#Accordions">Copy Code</button>
+<code class="markup" id="Accordions">&lt;!-- Accordion List -->
+&lt;ul class="accordion tornado-accordion">
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-plus">The #1 Designer's Dummy Text &lt;/h3>
+        &lt;!-- Accordion Content -->
+        &lt;div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.&lt;/div>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item active">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-plus">The #2 Designer's Dummy Text &lt;/h3>
+        &lt;!-- Accordion Content -->
+        &lt;div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.&lt;/div>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-plus">The #3 Designer's Dummy Text &lt;/h3>
+        &lt;!-- Accordion Content -->
+        &lt;div class="accordion-content">Poor Cicero’s masterpiece wasn’t mangled into unintelligible space-filling mumbo-jumbo until sometime in the middle ages. A typesetter, seeking copy that would showcase different fonts without being distracting, plucked the passage out of the original work and co-opted it for his own evil purposes.&lt;/div>
+    &lt;/li>
+&lt;/ul>
+&lt;!-- // Accordion List -->
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                    </div>
+                </div>
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

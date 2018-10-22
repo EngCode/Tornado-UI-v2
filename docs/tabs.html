@@ -108,37 +108,166 @@
             <!-- Page Content -->
             <div class="page-content">
                 <div class="page-head">
-                    <h1>Tornado | Tabs System</h1>
-                    <p>This Page is Under Construction</p>
+                    <h1>Tornado | Tabs</h1>
+                    <p>A tabs is a bunch of hidden section's of content Switch between them by a menu.</p>
                 </div>
 
-                <div class="alert danger">This Page is Under Construction</div>
-
                 <!-- Sass File Path -->
-                <!-- <div class="sass-path alert">
+                <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Alerts you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_alerts.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Tabs you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/components/_tabs-system.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
-                </div> -->
+                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Tabs System</h4>
+                    <h4>Tabs Structure</h4>
                     <p>
-                        
+                        in order to build tabs first you create a container and give it class name <span>tabs</span> then inside of it you create a tabs menu list
+                        and give it a class name <span>tabs-menu</span> and inside of it each tab take a <span>data-tab</span> attribute for identify the id of
+                        that tab content container after build your tabs menu create next to it or any where else a tabs content and give a class name <span>tabs-wraper</span>
+                        then create your tabs content each content element takes a class name <span>tab-content</span> and an id of the tab see the example below.
                     </p>
                 </div>
 
+                <!-- Tabs Container -->
+                <div class="tabs">
+                    <!-- Tabs Menu -->
+                    <ul class="tabs-menu">
+                        <li data-tab="first-tab-2">First Tab</li>
+                        <li data-tab="second-tab-2">Second Tab</li>
+                        <li data-tab="third-tab-2">Third Tab</li>
+                    </ul>
+
+                    <!-- Tabs Content's -->
+                    <div class="tabs-wraper">
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="first-tab-2">First Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="second-tab-2">Second Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="third-tab-2">Third Tab Content</div>
+                    </div>
+                </div>
+                <!-- // Tabs Container -->
+
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-alert">Copy Code</button>
-<code class="markup" id="standard-alert">
+<button class="copy-btn" data-clipboard-target="#tabs-strcuture">Copy Code</button>
+<code class="markup" id="tabs-strcuture">&lt;!-- Tabs Container -->
+&lt;div class="tabs">
+    &lt;!-- Tabs Menu -->
+    &lt;ul class="tabs-menu">
+        &lt;li data-tab="first-tab">First Tab&lt;/li>
+        &lt;li data-tab="second-tab">Second Tab&lt;/li>
+        &lt;li data-tab="third-tab">Third Tab&lt;/li>
+    &lt;/ul>
+
+    &lt;!-- Tabs Content's -->
+    &lt;div class="tabs-wraper">
+        &lt;!-- Tab Content -->
+        &lt;div class="tab-content" id="first-tab">First Tab Content&lt;/div>
+        &lt;!-- Tab Content -->
+        &lt;div class="tab-content" id="second-tab">Second Tab Content&lt;/div>
+        &lt;!-- Tab Content -->
+        &lt;div class="tab-content" id="third-tab">Third Tab Content&lt;/div>
+    &lt;/div>
+&lt;/div>
+&lt;!-- // Tabs Container -->
+
 </code>
 </pre> 
 <!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tabs Dialog Theme</h4>
+                    <p>
+                        in order to apply dialog theme on the tabs simply add class name to the <span>tabs</span> container <span>dialog-tabs</span> see the example below
+                    </p>
+                </div>
+
+                <!-- Tabs Container -->
+                <div class="tabs dialog-tabs">
+                    <!-- Tabs Menu -->
+                    <ul class="tabs-menu">
+                        <li data-tab="first-tab">First Tab</li>
+                        <li data-tab="second-tab">Second Tab</li>
+                        <li data-tab="third-tab">Third Tab</li>
+                    </ul>
+
+                    <!-- Tabs Content's -->
+                    <div class="tabs-wraper">
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="first-tab">First Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="second-tab">Second Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="third-tab">Third Tab Content</div>
+                    </div>
+                </div>
+                <!-- // Tabs Container -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tabs Tabular Theme</h4>
+                    <p>
+                        in order to apply Tabular theme on the tabs simply add class name to the <span>tabs</span> container <span>tabular-tabs</span> see the example below
+                    </p>
+                </div>
+
+                <!-- Tabs Container -->
+                <div class="tabs tabular-tabs">
+                    <!-- Tabs Menu -->
+                    <ul class="tabs-menu">
+                        <li data-tab="first-tab-4">First Tab</li>
+                        <li data-tab="second-tab-4">Second Tab</li>
+                        <li data-tab="third-tab-4">Third Tab</li>
+                    </ul>
+
+                    <!-- Tabs Content's -->
+                    <div class="tabs-wraper">
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="first-tab-4">First Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="second-tab-4">Second Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="third-tab-4">Third Tab Content</div>
+                    </div>
+                </div>
+                <!-- // Tabs Container -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tabs Lined Theme</h4>
+                    <p>
+                        in order to apply Lined theme on the tabs simply add class name to the <span>tabs</span> container <span>lined-tabs</span> see the example below
+                    </p>
+                </div>
+
+                <!-- Tabs Container -->
+                <div class="tabs lined-tabs">
+                    <!-- Tabs Menu -->
+                    <ul class="tabs-menu">
+                        <li data-tab="first-tab-3">First Tab</li>
+                        <li data-tab="second-tab-3">Second Tab</li>
+                        <li data-tab="third-tab-3">Third Tab</li>
+                    </ul>
+
+                    <!-- Tabs Content's -->
+                    <div class="tabs-wraper">
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="first-tab-3">First Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="second-tab-3">Second Tab Content</div>
+                        <!-- Tab Content -->
+                        <div class="tab-content" id="third-tab-3">Third Tab Content</div>
+                    </div>
+                </div>
+                <!-- // Tabs Container -->
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

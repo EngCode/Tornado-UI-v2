@@ -1,26 +1,107 @@
-/*======= Tabs System =======*/
-.tab-content{
-    display: none;
+/*======= Tabs Settings =======*/
+.tab-content{display: none;}
+.tab-content.active{display: block;}
+.tabs-menu{@extend %reset;}
+/*======= Tabs Defaultt Theme =======*/
+.tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        word-spacing: -5px;
+        li{
+            word-spacing: normal;
+            display: inline-block;
+            padding:0 30px;
+            font-size: 15px;
+            line-height: 48px;
+            font-weight: $medium-weight;
+            color:$gray-color;
+            cursor: pointer;
+            @extend %fast-motion;
+            &:hover,&.active {background:#eaebec;color:$dark-color;}
+        }
+    }
+
+    /*======== Tabs Content ========*/
+    .tab-content {
+        padding:25px;
+        margin-bottom: 30px;
+    }
+    
 }
 
-.tab-content.active{
-    display: block;
+/*======= Tabs Dialog Theme =======*/
+.dialog-tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        border: 1px solid rgba(0,0,0,.10);
+        background:#f8f8f8;
+        li{
+            color:$gray-color;
+            border-#{$directionReverse}:1px solid rgba(0,0,0,.10);
+            &:hover,&.active {
+                background: #FFF;
+                color: $dark-color;
+            }
+        }
+    }
+
+    /*======== Tabs Content ========*/
+    .tab-content {
+        border:1px solid rgba(0,0,0,.10);
+        border-top:0 none;
+        background: #FFF;
+    }
+    
 }
 
-.tabs-menu{
-    @extend %reset;
-    word-spacing: -5px;
+/*======= Tabs Tabular Theme =======*/
+.tabular-tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        li{
+            color:$gray-color;
+            position: relative;
+            top:2px;
+            &.active {
+                border:1px solid rgba(0,0,0,.10);
+                background: #fcfcfc;
+                color: $dark-color;
+                border-bottom: 0 none;
+            }
+        }
+    }
+
+    /*======== Tabs Content ========*/
+    .tab-content {
+        border:1px solid rgba(0,0,0,.10);
+        background: #fcfcfc;
+    }
 }
 
-.tabs-menu li{
-    word-spacing: normal;
-    display: inline-block;
-    padding:12px 30px;
-    font-size: 14px;
-    border: 1px solid rgba(0,0,0,.10);
-    color:$dark-color;
-    cursor: pointer;
-    background:#FFF;
-    @extend %normal-motion;
-    &:hover{background: #f7f7f7;}
+/*======= Tabs Lined Theme =======*/
+.lined-tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        border-bottom: 1px solid rgba(0,0,0,.10);
+        li{
+            padding:0 20px;
+            color:$gray-color;
+            position: relative;
+            &::after{
+                position: absolute;
+                content:'';
+                bottom:-2px;
+                #{$direction}:0;
+                height: 3px;
+                @extend %fast-motion;
+                background: $dark-color;
+                display: block;
+            }
+            &.active {
+                color: $dark-color;
+                background: transparent;
+                &::after{#{$directionReverse}:0;}
+            }
+        }
+    }
 }

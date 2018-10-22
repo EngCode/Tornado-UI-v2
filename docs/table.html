@@ -109,36 +109,288 @@
             <div class="page-content">
                 <div class="page-head">
                     <h1>Tornado | Tables</h1>
-                    <p>This Page is Under Construction</p>
+                    <p>Tables are a nice way to organize data. Tornado provide a few utility classes to help you style your table easily as possible.</p>
                 </div>
 
-                <div class="alert danger">This Page is Under Construction</div>
-
                 <!-- Sass File Path -->
-                <!-- <div class="sass-path alert">
+                <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Alerts you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_alerts.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Tables you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/components/_tables.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
-                </div> -->
+                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
                     <h4>Tables</h4>
                     <p>
-                        
+                        in order to apply tornado css on the table give a class name <span>table</span> to you'r html table tag see the example below.
                     </p>
                 </div>
 
+                <table class="table mb30">
+                    <thead>
+                        <tr>
+                            <th>Head Line 01</th>
+                            <th>Table Head 02</th>
+                            <th>Column 3 Head</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Column Number 01</td>
+                            <td>Column Number 02</td>
+                            <td>Column Number 03</td>
+                        </tr>
+                        <tr>
+                            <td>Column Number 01</td>
+                            <td>Column Number 02</td>
+                            <td>Column Number 03</td>
+                        </tr>
+                    </tbody>
+                </table>
+
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-alert">Copy Code</button>
-<code class="markup" id="standard-alert">
+<button class="copy-btn" data-clipboard-target="#standard-table">Copy Code</button>
+<code class="markup" id="standard-table">&lt;table class="table">
+    &lt;thead>
+        &lt;tr>
+            &lt;th>Head Line 01&lt;/th>
+            &lt;th>Table Head 02&lt;/th>
+            &lt;th>Column 3 Head&lt;/th>
+        &lt;/tr>
+    &lt;/thead>
+    &lt;tbody>
+        &lt;tr>
+            &lt;td>Column Number 01&lt;/td>
+            &lt;td>Column Number 02&lt;/td>
+            &lt;td>Column Number 03&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;td>Column Number 01&lt;/td>
+            &lt;td>Column Number 02&lt;/td>
+            &lt;td>Column Number 03&lt;/td>
+        &lt;/tr>
+    &lt;/tbody>
+&lt;/table>
+
 </code>
 </pre> 
 <!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Responsive Table</h4>
+                    <p>
+                        responsive table is a horizontally scrollable Table on smaller screen widths and in order to make your table to a responsive table
+                        create a container and give it a class name <span>responsive-table</span> and for a only mobile device's give the class name <span>responsive-sm-table</span>.
+                    </p>
+                </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#responsive-table">Copy Code</button>
+<code class="markup" id="responsive-table">&lt;div class="responsive-table">
+    &lt;table class="table">
+        &lt;thead>
+            &lt;tr>
+                &lt;th>Head Line 01&lt;/th>
+                &lt;th>Table Head 02&lt;/th>
+                &lt;th>Column 3 Head&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>Column Number 01&lt;/td>
+                &lt;td>Column Number 02&lt;/td>
+                &lt;td>Column Number 03&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+&lt;/div>
+
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Bordered Table</h4>
+                    <p>
+                        one of the most comon theme for is the bordered table and for that to apply all you have to do is add to the <span>table</span> another
+                        class name <span>bordered</span> see the example below.
+                    </p>
+                </div>
+
+                <div class="responsive-table mb30">
+                    <table class="table bordered">
+                        <thead>
+                            <tr>
+                                <th>Style Type</th>
+                                <th>Head Placeholder</th>
+                                <th>Column 3 Head</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bordered Theme</td>
+                                <td>Striped Mode</td>
+                                <td>Column Number 03</td>
+                            </tr>
+                            <tr>
+                                <td>Column Number 01</td>
+                                <td>Column Number 02</td>
+                                <td>Column Number 03</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#bordered-table">Copy Code</button>
+<code class="markup" id="bordered-table">&lt;div class="responsive-table">
+    &lt;table class="table bordered">
+        &lt;thead>
+            &lt;tr>
+                &lt;th>Style Type&lt;/th>
+                &lt;th>Head Placeholder&lt;/th>
+                &lt;th>Column 3 Head&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>Bordered Theme&lt;/td>
+                &lt;td>Striped Mode&lt;/td>
+                &lt;td>Column Number 03&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>Column Number 01&lt;/td>
+                &lt;td>Column Number 02&lt;/td>
+                &lt;td>Column Number 03&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+&lt;/div>
+
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Striped Table</h4>
+                    <p>
+                        striped table mode in order to apply this theme all you have to do is add to the <span>table</span> another
+                        class name <span>striped</span> and works fine with the bordered mode ... see the example below.
+                    </p>
+                </div>
+
+                <div class="responsive-table mb30">
+                    <table class="table striped">
+                        <thead>
+                            <tr>
+                                <th>Style Type</th>
+                                <th>Head Placeholder</th>
+                                <th>Column 3 Head</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bordered Theme</td>
+                                <td>Striped Mode</td>
+                                <td>Column Number 03</td>
+                            </tr>
+                            <tr>
+                                <td>Column Number 01</td>
+                                <td>Column Number 02</td>
+                                <td>Column Number 03</td>
+                            </tr>
+                            <tr>
+                                <td>Column Number 01</td>
+                                <td>Column Number 02</td>
+                                <td>Column Number 03</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#striped-table">Copy Code</button>
+<code class="markup" id="striped-table">&lt;div class="responsive-table">
+    &lt;table class="table striped">
+        &lt;thead>
+            &lt;tr>
+                &lt;th>Style Type&lt;/th>
+                &lt;th>Head Placeholder&lt;/th>
+                &lt;th>Column 3 Head&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        &lt;tbody>
+            &lt;tr>
+                &lt;td>Bordered Theme&lt;/td>
+                &lt;td>Striped Mode&lt;/td>
+                &lt;td>Column Number 03&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>Column Number 01&lt;/td>
+                &lt;td>Column Number 02&lt;/td>
+                &lt;td>Column Number 03&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;td>Column Number 01&lt;/td>
+                &lt;td>Column Number 02&lt;/td>
+                &lt;td>Column Number 03&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+&lt;/div>
+
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Coloring Tables</h4>
+                    <p>
+                        in order to color a complete table or just a row of it or even one column you can use <a href="colors.html">Colors Class's</a> Witch
+                        you can find all of them by <a href="colors.html">Clicking Here</a> see the example below.
+                    </p>
+                </div>
+
+                <div class="responsive-table mb30">
+                    <table class="table striped">
+                        <thead>
+                            <tr class="primary-bg">
+                                <th>Primary Background</th>
+                                <th>Normal Headline</th>
+                                <th>Secondary Headline</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Striped Row</td>
+                                <td>Normal Column</td>
+                                <td>Information</td>
+                            </tr>
+                            <tr>
+                                <td class="secondary-bg-light">Secondary Light</td>
+                                <td>Normal Background</td>
+                                <td class="danger-bg-light">Danger Light</td>
+                            </tr>
+                            <tr class="success-bg-light">
+                                <td>Complete Row Color</td>
+                                <td>Column Number 02</td>
+                                <td>Column Number 03</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

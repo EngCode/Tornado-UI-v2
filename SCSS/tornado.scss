@@ -51,7 +51,7 @@ $pinterest-color:#bd081c;
 $linkedin-color:#0077b5;
 $behance-color:#1769ff;
 $apple-color:#dbebfa;
-$clpudflare-color:#faae40;
+$cloudflare-color:#faae40;
 $dribbble-color:#ea4c89;
 $envato-color:#82b541;
 $flicker-color:#0063dc;
@@ -113,5 +113,6 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'components/tabs-system';
 @import 'components/slick-slider';
 @import 'components/modals';
+@import 'components/coloring';
 /*========== Blank Project Theme ==========*/
 @import 'theme';

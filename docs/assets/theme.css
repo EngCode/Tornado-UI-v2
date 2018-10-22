@@ -272,6 +272,8 @@ body::after {
     }
 }
 
+.mb30{margin-bottom: 30px;}
+
 .code-viewer .copy-btn{
     display:block;
     padding: 9px 14px;

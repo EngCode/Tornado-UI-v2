@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Tornado v2 Frontend and User Interface Framework">
         <meta name="keywords" content="tornado,tornadov2,tornado v2,css,css3,html,html5,js,jQuery,Vue.js,vue,framework,design,web design,ui,ux,front end,frontend">
-        <title>Tornado CSS v2 | Tables</title>
+        <title>Tornado CSS v2 | Tooltips</title>
         <!-- Required CSS Files -->
         <link rel="stylesheet" href="assets/tornado.min.css">
         <link rel="stylesheet" href="assets/github.css">
@@ -109,36 +109,69 @@
             <div class="page-content">
                 <div class="page-head">
                     <h1>Tornado | Tooltips</h1>
-                    <p>This Page is Under Construction</p>
+                    <p>Tooltips is a good way to make a declaration or show up a hint or small description for some element.</p>
                 </div>
 
-                <div class="alert danger">This Page is Under Construction</div>
-
                 <!-- Sass File Path -->
-                <!-- <div class="sass-path alert">
+                <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Alerts you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_alerts.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Tooltips you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/assets/_utilities.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
-                </div> -->
+                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Tooltip</h4>
+                    <h4>Tooltips</h4>
                     <p>
-                        
+                        in order to use the tooltip you can easily by give your element class name <span>tooltip</span> then add a <span>data-title</span>
+                        attribute with your tip/hint text in it for an example <a href="#" class="tooltip" data-title="Default Tooltip Example">Hover Me</a>
+                        and see the code below.
                     </p>
                 </div>
 
 <!-- Code Viewer -->
 <pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-alert">Copy Code</button>
-<code class="markup" id="standard-alert">
+<button class="copy-btn" data-clipboard-target="#tooltips">Copy Code</button>
+<code class="markup" id="tooltips">&lt;a href="#" class="tooltip" data-title="Default Tooltip Example">Hover Me&lt;/a>
 </code>
 </pre> 
 <!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tooltip Positions</h4>
+                    <p>
+                        you can change the position of a tooltip by changing the class to <span>tooltip-position</span> here is example of the 4 positions
+                        <span class="tooltip" data-title="Default Position">Default</span> Position and
+                        <span class="tooltip-bottom" data-title="Bottom Position">Bottom</span> Position and
+                        <span class="tooltip-start" data-title="Direction Start Position">Start</span> Position and
+                        <span class="tooltip-end" data-title="Direction End Position">End</span> Position
+                    </p>
+                </div>
+
+<!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#tooltip-position">Copy Code</button>
+<code class="markup" id="tooltip-position">&lt;span class="tooltip" data-title="Default Position">Default&lt;/span>
+&lt;span class="tooltip-bottom" data-title="Bottom Position">Bottom&lt;/span>
+&lt;span class="tooltip-start" data-title="Direction Start Position">Start&lt;/span>
+&lt;span class="tooltip-end" data-title="Direction End Position">End&lt;/span>
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tooltip Responsive</h4>
+                    <p>
+                        for a responsive position of tooltip and avoid overflow elements you can do that by adding class name <span>tooltip-responsive</span>
+                        and it works like that if you have a default positioned tooltip and the element is closer to the top edge of the window will change
+                        the position to bottom position tooltip and the same thing applyed to any other position.
+                    </p>
+                </div>
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

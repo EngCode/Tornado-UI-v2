@@ -5,6 +5,12 @@
     list-style: none;
 }
 
+%nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 %minus-indexing {
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;

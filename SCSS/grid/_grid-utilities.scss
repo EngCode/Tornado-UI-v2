@@ -129,18 +129,22 @@
     }
 } // Decrease Columns Gutter To 0 
 
-.gutter-small > [class*="col-"],.gutter-small > [class*="box-"] {
-    padding:0 $gutterSize/4;
-} 
+.gutter-small > [class*="col-"],.gutter-small > [class*="box-"] ,.wrap-gutter-s{
+    padding:0 5px;
+} // Decrease Columns Gutter To 50% 
 
-.gutter-medium > [class*="col-"],.gutter-medium > [class*="box-"]{
+.gutter-medium > [class*="col-"],.gutter-medium > [class*="box-"] ,.wrap-gutter-m{
     padding:0 10px;
-} 
+} // Increase Columns Gutter To 150% */
+
+.gutter-large > [class*="col-"],.gutter-large > [class*="box-"] ,.wrap-gutter-l{
+    padding:0 20px;
+} // Increase Columns Gutter 200%
 
 /*=== Fix Gutters ===*/
 .gutter-small{
-    margin-#{$direction}:-$gutterSize/4;
-    margin-#{$directionReverse}:-$gutterSize/4;
+    margin-#{$direction}:-10px;
+    margin-#{$directionReverse}:-10px;
     margin-top:0;
     margin-bottom:0;
 }
@@ -148,6 +152,13 @@
 .gutter-medium{
     margin-#{$direction}:-10px;
     margin-#{$directionReverse}:-10px;
+    margin-top:0;
+    margin-bottom:0;
+}
+
+.gutter-large{
+    margin-#{$direction}:-20px;
+    margin-#{$directionReverse}:-20px;
     margin-top:0;
     margin-bottom:0;
 }

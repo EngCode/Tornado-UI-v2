@@ -1,87 +1,76 @@
 /*===== Modals =====*/
 .modal-box {
-    //==== Base
-	display:-webkit-box;
-	display:-ms-flexbox;
-	display:flex;
-	-webkit-box-align:center;
-	-ms-flex-align:center;
-	align-items:center;
-	-webkit-box-pack:center;
-	-ms-flex-pack:center;
-	justify-content:center;
+    //==== Base ===//
+	@extend %flexbox;
+    @extend .align-center-z ;
+    @extend %minus-indexing;
+    @extend %fast-motion;
 	visibility:hidden;
-	position:fixed;
-	left:0;
-	right:0;
-	height:100vh;
-	top:0;
-	-webkit-backface-visibility:hidden;
-	backface-visibility:hidden;
-	-webkit-transform:translateZ(0);
-	transform:translateZ(0);
-	z-index:150;
+    position:fixed;
+    top:0;
+	#{$direction}:0;
+    height:100vh;
+    width:100vw;
+	z-index:9999;
     opacity:0;
-    //===== Activate 
+    //===== Activate ===//
     &.active{
         visibility:visible;
         opacity:1;
         -webkit-transition: all 0.5s;
         transition:all 0.5s;
     }
-    //=== Overlay
+    //=== Overlay ===//
     .modal-overlay{
         position:absolute;
-        left:0;
-        right:0;
-        bottom:0;
         top:0;
+        #{$direction}:0;
+        height:100%;
+        width:100%;
         background:rgba(0,0,0,.75);
         z-index:-1;
     }
-    //=== Content Box
+    //=== Content Box ===//
     .modal-content{
         position:relative;
         z-index:100;
         background:#FFF;
-        overflow:auto;
-        max-height:90vh;
-    }
-
-    .close-modal{
-        cursor:pointer;
-    }
-
-    //=== Theme
-    &.tornado-ui {
-        .modal-content{
-            width:640px;
-            border-radius:8px;
-            -webkit-box-shadow:0 0 10px 2px rgba(0,0,0,.50);
-            box-shadow:0 0 10px 2px rgba(0,0,0,.50);
-            @include small(false) { width:85%; }
-            //=== Head
-            .modal-head{
-                padding:15px 20px;
-                border-bottom:1px solid rgba(0,0,0,.10);
-                font-weight:700;
-                .close-modal{
-                    float:left;
-                    font-size:18px;
-                }
+        width:670px;
+        border-radius:5px;
+        @include small(false) { width:90%; }
+        .close-modal{cursor:pointer;}
+        //=== Head ===//
+        .modal-head{
+            padding:12px 20px;
+            border-bottom:1px solid rgba(0,0,0,.10);
+            font-weight:$medium-weight;
+            font-size:1rem;
+            .close-modal{
+                padding: 0;
+                float:$directionReverse;
+                font-size:14px;
+                line-height: 23px;
+                height: 20px;
+                border:0 none;
+                color:$danger-color;
+                background: transparent;
+                text-align: center;
+                width:20px;
             }
-            //=== Body
-            .modal-body{
-                padding:20px;
-            }
-            //=== Footer
-            .modal-footer{
-                padding:15px 20px;
-                border-top:1px solid rgba(0,0,0,.10);
-                .btn{
-                    margin-bottom:-5px;
-                }
-            }            
+        }
+        //=== Body ===//
+        .modal-body{
+            padding:20px;
+            overflow:auto;
+            max-height:calc(100vh - 130px);
+        }
+        //=== Footer ===//
+        .modal-footer{
+            @extend %flexbox;
+            @extend .align-between ;
+            padding:10px 20px;
+            border-top:1px solid rgba(0,0,0,.10);
+            .btn{margin: 0;}
         }
     }
 }

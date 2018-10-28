@@ -14,10 +14,9 @@
     height:42px;
     line-height: 40px;
     font-size: 14px;
-    border: 1px solid rgba(0,0,0,.10);
     color:$dark-color;
     cursor: pointer;
-    background:#FFF;
+    background:#f7f7f7;
     @extend %normal-motion;
     text-align: center;
     font-weight:$medium-weight;
@@ -26,13 +25,13 @@
         margin-#{$direction}:10px;
         &[class*="float-"] {margin:7px 0;}
     }
-    &:hover{background: #f7f7f7;}
+    &:hover{background: #e6e6e6;}
     &.round-corner { border-radius: 5px; }
     &.outline{ 
         background: transparent;
         color:$dark-color;
         border:1px solid $dark-bg;
-        line-height: 40px;
+        line-height: 38px;
     }
     //===== Buttons Sizes ====//
     &.tiny {
@@ -46,14 +45,14 @@
         font-size: 13px;
         padding: 0 20px;
         height: 36px;
-        line-height: 36px;
+        line-height: 34px;
         &.outline{line-height: 34px;border-width:1px;}
     }
     &.large {
         font-size: 16px;
         padding: 0 30px;
         height:50px;
-        line-height: 50px;
+        line-height: 47px;
         &.outline{line-height: 48px;border-width:3px;}
     }
     //==== Coloring Buttons ====//
@@ -163,7 +162,6 @@
         top:100%;
         #{$direction}:0;
         display: none;
-        top:100%;
         background: #FFF;
         width:200px;
         border:1px solid rgba(0, 0, 0, .10);

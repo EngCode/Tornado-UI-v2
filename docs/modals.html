@@ -109,36 +109,255 @@
             <div class="page-content">
                 <div class="page-head">
                     <h1>Tornado | Popup Modals</h1>
-                    <p>This Page is Under Construction</p>
+                    <p>Modals is a Popup dialog boxes that can be called up and interact with the user.</p>
                 </div>
 
-                <div class="alert danger">This Page is Under Construction</div>
 
                 <!-- Sass File Path -->
-                <!-- <div class="sass-path alert">
+                <div class="sass-path alert">
                     <h5 class="tx-uppercase">Sass Customize</h5>
                     <p> 
-                        in order to edit the Alerts you can use the css class's to overide the theme or you can edit it with sass 
-                        <span class="badge dark">Tornado Folder/SCSS/forms/_alerts.scss</span> and do not forget to compile the main files of the framework
+                        in order to edit the Modals Style you can use the css class's to overide the theme or you can edit it with sass 
+                        <span class="badge dark">Tornado Folder/SCSS/components/_modals.scss</span> and do not forget to compile the main files of the framework
                         <span class="badge dark">Tornado Folder/SCSS/tornado.scss</span> and <span class="badge dark">tornado-rtl.scss</span>.
                     </p>
-                </div> -->
+                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Popup Modals</h4>
+                    <h4>Modal Structure</h4>
+                    <p>
+                        in order to build a modal component first you must have an <span>event fire</span> element to call the modal to show up
+                        so to do that you give any element you disire a data atribute called <span>data-modal</span> and give it a value of the modal box <span>ID</span>
+                        then you build your box structre by creating a wraper <span>div</span> wih class name <span>modal-box</span> with a uniuqe <span>ID</span> Attribute
+                        and inside of the modal wraper you create the modal container with class name <span>modal-content</span> and here you can place any content you want
+                        you can use the Prdesigned Content Elements or build your own and for a close button inside the modal box is simple you can create your button and give
+                        a class name <span>close-modal</span> see the example below.
+                    </p>
+                </div>
+
+                <!-- Modal Button -->
+                <a href="#" class="btn primary mb30" data-modal="modal-demo">Modal Demo Example</a>
+
+                <!-- Modal Box -->
+                <div class="modal-box" id="modal-demo">
+                    <!-- Container -->
+                    <div class="modal-content">
+                        <!-- Headline -->
+                        <h2 class="modal-head">
+                            Modal Demo Dialog Box Title
+                            <button class="close-modal ti-close"></button>
+                        </h2>
+                        <!-- Content -->
+                        <div class="modal-body">
+                            <p>It’s grown to become something of an artform, and there are countless filler text generators sprinkled around the web that provide a modern take on this classic staple of the design industry.</p>
+                        </div>
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <a href="#" class="btn small primary">Submit Button</a>
+                            <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                        </div>
+                    </div>
+                    <!--// Container -->
+                </div>
+                <!-- // Modal Box -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#modal-structure">Copy Code</button>
+<code class="markup" id="modal-structure">&lt;!-- Modal Button -->
+&lt;a href="#" class="btn primary" data-modal="modal-demo">Modal Demo&lt;/a>
+&lt;!-- Modal Box -->
+&lt;div class="modal-box" id="modal-demo">
+    &lt;!-- Container -->
+    &lt;div class="modal-content">
+        &lt;!-- Headline -->
+        &lt;h2 class="modal-head">
+            Modal Demo Dialog Box Title
+            &lt;button class="close-modal ti-close">&lt;/button>
+        &lt;/h2>
+        &lt;!-- Content -->
+        &lt;div class="modal-body">
+            &lt;p>It’s grown to become something of an artform, and there are countless filler text generators sprinkled around the web that provide a modern take on this classic staple of the design industry.&lt;/p>
+        &lt;/div>
+        &lt;!-- Footer -->
+        &lt;div class="modal-footer">
+            &lt;a href="#" class="btn small primary">Submit Button&lt;/a>
+            &lt;a href="#" class="btn small danger close-modal">Cancel Button&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!--// Container -->
+&lt;/div>
+&lt;!-- // Modal Box -->
+
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Javascript Behavior</h4>
                     <p>
                         
                     </p>
                 </div>
 
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Call to Action Themes</h4>
+                    <p>
+                        
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-l-6 mb30">
+                        <!-- Modal Button -->
+                        <a href="#" class="btn primary" data-modal="cta-rating">Rating CTA Example</a>
+
+                        <!-- Modal Box -->
+                        <div class="modal-box" id="cta-rating">
+                            <!-- Container -->
+                            <div class="modal-content">
+
+                                <!-- Footer -->
+                                <div class="modal-footer">
+                                    <a href="#" class="btn small primary">Submit Button</a>
+                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                </div>
+                            </div>
+                            <!--// Container -->
+                        </div>
+                        <!-- // Modal Box -->
+
 <!-- Code Viewer -->
-<pre class="code-viewer full-height">
-<button class="copy-btn" data-clipboard-target="#standard-alert">Copy Code</button>
-<code class="markup" id="standard-alert">
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#modal-rating">Copy Code</button>
+<code class="markup" id="modal-rating">
 </code>
 </pre> 
 <!-- // Code Viewer -->
+                    </div>
+                    <div class="col-12 col-l-6 mb30">
+                        <!-- Modal Button -->
+                        <a href="#" class="btn primary" data-modal="cta-share">Sharing CTA Example</a>
+
+                        <!-- Modal Box -->
+                        <div class="modal-box" id="cta-share">
+                            <!-- Container -->
+                            <div class="modal-content">
+
+                                <!-- Footer -->
+                                <div class="modal-footer">
+                                    <a href="#" class="btn small primary">Submit Button</a>
+                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                </div>
+                            </div>
+                            <!--// Container -->
+                        </div>
+                        <!-- // Modal Box -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#modal-share">Copy Code</button>
+<code class="markup" id="modal-share">
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                    </div>
+                    <div class="col-12 mb30">
+                        <!-- Modal Button -->
+                        <a href="#" class="btn primary" data-modal="cta-newsletter">Newsletter CTA Example</a>
+
+                        <!-- Modal Box -->
+                        <div class="modal-box" id="cta-newsletter">
+                            <!-- Container -->
+                            <div class="modal-content">
+
+                                <!-- Footer -->
+                                <div class="modal-footer">
+                                    <a href="#" class="btn small primary">Submit Button</a>
+                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                </div>
+                            </div>
+                            <!--// Container -->
+                        </div>
+                        <!-- // Modal Box -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#modal-newsletter">Copy Code</button>
+<code class="markup" id="modal-newsletter">
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                    </div>
+                </div
+                >
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Colored Message Themes</h4>
+                    <p>
+                        
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-l-6 mb30">
+                        <!-- Modal Button -->
+                        <a href="#" class="btn primary" data-modal="modal-sucess">Sucess Message Example</a>
+
+                        <!-- Modal Box -->
+                        <div class="modal-box" id="modal-sucess">
+                            <!-- Container -->
+                            <div class="modal-content">
+
+                                <!-- Footer -->
+                                <div class="modal-footer">
+                                    <a href="#" class="btn small primary">Submit Button</a>
+                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                </div>
+                            </div>
+                            <!--// Container -->
+                        </div>
+                        <!-- // Modal Box -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#modal-sucess">Copy Code</button>
+<code class="markup" id="modal-sucess">
+</code>
+</pre>
+<!-- // Code Viewer -->
+                    </div>
+                    <div class="col-12 col-l-6 mb30">
+                        <!-- Modal Button -->
+                        <a href="#" class="btn primary" data-modal="modal-error">Error Message Example</a>
+
+                        <!-- Modal Box -->
+                        <div class="modal-box" id="modal-error">
+                            <!-- Container -->
+                            <div class="modal-content">
+
+                                <!-- Footer -->
+                                <div class="modal-footer">
+                                    <a href="#" class="btn small primary">Submit Button</a>
+                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                </div>
+                            </div>
+                            <!--// Container -->
+                        </div>
+                        <!-- // Modal Box -->
+
+<!-- Code Viewer -->
+<pre class="code-viewer">
+<button class="copy-btn" data-clipboard-target="#modal-error">Copy Code</button>
+<code class="markup" id="modal-error">
+</code>
+</pre> 
+<!-- // Code Viewer -->
+                    </div>
+                </div>
 
                 <!-- Pagination Buttons -->
                 <div class="pagi-buttons">

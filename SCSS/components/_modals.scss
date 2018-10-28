@@ -1,4 +1,4 @@
-/*===== Modals =====*/
+/*===== Default Modals =====*/
 .modal-box {
     //==== Base ===//
 	@extend %flexbox;
@@ -71,6 +71,53 @@
             padding:10px 20px;
             border-top:1px solid rgba(0,0,0,.10);
             .btn{margin: 0;}
+        }
+    }
+}
+
+/*======== Call to Action Theme ========*/
+.cta-modal {
+    .modal-content {
+        padding:30px;
+        text-align: center;
+        /*==== Close Button ====*/
+        .close-modal:not(.btn) {
+            position: absolute;
+            top:15px;
+            #{$directionReverse}:15px;
+            font-size:14px;
+            line-height: 30px;
+            height: 30px;
+            color:$danger-color;
+            text-align: center;
+            width:30px;
+        }
+        /*==== Content ====*/
+        .large-icon{
+            display: inline-block;
+            font-size:70px;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        h3 {
+            font-size:22px;
+            margin-bottom: 5px;
+        }
+        .rating-stars {
+            font-size:1.8rem;
+            margin-bottom: 10px;
+            color:$gray-color;
+            line-height: 1;
+            .active{ color:$warning-color; }
+        }
+        .social-btns {
+            margin-bottom: 5px;
+            .btn{margin: 5px}
+        }
+        /*==== Action Footer ====*/
+        .modal-footer{
+            border:0 none;
+            padding:0;
         }
     }
 }

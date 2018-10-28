@@ -20,12 +20,12 @@
     @extend %normal-motion;
     text-align: center;
     font-weight:$medium-weight;
+    border:0 none;
     .badge {
         margin-top: -3px;
         margin-#{$direction}:10px;
         &[class*="float-"] {margin:7px 0;}
     }
-    &:hover{background: #e6e6e6;}
     &.round-corner { border-radius: 5px; }
     &.outline{ 
         background: transparent;
@@ -145,6 +145,15 @@
     }
 
     &.rounded{border-radius:100px;}
+    
+    &.circle{
+        border-radius:50%;
+        width:42px;
+        padding:0;
+        &.tiny{width: 27px;padding:0;}
+        &.small{width: 36px;padding:0;}
+        &.large{width:50px;padding:0;}
+    }
 }
 
 /*======== Dropdown Lists ========*/

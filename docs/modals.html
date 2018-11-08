@@ -136,6 +136,16 @@
                     </p>
                 </div>
 
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>How it Works</h4>
+                    <p>
+                        most of the modal features is build with only css tricks its works easly by adding and removing a class name <span>active</span>
+                        to the modal box with the <span>ID</span> that exist in the call Button Attribute <span>data-modal</span> so you can easly Survey the call button
+                        and use the modal as part of your own function to using it for user action response.
+                    </p>
+                </div>
+
                 <!-- Modal Button -->
                 <a href="#" class="btn primary mb30" data-modal="modal-demo">Modal Demo Example</a>
 
@@ -193,14 +203,6 @@
 </code>
 </pre> 
 <!-- // Code Viewer -->
-
-                <!-- Text Paragraph -->
-                <div class="pargraph-area">
-                    <h4>Javascript Behavior</h4>
-                    <p>
-                        
-                    </p>
-                </div>
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
@@ -389,7 +391,9 @@
                 <div class="pargraph-area">
                     <h4>Colored Message Themes</h4>
                     <p>
-                        
+                        beside the <span>CTA</span> Theme Above You Can use the modal for sending the user a message after or before some thing hapen
+                        by using the colored themes <span>class's</span> as you can see the example's below and it support the main events colors
+                        <span>dark</span> | <span>success</span> | <span>danger</span> | <span>warning</span> | <span>info</span>.
                     </p>
                 </div>
 
@@ -399,14 +403,19 @@
                         <a href="#" class="btn primary" data-modal="modal-sucess">Sucess Message Example</a>
 
                         <!-- Modal Box -->
-                        <div class="modal-box" id="modal-sucess">
+                        <div class="modal-box cta-modal success" id="modal-sucess">
                             <!-- Container -->
                             <div class="modal-content">
-
+                                <!-- Close button -->
+                                <a href="#" class="close-modal ti-close-round"></a>
+                                <!-- Content -->
+                                <i class="large-icon ti-checkmark-round"></i>
+                                <h3>Sucess Message Title</h3>
+                                <p>The most well-known placeholder text in history is called lorem ipsum You’ll find a version you can copy and paste below in HTML and plain text.</p>
                                 <!-- Footer -->
                                 <div class="modal-footer">
-                                    <a href="#" class="btn small primary">Submit Button</a>
-                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                    <a href="#" class="btn rounded light col-5">Continue</a>
+                                    <a href="#" class="btn rounded dark col-5 close-modal">Close Modal</a>
                                 </div>
                             </div>
                             <!--// Container -->
@@ -416,7 +425,25 @@
 <!-- Code Viewer -->
 <pre class="code-viewer">
 <button class="copy-btn" data-clipboard-target="#modal-sucess">Copy Code</button>
-<code class="markup" id="modal-sucess">
+<code class="markup" id="modal-sucess">&lt;!-- Modal Box -->
+&lt;div class="modal-box cta-modal success" id="modal-sucess">
+    &lt;!-- Container -->
+    &lt;div class="modal-content">
+        &lt;!-- Close button -->
+        &lt;a href="#" class="close-modal ti-close-round">&lt;/a>
+        &lt;!-- Content -->
+        &lt;i class="large-icon ti-checkmark-round">&lt;/i>
+        &lt;h3>Sucess Message Title&lt;/h3>
+        &lt;p>The most well-known placeholder text in history is called lorem ipsum You’ll find a version you can copy and paste below in HTML and plain text.&lt;/p>
+        &lt;!-- Footer -->
+        &lt;div class="modal-footer">
+            &lt;a href="#" class="btn rounded light col-5">Continue&lt;/a>
+            &lt;a href="#" class="btn rounded dark col-5 close-modal">Close Modal&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!--// Container -->
+&lt;/div>
+&lt;!-- // Modal Box -->
 </code>
 </pre>
 <!-- // Code Viewer -->
@@ -426,14 +453,19 @@
                         <a href="#" class="btn primary" data-modal="modal-error">Error Message Example</a>
 
                         <!-- Modal Box -->
-                        <div class="modal-box" id="modal-error">
+                        <div class="modal-box cta-modal danger" id="modal-error">
                             <!-- Container -->
                             <div class="modal-content">
-
+                                <!-- Close button -->
+                                <a href="#" class="close-modal ti-close-round"></a>
+                                <!-- Content -->
+                                <i class="large-icon ti-warning"></i>
+                                <h3>Error Message Title</h3>
+                                <p>The most well-known placeholder text in history is called lorem ipsum You’ll find a version you can copy and paste below in HTML and plain text.</p>
                                 <!-- Footer -->
                                 <div class="modal-footer">
-                                    <a href="#" class="btn small primary">Submit Button</a>
-                                    <a href="#" class="btn small danger close-modal">Cancel Button</a>
+                                    <a href="#" class="btn rounded light col-5">Continue</a>
+                                    <a href="#" class="btn rounded dark col-5 close-modal">Close Modal</a>
                                 </div>
                             </div>
                             <!--// Container -->
@@ -443,7 +475,25 @@
 <!-- Code Viewer -->
 <pre class="code-viewer">
 <button class="copy-btn" data-clipboard-target="#modal-error">Copy Code</button>
-<code class="markup" id="modal-error">
+<code class="markup" id="modal-error">&lt;!-- Modal Box -->
+&lt;div class="modal-box cta-modal danger" id="modal-error">
+    &lt;!-- Container -->
+    &lt;div class="modal-content">
+        &lt;!-- Close button -->
+        &lt;a href="#" class="close-modal ti-close-round">&lt;/a>
+        &lt;!-- Content -->
+        &lt;i class="large-icon ti-warning">&lt;/i>
+        &lt;h3>Error Message Title&lt;/h3>
+        &lt;p>The most well-known placeholder text in history is called lorem ipsum You’ll find a version you can copy and paste below in HTML and plain text.&lt;/p>
+        &lt;!-- Footer -->
+        &lt;div class="modal-footer">
+            &lt;a href="#" class="btn rounded light col-5">Continue&lt;/a>
+            &lt;a href="#" class="btn rounded dark col-5 close-modal">Close Modal&lt;/a>
+        &lt;/div>
+    &lt;/div>
+    &lt;!--// Container -->
+&lt;/div>
+&lt;!-- // Modal Box -->
 </code>
 </pre> 
 <!-- // Code Viewer -->

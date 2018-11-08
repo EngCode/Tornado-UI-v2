@@ -120,4 +120,36 @@
             padding:0;
         }
     }
+    /* Dark background style */
+    &.dark .modal-content{background:$dark-color;color:$light-color;
+        /* Dismissal Button Style Reverse */
+        .close-modal:not(.btn){color:$light-color;}
+    } 
+    /* Success background Style */
+    &.success .modal-content {
+        background: $success-color;
+        color: #FFF;
+        .close-modal:not(.btn){color:#FFF;}
+    }
+
+    /* Danger and Error background Style */
+    &.danger .modal-content {
+        background: $danger-color;
+        color: #FFF;
+        .close-modal:not(.btn){color:#FFF;}
+    }
+
+    /* Warning background Style */
+    &.warning .modal-content {
+        background: $warning-color;
+        color: #FFF;
+        .close-modal:not(.btn){color:#FFF;}
+    }
+
+    /* information background style */
+    &.info .modal-content {
+        background: $info-color;
+        color: #FFF;
+        .close-modal:not(.btn){color:#FFF;}
+    }
 }

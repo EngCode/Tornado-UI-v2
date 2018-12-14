@@ -89,7 +89,7 @@
                 top:100%;
                 border:1px solid rgba(0,0,0,.15);
                 #{$direction}:0;
-                > li {
+                li {
                     position: relative;
                     border-bottom:1px solid rgba(0,0,0,.15);
                     font-weight:normal;
@@ -100,16 +100,16 @@
                         top: 0;
                         #{$direction}: 100%;
                     }
-                    //=== Fixing Last Item Overflow
-                    &:last-child {
-                        > ul {
-                            #{$direction}:auto;
-                            #{$directionReverse}:0;
-                            li ul {
-                                #{$direction}:auto;
-                                #{$directionReverse}:100%;
-                            }
-                        }
+                }
+            }
+            //=== Fixing Last Item Overflow
+            &:last-child {
+                > ul {
+                    #{$direction}:auto;
+                    #{$directionReverse}:0;
+                    li ul {
+                        #{$direction}:auto;
+                        #{$directionReverse}:100%;
                     }
                 }
             }

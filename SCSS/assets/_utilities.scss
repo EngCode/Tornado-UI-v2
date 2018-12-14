@@ -1,28 +1,9 @@
 /*======== Global ========*/
-html {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    font-size: $base-s-size;
-    line-height: $base-line-height;
-    /*=== Medium Screen ===*/
-    @include medium(true){
-        font-size: $base-m-size;
-        line-height: $base-line-height;
-    }
-    /*=== Large Screen ===*/
-    @include large(true) {
-        font-size: $base-l-size;
-        line-height: $base-line-height;
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
-    font-family: $secondary-font;
     direction: $page-dir;
     background: #FFF;
-    color: $dark-color;
     position: relative;
 }
 

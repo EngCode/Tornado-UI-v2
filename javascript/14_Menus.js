@@ -56,7 +56,7 @@ jQuery(function ($) {
 
     /* Anything that gets to the document will hide the dropdown */
     $(document).click(function(){
-        $(".dropdown-list").slideToggle();
+        $(".dropdown-list").slideUp();
     });
 
     /* Clicks within the dropdown won't make it past the dropdown itself */

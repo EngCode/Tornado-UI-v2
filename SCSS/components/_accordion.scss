@@ -61,7 +61,7 @@
             &.active .accordion-title {
                 background: #f9f9f9;
                 &::before{
-                    @extend .ti-minus:before;
+                    @extend .ti-minus,:before ;
                     -webkit-transform: rotate(360deg);
                             transform: rotate(360deg);
                 }

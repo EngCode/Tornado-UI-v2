@@ -367,16 +367,6 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.primary-bg-light {
-    background-color: lighten($primary-color, $amount: 35);
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.secondary-bg-light {
-    background-color: lighten($secondary-color, $amount: 35);
-    color: rgba(0, 0, 0, 0.5);
-}
-
 .info-bg-light {
     background-color: $info-bg;
     color: rgba(0, 0, 0, 0.5);

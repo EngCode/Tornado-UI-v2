@@ -21,7 +21,7 @@ var gulp = require('gulp'),
 /*====== Compile Sass ======*/
 gulp.task('tornado-sass', function () {
     'use strict';
-    return gulp.src('SCSS/*.scss')
+    return gulp.src('src/SCSS/*.scss')
         // Compile Sass
         .pipe(sass().on('error', sass.logError))
         // Minify CSS
@@ -34,7 +34,7 @@ gulp.task('tornado-sass', function () {
 /*====== Javascript Build ======*/
 gulp.task('tornado-js', function () {
     'use strict';
-    return gulp.src('javascript/*.js')
+    return gulp.src('src/javascript/*.js')
         // Merge Files
         .pipe(concat('tornado.min.js'))
         // Minify Javascript

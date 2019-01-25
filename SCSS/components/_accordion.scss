@@ -24,13 +24,21 @@
             }
         }
         .accordion-content {
-            display: none;
+            max-height: 0;
+            overflow: hidden;
             font-size:14px;
+            -webkit-transition: max-height 0.7s;
+            transition: max-height 0.7s;
         }
         /*==== Active ====*/
         &.active {
-            .accordion-title::before {-webkit-transform: rotate(0);transform: rotate(0);}
-            .accordion-content{display: block;}
+            .accordion-title::before {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+            .accordion-content{
+                overflow: auto;
+            }
         }
     }
 
@@ -39,7 +47,11 @@
         border:1px solid rgba(0,0,0,0.10);
         border-bottom: 0 none;
         .accordion-item {
+            padding:0 20px;
+            background: #FFF;
             .accordion-title{
+                margin:0 -20px;
+                margin-bottom: 0;
                 padding:0 20px;
                 font-size:15px;
                 line-height:46px;
@@ -53,17 +65,18 @@
                 }
             }
 
-            .accordion-content {
-                padding:20px;
-                border-bottom: 1px solid rgba(0,0,0,0.10);
-            }
+            &:not(:last-child){border-bottom: 1px solid rgba(0,0,0,0.10);}
 
-            &.active .accordion-title {
-                background: #f9f9f9;
-                &::before{
-                    @extend .ti-minus,:before ;
-                    -webkit-transform: rotate(360deg);
-                            transform: rotate(360deg);
+            &.active {
+                padding-bottom: 20px;
+                .accordion-title {
+                    background: #f9f9f9;
+                    &::before{
+                        line-height:46px;
+                    }
+                }
+                .accordion-content {
+                    margin-top: 20px;
                 }
             }
         }

@@ -213,7 +213,10 @@
             ul {
                 background-color:$sub-bg;
                 margin:0 -#{$space-size};
-                padding:10px 0;
+                max-height: 0;
+                overflow: hidden;
+                -webkit-transition: all 0.7s;
+                transition: all 0.7s;
                 li {
                     color:$sub-color;
                     padding:0 $space-size+10;

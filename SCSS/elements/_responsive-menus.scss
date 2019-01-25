@@ -112,8 +112,7 @@
             @extend %fast-motion;
             a { @extend %fast-motion; }
             ul {
-                display: none;
-                padding: 0;
+                padding:0;
                 li::before { content:'-';padding-#{$directionReverse}:5px; }
             }
             .submenu::before{float: $directionReverse;}

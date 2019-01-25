@@ -124,7 +124,7 @@
 
                 <!-- Text Paragraph -->
                 <div class="pargraph-area">
-                    <h4>Baisc Accordions</h4>
+                    <h4>Accordions Structrue</h4>
                     <p>
                         in order to build an accordion list first you create a <span>ul</span> html and give it a class name <span>accordion</span>,
                         then you ceate the <span>li</span> items and give it a class name <span>accordion-item</span> and inside of your list item
@@ -190,6 +190,50 @@
 &lt;/ul>
 &lt;!-- // Accordion List -->
 
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tabs Javascript Call Backs</h4>
+                    <p>
+                        tornado tabs provide Four Callback's functions that you can apply with HTML data attributes you give it to the accordion ==> Item ==> Title/Head and they work like this 
+                        <br><br><strong><span>data-call-before="</span>but Your Function Name Without ()<span>"</span> to Fire the Function Before Accordion Panel Opens<span></span></strong>
+                        <br><strong><span>data-call-after="</span>but Your Function Name Without ()<span>"</span> to Fire the Function After Accordion Panel Opens<span></span></strong>
+                        <br>
+                        <br><strong><span>data-call-before-close="</span>but Your Function Name Without ()<span>"</span> to Fire the Function Before Accordion Panel Closed<span></span></strong>
+                        <br><strong><span>data-call-after-close="</span>but Your Function Name Without ()<span>"</span> to Fire the Function After Accordion Panel Closed<span></span></strong>
+                    </p>
+                </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#tabs-callback">Copy Code</button>
+<code class="markup" id="tabs-callback">&lt;!-- Tabs Callback Functions -->
+&lt;ul class="accordion">
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b" data-call-before="functionName">Before Open the Panel&lt;/h3>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b" data-call-before-close="functionName">Before Close The Panel&lt;/h3>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b" data-call-after="functionName">After Open the Panel &lt;/h3>
+    &lt;/li>
+    &lt;!-- Accordion Item -->
+    &lt;li class="accordion-item">
+        &lt;!-- Accordion Title -->
+        &lt;h3 class="accordion-title ti-arrow-down-b" data-call-after-close="functionName">After Close the Panel&lt;/h3>
+    &lt;/li>
+&lt;/ul>
+&lt;!-- // Accordion List -->
 </code>
 </pre> 
 <!-- // Code Viewer -->

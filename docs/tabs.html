@@ -137,7 +137,7 @@
                 <div class="tabs">
                     <!-- Tabs Menu -->
                     <ul class="tabs-menu">
-                        <li data-tab="first-tab-2">First Tab</li>
+                        <li data-tab="first-tab-2" data-call-before="test_call_back">First Tab</li>
                         <li data-tab="second-tab-2">Second Tab</li>
                         <li data-tab="third-tab-2">Third Tab</li>
                     </ul>
@@ -178,6 +178,29 @@
 &lt;/div>
 &lt;!-- // Tabs Container -->
 
+</code>
+</pre> 
+<!-- // Code Viewer -->
+
+                <!-- Text Paragraph -->
+                <div class="pargraph-area">
+                    <h4>Tabs Javascript Call Backs</h4>
+                    <p>
+                        tornado tabs provide Two call back functions that you can apply with HTML data attributes and they work like this 
+                        <strong><span>data-call-before="</span>but Your Function Name Without ()<span>"</span> to Fire the Function Before Tab Panel Opens<span></span></strong>
+                        <br><strong><span>data-call-after="</span>but Your Function Name Without ()<span>"</span> to Fire the Function After Tab Panel Opens<span></span></strong>
+                    </p>
+                </div>
+
+                <!-- Code Viewer -->
+<pre class="code-viewer full-height">
+<button class="copy-btn" data-clipboard-target="#tabs-callback">Copy Code</button>
+<code class="markup" id="tabs-callback">&lt;!-- Tabs Callback Functions -->
+&lt;ul class="tabs-menu">
+    &lt;li data-tab="first-tab" data-call-before="functionName">First Tab&lt;/li>
+    &lt;li data-tab="second-tab" data-call-after="functionName">Second Tab&lt;/li>
+    &lt;li data-tab="third-tab" data-call-before="functionName" data-call-after="functionName">Third Tab&lt;/li>
+&lt;/ul>
 </code>
 </pre> 
 <!-- // Code Viewer -->

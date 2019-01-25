@@ -242,6 +242,9 @@ body::after {
     font-size:15px;
 }
 
+.pargraph-area a,.pargraph-area span{color:#4166d6;}
+    
+
 .code-viewer {
     margin-top: 25px;
 }

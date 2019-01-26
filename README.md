@@ -40,9 +40,11 @@ looking for Documentation **Visit** [Tornado UI v2](http://flash-point.net/torna
 and for Arabic [RTL] Documentation [Tornado UI v2 RTL](http://flash-point.net/tornado)
 
 -------------------
-#### Integration
-looking for Documentation **Visit** [Tornado UI v2](http://flash-point.net/tornado)
-and for Arabic [RTL] Documentation [Tornado UI v2 RTL](http://flash-point.net/tornado)
+#### Works Along Side With
+- jQuery
+- Vue.JS
+- ReactJS
+- CommonJS
 
 --------------------
 #### Credits

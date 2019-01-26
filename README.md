@@ -13,18 +13,18 @@ Hi! Tornado UI v2 is UI Framework and Work Enviroment to Help Web Designers and 
 #### Project Files Tree
  - Tornado Root<br>
     - Design Templates [PSD/XD Workspace and Tornado UI Kit]
-       - dist [Production/Deploy Files]
-          - CSS [CSS Production Files]
-	          - tornado.min.css [Minifyed LTR Version]
-	          - tornado-rtl.min.css [Minified RTL Version]
-          - fonts [Default Used Fonts]
-          - js [Javascript Production Files]
-	          - tornado.min.js [Tornado Minifyed Javascript]
-          - src [Project Source Files]
-              - javascript [Tornado Javascript Files]
-              - SCSS [Tornado SASS/CSS Files]
-          - node_modules [Node.JS Build Dependencies]
-          - gulpfile.js [Gulp Settings for Build Tasks]
+    - dist [Production/Deploy Files]
+        - CSS [CSS Production Files]
+            - tornado.min.css [Minifyed LTR Version]
+            - tornado-rtl.min.css [Minified RTL Version]
+        - fonts [Default Used Fonts]
+        - js [Javascript Production Files]
+            - tornado.min.js [Tornado Minifyed Javascript]
+    - src [Project Source Files]
+        - javascript [Tornado Javascript Files]
+        - SCSS [Tornado SASS/CSS Files]
+    - node_modules [Node.JS Build Dependencies]
+    - gulpfile.js [Gulp Settings for Build Tasks]
 
 --------------------
 

@@ -11,7 +11,7 @@ Hi! Tornado UI v2 is UI Framework and Work Enviroment to Help Web Designers and 
 --------------------
 
 #### Project Files Tree
- - Tornado Root<br>
+ - Tornado Root
     - Design Templates [PSD/XD Workspace and Tornado UI Kit]
     - dist [Production/Deploy Files]
         - CSS [CSS Production Files]
@@ -25,6 +25,7 @@ Hi! Tornado UI v2 is UI Framework and Work Enviroment to Help Web Designers and 
         - SCSS [Tornado SASS/CSS Files]
     - node_modules [Node.JS Build Dependencies]
     - gulpfile.js [Gulp Settings for Build Tasks]
+    - package.json [NPM Project Settings]
 
 --------------------
 

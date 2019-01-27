@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EngCode/Tornado-v2.git"
+    "url": "git+https://github.com/EngCode/Tornado-UI-v2"
   },
   "keywords": [
     "ui",
@@ -24,9 +24,9 @@
   "author": "Abdullah.Ramadan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EngCode/Tornado-v2/issues"
+    "url": "https://github.com/EngCode/Tornado-UI-v2/issues"
   },
-  "homepage": "https://github.com/EngCode/Tornado-v2#readme",
+  "homepage": "https://github.com/EngCode/Tornado-UI-v2#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
     "gulp-clean-css": "^4.0.0",

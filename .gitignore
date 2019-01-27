@@ -1,7 +1,7 @@
 _onWork/
 .vscode/
-SCSS/assets/_mahacode.scss
-SCSS/assets/_flashpoint.scss
-SCSS/assets/_engcode.scss
+src/SCSS/assets/_mahacode.scss
+src/SCSS/assets/_flashpoint.scss
+src/SCSS/assets/_engcode.scss
 dist/img/
 Tornado v2 Home Workspace.code-workspace

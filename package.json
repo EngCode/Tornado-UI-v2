@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "tornado": "webpack --config webpack.config.js",
+    "tornado": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -48,5 +48,8 @@
   "bugs": {
     "url": "https://github.com/EngCode/Tornado-v2/issues"
   },
-  "homepage": "https://github.com/EngCode/Tornado-v2#readme"
+  "homepage": "https://github.com/EngCode/Tornado-v2#readme",
+  "devDependencies": {
+    "webpack-cli": "^3.2.3"
+  }
 }

@@ -1,43 +1,52 @@
 {
-  "name": "tornado-v2",
-  "version": "2.1",
-  "description": "Tornado v2 Frontend Framework",
-  "main": "index.js",
+  "name": "tornado-ui",
+  "version": "2.0.5",
+  "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
+  "main": "/src/tornado.js",
   "directories": {
     "doc": "docs"
   },
+  "scripts": {
+    "tornado": "webpack --config webpack.config.js",
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EngCode/Tornado-UI-v2"
+    "url": "git+https://github.com/EngCode/Tornado-v2.git"
   },
   "keywords": [
+    "tornado",
     "ui",
-    "frontend",
-    "frame",
     "framework",
-    "js",
     "css",
-    "sass",
+    "js",
+    "esNext",
+    "es5",
+    "es6",
+    "react",
+    "vue",
+    "wordpress",
     "design",
-    "ux"
+    "web",
+    "app",
+    "enviroment",
+    "gutenberg",
+    "designers",
+    "developers",
+    "development",
+    "creative",
+    "webpack",
+    "sass",
+    "vanila",
+    "rtl",
+    "user",
+    "interface",
+    "ux",
+    "components"
   ],
   "author": "Abdullah.Ramadan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EngCode/Tornado-UI-v2/issues"
+    "url": "https://github.com/EngCode/Tornado-v2/issues"
   },
-  "homepage": "https://github.com/EngCode/Tornado-UI-v2#readme",
-  "devDependencies": {
-    "gulp": "^4.0.0",
-    "gulp-clean-css": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify-es": "^1.0.4",
-    "node-sass": "^4.11.0"
-  },
-  "dependencies": {
-    "dependencies": "0.0.1"
-  }
+  "homepage": "https://github.com/EngCode/Tornado-v2#readme"
 }

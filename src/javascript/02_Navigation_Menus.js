@@ -20,14 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
         var SubMenu = navMenus.querySelectorAll('li ul,li .megamenu');
         Array.from(SubMenu).forEach(function (SubMenu) {
             SubMenu.parentNode.classList.add('dropdown-item');
-        });
-
-        //===> Create Dropdown Toggle Button <===//
-        var dropDownToggle = navMenus.querySelectorAll('.dropdown-item');
-        Array.from(dropDownToggle).forEach(function (dropDownToggle) {
-            var CurrentHTML = dropDownToggle.innerHTML,
-                ToggleHTML = '<a href="javascript:void(0);" class="dropdown-toggle ti-arrow-down-chevron" title="Open or Close Menu"></a>';
-            dropDownToggle.innerHTML = ToggleHTML + CurrentHTML;
+            //===> Create Dropdown Toggle Button <===//
+            var dropDownBtn = document.createElement('a');
+            dropDownBtn.classList.add('dropdown-toggle');
+            dropDownBtn.classList.add('ti-arrow-down-chevron');
+            dropDownBtn.setAttribute('href', 'javascript:void(0);');
+            SubMenu.insertAdjacentElement('beforebegin', dropDownBtn);
         });
 
         //===> Adding Logo for Mobile Menu <===//

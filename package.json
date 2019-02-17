@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "tornado": "webpack --config webpack.config.js"
+    "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps"
   },
   "repository": {
     "type": "git",
@@ -52,6 +52,7 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1"
+    "@babel/preset-env": "^7.3.1",
+    "babel-minify": "^0.5.0"
   }
 }

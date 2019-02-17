@@ -1,2 +1,2 @@
 //====== Tornado Functions ======//
-import './javascript/00_ES6_Helpers';
+require ('./javascript/00_ES6_Helpers');

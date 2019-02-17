@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps"
+    "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps",
+    "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
-    "babel-minify": "^0.5.0"
+    "babel-minify": "^0.5.0",
+    "node-sass": "^4.11.0"
   }
 }

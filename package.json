@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps",
+    "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
     "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
     "tornado": "npm-run-all tornado-sass & tornado-js"
   },

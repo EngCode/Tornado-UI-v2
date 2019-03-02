@@ -48,3 +48,38 @@ const setAttributes = function (element, options) {
         element.setAttribute(attr, options[attr]);
     });
 };
+
+/*===== Live Events =====*/
+function addLiveListener(scope, selector, event, funct) {
+    'use strict';
+    //==== interval for Checking new Elements ====//
+    setInterval(function () {
+        //==== Selector ====//
+        var selectorParts = selector.split('.');
+        var tag = selectorParts.shift();
+        var className;
+        if (selectorParts.length) {
+            className = selectorParts.shift();
+        }
+        if (tag != "") {
+            tag = tag.toUpperCase();
+            var elements = scope.getElementsByTagName(tag);
+        } else {
+            var elements = scope.getElementsByClassName(className);
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i][event + '_processed'] === undefined && (tag == "" || elements[i].tagName == tag)) {
+                    elements[i].addEventListener(event, funct);
+                }
+            }
+        }
+    }, 1000);
+}
+
+/**
+ * Adds a Listener for specific tags for elements that may not yet
+ * exist.
+ * @param scope a reference to an element to look for elements in (i.e. document)
+ * @param selector the selector in form [tag].[class] (i.e. a.someBtn)
+ * @param event and event (i.e. click)
+ * @param funct a function reference to execute on an event
+ */

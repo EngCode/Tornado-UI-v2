@@ -83,3 +83,8 @@ function addLiveListener(scope, selector, event, funct) {
  * @param event and event (i.e. click)
  * @param funct a function reference to execute on an event
  */
+
+/*===== Insert After =====*/
+function insertAfter(el, referenceNode) {
+    referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+}

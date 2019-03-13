@@ -62,6 +62,38 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     });
 
+    //======> Validation <======//
+    var FormElement = getElements('form');
+    Array.from(FormElement).forEach(function(formElement) {
+        formElement.addEventListener('submit', function(e) {
+            //===== Select and Loop Throgh Childs =====//
+            let childs = this.children;
+            Array.from(childs).forEach(function(child) {
+                //===== Select All Childs that Matchs =====//
+                let formControls = child.querySelectorAll('[aria-required="true"],.required,[required],.wpcf7-validates-as-required');
+                Array.from(formControls).forEach(function(formControl) {
+                    //===== Grap this Control Value =====//
+                    let controlValue = formControl.value;
+                    //===== if the Value is Empity =====//
+                    if (controlValue === '' || controlValue === null || controlValue === undefined) {
+                        //==== Add Error Class ====//
+                        formControl.classList.add('error');
+                        //==== Create Error Message ====//
+                        var errorMsg = document.createElement('span');
+                        errorMsg.classList.add('badge','danger', 'outline', 'dismiss', 'pointing-top');
+                        errorMsg.innerHTML = 'Error : This Field is Required Please Fullfill this Field.';
+                        insertAfter(errorMsg, formControl);
+                        //===== Error to Fix Submit =====//
+                        e.preventDefault();
+                    } else {
+                        formControl.classList.remove('error');
+                        formControl.classList.add('success');
+                    }
+                });
+            });
+        });
+    });
+
     //====== Colors Checkbox's ======//
     // $('.color-checkbox').each(function(){
     //    var color = $(this).attr('data-color');

@@ -9,7 +9,9 @@
   "scripts": {
     "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
     "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
-    "tornado": "npm-run-all tornado-sass & tornado-js"
+    "tornado-js-build": "babel --presets @babel/preset-env src/javascript --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
+    "tornado-sass-build": "node-sass src/SCSS -o dist/css --output-style compressed --source-map true",
+    "tornado": "npm-run-all tornado-js-build & tornado-sass-build"
   },
   "repository": {
     "type": "git",

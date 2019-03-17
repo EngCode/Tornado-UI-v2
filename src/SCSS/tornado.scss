@@ -13,28 +13,16 @@ $page-dir:ltr;
 $page-dir-reverse:rtl;
 $direction:left;
 $directionReverse:right;
-//========== CSS Colors Variables ==========//
-:root{
-    --primary-color:#4166d6;
-    --primary-color-hover:#2e4dc9;
-    --secondary-color:#de670f;
-    --secondary-color-hover:#eaa711;
-    --reverse-color:#FFF;
-    --reverse-color-dark:#1c1c1c;
-    --light-color:#cad0e0;
-    --black-color:#222222;
-    --typo-color:#555555;
-}
 //========== Colors Variables Sass Render ==========//
-$primary-color:var(--primary-color);
-$primary-color-hover:var(--primary-color-hover);
-$secondary-color:var(--secondary-color);
-$secondary-color-hover:var(--secondary-color-hover);
-$reverse-color:var(--reverse-color);
-$reverse-color-dark:var(--reverse-color-dark);
-$light-color:var(--light-color);
-$black-color:var(--black-color);
-$typo-color:var(--typo-color);
+$primary-color:#4166d6;
+$primary-color-hover:#2e4dc9;
+$secondary-color:#de670f;
+$secondary-color-hover:#eaa711;
+$reverse-color:#FFF;
+$reverse-color-dark:#1c1c1c;
+$light-color:#cad0e0;
+$black-color:#222222;
+$typo-color:#555555;
 //=== Assets text colors ====//
 $success-color:#22b544;
 $danger-color:#de3131;
@@ -118,6 +106,7 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'elements/jumbtron';
 @import 'elements/labels';
 @import 'elements/cards';
+@import 'elements/pagination';
 /*========== Forms ==========*/
 @import 'forms/form-themes';
 /*========== Components ==========*/

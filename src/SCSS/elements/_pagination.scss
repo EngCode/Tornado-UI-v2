@@ -1,0 +1,44 @@
+.pagination {
+    @extend %reset;
+    word-spacing: -5px;
+    li {
+        word-spacing: normal;
+        display: inline-block;
+        padding:0 15px;
+        height:42px;
+        line-height: 40px;
+        font-size: 14px;
+        color:$dark-color;
+        background:#f7f7f7;
+        @extend %normal-motion;
+        text-align: center;
+        font-weight:$medium-weight;
+        span,a {
+            color: inherit;
+            display: block;
+            padding:0 15px;
+            margin: 0 -15px;
+        }
+        border:1px solid rgba(0,0,0,0.10);
+        &.current,&.active {
+            background:$primary-color;
+            color:#FFF;
+            span,a{color:inherit;}
+        }
+    }
+    /*======== Separated Theme ========*/
+    &.separate {word-spacing: 10px;}
+    /*======== Circles Theme ========*/
+    &.circles {
+        word-spacing: 10px;
+        li {
+            padding:0;
+            width:42px;
+            border-radius: 50%;
+        }
+    }
+    /*======== Fix Last Child Border ========*/
+    &:not(.circles):not(.separate){
+        li:not(:last-child) {border-#{$directionReverse}:0 none;}
+    }
+}

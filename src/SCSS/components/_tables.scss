@@ -4,14 +4,16 @@
     border-collapse: separate;
     border-spacing: 0;
     thead {
-        td,th{font-weight: $medium-weight;}
+        td,th{
+            font-weight: $medium-weight;
+        }
     }
 
     tr{
         td,th{
             padding:10px 0;
             border-bottom: 1px solid rgba($color: #000000, $alpha: 0.10);
-            // text-align: inherit;
+            text-align: inherit;
         }
     }
     

@@ -151,7 +151,7 @@
                 font-family: $primary-font;
             }
             
-            &:hover,&.active { 
+            &:hover,&.active,&.current-menu-parent,&.current-menu-item{ 
                 color:$hvr-color;
                 background:$hvr-bg;
                 > a {color:$hvr-color;}
@@ -172,7 +172,7 @@
                 line-height:$sub-height;
                 color:$sub-color;
                 a {color:$sub-color;}
-                &:hover,&.active {
+                &:hover,&.active,&.current-menu-parent,&.current-menu-item{
                     background:$sub-hvr-bg;
                     > a { color:$sub-hvr-color; }
                 }

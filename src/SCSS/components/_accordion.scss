@@ -38,6 +38,7 @@
             }
             .accordion-content{
                 overflow: auto;
+                max-height: none;
             }
         }
     }

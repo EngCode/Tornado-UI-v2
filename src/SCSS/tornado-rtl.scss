@@ -106,7 +106,6 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'assets/selectors';
 @import 'assets/mixins';
 @import 'assets/reset';
-@import 'assets/utilities';
 /*========== Global Sass ==========*/
 @import 'tornado-icons';
 @import 'grid/grid-system';
@@ -128,6 +127,8 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 @import 'components/tabs-system';
 @import 'components/accordion';
 @import 'components/modals';
+@import 'components/dropdowns';
 @import 'components/coloring';
+@import 'assets/utilities';
 /*========== Blank Project Theme ==========*/
 @import 'theme';

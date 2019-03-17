@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         //==== Create Error Message ====//
                         var errorMsg = document.createElement('span');
                         errorMsg.classList.add('badge','danger', 'outline', 'dismiss', 'pointing-top');
-                        errorMsg.innerHTML = 'Error : This Field is Required Please Fullfill this Field.';
+                        errorMsg.innerHTML = 'Error : This Field is Required Please Fulfill this Field.';
                         insertAfter(errorMsg, formControl);
                         //===== Error to Fix Submit =====//
                         e.preventDefault();

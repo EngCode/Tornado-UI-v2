@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     var callBackBefore = thisElement.getAttribute('data-call-before');
                     window[callBackBefore]();
                 }
-                //==== Activate Clicked Accordion if its Not Activated ====//
-                thisParent.classList.add('active');
                 //==== Set the Panel Max Height for Transtion ====//
                 var thisHight = nextPanel.scrollHeight,
                     padding = getComputedStyle(nextPanel).padding;
                 nextPanel.style.maxHeight = thisHight + padding + "px";
+                //==== Activate Clicked Accordion if its Not Activated ====//
+                thisParent.classList.add('active');
                 //==== Close Other Activated Siblings Accordion Items ====//
                 closeOther();
                 //==== Call Back Function After Opens the Panel ====//

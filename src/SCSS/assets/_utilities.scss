@@ -26,14 +26,6 @@ iframe {
     border: 0 none;
 }
 
-[data-src] {
-    display: block;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    background-repeat: no-repeat;
-}
-
 hr {
     height: 1px;
     opacity: 0.1;
@@ -176,3 +168,33 @@ hr {
 }
 
 .tooltip-responsive::not([class*="ti-"])::before{display: none;}
+
+/*======== Responsive Elements ========*/
+.responsive-element {
+    display: block;
+    position: relative;
+    padding-bottom: 75%; //====> Standard Monitor 4:3 Aspect Ratio
+    &.square-size{padding-bottom: 100%;}
+    &.hd-size {padding-bottom: 56.25%;} //====> HD 16:9 Aspect Ratio
+    &.classic-size {padding-bottom: 66.64%;} //====> Classic Film 3:2 Aspect Ratio
+    &.cinema-size {padding-bottom: 42.81%;} //====> Cinemascope 21:9 Aspect Ratio
+    /*==== Content Elements ====*/
+    &>iframe, &>video, &>.element-content {
+        display: block;
+        position: absolute;
+        top:0;
+        #{$direction}: 0;
+        width:100%;
+        height: 100%;
+    }
+
+    &> video {-o-object-fit: fill;object-fit: fill;}
+}
+
+[data-src] {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}

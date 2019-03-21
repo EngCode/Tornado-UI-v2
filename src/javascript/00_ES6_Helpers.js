@@ -1,11 +1,28 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
+
 /*===== Get Single Elements =====*/
 const getElement = document.querySelector.bind(document);
+
 /*===== Get Multiple Elements =====*/
 const getElements = document.querySelectorAll.bind(document);
+
 /*===== Define Page Direction =====*/
-var pageDirection = getComputedStyle(document.body).direction;
+const pageDirection = getComputedStyle(document.body).direction;
+
+/*===== Live Events Watcher =====*/
+const addLiveListener = function (selector, event, func) {
+    'use strict';
+    //==== interval for Checking new Elements ====//
+    setInterval(function () {
+        //==== Selector ====//
+        var elements = getElements(selector);
+        Array.from(elements).forEach(function (element) {
+            element.addEventListener(event, func);
+        });
+    }, 1000);
+};
+
 /*===== Get All Siblings [ES6] (c) 2018 Chris Ferdinandi =====*/
 const getSiblings = function (element) {
     'use strict';
@@ -14,6 +31,7 @@ const getSiblings = function (element) {
         return sibling !== element;
     });
 };
+
 /*===== Get Next Sibling that Matchs =====*/
 const getNextSibling = function (element, selector) {
     'use strict';
@@ -27,6 +45,7 @@ const getNextSibling = function (element, selector) {
         }
     }
 };
+
 /*===== Get Previos Sibling that Matchs =====*/
 const getPrevSibling = function (element, selector) {
     'use strict';
@@ -41,7 +60,7 @@ const getPrevSibling = function (element, selector) {
     }
 };
 
-/*===== Get Previos Sibling that Matchs =====*/
+/*===== Set new Attributes =====*/
 const setAttributes = function (element, options) {
     'use strict';
     Object.keys(options).forEach(function (attr) {
@@ -49,42 +68,8 @@ const setAttributes = function (element, options) {
     });
 };
 
-/*===== Live Events =====*/
-function addLiveListener(scope, selector, event, funct) {
-    'use strict';
-    //==== interval for Checking new Elements ====//
-    setInterval(function () {
-        //==== Selector ====//
-        var selectorParts = selector.split('.');
-        var tag = selectorParts.shift();
-        var className;
-        if (selectorParts.length) {
-            className = selectorParts.shift();
-        }
-        if (tag != "") {
-            tag = tag.toUpperCase();
-            var elements = scope.getElementsByTagName(tag);
-        } else {
-            var elements = scope.getElementsByClassName(className);
-            for (var i = 0; i < elements.length; i++) {
-                if (elements[i][event + '_processed'] === undefined && (tag == "" || elements[i].tagName == tag)) {
-                    elements[i].addEventListener(event, funct);
-                }
-            }
-        }
-    }, 1000);
-}
-
-/**
- * Adds a Listener for specific tags for elements that may not yet
- * exist.
- * @param scope a reference to an element to look for elements in (i.e. document)
- * @param selector the selector in form [tag].[class] (i.e. a.someBtn)
- * @param event and event (i.e. click)
- * @param funct a function reference to execute on an event
- */
-
 /*===== Insert After =====*/
-function insertAfter(el, referenceNode) {
-    referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+function insertAfter(element, reference) {
+    'use strict';
+    reference.parentNode.insertBefore(element, reference.nextSibling);
 }

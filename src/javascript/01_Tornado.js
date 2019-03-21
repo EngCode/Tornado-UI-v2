@@ -1,9 +1,10 @@
-/*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
+/*global window, document,addLiveListener, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
 /*===== Tornado Design Features =====*/
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    /*===== Backgrounds =====*/
+
+    /*===== Dynamic Backgrounds =====*/
     var backgroundElement = getElements('[data-src]');
     Array.from(backgroundElement).forEach(function (element) {
         var bgData = element.getAttribute('data-src');
@@ -30,27 +31,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //=== Item Remover Button ===//
-    var itemRemover = getElements('.remove-item');
-    Array.from(itemRemover).forEach(function (thisBtn) {
-        thisBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            //=== Remove Specific Target by ID ===//
-            if (thisBtn.hasAttribute('data-target')) {
-                //=== Get Target ID ===//
-                var target = thisBtn.getAttribute('data-target');
-                //=== Remove the Target ===//
-                getElement('#' + target).remove();
-            } else if (thisBtn.hasAttribute('data-tag')) {
-                //=== Get the Targeted HTML Tag ===//
-                var parentTag = thisBtn.getAttribute('data-tag');
-                //=== Remove the Target ===//
-                thisBtn.closest(parentTag).remove();
-            } else {
-                //=== Remove Direct Parent ===//
-                thisBtn.parentNode.remove();
-            }
-        });
+    addLiveListener('.remove-item', 'click', function (e) {
+        e.preventDefault();
+        var thisButton = this; //===> for Fewer Linter Warnings
+        //=== Remove Specific Target by ID ===//
+        if (thisButton.hasAttribute('data-target')) {
+            //=== Get Target ID ===//
+            var target = thisButton.getAttribute('data-target');
+            //=== Remove the Target ===//
+            getElement('#' + target).remove();
+        } else if (thisButton.hasAttribute('data-tag')) {
+            //=== Get the Targeted HTML Tag ===//
+            var parentTag = thisButton.getAttribute('data-tag');
+            //=== Remove the Target ===//
+            thisButton.closest(parentTag).remove();
+        } else {
+            //=== Remove Direct Parent ===//
+            thisButton.parentNode.remove();
+        }
     });
+
 });
 
 // jQuery(function ($) {

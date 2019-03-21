@@ -198,3 +198,10 @@ hr {
     position: relative;
     background-repeat: no-repeat;
 }
+
+.is-sticky{
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+}

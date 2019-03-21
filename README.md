@@ -1,10 +1,8 @@
 ![](https://img.shields.io/badge/build-v2.3-blue.svg) ![](https://img.shields.io/github/languages/code-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/repo-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/issues/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/license/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/badge/%40babel-v7.3.3-blue.svg) ![](https://img.shields.io/badge/Sass-v3.7.2-blue.svg)
 
 ## Welcome to Tornado UI v2
+Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and easy to control elements Builded With Sass and ES6 Babel for Easy Customizing.
 ##### No Dependency => Totally Customiazble
-
-Hi! Tornado UI v2 is UI Framework and Work Enviroment to Help Web Designers and Frontends to Built up a Clean Fast Websites and UI Elements **[Intermediate Level in Particular]** Built up With **[Sass](http://sass-lang.com/)** and **[Pure Javasript W/ ES5/ES6 Features](https://developer.mozilla.org/en-US/docs/Learn/JavaScript)** Writing To Be Compatible With Any **Realtime** Framework.
-
 --------------------
 #### browser support
 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
@@ -13,33 +11,21 @@ Hi! Tornado UI v2 is UI Framework and Work Enviroment to Help Web Designers and 
 
 --------------------
 #### Documentation
-
-looking for Documentation **Visit** [Tornado UI v2](http://flash-point.net/tornado) and for Arabic [RTL] Documentation [Tornado UI v2 RTL](http://flash-point.net/tornado)
+looking for Documentation **Visit** [Tornado UI v2](https://flash-point.net/tornado/docementation/getting-start/)
 
 --------------------
-#### Project Files Tree
-- Tornado Root
-- Design Templates [PSD/XD Workspace and Tornado UI Kit]
-- dist [Production Files]
-	- CSS [CSS Production Files]
-		- tornado.css [Minifyed LTR Version]
-		- tornado-rtl.css [Minified RTL Version]
-	- fonts [Default Used Fonts]
-	- js [Javascript Production Files]
-		- tornado.min.js [Tornado Minifyed Javascript]
-- src [Project Source Files]
-	- javascript [Tornado Javascript Files]
-	- SCSS [Tornado SASS/CSS Files]
-- node_modules [Node.JS Build Dependencies]
-- package.json [NPM Project Settings]
-- .babelrc [Babel Transpiler Settings]
-- .eslintrc.json [ES-Linter Config]
--------------------
-#### Works Along Side With
-- jQuery
-- Vue.JS
-- ReactJS
-- CommonJS
+#### Before You Start
+Before you start working with the framework you must know that this framework ment to be a complete work enviroment not just including the production css/js files so if you want to understand what exactly happening and use it in the right way continue reading the docementation in order from sidemenu or just jump to the quick start and keep copy and paste codes into your project.
+
+#### Installation
+
+in order to install Tornado env you can use npm install command or you can use Git CLI and Clone the Project into your Local Machine by runing the following Command after that you will need to install Node.JS and SASS the Ruby version for compiling the source files.
+
+	====== Git CLI Clone =====
+	git clone https://github.com/EngCode/Tornado-UI-v2.git
+	====== NPM Package Install ======
+	npm install tornado-ui@v2
+
 --------------------
 #### Credits
 -   [Abdullah Ramadan](https://www.facebook.com/Eng.AbdallahPS) - Tornado UI Creator

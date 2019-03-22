@@ -1,6 +1,6 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
-/*===== Tabs System =====*/
+//======> Tabs System <======//
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
     //=== Activate First tab and its Content Box

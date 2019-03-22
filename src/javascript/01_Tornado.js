@@ -1,17 +1,17 @@
 /*global window, document,addLiveListener, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
-/*===== Tornado Design Features =====*/
+//======> Tornado Design Features <======//
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
 
-    /*===== Dynamic Backgrounds =====*/
+    //======> Dynamic Backgrounds <======//
     var backgroundElement = getElements('[data-src]');
     Array.from(backgroundElement).forEach(function (element) {
         var bgData = element.getAttribute('data-src');
         element.style.backgroundImage = 'url("' + bgData + '")';
     });
 
-    /*===== Sticky Elements =====*/
+    //======> Sticky Elements <======//
     var stickyElement = getElements('[data-sticky]');
     Array.from(stickyElement).forEach(function (element) {
         //=== Calculate Offset ===//
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    //=== Item Remover Button ===//
+    //======> Item Remover Button <======//
     addLiveListener('.remove-item', 'click', function (e) {
         e.preventDefault();
         var thisButton = this; //===> for Fewer Linter Warnings
@@ -51,7 +51,134 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    //======> Responsive X Tooltip <======//
+    var tooltipX = getElements('.tooltip-start.tooltip-responsive,.tooltip-end.tooltip-responsive');
+    Array.from(tooltipX).forEach(function (tooltipX) {
+        var startTip = tooltipX.offsetLeft,
+            endTip = window.innerWidth - tooltipX.getBoundingClientRect().right; // tooltipX.offsetLeft + tooltipX.offsetWidth;
+        if (startTip < 100 || endTip < 100) {
+            tooltipX.classList.add('tooltip-bottom');
+            tooltipX.classList.remove('tooltip-end');
+            tooltipX.classList.remove('tooltip-start');
+        }
+    });
+
+    //======> Responsive Top Tooltip <======//
+    var tooltipTop = getElements('.tooltip.tooltip-responsive');
+    Array.from(tooltipTop).forEach(function (tooltipTop) {
+        var topTip = tooltipTop.offsetTop;
+        if (topTip <= 50) {
+            tooltipTop.classList.add('tooltip-bottom');
+            tooltipTop.classList.remove('tooltip');
+        }
+    });
+
+    //======> Responsive Bottom Tooltip <======//
+    var tooltipBottom = getElements('.tooltip-bottom.tooltip-responsive');
+    Array.from(tooltipBottom).forEach(function (tooltipBottom) {
+        var bottomTip = tooltipBottom.offsetTop + tooltipBottom.offsetHeight;
+        if (bottomTip <= 50) {
+            tooltipBottom.classList.add('tooltip');
+            tooltipBottom.classList.remove('tooltip-bottom');
+        }
+    });
+
+    //======> ScrollSpy <======//
+    const scrollspy = getElements('.scrollspy [data-target],.scrollspy a');
+    Array.from(scrollspy).forEach(function (scrollspy) {
+        //====> get the Target <====//
+        var scrollTarget = scrollspy.getAttribute('href') || scrollspy.getAttribute('data-target'),
+            selectedTarget = getElement(scrollTarget),
+            targetOffset = selectedTarget.offsetTop - 100;
+        //====> Scroll Event <====//
+        window.addEventListener('scroll', function () {
+            //====> if the position of the section less then the current position <====//
+            if (window.scrollY >= targetOffset) {
+                //====> Add Class Active <====//
+                if (scrollspy.hasAttribute('data-target')) {
+                    scrollspy.classList.add('active');
+                    var spySiblings = getSiblings(scrollspy);
+                    spySiblings.forEach(function (element) {
+                        element.classList.remove('active');
+                    });
+                } else {
+                    var spyParent = scrollspy.parentNode,
+                        otherSiblings = getSiblings(spyParent);
+                    spyParent.classList.add('active');
+                    otherSiblings.forEach(function (element) {
+                        element.classList.remove('active');
+                    });
+                }
+            } else {
+                //====> Remove Class Active <====//
+                if (scrollspy.hasAttribute('data-target')) {
+                    scrollspy.classList.remove('active');
+                } else {
+                    var parent = scrollspy.parentNode;
+                    parent.classList.remove('active');
+                }
+            }
+        });
+    });
+
+    //======> Smoth Scroll <======//
+    const smothScroll = getElements('.scrollspy [data-target],.scrollspy a,.smoth-scroll');
+    Array.from(smothScroll).forEach(function (smothScroll) {
+        smothScroll.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            //====> get the Target and its Options <====//
+            var scrollTarget = smothScroll.getAttribute('href') || smothScroll.getAttribute('data-target'),
+                duration = smothScroll.getAttribute('data-duration') || 1000,
+                target = getElement(scrollTarget),
+                startTime = null,
+                targetPosition = target.getBoundingClientRect().top,
+                startPosition = window.pageYOffset || window.scrollY;
+
+            //====> Scroll Animation <====//
+            function smothlyScroll(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                var timeElapsed = currentTime - startTime,
+                    scrollToTarget = easeMath(timeElapsed, startPosition, targetPosition, duration);
+                window.scrollTo(0, scrollToTarget);
+                if (timeElapsed < duration) requestAnimationFrame(smothlyScroll);
+            }
+
+            requestAnimationFrame(smothlyScroll);
+        });
+    });
 });
+
+
+// function smoothScroll(target, duration) {
+//     var target = document.querySelector(".last");
+//     var targetPosition = target.getBoundingClientRect().top;
+//     var startPosition = window.pageYOffset || window.scrollY;
+//     var distance = targetPosition - startPosition;
+//     var startTime = null;
+
+    // function loop(currentTime) {
+    //     if (startTime === null) startTime = currentTime;
+    //     var timeElapsed = currentTime - startTime;
+    //     var run = ease(timeElapsed, startPosition, distance, duration);
+    //     window.scrollTo(0, run);
+    //     if (timeElapsed < duration) requestAnimationFrame(loop);
+    // }
+
+//     requestAnimationFrame(loop);
+// }
+
+// //Animating
+// document.querySelector(".first").addEventListener("click", function (e) {
+//     e.preventDefault();
+//     smoothScroll(e.target, 500);
+// });
+
+// //Animating Second Link
+// document.querySelector(".last").addEventListener("click", function (e) {
+//     e.preventDefault();
+//     smoothScroll(e.target, 500);
+// });
 
 // jQuery(function ($) {
 //     'use strict';
@@ -71,29 +198,5 @@ document.addEventListener('DOMContentLoaded', function () {
 //                 $this.text(this.countNum);
 //             }
 //         });
-//     });
-
-//     /*===== Responsive X Tooltip =====*/
-//     $('.tooltip-start.tooltip-responsive,.tooltip-end.tooltip-responsive').each(function() {
-//         var startTip = $(this).offset().left,
-//             endTip = $(this).offset().left + $(this).outerWidth(true);
-//         if(startTip < 100 && endTip < 100) {
-//             $(this).addClass('tooltip-bottom').removeClass('tooltip-end').removeClass('tooltip-start');
-//         }
-//     });
-
-//     /*===== Responsive Y Tooltip =====*/
-//     $('.tooltip.tooltip-responsive').each(function() {
-//         var topTip = $(this).offset().top;
-//         if(topTip < 50) {
-//             $(this).addClass('tooltip-bottom').removeClass('tooltip');
-//         }
-//     });
-
-//     $('.tooltip-bottom.tooltip-responsive').each(function() {
-//         var bottomTip = $(this).offset().top + $(this).outerHeight(true);
-//         if(bottomTip < 50) {
-//             $(this).addClass('tooltip').removeClass('tooltip-bottom');
-//         }
 //     });
 // });

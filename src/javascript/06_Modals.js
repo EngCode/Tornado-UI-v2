@@ -1,6 +1,6 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
-/*===== Tornado Popup Modals =====*/
+//======> Tornado Popup Modals <======//
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
     /*=====> Create Overlay Triger <=====*/

@@ -1,16 +1,16 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
 
-/*===== Get Single Elements =====*/
+//======> Get Single Elements <======//
 const getElement = document.querySelector.bind(document);
 
-/*===== Get Multiple Elements =====*/
+//======> Get Multiple Elements <======//
 const getElements = document.querySelectorAll.bind(document);
 
-/*===== Define Page Direction =====*/
+//======> Define Page Direction <======//
 const pageDirection = getComputedStyle(document.body).direction;
 
-/*===== Live Events Watcher =====*/
+//======> Live Events Watcher <======//
 const addLiveListener = function (selector, event, func) {
     'use strict';
     //==== interval for Checking new Elements ====//
@@ -23,7 +23,7 @@ const addLiveListener = function (selector, event, func) {
     }, 1000);
 };
 
-/*===== Get All Siblings [ES6] (c) 2018 Chris Ferdinandi =====*/
+//======> Get All Siblings [ES6] (c) 2018 Chris Ferdinandi <======//
 const getSiblings = function (element) {
     'use strict';
     /*== Get all siblings of ==> element @param {Node} ==> @return {Array} The siblings ==*/
@@ -32,7 +32,7 @@ const getSiblings = function (element) {
     });
 };
 
-/*===== Get Next Sibling that Matchs =====*/
+//======> Get Next Sibling that Matchs <======//
 const getNextSibling = function (element, selector) {
     'use strict';
     // Get the next sibling element
@@ -46,7 +46,7 @@ const getNextSibling = function (element, selector) {
     }
 };
 
-/*===== Get Previos Sibling that Matchs =====*/
+//======> Get Previos Sibling that Matchs <======//
 const getPrevSibling = function (element, selector) {
     'use strict';
     // Get the Previos sibling element
@@ -60,7 +60,7 @@ const getPrevSibling = function (element, selector) {
     }
 };
 
-/*===== Set new Attributes =====*/
+//======> Set new Attributes <======//
 const setAttributes = function (element, options) {
     'use strict';
     Object.keys(options).forEach(function (attr) {
@@ -68,8 +68,16 @@ const setAttributes = function (element, options) {
     });
 };
 
-/*===== Insert After =====*/
+//======> Insert After <======//
 function insertAfter(element, reference) {
     'use strict';
     reference.parentNode.insertBefore(element, reference.nextSibling);
 }
+
+//======> Ease Animation <======//
+function easeMath(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+};

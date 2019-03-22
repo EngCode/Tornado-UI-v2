@@ -1,9 +1,9 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
-/*===== Accordion System =====*/
+//======> Accordion System <======//
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    /*===== When Click on Accordion Button =====*/
+    //======> When Click on Accordion Button <======//
     var accordionButton = getElements('.accordion-title');
     Array.from(accordionButton).forEach(function (element) {
         element.addEventListener('click', function () {

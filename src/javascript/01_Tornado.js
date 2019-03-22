@@ -149,37 +149,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-// function smoothScroll(target, duration) {
-//     var target = document.querySelector(".last");
-//     var targetPosition = target.getBoundingClientRect().top;
-//     var startPosition = window.pageYOffset || window.scrollY;
-//     var distance = targetPosition - startPosition;
-//     var startTime = null;
-
-    // function loop(currentTime) {
-    //     if (startTime === null) startTime = currentTime;
-    //     var timeElapsed = currentTime - startTime;
-    //     var run = ease(timeElapsed, startPosition, distance, duration);
-    //     window.scrollTo(0, run);
-    //     if (timeElapsed < duration) requestAnimationFrame(loop);
-    // }
-
-//     requestAnimationFrame(loop);
-// }
-
-// //Animating
-// document.querySelector(".first").addEventListener("click", function (e) {
-//     e.preventDefault();
-//     smoothScroll(e.target, 500);
-// });
-
-// //Animating Second Link
-// document.querySelector(".last").addEventListener("click", function (e) {
-//     e.preventDefault();
-//     smoothScroll(e.target, 500);
-// });
-
 // jQuery(function ($) {
 //     'use strict';
 //     //=== Animated Numbers ===//

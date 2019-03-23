@@ -153,10 +153,13 @@
     }
 
     /*======== Show the Dropdown ========*/
-    &.active > .dropdown-list,&[data-event="hover"]:hover > .dropdown-list {
-        -webkit-animation: dropOpen 0.5s both;
-                animation: dropOpen 0.5s both;
-        visibility: visible;
+    &.active,&[data-event="hover"]:hover{
+        z-index: 999;
+        .dropdown-list {
+            -webkit-animation: dropOpen 0.5s both;
+                    animation: dropOpen 0.5s both;
+            visibility: visible;
+        }
     }
 
     /*======== Animation ========*/
@@ -164,6 +167,7 @@
         0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
         100% {opacity: 1;-webkit-transform: none;transform: none;}
     }
+
     @keyframes dropOpen {
         0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
         100% {opacity: 1;-webkit-transform: none;transform: none;}

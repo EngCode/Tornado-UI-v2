@@ -2,6 +2,7 @@
 .dropdown {
     display: inline-block;
     position: relative;
+
     .dropdown-btn:not(.icon-btn)::before {
         float: $directionReverse;
         margin-#{$direction}: 5px;
@@ -14,13 +15,14 @@
         position: absolute;
         top:100%;
         #{$direction}:0;
-        display: none;
+        -webkit-animation: dropClose 0.5s both;
+                animation: dropClose 0.5s both;
+        visibility: hidden;
         background: #FFF;
         width:200px;
         border:1px solid rgba(0, 0, 0, .10);
         -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, .10);
                 box-shadow: 0 5px 5px rgba(0, 0, 0, .10);
-        &.active{display: block;}
         //==== Dropdown Arrow ====//
         &::after {
             content: '';
@@ -150,7 +152,30 @@
         }
     }
 
-    &[data-event="hover"]:hover {
-        .dropdown-list{display: block;}
+    /*======== Show the Dropdown ========*/
+    &.active > .dropdown-list,&[data-event="hover"]:hover > .dropdown-list {
+        -webkit-animation: dropOpen 0.5s both;
+                animation: dropOpen 0.5s both;
+        visibility: visible;
+    }
+
+    /*======== Animation ========*/
+    @-webkit-keyframes dropOpen {
+        0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
+        100% {opacity: 1;-webkit-transform: none;transform: none;}
+    }
+    @keyframes dropOpen {
+        0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
+        100% {opacity: 1;-webkit-transform: none;transform: none;}
+    }
+
+    @-webkit-keyframes dropClose {
+        0% {opacity: 1;-webkit-transform: none;transform: none;}
+        100% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
+    }
+
+    @keyframes dropClose {
+        0% {opacity: 1;-webkit-transform: none;transform: none;}
+        100% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
     }
 }

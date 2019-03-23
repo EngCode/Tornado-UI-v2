@@ -6,15 +6,22 @@ document.addEventListener('DOMContentLoaded', function () {
     //===> Dropdown Buttons <===//
     var dropdownButton = getElements('.dropdown-btn');
     Array.from(dropdownButton).forEach(function (dropdownButton) {
-        //===> Catch List Button <===//
-        var dropdownList = getNextSibling(dropdownButton, '.dropdown-list');
         //===> When Click on the Button <===//
         dropdownButton.addEventListener('click', function (event) {
             //==> Prevent Default Behavor <==//
             event.preventDefault();
+            var thisParent = dropdownButton.closest('.dropdown'),
+                otherDropdown = getElements('.dropdown.active');
+
+            //===> Deactivate Other <===//
+            Array.from(otherDropdown).forEach(function (otherDropdown) {
+                if(otherDropdown != thisParent) {
+                    otherDropdown.classList.remove('active');
+                }
+            });
+
             //===> Activat Button and List <===//
-            dropdownButton.classList.toggle('active');
-            dropdownList.classList.toggle('active');
+            thisParent.classList.toggle('active');
         });
     });
 

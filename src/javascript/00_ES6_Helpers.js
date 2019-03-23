@@ -1,7 +1,7 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
 
-//======> Get Single Elements <======//
+//======> Get Elements <======//
 const getElement = document.querySelector.bind(document);
 
 //======> Get Multiple Elements <======//
@@ -73,11 +73,3 @@ function insertAfter(element, reference) {
     'use strict';
     reference.parentNode.insertBefore(element, reference.nextSibling);
 }
-
-//======> Ease Animation <======//
-function easeMath(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
-    t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
-};

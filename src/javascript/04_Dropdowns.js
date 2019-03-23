@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             var thisParent = dropdownButton.closest('.dropdown'),
                 otherDropdown = getElements('.dropdown.active');
-
             //===> Deactivate Other <===//
             Array.from(otherDropdown).forEach(function (otherDropdown) {
-                if(otherDropdown != thisParent) {
+                if (otherDropdown !== thisParent) {
                     otherDropdown.classList.remove('active');
                 }
             });

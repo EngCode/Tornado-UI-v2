@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //===> Deactivate on Blank <===//
     window.onclick = function (blank) {
         if (!blank.target.matches('.dropdown') && !blank.target.matches('.dropdown *')) {
-            console.log('Blank Clicked');
             var activatedDrops = getElements('.dropdown.active');
             Array.from(activatedDrops).forEach(function (activatedDrops) {
                 activatedDrops.classList.remove('active');

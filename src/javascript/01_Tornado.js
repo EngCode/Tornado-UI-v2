@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             getElement('#' + target).remove();
         } else if (thisButton.hasAttribute('data-tag')) {
             //=== Get the Targeted HTML Tag ===//
-            var parentTag = thisButton.getAttribute('data-tag');
+            var parentTag = thisButton.getAttribute('data-closest');
             //=== Remove the Target ===//
             thisButton.closest(parentTag).remove();
         } else {

@@ -9,17 +9,11 @@ body {
 
 .no-padding {padding: 0;}
 
-.fluid,.block-lvl {
-    width: 100%;
-}
+.fluid,.block-lvl {width: 100%;}
 
-.float-start {
-    float: $direction;
-}
+.float-start {float: $direction;}
 
-.float-end {
-    float: $directionReverse;
-}
+.float-end {float: $directionReverse;}
 
 iframe {
     max-width: 100%;
@@ -28,10 +22,10 @@ iframe {
 
 hr {
     height: 1px;
-    opacity: 0.1;
+    opacity: 1;
     border: 0 none;
-    background: #000;
-    margin: 15px 0;
+    background: rgba(0,0,0,0.15);
+    margin: 0.9375rem 0;
 }
 
 .clear-after::after,.clear-fix {
@@ -199,9 +193,13 @@ hr {
     background-repeat: no-repeat;
 }
 
-.is-sticky{
+[data-sticky="inner"].is-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+}
+
+[data-sticky="absolute"].is-sticky {
     position: fixed;
     top:0;
-    left: 0;
-    right: 0;
 }

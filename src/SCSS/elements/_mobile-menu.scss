@@ -131,35 +131,40 @@
     }
     
     //==== Overlaps Nested Theme ====//
-    &.overlaps ul li {
+    &.overlaps ul {
         ul,.megamenu {
             position: absolute;
-            #{$directionReverse}:-100%;
+            #{$direction}:-100%;
             width:90%;
             top:0;
             height: 100%;
             max-height: none;
             overflow-x:hidden;
             overflow-y:visible;
+            margin: 0;
         }
         //======== Activated ========//
-        &.opened {
+        .dropdown-item.opened {
             position: static;
             > ul,.megamenu {
-                #{$direction}:0;
+                #{$direction}:10%;
                 z-index: 100;
                 background: $menuBackground;
+                max-height: none;
+                margin: 0;
             }
             .dropdown-toggle {
-                #{$direction}:90%;
+                #{$direction}:0;
                 width:10%;
                 top:0;
                 height: 100%;
-                background: rgba(0,0,0,.80);
+                background: $danger-color;
+                color:$reverse-color;
                 z-index: 100;
+                &::before{ -webkit-transform: rotate(45deg); transform: rotate(45deg); }
             }
         }
     }
 
-    *[calss*="col-"],*[calss*="box-"] {width: 100% !important;}
+    *[calss*="col-"],*[calss*="box-"] {width: 100%;}
 }

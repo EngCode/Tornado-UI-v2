@@ -36,6 +36,14 @@ document.addEventListener('DOMContentLoaded', function () {
             getElement('#' + MenuID + ' .menu-content').innerHTML = '<div class="logo"> <img src="' + logo + '" alt="logo"> </div>';
         }
 
+        //===> Multiple Themes for Mobile Menu <===//
+        if (navMenus.hasAttribute('data-theme')) {
+            //===> Get Logo URL <===//
+            var theme = navMenus.getAttribute('data-theme');
+            //===> Create Logo Elements <===//
+            getElement('#' + MenuID).classList.add(theme, 'custom-theme');
+        }
+
         //===> Copy the List <===//
         var MenuCopy = MenuList[0].cloneNode(true);
         getElement('#' + MenuID + ' .menu-content').appendChild(MenuCopy);
@@ -67,11 +75,47 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /*===> Mobile Menu Submenus Toggle <===*/
-    var dropdownMob = getElements('.mobile-menu .dropdown-toggle,.navigation-menu .dropdown-toggle');
+    var dropdownMob = getElements('.mobile-menu .dropdown-toggle');
     Array.from(dropdownMob).forEach(function (dropdownMob) {
         dropdownMob.addEventListener('click', function (event) {
             event.preventDefault();
-            dropdownMob.parentNode.classList.toggle('opened');
+            //====> Detacte Effect Theme <====//
+            var MobileMen = dropdownMob.closest('.mobile-menu');
+            if (!MobileMen.matches('.custom-theme')) {
+                //==== Store Playable Elements ====//
+                var nextSib = getNextSibling(dropdownMob, 'ul') || getNextSibling(dropdownMob, '.megamenu'),
+                    thisParent = dropdownMob.parentNode,
+                    parentSiblings = getSiblings(thisParent);
+                //==== Check if the Clicked Menu is Activated ====//
+                if (thisParent.classList.contains('opened')) {
+                    //====> Deactivate the Menu <====//
+                    thisParent.classList.remove('opened');
+                    nextSib.classList.remove('active');
+                    //==== Remove Max Height for Transtion ====//
+                    nextSib.style.maxHeight = null;
+                } else {
+                    thisParent.classList.add('opened');
+                    //==== Set Max Height for Transtion ====//
+                    var thisHight = nextSib.scrollHeight,
+                        padding = getComputedStyle(nextSib).padding;
+                    nextSib.style.maxHeight = thisHight + padding + "px";
+                    //==== Activate Clicked Accordion if its Not Activated ====//
+                    thisParent.classList.add('active');
+                    //==== Deactivate Siblings ====//
+                    Array.from(parentSiblings).forEach(function (siblings) {
+                        siblings.classList.remove('active');
+                        var siblingsChilds = siblings.children;
+                        //==== Remove the Max Height For Transition ====//
+                        Array.from(siblingsChilds).forEach(function (childs) {
+                            if (childs.matches('ul') || childs.matches('.megamenu')) {
+                                childs.style.maxHeight = null;
+                            }
+                        });
+                    });
+                }
+            } else {
+                dropdownMob.parentNode.classList.toggle('opened');
+            }
         });
     });
 });

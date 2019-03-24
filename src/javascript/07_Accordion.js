@@ -6,14 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
     //======> When Click on Accordion Button <======//
     var accordionButton = getElements('.accordion-title');
     Array.from(accordionButton).forEach(function (element) {
-        element.addEventListener('click', function () {
+        element.addEventListener('click', function (e) {
+            e.preventDefault();
             //==== Store Playable Elements ====//
             var thisElement = element,
                 nextPanel = getNextSibling(thisElement, '.accordion-content'),
                 thisParent = thisElement.parentNode,
                 parentSiblings = getSiblings(thisParent);
             //==== Close Other Panels Function ====//
-            function closeOther() {
+            function closeOtherAccourdions() {
                 //==== Deactivate Siblings ====//
                 Array.from(parentSiblings).forEach(function (siblings) {
                     siblings.classList.remove('active');
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 //==== Activate Clicked Accordion if its Not Activated ====//
                 thisParent.classList.add('active');
                 //==== Close Other Activated Siblings Accordion Items ====//
-                closeOther();
+                closeOtherAccourdions();
                 //==== Call Back Function After Opens the Panel ====//
                 if (thisElement.hasAttribute('data-call-after')) {
                     var callBackAfter = thisElement.getAttribute('data-call-after');

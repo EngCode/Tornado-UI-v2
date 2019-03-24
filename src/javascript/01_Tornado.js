@@ -16,17 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
     Array.from(stickyElement).forEach(function (element) {
         //=== Calculate Offset ===//
         var elementTop = element.offsetTop;
-        //=== if the Element Hit the Top Toggle Class ===//
-        function stickyElementFire() {
+        //=== On Window Scroll ===//
+        window.addEventListener('scroll', function () {
+            //==== if the Postion Less Then 50 Add Extra 10 pixels ====//
+            if (elementTop < 50) { elementTop = element.offsetTop+10; }
+            //==== if the Element Hit the Top Toggle Class ====//
             if (window.scrollY >= elementTop) {
                 element.classList.add('is-sticky');
             } else {
                 element.classList.remove('is-sticky');
             }
-        }
-        //=== Fire the Function When Scroll ===//
-        window.addEventListener('scroll', function () {
-            stickyElementFire();
         });
     });
 

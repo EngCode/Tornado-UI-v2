@@ -41,9 +41,11 @@
     [class*="col-"],[class*="box-"]{padding:0 $gutterSize/2;}
 }
 
+/*======== Masonry Grid Baisc ========*/
 [class*="masonry-"] {
     margin: 0 -#{$gutterMath};
     word-spacing: -5px;
+    /*======== Masonry Columns Baisc ========*/
     > .column{
         display: inline-block;
         padding:0 $gutterSize/2;

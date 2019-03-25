@@ -36,22 +36,21 @@
             -ms-flex-direction: row-reverse;
                 flex-direction: row-reverse;
     }
-    /* Masonry Mode 
-        &.masonry{
-            display: block;
-            word-spacing: -0.65rem;
-            vertical-align:top;
-            > [class*="col-"], > [class*="box-"] {
-                display:inline-block;
-                vertical-align:top;
-                word-spacing: normal;
-            }
-        }
-    */
 
     /* set gutters space for all columns */
     [class*="col-"],[class*="box-"]{padding:0 $gutterSize/2;}
 }
 
+[class*="masonry-"] {
+    margin: 0 -#{$gutterMath};
+    word-spacing: -5px;
+    > .column{
+        display: inline-block;
+        padding:0 $gutterSize/2;
+        word-spacing: normal;
+        width:100%;
+    }
+}
+
 @import 'grid-columns'; // Columns Sizes and Responsive
-@import 'grid-utilities'; // Grid System Assets and Features
+@import 'grid-utilities'; // Grid System Assets and Featuresa

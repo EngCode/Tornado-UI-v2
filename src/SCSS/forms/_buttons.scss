@@ -10,10 +10,10 @@
 
 .btn {
     display: inline-block;
-    padding:0 25px;
-    height:42px;
-    line-height: 40px;
-    font-size: 14px;
+    padding:0 1.563rem;
+    height:2.625rem;
+    line-height: 2.5rem;
+    font-size: 0.9375rem;
     color:$dark-color;
     cursor: pointer;
     background:#f7f7f7;
@@ -31,29 +31,29 @@
         background: transparent;
         color:$dark-color;
         border:1px solid $dark-bg;
-        line-height: 38px;
+        line-height: 2.5rem;
     }
     //===== Buttons Sizes ====//
     &.tiny {
-        font-size: 12px;
-        padding: 0 15px;
-        height: 27px;
-        line-height: 25px;
-        &.outline{line-height: 25px;border-width:1px;}
+        font-size: 0.75rem;
+        padding: 0 0.9375rem;
+        height: 1.688rem;
+        line-height: 1.563rem;
+        &.outline{line-height: 1.563rem;border-width:1px;}
     }
     &.small {
-        font-size: 13px;
-        padding: 0 20px;
-        height: 36px;
-        line-height: 34px;
-        &.outline{line-height: 34px;border-width:1px;}
+        font-size: 0.8125rem;
+        padding: 0 1.25rem;
+        height: 2.25rem;
+        line-height: 2.125rem;
+        &.outline{line-height: 2.125rem;border-width:1px;}
     }
     &.large {
-        font-size: 16px;
-        padding: 0 30px;
-        height:50px;
-        line-height: 47px;
-        &.outline{line-height: 48px;border-width:3px;}
+        font-size: 1rem;
+        padding: 0 1.875rem;
+        height:3.125rem;
+        line-height: 3rem;
+        &.outline{line-height: 3rem;border-width:3px;}
     }
     //==== Coloring Buttons ====//
     &.primary{
@@ -148,10 +148,10 @@
     
     &.circle{
         border-radius:50%;
-        width:42px;
+        width:2.625rem;
         padding:0;
-        &.tiny{width: 27px;padding:0;}
-        &.small{width: 36px;padding:0;}
-        &.large{width:50px;padding:0;}
+        &.tiny{width: 1.688rem;padding:0;}
+        &.small{width: 2.25rem;padding:0;}
+        &.large{width:3.125rem;padding:0;}
     }
 }

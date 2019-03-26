@@ -2,7 +2,6 @@
 .dropdown {
     display: inline-block;
     position: relative;
-
     .dropdown-btn:not(.icon-btn)::before {
         float: $directionReverse;
         margin-#{$direction}: 5px;
@@ -16,13 +15,13 @@
         top:100%;
         #{$direction}:0;
         -webkit-animation: dropClose 0.5s both;
-                animation: dropClose 0.5s both;
+            animation: dropClose 0.5s both;
         visibility: hidden;
         background: #FFF;
-        width:200px;
+        width:14.38rem;
         border:1px solid rgba(0, 0, 0, .10);
         -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, .10);
-                box-shadow: 0 5px 5px rgba(0, 0, 0, .10);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, .10);
         //==== Dropdown Arrow ====//
         &::after {
             content: '';
@@ -44,9 +43,9 @@
         }
         //==== List item ====//
         li {
-            font-size:14px;
+            font-size:0.875rem;
             font-weight: $medium-weight;
-            padding:10px 15px;
+            padding:0.625rem 0.9375rem;
             border-bottom:1px solid rgba(0, 0, 0, .10);
             &:last-child { border-bottom: 0 none; }
             
@@ -61,11 +60,18 @@
         //==== Contact List Theme ====//
         &.contact-us {
             text-align: center;
-            width:290px;
+            width:18.13rem;
             h3 { font-size:1rem; }
+            
             li {
-                font-size: 15px;
-                &:before{font-size: 25px;display: block;padding: 10px 15px;padding-bottom: 5px;}
+                font-size: 0.9375rem;
+                &:before{
+                    font-size: 1.5rem;
+                    display: block;
+                    padding: 0.625rem 0.9375rem;
+                    padding-bottom: 5px;
+                }
+
                 &.ti-mail {
                     color: $primary-color;
                     a {color: $primary-color;}
@@ -76,6 +82,7 @@
                     a {color: $whatsapp-color;}
                 }
             }
+
             .title{display: block;}
             a:before,a.ti-mail:before,a.ti-phone:before {display: none;}
             p { font-size:14px;color:$gray-color; }
@@ -84,7 +91,7 @@
         //==== Cart List Theme ====//
         &.cart-list {
             .info-item {color:$gray-color;}
-            width:320px;
+            width:20rem;
             .btns-item {
                 @extend %flexbox;
                 @extend .align-center-y ;
@@ -97,21 +104,19 @@
             .cart-item {
                 @extend %flexbox;
                 @extend .align-center-y ;
-                padding:15px;
+                padding:0.9375rem;
                 border-bottom: 1px solid rgba(0, 0, 0, .10);
                 position: relative;
                 background:#FFF;
 
-                .image {
-                    width: 65px;
-                }
+                .image {width: 4.063rem;}
                 
                 .info { 
-                    width:calc(100% - 65px);
-                    padding-#{$direction}:15px;
+                    width:calc(100% - 4.063rem);
+                    padding-#{$direction}:0.9375rem;
                     
                     h3 {
-                        font-size:15px;
+                        font-size:0.9375rem;
                         font-weight: normal;
                         white-space: nowrap;
                         overflow: hidden;
@@ -119,25 +124,25 @@
                     }
 
                     h4 {
-                        font-size:14px;
-                        line-height: 30px;
+                        font-size:0.875rem;
+                        line-height: 1.875rem;
                         font-weight: normal;
                         margin: 8px 0;
                         display: inline-block;
                         input {
                             border: 1px solid rgba(0, 0, 0, .10);
-                            width:50px;
+                            width:3.25rem;
                             padding:0 5px;
-                            height:30px;
+                            height:1.875rem;
                             margin: 0 5px;
                         }
                     }
                     
                     .price {
                         float: $directionReverse;
-                        font-size: 14px;
+                        font-size: 0.875rem;
                         color: $primary-color;
-                        margin-top: 10px;
+                        margin-top: 0.625rem;
                     }
                  }
                  
@@ -146,7 +151,7 @@
                     #{$directionReverse}: 15px;
                     bottom: 5px;
                     color: $danger-color;
-                    font-size: 12px;
+                    font-size: 0.75rem;
                 }
             }
         }
@@ -160,26 +165,5 @@
                     animation: dropOpen 0.5s both;
             visibility: visible;
         }
-    }
-
-    /*======== Animation ========*/
-    @-webkit-keyframes dropOpen {
-        0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
-        100% {opacity: 1;-webkit-transform: none;transform: none;}
-    }
-
-    @keyframes dropOpen {
-        0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
-        100% {opacity: 1;-webkit-transform: none;transform: none;}
-    }
-
-    @-webkit-keyframes dropClose {
-        0% {opacity: 1;-webkit-transform: none;transform: none;}
-        100% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
-    }
-
-    @keyframes dropClose {
-        0% {opacity: 1;-webkit-transform: none;transform: none;}
-        100% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
     }
 }

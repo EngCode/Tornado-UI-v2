@@ -2,13 +2,13 @@
 %form-control {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
-    font-size: 14px;
-    padding: 0 15px;
+    margin-bottom: 1.563rem;
+    font-size: 0.9375rem;
+    padding: 0 0.9375rem;
     border: 1px solid rgba(0, 0, 0, .10);
-    background-color: #fefcfc;
+    background-color: #fafafa;
     line-height: 1;
-    height:42px;
+    height:2.625rem;
     &::-webkit-input-placeholder {
         opacity: 1;
         color:$gray-color;
@@ -25,9 +25,9 @@
         opacity: 1;
         color:$gray-color;
     }
-    &.rounded-corner:not(textarea) { border-radius: 80px; }
+    &.rounded-corner:not(textarea) { border-radius: 3.75rem; }
     &.rounde-corner { border-radius: 6px; }
-    + .badge{top:-15px;}
+    + .badge{top:-0.9375rem;}
     /*==== Validation ====*/
     &.success {
         border-color: $success-color;
@@ -66,20 +66,20 @@
 }
 
 %form-tiny {
-    font-size: 11px;
-    padding: 0 10px;
-    height: 27px;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+    height: 1.688rem;
 }
 
 %form-small {
-    font-size: 13px;
-    height: 36px;
+    font-size: 0.8125rem;
+    height: 2.25rem;
 }
 
 %form-large {
-    font-size: 16px;
-    padding: 0 20px;
-    height:50px;
+    font-size: 1rem;
+    padding: 0 1.25rem;
+    height:3.125rem;
 }
 
 /*==== Standard Form Reset ====*/
@@ -97,7 +97,7 @@ select,keygen{
     appearance:none;
     background-repeat:no-repeat;
     background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="rgba(0,0,0,0.5)" d="M10.5 15l7.5 7.5 7.5-7.5z"/></svg>');
-    background-position:$directionReverse 15px center;
+    background-position:$directionReverse 0.9375rem center;
     &.chevron-select{
         background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">\
             <path fill="rgba(0,0,0,0.5)" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/>\
@@ -106,30 +106,30 @@ select,keygen{
 }
 
 //==== select reset for firefox ====//
-select option,keygen option{padding:0 15px;}
-select optgroup,keygen optgroup{font-style:normal;padding:15px;}
-select optgroup option,keygen optgroup option{margin:0 -15px;padding:0 15px;}
+select option,keygen option{padding:0 0.9375rem;}
+select optgroup,keygen optgroup{font-style:normal;padding:0.9375rem;}
+select optgroup option,keygen optgroup option{margin:0 -0.9375rem;padding:0 0.9375rem;}
 
 /*=== Form UI Container Theme ===*/
 .form-ui {
     // Form Control
     input:not(.btn),textarea,select,keygen,.tagsinput {@extend %form-control;}
-    textarea{height:110px;padding:15px;}
+    textarea{height:110px;padding:0.9375rem;}
 
     /*==== Sizes ====*/
     &.tiny {
         input:not(.btn),textarea,select,keygen,.tagsinput {@extend %form-tiny;}
-        textarea{height:50px;}
+        textarea{height:3.125rem;}
     }
 
     &.small {
         input:not(.btn),textarea,select,keygen,.tagsinput{@extend %form-small;}
-        textarea{height:90px;}
+        textarea{height:5.625rem;}
     }
 
     &.large {
         input:not(.btn),textarea,select,keygen,.tagsinput{@extend %form-large;}
-        textarea{height:140px;}
+        textarea{height:12.5rem;}
     }
 }
 
@@ -155,7 +155,7 @@ input {
 /*==== Form Labels and Icons ====*/
 label {
     display:block;
-    font-size:15px;
+    font-size:0.9375rem;
     font-weight:$strong-weight;
     margin-bottom:10px;
     &.success{color: $success-color;}
@@ -168,10 +168,10 @@ label {
 .file-input{
     position:relative;
     @extend .form-control;
-    line-height: 42px;
-    &.tiny {line-height: 25px;}
-    &.small {line-height: 34px;}
-    &.large {line-height: 50px;}
+    line-height: 2.625rem;
+    &.tiny {line-height: 1.563rem;}
+    &.small {line-height: 2.125rem;}
+    &.large {line-height: 3.125rem;}
     // Text 
     &::before {content:attr(data-text);}
     // Button
@@ -183,7 +183,7 @@ label {
         height: 100%;
         background: $secondary-color;
         color:#FFF;
-        padding:0 25px;
+        padding:0 1.563rem;
     }
     // Upload Input
     input[type="file"] {
@@ -201,9 +201,9 @@ label {
 
 .control-hint {
     @extend %reset;
-    font-size:12px;
+    font-size:0.8125rem;
     position: relative;
-    top:-20px;
+    top:-1.25rem;
     color:$gray-color;
     &.success{color: $success-color;}
     &.error{color: $danger-color;}
@@ -215,40 +215,40 @@ label {
     position: relative;
     &::before {
         position: absolute;
-        width:35px;
-        font-size:18px;
+        width:2.188rem;
+        font-size:1.125rem;
         color:rgba(0,0,0,0.50);
         #{$direction}:0;
-        line-height: 44px;
+        line-height: 2.75rem;
         bottom:0;
         text-align: $directionReverse;
     }
-    input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:45px; }
+    input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.813rem; }
 
     &.tiny {
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:37px; }
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.313rem; }
         &::before {
-            font-size: 13px;
-            height: 27px;
-            width:27px;
+            font-size: 0.8125rem;
+            height: 1.688rem;
+            width:1.688rem;
         }
     }
     
     &.small {
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:40px; }
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.5rem; }
         &::before {
-            font-size: 15px;
-            line-height: 36px;
-            width:30px;
+            font-size: 0.9375rem;
+            line-height: 2.25rem;
+            width:1.875rem;
         }
     }
     
     &.large {
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:55px; }
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:3.438rem; }
         &::before {
-            font-size: 22px;
-            line-height: 52px;
-            width:45px;
+            font-size: 1.375rem;
+            line-height: 3.25rem;
+            width:2.813rem;
         }
     }
     
@@ -259,7 +259,7 @@ label {
     }
 
     &.floating-end { 
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:15px; }
+        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:0.9375rem; }
         &::before {
             #{$direction}:auto;
             #{$directionReverse}:0;
@@ -276,12 +276,12 @@ label {
 .checkbox,.switch-control,.radio-button,.tag-check{
     display:inline-block;
     margin-top:0;
-    margin-bottom:15px;
-    margin-#{$directionReverse}:15px;
+    margin-bottom:0.9375rem;
+    margin-#{$directionReverse}:0.9375rem;
     width:auto;
     font-weight:$medium-weight;
-    line-height:25px;
-    font-size:15px;
+    line-height:1.563rem;
+    font-size:0.9375rem;
     cursor:pointer;
     input{display:none!important;}
     span:before{
@@ -300,11 +300,11 @@ label {
 .checkbox {
     span:before{
         @extend .ti-checkmark-round,:before ;
-        width:22px;
-        height:22px;
+        width:1.375rem;
+        height:1.375rem;
         color:#FFF;
-        line-height:19px;
-        font-size:13px;
+        line-height:1.188rem;
+        font-size:0.8125rem;
         top:-2px;
     }
     input:checked + span:before{
@@ -317,12 +317,12 @@ label {
 .radio-button {
     span:before{
         content:'';
-        width:22px;
-        height:22px;
+        width:1.375rem;
+        height:1.375rem;
         -webkit-box-shadow:inset 0 0 0 4px #FFF;
         box-shadow:inset 0 0 0 4px #FFF;
-        line-height:18px;
-        font-size:14px;
+        line-height:1.125rem;
+        font-size:0.875rem;
         top:-2px;
         border-radius:50%;
     }
@@ -340,7 +340,7 @@ label {
         width:60px;
         display:inline-block;
         vertical-align:middle;
-        border-radius:30px;
+        border-radius:1.875rem;
         margin:0 8px;
         background:#e5e5e5;
         position: relative;
@@ -354,8 +354,8 @@ label {
             @extend %position-center-y;
             background:#bdbdbd;
             border-radius:50%;
-            width:20px;
-            height:20px;
+            width:1.25rem;
+            height:1.25rem;
         }
     }
 
@@ -364,7 +364,7 @@ label {
         background: $success-color;
         &:before{
             #{$direction}:100%;
-            margin-#{$direction}:-15px;
+            margin-#{$direction}:-0.9375rem;
             background:$success-color;
         }
     }
@@ -382,9 +382,9 @@ label {
         padding:0;
         &:not(.error):not(.warning):not(.success):not(.disable){border-color:rgba(0,0,0,0.20);}
         + label {
-            font-size:13px;
+            font-size:0.8125rem;
             font-weight: normal;
-            line-height: 46px;
+            line-height: 2.875rem;
             margin: 0;
             -webkit-transform: translateY(-100%);
                     transform: translateY(-100%);
@@ -397,7 +397,7 @@ label {
     }
     
     textarea{
-        height: 66px;
+        height: 4.125rem;
         + label {
             -webkit-transform: translateY(-160%);
                 transform: translateY(-160%);
@@ -410,8 +410,8 @@ label {
     }
 
     .control-icon {
-        &::before {bottom: auto;top:0;width:20px;}
-        input:not(.btn),textarea,select,keygen,.file-input,&:not(.floating-end) label {padding-#{$direction}: 25px;}
+        &::before {bottom: auto;top:0;width:1.25rem;}
+        input:not(.btn),textarea,select,keygen,.file-input,&:not(.floating-end) label {padding-#{$direction}: 1.563rem;}
         &.floating-end {
             input:not(.btn),textarea,select,keygen,.file-input {padding-#{$direction}: 0;}
         }

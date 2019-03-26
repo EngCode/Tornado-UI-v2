@@ -1,8 +1,8 @@
 /*======== Standard Header ========*/
 .tornado-header {
-    $thisHeight:76px;
+    $thisHeight:4.75rem;
     border:1px solid rgba(0,0,0,0.10);
-    padding:0 15px;
+    padding:0 $gutterMath;
     background: #FFF;
     @extend %fast-motion;
     //=== Container Layout ===//
@@ -16,25 +16,27 @@
     //=== Logo ===//
     .logo {
         h1 {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: $medium-weight;
             color:$primary-color;
             text-transform: uppercase;
         }
+
+        img {max-height: 3rem;}
     }
     //=== Navigation Menu ===//
     .navigation-menu {
         @include navigation-custom-theme (
             $height:$thisHeight,// Height
-            $font-size:15px, // Font-size
+            $font-size:0.9375rem, // Font-size
             $font-weight:$medium-weight, // Font Weight
             $color:$gray-color, // Text Color
             $hvr-color:$black-color, // Hover Color
             $hvr-bg:transparent, // Hover Background
             $sub-color:$black-color, // Submenu Color
             $sub-bg:#FFF,// Submenu Background
-            $sub-font-size:14px, // Submenu Font-size
-            $sub-height:40px, // Submenu Height
+            $sub-font-size:0.875rem, // Submenu Font-size
+            $sub-height:2.5rem, // Submenu Height
             $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
             $sub-hvr-color:$black-color // Submenu Hover Color
         );
@@ -44,8 +46,8 @@
     //=== Actions Buttons ===*/
     .action-btns {
         .icon-btn {
-            padding:10px;
-            font-size:23px;
+            padding:0.625rem;
+            font-size:1.438rem;
             color:$gray-color;
             @extend %fast-motion;
             &:hover { color:$black-color; }
@@ -64,15 +66,17 @@
         }
 
         @include medium(true){
-            &:hover {
-                .dropdown-list{display: block;}
+            &:hover .dropdown-list {
+                -webkit-animation: dropOpen 0.5s both;
+                    animation: dropOpen 0.5s both;
+                visibility: visible;
             }
         };
         
         @include small(false) {
             position: static;
             .dropdown-list {
-                margin-top: -18px;
+                margin-top: -1.125rem;
                 width:100%;
                 &::before{display: none;}
                 &::after{display: none;}
@@ -84,7 +88,7 @@
     .search-box {
         display: inline-block;
         position: relative;
-        @include medium(true) { width:230px; }
+        @include medium(true) { width:14.38rem; }
         &.form-ui { input { margin-bottom: 0; } }
         .search-btn {
             position: absolute;
@@ -93,15 +97,13 @@
             bottom: 0;
             background:transparent;
             color:$gray-color;
-            width:38px;
+            width:2.375rem;
             border:0 none;
             cursor: pointer;
         }
     }
 
-    .btn {
-        margin-#{$direction}: 15px;
-    }
+    .btn {margin-#{$direction}: $gutterMath;}
     
     //=== Primary Colored ===//
     &.primary {
@@ -111,15 +113,15 @@
         .navigation-menu {
             @include navigation-custom-theme (
                 $height:$thisHeight,// Height
-                $font-size:15px, // Font-size
+                $font-size:0.9375rem, // Font-size
                 $font-weight:$medium-weight, // Font Weight
                 $color:#FFF, // Text Color
                 $hvr-color:$primary-color, // Hover Color
                 $hvr-bg:#FFF, // Hover Background
                 $sub-color:$primary-color, // Submenu Color
                 $sub-bg:#FFF,// Submenu Background
-                $sub-font-size:14px, // Submenu Font-size
-                $sub-height:40px, // Submenu Height
+                $sub-font-size:0.875rem, // Submenu Font-size
+                $sub-height:2.5rem, // Submenu Height
                 $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
                 $sub-hvr-color:$black-color // Submenu Hover Color
             );
@@ -134,27 +136,18 @@
         .navigation-menu {
             @include navigation-custom-theme (
                 $height:$thisHeight,// Height
-                $font-size:15px, // Font-size
+                $font-size:0.9375rem, // Font-size
                 $font-weight:$medium-weight, // Font Weight
                 $color:#FFF, // Text Color
                 $hvr-color:$dark-color, // Hover Color
                 $hvr-bg:#FFF, // Hover Background
                 $sub-color:$dark-color, // Submenu Color
                 $sub-bg:#FFF,// Submenu Background
-                $sub-font-size:14px, // Submenu Font-size
-                $sub-height:40px, // Submenu Height
+                $sub-font-size:0.875rem, // Submenu Font-size
+                $sub-height:2.5rem, // Submenu Height
                 $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
                 $sub-hvr-color:$black-color // Submenu Hover Color
             );
         }
-    }
-
-    //=== Sticky Header ===//
-    &.is-sticky {
-        position: fixed;
-        top:0;
-        right:0;
-        left:0;
-        z-index: 9999;
     }
 }

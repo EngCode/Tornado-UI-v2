@@ -71,13 +71,20 @@ dl.tornado-ui{
         &:not(:first-child){margin-top:$gutterSize/2;}
     }
     dd{
-        padding:0;margin:0;padding-#{$direction}:10px;
-        &:before{content:'_';display: inline-block;margin-#{$directionReverse}:5px;vertical-align:middle;position: relative;top:-7px;}
+        padding:0;margin:0;padding-#{$direction}:0.625rem;
+        &:before {
+            content: '_';
+            display: inline-block;
+            margin-#{$directionReverse}: 5px;
+            vertical-align: middle;
+            position: relative;
+            top: -7px;
+        }
     }
 }
 
 ul.tornado-ui,ol.tornado-ui{
-    li{font-size: 0.9375rem;margin-bottom: 10px;}
+    li{font-size: 0.9375rem;margin-bottom: 0.625rem;}
 }
 
 /*==== Blocks Quotes ====*/
@@ -86,7 +93,7 @@ blockquote {
     margin:0;
     position: relative;
     padding-#{$direction}:3rem;
-    margin-bottom: 30px;
+    margin-bottom: $gutterSize;
     font-size:1rem;
     color:$typo-color;
     @extend %minus-indexing;
@@ -105,18 +112,23 @@ blockquote {
     }
     // Source Name
     .quote-name {
-        font-size:14px;
+        font-size:0.875rem;
         font-weight: $strong-weight;
         display: block;
         color:$black-color;
-        margin-top: 10px;
-        &:before { content:'-'; display: inline-block; margin-right: 5px;z-index: -1;}
+        margin-top: 0.625rem;
+        &:before {
+            content: '-';
+            display: inline-block;
+            margin-right: 5px;
+            z-index: -1;
+        }
     }
 
     // Theme 2
     &.theme-2 {
         padding:2rem;
-        background:#FFF;
+        background:$reverse-color;
         border: 1px solid rgba(0,0,0,.10);
         -webkit-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
                 box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
@@ -126,7 +138,7 @@ blockquote {
             font-size:2.875rem;
             #{$direction}:auto;
             #{$directionReverse}:1.563rem;
-            color:#FFF;
+            color:$reverse-color;
             text-shadow:-2px -2px 0 rgba(0,0,0,.10),  2px -2px 0 rgba(0,0,0,.10),-2px 2px 0 rgba(0,0,0,.10),2px 2px 0 rgba(0,0,0,.10);
         }
     }
@@ -134,7 +146,7 @@ blockquote {
     // Theme 3
     &.theme-3 {
         padding:0 1.25rem;
-        background:#FFF;
+        background:$reverse-color;
         border-left: 5px solid rgba(0,0,0,.10);
         &:before{
             top:50%;
@@ -142,7 +154,7 @@ blockquote {
             #{$direction}:auto;
             #{$directionReverse}:1.563rem;
             @extend %position-center-y;
-            color:#FFF;
+            color:$reverse-color;
             text-shadow:-2px -2px 0 rgba(0,0,0,.05),  2px -2px 0 rgba(0,0,0,.05),-2px 2px 0 rgba(0,0,0,.05),2px 2px 0 rgba(0,0,0,.05);
         }
     }

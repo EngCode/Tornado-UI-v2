@@ -4,10 +4,10 @@
     li {
         word-spacing: normal;
         display: inline-block;
-        padding:0 15px;
-        height:42px;
-        line-height: 40px;
-        font-size: 14px;
+        padding:0 0.9375rem;
+        height:2.625rem;
+        line-height: 2.5rem;
+        font-size: 0.9375rem;
         color:$dark-color;
         background:#f7f7f7;
         @extend %normal-motion;
@@ -16,13 +16,13 @@
         span,a {
             color: inherit;
             display: block;
-            padding:0 15px;
-            margin: 0 -15px;
+            padding:0 0.9375rem;
+            margin: 0 -0.9375rem;
         }
         border:1px solid rgba(0,0,0,0.10);
         &.current,&.active {
             background:$primary-color;
-            color:#FFF;
+            color:$reverse-color;
             span,a{color:inherit;}
         }
     }
@@ -33,7 +33,7 @@
         word-spacing: 10px;
         li {
             padding:0;
-            width:42px;
+            width:2.625rem;
             border-radius: 50%;
         }
     }

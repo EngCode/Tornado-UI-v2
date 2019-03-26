@@ -50,8 +50,7 @@
     .logo {
         display: block;
         width:100%;
-        line-height: 100px;
-        height: 100px;
+        padding:1.125rem;
         text-align: center;
         border-bottom: 1px solid $dividerColor;
         img {
@@ -110,7 +109,7 @@
             position: absolute;
             width:2.813rem;
             height:2.75rem;
-            font-size:12px;
+            font-size:0.8125rem;
             text-align: center;
             line-height: 2.625rem;
             display: block;

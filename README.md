@@ -29,6 +29,17 @@ in order to install Tornado env you can use npm or you can use Git CLI from the 
 after that you will need to install Node.JS and SASS the Ruby version for compiling the source files.
 
 --------------------
+#### Changelog 03/2019 Update
+	#01 - Adding Simple Responsive Masonry Grid
+	#02 - Convert All Pixel Unites to REM
+	#03 - Adding Scrollspy Component
+	#04 - Fixing Dropdown Mechanism
+	#05 - Fixing Navigation Menu / Mobile Responsive Theme
+	#06 - Adding Smoth Scroll Effects
+	#07 - Adding Responsive Aspect Ratio Elements
+	#08 - Upgrade Utilties [ Sticky Elements | Item Remover | Data Backgrounds ]
+
+--------------------
 #### Credits
 -   [Abdullah Ramadan](https://www.facebook.com/Eng.AbdallahPS) - Tornado UI Creator
 -   [Jędrzej Chałubek](https://github.com/jedrzejchalubek) - Glade.JS Carousel Creator

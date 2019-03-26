@@ -1,10 +1,10 @@
 /*======== badges ========*/
 .badge {
     display: inline-block;
-    padding:0 12px;
-    height:28px;
-    line-height: 27px;
-    font-size: 12px;
+    padding:0 0.8125rem;
+    height:1.75rem;
+    line-height: 1.680rem;
+    font-size: 0.8125rem;
     color:$dark-color;
     cursor: pointer;
     background:$gray-bg;
@@ -17,8 +17,11 @@
         background:transparent;
         color:$dark-color;
         border:1px solid $gray-bg;
-        height: 29px;
-        &:hover{background: $gray-bg;color:$dark-color;}
+        height: 1.75rem;
+        &:hover {
+            background: $gray-bg;
+            color: $dark-color;
+        }
     }
     
     &.flexible {
@@ -29,18 +32,18 @@
     }
 
     &.tag {
-        height:30px;
-        line-height: 28px;
+        height:1.875rem;
+        line-height: 1.75rem;
         font-size: 13px;
         border-radius: 0;
-        margin-#{$direction}:25px;
+        margin-#{$direction}:1.563rem;
         &::after{
             content: '';
             display: block;
             position: absolute;
             width:0;
             height: 0;
-            border: 15px solid transparent;
+            border: 0.9375rem solid transparent;
             border-#{$directionReverse}-color:$gray-bg;
             top:50%;
             @extend %position-center-y;
@@ -54,7 +57,7 @@
             width: 5px;
             height: 5px;
             top:calc(50% - 1px);
-            background: #FFF;
+            background: $reverse-color;
             border-radius: 50%;
             @extend %position-center-y;
             #{$directionReverse}:calc(100%);
@@ -63,11 +66,11 @@
     }
 
     &:hover{background: #f7f7f7;}
-    &.rounded { border-radius: 150px; }
+    &.rounded { border-radius: 9.375rem; }
     &.circle {
         border-radius: 100%;
         padding: 0;
-        width:27px;
+        width:1.680rem;
     }
     &.dismiss {
         i {
@@ -81,7 +84,7 @@
     }
     /*==== Pointing ====*/
     &[class*="pointing"] {
-        &.outline{background: #FFF;}
+        &.outline{background: $reverse-color;}
         &::after {
             @extend %fast-motion;
             content: '';
@@ -107,7 +110,7 @@
             left:50%;
             border-bottom-color:$gray-bg;
         }
-        &.outline::after{ border-bottom-color:#FFF; }
+        &.outline::after{ border-bottom-color:$reverse-color; }
         &.outline::before {
             @extend %position-center-x;
             bottom: 100%;
@@ -126,7 +129,7 @@
             border-top-color:$gray-bg;
         }
         &:hover::after{border-top-color:#f7f7f7;}
-        &.outline::after{ border-top-color:#FFF; }
+        &.outline::after{ border-top-color:$reverse-color; }
         &.outline::before {
             @extend %position-center-x;
             top: 100%;
@@ -144,7 +147,7 @@
             border-#{$directionReverse}-color:$gray-bg;
         }
         &:hover::after{border-#{$directionReverse}-color:#f7f7f7;}
-        &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+        &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
         &.outline::before {
             @extend %position-center-y;
             top: 50%;
@@ -161,7 +164,7 @@
             border-#{$direction}-color:$gray-bg;
         }
         &:hover::after{border-#{$direction}-color:#f7f7f7;}
-        &.outline::after{ border-#{$direction}-color:#FFF; }
+        &.outline::after{ border-#{$direction}-color:$reverse-color; }
         &.outline::before {
             @extend %position-center-y;
             top: 50%;
@@ -180,12 +183,12 @@
             background:transparent;
             color:$primary-color;
             border:1px solid $primary-color;
-            &:hover{background: $primary-color;color:#FFF;}
+            &:hover{background: $primary-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$primary-color;}
             &:hover::after{border-bottom-color:$primary-color-hover;}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$primary-color;}
             &.outline:hover::after{ border-bottom-color:$primary-color; }
         }
@@ -193,7 +196,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$primary-color;}
             &:hover::after{border-top-color:$primary-color-hover;}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$primary-color;}
             &.outline:hover::after{ border-top-color:$primary-color; }
         }
@@ -201,7 +204,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$primary-color;}
             &:hover::after{border-#{$directionReverse}-color:$primary-color-hover;}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$primary-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$primary-color; }
         }
@@ -209,7 +212,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$primary-color;}
             &:hover::after{border-#{$direction}-color:$primary-color-hover;}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$primary-color;}
             &.outline:hover::after{ border-#{$direction}-color:$primary-color; }
         }
@@ -224,12 +227,12 @@
             background:transparent;
             color:$secondary-color;
             border:1px solid $secondary-color;
-            &:hover{background: $secondary-color;color:#FFF;}
+            &:hover{background: $secondary-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$secondary-color;}
             &:hover::after{border-bottom-color:$secondary-color-hover;}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$secondary-color;}
             &.outline:hover::after{ border-bottom-color:$secondary-color; }
         }
@@ -237,7 +240,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$secondary-color;}
             &:hover::after{border-top-color:$secondary-color-hover;}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$secondary-color;}
             &.outline:hover::after{ border-top-color:$secondary-color; }
         }
@@ -245,7 +248,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$secondary-color;}
             &:hover::after{border-#{$directionReverse}-color:$secondary-color-hover;}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$secondary-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$secondary-color; }
         }
@@ -253,7 +256,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$secondary-color;}
             &:hover::after{border-#{$direction}-color:$secondary-color-hover;}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$secondary-color;}
             &.outline:hover::after{ border-#{$direction}-color:$secondary-color; }
         }
@@ -268,12 +271,12 @@
             background:transparent;
             color:$success-color;
             border:1px solid $success-color;
-            &:hover{background: $success-color;color:#FFF;}
+            &:hover{background: $success-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$success-color;}
             &:hover::after{border-bottom-color:darken( $success-color,10% );}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$success-color;}
             &.outline:hover::after{ border-bottom-color:$success-color; }
         }
@@ -281,7 +284,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$success-color;}
             &:hover::after{border-top-color:darken( $success-color,10% );}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$success-color;}
             &.outline:hover::after{ border-top-color:$success-color; }
         }
@@ -289,7 +292,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$success-color;}
             &:hover::after{border-#{$directionReverse}-color:darken( $success-color,10% );}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$success-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$success-color; }
         }
@@ -297,7 +300,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$success-color;}
             &:hover::after{border-#{$direction}-color:darken( $success-color,10% );}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$success-color;}
             &.outline:hover::after{ border-#{$direction}-color:$success-color; }
         }
@@ -312,12 +315,12 @@
             background:transparent;
             color:$danger-color;
             border:1px solid $danger-color;
-            &:hover{background: $danger-color;color:#FFF;}
+            &:hover{background: $danger-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$danger-color;}
             &:hover::after{border-bottom-color:darken( $danger-color,10% );}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$danger-color;}
             &.outline:hover::after{ border-bottom-color:$danger-color; }
         }
@@ -325,7 +328,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$danger-color;}
             &:hover::after{border-top-color:darken( $danger-color,10% );}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$danger-color;}
             &.outline:hover::after{ border-top-color:$danger-color; }
         }
@@ -333,7 +336,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$danger-color;}
             &:hover::after{border-#{$directionReverse}-color:darken( $danger-color,10% );}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$danger-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$danger-color; }
         }
@@ -341,7 +344,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$danger-color;}
             &:hover::after{border-#{$direction}-color:darken( $danger-color,10% );}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$danger-color;}
             &.outline:hover::after{ border-#{$direction}-color:$danger-color; }
         }
@@ -358,12 +361,12 @@
             background:transparent;
             color:$warning-color;
             border:1px solid $warning-color;
-            &:hover{background: $warning-color;color:#FFF;}
+            &:hover{background: $warning-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$warning-color;}
             &:hover::after{border-bottom-color:darken( $warning-color,10% );}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$warning-color;}
             &.outline:hover::after{ border-bottom-color:$warning-color; }
         }
@@ -371,7 +374,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$warning-color;}
             &:hover::after{border-top-color:darken( $warning-color,10% );}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$warning-color;}
             &.outline:hover::after{ border-top-color:$warning-color; }
         }
@@ -379,7 +382,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$warning-color;}
             &:hover::after{border-#{$directionReverse}-color:darken( $warning-color,10% );}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$warning-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$warning-color; }
         }
@@ -387,7 +390,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$warning-color;}
             &:hover::after{border-#{$direction}-color:darken( $warning-color,10% );}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$warning-color;}
             &.outline:hover::after{ border-#{$direction}-color:$warning-color; }
         }
@@ -402,12 +405,12 @@
             background:transparent;
             color:$info-color;
             border:1px solid $info-color;
-            &:hover{background: $info-color;color:#FFF;}
+            &:hover{background: $info-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$info-color;}
             &:hover::after{border-bottom-color:darken( $info-color,10% );}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$info-color;}
             &.outline:hover::after{ border-bottom-color:$info-color; }
         }
@@ -415,7 +418,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$info-color;}
             &:hover::after{border-top-color:darken( $info-color,10% );}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$info-color;}
             &.outline:hover::after{ border-top-color:$info-color; }
         }
@@ -423,7 +426,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$info-color;}
             &:hover::after{border-#{$directionReverse}-color:darken( $info-color,10% );}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$info-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$info-color; }
         }
@@ -431,7 +434,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$info-color;}
             &:hover::after{border-#{$direction}-color:darken( $info-color,10% );}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$info-color;}
             &.outline:hover::after{ border-#{$direction}-color:$info-color; }
         }
@@ -446,12 +449,12 @@
             background:transparent;
             color:$gray-color;
             border:1px solid $gray-color;
-            &:hover{background: $gray-color;color:#FFF;}
+            &:hover{background: $gray-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$gray-color;}
             &:hover::after{border-bottom-color:darken( $gray-color,10% );}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$gray-color;}
             &.outline:hover::after{ border-bottom-color:$gray-color; }
         }
@@ -459,7 +462,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$gray-color;}
             &:hover::after{border-top-color:darken( $gray-color,10% );}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$gray-color;}
             &.outline:hover::after{ border-top-color:$gray-color; }
         }
@@ -467,7 +470,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$gray-color;}
             &:hover::after{border-#{$directionReverse}-color:darken( $gray-color,10% );}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$gray-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$gray-color; }
         }
@@ -475,7 +478,7 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$gray-color;}
             &:hover::after{border-#{$direction}-color:darken( $gray-color,10% );}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$gray-color;}
             &.outline:hover::after{ border-#{$direction}-color:$gray-color; }
         }
@@ -490,12 +493,12 @@
             background:transparent;
             color:$dark-color;
             border:1px solid $dark-color;
-            &:hover{background: $dark-color;color:#FFF;}
+            &:hover{background: $dark-color;color:$reverse-color;}
         }
         &.pointing-top {
             &::after {border-bottom-color:$dark-color;}
             &:hover::after{border-bottom-color:darken( $dark-color,10% );}
-            &.outline::after{ border-bottom-color:#FFF; }
+            &.outline::after{ border-bottom-color:$reverse-color; }
             &.outline::before {border-bottom-color:$dark-color;}
             &.outline:hover::after{ border-bottom-color:$dark-color; }
         }
@@ -503,7 +506,7 @@
         &.pointing-bottom {
             &::after {border-top-color:$dark-color;}
             &:hover::after{border-top-color:darken( $dark-color,10% );}
-            &.outline::after{ border-top-color:#FFF; }
+            &.outline::after{ border-top-color:$reverse-color; }
             &.outline::before {border-top-color:$dark-color;}
             &.outline:hover::after{ border-top-color:$dark-color; }
         }
@@ -511,7 +514,7 @@
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$dark-color;}
             &:hover::after{border-#{$directionReverse}-color:darken( $dark-color,10% );}
-            &.outline::after{ border-#{$directionReverse}-color:#FFF; }
+            &.outline::after{ border-#{$directionReverse}-color:$reverse-color; }
             &.outline::before {border-#{$directionReverse}-color:$dark-color;}
             &.outline:hover::after{ border-#{$directionReverse}-color:$dark-color; }
         }
@@ -519,41 +522,41 @@
         &.pointing-end {
             &::after{border-#{$direction}-color:$dark-color;}
             &:hover::after{border-#{$direction}-color:darken( $dark-color,10% );}
-            &.outline::after{ border-#{$direction}-color:#FFF; }
+            &.outline::after{ border-#{$direction}-color:$reverse-color; }
             &.outline::before {border-#{$direction}-color:$dark-color;}
             &.outline:hover::after{ border-#{$direction}-color:$dark-color; }
         }
     }
 
     &.light{
-        background: #FFF;color:$dark-color;border: 0 none;
-        &:hover{background:darken( #FFF,10% );}
-        &.tag::after{border-#{$directionReverse}-color:#FFF;}
-        &.tag:hover::after{border-#{$directionReverse}-color:darken(#FFF,10% );}
+        background: $reverse-color;color:$dark-color;border: 0 none;
+        &:hover{background:darken( $reverse-color,10% );}
+        &.tag::after{border-#{$directionReverse}-color:$reverse-color;}
+        &.tag:hover::after{border-#{$directionReverse}-color:darken($reverse-color,10% );}
         &.outline {
             background:transparent;
-            color:#FFF;
-            border:1px solid #FFF;
-            &:hover{background: #FFF;color:$dark-color;}
+            color:$reverse-color;
+            border:1px solid $reverse-color;
+            &:hover{background: $reverse-color;color:$dark-color;}
         }
         &.pointing-top {
-            &::after {border-bottom-color:#FFF;}
-            &:hover::after{border-bottom-color:darken( #FFF,10% );}
+            &::after {border-bottom-color:$reverse-color;}
+            &:hover::after{border-bottom-color:darken( $reverse-color,10% );}
         }
         
         &.pointing-bottom {
-            &::after {border-top-color:#FFF;}
-            &:hover::after{border-top-color:darken( #FFF,10% );}
+            &::after {border-top-color:$reverse-color;}
+            &:hover::after{border-top-color:darken( $reverse-color,10% );}
         }
     
         &.pointing-start {
-            &::after {border-#{$directionReverse}-color:#FFF;}
-            &:hover::after{border-#{$directionReverse}-color:darken( #FFF,10% );}
+            &::after {border-#{$directionReverse}-color:$reverse-color;}
+            &:hover::after{border-#{$directionReverse}-color:darken( $reverse-color,10% );}
         }
     
         &.pointing-end {
-            &::after{border-#{$direction}-color:#FFF;}
-            &:hover::after{border-#{$direction}-color:darken( #FFF,10% );}
+            &::after{border-#{$direction}-color:$reverse-color;}
+            &:hover::after{border-#{$direction}-color:darken( $reverse-color,10% );}
         }
     }
 }

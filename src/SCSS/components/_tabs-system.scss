@@ -10,21 +10,25 @@
         li{
             word-spacing: normal;
             display: inline-block;
-            padding:0 30px;
-            font-size: 15px;
-            line-height: 48px;
+            padding:0 1.875rem;
+            font-size: 0.9375rem;
+            line-height: 2.625rem;
             font-weight: $medium-weight;
             color:$gray-color;
             cursor: pointer;
             @extend %fast-motion;
-            &:hover,&.active {background:#eaebec;color:$dark-color;}
+            a{color:inherit;}
+            &:hover,&.active {
+                background:#eaebec;
+                color:$dark-color;
+            }
         }
     }
 
     /*======== Tabs Content ========*/
     .tab-content {
-        padding:25px;
-        margin-bottom: 30px;
+        padding:1.563rem;
+        margin-bottom: 1.875rem;
     }
     
 }
@@ -38,6 +42,7 @@
         li{
             color:$gray-color;
             border-#{$directionReverse}:1px solid rgba(0,0,0,.10);
+            /*======== Active Mode ========*/
             &:hover,&.active {
                 background: #FFF;
                 color: $dark-color;
@@ -84,7 +89,7 @@
     .tabs-menu {
         border-bottom: 1px solid rgba(0,0,0,.10);
         li{
-            padding:0 20px;
+            padding:0 1.25rem;
             color:$gray-color;
             position: relative;
             &::after{
@@ -97,6 +102,7 @@
                 background: $dark-color;
                 display: block;
             }
+            /*======== Active Mode ========*/
             &.active {
                 color: $dark-color;
                 background: transparent;

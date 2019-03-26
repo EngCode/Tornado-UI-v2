@@ -16,21 +16,21 @@
 /*=== Navigation Wraper ===*/
 .navigation-wraper {
     /*==== Default Theme ====*/
-    background: #FFF;
+    background: $reverse-color;
     border:1px solid rgba(0,0,0,0.10);
-    padding:0 15px;
+    padding:0 0.9375rem;
     position: relative;
     z-index: 100;
-    margin-bottom: 30px;
+    margin-bottom: $gutterSize;
     .navigation-menu {
         > ul > li > a { text-transform: uppercase; }
     }
     .menu-btn {
-        font-size:23px;
-        line-height: 58px;
+        font-size:1.563rem;
+        line-height: 3.625rem;
         color:$gray-color;
         display: inline-block;
-        padding:0 10px;
+        padding:0 0.625rem;
     }
     &.collapsed {
         .navigation-menu {display: none;}
@@ -90,14 +90,14 @@
 
 /*======== Nested Menus ========*/
 .nested-menu {
-    background:#fff;
+    background:$reverse-color;
     $border:1px solid rgba(0,0,0,0.10);
     border:$border;
     //==== Title ====//
     .title {
         margin: 0;
         padding:0 25px;
-        font-size:15px;
+        font-size:0.9375rem;
         font-weight: $medium-weight;
         background: rgba(0,0,0,0.03);
         border-bottom: $border;
@@ -113,12 +113,15 @@
             a { @extend %fast-motion; }
             ul {
                 padding:0;
-                li::before { content:'-';padding-#{$directionReverse}:5px; }
+                li::before {
+                    content: '-';
+                    padding-#{$directionReverse}: 5px;
+                }
             }
             .submenu::before{float: $directionReverse;}
         }
     }
-    >ul{padding: 15px 0;}
+    >ul{padding: 0.9375rem 0;}
     @include nested-menu ();
     //==== Primary Theme ====//
     &.primary {

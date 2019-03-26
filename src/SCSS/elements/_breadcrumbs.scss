@@ -1,15 +1,15 @@
 .breadcrumb {
     //==== Breadcrumb Box ====//
-    font-size:15px;
-    line-height: 30px;
+    font-size:0.9375rem;
+    line-height: 1.875rem;
     color:$dark-color;
     background: #f7f7f7;
     border:1px solid rgba(0,0,0,.10);
-    padding:11px 20px;
-    margin-bottom: 30px;
+    padding:0.6875rem 1.25rem;
+    margin-bottom: 1.875rem;
     [class*="ti-"] {
         &::before {
-            font-size:18px;
+            font-size:1.125rem;
             margin-#{$directionReverse}:5px;
             position: relative;
         }
@@ -31,17 +31,17 @@
         white-space: nowrap;
         overflow: hidden;
         padding: 0;
-        height: 52px;
+        height: 3.25rem;
         word-spacing: -5px;
         a {
             word-spacing: normal;
             color:$black-color;
-            padding:0 20px;
-            line-height: 50px;
+            padding:0 1.25rem;
+            line-height: 3.125rem;
             position: relative;
             &:last-child {
                 color: $gray-color;
-                padding-#{$direction}:35px;
+                padding-#{$direction}:2.188rem;
             }
             &::after,&::before {
                 content: '';
@@ -70,15 +70,15 @@
         white-space: nowrap;
         overflow: hidden;
         padding: 0;
-        height: 52px;
+        height: 3.25rem;
         word-spacing: -5px;
         a {
             word-spacing: normal;
             color:$black-color;
-            padding-#{$directionReverse}:10px;
-            padding-#{$direction}:20px;
-            &:not(:first-child) { padding-#{$direction}:30px; }
-            line-height: 50px;
+            padding-#{$directionReverse}:0.625rem;
+            padding-#{$direction}:1.25rem;
+            &:not(:first-child) { padding-#{$direction}:1.875rem; }
+            line-height: 3.125rem;
             position: relative;
             @extend %minus-indexing;
             &:not(:last-child){
@@ -87,9 +87,9 @@
                     content: '';
                     display: block;
                     position: absolute;
-                    width:100px;
-                    height: 100px;
-                    #{$directionReverse}:-10px;
+                    width:6.25rem;
+                    height: 6.25rem;
+                    #{$directionReverse}:-0.625rem;
                     top:50%;
                     @extend %position-center-y;
                     border-radius: 50%;
@@ -105,15 +105,15 @@
         white-space: nowrap;
         overflow: hidden;
         padding: 0;
-        height: 52px;
+        height: 3.25rem;
         word-spacing: -5px;
         a {
             word-spacing: normal;
             color:$black-color;
-            padding-#{$directionReverse}:10px;
-            padding-#{$direction}:20px;
-            &:not(:first-child) { padding-#{$direction}:30px; }
-            line-height: 50px;
+            padding-#{$directionReverse}:0.625rem;
+            padding-#{$direction}:1.25rem;
+            &:not(:first-child) { padding-#{$direction}:1.875rem; }
+            line-height: 3.125rem;
             position: relative;
             @extend %minus-indexing;
             &:not(:last-child){
@@ -124,7 +124,7 @@
                     position: absolute;
                     width:100%;
                     height: 100%;
-                    #{$directionReverse}:-10px;
+                    #{$directionReverse}:-0.625rem;
                     top:0;
                     @if $page-dir == 'ltr' {
                         -webkit-transform: skew(-10deg);transform: skew(-10deg);
@@ -147,7 +147,7 @@
             word-spacing: normal;
             padding-#{$directionReverse}:25px;
             position: relative;
-            line-height: 50px;
+            line-height: 3.125rem;
             &::after {
                 content: '';
                 position: absolute;
@@ -178,16 +178,19 @@
     //==== Coloring Themes ====//
     &.dark {
         background: $dark-color;
-        color:#FFFF;
+        color:$reverse-color;
         border: 0 none;
-        a {color: #FFF; &:last-child{color:#FFF;} }
+        a {
+            color: $reverse-color;
+            &:last-child{color:$reverse-color;} 
+        }
     }
     
     &.primary {
         background: $primary-color;
-        color:#FFFF;
+        color:$reverse-color;
         border: 0 none;
-        a { color:#FFF; }
+        a { color:$reverse-color; }
         //==== Pointing ====//
         &.pointing {
             &:not(.dark) { background: #f7f7f7; }
@@ -209,7 +212,7 @@
             a {
                 word-spacing: normal;
                 color:$black-color;
-                line-height: 52px;
+                line-height: 3.25rem;
                 &:not(:last-child){
                     color:$reverse-color;
                     background: $primary-color;
@@ -225,7 +228,7 @@
             a {
                 word-spacing: normal;
                 color:$black-color;
-                line-height: 52px;
+                line-height: 3.25rem;
                 &:not(:last-child){
                     color:$reverse-color;
                     background: $primary-color;
@@ -239,7 +242,7 @@
     &.secondary {
         //==== Pointing ====//
         &.pointing {
-            &.dark {height: 50px;}
+            &.dark {height: 3.125rem;}
             a {
                 color:$reverse-color;
                 background: $secondary-color;
@@ -253,7 +256,7 @@
             a {
                 word-spacing: normal;
                 color:$black-color;
-                line-height: 52px;
+                line-height: 3.25rem;
                 &:not(:last-child){
                     color:$reverse-color;
                     background: $secondary-color;
@@ -268,7 +271,7 @@
             a {
                 word-spacing: normal;
                 color:$black-color;
-                line-height: 52px;
+                line-height: 3.25rem;
                 &:not(:last-child){
                     color:$reverse-color;
                     background: $secondary-color;

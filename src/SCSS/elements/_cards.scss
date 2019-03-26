@@ -3,7 +3,7 @@
     margin-bottom: $gutterSize;
     //===== Content Box ======//
     .content-box {
-        $thisPadding : 25px;
+        $thisPadding : 1.563rem;
         padding:$thisPadding;
         background:#FFF;
         border:1px solid rgba(0,0,0,0.10);
@@ -15,6 +15,7 @@
             display: block;
             position: relative;
             padding-bottom: 78.13%;
+            /*==== All Media ====*/
             iframe,video,audio,embed,img {
                 position: absolute;
                 top:0;
@@ -25,14 +26,18 @@
                 margin: 0;
                 padding: 0;
             }
-            margin-bottom: $thisPadding - 5;
-            &.full{ margin:-$thisPadding;margin-bottom: $thisPadding - 5; }
+            margin-bottom: $thisPadding - 0.3125;
+            /*==== Full Width ====*/
+            &.full {
+                margin: -$thisPadding;
+                margin-bottom: $thisPadding - 0.3125;
+            }
             //===== Overlayed Content =====//
             &.overlayed {
                 margin-bottom: 0;
                 overflow: hidden;
                 & + .action-footer { margin-top: 0; }
-                
+                /*==== Overlay ====*/
                 &::after {
                     content:'';
                     position: absolute;
@@ -45,10 +50,11 @@
                     bottom:0;
                     @extend %fast-motion;
                     -webkit-transform:scaleY(0);
-                            transform:scaleY(0);
+                        transform:scaleY(0);
                     opacity: 0;
                 }
 
+                /*==== Overlay Content ====*/
                 .content {
                     position: absolute;
                     top:50%;
@@ -64,6 +70,7 @@
                     z-index: 5;
                 }
 
+                /*==== Hover Effect ====*/
                 &:hover {
                     .content { 
                         #{$direction}:0;
@@ -71,7 +78,7 @@
                     }
                     &::after {
                         -webkit-transform:scaleY(1);
-                                transform:scaleY(1);
+                            transform:scaleY(1);
                         opacity: 1;
                     }
                 }
@@ -85,22 +92,21 @@
                 @extend %fast-motion;
                 z-index: 5;
                 background: rgba(0, 0, 0, 0.75);
+                /*==== icon Button ====*/
                 .icon-btn {
-                    font-size:20px;
+                    font-size:1.25rem;
                     background: #FFF;
-                    width:45px;
-                    height: 45px;
+                    width:2.813rem;
+                    height: 2.813rem;
                     border-radius:50%;
-                    line-height: 43px;
+                    line-height: 2.688rem;
                     color:$danger-color;
                     text-align: center;
-                    margin: 0 10px;
+                    margin: 0 0.625rem;
                 }
             }
 
-            &:hover {
-                .hvr-component{opacity: 1;}
-            }
+            &:hover .hvr-component{opacity: 1;}
         }
         //===== Content =====//
         .title {
@@ -116,66 +122,76 @@
             }
         }
 
+        /*==== Description ====*/
         p {
             font-size:0.9375rem;
             margin: 0;
-            margin-bottom: 15px;
+            margin-bottom: $gutterMath;
             color:#6e6d6d;
             line-height: 1.6;
         }
+        
         //===== Footer =====//
         .action-footer {
             margin:-$thisPadding;
             @extend %flexbox;
             @extend .align-between ;
-            margin-top: $thisPadding - 5;
+            margin-top: $thisPadding - 0.3125;
             padding:0 $thisPadding;
-            font-size:14px;
-            line-height: 50px;
+            font-size:0.875rem;
+            line-height: 3.125rem;
             font-weight: $medium-weight;
             color:$gray-color;
             border-top:1px solid rgba(0,0,0,0.10);
+            /*==== Icons | Information | Read More Button ====*/
             [class*="ti-"]::before { 
-                font-size:16px;
+                font-size:1rem;
                 margin-#{$directionReverse}:5px;
             }
-            .info span {margin-#{$direction}:15px;}
+            .info span {margin-#{$direction}:0.9375rem;}
             .more-btn {
                 text-transform: uppercase;
                 &::before { position: relative;top:-2px; }
             }
+            /*==== Price ====*/
             .price {
                 margin: 0;
-                margin-#{$direction}:15px;
-                //float: $directionReverse;
-                font-size:16px;
+                margin-#{$direction}:0.9375rem;
+                font-size:1rem;
                 font-weight: $medium-weight;
                 color:$primary-color;
-                i{ font-size:15px;font-weight: normal;color:#b8b8b8;text-decoration: line-through; }
+                i {
+                    font-size: 0.9375rem;
+                    font-weight: normal;
+                    color: #b8b8b8;
+                    text-decoration: line-through;
+                }
             }
         }
         //===== Card Header =====//
         .card-head {
             margin:-$thisPadding;
-            padding:0 15px;
+            padding:0 0.9375rem;
             background: rgba(0, 0, 0, 0.02);
             border-bottom: 1px solid rgba(0,0,0,0.10);
             margin-bottom: $thisPadding;
             @extend %flexbox;
             @extend .align-between ;
             @extend .align-center-y ;
-            height: 50px;
+            height: 3.125rem;
+            /*==== Username ====*/
             .title {
                 margin: 0;
-                font-size:14px;
+                font-size:0.875rem;
                 color:$primary-color;
                 text-transform:none;
                 font-weight: normal;
             }
 
+            /*==== Avatar ====*/
             img {
-                max-width: 30px;
-                max-height: 30px;
+                max-width: 1.875rem;
+                max-height: 1.875rem;
                 width:auto;
                 height: auto;
                 display: inline-block;
@@ -183,7 +199,11 @@
                 border-radius: 50%;
                 margin-#{$directionReverse}:5px;
             }
-            .date { font-size:13px;color:$gray-color; }
+            /*==== Date ====*/
+            .date {
+                font-size: 0.8125rem;
+                color: $gray-color;
+            }
         }
         
         //===== Horizontal Mode =====//
@@ -191,33 +211,41 @@
             @extend %flexbox;
             @extend .align-between ;
             padding:0;
+            /*==== Media Element ====*/
             .card-media { 
                 width:33.333%;
                 margin: 0;
                 @media screen and (min-width:500px) { padding: 0; }
-                @media screen and (max-width:480px) { width:100%;margin-bottom: $thisPadding - 5; }
+                @media screen and (max-width:480px) {
+                    width: 100%;
+                    margin-bottom: $thisPadding - 0.3125;
+                }
             }
             
+            /*==== Content Wraper ====*/
             .content-wrap {
                 padding:$thisPadding;
                 width:66.666%;
                 @media screen and (max-width:480px) { width:100%; }
-             }
+            }
         }
         //===== Buttons Mode =====//
         .btns-group {
             .btn {
                 width:50%;
-                padding:0 15px;
+                padding:0 0.9375rem;
                 text-transform: uppercase;
             }
-            &.gutter-on{ .btn{ width:calc(50% - 20px); } }
-            [class*="ti-"]::before{margin-#{$directionReverse}:5px;font-size:1.2em; }
+            &.gutter-on{ .btn{ width:calc(50% - 1.25rem); } }
+            [class*="ti-"]::before {
+                margin-#{$directionReverse}: 5px;
+                font-size: 1.2em;
+            }
         }
     }
     //======== Product Components ========//
     &.product-card {
-        $ContainerGutter : 20px;
+        $ContainerGutter : 1.25rem;
         //====== Floating Elements =======//
         .floating-content,.hvr-component {
             padding:$ContainerGutter;
@@ -226,6 +254,7 @@
             left:0;
             right:0;
             bottom: 0;
+            /*==== Linked Overlay ====*/
             .overlay-link {
                 position: absolute;
                 bottom: 0;
@@ -236,33 +265,59 @@
                 ~ * {position: relative;z-index: 2;}
             }
             //==== Floating Modes ====//
-            .floating-drt {position: absolute;top:$ContainerGutter;#{$directionReverse}:$ContainerGutter;} // Floating To The Page Direction Reverse [ Right ] Top
-            .floating-dt {position: absolute;top:$ContainerGutter;#{$direction}:$ContainerGutter;} // Floating To The Page Direction [ Left ] Top
-            .floating-drb {position: absolute;bottom:$ContainerGutter;#{$directionReverse}:$ContainerGutter;} // Floating To The Page Direction Reverse [ Right ] Bottom
-            .floating-db {position: absolute;bottom:$ContainerGutter;#{$direction}:$ContainerGutter;} // Floating To The Page Direction [ Left ] Bottom
+            .floating-drt { //====> Floating To The Page Direction Reverse [ Right ] Top
+                position: absolute;
+                top: $ContainerGutter;
+                #{$directionReverse}: $ContainerGutter;
+            }
+
+            //====> Floating To The Page Direction [ Left ] Top
+            .floating-dt {
+                position: absolute;
+                top: $ContainerGutter;
+                #{$direction}: $ContainerGutter;
+            }
+
+            //====> Floating To The Page Direction Reverse [ Right ] Bottom
+            .floating-drb {
+                position: absolute;
+                bottom: $ContainerGutter;
+                #{$directionReverse}: $ContainerGutter;
+            }
+
+            //====> Floating To The Page Direction [ Left ] Bottom
+            .floating-db {
+                position: absolute;
+                bottom: $ContainerGutter;
+                #{$direction}: $ContainerGutter;
+            }
+
+            /*==== Badge ====*/
             .badge {
-                line-height: 30px;
-                height:30px;
-                margin-bottom: 15px;
+                line-height: 1.875rem;
+                height:1.875rem;
+                margin-bottom: $gutterMath;
             }
         }
 
+        /*==== Rating ====*/
         .stars { 
             display: block;
             color:$gray-color;
-            height: 30px;
+            height: 1.875rem;
             line-height: 1;
-            font-size:15px;
+            font-size:0.9375rem;
             padding-top: 2px;
             .active{ color:$warning-color; }
         }
-        
+
+        /*==== Price ====*/
         .btn.price{
             font-size:18px;
             i {
                 color:#7d7f81;
                 text-decoration: line-through;
-                font-size: 17px;
+                font-size: 1.063rem;
                 display: inline-block;
                 vertical-align: middle;
                 margin-#{$direction}:5px;
@@ -276,63 +331,73 @@
     /*======== User Card ========*/
     &.user-card {
         .content-box {
+            /*==== Media Element ====*/
             .card-media {
                 padding-bottom: 50%;
                 margin-bottom: 0;
-                [class*="floating-"]{padding:10px 20px;}
+                [class*="floating-"]{padding:0.625rem 1.25rem;}
             }
 
+            /*==== Information Elements ====*/
             .info-span { 
-                font-size:14px;
-                line-height: 20px;
+                font-size:0.875rem;
+                line-height: 1.25rem;
                 font-weight: $medium-weight;
-                margin-#{$directionReverse}:15px;
+                margin-#{$directionReverse}:0.9375rem;
                 color:#FFF;
                 &::before {
                     margin-#{$directionReverse}:5px;
                 }
             }
-            
+
+            /*==== Avatar Image ====*/
             .avatar {
                 margin: auto;
                 margin-top: -60px;
-                width:120px;
-                height: 120px;
+                width:11.25rem;
+                height: 11.25rem;
                 display: block;
                 border-radius: 50%;
                 border:1px solid rgba(0, 0, 0, 0.1);
                 position: relative;
                 z-index: 2;
-                img{ width:120px;height: 120px;border-radius: 50%; }
+                img {
+                    width: 11.25rem;
+                    height: 11.25rem;
+                    border-radius: 50%;
+                }
             }
 
+            /*==== Title ====*/
             .title {
-                margin-top: 20px;
+                margin-top: 1.25rem;
                 color:$primary-color;
                 text-align: center;
             }
 
+            /*==== Small Title ====*/
             .subtitle{
-                font-size:15px;
+                font-size:0.9375rem;
                 font-weight: normal;
                 margin: 0;
                 margin-top: -5px;
                 color:#868e96;
                 text-align: center;
-                margin-bottom: 10px;
+                margin-bottom: 0.625rem;
             }
 
+            /*==== Social Buttons ====*/
             .social-btns {
                 text-align: center;
                 word-spacing: -5px;
                 margin-top: -5px;
                 a {
                     display: inline-block;
-                    font-size:14px;
+                    font-size:0.875rem;
                     color:#7d7f81;
-                    width:30px;
-                    height: 30px;
-                    line-height: 27px;
+                    width:1.875rem;
+                    height: 1.875rem;
+                    line-height: 1.75rem;
                     margin:5px;
                     background: #eaeaea;
                     @extend %fast-motion;
@@ -348,16 +413,17 @@
         .content-box {
             @extend %flexbox;
             @extend .align-center-y ;
-            padding:20px;
+            padding:1.25rem;
             height: auto;
             position: relative;
+            /*==== icons Button ====*/
             .icon-btn{ 
-                width:30px;
-                height: 30px;
+                width:1.875rem;
+                height: 1.875rem;
                 color:#6e6d6d;
                 text-align: center;
-                line-height: 27px;
-                &::before{font-size:14px;display: inline;margin: 0;}
+                line-height: 1.75rem;
+                &::before{font-size:0.875rem;display: inline;margin: 0;}
                 border-radius: 50%;
                 display: inline-block;
                 padding:0;
@@ -365,21 +431,26 @@
                 &.primary{background: $primary-color;color:$reverse-color;}
                 &.secondary{background: $secondary-color;color:$reverse-color;}
             }
+
+            /*==== Widget Image ====*/
             .widget-image {
                 display: block;
-                width:70px;
-                height: 70px;
-                img { width:70px;height: 70px; }
+                width:4.375rem;
+                height: 4.375rem;
+                img { width:4.375rem;height: 4.375rem; }
+                /*==== Circle Image ====*/
                 &.circle{
                     border-radius: 50%;
                     img{ border-radius: 50%; }
                 }
             }
+
+            /*==== Widget Content ====*/
             .widget-content {
-                width:calc(100% - 70px);
-                padding-#{$direction}:15px;
+                width:calc(100% - 4.375rem);
+                padding-#{$direction}:0.9375rem;
                 h3 {
-                    font-size:16px;
+                    font-size:1rem;
                     line-height: 1;
                     white-space: nowrap;
                     overflow: hidden;
@@ -389,58 +460,79 @@
                     padding: 0;
                 }
                 h2 {
-                    font-size:16px;
+                    font-size:1rem;
                     line-height: 1;
                     color:$primary-color;
                     margin: 0;
                     padding: 0;
                     span {
                         display: block;
-                        font-size:13px;
-                        line-height: 20px;
+                        font-size:0.8125rem;
+                        line-height: 1.25rem;
                         color:#6e6d6d;
                         font-weight: normal;
                     }
                 }
                 p {
-                    font-size:13px;
-                    line-height: 20px;
+                    font-size:0.8125rem;
+                    line-height: 1.25rem;
                     color:#6e6d6d;
                     margin: 0;
                     padding: 0;
                     margin-top: 8px;
                 }
             }
+
+            /*==== Action Footer ====*/
             .action-footer {
-                width:calc(100% + 40px);
-                margin:-20px;
-                margin-top: 20px;
+                width:calc(100% + 2.5rem);
+                margin:-1.25rem;
+                margin-top: 1.25rem;
             }
+
             //==== Floating Modes ====//
-            .floating-drt {
+            .floating-drt { //====> Floating To The Page Direction Reverse [ Right ] Top
                 position: absolute;
                 top:5px;
                 #{$directionReverse}:5px;
-                &.primary,&.secondary{top:15px;#{$directionReverse}:15px;}
-            } // Floating To The Page Direction Reverse [ Right ] Top
-            .floating-dt {
+                &.primary,&.secondary {
+                    top: 0.9375rem;
+                    #{$directionReverse}: 0.9375rem;
+                }
+            } 
+
+            //====> Floating To The Page Direction [ Left ] Top
+            .floating-dt {  
                 position: absolute;
                 top: 5px;
                 #{$direction}: 5px;
-                &.primary,&.secondary{top:15px;#{$directionReverse}:15px;}
-            } // Floating To The Page Direction [ Left ] Top
-            .floating-drb {
+                &.primary,&.secondary{
+                    top:0.9375rem;
+                    #{$directionReverse}:0.9375rem;
+                }
+            }
+
+            //====> Floating To The Page Direction Reverse [ Right ] Bottom
+            .floating-drb { 
                 position: absolute;
                 bottom: 5px;
                 #{$directionReverse}: 5px;
-                &.primary,&.secondary{bottom:15px;#{$directionReverse}:15px;}
-            } // Floating To The Page Direction Reverse [ Right ] Bottom
+                &.primary,&.secondary{
+                    bottom:0.9375rem;
+                    #{$directionReverse}:0.9375rem;
+                }
+            } 
+
+            //====> Floating To The Page Direction [ Left ] Bottom
             .floating-db {
                 position: absolute;
                 bottom: 5px;
                 #{$direction}: 5px;
-                &.primary,&.secondary{bottom:15px;#{$directionReverse}:15px;}
-            } // Floating To The Page Direction [ Left ] Bottom
+                &.primary,&.secondary{
+                    bottom:0.9375rem;
+                    #{$directionReverse}:0.9375rem;
+                }
+            }
         }
     }
 }

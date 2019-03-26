@@ -71,5 +71,12 @@ const setAttributes = function (element, options) {
 //======> Insert After <======//
 function insertAfter(element, reference) {
     'use strict';
-    reference.parentNode.insertBefore(element, reference.nextSibling);
+    //===> Descover if its HTML String <===//
+    var elementString = element;
+    if (typeof element === string) {
+        var range = document.createRange();
+        elementString = range.createContextualFragment(element);
+    }
+    //===> Insert the Element After the Target <====//
+    reference.parentNode.insertBefore(elementString, reference.nextSibling);
 }

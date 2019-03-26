@@ -32,13 +32,13 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Changelog 03/2019 Update
 	#01 - Adding Simple Responsive Masonry Grid
 	#02 - Convert All Pixel Unites to REM
-	#03 - Adding Scrollspy Component
+	#03 - Adding Scrollspy Effect
 	#04 - Fixing Dropdown Mechanism
 	#05 - Fixing Navigation Menu / Mobile Responsive Theme
 	#06 - Adding Smoth Scroll Effects
 	#07 - Adding Responsive Aspect Ratio Elements
 	#08 - Upgrade Utilties [ Sticky Elements | Item Remover | Data Backgrounds ]
-
+	#09 - Javascript Shorthand Helpers
 --------------------
 #### Credits
 -   [Abdullah Ramadan](https://www.facebook.com/Eng.AbdallahPS) - Tornado UI Creator

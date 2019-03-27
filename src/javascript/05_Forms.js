@@ -63,57 +63,54 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     //======> Validation <======//
-    var FormElement = getElements('form');
-    Array.from(FormElement).forEach(function(formElement) {
-        formElement.addEventListener('submit', function(e) {
-            //===== Select and Loop Throgh Childs =====//
-            let childs = this.children;
-            Array.from(childs).forEach(function(child) {
-                //===== Select All Childs that Matchs =====//
-                let formControls = child.querySelectorAll('[aria-required="true"],.required,[required],.wpcf7-validates-as-required');
-                Array.from(formControls).forEach(function(formControl) {
-                    //===== Grap this Control Value =====//
-                    let controlValue = formControl.value;
-                    //===== if the Value is Empity =====//
-                    if (controlValue === '' || controlValue === null || controlValue === undefined) {
-                        //==== Add Error Class ====//
-                        formControl.classList.add('error');
-                        //==== Create Error Message ====//
-                        var errorMsg = document.createElement('span');
-                        errorMsg.classList.add('badge','danger', 'outline', 'dismiss', 'pointing-top','error-msg');
-                        errorMsg.innerHTML = 'Error : This Field is Required Please Fulfill this Field.';
-                        insertAfter(errorMsg, formControl);
-                        //===== When Change Value Remove the Error MSG ====//
-                        formControl.addEventListener('onchange', function(){
-                            getNextSibling(formControl,'.error-msg').remove;
-                        });
-                        //===== Error to Fix Submit =====//
-                        e.preventDefault();
-                    } else {
-                        //==== Clear Error Message and add Success Class ====//
-                        formControl.classList.remove('error');
-                        getNextSibling(formControl,'.error-msg').remove;
-                        formControl.classList.add('success');
-                        //==== Redirect to Success Page ====//
-                        if(formElement.hasAttribute('data-success')) {
-                            var SuccessURL = formElement.getAttribute('data-success'),
-                                timeOut = formElement.getAttribute('data-timeout') || 500;
-                            //====> Redirect After 1 Second
-                            setTimeout(function(){
-                                window.location = SuccessURL;
-                            }, timeOut);
-                        } else if (formControl.querySelector('input[name="success-redirect"]') !== null) {
-                            var SuccessURL = formElement.getAttribute('value'),
-                                timeOut = formElement.getAttribute('data-timeout') || 500;
-                            //====> Redirect After 1 Second
-                            setTimeout(function(){
-                                window.location = SuccessURL;
-                            }, timeOut);
+    var formElement = getElements('form');
+    Array.from(formElement).forEach(function(formElement) {
+        if (!formElement.matches('.no-vali')) {
+            formElement.addEventListener('submit', function(e) {
+                //===== Select and Loop Throgh Childs =====//
+                let childs = this.children;
+                Array.from(childs).forEach(function(child) {
+                    //===== Select All Childs that Matchs =====//
+                    let formControls = child.querySelectorAll('[aria-required="true"],.required,[required],.wpcf7-validates-as-required');
+                    Array.from(formControls).forEach(function(formControl) {
+                        //===== Grap this Control Value =====//
+                        let controlValue = formControl.value;
+                        //===== if the Value is Empity =====//
+                        if (controlValue === '' || controlValue === null || controlValue === undefined) {
+                            //==== Add Error Class ====//
+                            formControl.classList.add('error');
+                            //==== Create Error Message ====//
+                            var errorMsg = 'Error : This Field is Required Please Fulfill this Field.',
+                                errorElement = '<span class="badge danger outline dismiss pointing-top error-msg">'+errorMsg+' <a href="#" class="remove-item ti-close"></a></span>';
+                            if (pageDirection === 'rtl') errorMsg = 'هذا الحقل مطلوب يرجى ملء هذا الحقل.';
+                            insertAfter(errorElement, formControl);
+                            //===== Error to Fix Submit =====//
+                            e.preventDefault();
+                        } else {
+                            //==== Clear Error Message and add Success Class ====//
+                            formControl.classList.remove('error');
+                            formControl.classList.add('success');
+                            //==== Redirect to Success Page ====//
+                            if(formElement.hasAttribute('data-success')) {
+                                var SuccessURL = formElement.getAttribute('data-success'),
+                                    timeOut = formElement.getAttribute('data-timeout') || 500;
+                                //====> Redirect
+                                setTimeout(function(){
+                                    window.location = SuccessURL;
+                                }, timeOut);
+                            } else if (formControl.querySelector('input[name="success-redirect"]') !== null) {
+                                var SuccessURL = formElement.getAttribute('value'),
+                                    timeOut = formElement.getAttribute('data-timeout') || 500;
+                                //====> Redirect
+                                setTimeout(function(){
+                                    window.location = SuccessURL;
+                                }, timeOut);
+                            }
                         }
-                    }
+                    });
                 });
             });
-        });
+        }
     });
 
     //====== Colors Checkbox's ======//

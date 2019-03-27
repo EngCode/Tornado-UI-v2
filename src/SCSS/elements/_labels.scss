@@ -13,6 +13,7 @@
     border-radius: 5px;
     vertical-align: middle;
     position: relative;
+    a{color:inherit;}
     &.outline {
         background:transparent;
         color:$dark-color;
@@ -73,13 +74,14 @@
         width:1.680rem;
     }
     &.dismiss {
-        i {
+        i,a {
             font-style: normal;
             font-size:0.7em;
             line-height: inherit;
             float: $directionReverse;
             margin-#{$direction}:8px;
             position: relative;
+            top:-1px;
         }
     }
     /*==== Pointing ====*/

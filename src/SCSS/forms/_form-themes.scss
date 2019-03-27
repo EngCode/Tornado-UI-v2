@@ -219,8 +219,9 @@ label {
         font-size:1.125rem;
         color:rgba(0,0,0,0.50);
         #{$direction}:0;
-        line-height: 2.75rem;
-        bottom:0;
+        height: 2.625rem;
+        line-height: 2.625rem;
+        top:0;
         text-align: $directionReverse;
     }
     input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.813rem; }

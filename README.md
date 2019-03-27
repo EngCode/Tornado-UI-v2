@@ -39,6 +39,8 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#07 - Adding Responsive Aspect Ratio Elements
 	#08 - Upgrade Utilties [ Sticky Elements | Item Remover | Data Backgrounds ]
 	#09 - Javascript Shorthand Helpers
+	#10 - Forms Validation With Redirect After Submit
+
 --------------------
 #### Credits
 -   [Abdullah Ramadan](https://www.facebook.com/Eng.AbdallahPS) - Tornado UI Creator

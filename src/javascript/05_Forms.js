@@ -80,14 +80,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         formControl.classList.add('error');
                         //==== Create Error Message ====//
                         var errorMsg = document.createElement('span');
-                        errorMsg.classList.add('badge','danger', 'outline', 'dismiss', 'pointing-top');
+                        errorMsg.classList.add('badge','danger', 'outline', 'dismiss', 'pointing-top','error-msg');
                         errorMsg.innerHTML = 'Error : This Field is Required Please Fulfill this Field.';
                         insertAfter(errorMsg, formControl);
+                        //===== When Change Value Remove the Error MSG ====//
+                        formControl.addEventListener('onchange', function(){
+                            getNextSibling(formControl,'.error-msg').remove;
+                        });
                         //===== Error to Fix Submit =====//
                         e.preventDefault();
                     } else {
+                        //==== Clear Error Message and add Success Class ====//
                         formControl.classList.remove('error');
+                        getNextSibling(formControl,'.error-msg').remove;
                         formControl.classList.add('success');
+                        //==== Redirect to Success Page ====//
+                        if(formElement.hasAttribute('data-success')) {
+                            var SuccessURL = formElement.getAttribute('data-success'),
+                                timeOut = formElement.getAttribute('data-timeout') || 500;
+                            //====> Redirect After 1 Second
+                            setTimeout(function(){
+                                window.location = SuccessURL;
+                            }, timeOut);
+                        } else if (formControl.querySelector('input[name="success-redirect"]') !== null) {
+                            var SuccessURL = formElement.getAttribute('value'),
+                                timeOut = formElement.getAttribute('data-timeout') || 500;
+                            //====> Redirect After 1 Second
+                            setTimeout(function(){
+                                window.location = SuccessURL;
+                            }, timeOut);
+                        }
                     }
                 });
             });

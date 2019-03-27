@@ -73,7 +73,7 @@ function insertAfter(element, reference) {
     'use strict';
     //===> Descover if its HTML String <===//
     var elementString = element;
-    if (typeof element === string) {
+    if (typeof elementString === 'string') {
         var range = document.createRange();
         elementString = range.createContextualFragment(element);
     }

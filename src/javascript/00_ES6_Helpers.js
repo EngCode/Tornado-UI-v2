@@ -93,6 +93,21 @@ function insertAfter(element, reference) {
     }
 }
 
+//======> Insert Before <======//
+function insBefore(element, reference) {
+    'use strict';
+    //===> Descover if its HTML String <===//
+    var elementString = element;
+    if (typeof elementString === 'string' && reference !== null) {
+        var range = document.createRange();
+        elementString = range.createContextualFragment(element);
+    }
+    //===> Insert the Element After the Target <====//
+    if (reference !== null) {
+        reference.parentNode.insertBefore(elementString, reference);
+    }
+}
+
 //======> Append HTML <======//
 function appendIn(reference, element) {
     'use strict';

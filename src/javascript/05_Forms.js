@@ -98,13 +98,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                 setTimeout(function(){
                                     window.location = SuccessURL;
                                 }, timeOut);
-                            } else if (formControl.querySelector('input[name="success-redirect"]') !== null) {
-                                var SuccessURL = formElement.getAttribute('value'),
+                            } else {
+                                var rediInput = formControl.querySelector('input[name="success-redirect"]');
+                                if (rediInput !== null) {
+                                    var SuccessURL = formElement.getAttribute('value'),
                                     timeOut = formElement.getAttribute('data-timeout') || 500;
-                                //====> Redirect
-                                setTimeout(function(){
-                                    window.location = SuccessURL;
-                                }, timeOut);
+                                    //====> Redirect
+                                    setTimeout(function(){
+                                        window.location = SuccessURL;
+                                    }, timeOut);
+                                }
                             }
                         }
                     });

@@ -45,6 +45,8 @@
 [class*="masonry-"] {
     margin: 0 -#{$gutterMath};
     word-spacing: -5px;
+    -webkit-column-gap: 0;
+    column-gap: 0;
     /*======== Masonry Columns Baisc ========*/
     > .column{
         display: inline-block;

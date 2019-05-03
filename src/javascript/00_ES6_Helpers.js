@@ -9,6 +9,12 @@ const getElements = document.querySelectorAll.bind(document);
 
 //======> Define Page Direction <======//
 const pageDirection = getComputedStyle(document.body).direction;
+var startDirection = 'left',
+    endDirection = 'right';
+if (pageDirection == 'rtl') {
+    startDirection = 'right';
+    endDirection = 'left';
+}
 
 //======> Live Events Watcher <======//
 const addLiveListener = function (selector, event, func) {
@@ -36,6 +42,7 @@ const getSiblings = function (element) {
     }
 };
 
+
 //======> Get Next Sibling that Matchs <======//
 const getNextSibling = function (element, selector) {
     'use strict';
@@ -52,7 +59,24 @@ const getNextSibling = function (element, selector) {
     }
 };
 
-//======> Get Previos Sibling that Matchs <======//
+//======> Get All Next Sibling <======//
+function getNextSiblings(elem, filter) {
+    var sibs = [];
+    var nextElem = elem.parentNode.firstChild;
+    do {
+        if (nextElem.nodeType === 3) continue; // ignore text nodes
+        if (nextElem === elem) continue; // ignore elem of target
+        if (nextElem === elem.nextElementSibling) {
+            if (!filter || filter(elem)) {
+                sibs.push(nextElem);
+                elem = nextElem;
+            }
+        }
+    } while(nextElem = nextElem.nextSibling)
+    return sibs;
+}
+
+//======> Get Previous Sibling that Matchs <======//
 const getPrevSibling = function (element, selector) {
     'use strict';
     if (element !== null && selector !== null) {
@@ -67,6 +91,16 @@ const getPrevSibling = function (element, selector) {
         }
     }
 };
+
+//======> Get All Previous Sibling <======//
+function getPrevSiblings(elem, filter) {
+    var sibs = [];
+    while (elem = elem.previousSibling) {
+        if (elem.nodeType === 3) continue; // ignore text nodes
+        if (!filter || filter(elem)) sibs.push(elem);
+    }
+    return sibs;
+}
 
 //======> Set new Attributes <======//
 const setAttributes = function (element, options) {

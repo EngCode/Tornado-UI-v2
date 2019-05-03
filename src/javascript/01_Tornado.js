@@ -8,7 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var backgroundElement = getElements('[data-src]');
     Array.from(backgroundElement).forEach(function (element) {
         var bgData = element.getAttribute('data-src');
-        element.style.backgroundImage = 'url("' + bgData + '")';
+        if(bgData === null || undefined || '' || ' ') {
+            element.style.backgroundImage = 'url("https://via.placeholder.com/728x728.png?text=Source%20File%20not%20Found")';
+        } else {
+            bgData = bgData.replace(' ','20%');
+            bgData = bgData.replace('#','%23');
+            element.style.backgroundImage = 'url("' + bgData + '")';
+        }
     });
 
     //======> Sticky Elements <======//

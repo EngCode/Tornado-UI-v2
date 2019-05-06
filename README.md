@@ -29,6 +29,13 @@ in order to install Tornado env you can use npm or you can use Git CLI from the 
 after that you will need to install Node.JS and SASS the Ruby version for compiling the source files.
 
 --------------------
+#### Changelog 05/2019 Update
+	#01 - Adding More Helpers Functions [ get All Next/Previous Siblings ].
+	#02 - Upgrading CSS Backgrounds [data-src] Validation Filter.
+	#03 - Adding Helper Function for Selecting Ancestors [ parentsUntil() ].
+	#04 - Fixing Header icons Buttons.
+
+--------------------
 #### Changelog 03/2019 Update
 	#01 - Adding Simple Responsive Masonry Grid
 	#02 - Convert All Pixel Unites to REM

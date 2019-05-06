@@ -49,6 +49,8 @@
             padding:0.625rem;
             font-size:1.438rem;
             color:$gray-color;
+            display: inline-block;
+            @include large(up){ &.menu-btn {display: none;} };
             @extend %fast-motion;
             &:hover { color:$black-color; }
         }

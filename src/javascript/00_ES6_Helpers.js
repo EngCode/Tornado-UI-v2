@@ -16,43 +16,81 @@ if (pageDirection == 'rtl') {
     endDirection = 'left';
 }
 
-//======> Live Events Watcher <======//
-const addLiveListener = function (selector, event, func) {
-    'use strict';
-    //==== interval for Checking new Elements ====//
-    if (selector !== null) {
-        setInterval(function () {
-            //==== Selector ====//
-            var elements = getElements(selector);
-            Array.from(elements).forEach(function (element) {
-                element.addEventListener(event, func);
-            });
-        }, 1000);
+//======> Parents Until <======//
+const parentsUntil = function (elem, parent, selector) {
+    // Element.matches() polyfill
+    if (!Element.prototype.matches) {
+        Element.prototype.matches =
+            Element.prototype.matchesSelector ||
+            Element.prototype.mozMatchesSelector ||
+            Element.prototype.msMatchesSelector ||
+            Element.prototype.oMatchesSelector ||
+            Element.prototype.webkitMatchesSelector ||
+            function (s) {
+                var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+                    i = matches.length;
+                while (--i >= 0 && matches.item(i) !== this) {}
+                return i > -1;
+            };
     }
+
+    // Setup parents array
+    var parents = [];
+
+    // Get matching parent elements
+    for (; elem && elem !== document; elem = elem.parentNode) {
+        if (parent) { if (elem.matches(parent)) break; }
+        if (selector) {
+            if (elem.matches(selector)) { parents.push(elem); }
+            break;
+        }
+        parents.push(elem);
+    }
+    return parents;
 };
 
-//======> Get All Siblings [ES6] (c) 2018 Chris Ferdinandi <======//
-const getSiblings = function (element) {
+//======> Get All Siblings <======//
+const getSiblings = function (element,filter) {
     'use strict';
     /*== Get all siblings of ==> element @param {Node} ==> @return {Array} The siblings ==*/
     if (element !== null) {
         return Array.prototype.filter.call(element.parentNode.children, function (sibling) {
-            return sibling !== element;
+            if(!filter) {
+                return sibling !== element;
+            } else {
+                if (sibling.matches(filter)) return sibling;
+            }
         });
     }
 };
 
-
 //======> Get Next Sibling that Matchs <======//
-const getNextSibling = function (element, selector) {
+const getNextSibling = function (element, filter) {
     'use strict';
-    if (element !== null && selector !== null) {
+    if (element !== null) {
         // Get the next sibling element
         var sibling = element.nextElementSibling;
         // If the sibling matches our selector, use it
         // If not, jump to the next sibling and continue the loop
+        if (filter && filter !== null) {
+            while (sibling) 
+                if (sibling.matches(filter)) return sibling;
+        } else {
+            return sibling;
+        }
+    }
+};
+
+//======> Get Previous Sibling that Matchs <======//
+const getPrevSibling = function (element, filter) {
+    'use strict';
+    if (element !== null && filter !== null) {
+        // Get the Previos sibling element
+        var sibling = element.previousElementSibling;
+        // If the sibling matches our selector, use it
+        // If not, jump to the Previos sibling and continue the loop
         while (sibling) {
-            if (sibling.matches(selector)) {
+            if (sibling.matches(filter)) {
                 return sibling;
             }
         }
@@ -60,56 +98,37 @@ const getNextSibling = function (element, selector) {
 };
 
 //======> Get All Next Sibling <======//
-function getNextSiblings(elem, filter) {
-    var sibs = [];
-    var nextElem = elem.parentNode.firstChild;
-    do {
-        if (nextElem.nodeType === 3) continue; // ignore text nodes
-        if (nextElem === elem) continue; // ignore elem of target
-        if (nextElem === elem.nextElementSibling) {
-            if (!filter || filter(elem)) {
-                sibs.push(nextElem);
-                elem = nextElem;
-            }
-        }
-    } while(nextElem = nextElem.nextSibling)
-    return sibs;
-}
-
-//======> Get Previous Sibling that Matchs <======//
-const getPrevSibling = function (element, selector) {
-    'use strict';
-    if (element !== null && selector !== null) {
-        // Get the Previos sibling element
-        var sibling = element.previousElementSibling;
-        // If the sibling matches our selector, use it
-        // If not, jump to the Previos sibling and continue the loop
-        while (sibling) {
-            if (sibling.matches(selector)) {
-                return sibling;
-            }
-        }
-    }
+const getNextSiblings = function (element, filter) {
+    // Setup siblings array and get next sibling
+    var siblings = [],
+        next = element.nextElementSibling;
+    // Loop through all siblings
+	while (next) {
+        // If the matching item is found, quit
+        if (filter && next.matches(filter)) break;
+        // Otherwise, push to array
+        siblings.push(next);
+        // Get the next sibling
+        next = next.nextElementSibling;
+	}
+	return siblings;
 };
 
 //======> Get All Previous Sibling <======//
-function getPrevSiblings(elem, filter) {
-    var sibs = [];
-    while (elem = elem.previousSibling) {
-        if (elem.nodeType === 3) continue; // ignore text nodes
-        if (!filter || filter(elem)) sibs.push(elem);
+const getPrevSiblings = function (element, filter) {
+    // Setup siblings array and get previous sibling
+    var siblings = [];
+    var prev = element.previousElementSibling;
+    // Loop through all siblings
+    while (prev) {
+        // If the matching item is found, quit
+        if (filter && prev.matches(filter)) break;
+        // Otherwise, push to array
+        siblings.push(prev);
+        // Get the previous sibling
+        prev = prev.previousElementSibling
     }
-    return sibs;
-}
-
-//======> Set new Attributes <======//
-const setAttributes = function (element, options) {
-    'use strict';
-    if (element !== null) {
-        Object.keys(options).forEach(function (attr) {
-            element.setAttribute(attr, options[attr]);
-        });
-    }
+    return siblings;
 };
 
 //======> Insert After <======//
@@ -152,3 +171,28 @@ function appendIn(reference, element) {
         reference.appendChild(element);
     }
 }
+
+//======> Live Events Watcher <======//
+const addLiveListener = function (selector, event, func) {
+    'use strict';
+    //==== interval for Checking new Elements ====//
+    if (selector !== null) {
+        setInterval(function () {
+            //==== Selector ====//
+            var elements = getElements(selector);
+            Array.from(elements).forEach(function (element) {
+                element.addEventListener(event, func);
+            });
+        }, 1000);
+    }
+};
+
+//======> Set new Attributes <======//
+const setAttributes = function (element, options) {
+    'use strict';
+    if (element !== null) {
+        Object.keys(options).forEach(function (attr) {
+            element.setAttribute(attr, options[attr]);
+        });
+    }
+};

@@ -196,3 +196,40 @@ const setAttributes = function (element, options) {
         });
     }
 };
+
+//=======> CounterUp <======//
+const counter = function (obj) {
+    var elem = obj.elem;
+    var input = (elem.nodeName.toLowerCase() === 'input') ? true : false;
+    var value = obj.value || parseFloat(elem.getAttribute('data-counter')) || 0;
+    var duration = obj.duration || parseInt(elem.getAttribute('data-duration')) || 2000;
+    var delay = obj.delay || parseInt(elem.getAttribute('data-delay')) || 0;
+    var decimal = obj.decimal || parseInt(elem.getAttribute('data-decimal')) || 0;
+    var currency = obj.currency ||  parseInt(elem.getAttribute('data-currency')) || '';
+    var speed =  obj.speed ||  parseInt(elem.getAttribute('data-speed')) || 10;
+    var count = 0;
+    var increment = value / (duration / speed);
+    var interval = null;
+    var regex = /\B(?=(\d{3})+(?!\d))/g;
+    var run = function () {
+        count += increment;
+        if (count < value) {
+            (input) ? elem.value = currency + (count).toFixed(decimal).toString().replace(regex, ','): elem.innerHTML = currency + (count).toFixed(decimal).toString().replace(regex, ',');
+        } else {
+            clearInterval(interval);
+            (input) ? elem.value = currency + (value).toFixed(decimal).toString().replace(regex, ','): elem.innerHTML = currency + (value).toFixed(decimal).toString().replace(regex, ',');
+        }
+    };
+    setTimeout(function () {
+        interval = setInterval(run.bind(this), speed);
+    }.bind(this), delay);
+    this.reset = function () {
+        clearInterval(interval);
+        value = parseFloat(elem.getAttribute('data-counter')) || 0;
+        duration = parseInt(elem.getAttribute('data-duration')) || 0;
+        increment = value / (duration / speed);
+        delay = parseInt(elem.getAttribute('data-delay')) || 0;
+        count = 0;
+        interval = setInterval(run, speed);
+    }.bind(this);
+}

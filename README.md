@@ -35,8 +35,8 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#03 - Adding Helper Function for Selecting Ancestors [ parentsUntil() ].
 	#04 - Fixing Header icons Buttons.
 	#05 - JS Realtime Assets.
-	#06 - Animated Numbers Counter.
-	#07 - ViewPort Detactor.
+	#06 - Adding Animated Numbers Counter.
+	#07 - Adding ViewPort Detactor.
 
 --------------------
 #### Changelog 03/2019 Update

@@ -165,8 +165,26 @@ function smothScroll(selector) {
 function animatedCounter(selector) {
     var counterElements = getElements(selector || '[data-counter]');
     Array.from(counterElements).forEach(function (counterElement) {
-        var counterEnd = counterElement.getAttribute('data-counter');
+        //====> Reanimate When its Visible <======//
+        window.addEventListener('scroll', function (){
+            scrollPosition = window.scrollY || window.pageYOffset,
+            boundsTop = counterElement.getBoundingClientRect().top + scrollPosition,
+            viewport = {top: scrollPosition,bottom: scrollPosition + window.innerHeight},
+            bounds = {top: boundsTop, bottom: boundsTop + counterElement.clientHeight};
+            if (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom || bounds.top <= viewport.bottom && bounds.top >= viewport.top) {
+                if(!counterElement.classList.contains('counted')) {
+                    //====== Animate on Load =====//
+                    new counter ({
+                        elem: counterElement,
+                        speed: 10,
+                        decimal: 2,
+                        duration:5000,
+                    });
+                }
 
+                counterElement.classList.add('counted');
+            }
+        });
     });
 }
 
@@ -177,7 +195,7 @@ function ViewPortDetactor(selector) {
         var animName = element.getAttribute('data-animation'),
             animDelay = element.getAttribute('data-delay'),
             animDuration = element.getAttribute('data-duration');
-        //=====> Checking Function <=====//
+        //=====> Checking ViewPort Function <=====//
         function activateView() {
             //==== Get the Element Data ====//
             var scrollPosition = window.scrollY || window.pageYOffset,

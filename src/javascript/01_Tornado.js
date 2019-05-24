@@ -177,7 +177,6 @@ function animatedCounter(selector) {
                     new counter ({
                         elem: counterElement,
                         speed: 10,
-                        decimal: 2,
                         duration:5000,
                     });
                 }

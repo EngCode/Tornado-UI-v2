@@ -225,10 +225,10 @@ const counter = function (obj) {
     }.bind(this), delay);
     this.reset = function () {
         clearInterval(interval);
-        value = parseFloat(elem.getAttribute('data-counter')) || 0;
-        duration = parseInt(elem.getAttribute('data-duration')) || 0;
+        value = obj.value || parseFloat(elem.getAttribute('data-counter')) || 0;
+        duration = obj.duration || parseInt(elem.getAttribute('data-duration')) || 2000;
         increment = value / (duration / speed);
-        delay = parseInt(elem.getAttribute('data-delay')) || 0;
+        delay = obj.delay || parseInt(elem.getAttribute('data-delay')) || 0;
         count = 0;
         interval = setInterval(run, speed);
     }.bind(this);

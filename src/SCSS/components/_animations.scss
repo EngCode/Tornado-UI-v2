@@ -19,6 +19,16 @@
     100% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
 }
 
+/*======== Other Animations ========*/
+@-webkit-keyframes spin {
+    from {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+@keyframes spin {
+    from {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
+}
+
 /*======== Shaking ========*/
 @-webkit-keyframes shake {
     10% {-webkit-transform: translate3d(-1px, 0, 0);transform: translate3d(-1px, 0, 0);}

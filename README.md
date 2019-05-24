@@ -34,6 +34,9 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#02 - Upgrading CSS Backgrounds [data-src] Validation Filter.
 	#03 - Adding Helper Function for Selecting Ancestors [ parentsUntil() ].
 	#04 - Fixing Header icons Buttons.
+	#05 - JS Realtime Assets.
+	#06 - Animated Numbers Counter.
+	#07 - ViewPort Detactor.
 
 --------------------
 #### Changelog 03/2019 Update

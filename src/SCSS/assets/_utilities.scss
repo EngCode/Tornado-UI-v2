@@ -7,14 +7,6 @@ body {
     position: relative;
 }
 
-.no-padding {padding: 0;}
-
-.fluid,.block-lvl {width: 100%;}
-
-.float-start {float: $direction;}
-
-.float-end {float: $directionReverse;}
-
 iframe {
     max-width: 100%;
     border: 0 none;
@@ -33,6 +25,15 @@ hr {
     display: block;
     clear: both;
 }
+
+.view-status {visibility: hidden;}
+.view-status.view-active,.view-active{visibility: visible;}
+
+.no-padding {padding: 0;}
+.fluid,.block-lvl {width: 100%;}
+
+.float-start {float: $direction;}
+.float-end {float: $directionReverse;}
 
 /*======== Tooltips ========*/
 [class*="tooltip"] {

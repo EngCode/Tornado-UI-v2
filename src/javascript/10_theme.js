@@ -3,11 +3,5 @@
 /*=== Theme Customize ===*/
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    //==== Multi Langages ====//
-    if (pageDirection === 'rtl') {
-        //===== RTL Code ====//
-    } else {
-        //===== LTR Code ====//
-    }
 
 });

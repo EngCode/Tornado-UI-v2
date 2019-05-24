@@ -192,8 +192,8 @@ function ViewPortDetactor(selector) {
     var viewportElements = getElements(selector || '.view-status');
     Array.from(viewportElements).forEach(function (element) {
         var animName = element.getAttribute('data-animation'),
-            animDelay = element.getAttribute('data-delay'),
-            animDuration = element.getAttribute('data-duration');
+            animDelay = element.getAttribute('data-delay') || 0,
+            animDuration = element.getAttribute('data-duration') || 1000;
         //=====> Checking ViewPort Function <=====//
         function activateView() {
             //==== Get the Element Data ====//
@@ -206,10 +206,15 @@ function ViewPortDetactor(selector) {
                 //====> Activate the Element <=====//
                 element.classList.add('view-active');
                 //====> Add CSS Animation <=====//
-                if(animName) element.style.animation = animName + ' ' + animDuration || '0s'  + ' linear ' + animDelay || '0s';
+                if(animName) {
+                    element.style.animationName = animName;
+                    element.style.animationDuration = animDuration;
+                    element.style.animationTimingFunction  = 'linear';
+                    element.style.animationDelay = animDelay;
+                }
             } else {
-                element.classList.remove('view-active');
-                if(animName) element.style.animation = null;
+                // element.classList.remove('view-active');
+                // if(animName) element.style.animation = null;
             }
         }
 

@@ -30,8 +30,6 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 
 #### Quick CDN Links
 
-in order to install Tornado env you can use npm or you can use Git CLI from the Following Commands.
-
 	====== Tornado CSS [LTR] =====
 	https://unpkg.com/tornado-ui@2.0.6/dist/css/tornado.css
 

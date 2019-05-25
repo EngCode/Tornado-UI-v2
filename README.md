@@ -24,7 +24,7 @@ in order to install Tornado env you can use npm or you can use Git CLI from the 
 	====== Git CLI Clone =====
 	git clone https://github.com/EngCode/Tornado-UI-v2.git
 	====== NPM Package Install ======
-	npm install tornado-ui@v2
+	npm install tornado-ui
 
 after that you will need to install Node.JS and SASS the Ruby version for compiling the source files.
 

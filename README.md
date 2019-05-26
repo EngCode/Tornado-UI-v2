@@ -38,9 +38,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 
 	====== Tornado JS =====
 	https://unpkg.com/tornado-ui@2.0.6/dist/css/tornado.min.js
-
-after that you will need to install Node.JS and SASS the Ruby version for compiling the source files.
-
+dd
 --------------------
 #### Changelog 05/2019 Update
 	#01 - Adding More Helpers Functions [ get All Next/Previous Siblings ].

@@ -63,6 +63,7 @@
         &::-ms-input-placeholder {color: #c3c3c3;}
         &::placeholder {color: #c3c3c3;}
     }
+    &:focus{outline-width: 0;}
 }
 
 %form-tiny {

@@ -46,7 +46,9 @@
     //=== Actions Buttons ===*/
     .action-btns {
         .icon-btn {
-            padding:0.625rem;
+            width:2.3rem;
+            height:2.3rem;
+            line-height:2.3rem;
             font-size:1.438rem;
             color:$gray-color;
             display: inline-block;

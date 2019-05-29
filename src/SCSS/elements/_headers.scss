@@ -46,10 +46,10 @@
     //=== Actions Buttons ===*/
     .action-btns {
         .icon-btn {
-            width:2.3rem;
-            height:2.3rem;
-            line-height:2.3rem;
-            font-size:1.438rem;
+            width:2.25rem;
+            height:2.25rem;
+            line-height:2.25rem;
+            font-size:1.25rem;
             color:$gray-color;
             display: inline-block;
             @include large(up){ &.menu-btn {display: none;} };

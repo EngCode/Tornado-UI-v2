@@ -1,8 +1,8 @@
 .jumbtron {
-    padding:$gutterSize*2;
+    padding:2.813rem;
     background:#fcfcfc;
     -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.1);
-            box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.1);
     //=== Action Area ===//
     .action-area {
         @extend %flexbox;
@@ -10,6 +10,7 @@
         @extend .align-between ;
         width:100%;
         padding: 0.9375rem 0;
+        padding-bottom: 0;
         border-top:1px solid rgba(0, 0, 0, 0.1);
         margin-top: $gutterMath;
     }

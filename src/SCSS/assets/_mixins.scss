@@ -1,4 +1,18 @@
-//========== Media Query Mixins ==========//
+/*=====> Extra Small Screen Mixin 0 ==> 420px <========*/
+@mixin xSmall($up) {
+    @if ($up) {
+        @media (min-width: $xSmall-query) {
+            @content;
+        }
+    } 
+    @else {
+        @media (max-width: $xSmall-query-down) {
+            @content;
+        }
+    };
+}
+
+/*=====> Small Screen Mixin 576px ==> 640px <========*/
 @mixin small($up) {
     @if ($up) {
         @media (min-width: $small-query) {
@@ -12,6 +26,7 @@
     };
 }
 
+/*=====> Medium Screen Mixin 768px ==> 920px <========*/
 @mixin medium($up) {
     @if ($up) {
         @media (min-width: $medium-query) {
@@ -25,6 +40,7 @@
     };
 }
 
+/*=====> Large Screen Mixin 1024px ==> 1366px <========*/
 @mixin large($up) {
     @if ($up) {
         @media (min-width: $large-query) {
@@ -38,6 +54,7 @@
     };
 }
 
+/*=====> Extra Large Screen Mixin 1366px ==> 1600px <========*/
 @mixin xlarge($up) {
     @if ($up) {
         @media (min-width: $xlarge-query) {
@@ -49,189 +66,4 @@
             @content;
         }
     };
-}
-
-/*===== Navigation Menu =====*/
-@mixin navigation-main() {
-    //=== Menu Wraper ===//
-    position: relative;
-    @extend %fast-motion;
-    @include medium(false) { display: none; }
-    &.collapsed { display: none; }
-    ul { @extend %reset; }
-    //=== Menu Main CSS ===//
-    > ul {
-        word-spacing: -5px;
-        //=== Transition ===//
-        li,a {@extend %fast-motion;}
-        //== item ==//
-        > li {
-            word-spacing: normal;
-            display: inline-block;
-            position: relative;
-            padding: 0 0.9375rem;
-            //=== List item Link ===//
-            a {
-                color:inherit;
-                font-weight: inherit;
-                font-family: inherit;
-            }
-            //== Submenu Item Arrow ==//
-            .dropdown-toggle:before {
-                float:$directionReverse;
-                margin-#{$direction}:5px;
-                position:relative;
-                line-height:inherit;
-                @extend %fast-motion;
-                font-size:0.7em;
-            }
-            //=== Nested List ===//
-            > ul {
-                width:220px;
-                position: absolute;
-                top:100%;
-                border:1px solid rgba(0,0,0,.15);
-                visibility: hidden;
-                -webkit-animation: dropClose 0.5s both;
-                    animation: dropClose 0.5s both;
-                #{$direction}:0;
-                li {
-                    position: relative;
-                    border-bottom:1px solid rgba(0,0,0,.15);
-                    font-weight:normal;
-                    padding:0 0.9375rem;
-                    ul {
-                        position: absolute;
-                        top: 0;
-                        #{$direction}: 100%;
-                    }
-                }
-            }
-            //=== Fixing Last Item Overflow
-            &:last-child {
-                > ul {
-                    #{$direction}:auto;
-                    #{$directionReverse}:0;
-                    li ul {
-                        #{$direction}:auto;
-                        #{$directionReverse}:100%;
-                    }
-                }
-            }
-        }
-
-        //==== Hover Dropdown ====//
-        li:hover > ul { 
-            -webkit-animation: dropOpen 0.5s both; 
-                animation: dropOpen 0.5s both;
-            visibility: visible;
-        }
-    }
-}
-
-/*======= Custome Theme ========*/
-@mixin navigation-custom-theme (
-    $height:3.375rem,// Height
-    $font-size:0.9375rem,// Font-size
-    $font-weight:$medium-weight,// Font Weight
-    $color:$gray-color,// Text Color
-    $hvr-color:$primary-color,// Hover Color
-    $hvr-bg:transparent,// Hover Background
-    // submenu
-    $sub-color:$black-color,// Submenu Color
-    $sub-bg:$reverse-color,// Submenu Background
-    $sub-font-size:0.875rem,// Submenu Font-size
-    $sub-height:2.5rem,// Submenu Height
-    $sub-hvr-bg:$primary-color,// Submenu Hover Background
-    $sub-hvr-color:$reverse-color// Submenu Hover Color
-    ) {
-    //=== Menu Theme ===//
-    > ul > li {
-        font-size:$font-size;
-        font-weight: $font-weight;
-        color:$color;
-        line-height: $height;
-        //==== Hover Theme ====//
-        &:hover,&.active,&.current-menu-parent,&.current-menu-item{ 
-            color:$hvr-color;
-            background:$hvr-bg;
-        }
-        //=== Nested Menus ===//
-        ul {
-            background: $sub-bg;
-            //==== Nested Menus Items ====//
-            li {
-                font-size:$sub-font-size;
-                line-height:$sub-height;
-                color:$sub-color;
-                &:hover,&.active,&.current-menu-parent,&.current-menu-item{
-                    background:$sub-hvr-bg;
-                    color:$sub-hvr-color;
-                }
-            }
-        }
-    }
-}
-
-@mixin nested-menu (
-    $height:2.188rem,// Height
-    $font-size:0.9375rem,// Font-size
-    $font-weight:$normal-weight,// Font Weight
-    $color:$black-color,// Text Color
-    $hvr-color:$primary-color,// Hover Color
-    $hvr-bg:transparent,// Hover Background
-    $space-size:1.563rem, // Gutter Size
-    // submenu
-    $sub-color:$black-color,// Submenu Color
-    $sub-bg:rgba(0,0,0,0.05),// Submenu Background
-    $sub-font-size:0.875rem,// Submenu Font-size
-    $sub-height:2rem,// Submenu Height
-    $sub-hvr-bg:rgba(0,0,0,0.05),// Submenu Hover Background
-    $sub-hvr-color:$black-color// Submenu Hover Color
-) {
-    > ul {
-        > li {
-            font-size:$font-size;
-            line-height:$height;
-            color:$color;
-            padding:0 $space-size;
-            //=== List item Link ===//
-            a {
-                color:inherit;
-                font-weight: inherit;
-                font-family: inherit;
-            }
-            //== Submenu Item Arrow ==//
-            .submenu::before{
-                line-height: $height;
-                font-size:0.8em;
-            }
-            //== Hover Theme ==//
-            &:hover {
-                color:$hvr-color;
-                background:$hvr-bg;
-            }
-            //== Nested Menus ==//
-            ul {
-                background-color:$sub-bg;
-                margin:0 -#{$space-size};
-                max-height: 0;
-                overflow: hidden;
-                -webkit-transition: all 0.7s;
-                transition: all 0.7s;
-                //== Nested Menus Items ==//
-                li {
-                    color:$sub-color;
-                    padding:0 $space-size;
-                    font-size:$sub-font-size;
-                    line-height: $sub-height;
-                    //== Nested Menus Item Hover ==//
-                    &:hover {
-                        color:$sub-hvr-color;
-                        background:$sub-hvr-bg;
-                    }
-                }
-            }
-        }
-    }
 }

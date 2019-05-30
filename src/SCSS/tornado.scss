@@ -72,11 +72,13 @@ $grid-columns:12; // Numbers of Gride Columns
 $gutterSize:30px; // the Space Between Columns
 $gutterMath:$gutterSize/2; // the Space Between Columns Divided
 //====== Media Query Minimum Size =======//
+$xSmall-query:0; //  Mobile Screen Size to start from
 $small-query:576px; //  Mobile Screen Size to start from
 $medium-query:768px; // Tablet Screen Size to start from
 $large-query:1024px; // Desktop Screen Size to start from
 $xlarge-query:1360px; // Big Desktop Screen Size to start from
 //====== Media Query Maximum Size =======//
+$xSmall-query-down:420px; //  Mobile Screen Size to start from
 $small-query-down:640px; //  Mobile Screen Size to start from
 $medium-query-down:980px; // Tablet Screen Size to start from
 $large-query-down:1200px; // Desktop Screen Size to start from

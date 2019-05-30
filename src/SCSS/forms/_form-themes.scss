@@ -1,88 +1,3 @@
-//==== Global SASS Control Selector ====//
-%form-control {
-    display: block;
-    width: 100%;
-    margin-bottom: 1.563rem;
-    font-size: 0.9375rem;
-    padding: 0 0.9375rem;
-    border: 1px solid rgba(0, 0, 0, .10);
-    background-color: #fafafa;
-    line-height: 1;
-    height:2.625rem;
-    &::-webkit-input-placeholder {
-        opacity: 1;
-        color:$gray-color;
-    }
-    &:-ms-input-placeholder {
-        opacity: 1;
-        color:$gray-color;
-    }
-    &::-ms-input-placeholder {
-        opacity: 1;
-        color:$gray-color;
-    }
-    &::placeholder {
-        opacity: 1;
-        color:$gray-color;
-    }
-    &.rounded-corner:not(textarea) { border-radius: 3.75rem; }
-    &.rounde-corner { border-radius: 6px; }
-    + .badge{top:-0.9375rem;}
-    /*==== Validation ====*/
-    &.success {
-        border-color: $success-color;
-        color: $success-color;
-        &::-webkit-input-placeholder {color: $success-color;}
-        &:-ms-input-placeholder {color: $success-color;}
-        &::-ms-input-placeholder {color: $success-color;}
-        &::placeholder {color: $success-color;}
-    }
-
-    &.error {
-        border-color: $danger-color;
-        color: $danger-color;
-        &::-webkit-input-placeholder {color: $danger-color;}
-        &:-ms-input-placeholder {color: $danger-color;}
-        &::-ms-input-placeholder {color: $danger-color;}
-        &::placeholder {color: $danger-color;}
-    }
-
-    &.warning {
-        border-color: $warning-color;
-        color: $warning-color;
-        &::-webkit-input-placeholder {color: $warning-color;}
-        &:-ms-input-placeholder {color: $warning-color;}
-        &::-ms-input-placeholder {color: $warning-color;}
-        &::placeholder {color: $warning-color;}
-    }
-    &.disable,&[disabled] {
-        color: #c3c3c3;
-        background-color: #ebebeb;
-        &::-webkit-input-placeholder {color: #c3c3c3;}
-        &:-ms-input-placeholder {color: #c3c3c3;}
-        &::-ms-input-placeholder {color: #c3c3c3;}
-        &::placeholder {color: #c3c3c3;}
-    }
-    &:focus{outline-width: 0;}
-}
-
-%form-tiny {
-    font-size: 0.75rem;
-    padding: 0 0.75rem;
-    height: 1.688rem;
-}
-
-%form-small {
-    font-size: 0.8125rem;
-    height: 2.25rem;
-}
-
-%form-large {
-    font-size: 1rem;
-    padding: 0 1.25rem;
-    height:3.125rem;
-}
-
 /*==== Standard Form Reset ====*/
 button,input,optgroup,select,textarea {
     font-family: $secondary-font;
@@ -91,55 +6,194 @@ button,input,optgroup,select,textarea {
     margin: 0;
 }
 
-//==== Select Tags ====//
+//==== Select Reset ====//
 select,keygen{
     -webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;
     background-repeat:no-repeat;
-    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="rgba(0,0,0,0.5)" d="M10.5 15l7.5 7.5 7.5-7.5z"/></svg>');
-    background-position:$directionReverse 0.9375rem center;
-    &.chevron-select{
-        background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">\
-            <path fill="rgba(0,0,0,0.5)" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/>\
-        </svg>');
+    option { padding: 0 0.9375rem; }
+
+    optgroup {
+        font-style: normal;
+        padding: 0.9375rem;
+        option {
+            margin: 0 -0.9375rem;
+            padding: 0 0.9375rem;
+        }
     }
 }
 
-//==== select reset for firefox ====//
-select option,keygen option{padding:0 0.9375rem;}
-select optgroup,keygen optgroup{font-style:normal;padding:0.9375rem;}
-select optgroup option,keygen optgroup option{margin:0 -0.9375rem;padding:0 0.9375rem;}
+/*======== Controls Theme Mixin ========*/
+@mixin form-ui (
+    $gutter-bottom : null, //===> Space After Controler
+    $font-size : null,  //===> Controler Font Size
+    $padding : null, //===> Controler Padding
+    $border : null, //===> Controler Border
+    $background-color : null, //===> Controler Background
+    $height : null, //===> Controler Height
+    $placeholder-color : null, //===> Controler Placeholder Color
+    $arrow-color : null, //===> Select Arrow Color [only rgb]
+    $textarea-height : null, //===> Textarea Default Height
+) {
+    @if ($gutter-bottom) {margin-bottom: $gutter-bottom;}
+    @if ($font-size) { font-size: $font-size; }
+    @if ($padding) { padding:0 $padding; }
+    @if ($border) { border: $border; }
+    @if ($background-color) { background-color:$background-color ; }
+    @if ($height) { height:$height; }
+
+    /*======== Placeholder ========*/
+    @if ($placeholder-color) {
+        &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+        &::-ms-input-placeholder, &::-webkit-input-placeholder { color:$placeholder-color; }
+    }
+
+    /*==== Textarea ====*/
+    &:not(input):not(select):not(keygen):not(.file-input) {
+        @if ($padding) { padding: $padding; }
+        @if ($textarea-height) { height: $textarea-height; }
+    }
+
+    /*======== Select ========*/
+    @if ($arrow-color) {
+        &:not(input):not(textarea):not(.file-input) {
+            background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="#{$arrow-color}" d="M10.5 15l7.5 7.5 7.5-7.5z"/></svg>');
+            background-position:$directionReverse 0.9375rem center;
+            &.chevron-select{
+                background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">\
+                    <path fill="#{$arrow-color}" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/>\
+                </svg>');
+            }
+        }
+    }
+}
+
+//==== Global SASS Control Selector ====//
+%form-control {
+    display: block;
+    width: 100%;
+    line-height: 1;
+    
+    @include form-ui (
+        $gutter-bottom : 1.563rem, //===> Space After Controler
+        $font-size : 0.9375rem,  //===> Controler Font Size
+        $padding : 0.9375rem, //===> Controler Padding
+        $border : 1px solid rgba(#000, 0.10), //===> Controler Border
+        $background-color : #fafafa, //===> Controler Background
+        $height : 2.625rem, //===> Controler Height
+        $placeholder-color : $gray-color, //===> Controler Placeholder Color
+        $arrow-color : rgba(#000,0.5), //===> Select Arrow Color [only rgb]
+        $textarea-height : 110px, //===> Textarea Default Height
+    );
+
+    /*======== Placeholder ========*/
+    &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+    &::-ms-input-placeholder, &::-webkit-input-placeholder { opacity: 1; }
+
+    /*======== Radius ========*/
+    &.rounded-corner:not(textarea) { border-radius: 3.75rem; }
+    &.rounde-corner { border-radius: 6px; }
+
+    /*==== Validation ====*/
+    + .badge{top:-0.9375rem;}
+    
+    &.success {
+        border-color: $success-color;
+        color: $success-color;
+        &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+        &::-ms-input-placeholder, &::-webkit-input-placeholder {color: $success-color;}
+    }
+
+    &.error {
+        border-color: $danger-color;
+        color: $danger-color;
+        &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+        &::-ms-input-placeholder, &::-webkit-input-placeholder {color: $danger-color;}
+    }
+
+    &.warning {
+        border-color: $warning-color;
+        color: $warning-color;
+        &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+        &::-ms-input-placeholder, &::-webkit-input-placeholder {color: $warning-color;}
+    }
+
+    &.disable,&[disabled] {
+        color: #c3c3c3;
+        background-color: #ebebeb;
+        &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+        &::-ms-input-placeholder, &::-webkit-input-placeholder {color: #c3c3c3;}
+    }
+
+    &:focus{outline-width: 0;}
+}
 
 /*=== Form UI Container Theme ===*/
 .form-ui {
     // Form Control
-    input:not(.btn),textarea,select,keygen,.tagsinput {@extend %form-control;}
-    textarea{height:110px;padding:0.9375rem;}
+    input:not(.btn),textarea,select,keygen {@extend %form-control;}
 
     /*==== Sizes ====*/
     &.tiny {
-        input:not(.btn),textarea,select,keygen,.tagsinput {@extend %form-tiny;}
-        textarea{height:3.125rem;}
+        input:not(.btn),textarea,select,keygen,textarea {
+            @include form-ui (
+                $font-size : 0.75rem,  //===> Controler Font Size
+                $padding : 0.75rem, //===> Controler Padding
+                $height : 1.688rem, //===> Controler Height
+                $textarea-height : 3.125rem, //===> Textarea Default Height
+            );
+        }
     }
 
     &.small {
-        input:not(.btn),textarea,select,keygen,.tagsinput{@extend %form-small;}
-        textarea{height:5.625rem;}
+        input:not(.btn),textarea,select,keygen,textarea {
+            @include form-ui (
+                $font-size : 0.8125rem,  //===> Controler Font Size
+                $height : 2.25rem, //===> Controler Height
+                $textarea-height : 5.625rem, //===> Textarea Default Height
+            );
+        }
     }
 
     &.large {
-        input:not(.btn),textarea,select,keygen,.tagsinput{@extend %form-large;}
-        textarea{height:12.5rem;}
+        input:not(.btn),textarea,select,keygen,textarea {
+            @include form-ui (
+                $font-size : 1rem,  //===> Controler Font Size
+                $padding : 1.25rem, //===> Controler Padding
+                $height : 3.125rem, //===> Controler Height
+                $textarea-height : 12.5rem, //===> Textarea Default Height
+            );
+        }
     }
 }
 
 /*==== Stand alone Form Control ====*/
 .form-control {
     @extend %form-control;
-    &.tiny {@extend %form-tiny; }
-    &.small {@extend %form-small; }
-    &.large {@extend %form-large;}
+    &.tiny {
+        @include form-ui (
+            $font-size : 0.75rem,  //===> Controler Font Size
+            $padding : 0.75rem, //===> Controler Padding
+            $height : 1.688rem, //===> Controler Height
+            $textarea-height : 3.125rem, //===> Textarea Default Height
+        );
+    }
+    &.small {
+        @include form-ui (
+            $font-size : 0.8125rem,  //===> Controler Font Size
+            $height : 2.25rem, //===> Controler Height
+            $textarea-height : 5.625rem, //===> Textarea Default Height
+        );
+    }
+    &.large {
+        @include form-ui (
+            $font-size : 1rem,  //===> Controler Font Size
+            $padding : 1.25rem, //===> Controler Padding
+            $height : 3.125rem, //===> Controler Height
+            $textarea-height : 12.5rem, //===> Textarea Default Height
+        );
+    }
 }
 
 /*==== Checkboxs and Radio Buttons Reset ====*/

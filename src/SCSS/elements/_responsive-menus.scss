@@ -340,7 +340,6 @@
         @include nested-menu (
             $color:$reverse-color, // Text Color
             $hvr-color:$reverse-color, // Hover Color
-            $space-size:1.563rem,
             // submenu
             $sub-color:$reverse-color, // Submenu Color
             $sub-hvr-color:$reverse-color // Submenu Hover Color
@@ -354,7 +353,6 @@
         @include nested-menu (
             $color:$reverse-color, // Text Color
             $hvr-color:$reverse-color, // Hover Color
-            $space-size:1.563rem,
             // submenu
             $sub-color:$reverse-color, // Submenu Color
             $sub-hvr-color:$reverse-color // Submenu Hover Color
@@ -368,7 +366,6 @@
         @include nested-menu (
             $color:rgba(0,0,0,0.75), // Text Color
             $hvr-color:$black-color, // Hover Color
-            $space-size:1.563rem,
             // submenu
             $sub-color:$black-color, // Submenu Color
             $sub-hvr-color:$black-color // Submenu Hover Color

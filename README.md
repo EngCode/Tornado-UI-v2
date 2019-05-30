@@ -43,10 +43,10 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Changelog 06/2019 Components Mixins
 	#01 - Documented Responsive Query Mixins.
 	#02 - Adding Form Controls Themes Mixin
-	#03 - Improve Responsive Menus Mixin
+	#03 - Improve Responsive Menus Mixins
 	#04 - Adding Extra Small Responsive Mixin
 	#05 - More Coloring Helpers Added
-	#06 - 
+	#06 - Adding Mobile Menu Theme Mixin
 	#07 - 
     #08 - 
 	#09 - 

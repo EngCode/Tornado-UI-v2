@@ -1,31 +1,6 @@
-/*==== Standard Form Reset ====*/
-button,input,optgroup,select,textarea {
-    font-family: $secondary-font;
-    font-size: 0.875rem;
-    line-height: 1;
-    margin: 0;
-}
-
-//==== Select Reset ====//
-select,keygen{
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
-    background-repeat:no-repeat;
-    option { padding: 0 0.9375rem; }
-
-    optgroup {
-        font-style: normal;
-        padding: 0.9375rem;
-        option {
-            margin: 0 -0.9375rem;
-            padding: 0 0.9375rem;
-        }
-    }
-}
-
 /*======== Controls Theme Mixin ========*/
 @mixin form-ui (
+    $extend : null, //===> Change Selecting Pattren
     $gutter-bottom : null, //===> Space After Controler
     $font-size : null,  //===> Controler Font Size
     $padding : null, //===> Controler Padding
@@ -35,36 +10,142 @@ select,keygen{
     $placeholder-color : null, //===> Controler Placeholder Color
     $arrow-color : null, //===> Select Arrow Color [only rgb]
     $textarea-height : null, //===> Textarea Default Height
+    $file-btn-bg : null, //====> File Input Button Background
+    $file-btn-color : null, //====> File Input Button Color
+    /*==== icons ====*/
+    $icons-width : null ,  //====> Control icon by Width REM || position reqiuered
+    $icons-position : $direction, //====> Control icon Position || width reqiuered
+    $icons-height : null, //===> icons line height
+    $icons-bg : null ,  //====> Control icon Background
+    $icons-color : null, //====> Control icon Color
+    $icons-size : null, //===> Icons Font Size
 ) {
-    @if ($gutter-bottom) {margin-bottom: $gutter-bottom;}
-    @if ($font-size) { font-size: $font-size; }
-    @if ($padding) { padding:0 $padding; }
-    @if ($border) { border: $border; }
-    @if ($background-color) { background-color:$background-color ; }
-    @if ($height) { height:$height; }
-
-    /*======== Placeholder ========*/
-    @if ($placeholder-color) {
-        &::-webkit-input-placeholder, &:-ms-input-placeholder ,
-        &::-ms-input-placeholder, &::-webkit-input-placeholder { color:$placeholder-color; }
-    }
-
-    /*==== Textarea ====*/
-    &:not(input):not(select):not(keygen):not(.file-input) {
-        @if ($padding) { padding: $padding; }
-        @if ($textarea-height) { height: $textarea-height; }
-    }
-
-    /*======== Select ========*/
-    @if ($arrow-color) {
-        &:not(input):not(textarea):not(.file-input) {
-            background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="#{$arrow-color}" d="M10.5 15l7.5 7.5 7.5-7.5z"/></svg>');
-            background-position:$directionReverse 0.9375rem center;
-            &.chevron-select{
-                background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">\
-                    <path fill="#{$arrow-color}" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/>\
-                </svg>');
+    /*======== Inputs Controls ========*/
+    @if ($extend == 'controls-icons' or $extend == 'checkboxes') { }
+    @else if ($extend) {
+        @if ($gutter-bottom) {margin-bottom: $gutter-bottom;}
+        @if ($font-size) { font-size: $font-size; }
+        @if ($padding) { padding:0 $padding; }
+        @if ($border) { border: $border; }
+        @if ($background-color) { background-color:$background-color ; }
+        @if ($height) {
+            height: $height;
+            &:not(input):not(select):not(keygen):not(textarea) {
+                line-height:$height;
+                &::after {
+                    color:$file-btn-color;
+                    background:$file-btn-bg;
+                }
             }
+        }
+
+        /*======== Placeholder ========*/
+        @if ($placeholder-color) {
+            &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+            &::-ms-input-placeholder, &::-webkit-input-placeholder { color:$placeholder-color; }
+        }
+
+        /*==== Textarea ====*/
+        &:not(input):not(select):not(keygen):not(.file-input) {
+            @if ($padding) { padding: $padding; }
+            @if ($textarea-height) { height: $textarea-height; }
+        }
+
+        /*======== Select ========*/
+        @if ($arrow-color) {
+            &:not(input):not(textarea):not(.file-input) {
+                background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="#{$arrow-color}" d="M10.5 15l7.5 7.5 7.5-7.5z"/></svg>');
+                background-position:$directionReverse 0.9375rem center;
+                &.chevron-select{
+                    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">\
+                        <path fill="#{$arrow-color}" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/>\
+                    </svg>');
+                }
+            }
+        }
+    } 
+    @else {
+        .form-ui input:not(.btn),
+        .form-ui textarea,
+        .form-ui select,
+        .form-ui keygen,
+        .file-input {
+            @if ($gutter-bottom) {margin-bottom: $gutter-bottom;}
+            @if ($font-size) { font-size: $font-size; }
+            @if ($padding) { padding:0 $padding; }
+            @if ($border) { border: $border; }
+            @if ($background-color) { background-color:$background-color ; }
+            @if ($height) {
+                height: $height;
+                &:not(input):not(select):not(keygen):not(textarea) {
+                    line-height:$height;
+                    &::after {
+                        color:$file-btn-color;
+                        background:$file-btn-bg;
+                    }
+                }
+            }
+
+            /*======== Placeholder ========*/
+            @if ($placeholder-color) {
+                &::-webkit-input-placeholder, &:-ms-input-placeholder ,
+                &::-ms-input-placeholder, &::-webkit-input-placeholder { color:$placeholder-color; }
+            }
+
+            /*==== Textarea ====*/
+            &:not(input):not(select):not(keygen):not(.file-input) {
+                @if ($padding) { padding: $padding; }
+                @if ($textarea-height) { height: $textarea-height; }
+            }
+
+            /*======== Select ========*/
+            @if ($arrow-color) {
+                &:not(input):not(textarea):not(.file-input) {
+                    background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><path fill="#{$arrow-color}" d="M10.5 15l7.5 7.5 7.5-7.5z"/></svg>');
+                    background-position:$directionReverse 0.9375rem center;
+                    &.chevron-select{
+                        background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48">\
+                            <path fill="#{$arrow-color}" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/>\
+                        </svg>');
+                    }
+                }
+            }
+        }
+    }
+
+    /*======== Icons ========*/
+    @if ($icons-bg or $icons-color or $icons-position or $icons-height) {
+        /*==== icons Height ====*/
+        @if ($icons-height) {
+            &::before {
+                height:$icons-height;
+                line-height: $icons-height;
+            }
+        }
+        /*==== Width & Position ====*/
+        @if ($icons-width or $icons-position) {
+            @if ($icons-bg) {
+                input:not(.btn),textarea,select,keygen,.form-control {padding-#{$icons-position}:$icons-width+0.5;}
+            } @else {
+                input:not(.btn),textarea,select,keygen,.form-control {padding-#{$icons-position}:$icons-width;}
+            }
+            &::before {
+                width:$icons-width;
+                #{$icons-position}:0;
+            }
+        }
+        /*==== Font Size ====*/
+        @if ($icons-size) {
+            &::before { font-size: $icons-size;}
+        }
+
+        /*==== Background and Colors ====*/
+        @if ($icons-bg) {
+            &::before { background: $icons-bg;}
+        }
+
+        @if ($icons-color) {
+            &::before { color: $icons-color;}
         }
     }
 }
@@ -76,6 +157,7 @@ select,keygen{
     line-height: 1;
     
     @include form-ui (
+        $extend : true,
         $gutter-bottom : 1.563rem, //===> Space After Controler
         $font-size : 0.9375rem,  //===> Controler Font Size
         $padding : 0.9375rem, //===> Controler Padding
@@ -85,6 +167,8 @@ select,keygen{
         $placeholder-color : $gray-color, //===> Controler Placeholder Color
         $arrow-color : rgba(#000,0.5), //===> Select Arrow Color [only rgb]
         $textarea-height : 110px, //===> Textarea Default Height
+        $file-btn-bg : $secondary-color, //====> File Input Button Background
+        $file-btn-color : $reverse-color , //====> File Input Button Color
     );
 
     /*======== Placeholder ========*/
@@ -138,6 +222,7 @@ select,keygen{
     &.tiny {
         input:not(.btn),textarea,select,keygen,textarea {
             @include form-ui (
+                $extend : true,
                 $font-size : 0.75rem,  //===> Controler Font Size
                 $padding : 0.75rem, //===> Controler Padding
                 $height : 1.688rem, //===> Controler Height
@@ -149,6 +234,7 @@ select,keygen{
     &.small {
         input:not(.btn),textarea,select,keygen,textarea {
             @include form-ui (
+                $extend : true,
                 $font-size : 0.8125rem,  //===> Controler Font Size
                 $height : 2.25rem, //===> Controler Height
                 $textarea-height : 5.625rem, //===> Textarea Default Height
@@ -159,6 +245,7 @@ select,keygen{
     &.large {
         input:not(.btn),textarea,select,keygen,textarea {
             @include form-ui (
+                $extend : true,
                 $font-size : 1rem,  //===> Controler Font Size
                 $padding : 1.25rem, //===> Controler Padding
                 $height : 3.125rem, //===> Controler Height
@@ -173,6 +260,7 @@ select,keygen{
     @extend %form-control;
     &.tiny {
         @include form-ui (
+            $extend : true,
             $font-size : 0.75rem,  //===> Controler Font Size
             $padding : 0.75rem, //===> Controler Padding
             $height : 1.688rem, //===> Controler Height
@@ -181,6 +269,7 @@ select,keygen{
     }
     &.small {
         @include form-ui (
+            $extend : true,
             $font-size : 0.8125rem,  //===> Controler Font Size
             $height : 2.25rem, //===> Controler Height
             $textarea-height : 5.625rem, //===> Textarea Default Height
@@ -188,22 +277,12 @@ select,keygen{
     }
     &.large {
         @include form-ui (
+            $extend : true,
             $font-size : 1rem,  //===> Controler Font Size
             $padding : 1.25rem, //===> Controler Padding
             $height : 3.125rem, //===> Controler Height
             $textarea-height : 12.5rem, //===> Textarea Default Height
         );
-    }
-}
-
-/*==== Checkboxs and Radio Buttons Reset ====*/
-input {
-    &[type="radio"],&[type="checkbox"],&[type="range"],&[type="color"] {
-        display:inline-block;
-        width:auto;
-        margin:auto;
-        padding:0;
-        border:0 none;
     }
 }
 
@@ -220,13 +299,9 @@ label {
 }
 
 /*==== File Uploade Input ====*/
-.file-input{
+.file-input {
     position:relative;
-    @extend .form-control;
-    line-height: 2.625rem;
-    &.tiny {line-height: 1.563rem;}
-    &.small {line-height: 2.125rem;}
-    &.large {line-height: 3.125rem;}
+    @extend .form-control ;
     // Text 
     &::before {content:attr(data-text);}
     // Button
@@ -236,8 +311,6 @@ label {
         #{$directionReverse}:0;
         top:0;
         height: 100%;
-        background: $secondary-color;
-        color:#FFF;
         padding:0 1.563rem;
     }
     // Upload Input
@@ -270,56 +343,91 @@ label {
     position: relative;
     &::before {
         position: absolute;
-        width:2.188rem;
-        font-size:1.125rem;
-        color:rgba(0,0,0,0.50);
-        #{$direction}:0;
-        height: 2.625rem;
-        line-height: 2.625rem;
         top:0;
-        text-align: $directionReverse;
+        text-align: center;
     }
-    input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.813rem; }
+
+    @include form-ui (
+        $extend:'controls-icons',
+        /*==== icons ====*/
+        $icons-width : 2.813rem ,  //====> Control icon Width or position reqiuered
+        $icons-height: 2.625rem, //===> icons line height
+        $icons-position : $direction, //====> Control icon Position or width reqiuered
+        $icons-color : rgba(0,0,0,0.50), //====> Control icon Color
+        $icons-size : 1.125rem, //===> Icons Font Size
+    )
+
+    &.labeled { 
+        @include form-ui (
+            $extend:'controls-icons',
+            $icons-width : 2.813rem , 
+            $icons-bg:rgba(0, 0, 0, 0.05)
+        );
+        &::before {  border-#{$directionReverse}:1px solid rgba(0,0,0,.15); }
+    }
 
     &.tiny {
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.313rem; }
-        &::before {
-            font-size: 0.8125rem;
-            height: 1.688rem;
-            width:1.688rem;
+        @include form-ui (
+            $extend:'controls-icons',
+            /*==== icons ====*/
+            $icons-width : 1.688rem,  //====> Control icon Width or position reqiuered
+            $icons-height: 1.688rem, //===> icons line height
+            $icons-position : $direction, //====> Control icon Position or width reqiuered
+            $icons-size : 0.8125rem, //===> Icons Font Size
+        )
+        &.labeled { 
+            @include form-ui (
+                $extend:'controls-icons',
+                $icons-width : 1.688rem,  //====> Control icon Width or position reqiuered
+                $icons-bg:rgba(0, 0, 0, 0.05)
+            );
+            &::before {  border-#{$directionReverse}:1px solid rgba(0,0,0,.15); }
         }
     }
     
     &.small {
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:2.5rem; }
-        &::before {
-            font-size: 0.9375rem;
-            line-height: 2.25rem;
-            width:1.875rem;
+        @include form-ui (
+            $extend:'controls-icons',
+            /*==== icons ====*/
+            $icons-width : 2.25rem,  //====> Control icon Width or position reqiuered
+            $icons-height: 2.25rem, //===> icons line height
+            $icons-position : $direction, //====> Control icon Position or width reqiuered
+            $icons-size : 0.9375rem, //===> Icons Font Size
+        )
+        &.labeled { 
+            @include form-ui (
+                $extend:'controls-icons',
+                $icons-width : 2.25rem,  //====> Control icon Width or position reqiuered
+                $icons-bg:rgba(0, 0, 0, 0.05)
+            );
+            &::before {  border-#{$directionReverse}:1px solid rgba(0,0,0,.15); }
         }
     }
     
     &.large {
-        input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:3.438rem; }
-        &::before {
-            font-size: 1.375rem;
-            line-height: 3.25rem;
-            width:2.813rem;
+        @include form-ui (
+            $extend:'controls-icons',
+            /*==== icons ====*/
+            $icons-width : 2.813rem,  //====> Control icon Width or position reqiuered
+            $icons-height: 2.813rem, //===> icons line height
+            $icons-position : $direction, //====> Control icon Position or width reqiuered
+            $icons-size : 1.375rem, //===> Icons Font Size
+        )
+        &.labeled { 
+            @include form-ui (
+                $extend:'controls-icons',
+                $icons-width : 1.688rem,  //====> Control icon Width or position reqiuered
+                $icons-bg:rgba(0, 0, 0, 0.05)
+            );
+            &::before {  border-#{$directionReverse}:1px solid rgba(0,0,0,.15); }
         }
     }
-    
-    &.labeled::before { 
-        border-#{$directionReverse}:1px solid rgba(0,0,0,.15);
-        background: rgba(0, 0, 0, 0.05);
-        text-align: center;
-    }
 
-    &.floating-end { 
+    &.floating-end {
         input:not(.btn),textarea,select,keygen,.tagsinput,.form-control { padding-#{$direction}:0.9375rem; }
         &::before {
             #{$direction}:auto;
             #{$directionReverse}:0;
-            text-align: $direction;
         }
         &.labeled::before {
             border-#{$directionReverse}:0 none;

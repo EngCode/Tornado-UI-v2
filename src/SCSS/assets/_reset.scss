@@ -21,12 +21,9 @@ main {
     display: block;
 }
 
-figure {
-    margin: 1rem 40px;
-}
+figure {margin: 1rem 2.5rem;}
 
-hr,
-.hr {
+hr,.hr {
     display: block;
     background: rgba(0, 0, 0, .15);
     height: 1px;
@@ -223,4 +220,41 @@ template,
     padding:0;
     margin:0;
     list-style: none;
+}
+
+/*==== Standard Form Reset ====*/
+button,input,optgroup,select,textarea {
+    font-family: $secondary-font;
+    font-size: 0.875rem;
+    line-height: 1;
+    margin: 0;
+}
+
+//==== Select Reset ====//
+select,keygen{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background-repeat:no-repeat;
+    option { padding: 0 0.9375rem; }
+
+    optgroup {
+        font-style: normal;
+        padding: 0.9375rem;
+        option {
+            margin: 0 -0.9375rem;
+            padding: 0 0.9375rem;
+        }
+    }
+}
+
+/*==== Checkboxs and Radio Buttons Reset ====*/
+input {
+    &[type="radio"],&[type="checkbox"],&[type="range"],&[type="color"] {
+        display:inline-block;
+        width:auto;
+        margin:auto;
+        padding:0;
+        border:0 none;
+    }
 }

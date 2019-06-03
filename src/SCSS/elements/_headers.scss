@@ -1,8 +1,75 @@
+/*======== Header Mixin ========*/
+@mixin header(
+    $height : 4.75rem, //====> the Minimum Height
+    $background : null, //====> Header Bacground
+    $color : $gray-color, //====> Header Text Color
+    $font-size : 0.9375rem, //====> Header Text/Menu Font Size
+    //====> Menu Options All Required <======//
+    $menu-background-hvr : transparent, //====> Menu Links Hover Background
+    $menu-color-hvr : $primary-color, //====> Menu Links Hover Color
+    $dropdown-background : #FFF, //====> Dropdown Menu Background
+    $dropdown-background-hvr:rgba(0, 0, 0, 0.05), //====> Dropdown Menu Background Hover
+    $dropdown-color : $gray-color, //====> Dropdown Menu Links Color
+    $dropdown-color-hvr : $black-color, //====> Dropdown Menu Links Color Hover
+    //====> Icons buttons <======//
+    $icon-btn-size : null, //====> Icon Button Width/Height
+    $icon-size : null, //=====> Icon Button Font Size
+    $icon-background:null, //====> Icon Button Background 
+    $icon-color:null,  //====> Icon Button Color
+    $icon-background-hvr:null, //====> Icon Button Background 
+    $icon-color-hvr:null,  //====> Icon Button Color
+) {
+    @if($background) { background: $background; }
+    @if($color) {
+        color:$color;
+        //=== Logo ===//
+        .logo h1 { color:$color;}
+    }
+    /*==== Height ====*/
+    .container,.container-fluid,.container-xl{min-height:$height;} 
+    //=== Navigation Menu ===//
+    .navigation-menu {
+        @include navigation-custom-theme (
+            $height:$height,
+            $font-size:$font-size,
+            $color:$color,
+            $hvr-color:$menu-color-hvr,
+            $hvr-bg:$menu-background-hvr,
+            $sub-color:$dropdown-color,
+            $sub-bg:$dropdown-background,
+            $sub-hvr-bg:$dropdown-background-hvr,
+            $sub-hvr-color:$dropdown-color-hvr,
+        )
+    }
+
+    .action-btns .icon-btn {
+        @if ($icon-btn-size) {
+            width: $icon-btn-size;
+            height: $icon-btn-size;
+            line-height: $icon-btn-size;
+        }
+
+        @if($icon-size) { font-size: $icon-size; }
+        @if($icon-background) { background: $icon-background; }
+        @if($icon-color) { color: $icon-color; }
+
+        &:hover {
+            @if($icon-background-hvr) { background: $icon-background-hvr; }
+            @if($icon-color-hvr) { color: $icon-color-hvr; }
+        }  
+    }
+}
+
 /*======== Standard Header ========*/
 .tornado-header {
-    $thisHeight:4.75rem;
-    border:1px solid rgba(0,0,0,0.10);
-    padding:0 $gutterMath;
+    @include header (
+        $background : #FFF,
+        $icon-btn-size : 2.25rem,
+        $icon-size:1.25rem,
+        $icon-background:transparent, //====> Icon Button Background 
+        $icon-color:$gray-color,  //====> Icon Button Color
+    );
+    
     background: #FFF;
     @extend %fast-motion;
     //=== Container Layout ===//
@@ -10,7 +77,6 @@
         @extend %flexbox;
         @extend .align-between;
         @extend .align-center-y;
-        min-height:$thisHeight;
         &::after{ display: none; }
     }
     //=== Logo ===//
@@ -18,43 +84,19 @@
         h1 {
             font-size: 1.5rem;
             font-weight: $medium-weight;
-            color:$primary-color;
             text-transform: uppercase;
         }
 
         img {max-height: 3rem;}
     }
-    //=== Navigation Menu ===//
-    .navigation-menu {
-        @include navigation-custom-theme (
-            $height:$thisHeight,// Height
-            $font-size:0.9375rem, // Font-size
-            $font-weight:$medium-weight, // Font Weight
-            $color:$gray-color, // Text Color
-            $hvr-color:$black-color, // Hover Color
-            $hvr-bg:transparent, // Hover Background
-            $sub-color:$black-color, // Submenu Color
-            $sub-bg:#FFF,// Submenu Background
-            $sub-font-size:0.875rem, // Submenu Font-size
-            $sub-height:2.5rem, // Submenu Height
-            $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
-            $sub-hvr-color:$black-color // Submenu Hover Color
-        );
-        > ul > li > a { text-transform: uppercase; }
-    }
     
     //=== Actions Buttons ===*/
     .action-btns {
         .icon-btn {
-            width:2.25rem;
-            height:2.25rem;
-            line-height:2.25rem;
-            font-size:1.25rem;
-            color:$gray-color;
             display: inline-block;
-            @include large(up){ &.menu-btn {display: none;} };
+            text-align: center;
+            @include large(up){ &.menu-btn:not(.collapsed) {display: none;} }
             @extend %fast-motion;
-            &:hover { color:$black-color; }
         }
     }
 
@@ -111,47 +153,33 @@
     
     //=== Primary Colored ===//
     &.primary {
-        background:$primary-color;
-        border:0 none;
-        .logo h1,.action-btns .icon-btn{ color:#FFF; }
-        .navigation-menu {
-            @include navigation-custom-theme (
-                $height:$thisHeight,// Height
-                $font-size:0.9375rem, // Font-size
-                $font-weight:$medium-weight, // Font Weight
-                $color:#FFF, // Text Color
-                $hvr-color:$primary-color, // Hover Color
-                $hvr-bg:#FFF, // Hover Background
-                $sub-color:$primary-color, // Submenu Color
-                $sub-bg:#FFF,// Submenu Background
-                $sub-font-size:0.875rem, // Submenu Font-size
-                $sub-height:2.5rem, // Submenu Height
-                $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
-                $sub-hvr-color:$black-color // Submenu Hover Color
-            );
-        }
+        @include header(
+            $background : $primary-color, //====> Header Bacground
+            $color : $reverse-color, //====> Header Text Color
+            //====> Menu Options All Required <======//
+            $menu-background-hvr : transparent, //====> Menu Links Hover Background
+            $menu-color-hvr : $reverse-color, //====> Menu Links Hover Color
+            $dropdown-background : $primary-color, //====> Dropdown Menu Background
+            $dropdown-background-hvr:rgba(0, 0, 0, 0.05), //====> Dropdown Menu Background Hover
+            $dropdown-color : $reverse-color, //====> Dropdown Menu Links Color
+            $dropdown-color-hvr : $reverse-color, //====> Dropdown Menu Links Color Hover
+            $icon-color:$reverse-color,  //====> Icon Button Color
+        );
     }
     
     //=== Secondary Colored ===//
     &.secondary {
-        background:$dark-color;
-        border:0 none;
-        .logo h1,.action-btns .icon-btn{ color:#FFF; }
-        .navigation-menu {
-            @include navigation-custom-theme (
-                $height:$thisHeight,// Height
-                $font-size:0.9375rem, // Font-size
-                $font-weight:$medium-weight, // Font Weight
-                $color:#FFF, // Text Color
-                $hvr-color:$dark-color, // Hover Color
-                $hvr-bg:#FFF, // Hover Background
-                $sub-color:$dark-color, // Submenu Color
-                $sub-bg:#FFF,// Submenu Background
-                $sub-font-size:0.875rem, // Submenu Font-size
-                $sub-height:2.5rem, // Submenu Height
-                $sub-hvr-bg:rgba(0, 0, 0, 0.05), // Submenu Hover Background
-                $sub-hvr-color:$black-color // Submenu Hover Color
-            );
-        }
+        @include header(
+            $background : $secondary-color, //====> Header Bacground
+            $color : $reverse-color, //====> Header Text Color
+            //====> Menu Options All Required <======//
+            $menu-background-hvr : transparent, //====> Menu Links Hover Background
+            $menu-color-hvr : $reverse-color, //====> Menu Links Hover Color
+            $dropdown-background : $secondary-color, //====> Dropdown Menu Background
+            $dropdown-background-hvr:rgba(0, 0, 0, 0.05), //====> Dropdown Menu Background Hover
+            $dropdown-color : $reverse-color, //====> Dropdown Menu Links Color
+            $dropdown-color-hvr : $reverse-color, //====> Dropdown Menu Links Color Hover
+            $icon-color:$reverse-color,  //====> Icon Button Color
+        );
     }
 }

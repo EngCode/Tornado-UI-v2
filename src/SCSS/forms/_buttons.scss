@@ -16,7 +16,7 @@
     font-size: 0.9375rem;
     color:$dark-color;
     cursor: pointer;
-    background:#f7f7f7;
+    background:#ededed;
     @extend %normal-motion;
     text-align: center;
     font-weight:$medium-weight;
@@ -150,8 +150,8 @@
         border-radius:50%;
         width:2.625rem;
         padding:0;
-        &.tiny{width: 1.688rem;padding:0;}
-        &.small{width: 2.25rem;padding:0;}
-        &.large{width:3.125rem;padding:0;}
+        &.tiny{width: 1.688rem;}
+        &.small{width: 2.25rem;}
+        &.large{width:3.125rem;}
     }
 }

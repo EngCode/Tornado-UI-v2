@@ -220,7 +220,7 @@
 
     /*==== Sizes ====*/
     &.tiny {
-        input:not(.btn),textarea,select,keygen,textarea {
+        input:not(.btn),textarea,select,keygen,textarea,.file-input {
             @include form-ui (
                 $extend : true,
                 $font-size : 0.75rem,  //===> Controler Font Size
@@ -232,7 +232,7 @@
     }
 
     &.small {
-        input:not(.btn),textarea,select,keygen,textarea {
+        input:not(.btn),textarea,select,keygen,textarea,.file-input {
             @include form-ui (
                 $extend : true,
                 $font-size : 0.8125rem,  //===> Controler Font Size
@@ -243,7 +243,7 @@
     }
 
     &.large {
-        input:not(.btn),textarea,select,keygen,textarea {
+        input:not(.btn),textarea,select,keygen,textarea,.file-input {
             @include form-ui (
                 $extend : true,
                 $font-size : 1rem,  //===> Controler Font Size

@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollSpy();
 
     //======> Smoth Scroll <======//
-    smothScroll();
+    smothScroll('.smoth-scroll');
 
     //======> Responsive Tooltips <======//
     responsiveTooltips();

@@ -221,7 +221,7 @@
     }
     &.collapsed {
         .navigation-menu {display: none;}
-        .menu-btn {display: block;}
+        .menu-btn {display: inline-block;}
     }
     /*==== Gray Theme ====*/
     &.gray {

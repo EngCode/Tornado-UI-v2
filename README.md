@@ -48,7 +48,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#05 - More Coloring Helpers Added
 	#06 - Adding Mobile Menu Theme Mixin
 	#07 - Adding Header/Navbar Theme Mixin
-	#08 - 
+	#08 - ViewPort Animations Fix
 
 --------------------
 #### Changelog 05/2019 Update

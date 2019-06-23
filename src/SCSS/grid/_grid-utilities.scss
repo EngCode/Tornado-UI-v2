@@ -80,45 +80,45 @@
 .hidden{display: none;}
 /*=== Small Screen ===*/
 @include small(true) { 
-    .hidden-s-up{display: none;} 
-    .show-s-up{display: show;} 
+    .hidden-s-up{display: none!important;} 
+    .show-s-up{display: block!important;} 
 }
 
 @include small(false) { 
-    .hidden-s-down{display: none;} 
-    .show-s-down{display: block;} 
+    .hidden-s-down{display: none!important;} 
+    .show-s-down{display: block!important;} 
 }
 
 /*=== Medium Screen ===*/
 @include medium(true) { 
-    .hidden-m-up{display: none;} 
-    .show-m-up{display: block;} 
+    .hidden-m-up{display: none!important;} 
+    .show-m-up{display: block!important;} 
 }
 
 @include medium(false) { 
-    .hidden-m-down{display: none;}
-    .show-m-down{display: block;}
+    .hidden-m-down{display: none!important;}
+    .show-m-down{display: block!important;}
 }
 /*=== Large Screen ===*/
 @include large(true) { 
-    .hidden-l-up{display: none;} 
-    .show-l-up{display: block;} 
+    .hidden-l-up{display: none!important;} 
+    .show-l-up{display: block!important;} 
 }
 
 @include large(false) { 
-    .hidden-l-down{display: none;}
-    .show-l-down{display: block;}
+    .hidden-l-down{display: none!important;}
+    .show-l-down{display: block!important;}
 }
 
 /*=== Extra Large Screen ===*/
 @include xlarge(true) { 
-    .hidden-xl-up{display: none;} 
-    .show-xl-up{display: block;} 
+    .hidden-xl-up{display: none!important;} 
+    .show-xl-up{display: block!important;} 
 }
 
 @include xlarge(false) { 
-    .hidden-xl-down{display: none;} 
-    .show-xl-down{display: block;} 
+    .hidden-xl-down{display: none!important;} 
+    .show-xl-down{display: block!important;} 
 }
 
 /*==== Gutters ====*/

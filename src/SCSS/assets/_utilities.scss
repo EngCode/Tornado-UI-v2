@@ -204,3 +204,12 @@ hr {
     position: fixed;
     top:0;
 }
+
+.view-status {
+    visibility: hidden;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    &.view-active{ visibility: visible; }
+}

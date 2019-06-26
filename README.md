@@ -31,13 +31,13 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Quick CDN Links
 
 	====== Tornado CSS [LTR] =====
-	https://unpkg.com/tornado-ui@2.0.7/dist/css/tornado.css
+	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado.css
 
 	====== Tornado CSS [RTL] =====
-	https://unpkg.com/tornado-ui@2.0.7/dist/css/tornado-rtl.css
+	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado-rtl.css
 
 	====== Tornado JS =====
-	https://unpkg.com/tornado-ui@2.0.7/dist/css/tornado.min.js
+	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado.min.js
 
 --------------------
 #### Changelog 06/2019 Components Mixins

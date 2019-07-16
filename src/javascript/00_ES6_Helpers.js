@@ -17,7 +17,7 @@ if (pageDirection == 'rtl') {
 }
 
 //======> Parents Until <======//
-const parentsUntil = function (elem, parent, selector) {
+const parentsUntil = (elem, parent, selector) => {
     // Element.matches() polyfill
     if (!Element.prototype.matches) {
         Element.prototype.matches =
@@ -50,7 +50,7 @@ const parentsUntil = function (elem, parent, selector) {
 };
 
 //======> Get All Siblings <======//
-const getSiblings = function (element,filter) {
+const getSiblings = (element,filter) => {
     'use strict';
     /*== Get all siblings of ==> element @param {Node} ==> @return {Array} The siblings ==*/
     if (element !== null) {
@@ -65,7 +65,7 @@ const getSiblings = function (element,filter) {
 };
 
 //======> Get Next Sibling that Matchs <======//
-const getNextSibling = function (element, filter) {
+const getNextSibling = (element, filter) => {
     'use strict';
     if (element !== null) {
         // Get the next sibling element
@@ -82,7 +82,7 @@ const getNextSibling = function (element, filter) {
 };
 
 //======> Get Previous Sibling that Matchs <======//
-const getPrevSibling = function (element, filter) {
+const getPrevSibling = (element, filter) => {
     'use strict';
     if (element !== null && filter !== null) {
         // Get the Previos sibling element
@@ -98,7 +98,7 @@ const getPrevSibling = function (element, filter) {
 };
 
 //======> Get All Next Sibling <======//
-const getNextSiblings = function (element, filter) {
+const getNextSiblings = (element, filter) => {
     // Setup siblings array and get next sibling
     var siblings = [],
         next = element.nextElementSibling;
@@ -115,7 +115,7 @@ const getNextSiblings = function (element, filter) {
 };
 
 //======> Get All Previous Sibling <======//
-const getPrevSiblings = function (element, filter) {
+const getPrevSiblings = (element, filter) => {
     // Setup siblings array and get previous sibling
     var siblings = [];
     var prev = element.previousElementSibling;
@@ -132,7 +132,7 @@ const getPrevSiblings = function (element, filter) {
 };
 
 //======> Insert After <======//
-function insertAfter(element, reference) {
+const insertAfter = (element, reference) => {
     'use strict';
     //===> Descover if its HTML String <===//
     var elementString = element;
@@ -147,7 +147,7 @@ function insertAfter(element, reference) {
 }
 
 //======> Insert Before <======//
-function insBefore(element, reference) {
+const insBefore = (element, reference) => {
     'use strict';
     //===> Descover if its HTML String <===//
     var elementString = element;
@@ -162,7 +162,7 @@ function insBefore(element, reference) {
 }
 
 //======> Append HTML <======//
-function appendIn(reference, element) {
+const appendIn = (reference, element) => {
     'use strict';
     //===> Descover if its HTML String <===//
     if (typeof element === 'string' && reference !== null) {
@@ -173,7 +173,7 @@ function appendIn(reference, element) {
 }
 
 //======> Live Events Watcher <======//
-const addLiveListener = function (selector, event, func) {
+const addLiveListener = (selector, event, func) => {
     'use strict';
     //==== interval for Checking new Elements ====//
     if (selector !== null) {
@@ -188,7 +188,7 @@ const addLiveListener = function (selector, event, func) {
 };
 
 //======> Set new Attributes <======//
-const setAttributes = function (element, options) {
+const setAttributes = (element, options) => {
     'use strict';
     if (element !== null) {
         Object.keys(options).forEach(function (attr) {
@@ -198,7 +198,7 @@ const setAttributes = function (element, options) {
 };
 
 //=======> CounterUp <======//
-const counter = function (obj) {
+const counter = (obj) => {
     var elem = obj.elem;
     var input = (elem.nodeName.toLowerCase() === 'input') ? true : false;
     var value = obj.value || parseFloat(elem.getAttribute('data-counter')) || 0;

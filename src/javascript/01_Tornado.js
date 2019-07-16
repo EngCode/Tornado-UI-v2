@@ -2,7 +2,7 @@
 /*jslint es6 */
 
 //======> Dynamic Backgrounds <======//
-function dynamicBackgrounds (selector) {
+const dynamicBackgrounds = (selector) => {
     var backgroundElement = getElements(selector || '[data-src]');
     Array.from(backgroundElement).forEach(function (element) {
         var bgData = element.getAttribute('data-src');
@@ -17,7 +17,7 @@ function dynamicBackgrounds (selector) {
 }
 
 //======> Sticky Elements <======//
-function stickyElements(selector) {
+const stickyElements =(selector) => {
     var stickyElement = getElements(selector || '[data-sticky]');
     Array.from(stickyElement).forEach(function (element) {
         //=== Calculate Offset ===//
@@ -58,7 +58,7 @@ addLiveListener('.remove-item', 'click', function (e) {
 });
 
 //======> Responsive Tooltips <======//
-function responsiveTooltips () {
+const responsiveTooltips = () => {
     //======> Responsive X Tooltip <======//
     var tooltipX = getElements('.tooltip-start.tooltip-responsive,.tooltip-end.tooltip-responsive');
     Array.from(tooltipX).forEach(function (tooltipX) {
@@ -93,7 +93,7 @@ function responsiveTooltips () {
 }
 
 //======> ScrollSpy <======//
-function scrollSpy(selector) {
+const scrollSpy = (selector) => {
     const scrollspy = getElements(selector || '.scrollspy [data-target],.scrollspy a');
     Array.from(scrollspy).forEach(function (scrollspy) {
         //====> get the Target <====//
@@ -133,7 +133,7 @@ function scrollSpy(selector) {
 }
 
 //======> Smoth Scroll <======//
-function smothScroll(selector) {
+const smothScroll = (selector) => {
     const smothScroll = getElements('.scrollspy [data-target],.scrollspy a,' + selector || '.smoth-scroll');
     Array.from(smothScroll).forEach(function (smothScroll) {
         smothScroll.addEventListener('click', function (e) {
@@ -162,7 +162,7 @@ function smothScroll(selector) {
 }
 
 //======> Animated Counters <======//
-function animatedCounter(selector) {
+const animatedCounter = (selector) => {
     var counterElements = getElements(selector || '[data-counter]');
     Array.from(counterElements).forEach(function (counterElement) {
         //====> Reanimate When its Visible <======//
@@ -188,7 +188,7 @@ function animatedCounter(selector) {
 }
 
 //======> ViewPort Detactor <======//
-function ViewPortDetactor(selector) {
+const ViewPortDetactor = (selector) => {
     var viewportElements = getElements(selector || '.view-status');
     Array.from(viewportElements).forEach(function (element) {
         var animName = element.getAttribute('data-animation'),

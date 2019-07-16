@@ -3,7 +3,7 @@
 /*jslint es6 */
 
 //======> Ease Animation <======//
-function easeMath(t, b, c, d) {
+const easeMath = (t, b, c, d) => {
     'use strict';
     t /= d / 2;
     if (t < 1) return c / 2 * t * t + b;

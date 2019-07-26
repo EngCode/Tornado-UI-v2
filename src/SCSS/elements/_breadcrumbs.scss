@@ -1,55 +1,124 @@
+@mixin breadcrumb (
+    $backgroundColor:null, //====> Background Color
+    $border:null, //====> Box Border
+    $padding:null, //=====> Box Padding
+    $color:null, //=====> Text Color
+    $fontSize:null, //=====> Text Font Size
+    $lineHeight:null, //====> Text Line Height
+    $iconSize:null, //====> Icons Font Size
+    $colorActive:null, //=====> Active Text Color
+    $ActiveBackground:null, //====> Active Background Color
+    //============== Pointing Theme ==============//
+    
+    //============== Curving Theme ==============//
+
+    //============== Skewed Theme ==============//
+
+    //============== Dotted Theme ==============//
+) {
+    //====> Box Ruls
+    @if ($backgroundColor) { background-color:$backgroundColor; }
+    @if ($padding) { padding:$padding; }
+    @if ($border) { border:$border; }
+    //====> Text
+    @if ($color) { color:$color; }
+    @if ($fontSize) { font-size:$fontSize; }
+    @if ($lineHeight) { line-height:$lineHeight; }
+    //====> Icons Font Size
+    @if ($iconSize) { [class*="ti-"]::before { font-size:$iconSize; } }
+    //============== Pointing Theme ==============//
+    &.pointing {
+        @if($ActiveBackground) {background-color:$ActiveBackground;}
+        @if($colorActive) {color:$colorActive;}
+        >a,>span {
+            vertical-align: middle;
+            @if ($color) { color:$color; }
+            @if ($backgroundColor) {
+                background-color: $backgroundColor;
+                &::after{border-#{$direction}-color:$backgroundColor;}
+            }
+            &:last-child {
+                @if($ActiveBackground) {background-color:$ActiveBackground;}
+                @if($colorActive) {color:$colorActive;}
+            }
+        }
+    }
+    //============== Curving Theme ==============//
+    &.curving {
+        @if($ActiveBackground) {background-color:$ActiveBackground;}
+        @if($colorActive) {color:$colorActive;}
+        >a,>span {
+            vertical-align: middle;
+            @if ($color) { color:$color; }
+            @if ($backgroundColor) {
+                background-color: $backgroundColor;
+                &::after{background-color:$backgroundColor;}
+            }
+            &:last-child {
+                @if($ActiveBackground) {background-color:$ActiveBackground;}
+                @if($colorActive) {color:$colorActive;}
+            }
+        }
+    }
+    //============== Skewed Theme ==============//
+    &.skewed {
+        @if($ActiveBackground) {background-color:$ActiveBackground;}
+        @if($colorActive) {color:$colorActive;}
+        >a,>span {
+            vertical-align: middle;
+            @if ($color) { color:$color; }
+            @if ($backgroundColor) {
+                background-color: $backgroundColor;
+                &::after{background-color:$backgroundColor;}
+            }
+            &:last-child {
+                @if($ActiveBackground) {background-color:$ActiveBackground;}
+                @if($colorActive) {color:$colorActive;}
+            }
+        }
+    }
+};
+
+/*====== Breadcrumb =======*/
 .breadcrumb {
-    //==== Breadcrumb Box ====//
-    font-size:0.9375rem;
-    line-height: 1.875rem;
-    color:$dark-color;
-    background: #f7f7f7;
-    border:1px solid rgba(0,0,0,.10);
-    padding:0.6875rem 1.25rem;
     margin-bottom: 1.875rem;
     [class*="ti-"] {
         &::before {
-            font-size:1.125rem;
             margin-#{$directionReverse}:5px;
             position: relative;
         }
         &.ti-home::before { top:-2px; }
     }
     //==== Breadcrumb Elements ====//
-    a {
+    >a,>span {
         display: inline-block;
-        @extend %desc-index ;
+        color:inherit;
+        @extend %desc-index;
         &:not(:last-child)::after {
             padding:0 5px;
             @if $page-dir == 'ltr' { content:'/'; } @else { content:'\\'; }
         }
-
-        &:last-child { color:$dark-color; }
     }
     //==== Pointing ====//
     &.pointing {
         white-space: nowrap;
         overflow: hidden;
         padding: 0;
-        height: 3.25rem;
+        height: 3.125rem;
         word-spacing: -5px;
-        a {
+        >a,>span {
             word-spacing: normal;
-            color:$black-color;
             padding:0 1.25rem;
             line-height: 3.125rem;
             position: relative;
-            &:last-child {
-                color: $gray-color;
-                padding-#{$direction}:2.188rem;
-            }
+            &:last-child {padding-#{$direction}:2.188rem;}
             &::after,&::before {
                 content: '';
                 position: absolute;
                 border:25px solid transparent;
-                border-#{$direction}-color:#f7f7f7;
                 #{$direction}:100%;
-                -webkit-transform: translateX(-14px);transform: translateX(-14px);
+                -webkit-transform: translateX(-14px);
+                transform: translateX(-14px);
                 top:0;
             }
 
@@ -70,9 +139,9 @@
         white-space: nowrap;
         overflow: hidden;
         padding: 0;
-        height: 3.25rem;
+        height: 3.125rem;
         word-spacing: -5px;
-        a {
+        >a,>span {
             word-spacing: normal;
             color:$black-color;
             padding-#{$directionReverse}:0.625rem;
@@ -82,7 +151,6 @@
             position: relative;
             @extend %minus-indexing;
             &:not(:last-child){
-                background: darken($color: #f7f7f7, $amount: 05);
                 &::after {
                     content: '';
                     display: block;
@@ -94,7 +162,6 @@
                     @extend %position-center-y;
                     border-radius: 50%;
                     z-index: -1;
-                    background: darken($color: #f7f7f7, $amount: 05);
                     border-#{$directionReverse}:1px solid rgba(0,0,0,.20);
                 }
             }
@@ -105,11 +172,10 @@
         white-space: nowrap;
         overflow: hidden;
         padding: 0;
-        height: 3.25rem;
+        height: 3.125rem;
         word-spacing: -5px;
-        a {
+        >a,>span {
             word-spacing: normal;
-            color:$black-color;
             padding-#{$directionReverse}:0.625rem;
             padding-#{$direction}:1.25rem;
             &:not(:first-child) { padding-#{$direction}:1.875rem; }
@@ -117,7 +183,6 @@
             position: relative;
             @extend %minus-indexing;
             &:not(:last-child){
-                background: darken($color: #f7f7f7, $amount: 05);
                 &::after {
                     content: '';
                     display: block;
@@ -130,12 +195,64 @@
                         -webkit-transform: skew(-10deg);transform: skew(-10deg);
                     } @else { -webkit-transform: skew(10deg);transform: skew(10deg); }
                     z-index: -1;
-                    background: darken($color: #f7f7f7, $amount: 05);
                     border-#{$directionReverse}:1px solid rgba(0,0,0,.20);
                 }
             }
         }
     }
+    
+    //==== Breadcrumb Theme ====//
+    @include breadcrumb (
+        $backgroundColor:#f7f7f7, //====> Background Color
+        $border:1px solid rgba(0,0,0,.10), //====> Box Border
+        $padding:0.6875rem 1.25rem, //=====> Box Padding
+        $color:$dark-color, //=====> Text Color
+        $fontSize:0.9375rem, //=====> Text Font Size
+        $lineHeight:1.875rem, //====> Text Line Height
+        $iconSize:1rem, //====> Icons Font Size
+        $colorActive:$dark-color, //=====> Active Text Color
+        $ActiveBackground:#f7f7f7, //====> Active Background Color
+    );
+
+    &.dark {
+        @include breadcrumb (
+            $backgroundColor:$dark-color, //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:$reverse-color, //=====> Text Color
+            $colorActive:$reverse-color, //=====> Text Color
+        );
+    }
+    
+    &.primary {
+        @include breadcrumb (
+            $backgroundColor:$primary-color, //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:$reverse-color, //=====> Text Color
+            $colorActive:$dark-color, //=====> Active Text Color
+            $ActiveBackground:#f7f7f7, //====> Active Background Color
+        );
+    }
+
+    &.secondary {
+        @include breadcrumb (
+            $backgroundColor:$secondary-color, //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:$reverse-color, //=====> Text Color
+            $colorActive:$dark-color, //=====> Active Text Color
+            $ActiveBackground:#f7f7f7, //====> Active Background Color
+        );
+    }
+
+    &.primary,&.secondary {
+        &.dark {
+            @include breadcrumb (
+                $color:$reverse-color,
+                $colorActive:$reverse-color, //=====> Active Text Color
+                $ActiveBackground:$dark-color, //====> Active Background Color
+            );
+        }
+    }
+
     //==== Dotted ====//
     &.dotted {
         background:transparent;
@@ -172,113 +289,6 @@
                 color:$gray-color;
                 &::after,&::before { background: $gray-color; }
             }
-        }
-    }
-    
-    //==== Coloring Themes ====//
-    &.dark {
-        background: $dark-color;
-        color:$reverse-color;
-        border: 0 none;
-        a {
-            color: $reverse-color;
-            &:last-child{color:$reverse-color;} 
-        }
-    }
-    
-    &.primary {
-        background: $primary-color;
-        color:$reverse-color;
-        border: 0 none;
-        a { color:$reverse-color; }
-        //==== Pointing ====//
-        &.pointing {
-            &:not(.dark) { background: #f7f7f7; }
-            &.dark {background: $dark-color;}
-            a {
-                color:$reverse-color;
-                background: $primary-color;
-                &:last-child {
-                    color: $dark-color;
-                    background: transparent;
-                }
-                &::after {border-#{$direction}-color: $primary-color;}
-            }
-        }
-        //==== Curving ====//
-        &.curving {
-            &:not(.dark) { background: #f7f7f7; }
-            &.dark {background: $dark-color;}
-            a {
-                word-spacing: normal;
-                color:$black-color;
-                line-height: 3.25rem;
-                &:not(:last-child){
-                    color:$reverse-color;
-                    background: $primary-color;
-                    &::after {background: $primary-color;}
-                }
-            }
-            &.dark a:last-child {color: $reverse-color;}
-        }
-        //==== Skewed ====//
-        &.skewed {
-            &:not(.dark) { background: #f7f7f7; }
-            &.dark {background: $dark-color;}
-            a {
-                word-spacing: normal;
-                color:$black-color;
-                line-height: 3.25rem;
-                &:not(:last-child){
-                    color:$reverse-color;
-                    background: $primary-color;
-                    &::after {background: $primary-color;}
-                }
-            }
-            &.dark a:last-child {color: $reverse-color;}
-        }
-    }
-
-    &.secondary {
-        //==== Pointing ====//
-        &.pointing {
-            &.dark {height: 3.125rem;}
-            a {
-                color:$reverse-color;
-                background: $secondary-color;
-                &:last-child {color: $reverse-color;background: transparent;}
-                &::after {border-#{$direction}-color: $secondary-color;}
-            }
-        }
-        //==== Curving ====//
-        &.curving {
-            border:0 none;
-            a {
-                word-spacing: normal;
-                color:$black-color;
-                line-height: 3.25rem;
-                &:not(:last-child){
-                    color:$reverse-color;
-                    background: $secondary-color;
-                    &::after {background: $secondary-color;}
-                }
-            }
-            &.dark a:last-child {color: $reverse-color;}
-        }
-        //==== Skewed ====//
-        &.skewed {
-            border:0 none;
-            a {
-                word-spacing: normal;
-                color:$black-color;
-                line-height: 3.25rem;
-                &:not(:last-child){
-                    color:$reverse-color;
-                    background: $secondary-color;
-                    &::after {background: $secondary-color;}
-                }
-            }
-            &.dark a:last-child {color: $reverse-color;}
         }
     }
 }

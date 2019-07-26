@@ -40,11 +40,11 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado.min.js
 
 --------------------
-#### Changelog 08/2019 Update v2.0.9
+#### Changelog Update V2.0.9 || 07/2019
 	#01 - Documented All CSS Utlities
 	#02 - Adding Margin/Padding Utlities
 	#03 - Improve Grid CSS Utlities
-	#04 - 
+	#04 - Add Breadcrumb Theme Mixin
 	#05 - 
 	#06 - 
 	#07 - 

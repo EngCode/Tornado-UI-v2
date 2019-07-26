@@ -69,5 +69,6 @@
         color: $reverse-color;
     }
     //=== Responsive ===//
+    @include medium(false){ padding:2rem; };
     @include small(false) {padding:$gutterSize 0;}
 }

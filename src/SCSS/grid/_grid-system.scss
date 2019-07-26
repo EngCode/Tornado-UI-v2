@@ -1,24 +1,28 @@
 %container{
-    margin:auto;
+    margin-#{$direction}:auto;
+    margin-#{$directionReverse}:auto;
     display: block;
     position: relative;
 }
 
 .container {
     @extend %container;
-    padding:0 $gutterSize/2;
+    padding-#{$direction}:$gutterSize/2;
+    padding-#{$directionReverse}:$gutterSize/2;
     max-width: 1200px;
 }
 
 .container-fluid {
     @extend %container;
-    padding:0 $gutterSize/2;
+    padding-#{$direction}:$gutterSize/2;
+    padding-#{$directionReverse}:$gutterSize/2;
     width:100%;
 }
 
 .container-xl {
     @extend %container;
-    padding:0 $gutterSize;
+    padding-#{$direction}:$gutterSize;
+    padding-#{$directionReverse}:$gutterSize;
     max-width: 1400px;
 }
 
@@ -38,7 +42,10 @@
     }
 
     /* set gutters space for all columns */
-    [class*="col-"],[class*="box-"]{padding:0 $gutterSize/2;}
+    >[class*="col-"],>[class*="box-"] {
+        padding-#{$direction}:$gutterSize/2;
+        padding-#{$directionReverse}:$gutterSize/2;
+    }
 }
 
 /*======== Masonry Grid Baisc ========*/
@@ -50,7 +57,8 @@
     /*======== Masonry Columns Baisc ========*/
     > .column{
         display: inline-block;
-        padding:0 $gutterSize/2;
+        padding-#{$direction}:$gutterSize/2;
+        padding-#{$directionReverse}:$gutterSize/2;
         word-spacing: normal;
         width:100%;
     }

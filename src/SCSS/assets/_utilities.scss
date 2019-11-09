@@ -188,10 +188,12 @@ hr {
 
 [data-src] {
     display: block;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    background-repeat: no-repeat;
+    &:not([data-gradient]){
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-repeat: no-repeat;
+    }
 }
 
 [data-sticky="inner"].is-sticky {

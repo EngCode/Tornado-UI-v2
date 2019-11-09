@@ -5,16 +5,27 @@
 const dynamicBackgrounds = (selector) => {
     var backgroundElement = getElements(selector || '[data-src]');
     Array.from(backgroundElement).forEach(function (element) {
-        var bgData = element.getAttribute('data-src');
-        if(bgData === null || bgData === undefined || bgData === '' || bgData === ' ') {
-            element.style.backgroundImage = 'url("https://via.placeholder.com/728x728.png?text=Source%20File%20not%20Found")';
+        var bgData = element.getAttribute('data-src'),
+            bgGradient = null;
+        if(bgData !== null || bgData !== undefined || bgData !== '' || bgData !== ' ') {
+            if (element.hasAttribute('data-gradient')) {
+                //==== Get Gradient ===//
+                bgGradient = element.getAttribute('data-gradient');
+                element.style.backgroundImage = bgGradient + ',url("' + bgData + '")';
+                element.style.backgroundPosition = 'center center,center center';
+                element.style.backgroundSize = 'auto,cover';
+                element.style.backgroundRepeat = 'no-repeat,no-repeat';
+            } else {
+                bgData = bgData.replace(' ','%20');
+                bgData = bgData.replace('#','%23');
+                element.style.backgroundImage = 'url("' + bgData + '")';
+            }
+            
         } else {
-            bgData = bgData.replace(' ','%20');
-            bgData = bgData.replace('#','%23');
-            element.style.backgroundImage = 'url("' + bgData + '")';
+            element.style.backgroundImage = 'url("https://via.placeholder.com/728x728.png?text=Source%20File%20not%20Found")';
         }
     });
-}
+};
 
 //======> Sticky Elements <======//
 const stickyElements =(selector) => {
@@ -34,7 +45,7 @@ const stickyElements =(selector) => {
             }
         });
     });
-}
+};
 
 //======> Item Remover Button <======//
 addLiveListener('.remove-item', 'click', function (e) {
@@ -90,7 +101,7 @@ const responsiveTooltips = () => {
             tooltipBottom.classList.remove('tooltip-bottom');
         }
     });
-}
+};
 
 //======> ScrollSpy <======//
 const scrollSpy = (selector) => {
@@ -130,7 +141,7 @@ const scrollSpy = (selector) => {
             }
         });
     });
-}
+};
 
 //======> Smoth Scroll <======//
 const smothScroll = (selector) => {
@@ -159,7 +170,7 @@ const smothScroll = (selector) => {
             requestAnimationFrame(smothlyScroll);
         });
     });
-}
+};
 
 //======> Animated Counters <======//
 const animatedCounter = (selector) => {
@@ -185,7 +196,7 @@ const animatedCounter = (selector) => {
             }
         });
     });
-}
+};
 
 //======> ViewPort Detactor <======//
 const ViewPortDetactor = (selector) => {
@@ -225,7 +236,7 @@ const ViewPortDetactor = (selector) => {
             activateView();
         });
     });
-}
+};
 
 //======> Tornado Design Features <======//
 document.addEventListener('DOMContentLoaded', function () {

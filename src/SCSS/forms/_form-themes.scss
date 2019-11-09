@@ -409,9 +409,9 @@ label {
             $extend:'controls-icons',
             /*==== icons ====*/
             $icons-width : 2.813rem,  //====> Control icon Width or position reqiuered
-            $icons-height: 2.813rem, //===> icons line height
+            $icons-height: 3.125rem, //===> icons line height
             $icons-position : $direction, //====> Control icon Position or width reqiuered
-            $icons-size : 1.375rem, //===> Icons Font Size
+            $icons-size : 1.256rem, //===> Icons Font Size
         )
         &.labeled { 
             @include form-ui (

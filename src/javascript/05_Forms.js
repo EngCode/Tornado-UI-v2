@@ -73,20 +73,39 @@ document.addEventListener('DOMContentLoaded', function () {
                     //===== Select All Childs that Matchs =====//
                     let formControls = child.querySelectorAll('[aria-required="true"],.required,[required],.wpcf7-validates-as-required');
                     Array.from(formControls).forEach(function(formControl) {
+                        //==== Create Error Message ====//
+                        if (pageDirection == 'ltr') {
+                            var errorMsg = 'Error : This Field is Required Please Fulfill this Field.';
+                        } else {
+                            var errorMsg = 'خطأ : هذا الحقل مطلوب يرجي املاء هذا الحقل.';
+                        }
                         //===== Grap this Control Value =====//
-                        let controlValue = formControl.value;
+                        var controlValue = formControl.value,
+                            controlType = formControl.getAttribute('type'),
+                            errorExist = getNextSibling(formControl,'.error-msg'),
+                            emailCheck = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                         //===== if the Value is Empity =====//
                         if (controlValue === '' || controlValue === null || controlValue === undefined) {
                             //==== Add Error Class ====//
+                            var errorElement = '<span class="badge danger outline dismiss pointing-top error-msg">'+errorMsg+' <a href="#" class="remove-item ti-close"></a></span>';
                             formControl.classList.add('error');
-                            //==== Create Error Message ====//
-                            var errorMsg = 'Error : This Field is Required Please Fulfill this Field.',
-                                errorElement = '<span class="badge danger outline dismiss pointing-top error-msg">'+errorMsg+' <a href="#" class="remove-item ti-close"></a></span>';
-                            if (pageDirection === 'rtl') errorMsg = 'هذا الحقل مطلوب يرجى ملء هذا الحقل.';
-                            insertAfter(errorElement, formControl);
+                            if (!errorExist) insertAfter(errorElement, formControl);
+                            //===== Error to Fix Submit =====//
+                            e.preventDefault();
+                        } else if (controlType == 'email' && emailCheck.test(String(controlValue).toLowerCase()) == false) {
+                            if (pageDirection == 'rtl') {
+                                errorMsg = 'يرجي كتابة بريد الكتروني صحيح.'
+                            } else {
+                                errorMsg = 'The Email Address is not Currect.'
+                            }
+                            var errorElement = '<span class="badge danger outline dismiss pointing-top error-msg">'+errorMsg+' <a href="#" class="remove-item ti-close"></a></span>';
+                            //==== Add Error Class ====//
+                            formControl.classList.add('error');
+                            if (!errorExist) insertAfter(errorElement, formControl);
                             //===== Error to Fix Submit =====//
                             e.preventDefault();
                         } else {
+                            if (errorExist) formControl.parentNode.removeChild(errorExist);
                             //==== Clear Error Message and add Success Class ====//
                             formControl.classList.remove('error');
                             formControl.classList.add('success');

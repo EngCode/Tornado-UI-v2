@@ -45,7 +45,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#02 - Adding Margin/Padding Utlities
 	#03 - Improve Grid CSS Utlities
 	#04 - Add Breadcrumb Theme Mixin
-	#05 - 
+	#05 - Upgrade Dynamic Backgrounds With Multi Background Feature
 	#06 - 
 	#07 - 
 	#08 - 

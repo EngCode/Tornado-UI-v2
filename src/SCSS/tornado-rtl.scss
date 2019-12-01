@@ -93,7 +93,7 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 
 @font-face {
     font-family: 'DIN NEXT';
-    src: url('../fonts/DINNextLTW23-Bold2.woff') format('woff');
+    src: url('../fonts/DINNextLTW23-Bold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 }
@@ -109,7 +109,7 @@ $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
     font-family: "tornado-icons";
     font-style: normal;
     font-weight: normal;
-    src: url('../fonts/tornado-icons.woff') format('woff');
+    src: url('../fonts/tornado-icons.woff2') format('woff2');
 }
 //========== Global Sass ==========//
 @import 'assets/selectors';

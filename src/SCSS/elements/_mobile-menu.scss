@@ -41,7 +41,7 @@
             border-bottom:1px solid $divider-color;
             line-height: $item-height;
             //=== Activated Item ===//
-            &.opened{
+            &.active{
                 background:$item-active-bg;
                 color:$item-active-color;
                 ul,.megamenu{
@@ -75,7 +75,7 @@
     &.overlaps ul {
         ul,.megamenu { #{$direction}:-100%; }
         //======== Activated ========//
-        .dropdown-item.opened {
+        .dropdown-item.active {
             > ul,.megamenu {
                 #{$direction}:10%;
                 background: $menu-background;
@@ -162,7 +162,12 @@
                 font-family: inherit;
             }
             //=== Activated Item ===//
-            &.opened { border-bottom-width:0; }
+            &.active { border-bottom-width:0; }
+
+             /*======== Nested Menu Core ========*/
+            &:not(.active) {
+                ul,.megamenu {display: none;}
+            }
         }
 
         //==== Nested Menus Button =====//
@@ -176,43 +181,6 @@
             #{$directionReverse}:0;
             top:0;
             @extend %fast-motion;
-        }
-
-        /*======== Nested Menu Core ========*/
-        ul,.megamenu {
-            max-height: 0;
-            overflow: hidden;
-            @extend %fast-motion;
-        }
-    }
-    
-    //==== Overlaps Nested Theme ====//
-    &.overlaps ul {
-        ul,.megamenu {
-            position: absolute;
-            width:90%;
-            top:0;
-            height: 100%;
-            max-height: none;
-            overflow-x:hidden;
-            overflow-y:visible;
-            margin: 0;
-        }
-        //======== Activated ========//
-        .dropdown-item.opened {
-            position: static;
-            > ul,.megamenu {
-                z-index: 100;
-                max-height: none;
-                margin: 0;
-            }
-            .dropdown-toggle {
-                width:10%;
-                top:0;
-                height: 100%;
-                z-index: 100;
-                &::before{ -webkit-transform: rotate(45deg); transform: rotate(45deg); }
-            }
         }
     }
 

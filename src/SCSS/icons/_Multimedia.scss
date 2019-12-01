@@ -1,79 +1,387 @@
-.ti-add-to-queue:before{content:"\e2ae";}
-.ti-album:before{content:"\e2af";}
-.ti-amplifier:before{content:"\e2b0";}
-.ti-art-track:before{content:"\e2b1";}
-.ti-aspect-ratio:before{content:"\e2b2";}
-.ti-audiotrack:before{content:"\e2b3";}
-.ti-boombox:before{content:"\e2b4";}
-.ti-brightness-settings:before{content:"\e2b5";}
-.ti-brush:before{content:"\e2b6";}
-.ti-camera:before{content:"\e2b7";}
-.ti-camera-ios:before{content:"\e2b8";}
-.ti-camera-lens:before{content:"\e2b9";}
-.ti-closed-caption:before{content:"\e2ba";}
-.ti-eject:before{content:"\e2bb";}
-.ti-emby:before{content:"\e2bc";}
-.ti-equalizer:before{content:"\e2bd";}
-.ti-fast-forward:before{content:"\e2be";}
-.ti-fast-rewind:before{content:"\e2bf";}
-.ti-games-arrows:before{content:"\e2c0";}
-.ti-guitar-acoustic:before{content:"\e2c1";}
-.ti-guitar-electric:before{content:"\e2c2";}
-.ti-hearing:before{content:"\e2c3";}
-.ti-high-quality:before{content:"\e2c4";}
-.ti-library-add:before{content:"\e2c5";}
-.ti-library-books:before{content:"\e2c6";}
-.ti-library-music:before{content:"\e2c7";}
-.ti-loop:before{content:"\e2c8";}
-.ti-mic:before{content:"\e2c9";}
-.ti-mic-off:before{content:"\e2ca";}
-.ti-microphone-variant:before{content:"\e2cb";}
-.ti-movie-creation:before{content:"\e2cc";}
-.ti-movie-filter:before{content:"\e2cd";}
-.ti-movies:before{content:"\e2ce";}
-.ti-not-interested:before{content:"\e2cf";}
-.ti-palette:before{content:"\e2d0";}
-.ti-pause:before{content:"\e2d1";}
-.ti-perm-media:before{content:"\e2d2";}
-.ti-photo:before{content:"\e2d3";}
-.ti-play:before{content:"\e2d4";}
-.ti-playlist-add:before{content:"\e2d5";}
-.ti-playlist-check:before{content:"\e2d6";}
-.ti-playlist-play:before{content:"\e2d7";}
-.ti-podcast:before{content:"\e2d8";}
-.ti-projector:before{content:"\e2d9";}
-.ti-queue-music:before{content:"\e2da";}
-.ti-queue-next:before{content:"\e2db";}
-.ti-radio:before{content:"\e2dc";}
-.ti-recent-actors:before{content:"\e2dd";}
-.ti-record:before{content:"\e2de";}
-.ti-repeat:before{content:"\e2df";}
-.ti-repeat-one:before{content:"\e2e0";}
-.ti-replay:before{content:"\e2e1";}
-.ti-shuffle:before{content:"\e2e2";}
-.ti-skip-next:before{content:"\e2e3";}
-.ti-skip-previous:before{content:"\e2e4";}
-.ti-slow-motion:before{content:"\e2e5";}
-.ti-smart-record:before{content:"\e2e6";}
-.ti-snooze:before{content:"\e2e7";}
-.ti-sound-wave-2:before{content:"\e2e8";}
-.ti-speaker-1:before{content:"\e2e9";}
-.ti-stop:before{content:"\e2ea";}
-.ti-subscriptions:before{content:"\e2eb";}
-.ti-svideo:before{content:"\e2ec";}
-.ti-timer:before{content:"\e2ed";}
-.ti-video-call:before{content:"\e2ee";}
-.ti-video-library:before{content:"\e2ef";}
-.ti-videocam:before{content:"\e2f0";}
-.ti-videocam-off:before{content:"\e2f1";}
-.ti-violin:before{content:"\e2f2";}
-.ti-volume-4:before{content:"\e2f3";}
-.ti-volume-boost:before{content:"\e2f4";}
-.ti-volume-down:before{content:"\e2f5";}
-.ti-volume-mute:before{content:"\e2f6";}
-.ti-volume-off:before{content:"\e2f7";}
-.ti-volume-up:before{content:"\e2f8";}
-.ti-wireless-headset:before{content:"\e2f9";}
-.ti-youtube-tv:before{content:"\e2fa";}
-.ti-zoom-in:before{content:"\e2fb";}
-.ti-zoom-out:before{content:"\e2fc";}
+.ti-add-to-queue:before {
+    content: "\f5d6";
+}
+.ti-album:before {
+    content: "\f5d7";
+}
+.ti-amplifier-outline:before {
+    content: "\f5d8";
+}
+.ti-amplifier:before {
+    content: "\f5d9";
+}
+.ti-art-track:before {
+    content: "\f5da";
+}
+.ti-aspect-ratio:before {
+    content: "\f5db";
+}
+.ti-audiotrack-outline:before {
+    content: "\f5dc";
+}
+.ti-audiotrack:before {
+    content: "\f5dd";
+}
+.ti-boombox-outline:before {
+    content: "\f5de";
+}
+.ti-boombox:before {
+    content: "\f5df";
+}
+.ti-brightness-settings:before {
+    content: "\f5e0";
+}
+.ti-camera-lens-outline:before {
+    content: "\f5e1";
+}
+.ti-camera-lens:before {
+    content: "\f5e2";
+}
+.ti-camera-outline:before {
+    content: "\f5e3";
+}
+.ti-camera:before {
+    content: "\f5e4";
+}
+.ti-closed-caption-outline:before {
+    content: "\f5e5";
+}
+.ti-closed-caption:before {
+    content: "\f5e6";
+}
+.ti-eject-outline:before {
+    content: "\f5e7";
+}
+.ti-eject:before {
+    content: "\f5e8";
+}
+.ti-emby-outline:before {
+    content: "\f5e9";
+}
+.ti-emby:before {
+    content: "\f5ea";
+}
+.ti-equalizer:before {
+    content: "\f5eb";
+}
+.ti-fast-forward-outline:before {
+    content: "\f5ec";
+}
+.ti-fast-forward:before {
+    content: "\f5ed";
+}
+.ti-fast-rewind-outline:before {
+    content: "\f5ee";
+}
+.ti-fast-rewind:before {
+    content: "\f5ef";
+}
+.ti-film-outline:before {
+    content: "\f5f0";
+}
+.ti-film:before {
+    content: "\f5f1";
+}
+.ti-games-arrows-outline:before {
+    content: "\f5f2";
+}
+.ti-games-arrows:before {
+    content: "\f5f3";
+}
+.ti-guitar-acoustic-outline:before {
+    content: "\f5f4";
+}
+.ti-guitar-acoustic:before {
+    content: "\f5f5";
+}
+.ti-guitar-electric-outline:before {
+    content: "\f5f6";
+}
+.ti-guitar-electric:before {
+    content: "\f5f7";
+}
+.ti-hearing:before {
+    content: "\f5f8";
+}
+.ti-high-quality-outline:before {
+    content: "\f5f9";
+}
+.ti-high-quality:before {
+    content: "\f5fa";
+}
+.ti-library-add-outline:before {
+    content: "\f5fb";
+}
+.ti-library-add:before {
+    content: "\f5fc";
+}
+.ti-library-books-outline:before {
+    content: "\f5fd";
+}
+.ti-library-books:before {
+    content: "\f5fe";
+}
+.ti-library-music-outline:before {
+    content: "\f5ff";
+}
+.ti-library-music:before {
+    content: "\f600";
+}
+.ti-loop:before {
+    content: "\f601";
+}
+.ti-mic-off:before {
+    content: "\f602";
+}
+.ti-mic-outline:before {
+    content: "\f603";
+}
+.ti-mic:before {
+    content: "\f604";
+}
+.ti-microphone-variant-outline:before {
+    content: "\f605";
+}
+.ti-microphone-variant:before {
+    content: "\f606";
+}
+.ti-movie-filter-outline:before {
+    content: "\f607";
+}
+.ti-movie-filter:before {
+    content: "\f608";
+}
+.ti-movies-outline:before {
+    content: "\f609";
+}
+.ti-movies:before {
+    content: "\f60a";
+}
+.ti-not-interested:before {
+    content: "\f60b";
+}
+.ti-painting-brush-outline:before {
+    content: "\f60c";
+}
+.ti-painting-brush:before {
+    content: "\f60d";
+}
+.ti-palette-outline:before {
+    content: "\f60e";
+}
+.ti-palette:before {
+    content: "\f60f";
+}
+.ti-pause-outline:before {
+    content: "\f610";
+}
+.ti-pause:before {
+    content: "\f611";
+}
+.ti-perm-media-outline:before {
+    content: "\f612";
+}
+.ti-perm-media:before {
+    content: "\f613";
+}
+.ti-photo-outline:before {
+    content: "\f614";
+}
+.ti-photo:before {
+    content: "\f615";
+}
+.ti-play-outline:before {
+    content: "\f616";
+}
+.ti-play:before {
+    content: "\f617";
+}
+.ti-playlist-add:before {
+    content: "\f618";
+}
+.ti-playlist-check:before {
+    content: "\f619";
+}
+.ti-playlist-play:before {
+    content: "\f61a";
+}
+.ti-podcast:before {
+    content: "\f61b";
+}
+.ti-popcorn-outline:before {
+    content: "\f61c";
+}
+.ti-popcorn:before {
+    content: "\f61d";
+}
+.ti-projector-outline:before {
+    content: "\f61e";
+}
+.ti-projector:before {
+    content: "\f61f";
+}
+.ti-queue-music:before {
+    content: "\f620";
+}
+.ti-queue-next:before {
+    content: "\f621";
+}
+.ti-radio-outline:before {
+    content: "\f622";
+}
+.ti-radio:before {
+    content: "\f623";
+}
+.ti-recent-actors-outline:before {
+    content: "\f624";
+}
+.ti-recent-actors:before {
+    content: "\f625";
+}
+.ti-record-outline:before {
+    content: "\f626";
+}
+.ti-record:before {
+    content: "\f627";
+}
+.ti-repeat-one:before {
+    content: "\f628";
+}
+.ti-repeat:before {
+    content: "\f629";
+}
+.ti-replay:before {
+    content: "\f62a";
+}
+.ti-shuffle:before {
+    content: "\f62b";
+}
+.ti-skip-next-outline:before {
+    content: "\f62c";
+}
+.ti-skip-next:before {
+    content: "\f62d";
+}
+.ti-skip-previous-outline:before {
+    content: "\f62e";
+}
+.ti-skip-previous:before {
+    content: "\f62f";
+}
+.ti-slow-motion:before {
+    content: "\f630";
+}
+.ti-smart-record-outline:before {
+    content: "\f631";
+}
+.ti-smart-record:before {
+    content: "\f632";
+}
+.ti-snooze:before {
+    content: "\f633";
+}
+.ti-sound-wave:before {
+    content: "\f634";
+}
+.ti-speaker-outline:before {
+    content: "\f635";
+}
+.ti-speaker:before {
+    content: "\f636";
+}
+.ti-stop-outline:before {
+    content: "\f637";
+}
+.ti-stop:before {
+    content: "\f638";
+}
+.ti-subscriptions-outline:before {
+    content: "\f639";
+}
+.ti-subscriptions:before {
+    content: "\f63a";
+}
+.ti-svideo:before {
+    content: "\f63b";
+}
+.ti-timer:before {
+    content: "\f63c";
+}
+.ti-tv-retro-outline:before {
+    content: "\f63d";
+}
+.ti-tv-retro:before {
+    content: "\f63e";
+}
+.ti-video-call-outline:before {
+    content: "\f63f";
+}
+.ti-video-call:before {
+    content: "\f640";
+}
+.ti-video-library-outline:before {
+    content: "\f641";
+}
+.ti-video-library:before {
+    content: "\f642";
+}
+.ti-videocam-off:before {
+    content: "\f643";
+}
+.ti-videocam-outline:before {
+    content: "\f644";
+}
+.ti-videocam:before {
+    content: "\f645";
+}
+.ti-violin-outline:before {
+    content: "\f646";
+}
+.ti-violin:before {
+    content: "\f647";
+}
+.ti-volume-boost:before {
+    content: "\f648";
+}
+.ti-volume-down-outline:before {
+    content: "\f649";
+}
+.ti-volume-down:before {
+    content: "\f64a";
+}
+.ti-volume-mute-outline:before {
+    content: "\f64b";
+}
+.ti-volume-mute:before {
+    content: "\f64c";
+}
+.ti-volume-off:before {
+    content: "\f64d";
+}
+.ti-volume-up-outline:before {
+    content: "\f64e";
+}
+.ti-volume-up:before {
+    content: "\f64f";
+}
+.ti-volume:before {
+    content: "\f650";
+}
+.ti-wireless-headset-outline:before {
+    content: "\f651";
+}
+.ti-wireless-headset:before {
+    content: "\f652";
+}
+.ti-youtube-tv-outline:before {
+    content: "\f653";
+}
+.ti-youtube-tv:before {
+    content: "\f654";
+}
+.ti-zoom-in:before {
+    content: "\f655";
+}
+.ti-zoom-out:before {
+    content: "\f656";
+}

@@ -8,13 +8,6 @@
     $iconSize:null, //====> Icons Font Size
     $colorActive:null, //=====> Active Text Color
     $ActiveBackground:null, //====> Active Background Color
-    //============== Pointing Theme ==============//
-    
-    //============== Curving Theme ==============//
-
-    //============== Skewed Theme ==============//
-
-    //============== Dotted Theme ==============//
 ) {
     //====> Box Ruls
     @if ($backgroundColor) { background-color:$backgroundColor; }

@@ -31,24 +31,36 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Quick CDN Links
 
 	====== Tornado CSS [LTR] =====
-	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado.css
+	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado.css
 
 	====== Tornado CSS [RTL] =====
-	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado-rtl.css
+	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado-rtl.css
 
 	====== Tornado JS =====
-	https://unpkg.com/tornado-ui@2.0.8/dist/css/tornado.min.js
+	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado.min.js
 
 --------------------
-#### Changelog Update V2.0.9 || 07/2019
-	#01 - Documented All CSS Utlities
-	#02 - Adding Margin/Padding Utlities
-	#03 - Improve Grid CSS Utlities
-	#04 - Add Breadcrumb Theme Mixin
-	#05 - Upgrade Dynamic Backgrounds With Multi Background Feature
-	#06 - 
-	#07 - 
-	#08 - 
+#### Changelog Update V2.1.0 || 12/2019
+	#01 - [new] Upgrade Components into Mixins and Refactor Tornado Icons
+	#02 - [new] Breadcrumb Theme Mixin
+	#03 - [Doc] Documented All CSS Utlities
+	#04 - [new] Adding Margin/Padding Utlities
+	#05 - [new] Improve Grid CSS Utlities
+	#06 - [Fix] Form Validation Message Fix
+	#07 - [new] Redesign Tornado Icons [+1800 icons]
+	#08 - [new] New Animations Pack Set
+	#09 - [update] improve ALL JS Siblings(); Functions
+	#10 - [update] Improve JS ParentsUntil(); Function
+	#11 - [new] Adding JS Slide Up and Slide Down && Slide Toggle Functions.
+	#12 - [Fix] Collapse Effect Fix With Slide Toggle.
+	#13 - [third party] TinySlider Added [Custom CSS] [RTL Support]
+	#14 - [Deprecated] Glide.jS
+	#15 - [Deprecated] Helvatica Arabic Fonts
+	#16 - [Deprecated] Old Tornado Icons Font
+	#17 - [Fix] Allow Node Element In Live Event Listener
+	#18 - [new] JS getHeight(); Function Added.
+	#19 - [update] JS Accourdion // Mobile Menu // Nested Menu Dropdowns With Slide Effects
+	#20 - [Fix] Form Controls With Icons Validation Style Fix.
 
 --------------------
 #### Changelog 06/2019 Components Mixins
@@ -87,7 +99,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 --------------------
 #### Credits
 -   [Abdullah Ramadan](https://www.facebook.com/Eng.AbdallahPS) - Tornado UI Creator
--   [Jędrzej Chałubek](https://github.com/jedrzejchalubek) - Glade.JS Carousel Creator
+-   [William Lin](https://github.com/ganlanyuan/tiny-slider) - TinySlider Creator
 -   [Contributors](https://github.com/EngCode/Tornado-UI-v2/graphs/contributors)
 --------------------
 #### License

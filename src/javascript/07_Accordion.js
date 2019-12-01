@@ -11,22 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
             //==== Store Playable Elements ====//
             var thisElement = element,
                 nextPanel = getNextSibling(thisElement, '.accordion-content'),
-                thisParent = thisElement.parentNode,
-                parentSiblings = getSiblings(thisParent);
-            //==== Close Other Panels Function ====//
-            function closeOtherAccourdions() {
-                //==== Deactivate Siblings ====//
-                Array.from(parentSiblings).forEach(function (siblings) {
-                    siblings.classList.remove('active');
-                    var siblingsChilds = siblings.children;
-                    //==== Remove the Panel Max Height For Transition ====//
-                    Array.from(siblingsChilds).forEach(function (childs) {
-                        if (childs.classList.contains('accordion-content')) {
-                            childs.style.maxHeight = null;
-                        }
-                    });
-                });
-            }
+                thisParent = thisElement.parentNode;
+
             //==== Check if the Clicked Button is Activated or Not ====//
             if (thisParent.classList.contains('active')) {
                 //==== Call Back Function Before Close the Panel ====//
@@ -34,10 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     var callBackBeforeClose = thisElement.getAttribute('data-call-before-close');
                     window[callBackBeforeClose]();
                 }
+
                 //==== Deactivate Clicked Accordion if its Activated ====//
                 thisParent.classList.remove('active');
-                //==== Remove the Panel Max Height for Transtion ====//
-                nextPanel.style.maxHeight = null;
+                //==== Close the Panel ====//
+                slideUp(nextPanel,300);
+
                 //==== Call Back Function After Close the Panel ====//
                 if (thisElement.hasAttribute('data-call-after-close')) {
                     var callBackAfterClose = thisElement.getAttribute('data-call-after-close');
@@ -49,14 +37,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     var callBackBefore = thisElement.getAttribute('data-call-before');
                     window[callBackBefore]();
                 }
-                //==== Set the Panel Max Height for Transtion ====//
-                var thisHight = nextPanel.scrollHeight,
-                    padding = getComputedStyle(nextPanel).padding;
-                nextPanel.style.maxHeight = thisHight + padding + "px";
-                //==== Activate Clicked Accordion if its Not Activated ====//
+
+                //==== Close Siblings Panels ====//
+                var parentSiblings = getSiblings(thisParent);
+                Array.from(parentSiblings).forEach(function (sibling) {
+                    //==== Close Other Activated Siblings ====//
+                    sibling.classList.remove('active');
+                    var siblingPanel = sibling.querySelector('.accordion-content');
+                    //==== Close Siblings Panels ====//
+                    if (siblingPanel) slideUp(siblingPanel,300);
+                });
+
+                //==== Opem the Panel ====//
+                slideDown(nextPanel,300);
+                //==== Deactivate Clicked Accordion if its Activated ====//
                 thisParent.classList.add('active');
-                //==== Close Other Activated Siblings Accordion Items ====//
-                closeOtherAccourdions();
+
                 //==== Call Back Function After Opens the Panel ====//
                 if (thisElement.hasAttribute('data-call-after')) {
                     var callBackAfter = thisElement.getAttribute('data-call-after');

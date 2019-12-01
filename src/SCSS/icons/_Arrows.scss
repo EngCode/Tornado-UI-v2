@@ -1,39 +1,142 @@
-.ti-arrow-down-a:before{content:"\58";}
-.ti-arrow-down-b:before{content:"\59";}
-.ti-arrow-down-c:before{content:"\5a";}
-.ti-arrow-down-chevron:before{content:"\30";}
-.ti-arrow-down-chevron-light:before{content:"\31";}
-.ti-arrow-expand:before{content:"\32";}
-.ti-arrow-graph-down-#{$direction}:before{content:"\33";}
-.ti-arrow-graph-down-#{$directionReverse}:before{content:"\34";}
-.ti-arrow-graph-up-#{$direction}:before{content:"\35";}
-.ti-arrow-graph-up-#{$directionReverse}:before{content:"\36";}
-.ti-arrow-#{$direction}-a:before{content:"\37";}
-.ti-arrow-#{$direction}-b:before{content:"\38";}
-.ti-arrow-#{$direction}-c:before{content:"\39";}
-.ti-arrow-#{$direction}-chevron:before{content:"\21";}
-.ti-arrow-#{$direction}-chevron-light:before{content:"\22";}
-.ti-arrow-move:before{content:"\23";}
-.ti-arrow-redo:before{content:"\24";}
-.ti-arrow-reply:before{content:"\25";}
-.ti-arrow-reply-all:before{content:"\26";}
-.ti-arrow-resize:before{content:"\27";}
-.ti-arrow-return-#{$direction}:before{content:"\28";}
-.ti-arrow-return-#{$directionReverse}:before{content:"\29";}
-.ti-arrow-#{$directionReverse}-a:before{content:"\2a";}
-.ti-arrow-#{$directionReverse}-b:before{content:"\2b";}
-.ti-arrow-#{$directionReverse}-c:before{content:"\2c";}
-.ti-arrow-#{$directionReverse}-chevron:before{content:"\2d";}
-.ti-arrow-#{$directionReverse}-chevron-light:before{content:"\2e";}
-.ti-arrow-shrink:before{content:"\2f";}
-.ti-arrow-swap:before{content:"\3a";}
-.ti-arrow-thin-down:before{content:"\3b";}
-.ti-arrow-thin-#{$direction}:before{content:"\3c";}
-.ti-arrow-thin-#{$directionReverse}:before{content:"\3d";}
-.ti-arrow-thin-up:before{content:"\3e";}
-.ti-arrow-undo:before{content:"\3f";}
-.ti-arrow-up-a:before{content:"\40";}
-.ti-arrow-up-b:before{content:"\5b";}
-.ti-arrow-up-c:before{content:"\5d";}
-.ti-arrow-up-chevron:before{content:"\5e";}
-.ti-arrow-up-chevron-light:before{content:"\5f";}
+.ti-angle-double-down:before {
+    content: "\f101";
+}
+.ti-angle-double-#{$direction}:before {
+    content: "\f102";
+}
+.ti-angle-double-#{$directionReverse}:before {
+    content: "\f103";
+}
+.ti-angle-double-up:before {
+    content: "\f104";
+}
+.ti-angle-down:before {
+    content: "\f105";
+}
+.ti-angle-#{$direction}:before {
+    content: "\f106";
+}
+.ti-angle-#{$directionReverse}:before {
+    content: "\f107";
+}
+.ti-angle-up:before {
+    content: "\f108";
+}
+.ti-arrow-down-a:before {
+    content: "\f109";
+}
+.ti-arrow-down-b:before {
+    content: "\f10a";
+}
+.ti-arrow-down-c:before {
+    content: "\f10b";
+}
+.ti-arrow-down-chevron-light:before {
+    content: "\f10c";
+}
+.ti-arrow-down-chevron:before {
+    content: "\f10d";
+}
+.ti-arrow-expand:before {
+    content: "\f10e";
+}
+.ti-arrow-graph-down-#{$direction}:before {
+    content: "\f10f";
+}
+.ti-arrow-graph-down-#{$directionReverse}:before {
+    content: "\f110";
+}
+.ti-arrow-graph-up-#{$direction}:before {
+    content: "\f111";
+}
+.ti-arrow-graph-up-#{$directionReverse}:before {
+    content: "\f112";
+}
+.ti-arrow-#{$direction}-a:before {
+    content: "\f113";
+}
+.ti-arrow-#{$direction}-b:before {
+    content: "\f114";
+}
+.ti-arrow-#{$direction}-c:before {
+    content: "\f115";
+}
+.ti-arrow-#{$direction}-chevron-light:before {
+    content: "\f116";
+}
+.ti-arrow-#{$direction}-chevron:before {
+    content: "\f117";
+}
+.ti-arrow-move:before {
+    content: "\f118";
+}
+.ti-arrow-redo:before {
+    content: "\f119";
+}
+.ti-arrow-reply-all:before {
+    content: "\f11a";
+}
+.ti-arrow-reply:before {
+    content: "\f11b";
+}
+.ti-arrow-resize:before {
+    content: "\f11c";
+}
+.ti-arrow-return-#{$direction}:before {
+    content: "\f11d";
+}
+.ti-arrow-return-#{$directionReverse}:before {
+    content: "\f11e";
+}
+.ti-arrow-#{$directionReverse}-a:before {
+    content: "\f11f";
+}
+.ti-arrow-#{$directionReverse}-b:before {
+    content: "\f120";
+}
+.ti-arrow-#{$directionReverse}-c:before {
+    content: "\f121";
+}
+.ti-arrow-#{$directionReverse}-chevron-light:before {
+    content: "\f122";
+}
+.ti-arrow-#{$directionReverse}-chevron:before {
+    content: "\f123";
+}
+.ti-arrow-shrink:before {
+    content: "\f124";
+}
+.ti-arrow-swap:before {
+    content: "\f125";
+}
+.ti-arrow-thin-down:before {
+    content: "\f126";
+}
+.ti-arrow-thin-#{$direction}:before {
+    content: "\f127";
+}
+.ti-arrow-thin-#{$directionReverse}:before {
+    content: "\f128";
+}
+.ti-arrow-thin-up:before {
+    content: "\f129";
+}
+.ti-arrow-undo:before {
+    content: "\f12a";
+}
+.ti-arrow-up-a:before {
+    content: "\f12b";
+}
+.ti-arrow-up-b:before {
+    content: "\f12c";
+}
+.ti-arrow-up-c:before {
+    content: "\f12d";
+}
+.ti-arrow-up-chevron-light:before {
+    content: "\f12e";
+}
+
+.ti-arrow-up-chevron:before {
+    content: "\f12f";
+}

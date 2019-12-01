@@ -42,7 +42,7 @@
     }
 
     /* set gutters space for all columns */
-    >[class*="col-"],>[class*="box-"] {
+    [class*="col-"],[class*="box-"] {
         padding-#{$direction}:$gutterSize/2;
         padding-#{$directionReverse}:$gutterSize/2;
     }

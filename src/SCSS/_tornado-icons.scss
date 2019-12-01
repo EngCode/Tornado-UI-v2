@@ -1,11 +1,10 @@
 [data-icon]:before {
     font-family: "tornado-icons" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
     content: attr(data-icon);
-    speak: none;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -14,12 +13,11 @@
 }
 
 [class^="ti-"]:before,[class*=" ti-"]:before {
-    font-family: "tornado-icons" !important;
-    font-style: normal !important;
+    font-family: tornado-icons !important;
+    font-style: normal;
     font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
+    font-variant: normal;
+    text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -29,9 +27,6 @@
 
 /*===== Baisc icons =====*/
 @import 'icons/Baisc';
-
-/*===== Action icons =====*/
-@import 'icons/Action';
 
 /*===== Arrows icons =====*/
 @import 'icons/Arrows';
@@ -51,26 +46,8 @@
 /*===== Editor icons =====*/
 @import 'icons/Editor';
 
-/*===== Emoticons icons =====*/
-@import 'icons/Emoticons';
-
-/*===== Fashion icons =====*/
-@import 'icons/Fashion';
-
 /*===== Files icons =====*/
 @import 'icons/Files';
-
-/*===== Food icons =====*/
-@import 'icons/Food';
-
-/*===== Games icons =====*/
-@import 'icons/Games';
-
-/*===== Hardware icons =====*/
-@import 'icons/Hardware';
-
-/*===== Medical icons =====*/
-@import 'icons/Medical';
 
 /*===== Multimedia icons =====*/
 @import 'icons/Multimedia';
@@ -78,20 +55,8 @@
 /*===== Others icons =====*/
 @import 'icons/Others';
 
-/*===== Payment icons =====*/
-@import 'icons/Payment';
-
-/*===== People icons =====*/
-@import 'icons/People';
-
 /*===== Social icons =====*/
-@import 'icons/Social';
+@import 'icons/Brands';
 
 /*===== Technical icons =====*/
 @import 'icons/Technical';
-
-/*===== Transporting icons =====*/
-@import 'icons/Transporting';
-
-/*===== Weather icons =====*/
-@import 'icons/Weather';

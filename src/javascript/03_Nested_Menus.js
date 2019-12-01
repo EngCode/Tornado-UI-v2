@@ -19,22 +19,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 parentSiblings = getSiblings(thisParent);
             //===> Activated The Clicked Item <===//
             thisParent.classList.toggle('active');
+            slideToggle(SubMenuList,500);
             //===> Deativate the Siblings Items <===//
             Array.from(parentSiblings).forEach(function (parentSiblings) {
+                var siblingList = parentSiblings.querySelector('ul');
+                slideUp(siblingList,500);
                 parentSiblings.classList.remove('active');
             });
-            //===> Show/Hide Nested Menu <===//
-            if (SubMenuList.style.maxHeight) {
-                //==> If its Opened == Close it <==
-                SubMenuList.style.maxHeight = null;
-            } else {
-                //==> if its closed == Open it <==//
-                var thisHight = SubMenuList.scrollHeight;
-                    // paddingTop = parseInt(getComputedStyle(SubMenuList).paddingTop, 10),
-                    // paddingBottom = parseInt(getComputedStyle(SubMenuList).paddingBottom, 10),
-                    // padding = paddingTop + paddingBottom;
-                SubMenuList.style.maxHeight = thisHight + "px";
-            }
         });
     });
 

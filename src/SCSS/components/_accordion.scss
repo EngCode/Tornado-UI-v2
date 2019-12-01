@@ -3,6 +3,7 @@
     @extend %reset;
     margin-bottom: 1.875rem;
     .accordion-item {
+        font-size:0.875rem;
         /*======== Accordion List ========*/
         .accordion-title{
             font-size:1rem;
@@ -25,22 +26,12 @@
             }
         }
         /*======== Accordion ========*/
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            font-size:0.875rem;
-            -webkit-transition: max-height 0.7s;
-            transition: max-height 0.7s;
-        }
+        &:not(.active) .accordion-content {display: none;}
         /*==== Active Mode ====*/
         &.active {
             .accordion-title::before {
                 -webkit-transform: rotate(0);
                 transform: rotate(0);
-            }
-            .accordion-content{
-                overflow: auto;
-                max-height: none;
             }
         }
     }
@@ -51,11 +42,9 @@
         border-bottom: 0 none;
         /*======== Accordion Item ========*/
         .accordion-item {
-            padding:0 1.25rem;
             background: $reverse-color;
             /*======== Accordion Title ========*/
             .accordion-title{
-                margin:0 -1.25rem;
                 margin-bottom: 0;
                 padding:0 1.25rem;
                 font-size:0.9375rem;
@@ -71,17 +60,15 @@
                 }
             }
 
+            .accordion-content {padding:1.25rem;}
+
             /*======== Items Divider ========*/
             &:not(:last-child){border-bottom: 1px solid rgba(0,0,0,0.10);}
 
             /*==== Active Mode ====*/
-            &.active {
-                padding-bottom: 1.25rem;
-                .accordion-title {
-                    background: #f9f9f9;
-                    &::before{line-height:2.875rem;}
-                }
-                .accordion-content {margin-top: 1.25rem;}
+            &.active .accordion-title {
+                background: #f9f9f9;
+                &::before{line-height:2.875rem;}
             }
         }
     }

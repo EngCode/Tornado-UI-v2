@@ -5,27 +5,16 @@
 const dynamicBackgrounds = (selector) => {
     var backgroundElement = getElements(selector || '[data-src]');
     Array.from(backgroundElement).forEach(function (element) {
-        var bgData = element.getAttribute('data-src'),
-            bgGradient = null;
-        if(bgData !== null || bgData !== undefined || bgData !== '' || bgData !== ' ') {
-            if (element.hasAttribute('data-gradient')) {
-                //==== Get Gradient ===//
-                bgGradient = element.getAttribute('data-gradient');
-                element.style.backgroundImage = bgGradient + ',url("' + bgData + '")';
-                element.style.backgroundPosition = 'center center,center center';
-                element.style.backgroundSize = 'auto,cover';
-                element.style.backgroundRepeat = 'no-repeat,no-repeat';
-            } else {
-                bgData = bgData.replace(' ','%20');
-                bgData = bgData.replace('#','%23');
-                element.style.backgroundImage = 'url("' + bgData + '")';
-            }
-            
-        } else {
+        var bgData = element.getAttribute('data-src');
+        if(bgData === null || bgData === undefined || bgData === '' || bgData === ' ') {
             element.style.backgroundImage = 'url("https://via.placeholder.com/728x728.png?text=Source%20File%20not%20Found")';
+        } else {
+            bgData = bgData.replace(' ','%20');
+            bgData = bgData.replace('#','%23');
+            element.style.backgroundImage = 'url("' + bgData + '")';
         }
     });
-};
+}
 
 //======> Sticky Elements <======//
 const stickyElements =(selector) => {
@@ -45,28 +34,7 @@ const stickyElements =(selector) => {
             }
         });
     });
-};
-
-//======> Item Remover Button <======//
-addLiveListener('.remove-item', 'click', function (e) {
-    e.preventDefault();
-    var thisButton = this; //===> for Fewer Linter Warnings
-    //=== Remove Specific Target by ID ===//
-    if (thisButton.hasAttribute('data-target')) {
-        //=== Get Target ID ===//
-        var target = thisButton.getAttribute('data-target');
-        //=== Remove the Target ===//
-        getElement('#' + target).remove();
-    } else if (thisButton.hasAttribute('data-tag')) {
-        //=== Get the Targeted HTML Tag ===//
-        var parentTag = thisButton.getAttribute('data-closest');
-        //=== Remove the Target ===//
-        thisButton.closest(parentTag).remove();
-    } else {
-        //=== Remove Direct Parent ===//
-        thisButton.parentNode.remove();
-    }
-});
+}
 
 //======> Responsive Tooltips <======//
 const responsiveTooltips = () => {
@@ -101,7 +69,7 @@ const responsiveTooltips = () => {
             tooltipBottom.classList.remove('tooltip-bottom');
         }
     });
-};
+}
 
 //======> ScrollSpy <======//
 const scrollSpy = (selector) => {
@@ -141,7 +109,7 @@ const scrollSpy = (selector) => {
             }
         });
     });
-};
+}
 
 //======> Smoth Scroll <======//
 const smothScroll = (selector) => {
@@ -170,14 +138,14 @@ const smothScroll = (selector) => {
             requestAnimationFrame(smothlyScroll);
         });
     });
-};
+}
 
 //======> Animated Counters <======//
 const animatedCounter = (selector) => {
     var counterElements = getElements(selector || '[data-counter]');
     Array.from(counterElements).forEach(function (counterElement) {
         //====> Reanimate When its Visible <======//
-        window.addEventListener('scroll', function (){
+        window.addEventListener('scroll', function () {
             scrollPosition = window.scrollY || window.pageYOffset,
             boundsTop = counterElement.getBoundingClientRect().top + scrollPosition,
             viewport = {top: scrollPosition,bottom: scrollPosition + window.innerHeight},
@@ -196,7 +164,7 @@ const animatedCounter = (selector) => {
             }
         });
     });
-};
+}
 
 //======> ViewPort Detactor <======//
 const ViewPortDetactor = (selector) => {
@@ -236,11 +204,32 @@ const ViewPortDetactor = (selector) => {
             activateView();
         });
     });
-};
+}
 
 //======> Tornado Design Features <======//
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
+
+    //======> Item Remover Button <======//
+    addLiveListener('.remove-item', 'click', function (e) {
+        e.preventDefault();
+        var thisButton = this; //===> for Fewer Linter Warnings
+        //=== Remove Specific Target by ID ===//
+        if (thisButton.hasAttribute('data-target')) {
+            //=== Get Target ID ===//
+            var target = thisButton.getAttribute('data-target');
+            //=== Remove the Target ===//
+            getElement('#' + target).remove();
+        } else if (thisButton.hasAttribute('data-tag')) {
+            //=== Get the Targeted HTML Tag ===//
+            var parentTag = thisButton.getAttribute('data-closest');
+            //=== Remove the Target ===//
+            thisButton.closest(parentTag).remove();
+        } else {
+            //=== Remove Direct Parent ===//
+            thisButton.parentNode.remove();
+        }
+    });
 
     //======> Dynamic Backgrounds <======//
     dynamicBackgrounds();

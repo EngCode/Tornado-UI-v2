@@ -1,96 +1,1060 @@
-.ti-all-inclusive:before{content:"\e2fd";}
-.ti-atom:before{content:"\e2fe";}
-.ti-baby-buggy:before{content:"\e2ff";}
-.ti-bag:before{content:"\e300";}
-.ti-barrel:before{content:"\e301";}
-.ti-basketball:before{content:"\e302";}
-.ti-bed:before{content:"\e303";}
-.ti-birhtday-gift:before{content:"\e304";}
-.ti-bomb-1:before{content:"\e305";}
-.ti-bomb-off:before{content:"\e306";}
-.ti-bone-1:before{content:"\e307";}
-.ti-bonfire:before{content:"\e308";}
-.ti-book-minus:before{content:"\e309";}
-.ti-book-open-page-variant:before{content:"\e30a";}
-.ti-book-open-variant:before{content:"\e30b";}
-.ti-bowtie:before{content:"\e30c";}
-.ti-briefcase-2:before{content:"\e30d";}
-.ti-bug-1:before{content:"\e30e";}
-.ti-bullhorn:before{content:"\e30f";}
-.ti-bunk-bead:before{content:"\e310";}
-.ti-calculator:before{content:"\e311";}
-.ti-cctv:before{content:"\e312";}
-.ti-ceiling-light:before{content:"\e313";}
-.ti-chart-arc:before{content:"\e314";}
-.ti-chart-areaspline:before{content:"\e315";}
-.ti-chart-bar:before{content:"\e316";}
-.ti-chart-bar-stacked:before{content:"\e317";}
-.ti-chemical-weapon:before{content:"\e318";}
-.ti-clover:before{content:"\e319";}
-.ti-code-braces:before{content:"\e31a";}
-.ti-code-brackets:before{content:"\e31b";}
-.ti-code-tags:before{content:"\e31c";}
-.ti-dumbbell:before{content:"\e31d";}
-.ti-erlenmeyer-flask:before{content:"\e31e";}
-.ti-erlenmeyer-flask-bubbles:before{content:"\e31f";}
-.ti-extension:before{content:"\e320";}
-.ti-fire:before{content:"\e321";}
-.ti-fireball:before{content:"\e322";}
-.ti-gavel:before{content:"\e323";}
-.ti-gem:before{content:"\e324";}
-.ti-gender-female:before{content:"\e325";}
-.ti-gender-male:before{content:"\e326";}
-.ti-graduation-cap:before{content:"\e327";}
-.ti-grease-pencil:before{content:"\e328";}
-.ti-hand-lizard:before{content:"\e329";}
-.ti-hand-paper:before{content:"\e32a";}
-.ti-hand-peace:before{content:"\e32b";}
-.ti-hand-point-down:before{content:"\e32c";}
-.ti-hand-point-left:before{content:"\e32d";}
-.ti-hand-point-right:before{content:"\e32e";}
-.ti-hand-point-up:before{content:"\e32f";}
-.ti-hand-pointer:before{content:"\e330";}
-.ti-hand-rock:before{content:"\e331";}
-.ti-hand-scissors:before{content:"\e332";}
-.ti-handshake:before{content:"\e333";}
-.ti-incognito:before{content:"\e334";}
-.ti-infinity:before{content:"\e335";}
-.ti-lead-pencil:before{content:"\e336";}
-.ti-lightbulb-ios:before{content:"\e337";}
-.ti-local-activity:before{content:"\e338";}
-.ti-local-florist:before{content:"\e339";}
-.ti-magnet:before{content:"\e33a";}
-.ti-magnet-on:before{content:"\e33b";}
-.ti-mars:before{content:"\e33c";}
-.ti-mars-double:before{content:"\e33d";}
-.ti-mars-stroke:before{content:"\e33e";}
-.ti-mars-stroke-h:before{content:"\e33f";}
-.ti-mars-stroke-v:before{content:"\e340";}
-.ti-palm:before{content:"\e341";}
-.ti-pen:before{content:"\e342";}
-.ti-pistol:before{content:"\e343";}
-.ti-qrcode:before{content:"\e344";}
-.ti-qrcode-scan:before{content:"\e345";}
-.ti-ring:before{content:"\e346";}
-.ti-robot:before{content:"\e347";}
-.ti-rocket:before{content:"\e348";}
-.ti-roomba:before{content:"\e349";}
-.ti-single-bed-2:before{content:"\e34a";}
-.ti-sitemap:before{content:"\e34b";}
-.ti-skull:before{content:"\e34c";}
-.ti-source-branch:before{content:"\e34d";}
-.ti-space-shuttle:before{content:"\e34e";}
-.ti-tag:before{content:"\e34f";}
-.ti-thumbsdown:before{content:"\e350";}
-.ti-thumbsup:before{content:"\e351";}
-.ti-tie-2:before{content:"\e352";}
-.ti-treasure-chest:before{content:"\e353";}
-.ti-umbrella:before{content:"\e354";}
-.ti-wall:before{content:"\e355";}
-.ti-washing-machine:before{content:"\e356";}
-.ti-watch-export:before{content:"\e357";}
-.ti-watch-hand:before{content:"\e358";}
-.ti-watch-import:before{content:"\e359";}
-.ti-watch-vibrate:before{content:"\e35a";}
-.ti-yin-yang:before{content:"\e35b";}
-.ti-zip-box:before{content:"\e35c";}
+
+.ti-airballoon-outline:before {
+    content: "\f657";
+}
+.ti-airballoon:before {
+    content: "\f658";
+}
+.ti-all-inclusive:before {
+    content: "\f659";
+}
+.ti-apple-crate-outline:before {
+    content: "\f65a";
+}
+.ti-apple-crate:before {
+    content: "\f65b";
+}
+.ti-atom:before {
+    content: "\f65c";
+}
+.ti-axe-battle-outline:before {
+    content: "\f65d";
+}
+.ti-axe-battle:before {
+    content: "\f65e";
+}
+.ti-axe-outline:before {
+    content: "\f65f";
+}
+.ti-axe:before {
+    content: "\f660";
+}
+.ti-baby-buggy-outline:before {
+    content: "\f661";
+}
+.ti-baby-buggy:before {
+    content: "\f662";
+}
+.ti-bag-outline:before {
+    content: "\f663";
+}
+.ti-bag:before {
+    content: "\f664";
+}
+.ti-barrel-outline:before {
+    content: "\f665";
+}
+.ti-barrel:before {
+    content: "\f666";
+}
+.ti-basketball-outline:before {
+    content: "\f667";
+}
+.ti-basketball:before {
+    content: "\f668";
+}
+.ti-bed-long-outline:before {
+    content: "\f669";
+}
+.ti-bed-long:before {
+    content: "\f66a";
+}
+.ti-bike:before {
+    content: "\f66b";
+}
+.ti-biohazard:before {
+    content: "\f66c";
+}
+.ti-birhtday-gift-outline:before {
+    content: "\f66d";
+}
+.ti-birhtday-gift:before {
+    content: "\f66e";
+}
+.ti-blanket-outline:before {
+    content: "\f66f";
+}
+.ti-blanket:before {
+    content: "\f670";
+}
+.ti-boat-outline:before {
+    content: "\f671";
+}
+.ti-boat:before {
+    content: "\f672";
+}
+.ti-bomb-off-outline:before {
+    content: "\f673";
+}
+.ti-bomb-off:before {
+    content: "\f674";
+}
+.ti-bomb-outline:before {
+    content: "\f675";
+}
+.ti-bomb:before {
+    content: "\f676";
+}
+.ti-bone-outline:before {
+    content: "\f677";
+}
+.ti-bone:before {
+    content: "\f678";
+}
+.ti-bonfire-outline:before {
+    content: "\f679";
+}
+.ti-bonfire:before {
+    content: "\f67a";
+}
+.ti-book-minus-outline:before {
+    content: "\f67b";
+}
+.ti-book-minus:before {
+    content: "\f67c";
+}
+.ti-book-open-page-variant:before {
+    content: "\f67d";
+}
+.ti-book-open-variant:before {
+    content: "\f67e";
+}
+.ti-bowling-ball-outline:before {
+    content: "\f67f";
+}
+.ti-bowling-ball:before {
+    content: "\f680";
+}
+.ti-bowling-pins-outline:before {
+    content: "\f681";
+}
+.ti-bowling-pins:before {
+    content: "\f682";
+}
+.ti-bowtie-outline:before {
+    content: "\f683";
+}
+.ti-bowtie:before {
+    content: "\f684";
+}
+.ti-brain-outline:before {
+    content: "\f685";
+}
+.ti-brain:before {
+    content: "\f686";
+}
+.ti-brush-outline:before {
+    content: "\f687";
+}
+.ti-brush:before {
+    content: "\f688";
+}
+.ti-bug-c-outline:before {
+    content: "\f689";
+}
+.ti-bug-c:before {
+    content: "\f68a";
+}
+.ti-building-outline:before {
+    content: "\f68b";
+}
+.ti-building:before {
+    content: "\f68c";
+}
+.ti-bullhorn-outline:before {
+    content: "\f68d";
+}
+.ti-bullhorn:before {
+    content: "\f68e";
+}
+.ti-bunk-bead-outline:before {
+    content: "\f68f";
+}
+.ti-bunk-bead:before {
+    content: "\f690";
+}
+.ti-burrito-outline:before {
+    content: "\f691";
+}
+.ti-burrito:before {
+    content: "\f692";
+}
+.ti-bus-outline:before {
+    content: "\f693";
+}
+.ti-bus-school-outline:before {
+    content: "\f694";
+}
+.ti-bus-school:before {
+    content: "\f695";
+}
+.ti-bus:before {
+    content: "\f696";
+}
+.ti-cabinet-filing-outline:before {
+    content: "\f697";
+}
+.ti-cabinet-filing:before {
+    content: "\f698";
+}
+.ti-candle-holder-outline:before {
+    content: "\f699";
+}
+.ti-candle-holder:before {
+    content: "\f69a";
+}
+.ti-car-alt-outline:before {
+    content: "\f69b";
+}
+.ti-car-side-outline:before {
+    content: "\f69c";
+}
+.ti-car-side:before {
+    content: "\f69d";
+}
+.ti-car:before {
+    content: "\f69e";
+}
+.ti-cctv-outline:before {
+    content: "\f69f";
+}
+.ti-cctv:before {
+    content: "\f6a0";
+}
+.ti-ceiling-light-outline:before {
+    content: "\f6a1";
+}
+.ti-ceiling-light:before {
+    content: "\f6a2";
+}
+.ti-chair-office-outline:before {
+    content: "\f6a3";
+}
+.ti-chair-office:before {
+    content: "\f6a4";
+}
+.ti-chair-outline:before {
+    content: "\f6a5";
+}
+.ti-chair:before {
+    content: "\f6a6";
+}
+.ti-charging-station-outline:before {
+    content: "\f6a7";
+}
+.ti-charging-station:before {
+    content: "\f6a8";
+}
+.ti-chart-arc-outline:before {
+    content: "\f6a9";
+}
+.ti-chart-arc:before {
+    content: "\f6aa";
+}
+.ti-chart-areaspline:before {
+    content: "\f6ab";
+}
+.ti-chart-bar-stacked:before {
+    content: "\f6ac";
+}
+.ti-chart-bar:before {
+    content: "\f6ad";
+}
+.ti-cheeseburger-outline:before {
+    content: "\f6ae";
+}
+.ti-cheeseburger:before {
+    content: "\f6af";
+}
+.ti-chemical-weapon:before {
+    content: "\f6b0";
+}
+.ti-chess-bishop-alt-outline:before {
+    content: "\f6b1";
+}
+.ti-chess-bishop-alt:before {
+    content: "\f6b2";
+}
+.ti-chess-bishop-outline:before {
+    content: "\f6b3";
+}
+.ti-chess-bishop:before {
+    content: "\f6b4";
+}
+.ti-chess-king-alt-outline:before {
+    content: "\f6b5";
+}
+.ti-chess-king-alt:before {
+    content: "\f6b6";
+}
+.ti-chess-king-outline:before {
+    content: "\f6b7";
+}
+.ti-chess-king:before {
+    content: "\f6b8";
+}
+.ti-chess-knight-alt-outline:before {
+    content: "\f6b9";
+}
+.ti-chess-knight:before {
+    content: "\f6ba";
+}
+.ti-chess-pawn-alt-outline:before {
+    content: "\f6bb";
+}
+.ti-chess-pawn:before {
+    content: "\f6bc";
+}
+.ti-chess-queen-alt-outline:before {
+    content: "\f6bd";
+}
+.ti-chess-queen-alt:before {
+    content: "\f6be";
+}
+.ti-chess-queen-outline:before {
+    content: "\f6bf";
+}
+.ti-chess-queen:before {
+    content: "\f6c0";
+}
+.ti-chess-rook-alt:before {
+    content: "\f6c1";
+}
+.ti-chess-rook-outline:before {
+    content: "\f6c2";
+}
+.ti-chess:before {
+    content: "\f6c3";
+}
+.ti-city-outline:before {
+    content: "\f6c4";
+}
+.ti-city:before {
+    content: "\f6c5";
+}
+.ti-clover-outline:before {
+    content: "\f6c6";
+}
+.ti-clover:before {
+    content: "\f6c7";
+}
+.ti-code-braces:before {
+    content: "\f6c8";
+}
+.ti-code-brackets:before {
+    content: "\f6c9";
+}
+.ti-code-tags:before {
+    content: "\f6ca";
+}
+.ti-coffee-outline:before {
+    content: "\f6cb";
+}
+.ti-coffee-togo-outline:before {
+    content: "\f6cc";
+}
+.ti-coffee-togo:before {
+    content: "\f6cd";
+}
+.ti-coffee:before {
+    content: "\f6ce";
+}
+.ti-concierge-bell-outline:before {
+    content: "\f6cf";
+}
+.ti-concierge-bell:before {
+    content: "\f6d0";
+}
+.ti-corn-outline:before {
+    content: "\f6d1";
+}
+.ti-corn:before {
+    content: "\f6d2";
+}
+.ti-couch-outline:before {
+    content: "\f6d3";
+}
+.ti-couch:before {
+    content: "\f6d4";
+}
+.ti-crow-outline:before {
+    content: "\f6d5";
+}
+.ti-crow:before {
+    content: "\f6d6";
+}
+.ti-crown-outline:before {
+    content: "\f6d7";
+}
+.ti-crown:before {
+    content: "\f6d8";
+}
+.ti-dagger-outline:before {
+    content: "\f6d9";
+}
+.ti-dagger:before {
+    content: "\f6da";
+}
+.ti-diamond-outline:before {
+    content: "\f6db";
+}
+.ti-diamond:before {
+    content: "\f6dc";
+}
+.ti-dice-d4-outline:before {
+    content: "\f6dd";
+}
+.ti-dice-d4:before {
+    content: "\f6de";
+}
+.ti-dice-d6-outline:before {
+    content: "\f6df";
+}
+.ti-dice-d6:before {
+    content: "\f6e0";
+}
+.ti-dice-d8-outline:before {
+    content: "\f6e1";
+}
+.ti-dice-d8:before {
+    content: "\f6e2";
+}
+.ti-dice-outline:before {
+    content: "\f6e3";
+}
+.ti-dice-six-outline:before {
+    content: "\f6e4";
+}
+.ti-dice-six:before {
+    content: "\f6e5";
+}
+.ti-dice:before {
+    content: "\f6e6";
+}
+.ti-diploma-outline:before {
+    content: "\f6e7";
+}
+.ti-diploma:before {
+    content: "\f6e8";
+}
+.ti-directions-outline:before {
+    content: "\f6e9";
+}
+.ti-directions:before {
+    content: "\f6ea";
+}
+.ti-door-closed-outline:before {
+    content: "\f6eb";
+}
+.ti-door-closed:before {
+    content: "\f6ec";
+}
+.ti-door-open-outline:before {
+    content: "\f6ed";
+}
+.ti-door-open:before {
+    content: "\f6ee";
+}
+.ti-dove-outline:before {
+    content: "\f6ef";
+}
+.ti-dove:before {
+    content: "\f6f0";
+}
+.ti-dragon-outline:before {
+    content: "\f6f1";
+}
+.ti-dragon:before {
+    content: "\f6f2";
+}
+.ti-dumbbell-outline:before {
+    content: "\f6f3";
+}
+.ti-dumbbell:before {
+    content: "\f6f4";
+}
+.ti-ear-muffs-outline:before {
+    content: "\f6f5";
+}
+.ti-ear-muffs:before {
+    content: "\f6f6";
+}
+.ti-elephant-outline:before {
+    content: "\f6f7";
+}
+.ti-elephant:before {
+    content: "\f6f8";
+}
+.ti-erlenmeyer-flask-bubbles:before {
+    content: "\f6f9";
+}
+.ti-erlenmeyer-flask:before {
+    content: "\f6fa";
+}
+.ti-ev-station-outline:before {
+    content: "\f6fb";
+}
+.ti-ev-station:before {
+    content: "\f6fc";
+}
+.ti-extension-outline:before {
+    content: "\f6fd";
+}
+.ti-extension:before {
+    content: "\f6fe";
+}
+.ti-eye-evil:before {
+    content: "\f6ff";
+}
+.ti-feather-alt-outline:before {
+    content: "\f700";
+}
+.ti-feather-alt:before {
+    content: "\f701";
+}
+.ti-feather-outline:before {
+    content: "\f702";
+}
+.ti-feather:before {
+    content: "\f703";
+}
+.ti-fire-extinguisher-outline:before {
+    content: "\f704";
+}
+.ti-fire-extinguisher:before {
+    content: "\f705";
+}
+.ti-fire-outline:before {
+    content: "\f706";
+}
+.ti-fire-smoke-outline:before {
+    content: "\f707";
+}
+.ti-fire-smoke:before {
+    content: "\f708";
+}
+.ti-fire:before {
+    content: "\f709";
+}
+.ti-fireball-outline:before {
+    content: "\f70a";
+}
+.ti-fireball:before {
+    content: "\f70b";
+}
+.ti-fireplace-outline:before {
+    content: "\f70c";
+}
+.ti-fireplace:before {
+    content: "\f70d";
+}
+.ti-flag-checkered-outline:before {
+    content: "\f70e";
+}
+.ti-flame-outline:before {
+    content: "\f70f";
+}
+.ti-flame:before {
+    content: "\f710";
+}
+.ti-flask-poison-outline:before {
+    content: "\f711";
+}
+.ti-flask-poison:before {
+    content: "\f712";
+}
+.ti-flower-daffodil-outline:before {
+    content: "\f713";
+}
+.ti-flower-daffodil:before {
+    content: "\f714";
+}
+.ti-flower-tulip-outline:before {
+    content: "\f715";
+}
+.ti-flower-tulip:before {
+    content: "\f716";
+}
+.ti-football-outline:before {
+    content: "\f717";
+}
+.ti-football:before {
+    content: "\f718";
+}
+.ti-french-fries-outline:before {
+    content: "\f719";
+}
+.ti-french-fries:before {
+    content: "\f71a";
+}
+.ti-gavel-outline:before {
+    content: "\f71b";
+}
+.ti-gavel:before {
+    content: "\f71c";
+}
+.ti-gem-outline:before {
+    content: "\f71d";
+}
+.ti-gem:before {
+    content: "\f71e";
+}
+.ti-gender-female:before {
+    content: "\f71f";
+}
+.ti-gender-male:before {
+    content: "\f720";
+}
+.ti-ghost-outline:before {
+    content: "\f721";
+}
+.ti-ghost:before {
+    content: "\f722";
+}
+.ti-graduation-cap-outline:before {
+    content: "\f723";
+}
+.ti-graduation-cap:before {
+    content: "\f724";
+}
+.ti-hamburger-outline:before {
+    content: "\f725";
+}
+.ti-hamburger:before {
+    content: "\f726";
+}
+.ti-hard-hat-outline:before {
+    content: "\f727";
+}
+.ti-hard-hat:before {
+    content: "\f728";
+}
+.ti-hospital-alt-outline:before {
+    content: "\f729";
+}
+.ti-hospital-alt:before {
+    content: "\f72a";
+}
+.ti-hospital-outline:before {
+    content: "\f72b";
+}
+.ti-hospital:before {
+    content: "\f72c";
+}
+.ti-hotel-outline:before {
+    content: "\f72d";
+}
+.ti-hotel:before {
+    content: "\f72e";
+}
+.ti-incognito:before {
+    content: "\f72f";
+}
+.ti-infinity:before {
+    content: "\f730";
+}
+.ti-island-tropical-outline:before {
+    content: "\f731";
+}
+.ti-island-tropical:before {
+    content: "\f732";
+}
+.ti-jack-o-lantern-outline:before {
+    content: "\f733";
+}
+.ti-jack-o-lantern:before {
+    content: "\f734";
+}
+.ti-jedi-outline:before {
+    content: "\f735";
+}
+.ti-jedi:before {
+    content: "\f736";
+}
+.ti-joint-outline:before {
+    content: "\f737";
+}
+.ti-joint:before {
+    content: "\f738";
+}
+.ti-journal-whills-outline:before {
+    content: "\f739";
+}
+.ti-journal-whills:before {
+    content: "\f73a";
+}
+.ti-kaaba-outline:before {
+    content: "\f73b";
+}
+.ti-kaaba:before {
+    content: "\f73c";
+}
+.ti-key-skeleton-outline:before {
+    content: "\f73d";
+}
+.ti-key-skeleton:before {
+    content: "\f73e";
+}
+.ti-knife-kitchen-outline:before {
+    content: "\f73f";
+}
+.ti-knife-kitchen:before {
+    content: "\f740";
+}
+.ti-landmark-alt-outline:before {
+    content: "\f741";
+}
+.ti-landmark-alt:before {
+    content: "\f742";
+}
+.ti-lead-pencil-outline:before {
+    content: "\f743";
+}
+.ti-lead-pencil:before {
+    content: "\f744";
+}
+.ti-local-activity-outline:before {
+    content: "\f745";
+}
+.ti-local-activity:before {
+    content: "\f746";
+}
+.ti-local-florist-outline:before {
+    content: "\f747";
+}
+.ti-local-florist:before {
+    content: "\f748";
+}
+.ti-local-shipping-outline:before {
+    content: "\f749";
+}
+.ti-local-shipping:before {
+    content: "\f74a";
+}
+.ti-magnet-on-outline:before {
+    content: "\f74b";
+}
+.ti-magnet-on:before {
+    content: "\f74c";
+}
+.ti-magnet-outline:before {
+    content: "\f74d";
+}
+.ti-magnet:before {
+    content: "\f74e";
+}
+.ti-mask-outline:before {
+    content: "\f74f";
+}
+.ti-mask:before {
+    content: "\f750";
+}
+.ti-meteor-outline:before {
+    content: "\f751";
+}
+.ti-meteor:before {
+    content: "\f752";
+}
+.ti-moon-cloud-outline:before {
+    content: "\f753";
+}
+.ti-moon-cloud:before {
+    content: "\f754";
+}
+.ti-moon-outline:before {
+    content: "\f755";
+}
+.ti-moon-stars-outline:before {
+    content: "\f756";
+}
+.ti-moon-stars:before {
+    content: "\f757";
+}
+.ti-moon:before {
+    content: "\f758";
+}
+.ti-mosque-outline:before {
+    content: "\f759";
+}
+.ti-mosque:before {
+    content: "\f75a";
+}
+.ti-motorcycle-outline:before {
+    content: "\f75b";
+}
+.ti-motorcycle:before {
+    content: "\f75c";
+}
+.ti-newspaper-outline:before {
+    content: "\f75d";
+}
+.ti-newspaper:before {
+    content: "\f75e";
+}
+.ti-palm:before {
+    content: "\f75f";
+}
+.ti-pen-sharp-outline:before {
+    content: "\f760";
+}
+.ti-pen-sharp:before {
+    content: "\f761";
+}
+.ti-pistol-outline:before {
+    content: "\f762";
+}
+.ti-pistol:before {
+    content: "\f763";
+}
+.ti-qrcode-scan:before {
+    content: "\f764";
+}
+.ti-qrcode:before {
+    content: "\f765";
+}
+.ti-quran-outline:before {
+    content: "\f766";
+}
+.ti-quran:before {
+    content: "\f767";
+}
+.ti-railway-outline:before {
+    content: "\f768";
+}
+.ti-railway:before {
+    content: "\f769";
+}
+.ti-ring-outline:before {
+    content: "\f76a";
+}
+.ti-ring:before {
+    content: "\f76b";
+}
+.ti-robot-outline:before {
+    content: "\f76c";
+}
+.ti-robot:before {
+    content: "\f76d";
+}
+.ti-rocket-outline:before {
+    content: "\f76e";
+}
+.ti-rocket:before {
+    content: "\f76f";
+}
+.ti-single-bed-outline:before {
+    content: "\f770";
+}
+.ti-single-bed:before {
+    content: "\f771";
+}
+.ti-sitemap-outline:before {
+    content: "\f772";
+}
+.ti-sitemap:before {
+    content: "\f773";
+}
+.ti-skull-outline:before {
+    content: "\f774";
+}
+.ti-skull:before {
+    content: "\f775";
+}
+.ti-source-branch:before {
+    content: "\f776";
+}
+.ti-spa-outline:before {
+    content: "\f777";
+}
+.ti-spa:before {
+    content: "\f778";
+}
+.ti-space-shuttle-outline:before {
+    content: "\f779";
+}
+.ti-space-shuttle:before {
+    content: "\f77a";
+}
+.ti-spray-can-outline:before {
+    content: "\f77b";
+}
+.ti-spray-can:before {
+    content: "\f77c";
+}
+.ti-steering-wheel-outline:before {
+    content: "\f77d";
+}
+.ti-steering-wheel:before {
+    content: "\f77e";
+}
+.ti-subway-outline:before {
+    content: "\f77f";
+}
+.ti-subway:before {
+    content: "\f780";
+}
+.ti-sword-outline:before {
+    content: "\f781";
+}
+.ti-sword:before {
+    content: "\f782";
+}
+.ti-swords-outline:before {
+    content: "\f783";
+}
+.ti-swords:before {
+    content: "\f784";
+}
+.ti-tag-outline:before {
+    content: "\f785";
+}
+.ti-tag:before {
+    content: "\f786";
+}
+.ti-thumbsdown-outline:before {
+    content: "\f787";
+}
+.ti-thumbsdown:before {
+    content: "\f788";
+}
+.ti-thumbsup-outline:before {
+    content: "\f789";
+}
+.ti-thumbsup:before {
+    content: "\f78a";
+}
+.ti-tie-outline:before {
+    content: "\f78b";
+}
+.ti-tie:before {
+    content: "\f78c";
+}
+.ti-traffic-outline:before {
+    content: "\f78d";
+}
+.ti-traffic:before {
+    content: "\f78e";
+}
+.ti-treasure-chest-outline:before {
+    content: "\f78f";
+}
+.ti-treasure-chest:before {
+    content: "\f790";
+}
+.ti-tree-alt-outline:before {
+    content: "\f791";
+}
+.ti-tree-alt:before {
+    content: "\f792";
+}
+.ti-tree-outline:before {
+    content: "\f793";
+}
+.ti-tree:before {
+    content: "\f794";
+}
+.ti-trees-outline:before {
+    content: "\f795";
+}
+.ti-trees:before {
+    content: "\f796";
+}
+.ti-truck-fast-outline:before {
+    content: "\f797";
+}
+.ti-truck-fast:before {
+    content: "\f798";
+}
+.ti-truck-moving-outline:before {
+    content: "\f799";
+}
+.ti-truck-moving:before {
+    content: "\f79a";
+}
+.ti-truck-pickup-outline:before {
+    content: "\f79b";
+}
+.ti-truck-pickup:before {
+    content: "\f79c";
+}
+.ti-tshirt-outline:before {
+    content: "\f79d";
+}
+.ti-tshirt:before {
+    content: "\f79e";
+}
+.ti-turtle-outline:before {
+    content: "\f79f";
+}
+.ti-turtle:before {
+    content: "\f7a0";
+}
+.ti-umbrella-outline:before {
+    content: "\f7a1";
+}
+.ti-umbrella:before {
+    content: "\f7a2";
+}
+.ti-van-utility-outline:before {
+    content: "\f7a3";
+}
+.ti-van-utility:before {
+    content: "\f7a4";
+}
+.ti-volcano-outline:before {
+    content: "\f7a5";
+}
+.ti-volcano:before {
+    content: "\f7a6";
+}
+.ti-vote-nay-outline:before {
+    content: "\f7a7";
+}
+.ti-vote-nay:before {
+    content: "\f7a8";
+}
+.ti-vote-yea-outline:before {
+    content: "\f7a9";
+}
+.ti-vote-yea:before {
+    content: "\f7aa";
+}
+.ti-wall-outline:before {
+    content: "\f7ab";
+}
+.ti-wall:before {
+    content: "\f7ac";
+}
+.ti-washing-machine-outline:before {
+    content: "\f7ad";
+}
+.ti-washing-machine:before {
+    content: "\f7ae";
+}
+.ti-watch-fitness-outline:before {
+    content: "\f7af";
+}
+.ti-watch-fitness:before {
+    content: "\f7b0";
+}
+.ti-watch-hand-outline:before {
+    content: "\f7b1";
+}
+.ti-watch-hand:before {
+    content: "\f7b2";
+}
+.ti-watch-vibrate-outline:before {
+    content: "\f7b3";
+}
+.ti-watch-vibrate:before {
+    content: "\f7b4";
+}
+.ti-yin-yang:before {
+    content: "\f7b5";
+}
+.ti-zip-box-outline:before {
+    content: "\f7b6";
+}
+.ti-zip-box:before {
+    content: "\f7b7";
+}

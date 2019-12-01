@@ -1,13 +1,13 @@
 /*global window, document, getSiblings ,setInterval, clearInterval,getElements,getElement,getNextSibling,getPrevSibling,setAttributes,getComputedStyle,pageDirection,console*/
 /*jslint es6 */
 
-//======> Get Elements <======//
+//======> Get Elements <=======//
 const getElement = document.querySelector.bind(document);
 
-//======> Get Multiple Elements <======//
+//======> Get Multiple Elements <=======//
 const getElements = document.querySelectorAll.bind(document);
 
-//======> Define Page Direction <======//
+//======> Define Page Direction <=======//
 const pageDirection = getComputedStyle(document.body).direction;
 var startDirection = 'left',
     endDirection = 'right';
@@ -16,122 +16,109 @@ if (pageDirection == 'rtl') {
     endDirection = 'left';
 }
 
-//======> Parents Until <======//
-const parentsUntil = (elem, parent, selector) => {
-    // Element.matches() polyfill
-    if (!Element.prototype.matches) {
-        Element.prototype.matches =
-            Element.prototype.matchesSelector ||
-            Element.prototype.mozMatchesSelector ||
-            Element.prototype.msMatchesSelector ||
-            Element.prototype.oMatchesSelector ||
-            Element.prototype.webkitMatchesSelector ||
-            function (s) {
-                var matches = (this.document || this.ownerDocument).querySelectorAll(s),
-                    i = matches.length;
-                while (--i >= 0 && matches.item(i) !== this) {}
-                return i > -1;
-            };
+//======> Live Events Watcher <=======//
+const addLiveListener = (selector, event, func) => {
+    'use strict';
+    //==== interval for Checking new Elements ====//
+    if (selector !== null) {
+        setInterval(function () {
+            //==== Check if its Node Object =====//
+            if (typeof(selector) === 'object') {
+                selector.addEventListener(event, func);
+            } else {
+                //==== Selector ====//
+                var elements = getElements(selector);
+                Array.from(elements).forEach(function (element) {
+                    element.addEventListener(event, func);
+                });
+            }
+        }, 500);
     }
-
-    // Setup parents array
-    var parents = [];
-
-    // Get matching parent elements
-    for (; elem && elem !== document; elem = elem.parentNode) {
-        if (parent) { if (elem.matches(parent)) break; }
-        if (selector) {
-            if (elem.matches(selector)) { parents.push(elem); }
-            break;
-        }
-        parents.push(elem);
-    }
-    return parents;
 };
 
-//======> Get All Siblings <======//
-const getSiblings = (element,filter) => {
+//======> Parents Until <=======//
+const parentsUntil = (element, filter) => {
+    //====> Filtering the Matching Parent
+    for (i = 0; element && element !== document; element = element.parentNode) {
+        if (element.matches(filter)) {
+            return element;
+            break;
+        }
+    }
+};
+
+//======> Get All Siblings <=======//
+const getSiblings = (element,selector) => {
     'use strict';
     /*== Get all siblings of ==> element @param {Node} ==> @return {Array} The siblings ==*/
     if (element !== null) {
-        return Array.prototype.filter.call(element.parentNode.children, function (sibling) {
-            if(!filter) {
+        return Array.prototype.filter.call(element.parentNode.children, sibling => {
+            if(!selector) {
                 return sibling !== element;
-            } else {
-                if (sibling.matches(filter)) return sibling;
+            } else if(sibling.matches(selector)) {
+                return sibling;
             }
         });
     }
 };
 
-//======> Get Next Sibling that Matchs <======//
+//======> Get Next Sibling that Matchs <=======//
 const getNextSibling = (element, filter) => {
     'use strict';
     if (element !== null) {
-        // Get the next sibling element
+        //====> Get the next sibling element
         var sibling = element.nextElementSibling;
-        // If the sibling matches our selector, use it
-        // If not, jump to the next sibling and continue the loop
+        //====> Filtering the Matching Sibling
         if (filter && filter !== null) {
-            while (sibling) 
-                if (sibling.matches(filter)) return sibling;
-        } else {
-            return sibling;
+            if (sibling !== null && sibling.matches(filter)) return sibling;
         }
     }
 };
 
-//======> Get Previous Sibling that Matchs <======//
+//======> Get Previous Sibling that Matchs <=======//
 const getPrevSibling = (element, filter) => {
     'use strict';
     if (element !== null && filter !== null) {
-        // Get the Previos sibling element
+        //====> Get the Previous sibling element
         var sibling = element.previousElementSibling;
-        // If the sibling matches our selector, use it
-        // If not, jump to the Previos sibling and continue the loop
-        while (sibling) {
-            if (sibling.matches(filter)) {
-                return sibling;
-            }
-        }
+        //====> Filtering the Matching Sibling
+        if (sibling !== null && sibling.matches(filter)) return sibling;
     }
 };
 
-//======> Get All Next Sibling <======//
+//======> Get All Next Sibling <=======//
 const getNextSiblings = (element, filter) => {
-    // Setup siblings array and get next sibling
+    //====> Get the Next Sibling and Initialize Array
     var siblings = [],
-        next = element.nextElementSibling;
-    // Loop through all siblings
-	while (next) {
-        // If the matching item is found, quit
-        if (filter && next.matches(filter)) break;
-        // Otherwise, push to array
-        siblings.push(next);
-        // Get the next sibling
-        next = next.nextElementSibling;
-	}
-	return siblings;
-};
-
-//======> Get All Previous Sibling <======//
-const getPrevSiblings = (element, filter) => {
-    // Setup siblings array and get previous sibling
-    var siblings = [];
-    var prev = element.previousElementSibling;
-    // Loop through all siblings
-    while (prev) {
-        // If the matching item is found, quit
-        if (filter && prev.matches(filter)) break;
-        // Otherwise, push to array
-        siblings.push(prev);
-        // Get the previous sibling
-        prev = prev.previousElementSibling
+        sibling = element.nextElementSibling;
+    //====> Loop Throgh the Next Siblings
+	while (sibling) {
+        //====> Filtering Matched Sibling
+        if (filter && sibling.matches(filter)) siblings.push(sibling);
+        //====> Catch the New Next Sibling
+        next = sibling.nextElementSibling;
     }
-    return siblings;
+    //====> Return Siblings
+	if (siblings.length > 0) return siblings;
 };
 
-//======> Insert After <======//
+//======> Get All Previous Sibling <=======//
+const getPrevSiblings = (element, filter) => {
+    //====> Get the Previous Sibling and Initialize Array
+    var siblings = [],
+        sibling = element.previousElementSibling;
+    //====> Loop Throgh the Next Siblings
+	while (sibling) {
+        //====> Filtering Matched Sibling
+        if (filter && sibling.matches(filter)) siblings.push(prevSibling);
+        //====> Catch the New Next Sibling
+        sibling = sibling.previousElementSibling;
+    }
+    //====> Return Siblings
+	if (siblings.length > 0) return siblings;
+};
+
+//======> Insert After <=======//
 const insertAfter = (element, reference) => {
     'use strict';
     //===> Descover if its HTML String <===//
@@ -146,7 +133,7 @@ const insertAfter = (element, reference) => {
     }
 }
 
-//======> Insert Before <======//
+//======> Insert Before <=======//
 const insBefore = (element, reference) => {
     'use strict';
     //===> Descover if its HTML String <===//
@@ -161,7 +148,7 @@ const insBefore = (element, reference) => {
     }
 }
 
-//======> Append HTML <======//
+//======> Append HTML <=======//
 const appendIn = (reference, element) => {
     'use strict';
     //===> Descover if its HTML String <===//
@@ -172,22 +159,7 @@ const appendIn = (reference, element) => {
     }
 }
 
-//======> Live Events Watcher <======//
-const addLiveListener = (selector, event, func) => {
-    'use strict';
-    //==== interval for Checking new Elements ====//
-    if (selector !== null) {
-        setInterval(function () {
-            //==== Selector ====//
-            var elements = getElements(selector);
-            Array.from(elements).forEach(function (element) {
-                element.addEventListener(event, func);
-            });
-        }, 1000);
-    }
-};
-
-//======> Set new Attributes <======//
+//======> Set new Attributes <=======//
 const setAttributes = (element, options) => {
     'use strict';
     if (element !== null) {
@@ -197,7 +169,7 @@ const setAttributes = (element, options) => {
     }
 };
 
-//=======> CounterUp <======//
+//=======> Counter Up <=======//
 const counter = (obj) => {
     var elem = obj.elem;
     var input = (elem.nodeName.toLowerCase() === 'input') ? true : false;
@@ -232,4 +204,117 @@ const counter = (obj) => {
         count = 0;
         interval = setInterval(run, speed);
     }.bind(this);
+}
+
+//=======> Get Element Height <=======//
+const getHeight = (element) => {
+    //======> for Getting the Height of a Hidden Element <=======//
+    var origDisplay = getComputedStyle(element).display;
+    if (origDisplay == 'none') element.style.display = 'block';    
+    //======> Get Element Height <=======//
+    var eleHeight = element.scrollHeight,
+        elePadding = parseInt(getComputedStyle(element).padding,10) || 0;
+    if (origDisplay === 'none') element.style.display = 'none';
+    return eleHeight + elePadding;
+};
+
+//=======> Slide Up <=======//
+const slideUp = (element,time) => {
+    //======> Get Element Height and Current Display <=======//
+    var origDisplay = element.style.display,
+        eleHeight = getHeight(element);
+    if (!time) time = 300;
+    //===> Check Cureent State <===//
+    if (origDisplay !== 'none') {
+        //====== Prepare Element for Animation =======//
+        element.style.overflow = "hidden";
+        element.style.height = eleHeight + 'px';
+        //====== Slide Up Animation =======//
+        var keyframes = [
+            { height: eleHeight + 'px' },
+            { height: '0px' }
+        ]
+        element.animate(keyframes, {duration: time,});
+        //====== After Animation Reset to Default =======//
+        setTimeout(()=> {
+            element.style.display = "none";
+            element.style.height = null;
+            element.style.overflow = null;
+        },time);
+    }
+}
+
+//=======> Slide Down <=======//
+const slideDown = (element,time) => {
+    //======> Get Element Height and Current Display <=======//
+    var origDisplay = element.style.display || getComputedStyle(element).display,
+        eleHeight = getHeight(element);
+    if (!time) time = 300;
+    //===> Slide Down <===//
+    if (origDisplay && origDisplay === 'none')  {
+        //====== Prepare Element for Animation =======//
+        element.style.overflow = "hidden";
+        element.style.display = "block";
+        element.style.height = 0;
+        //====== Set Height With Animation =======//
+        setTimeout(()=>{
+            //====== Slide Down Animation =======//
+            var keyframes = [
+                { height: '0px' },
+                { height: eleHeight + 'px' }
+            ]
+            element.animate(keyframes, {duration: time,});
+        },5);
+        //====== After Animation Reset to Default =======//
+        setTimeout(()=>{
+            element.style.height = null;
+            element.style.overflow = null;
+        },time);
+    }
+}
+
+//=======> Slide Toggle <=======//
+const slideToggle = (element,time) => {
+    //======> Get Element Height and Current Display <=======//
+    var origDisplay = element.style.display || getComputedStyle(element).display,
+        eleHeight = getHeight(element);
+    if (!time) time = 300;
+    //===> Slide Up <===//
+    if (origDisplay && origDisplay !== 'none')  {
+        //====== Prepare Element for Animation =======//
+        element.style.overflow = "hidden";
+        element.style.height = eleHeight + 'px';
+        //====== Slide Up Animation =======//
+        var keyframes = [
+            { height: eleHeight + 'px' },
+            { height: '0px' }
+        ]
+        element.animate(keyframes, {duration: time,});
+        //====== After Animation Reset to Default =======//
+        setTimeout(()=> {
+            element.style.display = "none";
+            element.style.height = null;
+            element.style.overflow = null;
+        },time);
+    //===> Slide Down <===//
+    } else {
+        //====== Prepare Element for Animation =======//
+        element.style.overflow = "hidden";
+        element.style.display = "block";
+        element.style.height = 0;
+        //====== Set Height With Animation =======//
+        setTimeout(()=>{
+            //====== Slide Down Animation =======//
+            var keyframes = [
+                { height: '0px' },
+                { height: eleHeight + 'px' }
+            ]
+            element.animate(keyframes, {duration: time,});
+        },5);
+        //====== After Animation Reset to Default =======//
+        setTimeout(()=>{
+            element.style.height = null;
+            element.style.overflow = null;
+        },time);
+    }
 }

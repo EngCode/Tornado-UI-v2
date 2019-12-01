@@ -1,90 +1,225 @@
-.ti-balance-scale-a:before{content:"\e4f5";}
-.ti-bar-chart-1:before{content:"\e4f6";}
-.ti-binoculars-business:before{content:"\e4f7";}
-.ti-business-agreement:before{content:"\e4f8";}
-.ti-business-bar-chart:before{content:"\e4f9";}
-.ti-business-board-1:before{content:"\e4fa";}
-.ti-business-board-2:before{content:"\e4fb";}
-.ti-business-board-3:before{content:"\e4fc";}
-.ti-business-board-4:before{content:"\e4fd";}
-.ti-business-chronometer:before{content:"\e4fe";}
-.ti-business-cogs-group-2:before{content:"\e4ff";}
-.ti-business-cogwheel:before{content:"\e500";}
-.ti-business-group:before{content:"\e501";}
-.ti-business-group-1:before{content:"\e502";}
-.ti-business-group-3:before{content:"\e503";}
-.ti-business-hierarchical-1:before{content:"\e504";}
-.ti-business-hierarchical-structure:before{content:"\e505";}
-.ti-business-magnifying:before{content:"\e506";}
-.ti-business-management:before{content:"\e507";}
-.ti-business-manager-2:before{content:"\e508";}
-.ti-business-manager-check:before{content:"\e509";}
-.ti-business-manager-rate:before{content:"\e50a";}
-.ti-business-medal:before{content:"\e50b";}
-.ti-business-meeting:before{content:"\e50c";}
-.ti-business-meeting-1:before{content:"\e50d";}
-.ti-business-meeting-2:before{content:"\e50e";}
-.ti-business-networking:before{content:"\e50f";}
-.ti-business-networking-1:before{content:"\e510";}
-.ti-business-pie-chart:before{content:"\e511";}
-.ti-business-presentation:before{content:"\e512";}
-.ti-business-promotion:before{content:"\e513";}
-.ti-business-scheme:before{content:"\e514";}
-.ti-business-settings:before{content:"\e515";}
-.ti-business-settings-1:before{content:"\e516";}
-.ti-business-strategy:before{content:"\e517";}
-.ti-businessman-1-target:before{content:"\e518";}
-.ti-businessman-4:before{content:"\e519";}
-.ti-businessman-5:before{content:"\e51a";}
-.ti-businessman-cog:before{content:"\e51b";}
-.ti-businessman-target:before{content:"\e51c";}
-.ti-businessman-worker:before{content:"\e51d";}
-.ti-businessmen-speaking:before{content:"\e51e";}
-.ti-businesswoman-info:before{content:"\e51f";}
-.ti-businesswoman-speech:before{content:"\e520";}
-.ti-businesswoman-wining:before{content:"\e521";}
-.ti-businesswomen-worker:before{content:"\e522";}
-.ti-discussion-team:before{content:"\e523";}
-.ti-dollar-badge:before{content:"\e524";}
-.ti-dollar-bulb:before{content:"\e525";}
-.ti-dollar-target:before{content:"\e526";}
-.ti-electro-head-1:before{content:"\e527";}
-.ti-growth:before{content:"\e528";}
-.ti-hand-holding-card:before{content:"\e529";}
-.ti-hand-holding-clock:before{content:"\e52a";}
-.ti-hand-holding-financial-graph:before{content:"\e52b";}
-.ti-hand-holding-gear:before{content:"\e52c";}
-.ti-hand-holding-key:before{content:"\e52d";}
-.ti-hand-holding-magnifier:before{content:"\e52e";}
-.ti-hand-holding-recycling:before{content:"\e52f";}
-.ti-hand-holding-sack-money:before{content:"\e530";}
-.ti-hand-holding-sprout:before{content:"\e531";}
-.ti-hand-holding-wrench:before{content:"\e532";}
-.ti-hotel-sign:before{content:"\e533";}
-.ti-id-card:before{content:"\e534";}
-.ti-id-card-1:before{content:"\e535";}
-.ti-id-card-2:before{content:"\e536";}
-.ti-infinite-hand:before{content:"\e537";}
-.ti-info-head:before{content:"\e538";}
-.ti-job-search-1:before{content:"\e539";}
-.ti-justice-hammer:before{content:"\e53a";}
-.ti-like-badge:before{content:"\e53b";}
-.ti-loss-line-chart:before{content:"\e53c";}
-.ti-man-in-office-desk:before{content:"\e53d";}
-.ti-manager-3:before{content:"\e53e";}
-.ti-money-thief:before{content:"\e53f";}
-.ti-old-helicopter:before{content:"\e540";}
-.ti-person-reading:before{content:"\e541";}
-.ti-power-station:before{content:"\e542";}
-.ti-puzzle-1:before{content:"\e543";}
-.ti-puzzle-2:before{content:"\e544";}
-.ti-puzzle-3:before{content:"\e545";}
-.ti-safe-business:before{content:"\e546";}
-.ti-sleepy-worker:before{content:"\e547";}
-.ti-speech-bubble-dircetion:before{content:"\e548";}
-.ti-speech-bubble-percentage:before{content:"\e549";}
-.ti-team-world:before{content:"\e54a";}
-.ti-teamwork-b:before{content:"\e54b";}
-.ti-thinking-head-2:before{content:"\e54c";}
-.ti-wining-line-chart:before{content:"\e54d";}
-.ti-working-factory:before{content:"\e54e";}
+.ti-award-graduation-outline:before {
+    content: "\f293";
+}
+.ti-award-graduation:before {
+    content: "\f294";
+}
+.ti-award-like-outline:before {
+    content: "\f295";
+}
+.ti-award-like:before {
+    content: "\f296";
+}
+.ti-award-outline:before {
+    content: "\f297";
+}
+.ti-award-star-outline:before {
+    content: "\f298";
+}
+.ti-award-star:before {
+    content: "\f299";
+}
+.ti-award:before {
+    content: "\f29a";
+}
+.ti-bar-chart:before {
+    content: "\f29b";
+}
+.ti-business-cogwheel:before {
+    content: "\f29c";
+}
+.ti-business-group:before {
+    content: "\f29d";
+}
+.ti-business-search-outline:before {
+    content: "\f29e";
+}
+.ti-business-search:before {
+    content: "\f29f";
+}
+.ti-business-settings:before {
+    content: "\f2a0";
+}
+.ti-businessman-cog-outline:before {
+    content: "\f2a1";
+}
+.ti-businessman-cog:before {
+    content: "\f2a2";
+}
+.ti-businessman-outline:before {
+    content: "\f2a3";
+}
+.ti-businessman-target-outline:before {
+    content: "\f2a4";
+}
+.ti-businessman-target:before {
+    content: "\f2a5";
+}
+.ti-businessman:before {
+    content: "\f2a6";
+}
+.ti-businessmen-speaking-outline:before {
+    content: "\f2a7";
+}
+.ti-businessmen-speaking:before {
+    content: "\f2a8";
+}
+.ti-businesswomen-outline:before {
+    content: "\f2a9";
+}
+.ti-businesswomen:before {
+    content: "\f2aa";
+}
+.ti-dollar-bulb-outline:before {
+    content: "\f2ab";
+}
+.ti-dollar-bulb:before {
+    content: "\f2ac";
+}
+.ti-dollar-target:before {
+    content: "\f2ad";
+}
+.ti-hand-wrench-outline:before {
+    content: "\f2ae";
+}
+.ti-hand-wrench:before {
+    content: "\f2af";
+}
+.ti-head-electro-outline:before {
+    content: "\f2b0";
+}
+.ti-head-electro:before {
+    content: "\f2b1";
+}
+.ti-head-info-outline:before {
+    content: "\f2b2";
+}
+.ti-head-info:before {
+    content: "\f2b3";
+}
+.ti-head-thinking:before {
+    content: "\f2b4";
+}
+.ti-justice-hammer-outline:before {
+    content: "\f2b5";
+}
+.ti-justice-hammer:before {
+    content: "\f2b6";
+}
+.ti-justice-scale:before {
+    content: "\f2b7";
+}
+.ti-lightbulb-dollar-outline:before {
+    content: "\f2b8";
+}
+.ti-lightbulb-dollar:before {
+    content: "\f2b9";
+}
+.ti-lightbulb-exclamation-outline:before {
+    content: "\f2ba";
+}
+.ti-lightbulb-exclamation:before {
+    content: "\f2bb";
+}
+.ti-lightbulb-on-outline:before {
+    content: "\f2bc";
+}
+.ti-lightbulb-on:before {
+    content: "\f2bd";
+}
+.ti-lightbulb-outline:before {
+    content: "\f2be";
+}
+.ti-lightbulb-slash-outline:before {
+    content: "\f2bf";
+}
+.ti-lightbulb-slash:before {
+    content: "\f2c0";
+}
+.ti-lightbulb:before {
+    content: "\f2c1";
+}
+.ti-old-helicopter-outline:before {
+    content: "\f2c2";
+}
+.ti-old-helicopter:before {
+    content: "\f2c3";
+}
+.ti-power-station-outline:before {
+    content: "\f2c4";
+}
+.ti-power-station:before {
+    content: "\f2c5";
+}
+.ti-puzzle:before {
+    content: "\f2c6";
+}
+.ti-safe-business-outline:before {
+    content: "\f2c7";
+}
+.ti-safe-business:before {
+    content: "\f2c8";
+}
+.ti-speech-bubble-dircetion-outline:before {
+    content: "\f2c9";
+}
+.ti-speech-bubble-dircetion:before {
+    content: "\f2ca";
+}
+.ti-speech-bubble-percentage-outline:before {
+    content: "\f2cb";
+}
+.ti-speech-bubble-percentage:before {
+    content: "\f2cc";
+}
+.ti-statistics-bars:before {
+    content: "\f2cd";
+}
+.ti-statistics-canvas-outline:before {
+    content: "\f2ce";
+}
+.ti-statistics-canvas:before {
+    content: "\f2cf";
+}
+.ti-statistics-donut:before {
+    content: "\f2d0";
+}
+.ti-statistics-grow-bars:before {
+    content: "\f2d1";
+}
+.ti-statistics-growth:before {
+    content: "\f2d2";
+}
+.ti-statistics-loss-chart:before {
+    content: "\f2d3";
+}
+.ti-statistics-pie-chart-outline:before {
+    content: "\f2d4";
+}
+.ti-statistics-pie-chart:before {
+    content: "\f2d5";
+}
+.ti-statistics-pie:before {
+    content: "\f2d6";
+}
+.ti-statistics-wining-chart:before {
+    content: "\f2d7";
+}
+.ti-target:before {
+    content: "\f2d8";
+}
+.ti-team-conversation-outline:before {
+    content: "\f2d9";
+}
+.ti-team-conversation:before {
+    content: "\f2da";
+}
+.ti-track-radar:before {
+    content: "\f2db";
+}
+.ti-working-factory-outline:before {
+    content: "\f2dc";
+}
+.ti-working-factory:before {
+    content: "\f2dd";
+}

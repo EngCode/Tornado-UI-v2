@@ -2,11 +2,7 @@
   "name": "tornado-ui",
   "version": "2.0.8",
   "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
-  "main": [
-    "/dist/js/tornado.min.js",
-    "/dist/css/tornado.css",
-    "/dist/css/tornado-rtl.css"
-  ],
+  "main": "/dist/js/tornado.min.js",
   "directories": {
     "doc": "docs"
   },
@@ -58,11 +54,11 @@
   },
   "homepage": "https://flash-point.net/tornado/",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babel-minify": "^0.5.0",
-    "node-sass": "^4.12.0",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-minify": "^0.5.1",
+    "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5"
   }
 }

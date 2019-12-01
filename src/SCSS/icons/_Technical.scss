@@ -1,131 +1,345 @@
-.ti-basket:before{content:"\e460";}
-.ti-basket-add:before{content:"\e461";}
-.ti-basket-check:before{content:"\e462";}
-.ti-basket-delete:before{content:"\e463";}
-.ti-basket-remove:before{content:"\e464";}
-.ti-24-hours:before{content:"\e465";}
-.ti-advertising-window:before{content:"\e466";}
-.ti-alarm-bell:before{content:"\e467";}
-.ti-alarm-clock-2:before{content:"\e468";}
-.ti-analytics-1:before{content:"\e469";}
-.ti-analytics-board:before{content:"\e46a";}
-.ti-analytics-bounce:before{content:"\e46b";}
-.ti-api-page:before{content:"\e46c";}
-.ti-bounce-1:before{content:"\e46d";}
-.ti-briefcase-with-handle:before{content:"\e46e";}
-.ti-browser-settings:before{content:"\e46f";}
-.ti-browser-tabs:before{content:"\e470";}
-.ti-calculator-device:before{content:"\e471";}
-.ti-cd-recording:before{content:"\e472";}
-.ti-certificate-window:before{content:"\e473";}
-.ti-check-circular-button:before{content:"\e474";}
-.ti-chronometer:before{content:"\e475";}
-.ti-chronometer-1:before{content:"\e476";}
-.ti-clock-settings:before{content:"\e477";}
-.ti-clock-wall:before{content:"\e478";}
-.ti-cloud-computing:before{content:"\e479";}
-.ti-cloud-computing-1:before{content:"\e47a";}
-.ti-cloud-computing-2:before{content:"\e47b";}
-.ti-cloud-computing-3:before{content:"\e47c";}
-.ti-cloud-computing-4:before{content:"\e47d";}
-.ti-coding-1:before{content:"\e47e";}
-.ti-coding-2:before{content:"\e47f";}
-.ti-coding-window:before{content:"\e480";}
-.ti-coffee-cup:before{content:"\e481";}
-.ti-combo-chart:before{content:"\e482";}
-.ti-computer-network:before{content:"\e483";}
-.ti-construction-worker:before{content:"\e484";}
-.ti-cpu-chip:before{content:"\e485";}
-.ti-customer-service:before{content:"\e486";}
-.ti-digital-clock:before{content:"\e487";}
-.ti-email-2:before{content:"\e488";}
-.ti-email-new-letter:before{content:"\e489";}
-.ti-envelope-mail:before{content:"\e48a";}
-.ti-error-page:before{content:"\e48b";}
-.ti-error-sign:before{content:"\e48c";}
-.ti-error-sing:before{content:"\e48d";}
-.ti-fax-2x:before{content:"\e48e";}
-.ti-file-time:before{content:"\e48f";}
-.ti-goal:before{content:"\e490";}
-.ti-hdd-card:before{content:"\e491";}
-.ti-history-1:before{content:"\e492";}
-.ti-home-file:before{content:"\e493";}
-.ti-home-page:before{content:"\e494";}
-.ti-home-silhouette:before{content:"\e495";}
-.ti-home-telephone:before{content:"\e496";}
-.ti-imac:before{content:"\e497";}
-.ti-infinite-loop:before{content:"\e498";}
-.ti-job-search:before{content:"\e499";}
-.ti-landing-page:before{content:"\e49a";}
-.ti-landing-page-1:before{content:"\e49b";}
-.ti-landing-page-2:before{content:"\e49c";}
-.ti-landing-page-3:before{content:"\e49d";}
-.ti-laptop-1:before{content:"\e49e";}
-.ti-laptop-clock:before{content:"\e49f";}
-.ti-launch-rocket:before{content:"\e4a0";}
-.ti-letter-clock:before{content:"\e4a1";}
-.ti-male-consultant:before{content:"\e4a2";}
-.ti-manager-avatar:before{content:"\e4a3";}
-.ti-mechanical-engineer:before{content:"\e4a4";}
-.ti-medal-with-star:before{content:"\e4a5";}
-.ti-network-connection:before{content:"\e4a6";}
-.ti-network-server:before{content:"\e4a7";}
-.ti-network-square:before{content:"\e4a8";}
-.ti-one-hammer:before{content:"\e4a9";}
-.ti-online-shop:before{content:"\e4aa";}
-.ti-page-speed:before{content:"\e4ab";}
-.ti-pencil-and-ruler:before{content:"\e4ac";}
-.ti-pencil-case:before{content:"\e4ad";}
-.ti-personal-computer:before{content:"\e4ae";}
-.ti-phone-with-wire:before{content:"\e4af";}
-.ti-photo-camera:before{content:"\e4b0";}
-.ti-php-page:before{content:"\e4b1";}
-.ti-piggy-bank:before{content:"\e4b2";}
-.ti-planning:before{content:"\e4b3";}
-.ti-printer-with-paper:before{content:"\e4b4";}
-.ti-protection-shield:before{content:"\e4b5";}
-.ti-reminder:before{content:"\e4b6";}
-.ti-saving-diskette:before{content:"\e4b7";}
-.ti-scale:before{content:"\e4b8";}
-.ti-screw:before{content:"\e4b9";}
-.ti-sd-card-2:before{content:"\e4ba";}
-.ti-search-clock:before{content:"\e4bb";}
-.ti-search-for-incidents:before{content:"\e4bc";}
-.ti-server-check:before{content:"\e4bd";}
-.ti-server-download:before{content:"\e4be";}
-.ti-server-search:before{content:"\e4bf";}
-.ti-server-settings:before{content:"\e4c0";}
-.ti-setting-spanner:before{content:"\e4c1";}
-.ti-settings-cogwheels:before{content:"\e4c2";}
-.ti-settings-tools:before{content:"\e4c3";}
-.ti-share-server:before{content:"\e4c4";}
-.ti-shield-with-lock:before{content:"\e4c5";}
-.ti-softtware-engineer:before{content:"\e4c6";}
-.ti-software-assistant:before{content:"\e4c7";}
-.ti-soldering-machine:before{content:"\e4c8";}
-.ti-sql-browser:before{content:"\e4c9";}
-.ti-stopwatch:before{content:"\e4ca";}
-.ti-tags-list:before{content:"\e4cb";}
-.ti-target-board:before{content:"\e4cc";}
-.ti-technical-service-van:before{content:"\e4cd";}
-.ti-technical-treatment:before{content:"\e4ce";}
-.ti-technician-glasses:before{content:"\e4cf";}
-.ti-technics:before{content:"\e4d0";}
-.ti-telephone-2:before{content:"\e4d1";}
-.ti-time-bar-chart:before{content:"\e4d2";}
-.ti-time-management:before{content:"\e4d3";}
-.ti-time-management-1:before{content:"\e4d4";}
-.ti-time-management-2:before{content:"\e4d5";}
-.ti-time-management-3:before{content:"\e4d6";}
-.ti-time-management-4:before{content:"\e4d7";}
-.ti-usb-flash-drive:before{content:"\e4d8";}
-.ti-users-linked:before{content:"\e4d9";}
-.ti-video-card:before{content:"\e4da";}
-.ti-video-server:before{content:"\e4db";}
-.ti-vintage-web-cam:before{content:"\e4dc";}
-.ti-virtual-cloud:before{content:"\e4dd";}
-.ti-virtual-notebook:before{content:"\e4de";}
-.ti-vision:before{content:"\e4df";}
-.ti-wall-drill:before{content:"\e4e0";}
-.ti-watch-hand-2:before{content:"\e4e1";}
-.ti-web-analytics:before{content:"\e4e2";}
+.ti-browser-404:before {
+    content: "\f7b8";
+}
+.ti-browser-advertising:before {
+    content: "\f7b9";
+}
+.ti-browser-analytics-bounce:before {
+    content: "\f7ba";
+}
+.ti-browser-analytics:before {
+    content: "\f7bb";
+}
+.ti-browser-api:before {
+    content: "\f7bc";
+}
+.ti-browser-bounce:before {
+    content: "\f7bd";
+}
+.ti-browser-certificate:before {
+    content: "\f7be";
+}
+.ti-browser-coding-cog:before {
+    content: "\f7bf";
+}
+.ti-browser-coding:before {
+    content: "\f7c0";
+}
+.ti-browser-ecommerce:before {
+    content: "\f7c1";
+}
+.ti-browser-gem:before {
+    content: "\f7c2";
+}
+.ti-browser-landing-page:before {
+    content: "\f7c3";
+}
+.ti-browser-landing-setting:before {
+    content: "\f7c4";
+}
+.ti-browser-page-speed:before {
+    content: "\f7c5";
+}
+.ti-browser-php:before {
+    content: "\f7c6";
+}
+.ti-browser-plane:before {
+    content: "\f7c7";
+}
+.ti-browser-sql:before {
+    content: "\f7c8";
+}
+.ti-browser-tabs:before {
+    content: "\f7c9";
+}
+.ti-browser-web-analytics:before {
+    content: "\f7ca";
+}
+.ti-cd-recording:before {
+    content: "\f7cb";
+}
+.ti-cd-recordings-outline:before {
+    content: "\f7cc";
+}
+.ti-cloud-clock-outline:before {
+    content: "\f7cd";
+}
+.ti-cloud-clock:before {
+    content: "\f7ce";
+}
+.ti-cloud-close-outline:before {
+    content: "\f7cf";
+}
+.ti-cloud-close:before {
+    content: "\f7d0";
+}
+.ti-cloud-file-outline:before {
+    content: "\f7d1";
+}
+.ti-cloud-file:before {
+    content: "\f7d2";
+}
+.ti-cloud-plug-outline:before {
+    content: "\f7d3";
+}
+.ti-cloud-plug:before {
+    content: "\f7d4";
+}
+.ti-cloud-search-outline:before {
+    content: "\f7d5";
+}
+.ti-cloud-search:before {
+    content: "\f7d6";
+}
+.ti-cloud-virtual-outline:before {
+    content: "\f7d7";
+}
+.ti-cloud-virtual:before {
+    content: "\f7d8";
+}
+.ti-compact-disc-outline:before {
+    content: "\f7d9";
+}
+.ti-compact-disc:before {
+    content: "\f7da";
+}
+.ti-compass-outline:before {
+    content: "\f7db";
+}
+.ti-compass:before {
+    content: "\f7dc";
+}
+.ti-computer-network-outline:before {
+    content: "\f7dd";
+}
+.ti-computer-network:before {
+    content: "\f7de";
+}
+.ti-cpu-chip-outline:before {
+    content: "\f7df";
+}
+.ti-cpu-chip:before {
+    content: "\f7e0";
+}
+.ti-database-outline:before {
+    content: "\f7e1";
+}
+.ti-database:before {
+    content: "\f7e2";
+}
+.ti-debug-outline:before {
+    content: "\f7e3";
+}
+.ti-debug:before {
+    content: "\f7e4";
+}
+.ti-digital-clock-outline:before {
+    content: "\f7e5";
+}
+.ti-digital-clock:before {
+    content: "\f7e6";
+}
+.ti-digital-tachograph-outline:before {
+    content: "\f7e7";
+}
+.ti-digital-tachograph:before {
+    content: "\f7e8";
+}
+.ti-goal-outline:before {
+    content: "\f7e9";
+}
+.ti-goal:before {
+    content: "\f7ea";
+}
+.ti-hdd-card-outline:before {
+    content: "\f7eb";
+}
+.ti-hdd-card:before {
+    content: "\f7ec";
+}
+.ti-home-file:before {
+    content: "\f7ed";
+}
+.ti-home-silhouette:before {
+    content: "\f7ee";
+}
+.ti-imac-outline:before {
+    content: "\f7ef";
+}
+.ti-imac:before {
+    content: "\f7f0";
+}
+.ti-landing-page:before {
+    content: "\f7f1";
+}
+.ti-launch-rocket-outline:before {
+    content: "\f7f2";
+}
+.ti-launch-rocket:before {
+    content: "\f7f3";
+}
+.ti-medal-with-star-outline:before {
+    content: "\f7f4";
+}
+.ti-medal-with-star:before {
+    content: "\f7f5";
+}
+.ti-network-connection:before {
+    content: "\f7f6";
+}
+.ti-network-server-outline:before {
+    content: "\f7f7";
+}
+.ti-network-server:before {
+    content: "\f7f8";
+}
+.ti-network-square:before {
+    content: "\f7f9";
+}
+.ti-one-hammer:before {
+    content: "\f7fa";
+}
+.ti-pencil-case-outline:before {
+    content: "\f7fb";
+}
+.ti-pencil-case:before {
+    content: "\f7fc";
+}
+.ti-personal-computer-outline:before {
+    content: "\f7fd";
+}
+.ti-personal-computer:before {
+    content: "\f7fe";
+}
+.ti-protection-shield:before {
+    content: "\f7ff";
+}
+.ti-screw-outline:before {
+    content: "\f800";
+}
+.ti-screw:before {
+    content: "\f801";
+}
+.ti-server-check-outline:before {
+    content: "\f802";
+}
+.ti-server-check:before {
+    content: "\f803";
+}
+.ti-server-download-outline:before {
+    content: "\f804";
+}
+.ti-server-download:before {
+    content: "\f805";
+}
+.ti-server-search-outline:before {
+    content: "\f806";
+}
+.ti-server-search:before {
+    content: "\f807";
+}
+.ti-server-settings-outline:before {
+    content: "\f808";
+}
+.ti-server-settings:before {
+    content: "\f809";
+}
+.ti-server-share-outline:before {
+    content: "\f80a";
+}
+.ti-server-share:before {
+    content: "\f80b";
+}
+.ti-server-video-outline:before {
+    content: "\f80c";
+}
+.ti-server-video:before {
+    content: "\f80d";
+}
+.ti-setting-spanner-outline:before {
+    content: "\f80e";
+}
+.ti-setting-spanner:before {
+    content: "\f80f";
+}
+.ti-settings-cogwheels:before {
+    content: "\f810";
+}
+.ti-settings-tools-outline:before {
+    content: "\f811";
+}
+.ti-settings-tools:before {
+    content: "\f812";
+}
+.ti-shield-with-lock-outline:before {
+    content: "\f813";
+}
+.ti-shield-with-lock:before {
+    content: "\f814";
+}
+.ti-soldering-machine:before {
+    content: "\f815";
+}
+.ti-stopwatch-outline:before {
+    content: "\f816";
+}
+.ti-stopwatch:before {
+    content: "\f817";
+}
+.ti-tags-list-outline:before {
+    content: "\f818";
+}
+.ti-tags-list:before {
+    content: "\f819";
+}
+.ti-target-board:before {
+    content: "\f81a";
+}
+.ti-technical-service-van-outline:before {
+    content: "\f81b";
+}
+.ti-technical-service-van:before {
+    content: "\f81c";
+}
+.ti-technics-outline:before {
+    content: "\f81d";
+}
+.ti-technics:before {
+    content: "\f81e";
+}
+.ti-usb-flash-drive-outline:before {
+    content: "\f81f";
+}
+.ti-usb-flash-drive:before {
+    content: "\f820";
+}
+.ti-users-linked-outline:before {
+    content: "\f821";
+}
+.ti-users-linked:before {
+    content: "\f822";
+}
+.ti-video-card-outline:before {
+    content: "\f823";
+}
+.ti-video-card:before {
+    content: "\f824";
+}
+.ti-wall-drill-outline:before {
+    content: "\f825";
+}
+.ti-wall-drill:before {
+    content: "\f826";
+}
+.ti-wirelss-mouse-outline:before {
+    content: "\f827";
+}
+.ti-wirelss-mouse:before {
+    content: "\f828";
+}
+.ti-work-helmet-outline:before {
+    content: "\f829";
+}
+.ti-work-helmet:before {
+    content: "\f82a";
+}

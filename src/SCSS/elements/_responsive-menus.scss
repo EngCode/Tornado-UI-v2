@@ -302,19 +302,17 @@
                 @extend %fast-motion;
             }
 
-            ul {
-                max-height: 0;
-                overflow: hidden;
-                -webkit-transition: all 0.7s;
-                transition: all 0.7s;
-                li::before {
-                    content: '-';
-                    padding-#{$directionReverse}: 5px;
-                }
+            &:not(.active) > ul {display: none;}
+
+            ul li::before {
+                content: '-';
+                padding-#{$directionReverse}: 5px;
             }
+
             .submenu::before{float: $directionReverse;}
         }
     }
+
     > ul{padding: 0.9375rem 0;}
 
     @include nested-menu (

@@ -1,6 +1,6 @@
 {
   "name": "tornado-ui",
-  "version": "2.0.8",
+  "version": "2.1.0",
   "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
   "main": "/dist/js/tornado.min.js",
   "directories": {

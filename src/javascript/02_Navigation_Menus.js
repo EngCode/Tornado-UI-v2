@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     /*===> Mobile Menu Submenus Toggle <===*/
-    var dropdownMob = getElements('.mobile-menu .dropdown-toggle');
+    var dropdownMob = getElements('.mobile-menu .dropdown-toggle,.mobile-menu .dropdown-item > a');
     Array.from(dropdownMob).forEach(function (dropdownMob) {
         dropdownMob.addEventListener('click', function (event) {
             event.preventDefault();
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var MobileMen = dropdownMob.closest('.mobile-menu');
             if (!MobileMen.matches('.custom-theme')) {
                 //==== Store Playable Elements ====//
-                var nextSib = getNextSibling(dropdownMob, 'ul') || getNextSibling(dropdownMob, '.megamenu'),
+                var nextSib = getNextSibling(dropdownMob, 'ul') || getNextSibling(dropdownMob, '.megamenu') || dropdownMob.parentNode.querySelector('ul'),
                     thisParent = dropdownMob.parentNode,
                     parentSiblings = getSiblings(thisParent);
                 //==== Check if the Clicked Menu is Activated ====//

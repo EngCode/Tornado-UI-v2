@@ -40,6 +40,12 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado.min.js
 
 --------------------
+#### Changelog Update V2.1.5 || 01/2020
+	#01 - [new] Seperate Icons Font CSS from Tornado CSS.
+	#02 - [update] NPM Packages Update.
+	#03 - 
+
+--------------------
 #### Changelog Update V2.1.0 || 12/2019
 	#01 - [new] Upgrade Components into Mixins and Refactor Tornado Icons
 	#02 - [new] Breadcrumb Theme Mixin

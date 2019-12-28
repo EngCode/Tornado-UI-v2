@@ -463,7 +463,7 @@ label {
 /*==== Checkbox ====*/
 .checkbox {
     span:before{
-        @extend .ti-checkmark-round,:before ;
+        @extend %ti-checkmark-round,:before ;
         width:1.375rem;
         height:1.375rem;
         color:#FFF;

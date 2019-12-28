@@ -85,18 +85,12 @@ $large-query-down:1200px; // Desktop Screen Size to start from
 $xlarge-query-down:1600px; // Big Desktop Screen Size to start from
 /*========== Loading Fonts ==========*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
-@font-face {
-    font-family: "tornado-icons";
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/tornado-icons.woff2') format('woff2');
-}
 //========== Global Sass ==========//
 @import 'assets/selectors';
 @import 'assets/mixins';
 @import 'assets/reset';
+@import 'assets/tornado-icons-selectors';
 /*========== Global Sass ==========*/
-@import 'tornado-icons';
 @import 'grid/grid-system';
 /*========== Elements ==========*/
 @import 'elements/typography';

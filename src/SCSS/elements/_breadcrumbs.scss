@@ -80,7 +80,7 @@
             margin-#{$directionReverse}:5px;
             position: relative;
         }
-        &.ti-home::before { top:-2px; }
+        &%ti-home::before { top:-2px; }
     }
     //==== Breadcrumb Elements ====//
     >a,>span {

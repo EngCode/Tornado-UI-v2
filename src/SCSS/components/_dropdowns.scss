@@ -72,19 +72,19 @@
                     padding-bottom: 5px;
                 }
 
-                &.ti-mail {
+                &%ti-mail {
                     color: $primary-color;
                     a {color: $primary-color;}
                 }
 
-                &.ti-whatsapp {
+                &%ti-whatsapp {
                     color: $whatsapp-color;
                     a {color: $whatsapp-color;}
                 }
             }
 
             .title{display: block;}
-            a:before,a.ti-mail:before,a.ti-phone:before {display: none;}
+            a:before,a%ti-mail:before,a%ti-phone:before {display: none;}
             p { font-size:14px;color:$gray-color; }
 
         }

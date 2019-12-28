@@ -1,10 +1,10 @@
 .ti-angle-double-down:before {
     content: "\f101";
 }
-.ti-angle-double-#{$direction}:before {
+.ti-angle-double-left:before {
     content: "\f102";
 }
-.ti-angle-double-#{$directionReverse}:before {
+.ti-angle-double-right:before {
     content: "\f103";
 }
 .ti-angle-double-up:before {
@@ -13,10 +13,10 @@
 .ti-angle-down:before {
     content: "\f105";
 }
-.ti-angle-#{$direction}:before {
+.ti-angle-left:before {
     content: "\f106";
 }
-.ti-angle-#{$directionReverse}:before {
+.ti-angle-right:before {
     content: "\f107";
 }
 .ti-angle-up:before {
@@ -40,31 +40,31 @@
 .ti-arrow-expand:before {
     content: "\f10e";
 }
-.ti-arrow-graph-down-#{$direction}:before {
+.ti-arrow-graph-down-left:before {
     content: "\f10f";
 }
-.ti-arrow-graph-down-#{$directionReverse}:before {
+.ti-arrow-graph-down-right:before {
     content: "\f110";
 }
-.ti-arrow-graph-up-#{$direction}:before {
+.ti-arrow-graph-up-left:before {
     content: "\f111";
 }
-.ti-arrow-graph-up-#{$directionReverse}:before {
+.ti-arrow-graph-up-right:before {
     content: "\f112";
 }
-.ti-arrow-#{$direction}-a:before {
+.ti-arrow-left-a:before {
     content: "\f113";
 }
-.ti-arrow-#{$direction}-b:before {
+.ti-arrow-left-b:before {
     content: "\f114";
 }
-.ti-arrow-#{$direction}-c:before {
+.ti-arrow-left-c:before {
     content: "\f115";
 }
-.ti-arrow-#{$direction}-chevron-light:before {
+.ti-arrow-left-chevron-light:before {
     content: "\f116";
 }
-.ti-arrow-#{$direction}-chevron:before {
+.ti-arrow-left-chevron:before {
     content: "\f117";
 }
 .ti-arrow-move:before {
@@ -82,25 +82,25 @@
 .ti-arrow-resize:before {
     content: "\f11c";
 }
-.ti-arrow-return-#{$direction}:before {
+.ti-arrow-return-left:before {
     content: "\f11d";
 }
-.ti-arrow-return-#{$directionReverse}:before {
+.ti-arrow-return-right:before {
     content: "\f11e";
 }
-.ti-arrow-#{$directionReverse}-a:before {
+.ti-arrow-right-a:before {
     content: "\f11f";
 }
-.ti-arrow-#{$directionReverse}-b:before {
+.ti-arrow-right-b:before {
     content: "\f120";
 }
-.ti-arrow-#{$directionReverse}-c:before {
+.ti-arrow-right-c:before {
     content: "\f121";
 }
-.ti-arrow-#{$directionReverse}-chevron-light:before {
+.ti-arrow-right-chevron-light:before {
     content: "\f122";
 }
-.ti-arrow-#{$directionReverse}-chevron:before {
+.ti-arrow-right-chevron:before {
     content: "\f123";
 }
 .ti-arrow-shrink:before {
@@ -112,10 +112,10 @@
 .ti-arrow-thin-down:before {
     content: "\f126";
 }
-.ti-arrow-thin-#{$direction}:before {
+.ti-arrow-thin-left:before {
     content: "\f127";
 }
-.ti-arrow-thin-#{$directionReverse}:before {
+.ti-arrow-thin-right:before {
     content: "\f128";
 }
 .ti-arrow-thin-up:before {

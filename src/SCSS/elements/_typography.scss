@@ -100,7 +100,7 @@ blockquote {
     // icon
     &:before { 
         font-family: $font-icon;
-        @extend .ti-quote-#{$direction}:before;
+        @extend %ti-quote-#{$direction}:before;
         position: absolute;
         font-size:2.125rem;
         color:rgba(0,0,0,.10);

@@ -224,17 +224,18 @@ $perpage: 3;
 
         &::before {
             font-size: 17px;
+            font-family: $font-icon;
         }
     }
 
     .tns-controls [data-controls="prev"] {
         left: 30px;
-        &::before {@extend %ti-angle-#{$directionReverse};}
+        &::before {@extend %ti-angle-#{$directionReverse},:before;}
     }
 
     .tns-controls [data-controls="next"] {
         right: 30px;
-        &::before {@extend %ti-angle-#{$direction};}
+        &::before {@extend %ti-angle-#{$direction},:before;}
     }
 
     .tns-nav {

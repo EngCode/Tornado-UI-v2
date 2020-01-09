@@ -229,18 +229,12 @@ $perpage: 3;
 
     .tns-controls [data-controls="prev"] {
         left: 30px;
-
-        &::before {
-            content: "\21";
-        }
+        &::before {@extend %ti-angle-#{$directionReverse};}
     }
 
     .tns-controls [data-controls="next"] {
         right: 30px;
-
-        &::before {
-            content: '\2d';
-        }
+        &::before {@extend %ti-angle-#{$direction};}
     }
 
     .tns-nav {

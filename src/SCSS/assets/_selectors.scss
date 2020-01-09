@@ -18,6 +18,11 @@
             transform: translateZ(0);
 }
 
+%inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 %clear-after{
     content: '';
     display: block;

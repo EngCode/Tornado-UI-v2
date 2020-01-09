@@ -48,6 +48,11 @@
     }
 }
 
+.flexbox,.flex-box {
+    @extend %flexbox;
+    &.container{@extend %flexbox;}
+}
+
 /*======== Masonry Grid Baisc ========*/
 [class*="masonry-"] {
     margin: 0 -#{$gutterMath};

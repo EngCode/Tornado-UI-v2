@@ -229,12 +229,12 @@ $perpage: 3;
     }
 
     .tns-controls [data-controls="prev"] {
-        left: 30px;
+        #{$directionReverse}: 30px;
         &::before {@extend %ti-angle-#{$directionReverse},:before;}
     }
 
     .tns-controls [data-controls="next"] {
-        right: 30px;
+        #{$direction}: 30px;
         &::before {@extend %ti-angle-#{$direction},:before;}
     }
 

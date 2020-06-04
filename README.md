@@ -43,7 +43,10 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Changelog Update V2.1.5 || 01/2020
 	#01 - [new] Seperate Icons Font CSS from Tornado CSS.
 	#02 - [update] NPM Packages Update.
-	#03 - [new] Creating Events Timer Counter Down.
+	#03 - [new] JS Event Date/Time Counter Down
+	#04 - [fix] TinySlider Grid/Row Fixer Function
+	#05 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
+	#06 - [new] images lazyloading js functionality added
 
 --------------------
 #### Changelog Update V2.1.0 || 12/2019

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //==== Store Playable Elements ====//
             var thisElement = element,
                 nextPanel = getNextSibling(thisElement, '.accordion-content'),
-                thisParent = thisElement.parentNode;
+                thisParent = parentsUntil(thisElement,'.accordion-item');
 
             //==== Check if the Clicked Button is Activated or Not ====//
             if (thisParent.classList.contains('active')) {

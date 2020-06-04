@@ -1,7 +1,6 @@
 _onWork/
 .vscode/
-src/SCSS/assets/_mahacode.scss
-src/SCSS/assets/_flashpoint.scss
-src/SCSS/assets/_engcode.scss
+src/SCSS/theme/
+src/javascript/11_WordPress.js
 dist/img/
 Tornado v2 Home Workspace.code-workspace

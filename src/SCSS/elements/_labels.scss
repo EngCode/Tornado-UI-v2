@@ -532,9 +532,9 @@
 
     &.light{
         background: $reverse-color;color:$dark-color;border: 0 none;
-        &:hover{background:darken( $reverse-color,10% );}
+        &:hover{background:$light-color;}
         &.tag::after{border-#{$directionReverse}-color:$reverse-color;}
-        &.tag:hover::after{border-#{$directionReverse}-color:darken($reverse-color,10% );}
+        &.tag:hover::after{border-#{$directionReverse}-color:$light-color;}
         &.outline {
             background:transparent;
             color:$reverse-color;
@@ -543,22 +543,22 @@
         }
         &.pointing-top {
             &::after {border-bottom-color:$reverse-color;}
-            &:hover::after{border-bottom-color:darken( $reverse-color,10% );}
+            &:hover::after{border-bottom-color:$light-color;}
         }
         
         &.pointing-bottom {
             &::after {border-top-color:$reverse-color;}
-            &:hover::after{border-top-color:darken( $reverse-color,10% );}
+            &:hover::after{border-top-color:$light-color;}
         }
     
         &.pointing-start {
             &::after {border-#{$directionReverse}-color:$reverse-color;}
-            &:hover::after{border-#{$directionReverse}-color:darken( $reverse-color,10% );}
+            &:hover::after{border-#{$directionReverse}-color:$light-color;}
         }
     
         &.pointing-end {
             &::after{border-#{$direction}-color:$reverse-color;}
-            &:hover::after{border-#{$direction}-color:darken( $reverse-color,10% );}
+            &:hover::after{border-#{$direction}-color:$light-color;}
         }
     }
 }

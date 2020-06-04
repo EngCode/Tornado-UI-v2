@@ -151,7 +151,9 @@
                     ul {
                         position: absolute;
                         top: 0;
+                        width:220px;
                         #{$direction}: 100%;
+                        visibility: hidden;
                     }
                 }
             }

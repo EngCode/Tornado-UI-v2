@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     direction: $page-dir;
-    background: #FFF;
+    background: #F2F6FD;
     position: relative;
 }
 
@@ -232,9 +232,9 @@ hr {
 .mb10 {margin-bottom: 10px;}
 .mb15 {margin-bottom: 15px;}
 
-.mt30 {margin-bottom: 30px;}
-.mt10 {margin-bottom: 10px;}
-.mt15 {margin-bottom: 15px;}
+.mt30 {margin-top: 30px;}
+.mt10 {margin-top: 10px;}
+.mt15 {margin-top: 15px;}
 
 /*==== Padding Utilities ====*/
 .pt10{padding-top:10px ;}

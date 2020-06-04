@@ -13,16 +13,45 @@ $page-dir:rtl;
 $page-dir-reverse:ltr;
 $direction:right;
 $directionReverse:left;
+
+/*======== Root CSS Variables ========*/
+:root {
+    /*======== Primary Color ========*/
+    --primary-color: #4166d6;
+    --primary-color-hover: #2e4dc9;
+    /*======== Secondary Color ========*/
+    --secondary-color: #de670f;
+    --secondary-color-hover: #eaa711;
+    /*======== TXT Colors ========*/
+    --reverse-color:#FFF;
+    --reverse-color-dark:#1c1c1c;
+    --light-color:#cad0e0;
+    --black-color:#222222;
+    --typo-color:#555555;
+    //========== Typography Font Family ==========//
+    --primary-font:'DIN NEXT'; // font family for Head's and Titles
+    --secondary-font:'DIN NEXT'; // font family for Paragraph and Small Text
+    //========== Typography Base Font Sizes ==========//
+    --base-l-size:16px; // Base Font Size For Large Screens
+    --base-m-size:15px; // Base Font Size For Medium Screens
+    --base-s-size:14px; // Base Font Size For Small Screens
+    --base-line-height:1.4; // Base Line Height
+    //========== Typography Font Weight ==========//
+    --normal-weight:400; // Normal Font Weight
+    --medium-weight:500; // Medium Font Weight
+    --strong-weight:600; // Bold/Bolder Font Weight
+}
+
 //========== Colors Variables Sass Render ==========//
-$primary-color:#4166d6;
-$primary-color-hover:#2e4dc9;
-$secondary-color:#de670f;
-$secondary-color-hover:#eaa711;
-$reverse-color:#FFF;
-$reverse-color-dark:#1c1c1c;
-$light-color:#cad0e0;
-$black-color:#222222;
-$typo-color:#555555;
+$primary-color:var(--primary-color);
+$primary-color-hover:var(--primary-color-hover);
+$secondary-color:var(--secondary-color);
+$secondary-color-hover:var(--secondary-color-hover);
+$reverse-color:var(--reverse-color);
+$reverse-color-dark:var(--reverse-color-dark);
+$light-color:var(--light-color);
+$black-color:var(--black-color);
+$typo-color:var(--typo-color);
 //=== Assets text colors ====//
 $success-color:#22b544;
 $danger-color:#de3131;
@@ -56,17 +85,19 @@ $dribbble-color:#ea4c89;
 $envato-color:#82b541;
 $flicker-color:#0063dc;
 $github-color:#f5f5f5;
-//========== Typography ==========//
-$primary-font:'DIN NEXT'; // font family for Head's and Titles
-$secondary-font:'DIN NEXT'; // font family for Paragraph and Small Text
+//========== Typography Font Family ==========//
+$primary-font:var(--primary-font); // font family for Head's and Titles
+$secondary-font:var(--secondary-font); // font family for Paragraph and Small Text
 $font-icon:"tornado-icons"; // icons Font Family
-$base-l-size:16px; // Base Font Size For Large Screens
-$base-m-size:15px; // Base Font Size For Medium Screens
-$base-s-size:14px; // Base Font Size For Small Screens
-$base-line-height:1.4; // Base Line Height
-$normal-weight:400; // Normal Font Weight
-$medium-weight:500; // Medium Font Weight
-$strong-weight:600; // Bold/Bolder Font Weight
+//========== Typography Base Font Sizes ==========//
+$base-l-size:var(--base-l-size); // Base Font Size For Large Screens
+$base-m-size:var(--base-m-size); // Base Font Size For Medium Screens
+$base-s-size:var(--base-s-size); // Base Font Size For Small Screens
+$base-line-height:var(--base-line-height); // Base Line Height
+//========== Typography Font Weight ==========//
+$normal-weight:var(--normal-weight); // Normal Font Weight
+$medium-weight:var(--medium-weight); // Medium Font Weight
+$strong-weight:var(--strong-weight); // Bold/Bolder Font Weight
 //========== Grid System ==========//
 $grid-columns:12; // Numbers of Gride Columns
 $gutterSize:30px; // the Space Between Columns

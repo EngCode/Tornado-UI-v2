@@ -3,5 +3,6 @@
 /*=== Theme Customize ===*/
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    console.log('From Custom JS File');
+    //==== Grid Tiny Slider ====//
+    fixTnsGrid();
 });

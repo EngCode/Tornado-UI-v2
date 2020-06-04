@@ -43,7 +43,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Changelog Update V2.1.5 || 01/2020
 	#01 - [new] Seperate Icons Font CSS from Tornado CSS.
 	#02 - [update] NPM Packages Update.
-	#03 - 
+	#03 - [new] Creating Events Timer Counter Down.
 
 --------------------
 #### Changelog Update V2.1.0 || 12/2019

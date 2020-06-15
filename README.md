@@ -47,6 +47,8 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#04 - [fix] TinySlider Grid/Row Fixer Function
 	#05 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
 	#06 - [new] images lazyloading js functionality added
+	#07 - [fix] JS Dynamic Page Direction for WP
+	
 
 --------------------
 #### Changelog Update V2.1.0 || 12/2019

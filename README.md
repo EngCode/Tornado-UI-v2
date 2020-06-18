@@ -36,6 +36,9 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	====== Tornado CSS [RTL] =====
 	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado-rtl.css
 
+	====== Tornado [ICONS] CSS =====
+	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado-icons.css
+
 	====== Tornado JS =====
 	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.min.js
 

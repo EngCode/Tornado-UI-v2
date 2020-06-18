@@ -72,11 +72,14 @@
   "dependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
+    "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
-    "@babel/polyfill": "^7.10.1",
-    "eslint-plugin-react": "^7.20.0",
     "babel-minify": "^0.5.1",
-    "node-sass": "^4.14.1"
+    "eslint-plugin-react": "^7.20.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   }
 }

@@ -17,21 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    //=====> Lined Form Control Label Effect <=====//
-    var linedControls = getElements('.form-ui.lined input:not(.btn),.form-ui.lined textarea');
-    Array.from(linedControls).forEach(function (linedControl) {
-        //====> When Value Change <===//
-        linedControl.addEventListener('change', function () {
-            //===> Catch the Current Value <===//
-            var control_val = linedControl.getAttribute('value');
-            //===> if its Not Empty Value <===//
-            if (control_val !== '') {
-                //===> Add Class <===//
-                linedControl.classList.add('has-value');
-            }
-        });
-    });
-
     //=====> File Uploader <=====//
     var fileUploaders = getElements('.file-input input[type="file"]');
     Array.from(fileUploaders).forEach(function (fileUploader) {

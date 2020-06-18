@@ -31,16 +31,19 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Quick CDN Links
 
 	====== Tornado CSS [LTR] =====
-	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado.css
+	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado.css
 
 	====== Tornado CSS [RTL] =====
-	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado-rtl.css
+	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado-rtl.css
 
 	====== Tornado JS =====
-	https://unpkg.com/tornado-ui@2.1.0/dist/css/tornado.min.js
+	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.min.js
+
+	====== Tornado React Components =====
+	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.react.js
 
 --------------------
-#### Changelog Update V2.1.5 || 01/2020
+#### Changelog Update V2.1.5 ReactIt || 06/2020
 	#01 - [new] Seperate Icons Font CSS from Tornado CSS.
 	#02 - [update] NPM Packages Update.
 	#03 - [new] JS Event Date/Time Counter Down
@@ -48,7 +51,15 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#05 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
 	#06 - [new] images lazyloading js functionality added
 	#07 - [fix] JS Dynamic Page Direction for WP
-	
+	#08 - [Deprecated] Form Lined Theme
+	#-- - [new] React Components for all UI Elements
+	#-- - [fix] Form Validation In Realtime Upgrade
+	#-- - [new] Form Advanced Select With SlimSelect
+	#-- - [new] Form Advanced File Uploaders
+	#-- - [new] Form Advanced Checkboxes
+	#-- - [new] CSS Variables for Design Options
+	#-- - [doc] Tabs System Features
+	#-- - [doc] LazyLoading Functionality
 
 --------------------
 #### Changelog Update V2.1.0 || 12/2019

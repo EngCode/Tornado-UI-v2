@@ -533,50 +533,6 @@ label {
     }
 }
 
-/*======== Lined Form ========*/
-.form-ui.lined {
-    input:not(.btn),textarea,select,keygen,.file-input {
-        border-width: 0;
-        border-bottom-width : 1px;
-        background-color:transparent;
-        margin: 0;
-        position: relative;
-        z-index: 2;
-        padding:0;
-        &:not(.error):not(.warning):not(.success):not(.disable){border-color:rgba(0,0,0,0.20);}
-        + label {
-            font-size:0.8125rem;
-            font-weight: normal;
-            line-height: 2.875rem;
-            margin: 0;
-            transform: translateY(-100%);
-            @extend %fast-motion;
-        }
-        &:focus + label,&.has-value + label  {
-            transform: translateY(-150%);
-        }
-    }
-    
-    textarea{
-        height: 4.125rem;
-        + label {
-            transform: translateY(-160%);
-        }
-
-        &:focus + label,&.has-value + label {
-            transform: translateY(-220%);
-        }
-    }
-
-    .control-icon {
-        &::before {bottom: auto;top:0;width:1.25rem;}
-        input:not(.btn),textarea,select,keygen,.file-input,&:not(.floating-end) label {padding-#{$direction}: 1.563rem;}
-        &.floating-end {
-            input:not(.btn),textarea,select,keygen,.file-input {padding-#{$direction}: 0;}
-        }
-    }
-}
-
 //==== Form Parts ====//
 @import 'buttons';
 @import 'progress';

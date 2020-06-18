@@ -9,77 +9,56 @@
   "scripts": {
     "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
     "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
-    "tornado-react": "babel --presets @babel/preset-react src/React --out-file dist/js/tornado.react.js --minified --no-comments --source-maps"
-  },
-  "tornado-react": {
-    "build": {
-      "patterns": [
-        "src/React/"
-      ],
-      "extensions": "js,jsx"
-    }
+    "tornado-react": "babel --presets @babel/preset-react src/React --out-file dist/js/tornado.react.js --minified --no-comments --source-maps",
+    "react-build": "webpack --config webpack.config.js",
+    "react-watch": "webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EngCode/Tornado-v2.git"
   },
-  "keywords": [
-    "tornado",
-    "ui",
-    "framework",
-    "css",
-    "js",
-    "esNext",
-    "es5",
-    "es6",
-    "react",
-    "vue",
-    "wordpress",
-    "design",
-    "web",
-    "app",
-    "enviroment",
-    "gutenberg",
-    "designers",
-    "developers",
-    "development",
-    "creative",
-    "webpack",
-    "sass",
-    "vanila",
-    "rtl",
-    "user",
-    "interface",
-    "ux",
-    "components"
-  ],
   "author": "Abdullah.Ramadan",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/EngCode/Tornado-v2/issues"
   },
   "homepage": "https://flash-point.net/tornado/",
-  "devDependencies": {
-    "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
-    "@babel/polyfill": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1",
-    "babel-minify": "^0.5.1",
-    "eslint-plugin-react": "^7.20.0",
-    "node-sass": "^4.14.1"
-  },
   "dependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
-    "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
     "babel-minify": "^0.5.1",
     "eslint-plugin-react": "^7.20.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "keywords": [
+    "tornado ui",
+    "framework",
+    "css",
+    "js",
+    "esNext",
+    "es6",
+    "react",
+    "wordpress",
+    "design",
+    "web",
+    "app",
+    "enviroment",
+    "webpack",
+    "sass",
+    "rtl",
+    "ux",
+    "components"
+  ],
+  "devDependencies": {
+    "html-webpack-plugin": "^4.3.0"
   }
 }

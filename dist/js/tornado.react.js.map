@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/React/app.js"],"names":[],"mappings":"AACA,KAAM,CAAA,UAAN,QAAyB,CAAA,KAAK,CAAC,SAAU","file":"tornado.react.js","sourcesContent":["/*=======> App Component <=======*/\r\nclass TornadoApp extends React.Component {\r\n    \r\n}\r\n"]}

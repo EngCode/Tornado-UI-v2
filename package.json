@@ -9,9 +9,8 @@
   "scripts": {
     "tornado-js": "babel --presets @babel/preset-env src/javascript --watch --out-file dist/js/tornado.min.js --minified --no-comments --source-maps --source-type script",
     "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
-    "tornado-react": "babel --presets @babel/preset-react src/React --out-file dist/js/tornado.react.js --minified --no-comments --source-maps",
-    "react-build": "webpack --config webpack.config.js",
-    "react-watch": "webpack --config webpack.config.js --watch"
+    "tornado-react": "webpack --config webpack.config.js --watch",
+    "react-build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

@@ -46,23 +46,24 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.react.js
 
 --------------------
-#### Changelog Update V2.1.5 ReactIt || 06/2020
+#### Changelog Update V2.1.5 React-It || 06/2020
+	#00 - [new] React Components for all UI Elements
 	#01 - [new] Seperate Icons Font CSS from Tornado CSS.
 	#02 - [update] NPM Packages Update.
 	#03 - [new] JS Event Date/Time Counter Down
 	#04 - [fix] TinySlider Grid/Row Fixer Function
 	#05 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
 	#06 - [new] images lazyloading js functionality added
-	#07 - [fix] JS Dynamic Page Direction for WP
-	#08 - [Deprecated] Form Lined Theme
-	#-- - [new] React Components for all UI Elements
-	#-- - [fix] Form Validation In Realtime Upgrade
+	#07 - [fix] JS Dynamic Page Direction for WP-Admin
+	#08 - [Deprecated] Remove Lined Theme Form
+	#-- - [new] Form Validation In Realtime Upgrade
 	#-- - [new] Form Advanced Select With SlimSelect
 	#-- - [new] Form Advanced File Uploaders
 	#-- - [new] Form Advanced Checkboxes
 	#-- - [new] CSS Variables for Design Options
 	#-- - [doc] Tabs System Features
 	#-- - [doc] LazyLoading Functionality
+	#-- - [doc] Documenting React Components
 
 --------------------
 #### Changelog Update V2.1.0 || 12/2019

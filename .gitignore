@@ -3,4 +3,5 @@ _onWork/
 src/SCSS/theme/
 src/javascript/11_WordPress.js
 dist/img/
+node_modules/
 Tornado v2 Home Workspace.code-workspace

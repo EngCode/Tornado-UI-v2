@@ -2,22 +2,21 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 /*======> Tornado Grid System <======*/
-import GridContainer from './tornado-basic/01_Grid_Container';
-import GridRow from './tornado-basic/02_Grid_Row';
-
+import {Container, Row, Column} from './tornado-basic/01_Grid_System';
 /*=======> App Component <=======*/
 class Tornado extends Component {
     /*====> App Render Function <====*/
     render() {
         /*====> App Render Content <====*/
         return (
-            <GridContainer size="large">
+            <Container size="large" customClass="pt50">
+                <h1>Hi! From Tornado React</h1>
                 {/*====> Row Component <====*/}
-                <GridRow>
-                    <h1>Hi! From Tornado React</h1>
-                </GridRow>
+                <Row>
+                    <Column customClass="tx-align-center">Column Component 12</Column>
+                </Row>
                 {/*====> // Row Component <====*/}
-            </GridContainer>
+            </Container>
         );
     }
 }

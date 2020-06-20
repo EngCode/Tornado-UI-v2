@@ -1,16 +1,16 @@
 /*=======> Importing React Modules <=======*/
-const { Component } = require("react");
+import React, { Component } from "react";
 
 /*=======> Grid Container <=======*/
 export class Container extends Component {
     /*======> Render Function <======*/
     render() {
         /*====> Get Properties <====*/
-        const { size, customClass, children } = this.props
+        const { size, nameit, children } = this.props
 
         /*===> Get Custom Class Value <===*/
         var classes_value = '';
-        if (customClass) var classes_value = ' '+customClass
+        if (nameit) var classes_value = ' '+nameit
 
         /*===> Get Size Value <===*/
         var size_value = 'container';                         //====> Default Size Value
@@ -29,11 +29,11 @@ export class Row extends Component {
     /*======> Render Function <======*/
     render() {
         /*====> Get Properties <====*/
-        const { customClass, direction, gutter, alignX, alignY, children } = this.props
+        const { nameit, direction, gutter, alignX, alignY, children } = this.props
 
         /*===> Get Custom Class Value <===*/
         var classes_value = '';
-        if (customClass) var classes_value = ' '+customClass
+        if (nameit) var classes_value = ' '+nameit
 
         /*===> Get Direction Value <===*/
         var direction_value = '';
@@ -74,11 +74,11 @@ export class Column extends Component {
     /*======> Render Function <======*/
     render() {
         /*====> Get Properties <====*/
-        const { customClass, children, size, small, medium, large, xlarge } = this.props
+        const { nameit, children, size, small, medium, large, xlarge } = this.props
 
         /*===> Get Custom Class Value <===*/
         var classes_value = '';
-        if (customClass) var classes_value = ' '+customClass
+        if (nameit) var classes_value = ' '+nameit
 
         /*===> Mobile Size <===*/
         var smallSize = '';

@@ -9,11 +9,11 @@ class Tornado extends Component {
     render() {
         /*====> App Render Content <====*/
         return (
-            <Container size="large" customClass="pt50">
+            <Container size="large" nameit="pt50">
                 <h1>Hi! From Tornado React</h1>
                 {/*====> Row Component <====*/}
                 <Row>
-                    <Column customClass="tx-align-center">Column Component 12</Column>
+                    <Column nameit="tx-align-center">Column Component 12</Column>
                 </Row>
                 {/*====> // Row Component <====*/}
             </Container>

@@ -1,7 +1,19 @@
-/*======== Dropdown Lists ========*/
+/**======> Referance By Comment <======
+ * ===> 01 - Dropdown Wraper
+ * ===> 02 - Dropdown Button
+ * ===> 03 - Dropdown List
+ * ===> 04 - Dropdown List Arrow
+ * ===> 05 - Dropdown List item
+ * ===> 06 - Contact List Theme
+ * ===> 07 - Cart List Theme
+ * ===> 08 - Show the Dropdown
+*/
+
+/*======== Dropdown Wraper ========*/
 .dropdown {
     display: inline-block;
     position: relative;
+    /*======== Dropdown Button ========*/
     .dropdown-btn:not(.icon-btn)::before {
         float: $directionReverse;
         margin-#{$direction}: 5px;
@@ -9,6 +21,7 @@
         line-height: inherit;
     }
 
+    /*======== Dropdown List ========*/
     .dropdown-list {
         @extend %reset;
         position: absolute;
@@ -41,7 +54,7 @@
             border: 7px solid transparent;
             border-bottom-color: rgba(0, 0, 0, .20);
         }
-        //==== List item ====//
+        //==== Dropdown List item ====//
         li {
             font-size:0.875rem;
             font-weight: $medium-weight;

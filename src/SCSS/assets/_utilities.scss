@@ -1,9 +1,22 @@
-/*======== Global ========*/
+/**======> Referance By Comment <======
+ * ===> 01 - CSS Assets
+ * ===> 02 - Float Elements
+ * ===> 03 - Tooltips
+ * ===> 04 - Responsive Elements
+ * ===> 05 - Dynamic Bckgrounds
+ * ===> 06 - Sticky Elements
+ * ===> 07 - viewPort Animate
+ * ===> 08 - Margin Utilities
+ * ===> 09 - Padding Utilities
+ * ===> 10 - Section Utilities
+*/
+
+/*======== CSS Assets ========*/
 body {
     margin: 0;
     padding: 0;
     direction: $page-dir;
-    background: #F2F6FD;
+    background: #FFF;
     position: relative;
 }
 
@@ -20,20 +33,27 @@ hr {
     margin: 0.9375rem 0;
 }
 
+.no-padding {padding: 0;}
+
+.fluid,.block-lvl,.fluid-block {width: 100%;}
+
+.block-center {
+    display: block;
+    margin: auto;
+}
+
+.inline-block {display: inline-block;}
+
+/*======== Float Elements ========*/
+.float-start {float: $direction;}
+
+.float-end {float: $directionReverse;}
+
 .clear-after::after,.clear-fix {
     content: '';
     display: block;
     clear: both;
 }
-
-.view-status {visibility: hidden;}
-.view-status.view-active,.view-active{visibility: visible;}
-
-.no-padding {padding: 0;}
-.fluid,.block-lvl,.fluid-block {width: 100%;}
-
-.float-start {float: $direction;}
-.float-end {float: $directionReverse;}
 
 /*======== Tooltips ========*/
 [class*="tooltip"] {
@@ -186,6 +206,7 @@ hr {
     &> video {-o-object-fit: fill;object-fit: fill;}
 }
 
+/*======== Dynamic Bckgrounds ========*/
 [data-src] {
     display: block;
     background-size: cover;
@@ -194,6 +215,13 @@ hr {
     background-repeat: no-repeat;
 }
 
+.lazyloader {
+    object-fit: contain;
+    background-size: auto 100%;
+    background-color: #F1F2F3;
+}
+
+/*======== Sticky Elements ========*/
 [data-sticky="inner"].is-sticky {
     position: -webkit-sticky;
     position: sticky;
@@ -210,6 +238,7 @@ hr {
     }
 }
 
+/*======== viewPort Animate ========*/
 .view-status {
     visibility: hidden;
     -webkit-animation-fill-mode: both;
@@ -219,19 +248,10 @@ hr {
     &.view-active{ visibility: visible; }
 }
 
-/*======== CSS Assets ========*/
-.block-center {
-    display: block;
-    margin: auto;
-}
-
-.inline-block {display: inline-block;}
-
 /*==== Margin Utilities ====*/
 .mb30 {margin-bottom: 30px;}
 .mb10 {margin-bottom: 10px;}
 .mb15 {margin-bottom: 15px;}
-
 .mt30 {margin-top: 30px;}
 .mt10 {margin-top: 10px;}
 .mt15 {margin-top: 15px;}
@@ -243,7 +263,7 @@ hr {
 .pt50{padding-top:50px ;}
 .pt70{padding-top:70px ;}
 .pt100{padding-top:100px ;}
-
+/*==== .... ====*/
 .pb10{padding-bottom:10px ;}
 .pb15{padding-bottom:15px ;}
 .pb30{padding-bottom:30px ;}

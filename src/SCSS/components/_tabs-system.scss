@@ -1,7 +1,18 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Tabs Settings
+ * ===> 02 - Tabs Default Theme
+ * ===> 03 - Tabs Default Theme : Tabs Menu
+ * ===> 04 - Tabs Default Theme : Tabs Content 
+ * ===> 05 - Tabs Dialog Theme
+ * ===> 08 - Tabs Tabular Theme
+ * ===> 09 - Tabs Lined Theme
+*/
+
 /*======= Tabs Settings =======*/
 .tab-content{display: none;}
 .tab-content.active{display: block;}
 .tabs-menu{@extend %reset;}
+
 /*======= Tabs Defaultt Theme =======*/
 .tabs {
     /*======== Tabs Menu ========*/

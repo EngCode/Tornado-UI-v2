@@ -46,23 +46,23 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.react.js
 
 --------------------
-#### Changelog Update V2.1.5 React-It || 06/2020
-	#00 - [new] React Components for all UI Elements
-	#01 - [new] Seperate Icons Font CSS from Tornado CSS.
-	#02 - [update] NPM Packages Update.
-	#03 - [new] JS Event Date/Time Counter Down
-	#04 - [fix] TinySlider Grid/Row Fixer Function
-	#05 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
-	#06 - [new] images lazyloading js functionality added
-	#07 - [fix] JS Dynamic Page Direction for WP-Admin
-	#08 - [Deprecated] Remove Lined Theme Form
+#### Changelog Update V2.1.5 Super Tornado || 06/2020
+	#01 - [new] React Components for all UI Elements
+	#02 - [new] Convert all Javascript from Babel to Typescript
+	#03 - [new] Seperate Icons Font CSS from Tornado CSS.
+	#04 - [update] NPM Packages Update.
+	#05 - [new] JS Event Date/Time Counter Down
+	#06 - [fix] TinySlider Grid/Row Fixer Function
+	#07 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
+	#08 - [new] images lazyloading js functionality added
+	#09 - [fix] JS Dynamic Page Direction for WP-Admin
+	#10 - [Deprecated] Remove Lined Theme Form
+	#11 - [doc] LazyLoading Functionality
+	#12 - [new] CSS Variables for Design Options
 	#-- - [new] Form Validation In Realtime Upgrade
 	#-- - [new] Form Advanced Select With SlimSelect
 	#-- - [new] Form Advanced File Uploaders
 	#-- - [new] Form Advanced Checkboxes
-	#-- - [new] CSS Variables for Design Options
-	#-- - [doc] Tabs System Features
-	#-- - [doc] LazyLoading Functionality
 	#-- - [doc] Documenting React Components
 
 --------------------

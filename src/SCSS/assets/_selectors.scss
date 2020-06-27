@@ -1,4 +1,11 @@
-//==========  Global ==========//
+/**======> Referance By Comment <======
+ * ===> 01 - Assets Selectors
+ * ===> 02 - Transitions Effects
+ * ===> 03 - Absolute Positioning
+ * ===> 04 - Reverse zIndexing
+*/
+
+//========== Assets Selectors ==========//
 %reset{
     padding:0;
     margin:0;
@@ -84,16 +91,11 @@
             transform: translateX(0) translateY(0);
 }
 
-//========== Indexing ==========//
+//========== Reverse zIndexing ==========//
 %desc-index {
-    &:nth-child(1){z-index: 25;}
-    &:nth-child(2){z-index: 24;}
-    &:nth-child(3){z-index: 23;}
-    &:nth-child(4){z-index: 22;}
-    &:nth-child(5){z-index: 21;}
-    &:nth-child(6){z-index: 20;}
-    &:nth-child(7){z-index: 19;}
-    &:nth-child(8){z-index: 18;}
-    &:nth-child(9){z-index: 17;}
-    &:nth-child(10){z-index: 16;}
+    $newIndex : 25;
+    @for $index from 1 through 24 {
+        &:nth-child(#{$index}){z-index: $newIndex;}
+        $newIndex : $newIndex - 1;
+    }
 }

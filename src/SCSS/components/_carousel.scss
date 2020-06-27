@@ -1,6 +1,11 @@
-/*==== Carousel =====*/
-// Version: 2.9.2
+/**======> TinySlider Version: 2.9.2 Referance <======
+ * ===> 01 - Carousel
+ * ===> 02 - Fix a viewport issue in initialization
+ * ===> 03 - Detecting browser capability
+ * ===> 04 - Tiny Slider Fixs
+*/
 
+/*==== Carousel =====*/
 .tns-outer {
     padding: 0 !important; // remove padding: clientWidth = width + padding (0) = width
 
@@ -8,8 +13,7 @@
         display: none !important;
     }
 
-    [aria-controls],
-    [data-action] {
+    [aria-controls],[data-action] {
         cursor: pointer;
     }
 }

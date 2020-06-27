@@ -1,27 +1,21 @@
-@-ms-viewport {
-    width: device-width;
-}
+/**======> Referance <======
+ * ===> 01 - CSS Elements Reset
+ * ===> 02 - Standard Form Reset
+ * ===> 03 - Select Reset
+ * ===> 04 - Checkboxs and Radio Buttons Reset
+*/
 
-*,
-*:before,
-*:after {
+/*======== CSS Elements Reset ========*/
+@-ms-viewport {width: device-width;}
+
+*,*:before,*:after {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-article,
-aside,
-footer,
-header,
-nav,
-section,
-figcaption,
-figure,
-main {
-    display: block;
-}
+article,aside,footer,header,nav,section,figcaption,figure,main {display: block;}
 
-figure {margin: 1rem 2.5rem;}
+figure {margin:0;}
 
 hr,.hr {
     display: block;
@@ -42,14 +36,7 @@ a {
     color:$primary-color;
 }
 
-a,
-a:hover,
-a:focus,
-a:active,
-button,
-button:hover,
-button:focus,
-button:active {
+a,a:hover,a:focus,a:active,button,button:hover,button:focus,button:active {
     outline: 0 dotted rgba(0, 0, 0, 0);
 }
 
@@ -62,9 +49,7 @@ b,strong {
     font-weight: $strong-weight;
 }
 
-code,
-kbd,
-samp {
+code,kbd,samp {
     font-family: $secondary-font;
     font-size: 1rem;
 }
@@ -82,8 +67,7 @@ small {
     font-size: 0.8rem;
 }
 
-sub,
-sup {
+sub,sup {
     font-size: 0.75rem;
     line-height: 0;
     position: relative;
@@ -98,8 +82,7 @@ sup {
     top: -0.5rem;
 }
 
-audio,
-video {
+audio,video {
     display: inline-block;
 }
 
@@ -120,20 +103,15 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-button,
-input {
+button,input {
     overflow: visible;
 }
 
-button,
-select {
+button,select {
     text-transform: none;
 }
 
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
+button,html [type="button"],[type="reset"],[type="submit"] {
     -webkit-appearance: button;
 }
 

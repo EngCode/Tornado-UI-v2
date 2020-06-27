@@ -1,15 +1,31 @@
-/*======= Accordions =======*/
+/**======> Referance By Comment <======
+ * ===> Accordion List
+ * ======> Accordion Item
+ * ======> Accordion Title
+ * ======> Title Arrow || Plus
+ * ======> unActive Mode
+ * ======> Active Mode
+ * ======> Torando Theme
+ * =========> Accordion Item
+ * =========> Accordion Title
+ * =========> Title Arrow || Plus
+ * =========> Items Divider
+ * =========> Active Mode
+*/
+
+/*======= Accordion List =======*/
 .accordion {
     @extend %reset;
     margin-bottom: 1.875rem;
+    /*======== Accordion Item ========*/
     .accordion-item {
         font-size:0.875rem;
-        /*======== Accordion List ========*/
+        /*======== Accordion Title ========*/
         .accordion-title{
             font-size:1rem;
             line-height:2.2;
             cursor: pointer;
-            /*======== Button Arrow || Plus ========*/
+            /*======== Title Arrow || Plus ========*/
             &::before {
                 font-size:0.6875rem;
                 margin-#{$directionReverse}:5px;
@@ -25,7 +41,7 @@
                 }
             }
         }
-        /*======== Accordion ========*/
+        /*======== unActive Mode ========*/
         &:not(.active) .accordion-content {display: none;}
         /*==== Active Mode ====*/
         &.active {
@@ -50,7 +66,7 @@
                 font-size:0.9375rem;
                 line-height:2.875rem;
                 border-bottom: 1px solid rgba(0,0,0,0.10);
-                /*======== Button Arrow || Plus ========*/
+                /*======== Title Arrow || Plus ========*/
                 &::before{
                     float:$directionReverse;
                     line-height:2.875rem;

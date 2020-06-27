@@ -1,3 +1,14 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Default Modals
+ * ===> 02 - Default Modals : Base
+ * ===> 03 - Default Modals : Activate
+ * ===> 04 - Default Modals : Overlay
+ * ===> 05 - Default Modals : Content Box
+ * ===> 06 - Call to Action Theme
+ * ===> 07 - Call to Action : CTA Content
+ * ===> 07 - Call to Action : Colors Style
+*/
+
 /*===== Default Modals =====*/
 .modal-box {
     //==== Base ===//
@@ -77,6 +88,7 @@
 
 /*======== Call to Action Theme ========*/
 .cta-modal {
+    /*======== CTA Content ========*/
     .modal-content {
         padding:1.875rem;
         text-align: center;
@@ -120,33 +132,34 @@
             padding:0;
         }
     }
-    /* Dark background style */
+
+    /*======== Colors Style : Dark ========*/
     &.dark .modal-content{background:$dark-color;color:$light-color;
         /* Dismissal Button Style Reverse */
         .close-modal:not(.btn){color:$light-color;}
     } 
-    /* Success background Style */
+    /*======== Colors Style : Success ========*/
     &.success .modal-content {
         background: $success-color;
         color: $reverse-color;
         .close-modal:not(.btn){color:$reverse-color;}
     }
 
-    /* Danger and Error background Style */
+    /*======== Colors Style : Danger ========*/
     &.danger .modal-content {
         background: $danger-color;
         color: $reverse-color;
         .close-modal:not(.btn){color:$reverse-color;}
     }
 
-    /* Warning background Style */
+    /*======== Colors Style : Warning ========*/
     &.warning .modal-content {
         background: $warning-color;
         color: $reverse-color;
         .close-modal:not(.btn){color:$reverse-color;}
     }
 
-    /* information background style */
+    /*======== Colors Style : information ========*/
     &.info .modal-content {
         background: $info-color;
         color: $reverse-color;

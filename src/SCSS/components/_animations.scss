@@ -1,3 +1,18 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Dropdowns Animation
+ * ===> 02 - Spining Animations
+ * ===> 03 - Shaking Animations
+ * ===> 04 - Fading Animations
+ * ===> 05 - Bounce Animations
+ * ===> 06 - Flashing Animations
+ * ===> 07 - Pulse Animations
+ * ===> 08 - Rubber Band Animations
+ * ===> 09 - Jello Animations
+ * ===> 10 - Filppers Animations
+ * ===> 11 - Zoom Animations
+ * ===> 12 - Jack In The Box
+*/
+
 /*======== Dropdowns Animation ========*/
 @-webkit-keyframes dropOpen {
     0% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
@@ -19,17 +34,18 @@
     100% {opacity: 0;-webkit-transform: translate3d(0, 10%, 0);transform: translate3d(0, 10%, 0);}
 }
 
-/*======== Other Animations ========*/
+/*======== Spining Animations ========*/
 @-webkit-keyframes spin {
     from {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
     to {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
 }
+
 @keyframes spin {
     from {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
     to {-webkit-transform:rotate(360deg);transform:rotate(360deg);}
 }
 
-/*======== Shaking ========*/
+/*======== Shaking Animations ========*/
 @-webkit-keyframes shake {
     from,to {
         -webkit-transform: translate3d(0, 0, 0);

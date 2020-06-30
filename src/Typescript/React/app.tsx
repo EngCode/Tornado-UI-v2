@@ -2,18 +2,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 /*======> Tornado TS Modules <======*/
-import Tornado from '../Typescript/Tornado';
-// import '../Typescript/Utilities';        //======> Import Utilities
-// import '../Typescript/Responsive-Menus'; //======> Navigation Menu Component
-// import '../Typescript/Nested-Menus';     //======> Nested Menu Component
-// import '../Typescript/Dropdowns';        //======> Dropdowns Component
-// import '../Typescript/Forms';            //======> Form UI Component
-// import '../Typescript/Modals';           //======> Popup UI Component
-// import '../Typescript/Accordion';        //======> Accordion UI Component
-// import '../Typescript/Tabs';             //======> Tabs System UI Component
-// import '../Typescript/app';              //======> Custom Script
+import Tornado from '.././tornado/Tornado';
 /*======> Tornado React Grid <======*/
-import {Container, Row, Column} from './ui-baisc/grid_system';
+import {Container, Row, Column} from './Components/Grid-System';
 
 /*=======> App Component <=======*/
 class TornadoApp extends React.Component {
@@ -22,7 +13,7 @@ class TornadoApp extends React.Component {
         /*====> App Render Content <====*/
         return (
             <Container size="large" nameit="pt50">
-                <h1>Hi! From TSX Tornado React</h1>
+                <h1>Hi! From TSX With Tornado React</h1>
                 {/*====> Row Component <====*/}
                 <Row>
                     <Column nameit="tx-align-center">Column Component 12</Column>

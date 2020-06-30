@@ -655,7 +655,7 @@ const Tornado = {
 
 export default Tornado;
 //======> TinySlider <=======//
-import { tns } from "../../node_modules/tiny-slider/src/tiny-slider";
+import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 //======> Import Utilities <=======//
 import './Utilities';
 //======> Navigation Menu Component <=======//
@@ -673,4 +673,4 @@ import './Accordion';
 //======> Tabs System UI Component <=======//
 import './Tabs';
 //======> Custom Script <=======//
-import './app';
+import '../app';

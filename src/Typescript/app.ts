@@ -1,2 +1,3 @@
 //======> Import Tornado UI Helpers <=======//
-import Tornado from './Tornado';
+import './tornado/Tornado';
+import Tornado from './Tornado/Tornado';

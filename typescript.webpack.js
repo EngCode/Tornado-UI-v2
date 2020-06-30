@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: "production",
-    entry: path.join(__dirname, '/src/Typescript/Tornado.ts'),
+    entry: path.join(__dirname, '/src/Typescript/app.ts'),
     devtool: "source-map",
     output: {
         filename: 'tornado.min.js',

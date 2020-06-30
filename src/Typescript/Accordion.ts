@@ -1,5 +1,5 @@
 //======> Import Tornado UI Helpers <=======//
-import {Tornado as tui, Tornado} from './Tornado';
+import Tornado from './Tornado';
 
 /**======> Referance By Comment <======
  * ===> 01 - Tornado Accordions
@@ -9,7 +9,7 @@ import {Tornado as tui, Tornado} from './Tornado';
 /*==== Tornado Accordion ====*/
 export const tornadoAccordion = options => {
     //======> Accordion Trigger <======//
-    var accordionButton = tui.getElements(options.panelButton || '.accordion-title');
+    var accordionButton = Tornado.getElements(options.panelButton || '.accordion-title');
     Array.from(accordionButton).forEach(element => {
         element.addEventListener('click', event => {
             event.preventDefault();
@@ -48,4 +48,3 @@ export const tornadoAccordion = options => {
 }
 
 document.addEventListener('DOMContentLoaded', tornadoAccordion);
-

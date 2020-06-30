@@ -1,5 +1,5 @@
 //======> Import Tornado UI Helpers <=======//
-import {Tornado as tui, Tornado} from './Tornado';
+import Tornado from './Tornado';
 
 /**======> Referance By Comment <======
  * ===> 01 - Nested Multi Level Menu
@@ -7,7 +7,7 @@ import {Tornado as tui, Tornado} from './Tornado';
 
 /*==== Nested Multi Level Menu ====*/
 export const nestedMenu = options => {
-    var SubMenuList = tui.getElements('.nested-menu ul > li > ul');
+    var SubMenuList = Tornado.getElements('.nested-menu ul > li > ul');
     Array.from(SubMenuList).forEach(function (SubMenuList) {
         //===> Catch SubMenu Button <===//
         var SubMenuBtn = Tornado.getPrevSibling({element:SubMenuList, filter:'a'});

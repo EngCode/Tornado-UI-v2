@@ -14,7 +14,7 @@
 */
 
 //======> Tornado Methods Object <=======//
-export const Tornado = {
+const Tornado = {
     /**======> Referance By Comment <======
      * ===> 01 - get Element
      * ===> 02 - get Elements
@@ -653,6 +653,7 @@ export const Tornado = {
     }
 };
 
+export default Tornado;
 //======> TinySlider <=======//
 import { tns } from "../../node_modules/tiny-slider/src/tiny-slider";
 //======> Import Utilities <=======//

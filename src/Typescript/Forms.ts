@@ -1,5 +1,5 @@
 //======> Import Tornado UI Helpers <=======//
-import {Tornado as tui, Tornado} from './Tornado';
+import Tornado from './Tornado';
 
 /**======> Referance By Comment <======
  * ===> 01 - Tornado Forms Assets
@@ -12,7 +12,7 @@ import {Tornado as tui, Tornado} from './Tornado';
 /*==== Tornado Forms Assets ====*/
 export const tornadoForms = options => {
     //=====> Controls Placeholder <=====//
-    var placeholders = tui.getElements('[placeholder]');
+    var placeholders = Tornado.getElements('[placeholder]');
     Array.from(placeholders).forEach(function (placeholder) {
         var placeholderCurrent = placeholder.getAttribute('placeholder');
         //====> When Focus In Empty Placeholder <===//
@@ -26,7 +26,7 @@ export const tornadoForms = options => {
     });
 
     //=====> File Uploader <=====//
-    var fileUploaders = tui.getElements('.file-input input[type="file"]');
+    var fileUploaders = Tornado.getElements('.file-input input[type="file"]');
     Array.from(fileUploaders).forEach(function (fileUploader) {
         //====> When Value Change <===//
         fileUploader.addEventListener('change', function () {
@@ -41,7 +41,7 @@ export const tornadoForms = options => {
     });
 
     //=====> Progress Bars <=====//
-    var progressBars = tui.getElements('.progress-bar');
+    var progressBars = Tornado.getElements('.progress-bar');
     Array.from(progressBars).forEach(function (progressBar) {
         var progressValue = progressBar.getAttribute('data-value');
         //===> If Page Direction is Left to Right <===//
@@ -56,7 +56,7 @@ export const tornadoForms = options => {
     });
 
     //======> Validation <======//
-    var formElement = tui.getElements('form');
+    var formElement = Tornado.getElements('form');
     Array.from(formElement).forEach(function(formElement) {
         if (!formElement.matches('.no-vali')) {
             formElement.addEventListener('submit', function(e) {

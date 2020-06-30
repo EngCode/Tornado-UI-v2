@@ -1,5 +1,5 @@
 //======> Import Tornado UI Helpers <=======//
-import {Tornado as tui, Tornado} from './Tornado';
+import Tornado from './Tornado';
 
 /**======> Referance By Comment <======
  * ===> 01 - Responsive Navigation Menu
@@ -15,7 +15,7 @@ export const navMenu = options => {
     if(!options.wraper) options.wraper = ".navigation-menu";
 
     /*==== Create a Clone from The Menu ====*/
-    var navMenus = tui.getElements(options.wraper);
+    var navMenus = Tornado.getElements(options.wraper);
     Array.from(navMenus).forEach(navMenus => {
         //===> Get Menu ID <===//
         var MenuID = options.MenuID || navMenus.getAttribute('data-id'),
@@ -46,12 +46,12 @@ export const navMenu = options => {
             //===> Get Logo URL <===//
             var logo = navMenus.getAttribute('data-logo');
             //===> Create Logo Elements <===//
-            tui.getElement('#' + MenuID + ' .menu-content').innerHTML = '<div class="logo"> <img src="' + logo + '" alt="logo"> </div>';
+            Tornado.getElement('#' + MenuID + ' .menu-content').innerHTML = '<div class="logo"> <img src="' + logo + '" alt="logo"> </div>';
         }
 
         //===> Copy the List <===//
         var MenuCopy = MenuList[0].cloneNode(true);
-        tui.getElement('#' + MenuID + ' .menu-content').appendChild(MenuCopy);
+        Tornado.getElement('#' + MenuID + ' .menu-content').appendChild(MenuCopy);
 
         //===> Mega Menu Width Hack <===//
         var Megamenu = navMenus.querySelectorAll('.megamenu');
@@ -61,17 +61,17 @@ export const navMenu = options => {
     });
 
     /*===> Navigation Mobile Menu Toggle Button <===*/
-    var MobMenuToggle = tui.getElements('.menu-btn[data-id]');
+    var MobMenuToggle = Tornado.getElements('.menu-btn[data-id]');
     Array.from(MobMenuToggle).forEach(MobMenuToggle => {
         Tornado.liveEvent(MobMenuToggle, 'click', event => {
             event.preventDefault();
             var TargetID = MobMenuToggle.getAttribute('data-id');
-            tui.getElement('#' + TargetID).classList.toggle('active');
+            Tornado.getElement('#' + TargetID).classList.toggle('active');
         });
     });
 
     /*===> Navigation Mobile Menu Overlay Close <===*/
-    var OverlayButton = tui.getElements('.mobile-menu .overlay-close');
+    var OverlayButton = Tornado.getElements('.mobile-menu .overlay-close');
     Array.from(OverlayButton).forEach(function (OverlayButton) {
         OverlayButton.addEventListener('click', function (event) {
             event.preventDefault();
@@ -80,7 +80,7 @@ export const navMenu = options => {
     });
 
     /*===> Mobile Menu Submenus Toggle <===*/
-    var dropdownMob = tui.getElements('.mobile-menu .dropdown-toggle,.mobile-menu .dropdown-item > a');
+    var dropdownMob = Tornado.getElements('.mobile-menu .dropdown-toggle,.mobile-menu .dropdown-item > a');
     Array.from(dropdownMob).forEach(function (dropdownMob) {
         dropdownMob.addEventListener('click', function (event) {
             event.preventDefault();

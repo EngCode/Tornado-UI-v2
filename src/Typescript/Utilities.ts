@@ -1,5 +1,5 @@
 //======> Import Tornado UI Helpers <=======//
-import {Tornado as tui, Tornado} from './Tornado';
+import Tornado from './Tornado';
 
 /**======> Referance By Comment <======
  * ===> 01 - Item Remover
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //=== Get Target ID ===//
             var target = thisButton.getAttribute('data-target');
             //=== Remove the Target ===//
-            tui.getElement('#' + target).remove();
+            Tornado.getElement('#' + target).remove();
         } else if (thisButton.hasAttribute('data-tag')) {
             //=== Get the Targeted HTML Tag ===//
             var parentTag = thisButton.getAttribute('data-closest');
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //======> Responsive Tooltips <======//
     (function responsiveTooltips() {
         //======> Responsive X Tooltip <======//
-        var tooltipX = tui.getElements('.tooltip-start.tooltip-responsive,.tooltip-end.tooltip-responsive');
+        var tooltipX = Tornado.getElements('.tooltip-start.tooltip-responsive,.tooltip-end.tooltip-responsive');
         Array.from(tooltipX).forEach(function (tooltipX) {
             var startTip = tooltipX.offsetLeft,
                 endTip = window.innerWidth - tooltipX.getBoundingClientRect().right; // tooltipX.offsetLeft + tooltipX.offsetWidth;
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         //======> Responsive Top Tooltip <======//
-        var tooltipTop = tui.getElements('.tooltip.tooltip-responsive');
+        var tooltipTop = Tornado.getElements('.tooltip.tooltip-responsive');
         Array.from(tooltipTop).forEach(function (tooltipTop) {
             var topTip = tooltipTop.offsetTop;
             if (topTip <= 50) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         //======> Responsive Bottom Tooltip <======//
-        var tooltipBottom = tui.getElements('.tooltip-bottom.tooltip-responsive');
+        var tooltipBottom = Tornado.getElements('.tooltip-bottom.tooltip-responsive');
         Array.from(tooltipBottom).forEach(function (tooltipBottom) {
             var bottomTip = tooltipBottom.offsetTop + tooltipBottom.offsetHeight;
             if (bottomTip <= 50) {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //======> Animated Counters <======//
     (function animatedCounter() {
-        var counterElements = tui.getElements('[data-counter]');
+        var counterElements = Tornado.getElements('[data-counter]');
         Array.from(counterElements).forEach(element => {
             function animateNumbers () {
                 if (Tornado.inView(element)) {
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //======> ViewPort Detactor <======//
     (function ViewPortDetactor () {
-        var viewportElements = tui.getElements('.view-status');
+        var viewportElements = Tornado.getElements('.view-status');
         Array.from(viewportElements).forEach(function (element) {
             var animName = element.getAttribute('data-animation'),
                 animDelay = element.getAttribute('data-delay') || 0,
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //====> Fix Grid Tiny Slider <====//
     (function fixTnsGrid() {
         window.addEventListener('load', event => {
-            var gridTns = tui.getElements('.tns-slider.row');
+            var gridTns = Tornado.getElements('.tns-slider.row');
             Array.from(gridTns).forEach(function (gridTns){
                 gridTns.closest('.tns-outer').classList.add('grid-tns');
             });

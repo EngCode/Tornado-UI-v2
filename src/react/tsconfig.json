@@ -4,6 +4,7 @@
         "target": "es5",
         "sourceMap": true,
         "noImplicitAny": false,
+        "jsx": "react",
         "alwaysStrict":true,
     },
     "exclude": [

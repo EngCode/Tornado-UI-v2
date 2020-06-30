@@ -124,7 +124,7 @@
 /*==== Gutters ====*/
 .no-gutter{
     margin:0 0;
-    [class*="col-"],[class*="box-"] {
+    > [class*="col-"],> [class*="box-"] {
         padding:0 0;
     }
 } // Decrease Columns Gutter To 0 

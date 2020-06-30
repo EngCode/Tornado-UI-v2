@@ -6,8 +6,5 @@
         "noImplicitAny": false,
         "alwaysStrict":true,
     },
-    "exclude": [
-        "node_modules",
-        "React",
-    ]
+    "exclude": ["React"]
 }

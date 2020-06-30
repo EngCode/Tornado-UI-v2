@@ -1,10 +1,11 @@
 /*======> React Modules <======*/
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-/*======> Tornado TS Modules <======*/
+
+/*======> Tornado UI JS/TS Modules <======*/
 import Tornado from '.././tornado/Tornado';
 /*======> Tornado React Grid <======*/
-import {Container, Row, Column} from './Components/Grid-System';
+import * as Grid from './Tornado-UI/Grid';
 
 /*=======> App Component <=======*/
 class TornadoApp extends React.Component {
@@ -12,14 +13,14 @@ class TornadoApp extends React.Component {
     render() {
         /*====> App Render Content <====*/
         return (
-            <Container size="large" nameit="pt50">
+            <Grid.Container size="large" nameit="pt50">
                 <h1>Hi! From TSX With Tornado React</h1>
                 {/*====> Row Component <====*/}
-                <Row>
-                    <Column nameit="tx-align-center">Column Component 12</Column>
-                </Row>
+                <Grid.Row>
+                    <Grid.Column nameit="tx-align-center">Column Component 12</Grid.Column>
+                </Grid.Row>
                 {/*====> // Row Component <====*/}
-            </Container>
+            </Grid.Container>
         );
     }
 }

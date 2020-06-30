@@ -3,8 +3,8 @@ import * as React from "react";
 
 /*=======> Grid Container <=======*/
 type ContainerProps = {
-    size?: '',
-    nameit?: ''
+    size?: string,
+    nameit?: string
 }
 
 export class Container extends React.Component<{size,nameit}, ContainerProps> {
@@ -34,21 +34,45 @@ export class Container extends React.Component<{size,nameit}, ContainerProps> {
 
 /*=======> Grid Row <=======*/
 type RowProps = {
-    nameit?: '',
-    direction?: '',
-    gutter?: '',
-    alignX?: '',
-    alignY?: ''
+    nameit?: string,
+    direction?: string,
+    gutter?: any,
+    alignX?: string,
+    alignY?: string,
+    gridType?: string,
+    columns?: string,
+    columnsSmall?: string,
+    columnsMedium?: string,
+    columnsLarge?: string,
+    columnsxLarge?: string
 }
 
-export class Row extends React.Component<{nameit,direction,gutter,alignX,alignY}, RowProps> {
+export class Row extends React.Component < {
+        nameit,
+        direction,
+        gutter,
+        alignX,
+        alignY,
+        gridType,
+        columns,
+        columnsSmall,
+        columnsMedium,
+        columnsLarge,
+        columnsxLarge
+    }, RowProps > {
     /*======> Default Options <======*/
     static defaultProps = {
         nameit: '',
         direction: '',
         gutter: '',
         alignX: '',
-        alignY: ''
+        alignY: '',
+        gridType: '',
+        columns: '',
+        columnsSmall: '',
+        columnsMedium: '',
+        columnsLarge: '',
+        columnsxLarge: '',
     }
     /*======> Render Function <======*/
     render() {
@@ -81,9 +105,36 @@ export class Row extends React.Component<{nameit,direction,gutter,alignX,alignY}
         if (this.props.alignY === 'center')  alignY_value = ' align-center-y';
         if (this.props.alignY === 'end')     alignY_value = ' align-end-y';
 
+        /*===> Define Row Types <===*/
+        var rowType = 'row' + direction_value + gutter_value + alignX_value + alignY_value + classes_value;
+        if (this.props.gridType === 'masonry') {
+            /*===> Get Columns Number <===*/
+            var columns_value = '';
+            if (this.props.columns) columns_value =`masonry-${this.props.columns}x1`;
+
+            /*===> Get Columns Number in Small Screens <===*/
+            var columnsSmall_value = '';
+            if (this.props.columnsSmall) columnsSmall_value =` masonry-s-${this.props.columnsSmall}x1`;
+
+            /*===> Get Columns Number in Medium Screens <===*/
+            var columnsMedium_value = '';
+            if (this.props.columnsMedium) columnsMedium_value =` masonry-m-${this.props.columnsMedium}x1`;
+
+            /*===> Get Columns Number in Large Screens <===*/
+            var columnsLarge_value = '';
+            if (this.props.columnsLarge) columnsLarge_value =` masonry-l-${this.props.columnsLarge}x1`;
+
+            /*===> Get Columns Number in xLarge Screens <===*/
+            var columnsxLarge_value = '';
+            if (this.props.columnsxLarge) columnsxLarge_value =` masonry-xl-${this.props.columnsxLarge}x1`
+
+            /*===> Get Columns Number <===*/
+            return rowType = columns_value + columnsSmall_value + columnsMedium_value + columnsLarge_value + columnsxLarge_value + classes_value;
+        }
+
         /*====> Render Content <====*/
         return (
-            <div className={'row' + direction_value + gutter_value + alignX_value + alignY_value + classes_value}>
+            <div className={rowType}>
                 {this.props.children}
             </div>
         );
@@ -92,12 +143,12 @@ export class Row extends React.Component<{nameit,direction,gutter,alignX,alignY}
 
 /*=======> Grid Columns <=======*/
 type ColumnProps = {
-    nameit?: '',
-    size? :'',
-    small?: '',
-    medium?: '',
-    large?: '',
-    xlarge?: '',
+    nameit?: string,
+    size? :string,
+    small?: string,
+    medium?: string,
+    large?: string,
+    xlarge?: string,
 }
 
 export class Column extends React.Component<{nameit,size,small,medium,large,xlarge}, ColumnProps> {

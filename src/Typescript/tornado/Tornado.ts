@@ -83,10 +83,7 @@ const Tornado = {
                     selector.addEventListener(event, func);
                 } else {
                     //==== Selector ====//
-                    var elements = Tornado.getElements(selector);
-                    elements.forEach(function (element) {
-                        element.addEventListener(event, func);
-                    });
+                    Tornado.getElements(selector).forEach(element => element.addEventListener(event, func));
                 }
             }, 500);
         }
@@ -103,9 +100,8 @@ const Tornado = {
                 }
             }
         } else {
-            var elements = Tornado.getElements(element),
-                result;
-            elements.forEach(element => {
+            var result;
+            Tornado.getElements(element).forEach(element => {
                 for (let i = 0; element && element !== document; element = element.parentNode) {
                     if (element.matches(filter)) {
                         result = element;
@@ -122,11 +118,8 @@ const Tornado = {
         /*== Get all siblings of ==> element @param {Node} ==> @return {Array} The siblings ==*/
         if (options.element !== null) {
             return Array.prototype.filter.call(options.element.parentNode.children, sibling => {
-                if(!options.filter) {
-                    return sibling !== options.element;
-                } else if(sibling.matches(options.filter)) {
-                    return sibling;
-                }
+                if(!options.filter) return sibling !== options.element;
+                if(sibling.matches(options.filter)) return sibling;
             });
         }
     },
@@ -204,9 +197,7 @@ const Tornado = {
             elementString = range.createContextualFragment(element);
         }
         //===> Insert the Element After the Target <====//
-        if (reference !== null) {
-            reference.parentNode.insertBefore(elementString, reference.nextSibling);
-        }
+        reference?.parentNode.insertBefore(elementString, reference.nextSibling);
     },
 
     //======> Insert Before <=======//
@@ -218,9 +209,7 @@ const Tornado = {
             elementString = range.createContextualFragment(element);
         }
         //===> Insert the Element After the Target <====//
-        if (reference !== null) {
-            reference.parentNode.insertBefore(elementString, reference);
-        }
+        reference?.parentNode.insertBefore(elementString, reference);
     },
 
     //======> Append HTML <=======//
@@ -417,8 +406,7 @@ const Tornado = {
     //======> Set Background <======//
     "setBackground" : (selector,lazy) => {
         //======> Get Elements <=====//
-        var backgroundElement = Tornado.getElements(selector || '[data-src]');
-        Array.from(backgroundElement).forEach(function (element) {
+        Tornado.getElements(selector || '[data-src]').forEach(element => {
             //====> Lazyloader Set <====//
             if (lazy) {
                 element.classList.add('lazyloader');
@@ -468,8 +456,7 @@ const Tornado = {
     //======> Images LazyLoading <======//
     "lazyLoading" : (selector) => {
         //========> LazyLoading <========//
-        var lazyloadElements = Tornado.getElements(selector || '[data-lazyload]');
-        Array.from(lazyloadElements).forEach(element => {
+        Tornado.getElements(selector || '[data-lazyload]').forEach(element => {
             //====> Default Loader <====//
             element.setAttribute('src', "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBzdHlsZT0ibWFyZ2luOiBhdXRvOyBiYWNrZ3JvdW5kOiByZ2JhKDAsIDAsIDAsIDApIG5vbmUgcmVwZWF0IHNjcm9sbCAwJSAwJTsgZGlzcGxheTogYmxvY2s7IHNoYXBlLXJlbmRlcmluZzogYXV0bzsiIHdpZHRoPSIyMDBweCIgaGVpZ2h0PSIyMDBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4KPGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZGNkY2RjIiBzdHJva2Utd2lkdGg9IjMiIHI9IjE4IiBzdHJva2UtZGFzaGFycmF5PSI4NC44MjMwMDE2NDY5MjQ0MSAzMC4yNzQzMzM4ODIzMDgxMzgiPgogIDxhbmltYXRlVHJhbnNmb3JtIGF0dHJpYnV0ZU5hbWU9InRyYW5zZm9ybSIgdHlwZT0icm90YXRlIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgZHVyPSIxcyIgdmFsdWVzPSIwIDUwIDUwOzM2MCA1MCA1MCIga2V5VGltZXM9IjA7MSI+PC9hbmltYXRlVHJhbnNmb3JtPgo8L2NpcmNsZT4KPCEtLSBbbGRpb10gZ2VuZXJhdGVkIGJ5IGh0dHBzOi8vbG9hZGluZy5pby8gLS0+PC9zdmc+");
             //====> Set Media Method <====//
@@ -506,8 +493,7 @@ const Tornado = {
 
     //======> Sticky Elements <======//
     "sticky" : (selector) => {
-        var stickyElement = Tornado.getElements(selector || '[data-sticky]');
-        Array.from(stickyElement).forEach(element => {
+        Tornado.getElements(selector || '[data-sticky]').forEach(element => {
             //=== Calculate Offset ===//
             var elementTop = element.offsetTop;
             //=== On Window Scroll ===//
@@ -536,8 +522,7 @@ const Tornado = {
 
     //======> Smoth Scroll <======//
     "smothScroll" : (options) => {
-        var elements = Tornado.getElements(options.selector || '.smoth-scroll');
-        Array.from(elements).forEach(element => {
+        Tornado.getElements(options.selector || '.smoth-scroll').forEach(element => {
             element.addEventListener('click', event => {
                 event.preventDefault();
 
@@ -567,7 +552,7 @@ const Tornado = {
     "scrollSpy" : (options) => {
         //====> Scroll Spy Elements <====//
         var elements = Tornado.getElements(options.selector || '.scrollspy [href]' || '.scrollspy [data-target]');
-        Array.from(elements).forEach(element => {
+        elements.forEach(element => {
             Tornado.smothScroll({
                 element:element,
                 duration:options.duration,
@@ -614,8 +599,7 @@ const Tornado = {
     //=====> Event Date Counter <=====//
     "dateCounter" : (options) => {
         //====== Get Element and its Data =======//
-        var timerWrapers = Tornado.getElements(options.selector || '.date-counter');
-        Array.from(timerWrapers).forEach(timerWraper=>{
+        Tornado.getElements(options.selector || '.date-counter').forEach(timerWraper => {
             var timerSeconds  = timerWraper.querySelector('.seconds'),
                 timerMinutes  = timerWraper.querySelector('.minutes'),
                 timerHours    = timerWraper.querySelector('.hours'),

@@ -8,7 +8,7 @@ import Tornado from './Tornado';
 /*==== Tornado Tabs System ====*/
 export const tabsSystem = options => {
     //=== Activate First tab and its Content Box
-    Tornado.getElements('.tabs-menu [data-tab]:first-of-type,.tab-content:first-of-type').forEach(function (elements) {
+    Tornado.getElements('.tabs-menu [data-tab]:first-of-type,.tab-content:first-of-type').forEach(elements => {
         //==== Open the Tab Panel by URL HashTag ====//
         if (elements.hasAttribute('data-active-url')) {
             var urlHash = window.location.hash.substr(1),
@@ -23,9 +23,8 @@ export const tabsSystem = options => {
         }
     });
     //=== When Click on Tab
-    var tabsBtns = Tornado.getElements('.tabs-menu [data-tab]');
-    Array.from(tabsBtns).forEach(function (thisElement) {
-        thisElement.addEventListener('click', function () {
+    Tornado.getElements('.tabs-menu [data-tab]').forEach(thisElement => {
+        thisElement.addEventListener('click', event => {
             //==== Store the Tab ID and this Element
             var getPanelId = thisElement.getAttribute('data-tab'),
                 targtedPanel = Tornado.getElement('#' + getPanelId);
@@ -34,15 +33,11 @@ export const tabsSystem = options => {
             //==== Activate Clicked Tab
             thisElement.classList.add('active');
             //=== Remove Active Class From Siblings
-            Tornado.getSiblings({element:thisElement}).forEach(function (siblings) {
-                siblings.classList.remove('active');
-            });
+            Tornado.getSiblings({element:thisElement}).forEach(siblings => siblings.classList.remove('active'));
             //==== Activate Tab Content
             targtedPanel.classList.add('active');
             //=== Remove Active Class From Siblings
-            Tornado.getSiblings({element:targtedPanel}).forEach(function (siblings) {
-                siblings.classList.remove('active');
-            });
+            Tornado.getSiblings({element:targtedPanel}).forEach(siblings => siblings.classList.remove('active'));
             //==== Call Back Function After Opens the Panel ====//
             if (options.callClose) options.callClose;
         });

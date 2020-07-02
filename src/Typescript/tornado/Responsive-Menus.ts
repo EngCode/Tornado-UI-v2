@@ -15,8 +15,7 @@ export const navMenu = options => {
     if(!options.wraper) options.wraper = ".navigation-menu";
 
     /*==== Create a Clone from The Menu ====*/
-    var navMenus = Tornado.getElements(options.wraper);
-    Array.from(navMenus).forEach(navMenus => {
+    Tornado.getElements(options.wraper).forEach(navMenus => {
         //===> Get Menu ID <===//
         var MenuID = options.MenuID || navMenus.getAttribute('data-id'),
             //===> Get the Menu List Elements <===//
@@ -30,8 +29,7 @@ export const navMenu = options => {
         document.body.insertAdjacentHTML('beforeend', `<div class="mobile-menu ${mobileClass}" id="${MenuID}">${MenuElements}</div>`);
 
         //===> Marking Dropdown Sub Menus <===//
-        var SubMenu = navMenus.querySelectorAll('li ul,li .megamenu');
-        Array.from(SubMenu).forEach((SubMenu:any) => {
+        navMenus.querySelectorAll('li ul,li .megamenu').forEach(SubMenu => {
             SubMenu.parentNode.classList.add('dropdown-item');
             //===> Create Dropdown Toggle Button <===//
             var dropDownBtn = document.createElement('a');
@@ -54,15 +52,13 @@ export const navMenu = options => {
         Tornado.getElement('#' + MenuID + ' .menu-content').appendChild(MenuCopy);
 
         //===> Mega Menu Width Hack <===//
-        var Megamenu = navMenus.querySelectorAll('.megamenu');
-        Array.from(Megamenu).forEach((Megamenu:any) => {
+        navMenus.querySelectorAll('.megamenu').forEach(Megamenu => {
             Megamenu.parentNode.style.postion = 'static';
         });
     });
 
     /*===> Navigation Mobile Menu Toggle Button <===*/
-    var MobMenuToggle = Tornado.getElements('.menu-btn[data-id]');
-    Array.from(MobMenuToggle).forEach(MobMenuToggle => {
+    Tornado.getElements('.menu-btn[data-id]').forEach(MobMenuToggle => {
         Tornado.liveEvent(MobMenuToggle, 'click', event => {
             event.preventDefault();
             var TargetID = MobMenuToggle.getAttribute('data-id');
@@ -71,9 +67,8 @@ export const navMenu = options => {
     });
 
     /*===> Navigation Mobile Menu Overlay Close <===*/
-    var OverlayButton = Tornado.getElements('.mobile-menu .overlay-close');
-    Array.from(OverlayButton).forEach(function (OverlayButton) {
-        OverlayButton.addEventListener('click', function (event) {
+    Tornado.getElements('.mobile-menu .overlay-close').forEach(OverlayButton => {
+        OverlayButton.addEventListener('click', event => {
             event.preventDefault();
             OverlayButton.parentNode.classList.remove('active');
         });
@@ -81,8 +76,8 @@ export const navMenu = options => {
 
     /*===> Mobile Menu Submenus Toggle <===*/
     var dropdownMob = Tornado.getElements('.mobile-menu .dropdown-toggle,.mobile-menu .dropdown-item > a');
-    Array.from(dropdownMob).forEach(function (dropdownMob) {
-        dropdownMob.addEventListener('click', function (event) {
+    dropdownMob.forEach(dropdownMob => {
+        dropdownMob.addEventListener('click', event => {
             event.preventDefault();
             //====> Detacte Effect Theme <====//
             var MobileMen = dropdownMob.closest('.mobile-menu');
@@ -97,11 +92,10 @@ export const navMenu = options => {
                     thisParent.classList.remove('active');
                 } else {
                     //==== Deactivate Siblings ====//
-                    Array.from(parentSiblings).forEach((siblings:any) => {
+                    parentSiblings.forEach(siblings => {
                         siblings.classList.remove('active');
-                        var siblingsChilds = siblings.children;
                         //==== Close Dropdown ====//
-                        Array.from(siblingsChilds).forEach((childs:any) => {
+                        siblings.children.forEach(childs => {
                             if (childs.matches('ul') || childs.matches('.megamenu')) Tornado.slideUp(nextSib,300);
                         });
                     });

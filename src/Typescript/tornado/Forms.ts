@@ -12,37 +12,29 @@ import Tornado from './Tornado';
 /*==== Tornado Forms Assets ====*/
 export const tornadoForms = options => {
     //=====> Controls Placeholder <=====//
-    var placeholders = Tornado.getElements('[placeholder]');
-    Array.from(placeholders).forEach(function (placeholder) {
-        var placeholderCurrent = placeholder.getAttribute('placeholder');
+    Tornado.getElements('[placeholder]').forEach(placeholder => {
         //====> When Focus In Empty Placeholder <===//
-        placeholder.addEventListener('focus', function () {
-            placeholder.setAttribute('placeholder', '');
-        });
+        placeholder.addEventListener('focus', event => placeholder.setAttribute('placeholder', ''));
         //====> When Focus Out Restore Placeholder <===//
-        placeholder.addEventListener('blur', function () {
-            placeholder.setAttribute('placeholder', placeholderCurrent);
+        placeholder.addEventListener('blur', event => {
+            placeholder.setAttribute('placeholder', placeholder.getAttribute('placeholder'));
         });
     });
 
     //=====> File Uploader <=====//
-    var fileUploaders = Tornado.getElements('.file-input input[type="file"]');
-    Array.from(fileUploaders).forEach(function (fileUploader) {
+    Tornado.getElements('.file-input input[type="file"]').forEach(fileUploader => {
         //====> When Value Change <===//
-        fileUploader.addEventListener('change', function () {
+        fileUploader.addEventListener('change', event => {
             //===> Get Files Names <===//
             var filePath = [];
-            for (var i = 0; i < fileUploader.files.length; ++i) {
-                filePath.push(fileUploader.files[i].name);
-            }
+            for (var i = 0; i < fileUploader.files.length; ++i) filePath.push(fileUploader.files[i].name);
             //===> Set Files Names <===//
             fileUploader.parentNode.setAttribute('data-text',filePath);
         });
     });
 
     //=====> Progress Bars <=====//
-    var progressBars = Tornado.getElements('.progress-bar');
-    Array.from(progressBars).forEach(function (progressBar) {
+    Tornado.getElements('.progress-bar').forEach(progressBar => {
         var progressValue = progressBar.getAttribute('data-value');
         //===> If Page Direction is Left to Right <===//
         if ( Tornado.direction('page') === 'ltr' ) {
@@ -56,16 +48,14 @@ export const tornadoForms = options => {
     });
 
     //======> Validation <======//
-    var formElement = Tornado.getElements('form');
-    Array.from(formElement).forEach(function(formElement) {
+    Tornado.getElements('form').forEach(formElement => {
         if (!formElement.matches('.no-vali')) {
-            formElement.addEventListener('submit', function(e) {
+            formElement.addEventListener('submit', e => {
                 //===== Select and Loop Throgh Childs =====//
-                let childs = this.children;
-                Array.from(childs).forEach((child:any) => {
+                this.children?.forEach(child => {
                     //===== Select All Childs that Matchs =====//
                     let formControls = child.querySelectorAll('[aria-required="true"],.required,[required],.wpcf7-validates-as-required');
-                    Array.from(formControls).forEach((formControl:any) => {
+                    formControls.forEach(formControl => {
                         if(!formControl.matches('label')) {
                             //======== Catch Control With Icon Wraper =======//
                             var controlWrap = null,

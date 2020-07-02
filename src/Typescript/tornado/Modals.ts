@@ -13,23 +13,19 @@ import Tornado from './Tornado';
 /*==== Tornado Popup Modals ====*/
 export const tornadoModals = options => {
     /*=====> Create Overlay Trigger <=====*/
-    var modalBoxs = Tornado.getElements(options.modal || '.modal-box');
-    Array.from(modalBoxs).forEach((modalBox:any) => {
+    Tornado.getElements(options.modal || '.modal-box').forEach(modalBox => {
         modalBox.insertAdjacentHTML('afterbegin', '<a href="javascript:void(0);" class="modal-overlay"></a>');
         //==== Open the Modal by URL HashTag ====//
         if (options.activeByURL || modalBox.hasAttribute('data-active-url')) {
             var urlHash = window.location.hash.substr(1),
                 modalID = modalBox.getAttribute('id');
-            if (urlHash === modalID) {
-                modalBox.classList.add('active');
-            }
+            if (urlHash === modalID) modalBox.classList.add('active');
         }
     });
 
     /*=====> Open Modal Button <=====*/
-    var modalButton = Tornado.getElements('*[data-modal]');
-    Array.from(modalButton).forEach(function (modalButton) {
-        modalButton.addEventListener('click', function (event) {
+    Tornado.getElements('*[data-modal]').forEach(modalButton => {
+        modalButton.addEventListener('click', event => {
             event.preventDefault();
             //==== Open the Modal ====//
             var modalID = modalButton.getAttribute('data-modal');
@@ -40,9 +36,8 @@ export const tornadoModals = options => {
     });
 
     /*=====> Close Modal by Overlay <=====*/
-    var modalOverlay = Tornado.getElements('.modal-overlay');
-    Array.from(modalOverlay).forEach(function (modalOverlay) {
-        modalOverlay.addEventListener('click', function (event) {
+    Tornado.getElements('.modal-overlay').forEach(modalOverlay => {
+        modalOverlay.addEventListener('click', event => {
             event.preventDefault();
             //==== Close the Modal ====//
             modalOverlay.parentNode.classList.remove('active');
@@ -52,9 +47,8 @@ export const tornadoModals = options => {
     });
 
     /*=====> Close Modal Button <=====*/
-    var closeModal = Tornado.getElements('.close-modal');
-    Array.from(closeModal).forEach(function (closeModal) {
-        closeModal.addEventListener('click', function (event) {
+    Tornado.getElements('.close-modal').forEach(closeModal => {
+        closeModal.addEventListener('click', event => {
             event.preventDefault();
             //==== Close the Modal ====//
             closeModal.closest('.modal-box').classList.remove('active');

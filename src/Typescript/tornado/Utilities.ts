@@ -15,9 +15,9 @@ import Tornado from './Tornado';
  * ===> 11 - Activate Date Counter
 */
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', domReady => {
     //======> Item Remover <======//
-    Tornado.liveEvent('.remove-item', 'click', function (event) {
+    Tornado.liveEvent('.remove-item', 'click', event => {
         event.preventDefault();
         var thisButton = event.target; //===> for Fewer Linter Warnings
         //=== Remove Specific Target by ID ===//
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     (function responsiveTooltips() {
         //======> Responsive X Tooltip <======//
         var tooltipX = Tornado.getElements('.tooltip-start.tooltip-responsive,.tooltip-end.tooltip-responsive');
-        Array.from(tooltipX).forEach(function (tooltipX) {
+        tooltipX.forEach(tooltipX => {
             var startTip = tooltipX.offsetLeft,
                 endTip = window.innerWidth - tooltipX.getBoundingClientRect().right; // tooltipX.offsetLeft + tooltipX.offsetWidth;
             if (startTip < 100 || endTip < 100) {
@@ -62,8 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         //======> Responsive Top Tooltip <======//
-        var tooltipTop = Tornado.getElements('.tooltip.tooltip-responsive');
-        Array.from(tooltipTop).forEach(function (tooltipTop) {
+        Tornado.getElements('.tooltip.tooltip-responsive').forEach(tooltipTop => {
             var topTip = tooltipTop.offsetTop;
             if (topTip <= 50) {
                 tooltipTop.classList.add('tooltip-bottom');
@@ -72,8 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         //======> Responsive Bottom Tooltip <======//
-        var tooltipBottom = Tornado.getElements('.tooltip-bottom.tooltip-responsive');
-        Array.from(tooltipBottom).forEach(function (tooltipBottom) {
+        Tornado.getElements('.tooltip-bottom.tooltip-responsive').forEach(tooltipBottom => {
             var bottomTip = tooltipBottom.offsetTop + tooltipBottom.offsetHeight;
             if (bottomTip <= 50) {
                 tooltipBottom.classList.add('tooltip');
@@ -84,8 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //======> Animated Counters <======//
     (function animatedCounter() {
-        var counterElements = Tornado.getElements('[data-counter]');
-        Array.from(counterElements).forEach(element => {
+        Tornado.getElements('[data-counter]').forEach(element => {
             function animateNumbers () {
                 if (Tornado.inView(element)) {
                     if(!element.classList.contains('counted')) {
@@ -96,22 +93,20 @@ document.addEventListener('DOMContentLoaded', function () {
                             duration:2000,
                         });
                     }
+
                     element.classList.add('counted');
                 }
             }
 
             animateNumbers();
             //====> Reanimate When its Visible <======//
-            window.addEventListener('scroll', function () {
-                animateNumbers();
-            });
+            window.addEventListener('scroll', event => animateNumbers());
         });
     }());
 
     //======> ViewPort Detactor <======//
     (function ViewPortDetactor () {
-        var viewportElements = Tornado.getElements('.view-status');
-        Array.from(viewportElements).forEach(function (element) {
+        Tornado.getElements('.view-status').forEach(element => {
             var animName = element.getAttribute('data-animation'),
                 animDelay = element.getAttribute('data-delay') || 0,
                 animDuration = element.getAttribute('data-duration') || 1000;
@@ -130,19 +125,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             //====> Activate While Scroll
-            window.addEventListener('scroll', function (){
-                activateView();
-            });
+            window.addEventListener('scroll', event => activateView());
         });
     }());
 
     //====> Fix Grid Tiny Slider <====//
     (function fixTnsGrid() {
         window.addEventListener('load', event => {
-            var gridTns = Tornado.getElements('.tns-slider.row');
-            Array.from(gridTns).forEach(function (gridTns){
-                gridTns.closest('.tns-outer').classList.add('grid-tns');
-            });
+            Tornado.getElements('.tns-slider.row').forEach(gridTns => gridTns.closest('.tns-outer').classList.add('grid-tns'));
         })
     }());
 

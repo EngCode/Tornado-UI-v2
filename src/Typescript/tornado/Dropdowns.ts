@@ -10,20 +10,16 @@ import Tornado from './Tornado';
 /*==== Dropdowns Button ====*/
 export const Dropdowns = options => {
     //===> Dropdown Buttons <===//
-    var dropdownButton = Tornado.getElements('.dropdown-btn');
-    Array.from(dropdownButton).forEach(dropdownButton => {
+    Tornado.getElements('.dropdown-btn').forEach(dropdownButton => {
         //===> When Click on the Button <===//
-        dropdownButton.addEventListener('click', function (event) {
+        dropdownButton.addEventListener('click', event => {
             //==> Prevent Default Behavor <==//
             event.preventDefault();
-            var thisParent = dropdownButton.closest('.dropdown'),
-                otherDropdown = Tornado.getElements('.dropdown.active');
+            var thisParent = dropdownButton.closest('.dropdown');
 
             //===> Deactivate Other <===//
-            Array.from(otherDropdown).forEach(function (otherDropdown) {
-                if (otherDropdown !== thisParent) {
-                    otherDropdown.classList.remove('active');
-                }
+            Tornado.getElements('.dropdown.active').forEach(otherDropdown => {
+                if (otherDropdown !== thisParent) otherDropdown.classList.remove('active');
             });
 
             //===> Activat Button and List <===//
@@ -34,10 +30,7 @@ export const Dropdowns = options => {
     //===> Deactivate on Blank <===//
     window.onclick = blank => {
         if (!blank.target.matches('.dropdown') && !blank.target.matches('.dropdown *')) {
-            var activatedDrops = Tornado.getElements('.dropdown.active');
-            Array.from(activatedDrops).forEach(function (activatedDrops) {
-                activatedDrops.classList.remove('active');
-            });
+            Tornado.getElements('.dropdown.active').forEach(activatedDrops => activatedDrops.classList.remove('active'));
         }
     };
 }

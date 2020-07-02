@@ -9,14 +9,12 @@ import Tornado from './Tornado';
 /*==== Tornado Accordion ====*/
 export const tornadoAccordion = options => {
     //======> Accordion Trigger <======//
-    var accordionButton = Tornado.getElements(options.panelButton || '.accordion-title');
-    Array.from(accordionButton).forEach(element => {
+    Tornado.getElements(options.panelButton || '.accordion-title').forEach(element => {
         element.addEventListener('click', event => {
             event.preventDefault();
             //==== Store Playable Elements ====//
-            var thisElement = element,
-                nextPanel   = Tornado.getNextSibling({element:thisElement, filter:options.panelContent || '.accordion-content'}),
-                thisParent  = Tornado.parentsUntil(thisElement,options.panelWraper || '.accordion-item');
+            var nextPanel   = Tornado.getNextSibling({element:element, filter:options.panelContent || '.accordion-content'}),
+                thisParent  = Tornado.parentsUntil(element,options.panelWraper || '.accordion-item');
 
             //==== Check if the Clicked Button is Activated or Not ====//
             if (thisParent.classList.contains('active')) {
@@ -28,8 +26,7 @@ export const tornadoAccordion = options => {
                 if(options.callClose) options.callClose;
             } else {
                 //==== Close Siblings Panels ====//
-                var parentSiblings = Tornado.getSiblings({element:thisParent});
-                Array.from(parentSiblings).forEach((sibling:any) => {
+                Tornado.getSiblings({element:thisParent}).forEach((sibling:any) => {
                     //==== Close Other Activated Siblings ====//
                     sibling.classList.remove('active');
                     var siblingPanel = sibling.querySelector('.accordion-content');

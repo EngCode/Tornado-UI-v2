@@ -7,8 +7,7 @@ import Tornado from './Tornado';
 
 /*==== Nested Multi Level Menu ====*/
 export const nestedMenu = options => {
-    var SubMenuList = Tornado.getElements('.nested-menu ul > li > ul');
-    Array.from(SubMenuList).forEach(function (SubMenuList) {
+    Tornado.getElements('.nested-menu ul > li > ul').forEach(SubMenuList => {
         //===> Catch SubMenu Button <===//
         var SubMenuBtn = Tornado.getPrevSibling({element:SubMenuList, filter:'a'});
         SubMenuBtn.classList.add('submenu');
@@ -18,13 +17,12 @@ export const nestedMenu = options => {
             //==> Prevent Default Behavor <==//
             event.preventDefault();
             //==> Catch Playable Elements <==//
-            var thisParent = SubMenuBtn.parentNode,
-                parentSiblings = Tornado.getSiblings({element:thisParent});
+            var thisParent = SubMenuBtn.parentNode;
             //===> Activated The Clicked Item <===//
             thisParent.classList.toggle('active');
             Tornado.slideToggle(SubMenuList,500);
             //===> Deativate the Siblings Items <===//
-            Array.from(parentSiblings).forEach((parentSiblings:any) => {
+            Tornado.getSiblings({element:thisParent}).forEach(parentSiblings => {
                 var siblingList = parentSiblings.querySelector('ul');
                 Tornado.slideUp(siblingList,500);
                 parentSiblings.classList.remove('active');

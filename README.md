@@ -1,8 +1,8 @@
-![](https://img.shields.io/badge/build-v2.0.6-blue.svg) ![](https://img.shields.io/github/languages/code-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/repo-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/issues/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/license/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/badge/%40babel-v7.7.4-blue.svg) ![](https://img.shields.io/badge/Sass-v4.13.0-blue.svg)
+![](https://img.shields.io/badge/build-v2.0.6-blue.svg) ![](https://img.shields.io/github/languages/code-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/repo-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/issues/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/license/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/badge/%40typescript-v3.9.5-blue.svg) ![](https://img.shields.io/badge/Sass-v4.13.0-blue.svg)
 
 ## Welcome to Tornado UI v2
-Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and easy to control elements Builded With Sass and ES6 Babel for Easy Customizing.
-##### No Dependency => Totally Customiazble
+Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and easy to control elements Builded With Sass and TypeScript for Easy Customizing.
+
 --------------------
 #### browser support
 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
@@ -11,11 +11,11 @@ Tornado is an Open Source Framework for Forntend and UI/UX Designers made with l
 
 --------------------
 #### Documentation
-looking for Documentation **Visit** [Tornado UI v2](https://flash-point.net/tornado/docementation/getting-start/)
+looking for Documentation **Visit** [Tornado UI v2](https://tornado.phenixthemes.com/docementation/getting-start/)
 
 --------------------
 #### Before You Start
-Before you start working with the framework you must know that this framework ment to be a complete work enviroment not just including the production css/js files so if you want to understand what exactly happening and use it in the right way continue reading the docementation in order from sidemenu or just jump to the quick start and keep copy and paste codes into your project.
+Before you start working with the framework you must know that this framework ment to be a complete work enviroment not just including the production css/js files so if you want to understand what exactly happening and use it in the right way continue reading the docementation.
 
 #### Installation
 
@@ -23,7 +23,8 @@ in order to install Tornado env you can use npm or you can use Git CLI from the 
 
 	====== Git CLI Clone =====
 	git clone https://github.com/EngCode/Tornado-UI-v2.git
-	====== NPM Package Install ======
+
+	====== NPM Install ======
 	npm install tornado-ui
 
 after that you will need to install Node.JS and SASS the Ruby version for compiling the source files.
@@ -31,96 +32,52 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Quick CDN Links
 
 	====== Tornado CSS [LTR] =====
-	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado.css
+	https://unpkg.com/tornado-ui@2.5.0/dist/css/tornado.css
 
 	====== Tornado CSS [RTL] =====
-	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado-rtl.css
+	https://unpkg.com/tornado-ui@2.5.0/dist/css/tornado-rtl.css
 
 	====== Tornado [ICONS] CSS =====
-	https://unpkg.com/tornado-ui@2.1.5/dist/css/tornado-icons.css
+	https://unpkg.com/tornado-ui@2.5.0/dist/css/tornado-icons.css
 
 	====== Tornado JS =====
-	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.min.js
-
-	====== Tornado React Components =====
-	https://unpkg.com/tornado-ui@2.1.5/dist/js/tornado.react.js
+	https://unpkg.com/tornado-ui@2.5.0/dist/js/tornado.min.js
 
 --------------------
-#### Changelog Update V2.1.5 Super Tornado || 06/2020
-	#01 - [new] React Components for all UI Elements
-	#02 - [new] Convert all Javascript from Babel to Typescript
+#### Upcoming Update V2.6.☯️ Advanced Multimedia || 08/2020
+	#-- - [new] Advanced Video Player
+	#-- - [new] Advanced Audio Player
+	#-- - [new] Form Range Slider Control
+	#-- - [upgrade] Data Tables Advanced Options
+
+--------------------
+#### Lateast Update V2.5.☯️ Super 🦸‍♂️ Tornado || 07/2020
+	#01 - [new] Convert all Javascript from Babel to Typescript
+	#02 - [new] React Components for all UI Elements
 	#03 - [new] Seperate Icons Font CSS from Tornado CSS.
-	#04 - [update] NPM Packages Update.
-	#05 - [new] JS Event Date/Time Counter Down
-	#06 - [fix] TinySlider Grid/Row Fixer Function
-	#07 - [upgrade] Dynacmic Backgrounds Lazy Loading Added
-	#08 - [new] images lazyloading js functionality added
-	#09 - [fix] JS Dynamic Page Direction for WP-Admin
-	#10 - [Deprecated] Remove Lined Theme Form
-	#11 - [doc] LazyLoading Functionality
-	#12 - [new] CSS Variables for Design Options
-	#-- - [new] Form Validation In Realtime Upgrade
-	#-- - [new] Form Advanced Select With SlimSelect
-	#-- - [new] Form Advanced File Uploaders
-	#-- - [new] Form Advanced Checkboxes
+	#04 - [new] JS Event Date/Time Counter Down
+	#05 - [new] Dynamic Backgrounds Lazy Loading Added
+	#06 - [new] images lazyloading added
+	#07 - [new] CSS Variables for Design Options
+	#08 - [new] Form Control Validation In Realtime
+	#09 - [new] Form UI SASS Rewrite and JS Upgrade
+	#10 - [new] Form Advanced Select
+	#11 - [new] Form Advanced File Uploader
+	#12 - [new] Form Repeater Functionality
+	#13 - [new] Form Rating Stars
+	#14 - [new] Buttons new Themes Added
+	#15 - [new] TNS Slider Method and UI Components
+	#16 - [new] Data Tables Creation Method
+	#17 - [new] Tabs TypeScript Method
+	#18 - [new] Popup TypeScript Method
+	#19 - [new] Images Lightbox Component and Method
+	#20 - [new] Circle and Radial Progress Components
+	#21 - [new] Tornado Design Options Method
+	#22 - [new] Tornado Theme Switcher Method
+	#23 - [doc] Documenting Typescript Methods
+	#24 - [fix] JS Dynamic Page Direction for WP-Admin
+	#25 - [Deprecated] Remove Lined Theme Form
 	#-- - [doc] Documenting React Components
-
---------------------
-#### Changelog Update V2.1.0 || 12/2019
-	#01 - [new] Upgrade Components into Mixins and Refactor Tornado Icons
-	#02 - [new] Breadcrumb Theme Mixin
-	#03 - [Doc] Documented All CSS Utlities
-	#04 - [new] Adding Margin/Padding Utlities
-	#05 - [new] Improve Grid CSS Utlities
-	#06 - [Fix] Form Validation Message Fix
-	#07 - [new] Redesign Tornado Icons [+1800 icons]
-	#08 - [new] New Animations Pack Set
-	#09 - [update] improve ALL JS Siblings(); Functions
-	#10 - [update] Improve JS ParentsUntil(); Function
-	#11 - [new] Adding JS Slide Up and Slide Down && Slide Toggle Functions.
-	#12 - [Fix] Collapse Effect Fix With Slide Toggle.
-	#13 - [third party] TinySlider Added [Custom CSS] [RTL Support]
-	#14 - [Deprecated] Glide.jS
-	#15 - [Deprecated] Helvatica Arabic Fonts
-	#16 - [Deprecated] Old Tornado Icons Font
-	#17 - [Fix] Allow Node Element In Live Event Listener
-	#18 - [new] JS getHeight(); Function Added.
-	#19 - [update] JS Accourdion // Mobile Menu // Nested Menu Dropdowns With Slide Effects
-	#20 - [Fix] Form Controls With Icons Validation Style Fix.
-
---------------------
-#### Changelog 06/2019 Components Mixins
-	#01 - Documented Responsive Query Mixins.
-	#02 - Adding Form Controls Themes Mixin
-	#03 - Improve Responsive Menus Mixins
-	#04 - Adding Extra Small Responsive Mixin
-	#05 - More Coloring Helpers Added
-	#06 - Adding Mobile Menu Theme Mixin
-	#07 - Adding Header/Navbar Theme Mixin
-	#08 - ViewPort Animations Fix
-
---------------------
-#### Changelog 05/2019 Update
-	#01 - Adding More Helpers Functions [ get All Next/Previous Siblings ].
-	#02 - Upgrading CSS Backgrounds [data-src] Validation Filter.
-	#03 - Adding Helper Function for Selecting Ancestors [ parentsUntil() ].
-	#04 - Fixing Header icons Buttons.
-	#05 - JS Realtime Assets.
-	#06 - Adding Animated Numbers Counter.
-	#07 - Adding ViewPort Detactor.
-
---------------------
-#### Changelog 03/2019 Update
-	#01 - Adding Simple Responsive Masonry Grid
-	#02 - Convert All Pixel Unites to REM
-	#03 - Adding Scrollspy Effect
-	#04 - Fixing Dropdown Mechanism
-	#05 - Fixing Navigation Menu / Mobile Responsive Theme
-	#06 - Adding Smoth Scroll Effects
-	#07 - Adding Responsive Aspect Ratio Elements
-	#08 - Upgrade Utilties [ Sticky Elements | Item Remover | Data Backgrounds ]
-	#09 - Javascript Shorthand Helpers
-	#10 - Forms Validation With Redirect After Submit
 
 --------------------
 #### Credits

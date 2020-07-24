@@ -15,55 +15,76 @@ $direction:left;
 $directionReverse:right;
 /*======== Root CSS Variables ========*/
 :root {
-    /*======== Primary Color ========*/
-    --primary-color: #4166d6;
-    --primary-color-hover: #2e4dc9;
-    /*======== Secondary Color ========*/
-    --secondary-color: #de670f;
-    --secondary-color-hover: #eaa711;
-    /*======== TXT Colors ========*/
-    --reverse-color:#FFF;
-    --reverse-color-dark:#1c1c1c;
-    --light-color:#cad0e0;
-    --black-color:#222222;
-    --typo-color:#555555;
-    //========== Typography Font Family ==========//
-    --primary-font:'Roboto', sans-serif; // font family for Head's and Titles
-    --secondary-font:'Roboto', sans-serif; // font family for Paragraph and Small Text
-    //========== Typography Base Font Sizes ==========//
-    --base-l-size:16px; // Base Font Size For Large Screens
-    --base-m-size:15px; // Base Font Size For Medium Screens
-    --base-s-size:14px; // Base Font Size For Small Screens
-    --base-line-height:1.4; // Base Line Height
-    //========== Typography Font Weight ==========//
-    --normal-weight:400; // Normal Font Weight
-    --medium-weight:500; // Medium Font Weight
-    --strong-weight:600; // Bold/Bolder Font Weight
+    /*==== Body Background ====*/
+    --body-bg : #FCFCFC;
+    /*==== Primary Color ====*/
+    --primary-color   : #4166d6;
+    --primary-hover   : #2e4dc9;
+    --primary-reverse : #FFFFFF;
+    /*==== Secondary Color ====*/
+    --secondary-color   : #FA9443;
+    --secondary-hover   : #FE892D;
+    --secondary-reverse : #FFFFFF;
+    //=== Assets text colors ====//
+    --success-color :#22b544;
+    --danger-color  :#de3131;
+    --warning-color :#f4bb0e;
+    --info-color    :#17c0db;
+    --gray-color    :#868e96;
+    --dark-color    :#343a40;
+    --disable-color :#343a40;
+    //=== Assets backgrounds ====//
+    --success-light :#c1eecc;
+    --danger-light  :#fbbbbb;
+    --warning-light :#ffdd75;
+    --info-light    :#a6eaf5;
+    --gray-light    :#d9dde1;
+    --dark-light    :#585C5F;
+    /*==== Typography Colors ====*/
+    --headlines-color  : #1c1c1c;
+    --typography-color : #555;
+    --light-reverse    : #000;
+    --dark-reverse     : #FFF;
+    //==== Font Families ====//
+    --primary-font:'Roboto';
+    --secondary-font:'Roboto';
+    --icons-font:"tornado-icons";
+    //==== Font Sizes ====//
+    --base-l-size:16px;
+    --base-m-size:15px;
+    --base-s-size:14px;
+    --line-height:1.625;
+    //==== Font Weight ====//
+    --normal-weight:400;
+    --medium-weight:500;
+    --strong-weight:600;
+    //==== Components ====//
+    --component-background   : #FFFFFF;
+    --component-darker-bg    : #f8f8f8;
+    --component-color        : var(--dark-color);
+    --component-active-bg    : var(--primary-color);
+    --component-active-color : var(--primary-reverse);
+    --component-border       : 1px solid rgba(0,0,0,.10);
+    --component-radius       : 5px;
+    --component-padding      : 15px;
+    --component-shadow       : none;
 }
-//========== Colors Variables Sass Render ==========//
-$primary-color:var(--primary-color);
-$primary-color-hover:var(--primary-color-hover);
-$secondary-color:var(--secondary-color);
-$secondary-color-hover:var(--secondary-color-hover);
-$reverse-color:var(--reverse-color);
-$reverse-color-dark:var(--reverse-color-dark);
-$light-color:var(--light-color);
-$black-color:var(--black-color);
-$typo-color:var(--typo-color);
-//=== Assets text colors ====//
-$success-color:#22b544;
-$danger-color:#de3131;
-$warning-color:#f4bb0e;
-$info-color:#17c0db;
-$gray-color:#868e96;
-$dark-color:#343a40;
-//=== Assets backgrounds ====//
-$success-bg:#c1eecc;
-$danger-bg:#fbbbbb;
-$warning-bg:#ffdd75;
-$info-bg:#a6eaf5;
-$gray-bg:#d9dde1;
-$dark-bg:#343a40;
+//==== Layout ====//
+$gutter-size  : 30px; // the Space Between Columns
+$gutter-math  : 15px; // the Space Between Columns Divided
+$grid-columns : 12;
+//==== Responsive Minuimum ====//
+$small-base : 0; //  Mobile Screen Size to start from
+$small-min  : 576px; //  Mobile Screen Size to start from
+$medium-min : 768px; // Tablet Screen Size to start from
+$large-min  : 1200px; // Desktop Screen Size to start from
+$xlarge-min : 1366px; // Big Desktop Screen Size to start from
+//==== Responsive Maximum ====//
+$small-ceil : 480px; //  Mobile Screen Size to start from
+$small-max  : 640px; //  Mobile Screen Size to start from
+$medium-max : 1100px; // Tablet Screen Size to start from
+$large-max  : 1600px; // Desktop Screen Size to start from
+$xlarge-max : 2500px; // Big Desktop Screen Size to start from
 //==== Social Colors ====//
 $facebook-color:#505cd6;
 $twitter-color:#1da1f2;
@@ -83,65 +104,32 @@ $dribbble-color:#ea4c89;
 $envato-color:#82b541;
 $flicker-color:#0063dc;
 $github-color:#f5f5f5;
-//========== Typography Font Family ==========//
-$primary-font:var(--primary-font); // font family for Head's and Titles
-$secondary-font:var(--secondary-font); // font family for Paragraph and Small Text
-$font-icon:"tornado-icons"; // icons Font Family
-//========== Typography Base Font Sizes ==========//
-$base-l-size:var(--base-l-size); // Base Font Size For Large Screens
-$base-m-size:var(--base-m-size); // Base Font Size For Medium Screens
-$base-s-size:var(--base-s-size); // Base Font Size For Small Screens
-$base-line-height:var(--base-line-height); // Base Line Height
-//========== Typography Font Weight ==========//
-$normal-weight:var(--normal-weight); // Normal Font Weight
-$medium-weight:var(--medium-weight); // Medium Font Weight
-$strong-weight:var(--strong-weight); // Bold/Bolder Font Weight
-//========== Grid System ==========//
-$grid-columns:12; // Numbers of Gride Columns
-$gutterSize:30px; // the Space Between Columns
-$gutterMath:$gutterSize/2; // the Space Between Columns Divided
-//====== Media Query Minimum Size =======//
-$xSmall-query:0; //  Mobile Screen Size to start from
-$small-query:576px; //  Mobile Screen Size to start from
-$medium-query:768px; // Tablet Screen Size to start from
-$large-query:1024px; // Desktop Screen Size to start from
-$xlarge-query:1360px; // Big Desktop Screen Size to start from
-//====== Media Query Maximum Size =======//
-$xSmall-query-down:420px; //  Mobile Screen Size to start from
-$small-query-down:640px; //  Mobile Screen Size to start from
-$medium-query-down:980px; // Tablet Screen Size to start from
-$large-query-down:1200px; // Desktop Screen Size to start from
-$xlarge-query-down:1600px; // Big Desktop Screen Size to start from
-/*========== Loading Fonts ==========*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
 //========== Global Sass ==========//
 @import 'assets/selectors';
 @import 'assets/mixins';
 @import 'assets/reset';
 @import 'assets/tornado-icons-selectors';
-/*========== Global Sass ==========*/
+@import 'assets/animations';
+/*========== Grid Layout ==========*/
 @import 'grid/grid-system';
+/*========== Components ==========*/
+@import 'components/forms';
+@import 'components/navigation-menu';
+@import 'components/carousel';
+@import 'components/tables';
+@import 'components/tabs-system';
+@import 'components/accordion';
+@import 'components/modals';
 /*========== Elements ==========*/
 @import 'elements/typography';
-@import 'elements/responsive-menus';
 @import 'elements/headers';
 @import 'elements/breadcrumbs';
 @import 'elements/media-objects';
 @import 'elements/jumbtron';
 @import 'elements/labels';
 @import 'elements/cards';
-@import 'elements/pagination';
-/*========== Forms ==========*/
-@import 'forms/form-themes';
-/*========== Components ==========*/
-@import 'components/carousel';
-@import 'components/tables';
-@import 'components/tabs-system';
-@import 'components/accordion';
-@import 'components/modals';
-@import 'components/dropdowns';
-@import 'components/coloring';
-@import 'components/animations';
+/*========== Assets ==========*/
 @import 'assets/utilities';
+@import 'assets/coloring';
 /*========== Blank Project Theme ==========*/
 @import 'theme';

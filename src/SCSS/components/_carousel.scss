@@ -1,119 +1,159 @@
-/**======> TinySlider Version: 2.9.2 Referance <======
- * ===> 01 - Carousel
- * ===> 02 - Fix a viewport issue in initialization
- * ===> 03 - Detecting browser capability
- * ===> 04 - Tiny Slider Fixs
+/**======> TinySlider Version : 2.9.1 Modified <======
+ * ===> 01 - TNS Outer Wraper
+ * ===> 02 - TNS Items Wraper
+ * ===> 03 - Horizontal Mode
+ * ===> 04 - no Calculation
+ * ===> 05 - Gallery Mode
+ * ===> 06 - TNS Auto Dimensions
+ * ===> 07 - TNS Animations
+ * ===> 08 - Browser Capability
+ * ===> 09 - TNS Utilites
+ * ===> 10 - TNS Default Theme
 */
 
-/*==== Carousel =====*/
+/*==== TNS Outer Wraper =====*/
 .tns-outer {
-    padding: 0 !important; // remove padding: clientWidth = width + padding (0) = width
-
-    [hidden] {
-        display: none !important;
-    }
-
-    [aria-controls],[data-action] {
-        cursor: pointer;
-    }
+    padding: 0;
+    position: relative;
+    direction: ltr;
+    /*==== Fixs ====*/
+    [hidden] {display: none ;}
+    [aria-controls],[data-action] {cursor: pointer;}
+    .row {margin: 0}
+    &.grid-mode {margin: 0 -$gutter-math;}
+    .tns-visually-hidden {display: none;}
+    .tns-item {direction: $page-dir;}
 }
 
+/*==== TNS Items Wraper =====*/
 .tns-slider {
     -webkit-transition: all 0s;
-    transition: all 0s;
-
+        transition: all 0s;
+    /*==== Item ====*/
     >.tns-item {
         -webkit-box-sizing: border-box;
-        box-sizing: border-box;
+            box-sizing: border-box;
+    }
+    /*==== Horizontal Mode ====*/
+    &.tns-horizontal {
+        &.tns-subpixel {
+            white-space: nowrap;
+            /*==== Item ====*/
+            > .tns-item {
+                display: inline-block;
+                vertical-align: top;
+                white-space: normal;
+            }
+        }
+    
+        &.tns-no-subpixel {
+            &:after { @extend %clear-after,:after }
+            > .tns-item {float: left;}
+        }
+    
+        &.tns-carousel .tns-no-subpixel > .tns-item {margin-right: -100%;}
+    }
+    /*==== no Calculation ====*/
+    &.tns-no-calc {
+        position: relative;
+        left: 0;
+    }
+    /*==== Gallery Mode ====*/
+    &.tns-gallery {
+        position: relative;
+        left: 0;
+        min-height: 1px;
+        /*==== Item ====*/
+        >.tns-item {
+            position: absolute;
+            left: -100%;
+            -webkit-transition: transform 0s, opacity 0s;
+            -moz-transition: transform 0s, opacity 0s;
+            transition: transform 0s, opacity 0s;
+        }
+        /*==== Active Item ====*/
+        >.tns-slide-active {
+            position: relative;
+            left: auto !important;
+        }
+        /*==== Moving Item ====*/
+        >.tns-moving {
+            -webkit-transition: all 0.25s;
+            -moz-transition: all 0.25s;
+            transition: all 0.25s;
+        }
     }
 }
 
-.tns-horizontal {
-    &.tns-subpixel {
-        white-space: nowrap;
+/*==== TNS Auto Dimensions ====*/
+.tns-autowidth {display: inline-block;}
 
-        >.tns-item {
-            display: inline-block;
-            vertical-align: top;
-            white-space: normal;
-        }
+.tns-ah /* auto height transition */ {
+    -webkit-transition: height 0s;
+    -moz-transition: height 0s;
+    transition: height 0s;
+}
+
+.tns-vpfix /* Fixviewport */ {
+    white-space: nowrap;
+    >div,>li {display: inline-block;}
+}
+
+/*==== TNS Animations ====*/
+.tns-fadeIn {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    z-index: 0;
+}
+
+.tns-normal,.tns-fadeOut {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    z-index: -1;
+}
+
+/*==== Browser Capability ====*/
+.tns-t {
+    $width: 310px;
+    $height: 10px;
+    $count: 70;
+    $perpage: 3;
+
+    &-subp2 {
+        margin: 0 auto;
+        width: $width;
+        position: relative;
+        height: $height;
+        overflow: hidden;
     }
 
-    &.tns-no-subpixel {
+    &-ct {
+        width: (100% * $count / $perpage);
+        width: -webkit-calc(100% * #{$count} / #{$perpage});
+        width: -moz-calc(100% * #{$count} / #{$perpage});
+        width: calc(100% * #{$count} / #{$perpage});
+        position: absolute;
+        right: 0;
+
         &:after {
             content: '';
             display: table;
             clear: both;
         }
 
-        >.tns-item {
+        > div {
+            width: (100% / $count);
+            width: -webkit-calc(100% / #{$count});
+            width: -moz-calc(100% / #{$count});
+            width: calc(100% / #{$count});
+            height: $height;
             float: left;
         }
     }
-
-    &.tns-carousel {
-        &.tns-no-subpixel {
-            >.tns-item {
-                margin-right: -100%;
-            }
-        }
-    }
 }
 
-.tns-no-calc {
-    position: relative;
-    left: 0;
-}
-
-.tns-gallery {
-    position: relative;
-    left: 0;
-    min-height: 1px; // make sure slider container is visible
-
-    // overflow: hidden;
-    >.tns-item {
-        position: absolute;
-        left: -100%;
-        -webkit-transition: transform 0s, opacity 0s;
-        -webkit-transition: opacity 0s, -webkit-transform 0s;
-        transition: opacity 0s, -webkit-transform 0s;
-        transition: transform 0s, opacity 0s;
-        transition: transform 0s, opacity 0s, -webkit-transform 0s;
-    }
-
-    >.tns-slide-active {
-        position: relative;
-        left: auto !important;
-    }
-
-    >.tns-moving {
-        -webkit-transition: all 0.25s;
-        transition: all 0.25s;
-    }
-}
-
-.tns-autowidth {
-    display: inline-block;
-}
-
-.tns-lazy-img {
-    -webkit-transition: opacity 0.6s;
-    transition: opacity 0.6s;
-    opacity: 0.6;
-
-    &.tns-complete {
-        opacity: 1;
-    }
-}
-
-.tns-ah {
-    -webkit-transition: height 0s;
-    transition: height 0s;
-}
-
-.tns-ovh {
-    overflow: hidden;
-}
+/*==== TNS Utilites ====*/
+.tns-ovh {overflow: hidden;}
 
 .tns-visually-hidden {
     position: absolute;
@@ -125,143 +165,72 @@
     visibility: hidden;
 }
 
-.tns-fadeIn {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    z-index: 0;
-}
-
-.tns-normal,
-.tns-fadeOut {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    z-index: -1;
-}
-
-
-// *** Fix a viewport issue in initialization
-.tns-vpfix {
-    white-space: nowrap;
-
-    >div,
-    >li {
-        display: inline-block;
-    }
-}
-
-// *** Detecting browser capability ***
-$width: 310px;
-$height: 10px;
-$count: 70;
-$perpage: 3;
-
-.tns-t {
-    &-subp2 {
-        margin: 0 auto;
-        width: $width;
-        position: relative;
-        height: $height;
-        overflow: hidden;
-    }
-
-    &-ct {
-        width: (100% * $count / $perpage);
-        width: calc(100% * #{$count} / #{$perpage});
-        position: absolute;
-        right: 0;
-
-        &:after {
-            content: '';
-            display: table;
-            clear: both;
-        }
-
-        >div {
-            width: (100% / $count);
-            width: calc(100% / #{$count});
-            height: $height;
-            float: left;
-        }
-    }
-}
-
-/*======== Tiny Slider Fixs ========*/
+/*==== TNS Default Theme ====*/
 .tns-outer {
-    position: relative;
-    direction: ltr;
-    .row{margin: 0}
-    &.grid-tns{margin: 0 -#{$gutterMath}!important;}
-    .tns-visually-hidden {
-        display: none !important;
-    }
-
-    .tns-item {
-        direction: $page-dir;
-    }
-
+    /*==== Arrows Buttons ====*/
     .tns-controls button {
+        /*==== Theme ====*/
+        width: var(--forms-height);
+        height: var(--forms-height);
+        line-height: calc(var(--forms-height) - 2px);
+        font-size: 17px;
+        background: var(--primary-color);
+        color: var(--primary-reverse);
+        opacity: 0;
+        border-radius: 50%;
+        text-align: center;
+        border:0 none;
+        /*==== Position ====*/
         position: absolute;
         top: 50%;
-        width: 52px;
-        height: 52px;
+        z-index: 98;
         cursor: pointer;
-        border-radius: 50%;
-        font-size: 15px;
-        line-height: 48px;
-        background: $primary-color;
-        border: 2px solid $primary-color;
-        color: $reverse-color;
         @extend %fast-motion;
-        text-align: center;
-        opacity: 0;
-
-        &:hover {
-            background: $reverse-color;
-            color: $primary-color;
-        }
-
         @extend %position-center-y;
-        z-index: 99;
-        font-family: $font-icon;
-        direction: ltr;
-        font-size: 0;
-
-        &::before {
-            font-size: 17px;
-            font-family: $font-icon;
+        /*==== Icon ====*/
+        &::before {font-family: var(--icons-font);}
+        /*==== Hover Effect ====*/
+        &:hover {
+            background: var(--dark-reverse);
+            color: var(--primary-color);
+        }
+        /*==== Previous Button ====*/
+        &[data-controls="prev"] {
+            #{$directionReverse}: $gutter-math;
+            &::before {@extend %ti-angle-#{$directionReverse},:before;}
+        }
+        /*==== Next Button ====*/
+        &[data-controls="next"] {
+            #{$direction}: $gutter-math;
+            &::before {@extend %ti-angle-#{$direction},:before;}
         }
     }
 
-    .tns-controls [data-controls="prev"] {
-        #{$directionReverse}: 30px;
-        &::before {@extend %ti-angle-#{$directionReverse},:before;}
-    }
+    /*==== Show Controls on Hover ====*/
+    &:hover .tns-controls button{opacity: 1;}
 
-    .tns-controls [data-controls="next"] {
-        #{$direction}: 30px;
-        &::before {@extend %ti-angle-#{$direction},:before;}
-    }
-
+    /*==== Pagination Dots ====*/
     .tns-nav {
+        /*==== Theme ====*/
         text-align: center;
-        margin-top: 15px;
-
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        z-index: 98;
+        /*==== Item ====*/
         button {
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             border: 0 none;
             padding: 0;
             margin: 0 5px;
             border-radius: 50%;
-            background: $gray-color;
+            background: var(--gray-color);
             @extend %fast-motion;
-
-            &.tns-nav-active {
-                background: $primary-color;
-            }
+            /*==== Active Mode ====*/
+            &.tns-nav-active {background: var(--primary-color);}
         }
     }
-
-    &:hover .tns-controls button{opacity: 1;}
 }

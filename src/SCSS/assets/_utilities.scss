@@ -9,6 +9,7 @@
  * ===> 08 - Margin Utilities
  * ===> 09 - Padding Utilities
  * ===> 10 - Section Utilities
+ * ===> 11 - Lightbox Component
 */
 
 /*======== CSS Assets ========*/
@@ -16,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     direction: $page-dir;
-    background: #FFF;
+    background: var(--body-bg);
     position: relative;
 }
 
@@ -29,31 +30,19 @@ hr {
     height: 1px;
     opacity: 1;
     border: 0 none;
-    background: rgba(0,0,0,0.15);
+    background: var(--components-border);
     margin: 0.9375rem 0;
 }
 
 .no-padding {padding: 0;}
-
-.fluid,.block-lvl,.fluid-block {width: 100%;}
-
-.block-center {
-    display: block;
-    margin: auto;
-}
-
+.fluid,.block-lvl,.fluid-block,.line-break {width: 100%;display: block}
+.block-center {display: block;margin: auto;}
 .inline-block {display: inline-block;}
 
 /*======== Float Elements ========*/
 .float-start {float: $direction;}
-
 .float-end {float: $directionReverse;}
-
-.clear-after::after,.clear-fix {
-    content: '';
-    display: block;
-    clear: both;
-}
+.clear-after::after,.clear-fix { @extend %clear-after,:after; }
 
 /*======== Tooltips ========*/
 [class*="tooltip"] {
@@ -110,7 +99,6 @@ hr {
     &:not([class*="ti-"]) {
         &::after {margin-bottom: 5px;}
         &::before {
-            margin-bottom: -5px;
             left:50%;
             bottom: 100%;
             @extend %position-center-x;
@@ -286,4 +274,25 @@ hr {
     padding: 100px 0;
     @media screen and (max-width:1366px) { padding: 70px 0; }
     @media screen and (max-width:980px) { padding: 50px 0; }
+}
+
+/*======== Lightbox Component ========*/
+#lightbox-modal .modal-content {
+    @extend %flexbox;
+    @extend .align-center-z;
+    width:auto;
+    max-width: 90%;
+    background-color: transparent;
+    //====> Slider <====//
+    .item {
+        background-repeat: no-repeat;
+        background-position: center;
+        img {
+            max-height: calc(100vh - 30px);
+            display: block;
+            margin: auto;
+        }
+    }
+    //====> Arrows Controls <====//
+    .tns-controls button {opacity: 1;}
 }

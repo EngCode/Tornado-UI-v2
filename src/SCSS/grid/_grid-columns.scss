@@ -1,3 +1,11 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Extra Small Screen Loop
+ * ===> 02 - Small Screen Loop
+ * ===> 03 - Medium Screen Loop
+ * ===> 04 - Large Screen Loop
+ * ===> 05 - Extra Large Screen Loop
+*/
+
 /*======== Extra Small Screen ========*/
 @for $i from 1 through $grid-columns { 
     .col-#{$i} {width: percentage($i / $grid-columns);} // Normal Grid

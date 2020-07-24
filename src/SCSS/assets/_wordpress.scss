@@ -12,7 +12,7 @@ body:not(.wp-admin) #wpadminbar{
         position: fixed;
         top:0;
         #{$direction}:0;
-        background: $dark-color;
+        background: var(--dark-color);
         .ab-submenu{display: none!important;}
     }
     &:hover{
@@ -28,7 +28,7 @@ html{margin: 0!important;}
 
 /*======== REQUIRED CSS ========*/
 .wp-caption,.gallery-caption {
-    color:$gray-color;
+    color:var(--gray-color);
     font-size:14px;
     margin-bottom: 15px;
 }
@@ -37,8 +37,8 @@ html{margin: 0!important;}
     max-width:100%;
     @extend %nowrap;
     padding: 5px;
-    background:$dark-bg;
-    color:$reverse-color;
+    background:var(--dark-light);
+    color:var(--dark-reverse);
 }
 
 .sticky {position: relative;}
@@ -57,13 +57,11 @@ html{margin: 0!important;}
 }
 
 .alignleft {
-	display: inline;
 	float: $direction;
 	margin-#{$directionReverse}: 1.5em;
 }
 
 .alignright {
-	display: inline;
 	float: $directionReverse;
 	margin-#{$direction}: 1.5em;
 }

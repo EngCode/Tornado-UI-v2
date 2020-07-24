@@ -1,7 +1,13 @@
+# Folders
 _onWork/
 .vscode/
-src/SCSS/theme/
-src/javascript/11_WordPress.js
-dist/img/
 node_modules/
-Tornado v2 Home Workspace.code-workspace
+
+# Fonts
+dist/fonts/DINNextLTW23-Bold.woff
+dist/fonts/DINNextLTW23-Medium.woff
+dist/fonts/DINNextLTW23-Regular.woff
+
+# SASS
+src/SCSS/assets/_wordpress.scss
+src/SCSS/theme/

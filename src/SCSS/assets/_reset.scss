@@ -25,7 +25,7 @@ hr,.hr {
 }
 
 pre {
-    font-family: $secondary-font;
+    font-family: var(--secondary-font);
     font-size: 1rem;
 }
 
@@ -33,7 +33,7 @@ a {
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
     text-decoration: none;
-    color:$primary-color;
+    color:var(--primary-color);
 }
 
 a,a:hover,a:focus,a:active,button,button:hover,button:focus,button:active {
@@ -45,27 +45,21 @@ abbr[title] {
     text-decoration: underline;
 }
 
-b,strong {
-    font-weight: $strong-weight;
-}
+b,strong {font-weight: var(--strong-weight);}
 
 code,kbd,samp {
-    font-family: $secondary-font;
+    font-family: var(--secondary-font);
     font-size: 1rem;
 }
 
-dfn {
-    font-style: italic;
-}
+dfn {font-style: italic;}
 
 mark {
-    background-color: $warning-bg;
-    color: #000;
+    background-color: var(--warning-light);
+    color: var(--light-reverse);
 }
 
-small {
-    font-size: 0.8rem;
-}
+small {font-size: 0.8rem;}
 
 sub,sup {
     font-size: 0.75rem;
@@ -74,13 +68,8 @@ sub,sup {
     vertical-align: baseline;
 }
 
-sub {
-    bottom: -0.25rem;
-}
-
-sup {
-    top: -0.5rem;
-}
+sub {bottom: -0.25rem;}
+sup {top: -0.5rem;}
 
 audio,video {
     display: inline-block;
@@ -111,8 +100,9 @@ button,select {
     text-transform: none;
 }
 
-button,html [type="button"],[type="reset"],[type="submit"] {
+button,[type="button"],[type="reset"],[type="submit"] {
     -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button::-moz-focus-inner,
@@ -202,7 +192,7 @@ template,
 
 /*==== Standard Form Reset ====*/
 button,input,optgroup,select,textarea {
-    font-family: $secondary-font;
+    font-family: var(--secondary-font);
     font-size: 0.875rem;
     line-height: 1;
     margin: 0;

@@ -1,5 +1,6 @@
 //======> Import Tornado UI Helpers <=======//
 import Tornado from './Tornado';
+import DataTable from './DataTable';
 
 /**======> Referance By Comment <======
  * ===> 01 - Item Remover
@@ -9,13 +10,28 @@ import Tornado from './Tornado';
  * ===> 05 - Responsive Tooltips
  * ===> 06 - Animated Counters
  * ===> 07 - ViewPort Detactor
- * ===> 08 - Fix Grid Tiny Slider
- * ===> 09 - Activate Smoth Scroll
- * ===> 10 - Activate Scroll Spy
- * ===> 11 - Activate Date Counter
+ * ===> 08 - Activate Smoth Scroll
+ * ===> 09 - Activate Scroll Spy
+ * ===> 10 - Activate Date Counter
+ * ===> 11 - Activate Dropdown Buttons
+ * ===> 12 - Activate Data Tables
+ * ===> 13 - Activate Tabs
+ * ===> 14 - Activate Accordion 
+ * ===> 15 - Activate Dropdowns
+ * ===> 16 - Activate Popups
 */
 
 document.addEventListener('DOMContentLoaded', domReady => {
+    //======> Remove ITem Access <======//
+    Tornado.getElements('.remove-item')?.forEach(element => {
+        //=====> Accessibility <=====//
+        Tornado.setAttributes(element,{
+            "tabindex":0,
+            "role":"button",
+            "aria-pressed":"false",
+        });
+    });
+
     //======> Item Remover <======//
     Tornado.liveEvent('.remove-item', 'click', event => {
         event.preventDefault();
@@ -116,24 +132,14 @@ document.addEventListener('DOMContentLoaded', domReady => {
                     //====> Activate the Element <=====//
                     element.classList.add('view-active');
                     //====> Add CSS Animation <=====//
-                    if(animName) {
-                        element.style.animationName = animName;
-                        element.style.animationDuration = animDuration;
-                        element.style.animationTimingFunction  = 'linear';
-                        element.style.animationDelay = animDelay;
-                    }
+                    if (animName) element.style.animationName = animName;
+                    if (animDuration) element.style.animationDuration = animDuration;
+                    if (animDelay) element.style.animationDelay = animDelay;
                 }
             }
             //====> Activate While Scroll
             window.addEventListener('scroll', event => activateView());
         });
-    }());
-
-    //====> Fix Grid Tiny Slider <====//
-    (function fixTnsGrid() {
-        window.addEventListener('load', event => {
-            Tornado.getElements('.tns-slider.row').forEach(gridTns => gridTns.closest('.tns-outer').classList.add('grid-tns'));
-        })
     }());
 
     //====> Activate Smoth Scroll <====//
@@ -144,10 +150,31 @@ document.addEventListener('DOMContentLoaded', domReady => {
 
     //====> Activate Scroll Spy <====//
     Tornado.scrollSpy({
-        selector : '.scrollSpy',
+        selector : '.scrollspy',
         duration : 1500,
     });
 
     //====> Activate Date Counter <====//
     Tornado.dateCounter({selector : '.date-counter'});
+
+    //====> Activate Dropdown Buttons <====//
+    Tornado.dropdown('.dropdown');
+
+    //====> Activate Data Tables <====//
+    DataTable('.data-table');
+    
+    //====> Activate Tabs <====//
+    Tornado.tabs('.tabs-menu [data-tab]');
+
+    //====> Activate Accordion <====//
+    Tornado.accordion('.accordion-item .accordion-title');
+
+    //====> Activate Dropdowns <====//
+    Tornado.dropdown('.dropdown .dropdown-btn');
+
+    //====> Activate Popups <====//
+    Tornado.popup('.modal-box');
+
+    //====> Activate Lightbox <====//
+    Tornado.lightbox('[data-lightbox]');
 });

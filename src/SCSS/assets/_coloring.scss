@@ -1,0 +1,392 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Colored Borders
+ * ===> 02 - Text Colors
+ * ===> 03 - Backgrounds Colors
+*/
+
+/*======== Colored Borders ========*/
+.success-border {
+    border-color: var(--success-color);
+}
+
+.danger-border {
+    border-color: var(--danger-color);
+}
+
+.warning-border {
+    border-color: var(--warning-color);
+}
+
+.primary-border {
+    border-color: var(--primary-color);
+}
+
+.secondary-border {
+    border-color: var(--secondary-color);
+}
+
+.light-border {
+    border-color: var(--dark-reverse);
+}
+
+.info-border {
+    border-color: var(--info-color);
+}
+
+.gray-border {
+    border-color: var(--gray-color);
+}
+
+.dark-border {
+    border-color: var(--dark-color);
+}
+
+.facebook-border {
+    border-color: $facebook-color;
+}
+
+.twitter-border {
+    border-color: $twitter-color;
+}
+
+.google-plus-border {
+    border-color: $google-plus-color;
+}
+
+.youtube-border {
+    border-color: $youtube-color;
+}
+
+.tumblr-border {
+    border-color: $tumblr-color;
+}
+
+.instagram-border {
+    border-color: $instagram-color;
+}
+
+.android-border {
+    border-color: $android-color;
+}
+
+.snapchat-border {
+    border-color: $snapchat-color;
+}
+
+.whatsapp-border {
+    border-color: $whatsapp-color;
+}
+
+.pinterest-border {
+    border-color: $pinterest-color;
+}
+
+.linkedin-border {
+    border-color: $linkedin-color;
+}
+
+.behance-border {
+    border-color: $behance-color;
+}
+
+.apple-border {
+    border-color: $apple-color;
+}
+
+.cloudflare-border {
+    border-color: $cloudflare-color;
+}
+
+.dribbble-border {
+    border-color: $dribbble-color;
+}
+
+.envato-border {
+    border-color: $envato-color;
+}
+
+.flicker-border {
+    border-color: $flicker-color;
+}
+
+.github-border {
+    border-color: $github-color;
+}
+
+/*======== Text Colors ========*/
+.success-color {
+    color: var(--success-color);
+}
+
+.danger-color {
+    color: var(--danger-color);
+}
+
+.warning-color {
+    color: var(--warning-color);
+}
+
+.primary-color {
+    color: var(--primary-color);
+}
+
+.secondary-color {
+    color: var(--secondary-color);
+}
+
+.light-color {
+    color: var(--dark-reverse);
+}
+
+.info-color {
+    color: var(--info-color);
+}
+
+.gray-color {
+    color: var(--gray-color);
+}
+
+.dark-color {
+    color: var(--dark-color);
+}
+
+.facebook-color {
+    color: $facebook-color;
+}
+
+.twitter-color {
+    color: $twitter-color;
+}
+
+.google-plus-color {
+    color: $google-plus-color;
+}
+
+.youtube-color {
+    color: $youtube-color;
+}
+
+.tumblr-color {
+    color: $tumblr-color;
+}
+
+.instagram-color {
+    color: $instagram-color;
+}
+
+.android-color {
+    color: $android-color;
+}
+
+.snapchat-color {
+    color: $snapchat-color;
+}
+
+.whatsapp-color {
+    color: $whatsapp-color;
+}
+
+.pinterest-color {
+    color: $pinterest-color;
+}
+
+.linkedin-color {
+    color: $linkedin-color;
+}
+
+.behance-color {
+    color: $behance-color;
+}
+
+.apple-color {
+    color: $apple-color;
+}
+
+.cloudflare-color {
+    color: $cloudflare-color;
+}
+
+.dribbble-color {
+    color: $dribbble-color;
+}
+
+.envato-color {
+    color: $envato-color;
+}
+
+.flicker-color {
+    color: $flicker-color;
+}
+
+.github-color {
+    color: $github-color;
+}
+
+/*======== Backgrounds Colors ========*/
+.success-bg {
+    background-color: var(--success-color);
+    color: var(--dark-reverse);
+}
+
+.danger-bg {
+    background-color: var(--danger-color);
+    color: var(--dark-reverse);
+}
+
+.warning-bg {
+    background-color: var(--warning-color);
+    color: var(--dark-reverse);
+}
+
+.primary-bg {
+    background-color: var(--primary-color);
+    color: var(--dark-reverse);
+}
+
+.secondary-bg {
+    background-color: var(--secondary-color);
+    color: var(--dark-reverse);
+}
+
+.light-bg {
+    background-color: var(--dark-reverse);
+    color: var(--dark-color);
+}
+
+.info-bg {
+    background-color: var(--info-color);
+    color: var(--dark-reverse);
+}
+
+.gray-bg {
+    background-color: var(--gray-color);
+    color: var(--dark-reverse);
+}
+
+.dark-bg {
+    background-color: var(--dark-color);
+    color: var(--dark-reverse);
+}
+
+.facebook-bg {
+    background-color: $facebook-color;
+    color: var(--dark-reverse);
+}
+
+.twitter-bg {
+    background-color: $twitter-color;
+    color: var(--dark-reverse);
+}
+
+.google-plus-bg {
+    background-color: $google-plus-color;
+    color: var(--dark-reverse);
+}
+
+.youtube-bg {
+    background-color: $youtube-color;
+    color: var(--dark-reverse);
+}
+
+.tumblr-bg {
+    background-color: $tumblr-color;
+    color: var(--dark-reverse);
+}
+
+.instagram-bg {
+    background-color: $instagram-color;
+    color: var(--dark-reverse);
+}
+
+.android-bg {
+    background-color: $android-color;
+    color: var(--dark-reverse);
+}
+
+.snapchat-bg {
+    background-color: $snapchat-color;
+    color: var(--dark-reverse);
+}
+
+.whatsapp-bg {
+    background-color: $whatsapp-color;
+    color: var(--dark-reverse);
+}
+
+.pinterest-bg {
+    background-color: $pinterest-color;
+    color: var(--dark-reverse);
+}
+
+.linkedin-bg {
+    background-color: $linkedin-color;
+    color: var(--dark-reverse);
+}
+
+.behance-bg {
+    background-color: $behance-color;
+    color: var(--dark-reverse);
+}
+
+.apple-bg {
+    background-color: $apple-color;
+    color: var(--dark-color);
+}
+
+.cloudflare-bg {
+    background-color: $cloudflare-color;
+    color: var(--dark-reverse);
+}
+
+.dribbble-bg {
+    background-color: $dribbble-color;
+    color: var(--dark-reverse);
+}
+
+.envato-bg {
+    background-color: $envato-color;
+    color: var(--dark-reverse);
+}
+
+.flicker-bg {
+    background-color: $flicker-color;
+    color: var(--dark-reverse);
+}
+
+.github-bg {
+    background-color: $github-color;
+    color: var(--dark-color);
+}
+
+.success-bg-light {
+    background-color: var(--success-light);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.danger-bg-light {
+    background-color: var(--danger-light);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.warning-bg-light {
+    background-color: var(--warning-light);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.info-bg-light {
+    background-color: var(--info-light);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.white-bg {
+    background:#FFF;
+    color:var(--dark-color);
+}
+
+.white-color {
+    color:#FFF;
+}
+
+.white-border {
+    border-color:#FFF;
+}

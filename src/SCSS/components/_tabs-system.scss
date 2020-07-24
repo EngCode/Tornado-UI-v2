@@ -1,6 +1,6 @@
 /**======> Referance By Comment <======
  * ===> 01 - Tabs Settings
- * ===> 02 - Tabs Default Theme
+ * ===> 02 - Tabs Menu Default Theme
  * ===> 03 - Tabs Default Theme : Tabs Menu
  * ===> 04 - Tabs Default Theme : Tabs Content 
  * ===> 05 - Tabs Dialog Theme
@@ -9,65 +9,67 @@
 */
 
 /*======= Tabs Settings =======*/
-.tab-content{display: none;}
-.tab-content.active{display: block;}
-.tabs-menu{@extend %reset;}
+.tab-content {
+    padding:$gutter-math 0;
+    margin-bottom: 1.875rem;
+    display: none;
+    &.active{display: block;}
+}
 
-/*======= Tabs Defaultt Theme =======*/
-.tabs {
-    /*======== Tabs Menu ========*/
-    .tabs-menu {
-        word-spacing: -5px;
-        li{
-            word-spacing: normal;
-            display: inline-block;
-            padding:0 1.875rem;
-            font-size: 0.9375rem;
-            line-height: 2.625rem;
-            font-weight: $medium-weight;
-            color:$gray-color;
-            cursor: pointer;
-            @extend %fast-motion;
-            a{color:inherit;}
-            &:hover,&.active {
-                background:#eaebec;
-                color:$dark-color;
-            }
+/*======== Tabs Menu ========*/
+.tabs-menu {
+    @extend %reset;
+    li{
+        margin-bottom: 0;
+        word-spacing: normal;
+        display: inline-block;
+        font-size: 15px;
+        cursor: pointer;
+        @extend %fast-motion;
+        a{color:inherit;}
+        padding:0 var(--component-padding);
+        line-height: var(--forms-height-small);
+        font-weight: var(--medium-weight);
+        color:var(--component-color);
+        border-radius: var(--component-radius);
+        /*==== Active Mode ====*/
+        &:hover,&.active {
+            background:var(--component-active-bg);
+            color:var(--component-active-color);
         }
     }
-
-    /*======== Tabs Content ========*/
-    .tab-content {
-        padding:1.563rem;
-        margin-bottom: 1.875rem;
-    }
-    
 }
 
 /*======= Tabs Dialog Theme =======*/
 .dialog-tabs {
     /*======== Tabs Menu ========*/
     .tabs-menu {
-        border: 1px solid rgba(0,0,0,.10);
-        background:#f8f8f8;
+        border: var(--component-border);
+        background:var(--component-darker-bg);
+        border-radius: var(--component-radius) var(--component-radius) 0 0;
+        overflow: hidden;
+        word-spacing: -5px;
         li{
-            color:$gray-color;
-            border-#{$directionReverse}:1px solid rgba(0,0,0,.10);
+            color:var(--component-color);
+            border-#{$directionReverse}:var(--component-border);
+            border-radius: 0;
+            padding:2.5px calc(var(--component-padding) + 2.5px);
             /*======== Active Mode ========*/
             &:hover,&.active {
-                background: #FFF;
-                color: $dark-color;
+                background: var(--component-background);
+                color: var(--component-active-bg);
             }
         }
     }
 
     /*======== Tabs Content ========*/
     .tab-content {
-        border:1px solid rgba(0,0,0,.10);
+        padding:var(--component-padding);
+        border:var(--component-border);
+        background: var(--component-background);
         border-top:0 none;
-        background: #FFF;
+        border-radius:0 0 var(--component-radius) var(--component-radius);
     }
-    
 }
 
 /*======= Tabs Tabular Theme =======*/
@@ -75,13 +77,15 @@
     /*======== Tabs Menu ========*/
     .tabs-menu {
         li{
-            color:$gray-color;
+            color:var(--component-color);
             position: relative;
             top:2px;
-            &.active {
-                border:1px solid rgba(0,0,0,.10);
-                background: #fcfcfc;
-                color: $dark-color;
+            padding:2.5px calc(var(--component-padding) + 2.5px);
+            &.active,&:hover {
+                border:var(--component-border);
+                background: var(--component-background);
+                color: var(--component-active-bg);
+                border-radius: var(--component-radius) var(--component-radius) 0 0;
                 border-bottom: 0 none;
             }
         }
@@ -89,8 +93,11 @@
 
     /*======== Tabs Content ========*/
     .tab-content {
-        border:1px solid rgba(0,0,0,.10);
-        background: #fcfcfc;
+        padding:var(--component-padding);
+        border:var(--component-border);
+        background: var(--component-background);
+        @if($page-dir == 'ltr') { border-radius:0 var(--component-radius) var(--component-radius) var(--component-radius); }
+        @else { border-radius:var(--component-radius) 0 var(--component-radius) var(--component-radius); }
     }
 }
 
@@ -98,26 +105,28 @@
 .lined-tabs {
     /*======== Tabs Menu ========*/
     .tabs-menu {
-        border-bottom: 1px solid rgba(0,0,0,.10);
+        border-bottom: var(--component-border);
         li{
-            padding:0 1.25rem;
-            color:$gray-color;
+            padding:0 calc(var(--component-padding) / 2);
+            color:var(--component-color);
             position: relative;
+            border-radius: 0;
             &::after{
                 position: absolute;
                 content:'';
                 bottom:-2px;
                 #{$direction}:0;
+                width:0px;
                 height: 3px;
                 @extend %fast-motion;
-                background: $dark-color;
+                background: var(--component-active-bg);
                 display: block;
             }
             /*======== Active Mode ========*/
-            &.active {
-                color: $dark-color;
+            &.active,&:hover {
+                color: var(--component-active-bg);
                 background: transparent;
-                &::after{#{$directionReverse}:0;}
+                &::after{width:100%;}
             }
         }
     }

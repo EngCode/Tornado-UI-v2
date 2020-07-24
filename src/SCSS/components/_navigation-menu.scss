@@ -1,0 +1,370 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Navigation Menu
+ * ===> 02 - Menu Mobile Button
+ * ===> 03 - Mobile Menu
+ * ===> 04 - Nested Menus
+*/
+
+/*======== Navigation Menu ========*/
+.navigation-menu {
+    //=== Menu Settings ===//
+    position: relative;
+    z-index: 99;
+    @extend %fast-motion;
+    @include medium(false) { display: none; }
+    &.collapsed { display: none; }
+    /*==== Default Theme ====*/
+    background: var(--component-background);
+    border:var(--component-border);
+    padding: 0 var(--component-padding);
+    margin-bottom: $gutter-size;
+    box-shadow: var(--component-shadow);
+    //=== Primary Menu List ===//
+    ul { @extend %reset; }
+    > ul {
+        word-spacing: -5px;
+        //=== Items Reset ===//
+        li,a {
+            @extend %reset;
+            @extend %fast-motion;
+        }
+        //== item ==//
+        > li {
+            @extend %inline-block;
+            word-spacing: normal;
+            position: relative;
+            //=== List item Link ===//
+            a {
+                color:inherit;
+                font-weight: inherit;
+                font-family: inherit;
+            }
+            //=== List item Arrow ===//
+            .dropdown-toggle:before {
+                float:$directionReverse;
+                margin-#{$direction}:5px;
+                position:relative;
+                line-height:inherit;
+                @extend %fast-motion;
+                font-size:0.7em;
+                top:0;
+            }
+            //=== Nested Setup ===//
+            ul {
+                width:220px;
+                position: absolute;
+                border:1px solid rgba(0,0,0,.15);
+                visibility: hidden;
+                /*==== Closing Animation ====*/
+                -webkit-animation: dropClose 0.5s both;
+                        animation: dropClose 0.5s both;
+            }
+            //=== Nested List ===//
+            > ul {
+                /*==== Settings ====*/
+                top:100%;
+                #{$direction}:0;
+                /*==== List item ====*/
+                li {
+                    position: relative;
+                    font-weight:normal;
+                    padding:0 0.9375rem;
+                    &:not(:last-child) { border-bottom:1px solid rgba(0,0,0,.15); }
+                    /*==== Nested Lvl >= 3 ====*/
+                    ul {
+                        top: 0;
+                        #{$direction}: 100%;
+                    }
+                }
+            }
+            //=== Nested Positon Reverse for Last Item ===//
+            &:last-child {
+                /*==== Submenu Position Fix ====*/
+                > ul {
+                    #{$direction}:auto;
+                    #{$directionReverse}:0;
+                    /*==== Lvl >= 3 Position Fix ====*/
+                    li ul {
+                        #{$direction}:auto;
+                        #{$directionReverse}:100%;
+                    }
+                }
+            }
+        }
+        //=== Hover Dropdown ===//
+        li:hover > ul { 
+            -webkit-animation: dropOpen 0.5s both; 
+                animation: dropOpen 0.5s both;
+            visibility: visible;
+        }
+    }
+
+    /*==== Menu Theme ====*/
+    @include custom-navigation (
+        $height:44px,                 //==> Height
+        $font-size:16px,              //==> Font-size
+        $font-weight:var(--medium-weight),  //==> Font Weight
+        $item-gutter : 20px,          //==> Space Between Items
+        $color:var(--component-color),           //==> Text Color
+        $hvr-color:var(--component-active-bg),    //==> Hover Color
+        $hvr-bg:transparent,          //==> Hover Background
+        //===> Sub Menu <===//
+        $sub-color:var(--component-color),       //==> Submenu Color
+        $sub-bg:var(--component-background),     //==> Submenu Background
+        $sub-font-size:14px,           //==> Submenu Font-size
+        $sub-height:36px,              //==> Submenu Height
+        $sub-hvr-bg:var(--component-active-bg),    //==> Submenu Hover Background
+        $sub-hvr-color:var(--component-active-color)  //==> Submenu Hover Color
+    );
+
+    /*==== Primary Theme ====*/
+    &.primary {
+        background-color:var(--primary-color);
+        border: 0 none;
+        @include custom-navigation (
+            $color:var(--primary-reverse),// Text Color
+            $hvr-color:var(--primary-reverse),// Hover Color
+            $hvr-bg:var(--primary-hover),// Hover Background
+            $sub-color:var(--primary-reverse),// Submenu Color
+            $sub-bg:var(--primary-color),// Submenu Background
+            $sub-hvr-bg:var(--primary-hover),// Submenu Hover Background
+            $sub-hvr-color:var(--primary-reverse)// Submenu Hover Color
+        );
+    }
+    /*==== Black Theme ====*/
+    &.dark {
+        background-color:var(--dark-color);
+        border: 0 none;
+        @include custom-navigation (
+            $color:var(--dark-reverse),// Text Color
+            $hvr-color:var(--dark-reverse),// Hover Color
+            $hvr-bg:var(--primary-color),// Hover Background
+            $sub-color:var(--dark-reverse),// Submenu Color
+            $sub-bg:var(--primary-color),// Submenu Background
+            $sub-hvr-bg:var(--dark-color),// Submenu Hover Background
+            $sub-hvr-color:var(--dark-reverse)// Submenu Hover Color
+        );
+    }
+}
+
+/*=== Menu Mobile Button ===*/
+.menu-btn[data-id] { 
+    @extend %inline-block;
+
+    @include large(true) {
+        &:not(.collapsed) { display: none; }
+    };
+}
+
+//==== Mobile Menu =====//
+.mobile-menu {
+    position:fixed;
+    top:0;
+    left: 0;
+    width:100vw;
+    height:100vh;
+    z-index:999999;
+    visibility: hidden;
+    
+    /*======== Overlay ========*/
+    .overlay-close {
+        position:fixed;
+        display:block;
+        top:0;
+        left:0;
+        background:rgba(0,0,0,.80);
+        width:100%;
+        height:100%;
+        @extend %fast-motion;
+        z-index: -1;
+        opacity: 0;
+    }
+    
+    /*======== Menu Wrapper ========*/
+    .menu-content {
+        position: relative;
+        height:100vh;
+        overflow-x:hidden;
+        overflow-y:visible;
+        @extend %fast-motion;
+        z-index:2;
+        margin: 0;
+    }
+
+    //==== Activated Effects =====//
+    &.active{
+        visibility:visible;
+        .overlay-close {opacity: 1;}
+    }
+
+    /*======== Menu Theme ========*/
+    ul {
+        @extend %reset;
+        //======== Menu Icons ========//
+        [class*="ti-"]:not(.dropdown-toggle)::before {
+            display: inline-block;
+            vertical-align: middle;
+            width:2.5rem;
+            text-align: center;
+        }
+        /*======== Menu Items ========*/
+        li{
+            position: relative;
+            margin-bottom: 0;
+            //=== List item Link ===//
+            a {
+                display: block;
+                color:inherit;
+                font-weight: inherit;
+                font-family: inherit;
+            }
+            //=== Activated Item ===//
+            &.active { border-bottom-width:0; }
+
+             /*======== Nested Menu Core ========*/
+            &:not(.active) {
+                ul,.megamenu {display: none;}
+            }
+        }
+
+        //==== Nested Menus Button =====//
+        .dropdown-toggle {
+            position: absolute;
+            width:2.813rem;
+            font-size:0.8em;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+            #{$directionReverse}:0;
+            top:0;
+            @extend %fast-motion;
+        }
+    }
+
+    *[calss*="col-"],*[calss*="box-"] {width: 100%;}
+
+    @include mobile-menu (
+        $menu-width : 280px, //====> Menu Width
+        $menu-background : var(--component-background), //====> Menu Background
+        $item-padding : 1.25rem, //====> Menu Item Padding
+        $item-height : 2.875rem, //====> Item Height
+        $item-font-size : 1rem, //===> Item Font Size
+        $item-active-bg : var(--component-active-bg), //====> Activated Item Background
+        $item-active-color : var(--component-active-color), //===> Activated Item Color
+        $sub-height : 2.875rem, //====> Sub Item Height
+        $sub-font-size : 0.9rem, //====> Sub Item Font Size
+        $sub-bg : var(--component-darker-bg), //===> Sub Item Background
+        $sub-color : var(--component-color), //===> Sub Item Color
+        $divider-color : var(--component-border), //====> Menu Item Border Color
+        $icon-size : 1.25rem, //====> Menu Item Icons Font Size
+        $menu-direction: $direction, //====> Menu Direction Position [left,right]
+    );
+}
+
+/*======== Nested Menus ========*/
+.nested-menu {
+    background:var(--component-background);
+    $border:var(--component-border);
+    box-shadow: var(--component-shadow);
+    border:$border;
+    //==== Title ====//
+    .title {
+        margin: 0;
+        padding:0 $gutter-math;
+        font-size:0.9375rem;
+        font-weight: var(--medium-weight);
+        background: rgba(0,0,0,0.03);
+        border-bottom: $border;
+        line-height: 42px;
+        text-transform: uppercase;
+        color:var(--primary-color);
+    }
+    //==== List Menu ====//
+    ul {
+        @extend %reset;
+        /*==== List Item ====*/
+        li {
+            margin-bottom: 0;
+            &:not(:last-child) {border-bottom: var(--component-border);}
+            @extend %fast-motion;
+            //=== List item Link ===//
+            a {
+                display: block;
+                color:inherit;
+                font-weight: inherit;
+                font-family: inherit;
+                @extend %fast-motion;
+            }
+            /*==== Hide Dropdown Lists ====*/
+            &:not(.active) > ul {display: none;}
+            /*==== Submenus Lists ====*/
+            ul li {
+                &:first-child{border-top:var(--component-border);}
+                /*==== Marker ====*/
+                >a::before {
+                    content: '-';
+                    padding-#{$directionReverse}: 5px;
+                }
+            }
+            /*==== Arrow Position ====*/
+            .submenu::before{float: $directionReverse;}
+        }
+    }
+
+    //==== Menu Theme ====//
+    @include nested-menu (
+        $height:42px,// Height
+        $font-size:0.9375rem,// Font-size
+        $font-weight:var(--normal-weight),// Font Weight
+        $color:var(--component-color),// Text Color
+        $hvr-color:var(--component-active-bg),// Hover Color
+        $hvr-bg:transparent,// Hover Background
+        $space-size:20px, // Gutter Size
+        // submenu
+        $sub-color:var(--component-color),// Submenu Color
+        $sub-bg:var(--component-darker-bg),// Submenu Background
+        $sub-font-size:0.875rem,// Submenu Font-size
+        $sub-height:34px,// Submenu Height
+        $sub-hvr-bg:var(--component-active-bg),// Submenu Hover Background
+        $sub-hvr-color:var(--component-active-color)// Submenu Hover Color
+    );
+
+    //==== Primary Theme ====//
+    &.primary {
+        background: var(--primary-color);
+        .title{color:var(--dark-reverse);}
+        @include nested-menu (
+            $color:var(--dark-reverse), // Text Color
+            $hvr-color:var(--dark-reverse), // Hover Color
+            // submenu
+            $sub-color:var(--dark-reverse), // Submenu Color
+            $sub-hvr-color:var(--dark-reverse) // Submenu Hover Color
+        );
+    }
+
+    //==== Dark Theme ====//
+    &.dark {
+        background: var(--dark-color);
+        .title{color:var(--dark-reverse);}
+        @include nested-menu (
+            $color:var(--dark-reverse), // Text Color
+            $hvr-color:var(--dark-reverse), // Hover Color
+            // submenu
+            $sub-color:var(--dark-reverse), // Submenu Color
+            $sub-hvr-color:var(--dark-reverse) // Submenu Hover Color
+        );
+    }
+
+    //==== Gray Theme ====//
+    &.gray {
+        background: var(--gray-color);
+        .title{color:var(--light-reverse);}
+        @include nested-menu (
+            $color:rgba(0,0,0,0.75), // Text Color
+            $hvr-color:var(--light-reverse), // Hover Color
+            // submenu
+            $sub-color:var(--light-reverse), // Submenu Color
+            $sub-hvr-color:var(--light-reverse) // Submenu Hover Color
+        );
+    }
+}

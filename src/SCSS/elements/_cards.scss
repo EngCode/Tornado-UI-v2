@@ -1,14 +1,45 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Cards Blocks
+ * ===> 02 - Default Theme
+ * ===> 03 - Media Element
+ * ===> 04 - Card Title
+ * ===> 05 - Description
+ * ===> 06 - Card Footer
+ * ===> 07 - Card Header
+ * ===> 08 - Horizontal Mode
+ * ===> 09 - Buttons Group
+ *****************************
+ * ===> 10 - Product Card
+ * ===> 11 - Floating Elements
+ * ===> 12 - Rating
+ * ===> 13 - Price
+*****************************
+ * ===> 11 - User Card
+ * ===> 12 - Media Element
+ * ===> 13 - Information Elements
+ * ===> 14 - Avatar Image
+ * ===> 15 - Card Title
+ * ===> 16 - Small Title
+ * ===> 17 - Social Buttons
+*****************************
+ * ===> 18 - Card Widget
+ * ===> 19 - icons Button
+ * ===> 20 - Widget Image
+ * ===> 21 - Widget Content
+ * ===> 22 - Action Footer
+ * ===> 23 - Floating Modes
+*/
+
 /*======== Cards Blocks ========*/
 .card-block {
-    margin-bottom: $gutterSize;
-    //===== Content Box ======//
+    margin-bottom: $gutter-size;
+    //===== Default Theme ======//
     .content-box {
-        $thisPadding : 1.563rem;
-        padding:$thisPadding;
-        background:#FFF;
-        border:1px solid rgba(0,0,0,0.10);
-        -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
-                box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+        padding:var(--component-padding);
+        background:var(--component-background);
+        border:var(--component-border);
+        -webkit-box-shadow: var(--component-shadow);
+                box-shadow: var(--component-shadow);
         height: 100%;
         //===== Media Element =====//
         .card-media {
@@ -26,11 +57,11 @@
                 margin: 0;
                 padding: 0;
             }
-            margin-bottom: $thisPadding - 0.3125;
+            margin-bottom: calc(var(--component-padding) - 5px);
             /*==== Full Width ====*/
             &.full {
-                margin: -$thisPadding;
-                margin-bottom: $thisPadding - 0.3125;
+                margin: calc(-1 * var(--component-padding));
+                margin-bottom: calc(var(--component-padding) - 5px);
             }
             //===== Overlayed Content =====//
             &.overlayed {
@@ -63,7 +94,7 @@
                     opacity: 0;
                     @extend %position-center-y;
                     text-align: center;
-                    padding:0 $thisPadding;
+                    padding:0 var(--component-padding);
                     color:#FFF;
                     @extend %fast-motion;
                     .title,p{ color:#FFF; }
@@ -100,7 +131,7 @@
                     height: 2.813rem;
                     border-radius:50%;
                     line-height: 2.688rem;
-                    color:$danger-color;
+                    color:var(--danger-color);
                     text-align: center;
                     margin: 0 0.625rem;
                 }
@@ -108,10 +139,10 @@
 
             &:hover .hvr-component{opacity: 1;}
         }
-        //===== Content =====//
+        //===== Card Title =====//
         .title {
-            font-size:1.125rem;
-            color:$dark-color;
+            font-size:1rem;
+            color:var(--component-color);
             text-transform: uppercase;
             margin-bottom: 5px;
             line-height: 1.6;
@@ -126,29 +157,29 @@
         p {
             font-size:0.9375rem;
             margin: 0;
-            margin-bottom: $gutterMath;
-            color:#6e6d6d;
-            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: $gutter-math;
+            color:var(--component-color);
         }
         
-        //===== Footer =====//
+        //===== Card Footer =====//
         .action-footer {
-            margin:-$thisPadding;
+            margin:calc(-1 * var(--component-padding));
             @extend %flexbox;
             @extend .align-between ;
-            margin-top: $thisPadding - 0.3125;
-            padding:0 $thisPadding;
+            margin-top: calc(var(--component-padding) - 5px);
+            padding:0 var(--component-padding);
             font-size:0.875rem;
             line-height: 3.125rem;
-            font-weight: $medium-weight;
-            color:$gray-color;
-            border-top:1px solid rgba(0,0,0,0.10);
+            font-weight: var(--medium-weight);
+            color:var(--component-color);
+            border-top:var(--component-border);
             /*==== Icons | Information | Read More Button ====*/
             [class*="ti-"]::before { 
                 font-size:1rem;
                 margin-#{$directionReverse}:5px;
             }
-            .info span {margin-#{$direction}:0.9375rem;}
+            .info span {margin-#{$direction}:0.9375rem;opacity: 0.9;}
             .more-btn {
                 text-transform: uppercase;
                 &::before { position: relative;top:-2px; }
@@ -158,8 +189,8 @@
                 margin: 0;
                 margin-#{$direction}:0.9375rem;
                 font-size:1rem;
-                font-weight: $medium-weight;
-                color:$primary-color;
+                font-weight: var(--medium-weight);
+                color:var(--primary-color);
                 i {
                     font-size: 0.9375rem;
                     font-weight: normal;
@@ -168,13 +199,14 @@
                 }
             }
         }
+
         //===== Card Header =====//
         .card-head {
-            margin:-$thisPadding;
+            margin:calc(-1 * var(--component-padding));
             padding:0 0.9375rem;
             background: rgba(0, 0, 0, 0.02);
-            border-bottom: 1px solid rgba(0,0,0,0.10);
-            margin-bottom: $thisPadding;
+            border-bottom: var(--component-border);
+            margin-bottom: var(--component-padding);
             @extend %flexbox;
             @extend .align-between ;
             @extend .align-center-y ;
@@ -183,7 +215,7 @@
             .title {
                 margin: 0;
                 font-size:0.875rem;
-                color:$primary-color;
+                color:var(--primary-color);
                 text-transform:none;
                 font-weight: normal;
             }
@@ -202,7 +234,8 @@
             /*==== Date ====*/
             .date {
                 font-size: 0.8125rem;
-                color: $gray-color;
+                color: var(--component-color);
+                opacity: 0.9;
             }
         }
         
@@ -218,32 +251,49 @@
                 @media screen and (min-width:500px) { padding: 0; }
                 @media screen and (max-width:480px) {
                     width: 100%;
-                    margin-bottom: $thisPadding - 0.3125;
+                    margin-bottom: calc(var(--component-padding) - 5px);
                 }
             }
             
             /*==== Content Wraper ====*/
             .content-wrap {
-                padding:$thisPadding;
+                padding:var(--component-padding);
                 width:66.666%;
                 @media screen and (max-width:480px) { width:100%; }
             }
         }
-        //===== Buttons Mode =====//
+
+        //===== Buttons Group =====//
         .btns-group {
+            @extend %flexbox;
+            @extend .align-between;
+            /*==== Button ====*/
             .btn {
                 width:50%;
+                margin: 0;
                 padding:0 0.9375rem;
                 text-transform: uppercase;
             }
-            &.gutter-on{ .btn{ width:calc(50% - 1.25rem); } }
+            /*==== Button Space ====*/
+            &.gutter-on .btn{ width:calc(50% - 1.25rem); }
+            /*==== Icons ====*/
             [class*="ti-"]::before {
                 margin-#{$directionReverse}: 5px;
                 font-size: 1.2em;
             }
+            /*==== no Space ====*/
+            &:not(.gutter-on) .btn {
+                @if($page-dir == 'ltr') {
+                    &:first-child {border-radius: var(--component-radius) 0 0 var(--component-radius);}
+                    &:last-child {border-radius: 0 var(--component-radius) var(--component-radius) 0;}
+                } @else {
+                    &:last-child {border-radius: var(--component-radius) 0 0 var(--component-radius);}
+                    &:first-child {border-radius: 0 var(--component-radius) var(--component-radius) 0;}
+                }
+            }
         }
     }
-    //======== Product Components ========//
+    //======== Product Card ========//
     &.product-card {
         $ContainerGutter : 1.25rem;
         //====== Floating Elements =======//
@@ -296,19 +346,20 @@
             .badge {
                 line-height: 1.875rem;
                 height:1.875rem;
-                margin-bottom: $gutterMath;
+                margin-bottom: $gutter-math;
             }
         }
 
         /*==== Rating ====*/
         .stars { 
             display: block;
-            color:$gray-color;
+            color:var(--component-color);
             height: 1.875rem;
             line-height: 1;
             font-size:0.9375rem;
             padding-top: 2px;
-            .active{ color:$warning-color; }
+            opacity: 0.9;
+            .active{ color:var(--warning-color);opacity: 1; }
         }
 
         /*==== Price ====*/
@@ -342,7 +393,7 @@
             .info-span { 
                 font-size:0.875rem;
                 line-height: 1.25rem;
-                font-weight: $medium-weight;
+                font-weight: var(--medium-weight);
                 margin-#{$directionReverse}:0.9375rem;
                 color:#FFF;
                 &::before {
@@ -358,7 +409,7 @@
                 height: 11.25rem;
                 display: block;
                 border-radius: 50%;
-                border:1px solid rgba(0, 0, 0, 0.1);
+                border:var(--component-border);
                 position: relative;
                 z-index: 2;
                 img {
@@ -368,10 +419,10 @@
                 }
             }
 
-            /*==== Title ====*/
+            /*==== Card Title ====*/
             .title {
                 margin-top: 1.25rem;
-                color:$primary-color;
+                color:var(--primary-color);
                 text-align: center;
             }
 
@@ -381,7 +432,8 @@
                 font-weight: normal;
                 margin: 0;
                 margin-top: -5px;
-                color:#868e96;
+                color:var(--component-color);
+                opacity: 0.9;
                 text-align: center;
                 margin-bottom: 0.625rem;
             }
@@ -391,10 +443,12 @@
                 text-align: center;
                 word-spacing: -5px;
                 margin-top: -5px;
+                margin-bottom: 10px;
                 a {
                     display: inline-block;
                     font-size:0.875rem;
-                    color:#7d7f81;
+                    color:var(--component-color);
+                    opacity: 0.9;
                     width:1.875rem;
                     height: 1.875rem;
                     line-height: 1.75rem;
@@ -427,9 +481,9 @@
                 border-radius: 50%;
                 display: inline-block;
                 padding:0;
-                &%ti-heart{color:$danger-color;}
-                &.primary{background: $primary-color;color:$reverse-color;}
-                &.secondary{background: $secondary-color;color:$reverse-color;}
+                &%ti-heart{color:var(--danger-color);}
+                &.primary{background: var(--primary-color);color:var(--dark-reverse);}
+                &.secondary{background: var(--secondary-color);color:var(--dark-reverse);}
             }
 
             /*==== Widget Image ====*/
@@ -455,28 +509,30 @@
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    color:$primary-color;
+                    color:var(--primary-color);
                     margin: 0;
                     padding: 0;
                 }
                 h2 {
                     font-size:1rem;
                     line-height: 1;
-                    color:$primary-color;
+                    color:var(--primary-color);
                     margin: 0;
                     padding: 0;
                     span {
                         display: block;
                         font-size:0.8125rem;
                         line-height: 1.25rem;
-                        color:#6e6d6d;
+                        color:var(--component-color);
+                        opacity: 0.9;
                         font-weight: normal;
                     }
                 }
                 p {
                     font-size:0.8125rem;
                     line-height: 1.25rem;
-                    color:#6e6d6d;
+                    color:var(--component-color);
+                    opacity: 0.9;
                     margin: 0;
                     padding: 0;
                     margin-top: 8px;

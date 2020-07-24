@@ -5,20 +5,6 @@
     src: url('../fonts/tornado-icons.woff2') format('woff2');
 }
 
-[data-icon]:before {
-    font-family: "tornado-icons" !important;
-    content: attr(data-icon);
-    font-style: normal;
-    font-weight: normal !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: middle;
-    display: inline-block;
-}
-
 [class^="ti-"]:before,[class*=" ti-"]:before {
     font-family: tornado-icons !important;
     font-style: normal;
@@ -29,7 +15,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     vertical-align: middle;
+    position: relative;
     display: inline-block;
+    top:-1px;
 }
 
 /*===== Baisc icons =====*/

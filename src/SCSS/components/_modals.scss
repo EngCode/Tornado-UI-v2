@@ -45,7 +45,7 @@
     .modal-content{
         position:relative;
         z-index:100;
-        background:$reverse-color;
+        background:var(--component-background);
         width:670px;
         border-radius:5px;
         @include small(false) { width:90%; }
@@ -53,8 +53,8 @@
         //=== Head ===//
         .modal-head{
             padding:0.75rem 1.25rem;
-            border-bottom:1px solid rgba(0,0,0,.10);
-            font-weight:$medium-weight;
+            border-bottom:var(--component-border);
+            font-weight:var(--medium-weight);
             font-size:1rem;
             .close-modal{
                 padding: 0;
@@ -63,7 +63,7 @@
                 line-height: 1.74rem;
                 height: 1.25rem;
                 border:0 none;
-                color:$danger-color;
+                color:var(--gray-color);
                 background: transparent;
                 text-align: center;
                 width:1.25rem;
@@ -80,7 +80,7 @@
             @extend %flexbox;
             @extend .align-between ;
             padding:0.625rem 1.25rem;
-            border-top:1px solid rgba(0,0,0,.10);
+            border-top:var(--component-border);
             .btn{margin: 0;}
         }
     }
@@ -92,6 +92,7 @@
     .modal-content {
         padding:1.875rem;
         text-align: center;
+
         /*==== Close Button ====*/
         .close-modal:not(.btn) {
             position: absolute;
@@ -100,10 +101,11 @@
             font-size:14px;
             line-height: 1.875rem;
             height: 1.875rem;
-            color:$danger-color;
+            color:var(--danger-color);
             text-align: center;
             width:1.875rem;
         }
+
         /*==== Content ====*/
         .large-icon{
             display: inline-block;
@@ -111,21 +113,24 @@
             margin-bottom: 0.625rem;
             line-height: 1;
         }
+
         h3 {
             font-size:1.375rem;
             margin-bottom: 5px;
+            color:var(--component-color);
         }
-        .rating-stars {
-            font-size:1.8rem;
+
+        .rating-control {
             margin-bottom: 0.625rem;
-            color:$gray-color;
-            line-height: 1;
-            .active{ color:$warning-color; }
+            .rate-icon {font-size:1.8rem;vertical-align: middle;}
+            .text {font-size:1.25rem;vertical-align: middle;}
         }
+
         .social-btns {
             margin-bottom: 5px;
             .btn{margin: 5px}
         }
+
         /*==== Action Footer ====*/
         .modal-footer{
             border:0 none;
@@ -134,35 +139,38 @@
     }
 
     /*======== Colors Style : Dark ========*/
-    &.dark .modal-content{background:$dark-color;color:$light-color;
+    &.dark .modal-content {
+        background: var(--dark-color);
+        color: var(--dark-reaverse);
         /* Dismissal Button Style Reverse */
-        .close-modal:not(.btn){color:$light-color;}
-    } 
+        .close-modal:not(.btn),h3,p {color: var(--dark-reaverse);}
+    }
+
     /*======== Colors Style : Success ========*/
     &.success .modal-content {
-        background: $success-color;
-        color: $reverse-color;
-        .close-modal:not(.btn){color:$reverse-color;}
+        background: var(--success-color);
+        color: var(--dark-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--dark-reverse);}
     }
 
     /*======== Colors Style : Danger ========*/
     &.danger .modal-content {
-        background: $danger-color;
-        color: $reverse-color;
-        .close-modal:not(.btn){color:$reverse-color;}
+        background: var(--danger-color);
+        color: var(--dark-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--dark-reverse);}
     }
 
     /*======== Colors Style : Warning ========*/
     &.warning .modal-content {
-        background: $warning-color;
-        color: $reverse-color;
-        .close-modal:not(.btn){color:$reverse-color;}
+        background: var(--warning-color);
+        color: var(--light-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--light-reverse);}
     }
 
     /*======== Colors Style : information ========*/
     &.info .modal-content {
-        background: $info-color;
-        color: $reverse-color;
-        .close-modal:not(.btn){color:$reverse-color;}
+        background: var(--info-color);
+        color: var(--dark-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--dark-reverse);}
     }
 }

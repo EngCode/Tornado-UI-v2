@@ -1,87 +1,17 @@
-@mixin breadcrumb (
-    $backgroundColor:null, //====> Background Color
-    $border:null, //====> Box Border
-    $padding:null, //=====> Box Padding
-    $color:null, //=====> Text Color
-    $fontSize:null, //=====> Text Font Size
-    $lineHeight:null, //====> Text Line Height
-    $iconSize:null, //====> Icons Font Size
-    $colorActive:null, //=====> Active Text Color
-    $ActiveBackground:null, //====> Active Background Color
-) {
-    //====> Box Ruls
-    @if ($backgroundColor) { background-color:$backgroundColor; }
-    @if ($padding) { padding:$padding; }
-    @if ($border) { border:$border; }
-    //====> Text
-    @if ($color) { color:$color; }
-    @if ($fontSize) { font-size:$fontSize; }
-    @if ($lineHeight) { line-height:$lineHeight; }
-    //====> Icons Font Size
-    @if ($iconSize) { [class*="ti-"]::before { font-size:$iconSize; } }
-    //============== Pointing Theme ==============//
-    &.pointing {
-        @if($ActiveBackground) {background-color:$ActiveBackground;}
-        @if($colorActive) {color:$colorActive;}
-        >a,>span {
-            vertical-align: middle;
-            @if ($color) { color:$color; }
-            @if ($backgroundColor) {
-                background-color: $backgroundColor;
-                &::after{border-#{$direction}-color:$backgroundColor;}
-            }
-            &:last-child {
-                @if($ActiveBackground) {background-color:$ActiveBackground;}
-                @if($colorActive) {color:$colorActive;}
-            }
-        }
-    }
-    //============== Curving Theme ==============//
-    &.curving {
-        @if($ActiveBackground) {background-color:$ActiveBackground;}
-        @if($colorActive) {color:$colorActive;}
-        >a,>span {
-            vertical-align: middle;
-            @if ($color) { color:$color; }
-            @if ($backgroundColor) {
-                background-color: $backgroundColor;
-                &::after{background-color:$backgroundColor;}
-            }
-            &:last-child {
-                @if($ActiveBackground) {background-color:$ActiveBackground;}
-                @if($colorActive) {color:$colorActive;}
-            }
-        }
-    }
-    //============== Skewed Theme ==============//
-    &.skewed {
-        @if($ActiveBackground) {background-color:$ActiveBackground;}
-        @if($colorActive) {color:$colorActive;}
-        >a,>span {
-            vertical-align: middle;
-            @if ($color) { color:$color; }
-            @if ($backgroundColor) {
-                background-color: $backgroundColor;
-                &::after{background-color:$backgroundColor;}
-            }
-            &:last-child {
-                @if($ActiveBackground) {background-color:$ActiveBackground;}
-                @if($colorActive) {color:$colorActive;}
-            }
-        }
-    }
-};
+/**======> Referance By Comment <======
+ * ===> 01 - Breadcrumb Theme
+ * ===> 02 - Breadcrumb Elements
+ * ===> 03 - Elements Icon
+ * ===> 04 - Pointing Theme
+ * ===> 05 - Curving Theme
+ * ===> 06 - Skewed Theme
+ * ===> 07 - Dotted Theme
+ * ===> 08 - Breadcrumb Colors
+*/
 
 /*====== Breadcrumb =======*/
 .breadcrumb {
     margin-bottom: 1.875rem;
-    [class*="ti-"] {
-        &::before {
-            margin-#{$directionReverse}:5px;
-            position: relative;
-        }
-        &%ti-home::before { top:-2px; }
-    }
     //==== Breadcrumb Elements ====//
     >a,>span {
         display: inline-block;
@@ -92,7 +22,17 @@
             @if $page-dir == 'ltr' { content:'/'; } @else { content:'\\'; }
         }
     }
-    //==== Pointing ====//
+
+    //====> Elements Icon <===//
+    [class*="ti-"] {
+        &::before {
+            margin-#{$directionReverse}:5px;
+            position: relative;
+        }
+        &%ti-home::before { top:-2px; }
+    }
+
+    //==== Pointing Theme ====//
     &.pointing {
         white-space: nowrap;
         overflow: hidden;
@@ -127,7 +67,8 @@
             &:last-child::before,&:last-child::after{display: none;}
         }
     }
-    //==== Curving ====//
+
+    //==== Curving Theme ====//
     &.curving {
         white-space: nowrap;
         overflow: hidden;
@@ -136,7 +77,7 @@
         word-spacing: -5px;
         >a,>span {
             word-spacing: normal;
-            color:$black-color;
+            color:var(--component-color);
             padding-#{$directionReverse}:0.625rem;
             padding-#{$direction}:1.25rem;
             &:not(:first-child) { padding-#{$direction}:1.875rem; }
@@ -160,7 +101,8 @@
             }
         }
     }
-    //==== Skewed ====//
+
+    //==== Skewed Theme ====//
     &.skewed {
         white-space: nowrap;
         overflow: hidden;
@@ -193,65 +135,13 @@
             }
         }
     }
-    
-    //==== Breadcrumb Theme ====//
-    @include breadcrumb (
-        $backgroundColor:#f7f7f7, //====> Background Color
-        $border:1px solid rgba(0,0,0,.10), //====> Box Border
-        $padding:0.6875rem 1.25rem, //=====> Box Padding
-        $color:$dark-color, //=====> Text Color
-        $fontSize:0.9375rem, //=====> Text Font Size
-        $lineHeight:1.875rem, //====> Text Line Height
-        $iconSize:1rem, //====> Icons Font Size
-        $colorActive:$dark-color, //=====> Active Text Color
-        $ActiveBackground:#f7f7f7, //====> Active Background Color
-    );
 
-    &.dark {
-        @include breadcrumb (
-            $backgroundColor:$dark-color, //====> Background Color
-            $border:0 none, //====> Box Border
-            $color:$reverse-color, //=====> Text Color
-            $colorActive:$reverse-color, //=====> Text Color
-        );
-    }
-    
-    &.primary {
-        @include breadcrumb (
-            $backgroundColor:$primary-color, //====> Background Color
-            $border:0 none, //====> Box Border
-            $color:$reverse-color, //=====> Text Color
-            $colorActive:$dark-color, //=====> Active Text Color
-            $ActiveBackground:#f7f7f7, //====> Active Background Color
-        );
-    }
-
-    &.secondary {
-        @include breadcrumb (
-            $backgroundColor:$secondary-color, //====> Background Color
-            $border:0 none, //====> Box Border
-            $color:$reverse-color, //=====> Text Color
-            $colorActive:$dark-color, //=====> Active Text Color
-            $ActiveBackground:#f7f7f7, //====> Active Background Color
-        );
-    }
-
-    &.primary,&.secondary {
-        &.dark {
-            @include breadcrumb (
-                $color:$reverse-color,
-                $colorActive:$reverse-color, //=====> Active Text Color
-                $ActiveBackground:$dark-color, //====> Active Background Color
-            );
-        }
-    }
-
-    //==== Dotted ====//
+    //==== Dotted Theme ====//
     &.dotted {
         background:transparent;
         border:0 none;
         padding:0;
-        border-bottom: 1px solid rgba(0,0,0,.10);
+        border-bottom:var(--component-border);
         word-spacing: -5px;
         a {
             word-spacing: normal;
@@ -264,7 +154,7 @@
                 bottom: -1px;
                 #{$direction}:0;
                 width:100%;
-                background: $primary-color;
+                background: var(--primary-color);
                 height: 1px;
             }
             &::before {
@@ -275,13 +165,66 @@
                 bottom:-5px;
                 left:50%;
                 margin-left:-14px;
-                background: $primary-color;
+                background: var(--primary-color);
                 border-radius: 50%;
             }
             &:last-child {
-                color:$gray-color;
-                &::after,&::before { background: $gray-color; }
+                color:var(--component-color);
+                &::after,&::before { background: var(--component-color); }
             }
+        }
+    }
+
+    //==== Breadcrumb Theme ====//
+    @include breadcrumb (
+        $backgroundColor:var(--component-background), //====> Background Color
+        $border:1px solid rgba(0,0,0,.10), //====> Box Border
+        $padding:0.6875rem 1.25rem, //=====> Box Padding
+        $color:var(--component-color), //=====> Text Color
+        $fontSize:0.9375rem, //=====> Text Font Size
+        $lineHeight:1.875rem, //====> Text Line Height
+        $iconSize:1rem, //====> Icons Font Size
+        $colorActive:var(--component-color), //=====> Active Text Color
+        $ActiveBackground:var(--component-background), //====> Active Background Color
+    );
+    
+    //==== Breadcrumb Colors ====//
+    &.dark {
+        @include breadcrumb (
+            $backgroundColor:var(--dark-color), //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:var(--dark-reverse), //=====> Text Color
+            $colorActive:var(--dark-reverse), //=====> Text Color
+        );
+    }
+    
+    &.primary {
+        @include breadcrumb (
+            $backgroundColor:var(--primary-color), //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:var(--primary-reverse), //=====> Text Color
+            $colorActive:var(--component-color), //=====> Active Text Color
+            $ActiveBackground:var(--component-background), //====> Active Background Color
+        );
+    }
+
+    &.secondary {
+        @include breadcrumb (
+            $backgroundColor:var(--secondary-color), //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:var(--secondary-reverse), //=====> Text Color
+            $colorActive:var(--component-color), //=====> Active Text Color
+            $ActiveBackground:var(--component-background), //====> Active Background Color
+        );
+    }
+
+    &.primary,&.secondary {
+        &.dark {
+            @include breadcrumb (
+                $color:var(--dark-reverse),
+                $colorActive:var(--dark-reverse), //=====> Active Text Color
+                $ActiveBackground:var(--dark-color), //====> Active Background Color
+            );
         }
     }
 }

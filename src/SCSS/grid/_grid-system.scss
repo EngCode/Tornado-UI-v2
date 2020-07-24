@@ -1,3 +1,11 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Containers
+ * ===> 02 - Rows and Flexbox
+ * ===> 03 - Masonry Grid
+ * ===> 04 - Masonry Columns
+*/
+
+/*==== Containers ====*/
 %container{
     margin-#{$direction}:auto;
     margin-#{$directionReverse}:auto;
@@ -7,32 +15,30 @@
 
 .container {
     @extend %container;
-    padding-#{$direction}:$gutterSize/2;
-    padding-#{$directionReverse}:$gutterSize/2;
+    padding-#{$direction}:$gutter-math;
+    padding-#{$directionReverse}:$gutter-math;
     max-width: 1200px;
 }
 
 .container-fluid {
     @extend %container;
-    padding-#{$direction}:$gutterSize/2;
-    padding-#{$directionReverse}:$gutterSize/2;
+    padding-#{$direction}:$gutter-math;
+    padding-#{$directionReverse}:$gutter-math;
     width:100%;
 }
 
 .container-xl {
     @extend %container;
-    padding-#{$direction}:$gutterSize;
-    padding-#{$directionReverse}:$gutterSize;
+    padding-#{$direction}:$gutter-size;
+    padding-#{$directionReverse}:$gutter-size;
     max-width: 1400px;
 }
 
+/*==== Rows and Flexbox ====*/
 .row {
-    margin: 0 -#{$gutterMath};
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    margin-#{$direction}:-$gutter-math;
+    margin-#{$directionReverse}:-$gutter-math;
+    @extend %flexbox;
     /* Reverse row Dircetion */
     &.row-reverse {
         -webkit-box-orient: horizontal;
@@ -42,9 +48,9 @@
     }
 
     /* set gutters space for all columns */
-    [class*="col-"],[class*="box-"] {
-        padding-#{$direction}:$gutterSize/2;
-        padding-#{$directionReverse}:$gutterSize/2;
+    > [class*="col-"],> [class*="box-"] {
+        padding-#{$direction}:$gutter-math;
+        padding-#{$directionReverse}:$gutter-math;
     }
 }
 
@@ -53,17 +59,17 @@
     &.container{@extend %flexbox;}
 }
 
-/*======== Masonry Grid Baisc ========*/
+/*======== Masonry Grid ========*/
 [class*="masonry-"] {
-    margin: 0 -#{$gutterMath};
+    margin: 0 -$gutter-math;
     word-spacing: -5px;
     -webkit-column-gap: 0;
     column-gap: 0;
-    /*======== Masonry Columns Baisc ========*/
+    /*======== Masonry Columns ========*/
     > .column{
         display: inline-block;
-        padding-#{$direction}:$gutterSize/2;
-        padding-#{$directionReverse}:$gutterSize/2;
+        padding-#{$direction}:$gutter-math;
+        padding-#{$directionReverse}:$gutter-math;
         word-spacing: normal;
         width:100%;
     }

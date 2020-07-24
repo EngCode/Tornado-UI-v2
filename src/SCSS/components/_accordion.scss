@@ -20,6 +20,7 @@
     /*======== Accordion Item ========*/
     .accordion-item {
         font-size:0.875rem;
+        margin-bottom: 0;
         /*======== Accordion Title ========*/
         .accordion-title{
             font-size:1rem;
@@ -54,18 +55,18 @@
 
     /*======== Torando Theme ========*/
     &.tornado-accordion {
-        border:1px solid rgba(0,0,0,0.10);
+        border:var(--component-border);
         border-bottom: 0 none;
         /*======== Accordion Item ========*/
         .accordion-item {
-            background: $reverse-color;
+            background: var(--component-background);
             /*======== Accordion Title ========*/
             .accordion-title{
                 margin-bottom: 0;
-                padding:0 1.25rem;
+                padding:0 calc(var(--component-padding) + 5px);
                 font-size:0.9375rem;
                 line-height:2.875rem;
-                border-bottom: 1px solid rgba(0,0,0,0.10);
+                border-bottom: var(--component-border);
                 /*======== Title Arrow || Plus ========*/
                 &::before{
                     float:$directionReverse;
@@ -79,11 +80,11 @@
             .accordion-content {padding:1.25rem;}
 
             /*======== Items Divider ========*/
-            &:not(:last-child){border-bottom: 1px solid rgba(0,0,0,0.10);}
+            &:not(:last-child){border-bottom: var(--component-border);}
 
             /*==== Active Mode ====*/
             &.active .accordion-title {
-                background: #f9f9f9;
+                background: var(--component-darker-bg);
                 &::before{line-height:2.875rem;}
             }
         }

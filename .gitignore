@@ -1,7 +1,7 @@
 # Folders
 _onWork/
 .vscode/
-node_modules/
+
 
 # Fonts
 dist/fonts/DINNextLTW23-Bold.woff

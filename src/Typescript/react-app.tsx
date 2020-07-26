@@ -3,9 +3,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 /*======> Tornado UI JS/TS Modules <======*/
-import Tornado from '.././tornado/Tornado';
+import Tornado from './Base/Tornado';
 /*======> Tornado React Grid <======*/
-import * as Grid from './Tornado-UI/Grid';
+import * as Grid from './React/Grid';
 
 /*=======> App Component <=======*/
 class TornadoApp extends React.Component {

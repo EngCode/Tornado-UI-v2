@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     mode: "production",
-    entry: path.join(__dirname, '/src/Typescript/React/app.tsx'),
+    entry: path.join(__dirname, '/src/Typescript/react-app.tsx'),
     output: {
         filename: 'tornado.react.js',
         path: path.join(__dirname, '/dist/js/')

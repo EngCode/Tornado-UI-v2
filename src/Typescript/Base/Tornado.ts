@@ -7,7 +7,6 @@
  * ===> 05 - DataTable Component
  * ===> 06 - Allow Access to Tornado Methods
  * ===> 07 - Tornado UI Utilities
- * ===> 08 - Custom Script
 */
 
 //======> TinySlider <=======//
@@ -1358,6 +1357,3 @@ window.Tornado.DataTable = window.Tornado.DataTable || DataTable;
 
 //======> Tornado UI Utilities <=======//
 import './Utilities';
-
-//======> Custom Script <=======//
-import '../app';

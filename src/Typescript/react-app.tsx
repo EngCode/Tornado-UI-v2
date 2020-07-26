@@ -13,11 +13,11 @@ class TornadoApp extends React.Component {
     render() {
         /*====> App Render Content <====*/
         return (
-            <Grid.Container size="large" nameit="pt50">
+            <Grid.Container size="large" className="pt50">
                 <h1>Hi! From TSX With Tornado React</h1>
                 {/*====> Row Component <====*/}
                 <Grid.Row>
-                    <Grid.Column nameit="tx-align-center">Column Component 12</Grid.Column>
+                    <Grid.Column className="tx-align-center">Column Component 12</Grid.Column>
                 </Grid.Row>
                 {/*====> // Row Component <====*/}
             </Grid.Container>

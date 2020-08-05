@@ -10,7 +10,7 @@
 */
 
 //======> TinySlider <=======//
-import { tns } from "tiny-slider";
+import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
 
 //======> Tornado Methods Object <=======//
 const Tornado = {

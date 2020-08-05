@@ -9,13 +9,13 @@
 import * as React from "react";
 
 /*=======> Grid Container <=======*/
-type ContainerProps = {
+interface ContainerProps {
     id?:string,
     size?: string,
     className?: string
 }
 
-export class Container extends React.Component<{size,className,id}, ContainerProps> {
+export class Container extends React.Component<ContainerProps> {
     /*======> Default Options <======*/
     static defaultProps = {
         size: '',
@@ -41,7 +41,7 @@ export class Container extends React.Component<{size,className,id}, ContainerPro
 }
 
 /*=======> Grid Row <=======*/
-type RowProps = {
+interface RowProps {
     id?:string,
     className?: string,
     direction?: string,
@@ -56,20 +56,7 @@ type RowProps = {
     columnsxLarge?: string
 }
 
-export class Row extends React.Component < {
-        id,
-        className,
-        direction,
-        gutter,
-        alignX,
-        alignY,
-        gridType,
-        columns,
-        columnsSmall,
-        columnsMedium,
-        columnsLarge,
-        columnsxLarge
-    }, RowProps > {
+export class Row extends React.Component <RowProps> {
     /*======> Default Options <======*/
     static defaultProps = {
         id:null,
@@ -153,17 +140,17 @@ export class Row extends React.Component < {
 }
 
 /*=======> Grid Columns <=======*/
-type ColumnProps = {
-    id?:string,
-    className?: string,
-    size? :string,
-    small?: string,
-    medium?: string,
-    large?: string,
-    xlarge?: string,
+interface ColumnProps {
+    id?,
+    className?,
+    size?,
+    small?,
+    medium?,
+    large?,
+    xlarge?,
 }
 
-export class Column extends React.Component<{className,size,small,medium,large,xlarge,id}, ColumnProps> {
+export class Column extends React.Component<ColumnProps> {
     /*======> Default Options <======*/
     static defaultProps = {
         id:null,

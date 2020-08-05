@@ -157,9 +157,6 @@ document.addEventListener('DOMContentLoaded', domReady => {
     //====> Activate Date Counter <====//
     Tornado.dateCounter({selector : '.date-counter'});
 
-    //====> Activate Dropdown Buttons <====//
-    Tornado.dropdown('.dropdown');
-
     //====> Activate Data Tables <====//
     DataTable('.data-table');
     

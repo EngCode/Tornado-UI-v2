@@ -38,6 +38,7 @@
     &.tns-horizontal {
         &.tns-subpixel {
             white-space: nowrap;
+            overflow: hidden;
             /*==== Item ====*/
             > .tns-item {
                 display: inline-block;

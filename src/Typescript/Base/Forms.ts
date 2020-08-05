@@ -205,7 +205,8 @@ const Forms = {
                 Forms = Tornado.parentsUntil(element, '.form-ui'),
                 selectList = selectWraper.querySelector('.options-list'),
                 multipleSelect = element.hasAttribute('multiple'),
-                selectedOption = selectWraper.querySelector('.selected-option');
+                selectedOption = selectWraper.querySelector('.selected-option'),
+                arrowIcon = selectWraper.querySelector('.arrow-icon');
             //=====> Set Large Size <=====//
             if(element.classList.contains('large') || Forms?.classList.contains('large'))
                 selectWraper.querySelector('.form-control').classList.add('large');
@@ -257,6 +258,7 @@ const Forms = {
             } else {
                 //=====> Show/Hide options <=====//
                 selectedOption.addEventListener('click', event => selectList.classList.add('active'));
+                arrowIcon.addEventListener('click', event => selectList.classList.add('active'));
                 selectWraper.addEventListener('mouseout', event => selectList.classList.remove('active'));
             }
             //=====> get and set the Selected Value <=====//

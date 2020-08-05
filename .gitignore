@@ -1,7 +1,7 @@
 # Folders
-_onWork/
 .vscode/
 node_modules/
+DesignTemplates/
 
 # Fonts
 dist/fonts/DINNextLTW23-Bold.woff
@@ -10,4 +10,4 @@ dist/fonts/DINNextLTW23-Regular.woff
 
 # SASS
 src/SCSS/assets/_wordpress.scss
-src/SCSS/theme/
+src/SCSS/ui-kit/

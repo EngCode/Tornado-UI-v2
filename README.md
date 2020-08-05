@@ -44,14 +44,14 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	https://unpkg.com/tornado-ui@2.5.0/dist/js/tornado.min.js
 
 --------------------
-#### Upcoming Update V2.6.☯️ Advanced Multimedia || 08/2020
+#### Upcoming Update V2.6.☯ Advanced Multimedia || 08/2020
 	#-- - [new] Advanced Video Player
 	#-- - [new] Advanced Audio Player
 	#-- - [new] Form Range Slider Control
 	#-- - [upgrade] Data Tables Advanced Options
 
 --------------------
-#### Lateast Update V2.5.☯️ Super 🦸‍♂️ Tornado || 07/2020
+#### Lateast Update V2.5.☯ Super 🦸‍♂️ Tornado || 07/2020
 	#01 - [new] Convert all Javascript from Babel to Typescript
 	#02 - [new] React Components for all UI Elements
 	#03 - [new] Seperate Icons Font CSS from Tornado CSS.
@@ -77,7 +77,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#23 - [doc] Documenting Typescript Methods
 	#24 - [fix] JS Dynamic Page Direction for WP-Admin
 	#25 - [Deprecated] Remove Lined Theme Form
-	#-- - [doc] Documenting React Components
+	#26 - [doc] Documenting React Components
 
 --------------------
 #### Credits

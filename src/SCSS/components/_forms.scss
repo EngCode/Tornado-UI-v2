@@ -211,12 +211,12 @@ label {
     text-align: $direction;
     /*==== Arrow ====*/
     .arrow-icon {
+        cursor: pointer;
         position: absolute;
         top:0;
         #{$directionReverse}:10px;
         text-align: center;
         line-height: var(--forms-height);
-        margin-top: -3px;
         svg{vertical-align: middle;display: inline-block;}
         .arrow-color {fill:var(--gray-color);}
     }

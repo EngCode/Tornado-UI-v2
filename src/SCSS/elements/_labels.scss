@@ -1,0 +1,588 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Default Theme
+ * ===> 02 - Outline Theme
+ * ===> 03 - Tag Theme
+ * ===> 04 - Rounded Mode
+ * ===> 05 - Circle Mode
+ * ===> 06 - Dismissal Mode
+ * ===> 07 - Pointing Theme
+ * ===> 08 - Badge Colors
+*/
+
+.badge {
+    $height : 1.75rem;
+    /*===== Default Theme =====*/
+    display: inline-block;
+    padding:0 0.8125rem;
+    height:$height;
+    line-height: $height;
+    font-size: 0.8125rem;
+    color:var(--dark-color);
+    cursor: pointer;
+    background:var(--gray-light);
+    @extend %normal-motion;
+    text-align: center;
+    border-radius: 5px;
+    vertical-align: middle;
+    position: relative;
+    margin: 5px;
+
+    /*===== Outline Theme =====*/
+    &.outline {
+        background:transparent;
+        color:var(--dark-color);
+        border:1px solid var(--gray-light);
+        height: calc($height - 2px);
+    }
+    
+    /*===== Tag Theme =====*/
+    &.tag {
+        height:1.875rem;
+        line-height: 1.75rem;
+        font-size: 13px;
+        border-radius: 0;
+        margin-#{$direction}:1.563rem;
+        /*==== Tag Arrow ====*/
+        &::after{
+            content: '';
+            display: block;
+            position: absolute;
+            width:0;
+            height: 0;
+            border: 0.9375rem solid transparent;
+            border-#{$directionReverse}-color:var(--gray-light);
+            top:50%;
+            @extend %position-center-y;
+            @extend %fast-motion;
+            #{$directionReverse}:100%;
+        }
+
+        /*==== Tag Arrow Point ====*/
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            top:calc(50% - 1px);
+            background: var(--dark-reverse);
+            border-radius: 50%;
+            @extend %position-center-y;
+            #{$directionReverse}:calc(100%);
+            z-index: 1;
+        }
+    }
+
+    /*===== Rounded Mode =====*/
+    &.rounded { border-radius: 9.375rem; }
+
+    /*===== Circle Mode =====*/
+    &.circle {
+        border-radius: 100%;
+        padding: 0;
+        width:$height;
+    }
+
+    /*===== Dismissal Mode =====*/
+    &.dismiss {
+        i,a {
+            font-style: normal;
+            font-size:0.7em;
+            line-height: inherit;
+            float: $directionReverse;
+            margin-#{$direction}:8px;
+            position: relative;
+            top:-1px;
+        }
+    }
+
+    /*==== Pointing Theme ====*/
+    &[class*="pointing"] {
+        &.outline{background: var(--dark-reverse);}
+        &::after {
+            @extend %fast-motion;
+            content: '';
+            position: absolute;
+            width:0;
+            height: 0;
+            border:0.5em solid transparent;
+        }
+        &.outline::before {
+            @extend %fast-motion;
+            content: '';
+            position: absolute;
+            width:0;
+            height: 0;
+            border:0.5em solid transparent;
+        }
+    }
+
+    /*==== Pointing Top Position ====*/
+    &.pointing-top {
+        &::after {
+            @extend %position-center-x;
+            bottom: 100%;
+            left:50%;
+            border-bottom-color:var(--gray-light);
+        }
+        &.outline::after{ border-bottom-color:var(--dark-reverse); }
+        &.outline::before {
+            @extend %position-center-x;
+            bottom: 100%;
+            left:50%;
+            margin-bottom:1px;
+            border-bottom-color:var(--gray-light);
+        }
+        &:hover::after{border-bottom-color:#f7f7f7;}
+    }
+
+    /*==== Pointing Bottom Position ====*/
+    &.pointing-bottom {
+        &::after {
+            @extend %position-center-x;
+            top: 100%;
+            left:50%;
+            border-top-color:var(--gray-light);
+        }
+        &.outline::after{ border-top-color:var(--dark-reverse); }
+        &.outline::before {
+            @extend %position-center-x;
+            top: 100%;
+            left:50%;
+            margin-top:1px;
+            border-top-color:var(--gray-light);
+        }
+    }
+
+    /*==== Pointing Start Position ====*/
+    &.pointing-start {
+        &::after {
+            @extend %position-center-y;
+            top: 50%;
+            #{$directionReverse}:100%;
+            border-#{$directionReverse}-color:var(--gray-light);
+        }
+        &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+        &.outline::before {
+            @extend %position-center-y;
+            top: 50%;
+            #{$directionReverse}:calc(100% + 1px);
+            border-#{$directionReverse}-color:var(--gray-light);
+        }
+    }
+
+    /*==== Pointing End Position ====*/
+    &.pointing-end {
+        &::after {
+            @extend %position-center-y;
+            top: 50%;
+            #{$direction}:100%;
+            border-#{$direction}-color:var(--gray-light);
+        }
+        &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+        &.outline::before {
+            @extend %position-center-y;
+            top: 50%;
+            #{$direction}:calc(100% + 1px);
+            border-#{$direction}-color:var(--gray-light);
+        }
+    }
+
+    //==== Badge Colors [Primary] ====//
+    &.primary{
+        background: var(--primary-color);
+        color:var(--dark-reverse);
+        border: 0 none;
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--primary-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--primary-color);
+            border:1px solid var(--primary-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--primary-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--primary-color);}
+        }
+
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--primary-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--primary-color);}
+        }
+
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--primary-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--primary-color);}
+        }
+
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--primary-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--primary-color);}
+        }
+    }
+
+    //==== Secondary Color ====//
+    &.secondary{
+        background: var(--secondary-color);
+        color:var(--dark-reverse);
+        border: 0 none;
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--secondary-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--secondary-color);
+            border:1px solid var(--secondary-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--secondary-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--secondary-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--secondary-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--secondary-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--secondary-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--secondary-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--secondary-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--secondary-color);}
+        }
+    }
+
+    //==== Success Color ====//
+    &.success{
+        background: var(--success-color);
+        color:var(--dark-reverse);
+        border: 0 none;
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--success-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--success-color);
+            border:1px solid var(--success-color);
+        }
+        
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--success-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--success-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--success-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--success-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--success-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--success-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--success-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--success-color);}
+        }
+    }
+
+    //==== Danger Color ====//
+    &.danger{
+        background: var(--danger-color);
+        color:var(--dark-reverse);
+        border: 0 none;
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--danger-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--danger-color);
+            border:1px solid var(--danger-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--danger-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--danger-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--danger-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--danger-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--danger-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--danger-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--danger-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--danger-color);}
+        }
+    }
+
+    //==== Badge Colors ====//
+    &.warning{
+        background: var(--warning-color);
+        color:var(--dark-color);
+        border: 0 none;
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--warning-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--warning-color);
+            border:1px solid var(--warning-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--warning-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--warning-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--warning-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--warning-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--warning-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--warning-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--warning-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--warning-color);}
+        }
+    }
+
+    //==== Info Color ====//
+    //==== Badge Colors ====//
+    &.info{
+        background: var(--info-color);
+        color:var(--dark-reverse);
+        border: 0 none;
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--info-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--info-color);
+            border:1px solid var(--info-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--info-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--info-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--info-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--info-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--info-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--info-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--info-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--info-color);}
+        }
+    }
+
+    //==== Gray Color ====//
+    //==== Badge Colors ====//
+    &.gray{
+        background: var(--gray-color);
+        color:var(--dark-reverse);
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--gray-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--gray-color);
+            border:1px solid var(--gray-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--gray-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--gray-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--gray-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--gray-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--gray-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--gray-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--gray-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--gray-color);}
+        }
+    }
+    
+    //==== Dark Color ====//
+    //==== Badge Colors ====//
+    //==== Badge Colors ====//
+    &.dark{
+        background: var(--dark-color);color:var(--dark-reverse);border: 0 none;
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--dark-color);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--dark-color);
+            border:1px solid var(--dark-color);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--dark-color);}
+            &.outline::after{ border-bottom-color:var(--dark-reverse); }
+            &.outline::before {border-bottom-color:var(--dark-color);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--dark-color);}
+            &.outline::after{ border-top-color:var(--dark-reverse); }
+            &.outline::before {border-top-color:var(--dark-color);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--dark-color);}
+            &.outline::after{ border-#{$directionReverse}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$directionReverse}-color:var(--dark-color);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--dark-color);}
+            &.outline::after{ border-#{$direction}-color:var(--dark-reverse); }
+            &.outline::before {border-#{$direction}-color:var(--dark-color);}
+        }
+    }
+
+    //==== Dark Color ====//
+    //==== Badge Colors ====//
+    //==== Badge Colors ====//
+    &.light{
+        background: var(--dark-reverse);
+        color:var(--dark-color);
+        border: 1px solid rgba(#000,0.1);
+
+        /*===== Tag Color =====*/
+        &.tag::after{border-#{$directionReverse}-color:var(--dark-reverse);}
+
+        /*===== Outline Color =====*/
+        &.outline {
+            background:transparent;
+            color:var(--dark-reverse);
+            border:1px solid var(--dark-reverse);
+        }
+
+        /*==== Pointing Top Color ====*/
+        &.pointing-top {
+            &::after {border-bottom-color:var(--dark-reverse);}
+        }
+        
+        /*==== Pointing Bottom Color ====*/
+        &.pointing-bottom {
+            &::after {border-top-color:var(--dark-reverse);}
+        }
+    
+        /*==== Pointing Start Color ====*/
+        &.pointing-start {
+            &::after {border-#{$directionReverse}-color:var(--dark-reverse);}
+        }
+    
+        /*==== Pointing End Color ====*/
+        &.pointing-end {
+            &::after{border-#{$direction}-color:var(--dark-reverse);}
+        }
+    }
+}

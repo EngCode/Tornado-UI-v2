@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\..\\..\\..\\Design Library\\Photos - Designs\\Privacy\\Information\\Markdown - Notes"
+		}
+	],
+	"settings": {
+		// Sass Compile Setting
+		"liveSassCompile.settings.generateMap":true,
+		"liveSassCompile.settings.formats":[
+			/* Sass framework Minifyed */
+			{
+				"format": "compressed",
+				"extensionName": ".min.css",
+				"savePath": "/dist/css"
+			},
+			
+			/* Sass framework Minifyed */
+			{
+				"format": "compressed",
+				"extensionName": ".min.css",
+				"savePath": "/docs/assets"
+			},
+			
+		],
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.multiRootWorkspaceName": "Markdown - Notes",
+		"liveServer.settings.port": 5501,
+	}
+}

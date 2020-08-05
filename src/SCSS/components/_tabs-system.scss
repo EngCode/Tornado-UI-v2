@@ -1,0 +1,133 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Tabs Settings
+ * ===> 02 - Tabs Menu Default Theme
+ * ===> 03 - Tabs Default Theme : Tabs Menu
+ * ===> 04 - Tabs Default Theme : Tabs Content 
+ * ===> 05 - Tabs Dialog Theme
+ * ===> 08 - Tabs Tabular Theme
+ * ===> 09 - Tabs Lined Theme
+*/
+
+/*======= Tabs Settings =======*/
+.tab-content {
+    padding:$gutter-math 0;
+    margin-bottom: 1.875rem;
+    display: none;
+    &.active{display: block;}
+}
+
+/*======== Tabs Menu ========*/
+.tabs-menu {
+    @extend %reset;
+    li{
+        margin-bottom: 0;
+        word-spacing: normal;
+        display: inline-block;
+        font-size: 15px;
+        cursor: pointer;
+        @extend %fast-motion;
+        a{color:inherit;}
+        padding:0 var(--component-padding);
+        line-height: var(--forms-height-small);
+        font-weight: var(--medium-weight);
+        color:var(--component-color);
+        border-radius: var(--component-radius);
+        /*==== Active Mode ====*/
+        &:hover,&.active {
+            background:var(--component-active-bg);
+            color:var(--component-active-color);
+        }
+    }
+}
+
+/*======= Tabs Dialog Theme =======*/
+.dialog-tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        border: var(--component-border);
+        background:var(--component-darker-bg);
+        border-radius: var(--component-radius) var(--component-radius) 0 0;
+        overflow: hidden;
+        word-spacing: -5px;
+        li{
+            color:var(--component-color);
+            border-#{$directionReverse}:var(--component-border);
+            border-radius: 0;
+            padding:2.5px calc(var(--component-padding) + 2.5px);
+            /*======== Active Mode ========*/
+            &:hover,&.active {
+                background: var(--component-background);
+                color: var(--component-active-bg);
+            }
+        }
+    }
+
+    /*======== Tabs Content ========*/
+    .tab-content {
+        padding:var(--component-padding);
+        border:var(--component-border);
+        background: var(--component-background);
+        border-top:0 none;
+        border-radius:0 0 var(--component-radius) var(--component-radius);
+    }
+}
+
+/*======= Tabs Tabular Theme =======*/
+.tabular-tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        li{
+            color:var(--component-color);
+            position: relative;
+            top:2px;
+            padding:2.5px calc(var(--component-padding) + 2.5px);
+            &.active,&:hover {
+                border:var(--component-border);
+                background: var(--component-background);
+                color: var(--component-active-bg);
+                border-radius: var(--component-radius) var(--component-radius) 0 0;
+                border-bottom: 0 none;
+            }
+        }
+    }
+
+    /*======== Tabs Content ========*/
+    .tab-content {
+        padding:var(--component-padding);
+        border:var(--component-border);
+        background: var(--component-background);
+        @if($page-dir == 'ltr') { border-radius:0 var(--component-radius) var(--component-radius) var(--component-radius); }
+        @else { border-radius:var(--component-radius) 0 var(--component-radius) var(--component-radius); }
+    }
+}
+
+/*======= Tabs Lined Theme =======*/
+.lined-tabs {
+    /*======== Tabs Menu ========*/
+    .tabs-menu {
+        border-bottom: var(--component-border);
+        li{
+            padding:0 calc(var(--component-padding) / 2);
+            color:var(--component-color);
+            position: relative;
+            border-radius: 0;
+            &::after{
+                position: absolute;
+                content:'';
+                bottom:-2px;
+                #{$direction}:0;
+                width:0px;
+                height: 3px;
+                @extend %fast-motion;
+                background: var(--component-active-bg);
+                display: block;
+            }
+            /*======== Active Mode ========*/
+            &.active,&:hover {
+                color: var(--component-active-bg);
+                background: transparent;
+                &::after{width:100%;}
+            }
+        }
+    }
+}

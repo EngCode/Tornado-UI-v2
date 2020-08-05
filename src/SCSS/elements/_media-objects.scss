@@ -1,0 +1,41 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Media Object Block
+ * ===> 02 - Layout Base
+ * ===> 03 - Media Element
+ * ===> 04 - Media Content
+ * ===> 05 - Boxed Object
+ * ===> 06 - Nested Object
+*/
+
+/*======== Media Object Block ========*/
+.media-object {
+    /*==== Layout Base ====*/
+    @extend %flexbox;
+    &:not(.boxed) { -ms-flex-wrap: nowrap;flex-wrap: nowrap; }
+    margin-bottom: $gutter-size;
+
+    /*==== Media Element ====*/
+    .media {
+        width: 80px;
+        height: 80px;
+        img{width: 100%;}
+    }
+
+    /*==== Media Content ====*/
+    .media-content {
+        width:calc(100% - 80px);
+        padding-#{$direction}:1.25rem;
+        p {margin: 0;margin-top: 5px;}
+    }
+
+    /*==== Boxed Object ====*/
+    &.boxed {
+        padding:var(--component-padding);
+        background: var(--component-background);
+        border:var(--component-border);
+    }
+
+    /*==== Nested Object ====*/
+    .media-object  { margin-top: $gutter-size; }
+    &.nested-level { margin-#{$direction}:10%; }
+}

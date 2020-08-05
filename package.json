@@ -1,0 +1,70 @@
+{
+  "name": "tornado-ui",
+  "version": "2.4.0",
+  "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
+  "main":"/dist/js/tornado.min.js",
+  "exports": {
+    "tornado-ui":"./src/Typescript/",
+    "./": "./src/Typescript/",
+    "tornado-sass": "./src/SCSS/",
+    "tornado-css": "./dist/css/"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "tornado-ts": "webpack --config typescript.webpack.js --watch",
+    "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
+    "tornado-react": "webpack --config react.webpack.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EngCode/Tornado-v2.git"
+  },
+  "author": "Abdullah.Ramadan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EngCode/Tornado-v2/issues"
+  },
+  "homepage": "https://tornado.phenixthemes.com",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tiny-slider": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1",
+    "source-map-loader": "^1.0.0",
+    "tiny-slider": "^2.9.2",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "keywords": [
+    "tornado ui",
+    "framework",
+    "css",
+    "js",
+    "esNext",
+    "es6",
+    "react",
+    "wordpress",
+    "design",
+    "web",
+    "app",
+    "enviroment",
+    "webpack",
+    "sass",
+    "rtl",
+    "ux",
+    "typescript",
+    "components"
+  ]
+}

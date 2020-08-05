@@ -1,0 +1,176 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Default Modals
+ * ===> 02 - Default Modals : Base
+ * ===> 03 - Default Modals : Activate
+ * ===> 04 - Default Modals : Overlay
+ * ===> 05 - Default Modals : Content Box
+ * ===> 06 - Call to Action Theme
+ * ===> 07 - Call to Action : CTA Content
+ * ===> 07 - Call to Action : Colors Style
+*/
+
+/*===== Default Modals =====*/
+.modal-box {
+    //==== Base ===//
+	@extend %flexbox;
+    @extend .align-center-z ;
+    @extend %minus-indexing;
+    @extend %fast-motion;
+	visibility:hidden;
+    position:fixed;
+    top:0;
+	#{$direction}:0;
+    height:100vh;
+    width:100vw;
+	z-index:9999;
+    opacity:0;
+    //===== Activate ===//
+    &.active{
+        visibility:visible;
+        opacity:1;
+        -webkit-transition: all 0.5s;
+        transition:all 0.5s;
+    }
+    //=== Overlay ===//
+    .modal-overlay{
+        position:absolute;
+        top:0;
+        #{$direction}:0;
+        height:100%;
+        width:100%;
+        background:rgba(0,0,0,.75);
+        z-index:-1;
+    }
+    //=== Content Box ===//
+    .modal-content{
+        position:relative;
+        z-index:100;
+        background:var(--component-background);
+        width:670px;
+        border-radius:5px;
+        @include small(false) { width:90%; }
+        .close-modal{cursor:pointer;}
+        //=== Head ===//
+        .modal-head{
+            padding:0.75rem 1.25rem;
+            border-bottom:var(--component-border);
+            font-weight:var(--medium-weight);
+            font-size:1rem;
+            .close-modal{
+                padding: 0;
+                float:$directionReverse;
+                font-size:14px;
+                line-height: 1.74rem;
+                height: 1.25rem;
+                border:0 none;
+                color:var(--gray-color);
+                background: transparent;
+                text-align: center;
+                width:1.25rem;
+            }
+        }
+        //=== Body ===//
+        .modal-body{
+            padding:1.25rem;
+            overflow:auto;
+            max-height:calc(100vh - 11.875rem);
+        }
+        //=== Footer ===//
+        .modal-footer{
+            @extend %flexbox;
+            @extend .align-between ;
+            padding:0.625rem 1.25rem;
+            border-top:var(--component-border);
+            .btn{margin: 0;}
+        }
+    }
+}
+
+/*======== Call to Action Theme ========*/
+.cta-modal {
+    /*======== CTA Content ========*/
+    .modal-content {
+        padding:1.875rem;
+        text-align: center;
+
+        /*==== Close Button ====*/
+        .close-modal:not(.btn) {
+            position: absolute;
+            top:15px;
+            #{$directionReverse}:15px;
+            font-size:14px;
+            line-height: 1.875rem;
+            height: 1.875rem;
+            color:var(--danger-color);
+            text-align: center;
+            width:1.875rem;
+        }
+
+        /*==== Content ====*/
+        .large-icon{
+            display: inline-block;
+            font-size:4.375rem;
+            margin-bottom: 0.625rem;
+            line-height: 1;
+        }
+
+        h3 {
+            font-size:1.375rem;
+            margin-bottom: 5px;
+            color:var(--component-color);
+        }
+
+        .rating-control {
+            margin-bottom: 0.625rem;
+            .rate-icon {font-size:1.8rem;vertical-align: middle;}
+            .text {font-size:1.25rem;vertical-align: middle;}
+        }
+
+        .social-btns {
+            margin-bottom: 5px;
+            .btn{margin: 5px}
+        }
+
+        /*==== Action Footer ====*/
+        .modal-footer{
+            border:0 none;
+            padding:0;
+        }
+    }
+
+    /*======== Colors Style : Dark ========*/
+    &.dark .modal-content {
+        background: var(--dark-color);
+        color: var(--dark-reaverse);
+        /* Dismissal Button Style Reverse */
+        .close-modal:not(.btn),h3,p {color: var(--dark-reaverse);}
+    }
+
+    /*======== Colors Style : Success ========*/
+    &.success .modal-content {
+        background: var(--success-color);
+        color: var(--dark-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--dark-reverse);}
+    }
+
+    /*======== Colors Style : Danger ========*/
+    &.danger .modal-content {
+        background: var(--danger-color);
+        color: var(--dark-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--dark-reverse);}
+    }
+
+    /*======== Colors Style : Warning ========*/
+    &.warning .modal-content {
+        background: var(--warning-color);
+        color: var(--light-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--light-reverse);}
+    }
+
+    /*======== Colors Style : information ========*/
+    &.info .modal-content {
+        background: var(--info-color);
+        color: var(--dark-reverse);
+        .close-modal:not(.btn),h3,p {color:var(--dark-reverse);}
+    }
+}

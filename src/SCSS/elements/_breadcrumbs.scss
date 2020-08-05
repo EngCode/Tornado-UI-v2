@@ -1,0 +1,230 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Breadcrumb Theme
+ * ===> 02 - Breadcrumb Elements
+ * ===> 03 - Elements Icon
+ * ===> 04 - Pointing Theme
+ * ===> 05 - Curving Theme
+ * ===> 06 - Skewed Theme
+ * ===> 07 - Dotted Theme
+ * ===> 08 - Breadcrumb Colors
+*/
+
+/*====== Breadcrumb =======*/
+.breadcrumb {
+    margin-bottom: 1.875rem;
+    //==== Breadcrumb Elements ====//
+    >a,>span {
+        display: inline-block;
+        color:inherit;
+        @extend %desc-index;
+        &:not(:last-child)::after {
+            padding:0 5px;
+            @if $page-dir == 'ltr' { content:'/'; } @else { content:'\\'; }
+        }
+    }
+
+    //====> Elements Icon <===//
+    [class*="ti-"] {
+        &::before {
+            margin-#{$directionReverse}:5px;
+            position: relative;
+        }
+        &%ti-home::before { top:-2px; }
+    }
+
+    //==== Pointing Theme ====//
+    &.pointing {
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        height: 3.125rem;
+        word-spacing: -5px;
+        >a,>span {
+            word-spacing: normal;
+            padding:0 1.25rem;
+            line-height: 3.125rem;
+            position: relative;
+            &:last-child {padding-#{$direction}:2.188rem;}
+            &::after,&::before {
+                content: '';
+                position: absolute;
+                border:25px solid transparent;
+                #{$direction}:100%;
+                -webkit-transform: translateX(-14px);
+                transform: translateX(-14px);
+                top:0;
+            }
+
+            &::before {
+                border-#{$direction}-color: rgba(0, 0, 0, 0.25);
+                -webkit-transform: translateX(-13px);transform: translateX(-13px);
+            }
+            &:nth-last-child(2) {
+                padding-#{$directionReverse}:5px;
+                &::after {-webkit-transform: translateX(0);transform: translateX(0);}
+                &::before {-webkit-transform: translateX(1px);transform: translateX(1px);}
+            }
+            &:last-child::before,&:last-child::after{display: none;}
+        }
+    }
+
+    //==== Curving Theme ====//
+    &.curving {
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        height: 3.125rem;
+        word-spacing: -5px;
+        >a,>span {
+            word-spacing: normal;
+            color:var(--component-color);
+            padding-#{$directionReverse}:0.625rem;
+            padding-#{$direction}:1.25rem;
+            &:not(:first-child) { padding-#{$direction}:1.875rem; }
+            line-height: 3.125rem;
+            position: relative;
+            @extend %minus-indexing;
+            &:not(:last-child){
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width:6.25rem;
+                    height: 6.25rem;
+                    #{$directionReverse}:-0.625rem;
+                    top:50%;
+                    @extend %position-center-y;
+                    border-radius: 50%;
+                    z-index: -1;
+                    border-#{$directionReverse}:1px solid rgba(0,0,0,.20);
+                }
+            }
+        }
+    }
+
+    //==== Skewed Theme ====//
+    &.skewed {
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0;
+        height: 3.125rem;
+        word-spacing: -5px;
+        >a,>span {
+            word-spacing: normal;
+            padding-#{$directionReverse}:0.625rem;
+            padding-#{$direction}:1.25rem;
+            &:not(:first-child) { padding-#{$direction}:1.875rem; }
+            line-height: 3.125rem;
+            position: relative;
+            @extend %minus-indexing;
+            &:not(:last-child){
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width:100%;
+                    height: 100%;
+                    #{$directionReverse}:-0.625rem;
+                    top:0;
+                    @if $page-dir == 'ltr' {
+                        -webkit-transform: skew(-10deg);transform: skew(-10deg);
+                    } @else { -webkit-transform: skew(10deg);transform: skew(10deg); }
+                    z-index: -1;
+                    border-#{$directionReverse}:1px solid rgba(0,0,0,.20);
+                }
+            }
+        }
+    }
+
+    //==== Dotted Theme ====//
+    &.dotted {
+        background:transparent;
+        border:0 none;
+        padding:0;
+        border-bottom:var(--component-border);
+        word-spacing: -5px;
+        a {
+            word-spacing: normal;
+            padding-#{$directionReverse}:25px;
+            position: relative;
+            line-height: 3.125rem;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -1px;
+                #{$direction}:0;
+                width:100%;
+                background: var(--primary-color);
+                height: 1px;
+            }
+            &::before {
+                content:'';
+                position: absolute;
+                width:11px;
+                height: 11px;
+                bottom:-5px;
+                left:50%;
+                margin-left:-14px;
+                background: var(--primary-color);
+                border-radius: 50%;
+            }
+            &:last-child {
+                color:var(--component-color);
+                &::after,&::before { background: var(--component-color); }
+            }
+        }
+    }
+
+    //==== Breadcrumb Theme ====//
+    @include breadcrumb (
+        $backgroundColor:var(--component-background), //====> Background Color
+        $border:1px solid rgba(0,0,0,.10), //====> Box Border
+        $padding:0.6875rem 1.25rem, //=====> Box Padding
+        $color:var(--component-color), //=====> Text Color
+        $fontSize:0.9375rem, //=====> Text Font Size
+        $lineHeight:1.875rem, //====> Text Line Height
+        $iconSize:1rem, //====> Icons Font Size
+        $colorActive:var(--component-color), //=====> Active Text Color
+        $ActiveBackground:var(--component-background), //====> Active Background Color
+    );
+    
+    //==== Breadcrumb Colors ====//
+    &.dark {
+        @include breadcrumb (
+            $backgroundColor:var(--dark-color), //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:var(--dark-reverse), //=====> Text Color
+            $colorActive:var(--dark-reverse), //=====> Text Color
+        );
+    }
+    
+    &.primary {
+        @include breadcrumb (
+            $backgroundColor:var(--primary-color), //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:var(--primary-reverse), //=====> Text Color
+            $colorActive:var(--component-color), //=====> Active Text Color
+            $ActiveBackground:var(--component-background), //====> Active Background Color
+        );
+    }
+
+    &.secondary {
+        @include breadcrumb (
+            $backgroundColor:var(--secondary-color), //====> Background Color
+            $border:0 none, //====> Box Border
+            $color:var(--secondary-reverse), //=====> Text Color
+            $colorActive:var(--component-color), //=====> Active Text Color
+            $ActiveBackground:var(--component-background), //====> Active Background Color
+        );
+    }
+
+    &.primary,&.secondary {
+        &.dark {
+            @include breadcrumb (
+                $color:var(--dark-reverse),
+                $colorActive:var(--dark-reverse), //=====> Active Text Color
+                $ActiveBackground:var(--dark-color), //====> Active Background Color
+            );
+        }
+    }
+}

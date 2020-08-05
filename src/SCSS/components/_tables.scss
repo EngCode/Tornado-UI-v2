@@ -1,0 +1,163 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Tables CSS
+ * ===> 02 - Table Columns
+ * ===> 03 - Table Head
+ * ===> 04 - Striped and Bordered
+ * ===> 05 - Striped BG
+ * ===> 06 - Table Responsive
+ * ===> 07 - Data Tables Navigation
+ * ===> 08 - Data Table Pagination
+*/
+
+/*==== Tables Options ====*/
+:root {
+    --table-background : #FFFFFF;
+    --table-head-bg    : #f4f4f4;
+    --table-striped    : #f4f4f4;
+    --table-border     : 1px solid rgba(0,0,0, 0.1);
+    --table-padding    : 15px;
+}
+
+/*==== Tables CSS ====*/
+.table {
+    /*==== Setup ====*/
+    width:100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size:15px;
+    margin-bottom: $gutter-size;
+
+    /*==== Table Columns ====*/
+    tr {
+        td,th{
+            padding-top: calc( var(--table-padding) / 2 );
+            padding-bottom: calc( var(--table-padding) / 2 );
+            border-bottom: var(--table-border);
+            text-align: $direction;
+        }
+    }
+
+    /*==== Table Head ====*/
+    thead th {
+        font-weight: var(--strong-weight);
+        text-align: inherit;
+    }
+    
+    /*==== Striped and Bordered ====*/
+    &.bordered, &.striped {
+        background-color: var(--table-background);
+        td,th {
+            padding:calc( var(--table-padding) / 2 ) var(--table-padding);
+            border-bottom: 0 none;
+        }
+    }
+
+    /*==== Striped BG ====*/
+    &.striped tbody tr:not([class*="-bg"]):nth-child(odd) {
+        td,th {background:var(--table-striped);}
+    }
+
+    /*==== Bordered Table ====*/
+    &.bordered {
+        border: var(--table-border);
+        /*==== Columns ====*/
+        td,th {border: var(--table-border);}
+        /*==== Head ====*/
+        thead:not([class*="-bg"]) {
+            td,th{background:var(--table-head-bg);}
+        }
+        /*==== Striped BG ====*/
+        &.striped thead tr:nth-child(odd) {
+            td,th {background:var(--table-head-bg);}
+        }
+    }
+}
+
+/*==== Table Responsive ====*/
+.responsive-table,.responsive-sm-table{
+    overflow: auto;
+    margin-bottom: $gutter-size;
+    .table{margin-bottom: 0;}
+}
+
+@include medium(false) { 
+    .responsive-table .table{width:970px;}
+}
+
+@include small(false) { 
+    .responsive-sm-table .table{width:768px;}
+}
+
+/*==== Data Table ====*/
+.data-table-wrap .sort-table {
+    cursor: pointer;
+    .sort-icon {
+        float: $direction;
+        font-size:13px;
+        color:inherit;
+        margin-#{$direction}:-5px;
+        margin-#{$directionReverse}:3px;
+        opacity: 0.5;
+        &::before{top:0;}
+    }
+
+    &.active .sort-icon{opacity: 1;}
+    
+    &.desc-sort .sort-icon::before {
+        transform: rotate(180deg);
+        top:1px;
+    }
+}
+
+/*==== Data Tables Navigation ====*/
+.data-table-nav {
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    border-bottom: var(--table-border);
+    /*==== Form Controls ====*/
+    .form-control:not(.selected-option),.tornado-select,label {
+        margin-bottom: 0;
+        width:auto;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /*==== Filters ====*/
+    .table-filters {
+        /*==== Labels ====*/
+        label {
+            margin-#{$directionReverse}: 5px;
+            text-transform: uppercase;
+            &.backspace {
+                margin-#{$direction}: -5px;
+                margin-#{$directionReverse}: 10px;
+            }
+        }
+
+        /*==== Form Controls ====*/
+        .form-control:not(.selected-option):not(.table-search),.tornado-select {margin-#{$directionReverse}: 10px;}
+        .form-control{padding: 0 12px;}
+
+        /*==== Per Page Controls ====*/
+        .perpage + .tornado-select {width:90px;
+            .filter-select{display: none;}
+        }
+    }
+}
+
+/*==== Data Table Pagination ====*/
+.data-table-pagi {
+    margin-top: -$gutter-size/1.5;
+    margin-bottom: $gutter-size;
+    /*==== info ====*/
+    p {
+        margin: 0;
+        font-size:14px;
+        color:var(--gray-color);
+    }
+    /*==== Pagination ====*/
+    .pagination li {
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,79 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Containers
+ * ===> 02 - Rows and Flexbox
+ * ===> 03 - Masonry Grid
+ * ===> 04 - Masonry Columns
+*/
+
+/*==== Containers ====*/
+%container{
+    margin-#{$direction}:auto;
+    margin-#{$directionReverse}:auto;
+    display: block;
+    position: relative;
+}
+
+.container {
+    @extend %container;
+    padding-#{$direction}:$gutter-math;
+    padding-#{$directionReverse}:$gutter-math;
+    max-width: 1200px;
+}
+
+.container-fluid {
+    @extend %container;
+    padding-#{$direction}:$gutter-math;
+    padding-#{$directionReverse}:$gutter-math;
+    width:100%;
+}
+
+.container-xl {
+    @extend %container;
+    padding-#{$direction}:$gutter-size;
+    padding-#{$directionReverse}:$gutter-size;
+    max-width: 1400px;
+}
+
+/*==== Rows and Flexbox ====*/
+.row {
+    margin-#{$direction}:-$gutter-math;
+    margin-#{$directionReverse}:-$gutter-math;
+    @extend %flexbox;
+    /* Reverse row Dircetion */
+    &.row-reverse {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+    }
+
+    /* set gutters space for all columns */
+    > [class*="col-"],> [class*="box-"] {
+        padding-#{$direction}:$gutter-math;
+        padding-#{$directionReverse}:$gutter-math;
+    }
+}
+
+.flexbox,.flex-box {
+    @extend %flexbox;
+    &.container{@extend %flexbox;}
+}
+
+/*======== Masonry Grid ========*/
+[class*="masonry-"] {
+    margin: 0 -$gutter-math;
+    word-spacing: -5px;
+    -webkit-column-gap: 0;
+    column-gap: 0;
+    /*======== Masonry Columns ========*/
+    > .column{
+        display: inline-block;
+        padding-#{$direction}:$gutter-math;
+        padding-#{$directionReverse}:$gutter-math;
+        word-spacing: normal;
+        width:100%;
+    }
+}
+
+@import 'grid-columns'; // Columns Sizes and Responsive
+@import 'grid-utilities'; // Grid System Assets and Featuresa

@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "alwaysStrict":true,
+        "jsx": "react", //===> for React Apps
+    },
+
+    // "exclude": ["React"] //===> for None React Apps
+}

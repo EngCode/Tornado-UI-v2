@@ -1,0 +1,193 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Typography Settings
+ * ===> 02 - Headine Sizes
+ * ===> 03 - Paragraph Sizes
+ * ===> 04 - Text Utilities
+ * ===> 05 - Text Alignment
+ * ===> 06 - Default Lists
+ * ===> 07 - Data Lists
+ * ===> 08 - Blocks Quotes
+*/
+
+/*==== Typography Settings ====*/
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: var(--base-s-size);
+    line-height: var(--line-height);
+    /*=== Medium Screen ===*/
+    @include medium(up){font-size: var(--base-m-size);}
+    /*=== Large Screen ===*/
+    @include large(up) {font-size: var(--base-l-size);}
+}
+
+body {
+    font-family: var(--secondary-font);
+    color: var(--typography-color);
+}
+
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
+    font-family: var(--primary-font);
+    font-weight: var(--strong-weight);
+    color:var(--headlines-color);
+    margin:0 auto;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    margin-bottom: $gutter-math
+}
+
+/*==== Headine Sizes ====*/
+h1,.h1 {font-size: 1.813rem;}
+h2,.h2 {font-size: 1.563rem;}
+h3,.h3 {font-size: 1.375rem;}
+h4,.h4 {font-size: 1.25rem;}
+h5,.h5 {font-size: 1.125rem;}
+h6,.h6 {font-size: 1rem;}
+
+/*==== Text Sizes ====*/
+.large-text {font-size: 1.125rem;}
+.medium-text {font-size: 1rem;}
+.small-text {font-size: 0.875rem;}
+
+/*==== Text Utilities ====*/
+.tx-uppercase{text-transform: uppercase;}
+.tx-capitalize{text-transform: capitalize;}
+.tx-line-through{text-decoration:line-through;}
+
+/*==== Text Alignment ====*/
+.tx-align-start{text-align: start;}
+.tx-align-end{text-align:end;}
+.tx-align-right{text-align: right;}
+.tx-align-left{text-align: left;}
+.tx-align-center{text-align: center;}
+.tx-align-justify{text-align:justify;}
+
+/*==== Default Lists ====*/
+ul,ol,dl{
+    display:block;
+    padding:0;
+    margin:auto;
+    padding-#{$direction}:15px;
+    margin-bottom:$gutter-size;
+    /*==== Nested Lists ====*/
+    ul,ol{
+        padding: 0;
+        margin: 0;
+        padding-#{$direction}:15px;
+    }
+    /*==== List Item ====*/
+    li {
+        font-size: 0.9375rem;
+        margin-bottom: 5px;
+    }
+}
+
+/*==== Data Lists ====*/
+dl {
+    /*==== Item Title ====*/
+    dt{
+        font-weight: var(--strong-weight);
+        &:not(:first-child){margin-top:5px;}
+    }
+    /*==== Item Data ====*/
+    dd{
+        padding:0;
+        margin:0;
+        padding-#{$direction}:0.625rem;
+        /*==== Icon ====*/
+        &:before {
+            content: '_';
+            display: inline-block;
+            margin-#{$directionReverse}: 5px;
+            vertical-align: middle;
+            position: relative;
+            top: -7px;
+        }
+    }
+}
+
+/*==== Blocks Quotes ====*/
+blockquote {
+    //==== Default Theme ====//
+    margin:0;
+    position: relative;
+    padding-#{$direction}:3rem;
+    margin-bottom: $gutter-size;
+    font-size:1rem;
+    font-style: italic;
+    color:var(--typography-color);
+    @extend %minus-indexing;
+    /*==== icon ====*/
+    &:before { 
+        font-family: var(--icons-font);
+        @extend %ti-quote-#{$direction}:before;
+        position: absolute;
+        font-size:2.125rem;
+        color:var(--component-color);
+        opacity: 0.3;
+        #{$direction}:0;
+        top:0;
+        font-style:normal;
+        line-height: 1;
+        z-index: -1;
+    }
+    /*==== Source Name ====*/
+    .quote-name {
+        font-size:0.875rem;
+        font-weight: var(--strong-weight);
+        display: block;
+        margin-top: 0.625rem;
+        font-style: normal;
+        &:before {
+            content: '-';
+            display: inline-block;
+            margin-right: 5px;
+            z-index: -1;
+        }
+    }
+
+    /*==== Theme 2 ====*/
+    &.theme-2 {
+        padding:2rem;
+        background:var(--component-background);
+        border: var(--component-border);
+        -webkit-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+                box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+        /*==== icon ====*/
+        &:before{
+            top:auto;
+            bottom: 1.563rem;
+            font-size:2.875rem;
+            #{$direction}:auto;
+            #{$directionReverse}:1.563rem;
+            text-shadow:-2px -2px 0 rgba(0,0,0,.10),  2px -2px 0 rgba(0,0,0,.10),-2px 2px 0 rgba(0,0,0,.10),2px 2px 0 rgba(0,0,0,.10);
+        }
+    }
+
+    /*==== Theme 3 ====*/
+    &.theme-3 {
+        padding:0 1.25rem;
+        border-left: 5px solid var(--component-darker-bg);
+        &::before{display: none;}
+    }
+
+    /*==== Theme 4 ====*/
+    &.theme-4 {
+        padding:1.5rem 2rem;
+        padding-#{$directionReverse}:3rem;
+        background:var(--component-background);
+        border: var(--component-border);
+        -webkit-box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+                box-shadow: 0px 3px 18px 0px rgba(0, 0, 0, 0.04);
+        /*==== icon ====*/
+        &:before{
+            top:1rem;
+            #{$direction}:auto;
+            #{$directionReverse}:1rem;
+            font-size:2rem;
+        }
+    }
+}

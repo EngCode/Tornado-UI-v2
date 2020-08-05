@@ -1,0 +1,1475 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Theme Variables
+ * ===> 02 - Theme Selector Variables
+ * ===> 03 - Shared Theme
+ * ===> 04 - Input Theme
+ * ===> 05 - Textarea Theme
+ * ===> 06 - Checkbox/Radio Theme
+ * ===> 07 - Label Theme
+ * ===> 08 - Standalone Control
+ * ===> 09 - Form UI Controls
+ * ===> 10 - Validation Message
+ * ===> 11 - Tornado Select
+ * ===> 12 - File Upload Input
+ * ===> 13 - Checkbox
+ * ===> 14 - Radio Button
+ * ===> 15 - Switch Button
+ * ===> 16 - Control W/ Icons
+ * ===> 17 - Advanced Uploader
+ * ===> 18 - Form Repeater
+ * ===> 19 - Alert Boxes
+ * ===> 20 - Progress Component
+ * ===> 21 - Buttons Themes
+ * ===> 22 - Dropdown Button
+ * ===> 23 - Form Rating Control
+ * ===> 24 - Form Groups
+ * ===> 25 - Pagination
+*/
+
+/*======== Theme Variables ========*/
+:root {
+    /*==== Forms Compnents ====*/
+    --forms-bg     : #FFF;
+    --forms-color  : var(--typography-color);
+    --forms-radius : 5px;
+    --forms-border : 1px solid rgba(0,0,0, 0.1);
+    --forms-darker-bg : #ebebeb;
+    --forms-shadow : inset 0 0 5px rgba(0,0,0, 0.03);
+    --forms-btns-shadow : none;
+    --forms-height : 2.5rem;
+    --forms-height-small  : 2.25rem;
+    --forms-height-large  : 3rem;
+    --forms-height-txarea : 6.25rem;
+    --forms-padding : 0.9375rem;
+    --forms-padding-large : 1.25rem;
+    --forms-gutter : 1.25rem;
+    --forms-alert  : #c2c8cd;
+}
+
+/*======== Theme Selectors Variables ========*/
+$input_elements   : 'input:not(.btn),.form-control,.file-input';
+$exclode_elements : '[type="submit"]:not(.btn),[type="button"]:not(.btn),[type="radio"],[type="checkbox"]';
+$placeholder : '&::placeholder,&::-webkit-input-placeholder, &:-ms-input-placeholder,&::-ms-input-placeholder, &::-webkit-input-placeholder';
+
+//=====> Shared Theme <=====//
+%shared-theme {
+    background-color:var(--forms-bg);
+    color:var(--forms-color);
+    margin-bottom: var(--forms-gutter);
+    border:var(--forms-border);
+    border-radius: var(--forms-radius);
+    font-size:15px;
+    box-shadow: var(--forms-shadow);
+    //=====> Reset Base Code <=====//
+    display: block;
+    &:not([class*="col-"]) {width:100%;}
+    &:focus{outline-width: 0;}
+    //=====> Colored Modes <=====//
+    &.success {
+        border-color: var(--success-color);
+        color: var(--success-color);
+    }
+
+    &.error {
+        border-color: var(--danger-color);
+        color: var(--danger-color);
+    }
+
+    &.warning {
+        border-color: var(--warning-color);
+        color: var(--warning-color);
+    }
+
+    &.disable,&[disabled] {
+        color: rgba(#000,0.3);
+        background-color: var(--disable-color);
+    }
+    //=====> Validation Messages <=====//
+    ~ .badge{margin-top: -var(--forms-gutter);}
+}
+
+//=====> Input Theme <=====//
+%control-theme {
+    height: var(--forms-height);
+    padding-right:var(--forms-padding);
+    padding-left:var(--forms-padding);
+}
+
+//=====> Textarea Theme <=====//
+%textarea-theme {
+    height: var(--forms-height-txarea);
+    padding: calc(var(--forms-padding) / 1.5) var(--forms-padding);
+    line-height: var(--line-height);
+}
+
+//=====> Checkbox/Radio Theme <=====//
+%checkbox-theme {
+    margin-bottom: 0;
+    display:inline-block;
+    vertical-align: middle;
+    width:auto;
+    font-weight:var(--medium-weight);
+    line-height:2.25rem;
+    font-size:15px;
+    cursor:pointer;
+    input{display:none!important;}
+    /*==== icon ====*/
+    span {
+        display: block;
+        &:before{
+            font-family: var(--icons-font);
+            margin-#{$directionReverse}:5px;
+            position:relative;
+            display:inline-block;
+            vertical-align:middle;
+            text-align:center;
+            top:-1px;
+            @extend %fast-motion;
+        }
+    }
+}
+
+//====> Label Theme <====//
+label {
+    font-size:0.9375rem;
+    margin-bottom: 10px;
+    display: block;
+    color:var(--forms-color);
+    font-weight: var(--medium-weight);
+    /*==== Range Slider Hack ====*/
+    + .range-slider + .tornado-range-slider:not(.vertical) {margin-top: -5px;}
+}
+
+/*========> Standalone Control <========*/
+.form-control {
+    @extend %shared-theme;
+    @extend %control-theme;
+    &.large{height: var(--forms-height-large);}
+    &.small{height: var(--forms-height-small);}
+    #{$placeholder} {opacity: 1;color:inherit;}
+}
+
+/*========> Form UI Controls <========*/
+.form-ui {
+    //=====> Controls <=====//
+    #{$input_elements} {
+        /*==== Extend Theme ====*/
+        @extend %shared-theme;
+        @extend %control-theme;
+        #{$placeholder} {opacity: 1;color:inherit;}
+    }
+
+    &.large{
+        #{$input_elements} {
+            height: var(--forms-height-large);
+            padding-right:var(--forms-padding-large);
+            padding-left:var(--forms-padding-large);
+        }
+        .file-input{line-height: var(--forms-height-large);}
+    }
+
+    &.small{
+        #{$input_elements} {height: var(--forms-height-small);}
+        .file-input{line-height: var(--forms-height-small);}
+    }
+
+    //=====> Textarea <=====//
+    textarea {
+        /*==== Extend Theme ====*/
+        @extend %shared-theme;
+        @extend %textarea-theme;
+        #{$placeholder} {opacity: 1;color:inherit;}
+    }
+
+    //=====> Excluded Types <=====//
+    #{$exclode_elements} {
+        @extend %reset;
+        @extend %inline-block;
+        width: auto;
+        height: auto;
+    }
+}
+
+/*========> Validation Message <========*/
+.control-hint {
+    @extend %reset;
+    font-size:0.8125rem;
+    position: relative;
+    bottom:calc(var(--forms-gutter) / 1.5);
+    color:var(--gray-color);
+    &.success{color: var(--success-color);}
+    &.error{color: var(--danger-color);}
+    &.warning{color: var(--warning-color);}
+    &.disable,&[disabled] {color: #cfcfcf;}
+}
+
+/*========> Tornado Select <========*/
+.tornado-select {
+    color:var(--typography-color);
+    position: relative;
+    margin-bottom: var(--forms-gutter);
+    text-align: $direction;
+    /*==== Arrow ====*/
+    .arrow-icon {
+        cursor: pointer;
+        position: absolute;
+        top:0;
+        #{$directionReverse}:10px;
+        text-align: center;
+        line-height: var(--forms-height);
+        svg{vertical-align: middle;display: inline-block;}
+        .arrow-color {fill:var(--gray-color);}
+    }
+    /*==== Selected Options Wraper ====*/
+    .selected-option {
+        @extend %nowrap;
+        cursor: pointer;
+        margin-bottom: 0;
+        line-height: calc(var(--forms-height) - 3px);
+        &.large,&.large+.arrow-icon{line-height: calc(var(--forms-height-large) - 3px);}
+        &.small,&.small+.arrow-icon{line-height: calc(var(--forms-height-small) - 3px);}
+        background-position:$directionReverse 10px center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        text-align: $direction;
+        /*==== Multiple Selection ====*/
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 10px;
+            background:var(--primary-color);
+            color:var(--primary-reverse);
+            height: 24px;
+            line-height: 24px;
+            border-radius: var(--forms-radius);
+            position: relative;
+            top:-2px;
+            font-size:0.7em;
+            margin-#{$directionReverse}:5px;
+            &::after {
+                @extend %ti-close,:before;
+                font-family: var(--icons-font);
+                padding-#{$direction}:5px;
+                font-size: 7px;
+                position: relative;
+                top:-1px;
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+        /*==== Multiple Selection ====*/
+        &.filter-select {
+            &::before {display: none;}
+            input {
+                vertical-align: middle;
+                width:auto;
+                @extend %inline-block;
+                @extend %reset;
+                height: auto;
+                border:0 none;
+                word-spacing: normal;
+                box-shadow: unset;
+                display: inline-block;
+            }
+        }
+    }
+    /*==== Select List ====*/
+    .options-list {
+        @extend %reset;
+        display: none;
+        position: absolute;
+        top:100%;
+        left: 0;
+        right: 0;
+        z-index: 999999;
+        background:var(--forms-bg);
+        border:var(--forms-border);
+        border-radius: var(--forms-radius);
+        max-height: 280px;
+        overflow-y: auto;
+        &.reverse-pos{top:auto;bottom: 100%;}
+        &:hover,&.active {display: block;}
+
+        /*==== Item ====*/
+        li {
+            margin-bottom: 0;
+            padding:8px 15px;
+            font-size:14px;
+            cursor: pointer;
+            &:not(:last-child) {border-bottom: var(--forms-border);}
+            /*==== Filter Search ====*/
+            &.filter-select {
+                padding: 5px 15px;
+                word-spacing: -5px;
+                &::before {
+                    @extend %inline-block;
+                    line-height: 28px;
+                    width:20px;
+                    font-size:14px;
+                    color:var(--gray-color);
+                    position: relative;
+                    top:-1px;
+                }
+                input {
+                    width:calc(100% - 20px);
+                    @extend %inline-block;
+                    @extend %reset;
+                    height: 32px;
+                    border:0 none;
+                    word-spacing: normal;
+                    box-shadow: unset;
+                }
+            }
+        }
+    }
+}
+
+/*==== File Upload Input ====*/
+.file-input {
+    position:relative;
+    overflow: hidden;
+    line-height: calc(var(--forms-height) - 3px);
+    @extend .form-control;
+    /*==== Value Text ====*/ 
+    &::before {
+        content: attr(data-text);
+        line-height: inherit;
+    }
+    /*==== Browse Button ====*/
+    &::after {
+        content:attr(data-btn);
+        position: absolute;
+        #{$directionReverse}:0;
+        top:0;
+        height: 100%;
+        padding:0 1.563rem;
+        background-color: var(--primary-color);
+        color:var(--primary-reverse);
+        line-height: calc(var(--forms-height) - 3px);
+    }
+    /*==== Upload Input ====*/ 
+    input[type="file"] {
+        position:absolute;
+        opacity:0;
+        cursor:pointer;
+        margin:0;
+        top:0;
+        #{$direction}:0;
+        width:100%;
+        height: 100%;
+        z-index:1;
+    }
+}
+
+/*======== Checkbox ========*/
+.checkbox {
+    @extend %checkbox-theme;
+    margin-bottom: calc(var(--forms-gutter) / 2);
+    + .checkbox:not(.block-lvl) {margin-#{$direction}:10px;}
+    /*==== Icon ====*/
+    span:before{
+        top:-2px;
+        @extend %ti-checkmark-round,:before ;
+        width:20px;
+        height:20px;
+        color:var(--disable-color);
+        background-color: var(--forms-bg);
+        line-height:19px;
+        font-size:10px;
+        border:var(--forms-border);
+        border-radius: calc(var(--forms-radius) / 2);
+    }
+    /*==== Checked Mode ====*/
+    input:checked + span:before{
+        border-color:var(--success-color);
+        color:var(--success-color);
+    }
+}
+
+/*======== Radio Button ========*/
+.radio-button {
+    @extend %checkbox-theme;
+    margin-bottom: calc(var(--forms-gutter) / 2);
+    + .radio-button:not(.block-lvl) {margin-#{$direction}:10px;}
+    /*==== Icon ====*/
+    span:before{
+        content:'';
+        top:-2px;
+        width:18px;
+        height:18px;
+        box-shadow:inset 0 0 0 4px var(--forms-bg);
+        border-radius:50%;
+        background-color: #c3c3c3;
+        border: var(--forms-border);
+    }
+    /*==== Checked Mode ====*/
+    input:checked + span:before{
+        border-color:var(--success-color);
+        background-color:var(--success-color);
+        color:var(--success-color);
+    }
+}
+
+/*======== Switch Button ========*/
+.switch-control {
+    @extend %checkbox-theme;
+    margin-bottom: calc(var(--forms-gutter) / 2);
+    + .switch-control:not(.block-lvl) {margin-#{$direction}:10px;}
+    /*==== Switch Key ====*/
+    .switch {
+        @extend %inline-block;
+        @extend %fast-motion;
+        height:6px;
+        width:40px;
+        border-radius:6px;
+        margin:0 5px;
+        background:#c3c3c3;
+        position: relative;
+        top:-1px;
+        &:before{
+            content:'';
+            border:0 none;
+            position:absolute;
+            #{$direction}:0;
+            top:50%;
+            @extend %position-center-y;
+            background:#acacac;
+            border-radius:50%;
+            width:15px;
+            height:15px;
+        }
+    }
+
+    /*==== Checked Mode ====*/
+    input:checked + .switch{
+        background: var(--success-color);
+        &:before{
+            #{$direction}:100%;
+            margin-#{$direction}:-0.9375rem;
+            background:var(--success-color);
+        }
+    }
+}
+
+/*======== Control W/ Icons ========*/
+.control-icon {
+    position: relative;
+    /*==== Icon ====*/
+    &::before {
+        position: absolute;
+        top:1px;
+        #{$direction}:10px;
+        text-align: center;
+        width:20px;
+        height: calc(var(--forms-height) - 2px);
+        line-height: calc(var(--forms-height) - 0.2rem);
+        color:var(--forms-color);
+        font-size:15px;
+        z-index: 5;
+    }
+
+    /*==== Controls ====*/
+    #{$input_elements} {padding-#{$direction}:calc(var(--forms-height) - 5px);}
+
+    /*==== Labeled Theme ====*/
+    &.labeled{
+        /*==== Icon ====*/
+        &::before {
+            #{$direction}:1px;
+            width:var(--forms-height);
+            border-#{$directionReverse}:var(--forms-border);
+            background-color: var(--forms-darker-bg);
+            @if ($page-dir == 'ltr') {
+                border-radius: var(--forms-radius) 0 0 var(--forms-radius);
+            } @else {
+                border-radius: 0 var(--forms-radius) var(--forms-radius) 0;
+            }
+        }
+        /*==== Controls ====*/
+        #{$input_elements} {padding-#{$direction}:calc(var(--forms-height) + 0.5rem);}
+    }
+    
+    /*==== Small Size ====*/
+    &.small {
+        /*==== Icon ====*/
+        &::before {
+            width:20px;
+            height: var(--forms-height-small);
+            line-height: calc(var(--forms-height-small) - 0.2rem);
+            font-size:15px;
+        }
+
+        /*==== Controls ====*/
+        #{$input_elements} {padding-#{$direction}:calc(var(--forms-height-small) / 1.2);}
+
+        /*==== Labeled Theme ====*/
+        &.labeled{
+            /*==== Icon ====*/
+            &::before {width:var(--forms-height-small);}
+            /*==== Controls ====*/
+            #{$input_elements} {padding-#{$direction}:calc(var(--forms-height-small) + 0.5rem);}
+        }
+    }
+    
+    /*==== Large Size ====*/
+    &.large {
+        /*==== Icon ====*/
+        &::before {
+            #{$direction}:15px;
+            width:25px;
+            height: var(--forms-height-large);
+            line-height: calc(var(--forms-height-large) - 0.2rem);
+            font-size:17px;
+        }
+
+        /*==== Controls ====*/
+        #{$input_elements} {padding-#{$direction}:calc(var(--forms-height-large) / 1.2);}
+
+        /*==== Labeled Theme ====*/
+        &.labeled{
+            /*==== Icon ====*/
+            &::before {
+                width: var(--forms-height-large);
+                #{$direction}: 0;
+            }
+            /*==== Controls ====*/
+            #{$input_elements} {padding-#{$direction}:calc(var(--forms-height-large) + 0.5rem);}
+        }
+    }
+
+    /*==== Floating Mode ====*/
+    &.floating-end {
+        /*==== Icon ====*/
+        &::before {
+            #{$direction}:auto;
+            #{$directionReverse}:10px;
+        }
+        /*==== Labeled ====*/
+        &.labeled::before {
+            #{$directionReverse}:0;
+            border-#{$directionReverse}:0 none;
+            border-#{$direction}:1px solid rgba(0,0,0,.15);
+        }
+        /*==== Controls ====*/
+        #{$input_elements} {padding-#{$direction}:var(--forms-padding);}
+    }
+}
+
+/*======== Advanced Uploader ========*/
+.advanced-uploader {
+    position: relative;
+    margin-bottom: var(--forms-gutter);
+    background-size:cover;
+    background-position: center;
+    overflow: hidden;
+    @extend %fast-motion;
+    /*======== Theme ========*/
+    padding: 30px;
+    background-color:var(--forms-darker-bg);
+    text-align: center;
+    font-size:13px;
+    /*======== Hidden Input ========*/
+    input[type="file"] {
+        position:absolute;
+        top:15px;
+        #{$direction}:0;
+        #{$directionReverse}:0;
+        cursor:pointer;
+        margin:0;
+        width:auto;
+        height: 88px;
+        max-height: 100%;
+        z-index:5;
+        opacity: 0;
+    }
+    /*======== Border ========*/
+    &::after {
+        position: absolute;
+        z-index: 1;
+        content:'';
+        display: block;
+        top:15px;
+        bottom: 15px;
+        #{$direction}:15px;
+        #{$directionReverse}:15px;
+        max-height: 95px;
+        border:var(--forms-border);
+    }
+    /*======== icon ========*/
+    &::before {
+        display: block;
+        margin: auto;
+        font-size:1.75rem;
+        width:40px;
+        height: 40px;
+        line-height: 40px;
+    }
+    /*======== Text ========*/
+    span {
+        display: block;
+        height: 25px;
+        @extend %nowrap;
+    }
+    /*======== Heighlight ========*/
+    &.highlight {
+        background-color: #fff;
+        color:var(--primary-color);
+        &::after {border-color:var(--primary-color);}
+    }
+    /*==== Preview Mode ====*/
+    &.image-mode,&.video-mode {
+        &::before,span,&::after{display: none;}
+        /*==== Size ====*/
+        &[data-size="hd"] {padding-bottom: 56.25%;}
+        &[data-size="square"] {padding-bottom:100%;}
+        /*==== Resize Fix ====*/
+        &[data-size] {
+            height: 125px;
+            input[type="file"] {height: 100%;}
+            .files {
+                #{$direction}:0;
+                #{$directionReverse}:0;
+                position: absolute;
+                bottom: 0;
+                margin: 0;
+                li{padding: 0 15px;}
+            }
+        }
+    }
+    /*==== Video Mode ====*/
+    &.video-mode {
+        overflow: hidden;
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 0;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    /*======== Files ========*/
+    .files {
+        @extend %reset;
+        margin: 0 -15px;
+        margin-bottom: -25px;
+        margin-top: 25px;
+        li {
+            @extend %nowrap;
+            text-align: $direction;
+            line-height: 25px;
+            color:var(--primary-color);
+            background-color: #fff;
+            padding:0;
+            margin-bottom: 10px;
+            &:not(:last-child){border-bottom: 1px solid rgba(#000,0.1);}
+            &::before {
+                font-family: var(--icons-font);
+                margin-#{$directionReverse}:5px;
+                position: relative;
+                top:-1px;
+                @extend %inline-block;
+                @extend %ti-file-new,:before;
+            }
+        }
+    }
+}
+
+/*======== Form Repeater ========*/
+.form-repeater {
+    position: relative;
+    .repeater-item {
+        @extend %flexbox;
+        @extend .align-between;
+        /*==== Controls ====*/
+        .controls-wrap {
+            @extend .col-auto;
+            padding-#{$directionReverse}:15px;
+        }
+        /*==== Button ====*/
+        .add-item,.remove-item {
+            width: var(--forms-height);
+            height: var(--forms-height);
+            line-height: var(--forms-height);
+            text-align: center;
+            border-radius: var(--forms-radius);
+            color:#FFF;
+            &::before{top:-2px;}
+        }
+        /*==== Button Colors ====*/
+        .add-item{background:var(--success-color);}
+        .remove-item{background:var(--danger-color);}
+    }
+    /*==== Sizes ====*/
+    &.large .repeater-item {
+        .add-item,.remove-item {
+            width: var(--forms-height-large);
+            height: var(--forms-height-large);
+            line-height: var(--forms-height-large);
+        }
+    }
+
+    &.small .repeater-item {
+        .add-item,.remove-item {
+            width: var(--forms-height-small);
+            height: var(--forms-height-small);
+            line-height: var(--forms-height-small);
+        }
+    }
+}
+
+/*======== Alert Boxes ========*/
+.alert{
+    /*==== Default Theme ====*/
+    position: relative;
+    padding:0.9375rem 1.25rem;
+    background:var(--forms-alert);
+    color:var(--forms-color);
+    font-size:0.9375rem;
+    margin-bottom: $gutter-math;
+    border-radius: var(--forms-radius);
+    /*==== Paragraph Reset ====*/
+    p {margin: 0;padding: 0;} 
+    /*==== Dismissal Button ====*/
+    .remove-item {
+        position: absolute;
+        #{$directionReverse}:0;
+        top:0;
+        width:3.125rem;
+        height: 3.125rem;
+        line-height: 3.125rem;
+        color:rgba(0,0,0,.30);
+        font-size:0.9375rem;
+        text-align: center;
+        background: transparent;
+        border: 0 none;
+        cursor: pointer;
+    } 
+    /*==== Dark Color ====*/
+    &.dark {
+        background:var(--dark-light);
+        color:var(--dark-reverse);
+        .remove-item {color:var(--dark-reverse);} 
+    } 
+    /*==== Success Color ====*/
+    &.success {
+        background: var(--success-light);
+        color: var(--light-reverse);
+    }
+    /*==== Danger Color ====*/
+    &.danger {
+        background: var(--danger-light);
+        color: var(--light-reverse);
+    }
+    /*==== Warning Color ====*/
+    &.warning {
+        background: var(--warning-light);
+        color: var(--light-reverse);
+    }
+    /*==== Info Color ====*/
+    &.info {
+        background: var(--info-light);
+        color: var(--light-reverse);
+    }
+}
+
+/*======== Progress Component ========*/
+.progress-bar {
+    /*==== Baisc ====*/
+    display: block;
+    position: relative;
+    /*==== Title ====*/
+    &[data-title]::before {
+        content: attr(data-title);
+        display: block;
+        position: absolute;
+    }
+    /*==== Number ====*/
+    .progress-num {
+        position: absolute;
+        display: block;
+    }
+
+    /*==== Bar Theme ====*/
+    &:not(.radial):not(.circle) {
+        height: 24px;
+        background-color:var(--forms-darker-bg);
+        margin-bottom: 25px;
+        font-size:14px;
+        line-height: 23px;
+        /*==== Progress ====*/
+        svg {
+            @extend %fast-motion;
+            rect {fill: var(--gray-color);@extend %fast-motion;}
+        }
+        /*==== Title ====*/
+        &[data-title] {
+            margin-top: 30px;
+            &::before {
+                height: 25px;
+                font-size:13px;
+                line-height: 25px;
+                font-weight: var(--strong-weight);
+                #{$direction}:0;
+                width:100%;
+                bottom: 100%;
+            }
+        }
+        /*==== Progress Number ====*/
+        .progress-num {
+            color:#FFF;
+            height: 100%;
+            top:0;
+            bottom: 0;
+            padding:0 15px;
+            @if ( $page-dir == 'ltr' ) {
+                -webkit-transform: translateX(-100%);
+                        transform: translateX(-100%);
+            } @else {
+                -webkit-transform: translateX(100%);
+                        transform: translateX(100%);
+            }
+        }
+        /*==== Bar Colors ====*/
+        &.primary svg rect   {fill: var(--primary-color);}
+        &.secondary svg rect {fill: var(--secondary-color);}
+        &.success svg rect   {fill: var(--success-color);}
+        &.danger svg rect    {fill: var(--danger-color);}
+        &.warning svg rect   {fill: var(--warning-color);}
+        &.info svg rect      {fill: var(--info-color);}
+    }
+
+    /*==== Circle and Radial ====*/
+    &.circle, &.radial {
+        /*==== SVG ====*/
+        svg {
+            width:100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        /*==== Number ====*/
+        .progress-num {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top:50%;
+            font-weight: var(--strong-weight);
+            text-align: center;
+            font-size:2rem;
+            @extend %position-center-y;
+        }
+    }
+
+    /*==== Circle Theme ====*/
+    &.circle {
+        padding-bottom:100%;
+        margin-bottom: 30px;
+        svg{
+            height:100%;
+            padding: 5px;
+        }
+        /*==== SVG ====*/
+        svg path {
+            stroke: var(--gray-color);
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            animation: progress 1s ease-out forwards;
+        }
+        @keyframes progress {0% {stroke-dasharray: 0 100;}}
+        /*==== Title ====*/
+        &[data-title]::before {
+            top:100%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: var(--strong-weight);
+            font-size:15px;
+        }
+        /*==== Number ====*/
+        .progress-num {
+            top: 50%;
+            font-size: 2rem;
+        }
+        /*==== Colors ====*/
+        &.primary  {
+            .progress-num { color:var(--primary-color); }
+            svg path {stroke: var(--primary-color);}
+        }
+
+        &.secondary  {
+            .progress-num { color:var(--secondary-color); }
+            svg path {stroke: var(--secondary-color);}
+        }
+
+        &.success  {
+            .progress-num { color:var(--success-color); }
+            svg path {stroke: var(--success-color);}
+        }
+
+        &.danger  {
+            .progress-num { color:var(--danger-color); }
+            svg path {stroke: var(--danger-color);}
+        }
+
+        &.warning  {
+            .progress-num { color:var(--warning-color); }
+            svg path {stroke: var(--warning-color);}
+        }
+
+        &.info  {
+            .progress-num { color:var(--info-color); }
+            svg path {stroke: var(--info-color);}
+        }
+    }
+
+    /*==== Radial Theme ====*/
+    &.radial {
+        padding-bottom: 90%;
+        /*==== SVG ====*/
+        svg path {
+            will-change: auto;
+            stroke-width: $gutter-math;
+            stroke-miterlimit: round;
+            transition: stroke-dashoffset 850ms ease-in-out;
+        }
+        /*==== Title ====*/
+        &[data-title]::before {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size:14px;
+            font-weight: var(--strong-weight);
+        }
+        /*==== Theme ====*/
+        .progress-num {
+            color:var(--gray-color);
+            top:55%;
+        }
+        svg .progress-bg{stroke: var(--forms-darker-bg);}
+        svg .progress{stroke: var(--gray-color);}
+        /*==== Colors ====*/
+        &.primary  {
+            .progress-num { color:var(--primary-color); }
+            svg .progress{stroke: var(--primary-color);}
+        }
+
+        &.secondary  {
+            .progress-num { color:var(--secondary-color); }
+            svg .progress{stroke: var(--secondary-color);}
+        }
+
+        &.success  {
+            .progress-num { color:var(--success-color); }
+            svg .progress{stroke: var(--success-color);}
+        }
+
+        &.danger  {
+            .progress-num { color:var(--danger-color); }
+            svg .progress{stroke: var(--danger-color);}
+        }
+
+        &.warning  {
+            .progress-num { color:var(--warning-color); }
+            svg .progress{stroke: var(--warning-color);}
+        }
+
+        &.info  {
+            .progress-num { color:var(--info-color); }
+            svg .progress{stroke: var(--info-color);}
+        }
+    }
+}
+
+/*======== Buttons Theme ========*/
+.btn {
+    /*==== Default Theme ====*/
+    @extend %inline-block;
+    @extend %fast-motion;
+    padding:0 var(--forms-padding);
+    height:var(--forms-height);
+    line-height: var(--forms-height);
+    color:var(--forms-color);
+    background-color:var(--forms-bg);
+    font-size: 14px;
+    font-weight:var(--strong-weight);
+    text-align: center;
+    border-radius: var(--forms-radius);
+    border:0 none;
+    box-shadow: var(--forms-btns-shadow) rgba(#000,0.05);
+    &.default{border:var(--forms-border);}
+    &::before{top:-2px;}
+    //======> Outline Theme <======//
+    &.outline{ 
+        background: transparent;
+        color:var(--typography-color);
+        line-height: calc(var(--forms-height) - 2px);
+        border:var(--forms-border);
+        box-shadow: var(--forms-btns-shadow) rgba(#000,0.05);
+    }
+
+    //===== Small Button ====//
+    &.small {
+        height: var(--forms-height-small);
+        line-height: var(--forms-height-small);
+        /*==== Outline Mode ====*/
+        &.outline {line-height: calc(var(--forms-height-small) - 2px);}
+    }
+
+    //===== Large Button ====//
+    &.large {
+        height: var(--forms-height-large);
+        line-height: var(--forms-height-large);
+        font-size:1rem;
+        /*==== Outline Mode ====*/
+        &.outline {line-height: calc(var(--forms-height-large) - 2px);}
+    }
+
+    //===== Circle Button ====//
+    &.circle{
+        border-radius:50%;
+        width:var(--forms-height);
+        padding:0;
+        &.small{width: var(--forms-height-small);}
+        &.large{width: var(--forms-height-large);}
+    }
+
+    //===== Button W/ Icon ====//
+    &.btn-icon {
+        /*==== Icon ====*/
+        &::before {
+            margin-#{$directionReverse}: 5px;
+            line-height: var(--forms-height);
+            height: 100%;
+        }
+        /*==== Sizes ====*/
+        &.small::before {line-height: var(--forms-height-small);}
+        &.large::before {line-height: var(--forms-height-large);}
+
+        /*==== Labeled Mode ====*/
+        &.labeled {
+            overflow: hidden;
+            padding-#{$direction}:0;
+            /*==== Icon ====*/
+            &::before {
+                background-color: rgba(0,0,0, 0.1);
+                text-align: center;
+                margin-#{$directionReverse}:var(--forms-padding);
+                width:var(--forms-height);
+            }
+            /*==== Outline BG ====*/
+            &.outline:not(:hover)::before {
+                background-color: transparent;
+                border-#{$directionReverse}-width:1px;
+                border-#{$directionReverse}-style:solid;
+            }
+            /*==== Sizes ====*/
+            &.small::before {
+                width:var(--forms-height-small);
+                line-height: calc(var(--forms-height-small) - 3px);
+            }
+
+            &.large::before {
+                margin-#{$direction}:-var(--forms-padding-large);
+                margin-#{$directionReverse}:var(--forms-padding-large);
+                width:var(--forms-height-large);
+                line-height: calc(var(--forms-height-large) - 3px);
+            }
+        }
+    }
+
+    //===== Button W/ Icon After ====//
+    &.btn-icon-after {        
+        /*==== Icon ====*/
+        &::before {
+            top:0;
+            margin-#{$direction}: 5px;
+            height:100%;
+            line-height: var(--forms-height);
+            float:$directionReverse;
+        }
+        /*==== Sizes ====*/
+        &.small::before {line-height: var(--forms-height-small);}
+        &.large::before {line-height: var(--forms-height-large);}
+        /*==== Labeled Mode ====*/
+        &.labeled {
+            overflow: hidden;
+            padding-#{$directionReverse}:0;
+            /*==== Icon ====*/
+            &::before {
+                background-color: rgba(#000,0.1);
+                text-align: center;
+                margin-#{$direction}:var(--forms-padding);
+                width:var(--forms-height);
+                line-height: calc(var(--forms-height) - 3px);
+            }
+            /*==== Outline BG ====*/
+            &.outline:not(:hover)::before {
+                background-color: transparent;
+                border-#{$direction}-width:1px;
+                border-#{$direction}-style:solid;
+            }
+            /*==== Sizes ====*/
+            &.small::before {
+                width:var(--forms-height-small);
+                line-height: calc(var(--forms-height-small) - 3px);
+            }
+            
+            &.large::before {
+                margin-#{$direction}:var(--forms-padding-large);
+                margin-#{$directionReverse}:-var(--forms-padding-large);
+                width:var(--forms-height-large);
+                line-height: calc(var(--forms-height-large) - 3px);
+            }
+        }
+    }
+
+    //==== Button Colors ====//
+    &.primary {
+        background: var(--primary-color);
+        color:var(--primary-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--primary-color);
+        &:hover{background:var(--primary-hover);}
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--primary-color);
+            color:var(--primary-color);
+            box-shadow: none;
+            &::before{border-color:var(--primary-color);}
+            &:hover {
+                background: var(--primary-color);
+                color: var(--primary-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--primary-color);
+            }
+        }
+    }
+
+    &.secondary{
+        background: var(--secondary-color);
+        color:var(--secondary-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--secondary-color);
+        &:hover{background:var(--secondary-hover);}
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--secondary-color);
+            color:var(--secondary-color);
+            box-shadow: none;
+            &::before{border-color:var(--secondary-color);}
+            &:hover {
+                background: var(--secondary-color);
+                color: var(--secondary-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--secondary-color);
+            }
+        }
+    }
+
+    &.success{
+        background: var(--success-color);
+        color:var(--dark-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--success-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--success-color);
+            color:var(--success-color);
+            box-shadow: none;
+            &::before{border-color:var(--success-color);}
+            &:hover{
+                background:var(--success-color);
+                color:var(--dark-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--success-color);
+            }
+        }
+    }
+
+    &.danger{
+        background: var(--danger-color);
+        color:var(--dark-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--danger-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--danger-color);
+            color:var(--danger-color);
+            box-shadow: none;
+            &::before{border-color:var(--danger-color);}
+            &:hover {
+                background: var(--danger-color);
+                color: var(--dark-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--danger-color);
+            }
+        }
+    }
+
+    &.warning{
+        background: var(--warning-color);
+        color:var(--dark-color);
+        box-shadow: var(--forms-btns-shadow) var(--warning-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--warning-color);
+            color:var(--warning-color);
+            box-shadow: none;
+            &::before{border-color:var(--warning-color);}
+            &:hover {
+                background: var(--warning-color);
+                color: var(--dark-color);
+                box-shadow: var(--forms-btns-shadow) var(--warning-color);
+            }
+        }
+    }
+
+    &.info{
+        background: var(--info-color);
+        color:var(--dark-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--info-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--info-color);
+            color:var(--info-color);
+            box-shadow: none;
+            &::before{border-color:var(--info-color);}
+            &:hover {
+                background: var(--info-color);
+                color: var(--dark-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--info-color);
+            }
+        }
+    }
+
+    &.gray{
+        background: var(--gray-color);
+        color:var(--dark-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--gray-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--gray-color);
+            color:var(--gray-color);
+            box-shadow: none;
+            &::before{border-color:var(--gray-color);}
+            &:hover {
+                background: var(--gray-color);
+                color: var(--dark-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--gray-color);
+            }
+        }
+    }
+    
+    &.dark{
+        background: var(--dark-color);
+        color:var(--dark-reverse);
+        box-shadow: var(--forms-btns-shadow) var(--dark-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--dark-color);
+            color:var(--dark-color);
+            box-shadow: none;
+            &::before{border-color:var(--dark-color);}
+            &:hover {
+                background: var(--dark-color);
+                color: var(--dark-reverse);
+                box-shadow: var(--forms-btns-shadow) var(--dark-color);
+            }
+        }
+    }
+}
+
+/*======== Dropdown Button ========*/
+.dropdown {
+    display: inline-block;
+    position: relative;
+    /*======== Dropdown Button ========*/
+    .dropdown-btn:not(.icon-btn)::after {
+        position: relative;
+        @extend %ti-arrow-down-chevron,:before;
+        font-family: var(--icons-font);
+        margin-#{$direction}: 5px;
+        font-size:0.9em;
+        vertical-align: middle;
+        top:-2px;
+    }
+
+    /*======== Dropdown List ========*/
+    .dropdown-list {
+        @extend %reset;
+        position: absolute;
+        top:100%;
+        #{$direction}:0;
+        -webkit-animation: dropClose 0.5s both;
+            animation: dropClose 0.5s both;
+        visibility: hidden;
+        background: var(--forms-bg);
+        min-width:190px;
+        width:100%;
+        border:var(--forms-border);
+        -webkit-box-shadow: 0 5px 5px rgba(#000,0.1);
+            box-shadow: 0 5px 5px rgba(#000,0.1);
+        //==== Dropdown Arrow ====//
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            #{$direction}:12px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--forms-bg);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            margin-bottom: 1px;
+            #{$direction}:12px;
+            border: 7px solid transparent;
+            border-bottom-color: var(--forms-darker-bg);
+        }
+        //==== Dropdown List item ====//
+        li {
+            font-size:0.875rem;
+            font-weight: var(--medium-weight);
+            padding:8px 15px;
+            border-bottom:var(--forms-border);
+            margin-bottom: 0;
+            color:var(--gray-color); 
+            &:last-child { border-bottom: 0 none; }
+            a:not(.btn) {
+                display: block;
+                @extend %fast-motion;
+                color:inherit;
+                &:hover{color:var(--primary-color);}
+            }
+        }
+
+    }
+
+    /*======== Show the Dropdown ========*/
+    &.active,&[data-event="hover"]:hover{
+        z-index: 999;
+        .dropdown-list {
+            -webkit-animation: dropOpen 0.5s both;
+                    animation: dropOpen 0.5s both;
+            visibility: visible;
+        }
+    }
+}
+
+/*======== Form Rating Control ========*/
+.rating-control {
+    @extend %inline-block;
+    position: relative;
+    #{$input_elements} {display: none;}
+    height: var(--forms-height);
+    line-height: var(--forms-height);
+    /*==== Icons ====*/
+    .rate-icon,.text {
+        @extend %inline-block;
+        color:var(--gray-color);
+        font-size:17px;
+        margin-#{$directionReverse}:5px;
+        &::before{top:-3px;}
+        &.active {color:var(--warning-color);}
+    }
+    /*==== Sizes ====*/
+    &.small {
+        height: var(--forms-height-small);
+        line-height: var(--forms-height-small);
+        font-size:15px;
+    }
+    /*==== Sizes ====*/
+    &.large {
+        height: var(--forms-height-large);
+        line-height: var(--forms-height-large);
+        font-size:20px;
+    }
+}
+
+/*======== Form Groups ========*/
+.form-group {
+    @extend %flexbox;
+    #{$input_elements},.btn {
+        border-radius: 0;
+        &:first-child {
+            @if ($page-dir == 'ltr') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+        }
+        &:last-child {
+            @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+        }
+    }
+}
+
+/*======== Pagination ========*/
+.pagination {
+    /*===== Default Theme =====*/
+    @extend %reset;
+    word-spacing: -5px;
+    /*===== Pagination Item =====*/
+    li {
+        word-spacing: normal;
+        display: inline-block;
+        padding:0 12px;
+        height:var(--forms-height);
+        line-height: var(--forms-height);
+        font-size: 15px;
+        color:var(--forms-color);
+        background:var(--forms-bg);
+        @extend %normal-motion;
+        text-align: center;
+        font-weight:var(--strong-weight);
+        border:var(--forms-border);
+        /*===== Item content =====*/
+        span,a {
+            color: inherit;
+            display: block;
+            padding:0 0.9375rem;
+            margin: 0 -0.9375rem;
+        }
+        /*===== Active Status =====*/
+        &.current,&.active,&:hover {
+            background:var(--primary-color);
+            color:var(--dark-reverse);
+        }
+    }
+    /*======== Separated Theme ========*/
+    &.separate {word-spacing: 10px;}
+    /*======== Circles Theme ========*/
+    &.circles {
+        word-spacing: 10px;
+        li {
+            padding:0;
+            width:var(--forms-height);
+            line-height: var(--forms-height);
+            border-radius: 50%;
+        }
+        [class^="ti-"]::before, [class*=" ti-"]::before {top:-2px;}
+    }
+    /*======== Fix Last Child Border ========*/
+    &:not(.circles):not(.separate){
+        li:not(:last-child) {border-#{$directionReverse}:0 none;}
+    }
+    /*======== Small Size ========*/
+    &.small {
+        li {
+            height: var(--forms-height-small);
+            line-height: calc(var(--forms-height-small) - 2px);
+            padding: 0 12px;
+            font-size:14px;
+        }
+        &.circel li {
+            width: var(--forms-height-small);
+            line-height: var(--forms-height-small);
+            padding: 0;
+        }
+    }
+}

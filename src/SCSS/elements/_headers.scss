@@ -1,0 +1,139 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Standard Header
+ * ===> 02 - Container Layout
+ * ===> 03 - Logo Element
+ * ===> 04 - Actions Buttons
+ * ===> 05 - Search Box
+ * ===> 06 - Primary Colored
+ * ===> 07 - Secondary Colored
+*/
+
+/*======== Standard Header ========*/
+.tornado-header {
+    box-shadow: var(--component-shadow);
+    @include header (
+        //====> Base Options <======//
+        $height     : 64px,
+        $background : var(--component-background),
+        $color      : var(--component-color),
+        $font-size  : 0.9375rem,
+        //====> Menu Options <======//
+        $menu-background-hvr : transparent,    //====> Menu Links Hover Background
+        $menu-color-hvr      : var(--component-active-bg), //====> Menu Links Hover Color
+        $dropdown-background : var(--component-background),         //====> Dropdown Menu Background
+        $dropdown-color      : var(--component-color),     //====> Dropdown Menu Links Color
+        $dropdown-color-hvr  : var(--component-active-color),    //====> Dropdown Menu Links Color Hover
+        $dropdown-background-hvr:var(--component-active-bg), //====> Dropdown Menu Background Hover
+        //====> Icons buttons <======//
+        $icon-btn-size : 2.25rem,     //====> Icon Width and Height
+        $icon-size:1.25rem,           //====> Icon Font Size
+        $icon-background:transparent, //====> Icon Button Background 
+        $icon-color:var(--component-color),      //====> Icon Button Color
+    );
+
+    //=== Container Layout ===//
+    .container,.container-fluid,.container-xl {
+        @extend %flexbox;
+        @extend .align-between;
+        @extend .align-center-y;
+        &::after{ display: none; }
+    }
+
+    //=== Logo Element ===//
+    .logo {
+        color:inherit;
+        
+        h1 {
+            font-size: 1.5rem;
+            font-weight: var(--medium-weight);
+            text-transform: uppercase;
+            color: inherit;
+        }
+
+        img {max-height: 3rem;}
+    }
+    
+    /*=== Actions Buttons ===*/
+    .action-btns {
+        /*==== Icon Button ====*/
+        .icon-btn {
+            text-align: center;
+            &:not(.menu-btn) { @extend %inline-block; }
+            @extend %fast-motion;
+        }
+        /*==== Buttons ====*/
+        .btn {margin-#{$direction}: $gutter-math;}
+        /*=== Dropdown Buttons ===*/
+        .dropdown {
+            .dropdown-list {
+                #{$direction}:auto;
+                #{$directionReverse}:0;
+                &::after,&::before { 
+                    #{$direction}:auto;
+                    #{$directionReverse}:12px;
+                 }
+            }
+            
+            @include small(false) {
+                position: static;
+                .dropdown-list {
+                    margin-top: -1.125rem;
+                    width:100%;
+                    &::before{display: none;}
+                    &::after{display: none;}
+                }
+            };
+        }
+    }
+
+    /*=== Search Box ===*/
+    .search-box {
+        display: inline-block;
+        position: relative;
+        @include medium(true) { width:14.38rem; }
+        &.form-ui { input { margin-bottom: 0; } }
+        .search-btn {
+            position: absolute;
+            #{$directionReverse}:0;
+            top:0;
+            bottom: 0;
+            background:transparent;
+            color:var(--forms-color);
+            width:2.375rem;
+            border:0 none;
+            cursor: pointer;
+        }
+    }
+    
+    //=== Primary Colored ===//
+    &.primary {
+        @include header(
+            $background : var(--primary-color), //====> Header Bacground
+            $color : var(--primary-reverse), //====> Header Text Color
+            //====> Menu Options All Required <======//
+            $menu-background-hvr : transparent, //====> Menu Links Hover Background
+            $menu-color-hvr : var(--primary-reverse), //====> Menu Links Hover Color
+            $dropdown-background : var(--primary-color), //====> Dropdown Menu Background
+            $dropdown-background-hvr:var(--primary-hover), //====> Dropdown Menu Background Hover
+            $dropdown-color : var(--primary-reverse), //====> Dropdown Menu Links Color
+            $dropdown-color-hvr : var(--primary-reverse), //====> Dropdown Menu Links Color Hover
+            $icon-color:var(--primary-reverse),  //====> Icon Button Color
+        );
+    }
+    
+    //=== Secondary Colored ===//
+    &.secondary {
+        @include header(
+            $background : var(--secondary-color), //====> Header Bacground
+            $color : var(--secondary-reverse), //====> Header Text Color
+            //====> Menu Options All Required <======//
+            $menu-background-hvr : transparent, //====> Menu Links Hover Background
+            $menu-color-hvr : var(--secondary-reverse), //====> Menu Links Hover Color
+            $dropdown-background : var(--secondary-color), //====> Dropdown Menu Background
+            $dropdown-background-hvr:var(--secondary-hover), //====> Dropdown Menu Background Hover
+            $dropdown-color : var(--secondary-reverse), //====> Dropdown Menu Links Color
+            $dropdown-color-hvr : var(--secondary-reverse), //====> Dropdown Menu Links Color Hover
+            $icon-color:var(--secondary-reverse),  //====> Icon Button Color
+        );
+    }
+}

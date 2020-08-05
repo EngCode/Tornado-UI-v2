@@ -1,0 +1,85 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Base Style
+ * ===> 02 - Action Area
+ * ===> 03 - Multiple Buttons
+ * ===> 04 - Coloring
+ * ===> 05 - Responsive
+*/
+
+.jumbtron {
+    /*==== Base Style ====*/
+    padding:2.813rem;
+    background:var(--component-background);
+    -webkit-box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 0.5rem 0px rgba(0, 0, 0, 0.1);
+    color:var(--component-color);
+    h1,h2,h3,h4,h5,h6{color: inherit;}
+    //=== Action Area ===//
+    .action-area {
+        @extend %flexbox;
+        @extend .align-center-y ;
+        @extend .align-between ;
+        width:100%;
+        padding: 0.9375rem 0;
+        padding-bottom: 0;
+        border-top:var(--component-border);
+        margin-top: var(--component-padding);
+    }
+    //=== Multiple Buttons ===//
+    .btn {
+        min-width:9.375rem;
+        &:nth-child(even) { margin-#{$direction}:0.9375rem;}
+    }
+     //==== Coloring ====//
+    &.primary {
+        background: var(--primary-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--primary-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--primary-color);
+        color:var(--primary-reverse);
+    }
+
+    &.secondary{
+        background: var(--secondary-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--secondary-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--secondary-color);
+        color:var(--secondary-reverse);
+    }
+
+    &.success{
+        background: var(--success-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--success-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--success-color);
+        color:var(--dark-reverse);
+    }
+
+    &.danger{
+        background: var(--danger-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--danger-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--danger-color);
+        color:var(--dark-reverse);
+    }
+
+    &.warning{
+        background: var(--warning-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--warning-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--warning-color);
+        color:var(--dark-reverse);
+    }
+
+    &.info{
+        background: var(--info-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--info-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--info-color);
+        color:var(--dark-reverse);
+    }
+    
+    &.dark {
+        background: var(--dark-color);
+        -webkit-box-shadow: 0px 0px 0.5rem 0px var(--dark-color);
+            box-shadow: 0px 0px 0.5rem 0px var(--dark-color);
+        color: var(--dark-reverse);
+    }
+    //=== Responsive ===//
+    @include medium(false){ padding:2rem; };
+    @include small(false) {padding:$gutter-size 0;}
+}

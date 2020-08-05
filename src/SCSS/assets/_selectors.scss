@@ -1,0 +1,111 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Assets Selectors
+ * ===> 02 - Transitions Effects
+ * ===> 03 - Absolute Positioning
+ * ===> 04 - Reverse zIndexing
+*/
+
+//========== Assets Selectors ==========//
+%reset{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+
+%nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%minus-indexing {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+}
+
+%inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%clear-after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+%flexbox{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+%select-theme{
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    background-repeat:no-repeat;
+    background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNiIgaGVpZ2h0PSIzNiIgdmlld0JveD0iMCAwIDM2IDM2Ij48cGF0aCBkPSJNMTAuNSAxNWw3LjUgNy41IDcuNS03LjV6Ii8+PC9zdmc+);
+    background-size:20px;
+    background-position:$directionReverse 15px center;
+}
+
+//========== Transitions Effects ==========//
+%slow-motion{
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+%normal-motion{
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+
+%fast-motion{
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+//========== Absolute Positioning ==========//
+%position-center-x {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+}
+
+%position-center-y {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+%position-center-z {
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+}
+
+%position-default {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+}
+
+//========== Reverse zIndexing ==========//
+%desc-index {
+    $newIndex : 25;
+    @for $index from 1 through 24 {
+        &:nth-child(#{$index}){z-index: $newIndex;}
+        $newIndex : $newIndex - 1;
+    }
+}
+
+/*======== Prevent Select ========*/
+%no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}

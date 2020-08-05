@@ -1,0 +1,172 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Auto Width Column
+ * ===> 02 - Grid Alignments
+ * ===> 03 - Display Settings
+ * ===> 04 - Grid Gutters
+ * ===> 05 - Fix Gutters
+*/
+
+/*=== Auto Width Column ===*/
+.col-auto{
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+}
+
+/*=== Grid Alignments ===*/
+.align-center-z{ 
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+} /* Align Columns Centered Vertical and Horizontal */
+
+.align-center-x{
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+} /* Horizontaly Align Columns to the Center */
+
+.align-start-x{
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+} /* Horizontaly Align Columns to the Direction start point */
+
+.align-end-x{
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+} /* Horizontaly Align Columns to the Direction end point */
+
+.align-around{
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+} /* Horizontaly Align and spliting the space around Columns */
+
+.align-between{
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+} /* Horizontaly Align and spliting the space between Columns */
+
+.align-start-y{
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+} /* Vertical Align Columns to the top */
+
+.align-center-y{
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+} /* Vertical Align Columns to the Center */
+
+.align-end-y{
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+} /* Vertical Align Columns to the bottom */
+
+.align-self-start{
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+} /* Vertical Align item to the top */
+
+.align-self-center{
+    -ms-flex-item-align: center;
+        align-self: center;
+} /* Vertical Align item to the Center */
+
+.align-self-end{
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+} /* Vertical Align item to the bottom */
+
+/*========== Display Settings =========*/
+.hidden{display: none;}
+
+/*=== Small Screen ===*/
+@include small(true) { 
+    .hidden-s-up{display: none!important;} 
+    .show-s-up{display: block!important;} 
+}
+
+@include small(false) { 
+    .hidden-s-down{display: none!important;} 
+    .show-s-down{display: block!important;} 
+}
+
+/*=== Medium Screen ===*/
+@include medium(true) { 
+    .hidden-m-up{display: none!important;} 
+    .show-m-up{display: block!important;} 
+}
+
+@include medium(false) { 
+    .hidden-m-down{display: none!important;}
+    .show-m-down{display: block!important;}
+}
+/*=== Large Screen ===*/
+@include large(true) { 
+    .hidden-l-up{display: none!important;} 
+    .show-l-up{display: block!important;} 
+}
+
+@include large(false) { 
+    .hidden-l-down{display: none!important;}
+    .show-l-down{display: block!important;}
+}
+
+/*=== Extra Large Screen ===*/
+@include xlarge(true) { 
+    .hidden-xl-up{display: none!important;} 
+    .show-xl-up{display: block!important;} 
+}
+
+@include xlarge(false) { 
+    .hidden-xl-down{display: none!important;} 
+    .show-xl-down{display: block!important;} 
+}
+
+/*==== Grid Gutters ====*/
+.no-gutter{
+    margin:0 0;
+    >[class*="col-"],>[class*="box-"] {
+        padding-#{$direction}:0;
+        padding-#{$directionReverse}:0;
+    }
+} // Decrease Columns Gutter To 0 
+
+.gutter-small > [class*="col-"],.gutter-small > [class*="box-"] ,.wrap-gutter-s{
+    padding-#{$direction}:5px;
+    padding-#{$directionReverse}:5px;
+} // Decrease Columns Gutter To 50% 
+
+.gutter-medium > [class*="col-"],.gutter-medium > [class*="box-"] ,.wrap-gutter-m{
+    padding-#{$direction}:10px;
+    padding-#{$directionReverse}:10px;
+} // Increase Columns Gutter To 150% */
+
+.gutter-large > [class*="col-"],.gutter-large > [class*="box-"] ,.wrap-gutter-l{
+    padding-#{$direction}:20px;
+    padding-#{$directionReverse}:20px;
+} // Increase Columns Gutter 200%
+
+/*=== Fix Gutters ===*/
+.gutter-small{
+    margin-#{$direction}:-10px;
+    margin-#{$directionReverse}:-10px;
+}
+
+.gutter-medium{
+    margin-#{$direction}:-10px;
+    margin-#{$directionReverse}:-10px;
+}
+
+.gutter-large{
+    margin-#{$direction}:-20px;
+    margin-#{$directionReverse}:-20px;
+}

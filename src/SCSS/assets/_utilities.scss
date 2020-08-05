@@ -1,0 +1,298 @@
+/**======> Referance By Comment <======
+ * ===> 01 - CSS Assets
+ * ===> 02 - Float Elements
+ * ===> 03 - Tooltips
+ * ===> 04 - Responsive Elements
+ * ===> 05 - Dynamic Bckgrounds
+ * ===> 06 - Sticky Elements
+ * ===> 07 - viewPort Animate
+ * ===> 08 - Margin Utilities
+ * ===> 09 - Padding Utilities
+ * ===> 10 - Section Utilities
+ * ===> 11 - Lightbox Component
+*/
+
+/*======== CSS Assets ========*/
+body {
+    margin: 0;
+    padding: 0;
+    direction: $page-dir;
+    background: var(--body-bg);
+    position: relative;
+}
+
+iframe {
+    max-width: 100%;
+    border: 0 none;
+}
+
+hr {
+    height: 1px;
+    opacity: 1;
+    border: 0 none;
+    background: var(--components-border);
+    margin: 0.9375rem 0;
+}
+
+.no-padding {padding: 0;}
+.fluid,.block-lvl,.fluid-block,.line-break {width: 100%;display: block}
+.block-center {display: block;margin: auto;}
+.inline-block {display: inline-block;}
+
+/*======== Float Elements ========*/
+.float-start {float: $direction;}
+.float-end {float: $directionReverse;}
+.clear-after::after,.clear-fix { @extend %clear-after,:after; }
+
+/*======== Tooltips ========*/
+[class*="tooltip"] {
+    position: relative;
+    &::after {
+        content: attr(data-title);
+        position: absolute;
+        font-size:12px;
+        line-height: 27px;
+        @extend %nowrap;
+        background:rgba(0,0,0,0.75);
+        color:#FFF;
+        padding:0 15px;
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        @extend %fast-motion;
+    }
+    
+    &:hover::after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /*==== Pointing Arrow ====*/
+    &:not([class*="ti-"]) {
+        &::before {
+            content: '';
+            position: absolute;
+            width:0;
+            height: 0;
+            border:5px solid transparent;
+            visibility: hidden;
+            opacity: 0;
+            @extend %fast-motion;
+        }
+
+        &:hover::before {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+/*==== Default Tooltip ====*/
+.tooltip {
+    &::after {
+        left:50%;
+        bottom: 100%;
+        @extend %position-center-x;
+        max-width:300px;
+    }
+    /*==== Pointing Arrow ====*/
+    &:not([class*="ti-"]) {
+        &::after {margin-bottom: 5px;}
+        &::before {
+            left:50%;
+            bottom: 100%;
+            @extend %position-center-x;
+            border-top-color: rgba(0,0,0,0.75);
+        }
+    }
+}
+
+/*==== Bottom Tooltip ====*/
+.tooltip-bottom {
+    &::after {
+        left:50%;
+        top: 100%;
+        @extend %position-center-x;
+        max-width:300px;
+    }
+    /*==== Pointing Arrow ====*/
+    &:not([class*="ti-"]) {
+        &::after {margin-top: 5px;}
+        &::before {
+            margin-top: -5px;
+            left:50%;
+            top: 100%;
+            @extend %position-center-x;
+            border-bottom-color: rgba(0,0,0,0.75);
+        }
+    }
+}
+
+/*==== Start Tooltip ====*/
+.tooltip-start {
+    &::after {
+        #{$directionReverse}:100%;
+        top: 50%;
+        @extend %position-center-y;
+        max-width:300px;
+    }
+    /*==== Pointing Arrow ====*/
+    &:not([class*="ti-"]) {
+        &::after {margin-#{$directionReverse}: 5px;}
+        &::before {
+            margin-#{$directionReverse}: -5px;
+            #{$directionReverse}:100%;
+            top: 50%;
+            @extend %position-center-y;
+            border-#{$direction}-color: rgba(0,0,0,0.75);
+        }
+    }
+}
+
+/*==== End Tooltip ====*/
+.tooltip-end {
+    &::after {
+        #{$direction}:100%;
+        top: 50%;
+        @extend %position-center-y;
+        max-width:300px;
+    }
+    /*==== Pointing Arrow ====*/
+    &:not([class*="ti-"]) {
+        &::after {margin-#{$direction}: 5px;}
+        &::before {
+            margin-#{$direction}: -5px;
+            #{$direction}:100%;
+            top: 50%;
+            @extend %position-center-y;
+            border-#{$directionReverse}-color: rgba(0,0,0,0.75);
+        }
+    }
+}
+
+.tooltip-responsive::not([class*="ti-"])::before{display: none;}
+
+/*======== Responsive Elements ========*/
+.responsive-element {
+    display: block;
+    position: relative;
+    padding-bottom: 75%; //====> Standard Monitor 4:3 Aspect Ratio
+    &.square-size{padding-bottom: 100%;}
+    &.hd-size {padding-bottom: 56.25%;} //====> HD 16:9 Aspect Ratio
+    &.classic-size {padding-bottom: 66.64%;} //====> Classic Film 3:2 Aspect Ratio
+    &.cinema-size {padding-bottom: 42.81%;} //====> Cinemascope 21:9 Aspect Ratio
+    /*==== Content Elements ====*/
+    &>iframe, &>video, &>.element-content {
+        display: block;
+        position: absolute;
+        top:0;
+        #{$direction}: 0;
+        width:100%;
+        height: 100%;
+    }
+
+    &> video {-o-object-fit: fill;object-fit: fill;}
+}
+
+/*======== Dynamic Bckgrounds ========*/
+[data-src] {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+.lazyloader {
+    object-fit: contain;
+    background-size: auto 100%;
+    background-color: #F1F2F3;
+}
+
+/*======== Sticky Elements ========*/
+[data-sticky="inner"].is-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+}
+
+[data-sticky="absolute"].is-sticky {
+    position: fixed;
+    top:0;
+    &.tornado-header {
+        left: 0;
+        right:0;
+        width:100%;
+    }
+}
+
+/*======== viewPort Animate ========*/
+.view-status {
+    visibility: hidden;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    &.view-active{ visibility: visible; }
+}
+
+/*==== Margin Utilities ====*/
+.mb30 {margin-bottom: 30px;}
+.mb10 {margin-bottom: 10px;}
+.mb15 {margin-bottom: 15px;}
+.mt30 {margin-top: 30px;}
+.mt10 {margin-top: 10px;}
+.mt15 {margin-top: 15px;}
+
+/*==== Padding Utilities ====*/
+.pt10{padding-top:10px ;}
+.pt15{padding-top:15px ;}
+.pt30{padding-top:30px ;}
+.pt50{padding-top:50px ;}
+.pt70{padding-top:70px ;}
+.pt100{padding-top:100px ;}
+/*==== .... ====*/
+.pb10{padding-bottom:10px ;}
+.pb15{padding-bottom:15px ;}
+.pb30{padding-bottom:30px ;}
+.pb50{padding-bottom:50px ;}
+.pb70{padding-bottom:70px ;}
+.pb100{padding-bottom:100px ;}
+
+/*==== Section Utilities ====*/
+.section-small {
+    padding: 50px 0;
+    @media screen and (max-width:1024px) { padding: 30px 0; }
+}
+
+.section-medium {
+    padding: 70px 0;
+    @media screen and (max-width:1024px) { padding: 50px 0; }
+}
+
+.section-large {
+    padding: 100px 0;
+    @media screen and (max-width:1366px) { padding: 70px 0; }
+    @media screen and (max-width:980px) { padding: 50px 0; }
+}
+
+/*======== Lightbox Component ========*/
+#lightbox-modal .modal-content {
+    @extend %flexbox;
+    @extend .align-center-z;
+    width:auto;
+    max-width: 90%;
+    background-color: transparent;
+    //====> Slider <====//
+    .item {
+        background-repeat: no-repeat;
+        background-position: center;
+        img {
+            max-height: calc(100vh - 30px);
+            display: block;
+            margin: auto;
+        }
+    }
+    //====> Arrows Controls <====//
+    .tns-controls button {opacity: 1;}
+}

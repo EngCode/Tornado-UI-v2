@@ -1,0 +1,594 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Cards Blocks
+ * ===> 02 - Default Theme
+ * ===> 03 - Media Element
+ * ===> 04 - Card Title
+ * ===> 05 - Description
+ * ===> 06 - Card Footer
+ * ===> 07 - Card Header
+ * ===> 08 - Horizontal Mode
+ * ===> 09 - Buttons Group
+ *****************************
+ * ===> 10 - Product Card
+ * ===> 11 - Floating Elements
+ * ===> 12 - Rating
+ * ===> 13 - Price
+*****************************
+ * ===> 11 - User Card
+ * ===> 12 - Media Element
+ * ===> 13 - Information Elements
+ * ===> 14 - Avatar Image
+ * ===> 15 - Card Title
+ * ===> 16 - Small Title
+ * ===> 17 - Social Buttons
+*****************************
+ * ===> 18 - Card Widget
+ * ===> 19 - icons Button
+ * ===> 20 - Widget Image
+ * ===> 21 - Widget Content
+ * ===> 22 - Action Footer
+ * ===> 23 - Floating Modes
+*/
+
+/*======== Cards Blocks ========*/
+.card-block {
+    margin-bottom: $gutter-size;
+    //===== Default Theme ======//
+    .content-box {
+        padding:var(--component-padding);
+        background:var(--component-background);
+        border:var(--component-border);
+        -webkit-box-shadow: var(--component-shadow);
+                box-shadow: var(--component-shadow);
+        height: 100%;
+        //===== Media Element =====//
+        .card-media {
+            display: block;
+            position: relative;
+            padding-bottom: 78.13%;
+            /*==== All Media ====*/
+            iframe,video,audio,embed,img {
+                position: absolute;
+                top:0;
+                left: 0;
+                width:100%;
+                height: 100%;
+                border:0 none;
+                margin: 0;
+                padding: 0;
+            }
+            margin-bottom: calc(var(--component-padding) - 5px);
+            /*==== Full Width ====*/
+            &.full {
+                margin: calc(-1 * var(--component-padding));
+                margin-bottom: calc(var(--component-padding) - 5px);
+            }
+            //===== Overlayed Content =====//
+            &.overlayed {
+                margin-bottom: 0;
+                overflow: hidden;
+                & + .action-footer { margin-top: 0; }
+                /*==== Overlay ====*/
+                &::after {
+                    content:'';
+                    position: absolute;
+                    display: block;
+                    background: rgba(0, 0, 0, 0.5);
+                    z-index: 0;
+                    top:0;
+                    left: 0;
+                    right:0;
+                    bottom:0;
+                    @extend %fast-motion;
+                    -webkit-transform:scaleY(0);
+                        transform:scaleY(0);
+                    opacity: 0;
+                }
+
+                /*==== Overlay Content ====*/
+                .content {
+                    position: absolute;
+                    top:50%;
+                    width:100%;
+                    #{$direction}:-50%;
+                    opacity: 0;
+                    @extend %position-center-y;
+                    text-align: center;
+                    padding:0 var(--component-padding);
+                    color:#FFF;
+                    @extend %fast-motion;
+                    .title,p{ color:#FFF; }
+                    z-index: 5;
+                }
+
+                /*==== Hover Effect ====*/
+                &:hover {
+                    .content { 
+                        #{$direction}:0;
+                        opacity: 1;
+                    }
+                    &::after {
+                        -webkit-transform:scaleY(1);
+                            transform:scaleY(1);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            //====== Hover Elements =======//
+            .hvr-component {
+                @extend %flexbox;
+                @extend .align-center-z ;
+                opacity: 0;
+                @extend %fast-motion;
+                z-index: 5;
+                background: rgba(0, 0, 0, 0.75);
+                /*==== icon Button ====*/
+                .icon-btn {
+                    font-size:1.25rem;
+                    background: #FFF;
+                    width:2.813rem;
+                    height: 2.813rem;
+                    border-radius:50%;
+                    line-height: 2.688rem;
+                    color:var(--danger-color);
+                    text-align: center;
+                    margin: 0 0.625rem;
+                }
+            }
+
+            &:hover .hvr-component{opacity: 1;}
+        }
+        //===== Card Title =====//
+        .title {
+            font-size:1rem;
+            color:var(--component-color);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1.6;
+            &.overflow-text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+
+        /*==== Description ====*/
+        p {
+            font-size:0.9375rem;
+            margin: 0;
+            opacity: 0.9;
+            margin-bottom: $gutter-math;
+            color:var(--component-color);
+        }
+        
+        //===== Card Footer =====//
+        .action-footer {
+            margin:calc(-1 * var(--component-padding));
+            @extend %flexbox;
+            @extend .align-between ;
+            margin-top: calc(var(--component-padding) - 5px);
+            padding:0 var(--component-padding);
+            font-size:0.875rem;
+            line-height: 3.125rem;
+            font-weight: var(--medium-weight);
+            color:var(--component-color);
+            border-top:var(--component-border);
+            /*==== Icons | Information | Read More Button ====*/
+            [class*="ti-"]::before { 
+                font-size:1rem;
+                margin-#{$directionReverse}:5px;
+            }
+            .info span {margin-#{$direction}:0.9375rem;opacity: 0.9;}
+            .more-btn {
+                text-transform: uppercase;
+                &::before { position: relative;top:-2px; }
+            }
+            /*==== Price ====*/
+            .price {
+                margin: 0;
+                margin-#{$direction}:0.9375rem;
+                font-size:1rem;
+                font-weight: var(--medium-weight);
+                color:var(--primary-color);
+                i {
+                    font-size: 0.9375rem;
+                    font-weight: normal;
+                    color: #b8b8b8;
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+        //===== Card Header =====//
+        .card-head {
+            margin:calc(-1 * var(--component-padding));
+            padding:0 0.9375rem;
+            background: rgba(0, 0, 0, 0.02);
+            border-bottom: var(--component-border);
+            margin-bottom: var(--component-padding);
+            @extend %flexbox;
+            @extend .align-between ;
+            @extend .align-center-y ;
+            height: 3.125rem;
+            /*==== Username ====*/
+            .title {
+                margin: 0;
+                font-size:0.875rem;
+                color:var(--primary-color);
+                text-transform:none;
+                font-weight: normal;
+            }
+
+            /*==== Avatar ====*/
+            img {
+                max-width: 1.875rem;
+                max-height: 1.875rem;
+                width:auto;
+                height: auto;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: 50%;
+                margin-#{$directionReverse}:5px;
+            }
+            /*==== Date ====*/
+            .date {
+                font-size: 0.8125rem;
+                color: var(--component-color);
+                opacity: 0.9;
+            }
+        }
+        
+        //===== Horizontal Mode =====//
+        &.horizontal {
+            @extend %flexbox;
+            @extend .align-between ;
+            padding:0;
+            /*==== Media Element ====*/
+            .card-media { 
+                width:33.333%;
+                margin: 0;
+                @media screen and (min-width:500px) { padding: 0; }
+                @media screen and (max-width:480px) {
+                    width: 100%;
+                    margin-bottom: calc(var(--component-padding) - 5px);
+                }
+            }
+            
+            /*==== Content Wraper ====*/
+            .content-wrap {
+                padding:var(--component-padding);
+                width:66.666%;
+                @media screen and (max-width:480px) { width:100%; }
+            }
+        }
+
+        //===== Buttons Group =====//
+        .btns-group {
+            @extend %flexbox;
+            @extend .align-between;
+            /*==== Button ====*/
+            .btn {
+                width:50%;
+                margin: 0;
+                padding:0 0.9375rem;
+                text-transform: uppercase;
+            }
+            /*==== Button Space ====*/
+            &.gutter-on .btn{ width:calc(50% - 1.25rem); }
+            /*==== Icons ====*/
+            [class*="ti-"]::before {
+                margin-#{$directionReverse}: 5px;
+                font-size: 1.2em;
+            }
+            /*==== no Space ====*/
+            &:not(.gutter-on) .btn {
+                @if($page-dir == 'ltr') {
+                    &:first-child {border-radius: var(--component-radius) 0 0 var(--component-radius);}
+                    &:last-child {border-radius: 0 var(--component-radius) var(--component-radius) 0;}
+                } @else {
+                    &:last-child {border-radius: var(--component-radius) 0 0 var(--component-radius);}
+                    &:first-child {border-radius: 0 var(--component-radius) var(--component-radius) 0;}
+                }
+            }
+        }
+    }
+    //======== Product Card ========//
+    &.product-card {
+        $ContainerGutter : 1.25rem;
+        //====== Floating Elements =======//
+        .floating-content,.hvr-component {
+            padding:$ContainerGutter;
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            /*==== Linked Overlay ====*/
+            .overlay-link {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                top:0;
+                right: 0;
+                z-index: 1;
+                ~ * {position: relative;z-index: 2;}
+            }
+            //==== Floating Modes ====//
+            .floating-drt { //====> Floating To The Page Direction Reverse [ Right ] Top
+                position: absolute;
+                top: $ContainerGutter;
+                #{$directionReverse}: $ContainerGutter;
+            }
+
+            //====> Floating To The Page Direction [ Left ] Top
+            .floating-dt {
+                position: absolute;
+                top: $ContainerGutter;
+                #{$direction}: $ContainerGutter;
+            }
+
+            //====> Floating To The Page Direction Reverse [ Right ] Bottom
+            .floating-drb {
+                position: absolute;
+                bottom: $ContainerGutter;
+                #{$directionReverse}: $ContainerGutter;
+            }
+
+            //====> Floating To The Page Direction [ Left ] Bottom
+            .floating-db {
+                position: absolute;
+                bottom: $ContainerGutter;
+                #{$direction}: $ContainerGutter;
+            }
+
+            /*==== Badge ====*/
+            .badge {
+                line-height: 1.875rem;
+                height:1.875rem;
+                margin-bottom: $gutter-math;
+            }
+        }
+
+        /*==== Rating ====*/
+        .stars { 
+            display: block;
+            color:var(--component-color);
+            height: 1.875rem;
+            line-height: 1;
+            font-size:0.9375rem;
+            padding-top: 2px;
+            opacity: 0.9;
+            .active{ color:var(--warning-color);opacity: 1; }
+        }
+
+        /*==== Price ====*/
+        .btn.price{
+            font-size:18px;
+            i {
+                color:#7d7f81;
+                text-decoration: line-through;
+                font-size: 1.063rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-#{$direction}:5px;
+                font-weight: normal;
+                position: relative;
+                top:-3px;
+            }
+            &:hover i{color:#FFF;}
+        }
+    }
+    /*======== User Card ========*/
+    &.user-card {
+        .content-box {
+            /*==== Media Element ====*/
+            .card-media {
+                padding-bottom: 50%;
+                margin-bottom: 0;
+                [class*="floating-"]{padding:0.625rem 1.25rem;}
+            }
+
+            /*==== Information Elements ====*/
+            .info-span { 
+                font-size:0.875rem;
+                line-height: 1.25rem;
+                font-weight: var(--medium-weight);
+                margin-#{$directionReverse}:0.9375rem;
+                color:#FFF;
+                &::before {
+                    margin-#{$directionReverse}:5px;
+                }
+            }
+
+            /*==== Avatar Image ====*/
+            .avatar {
+                margin: auto;
+                margin-top: -60px;
+                width:11.25rem;
+                height: 11.25rem;
+                display: block;
+                border-radius: 50%;
+                border:var(--component-border);
+                position: relative;
+                z-index: 2;
+                img {
+                    width: 11.25rem;
+                    height: 11.25rem;
+                    border-radius: 50%;
+                }
+            }
+
+            /*==== Card Title ====*/
+            .title {
+                margin-top: 1.25rem;
+                color:var(--primary-color);
+                text-align: center;
+            }
+
+            /*==== Small Title ====*/
+            .subtitle{
+                font-size:0.9375rem;
+                font-weight: normal;
+                margin: 0;
+                margin-top: -5px;
+                color:var(--component-color);
+                opacity: 0.9;
+                text-align: center;
+                margin-bottom: 0.625rem;
+            }
+
+            /*==== Social Buttons ====*/
+            .social-btns {
+                text-align: center;
+                word-spacing: -5px;
+                margin-top: -5px;
+                margin-bottom: 10px;
+                a {
+                    display: inline-block;
+                    font-size:0.875rem;
+                    color:var(--component-color);
+                    opacity: 0.9;
+                    width:1.875rem;
+                    height: 1.875rem;
+                    line-height: 1.75rem;
+                    margin:5px;
+                    background: #eaeaea;
+                    @extend %fast-motion;
+                    &.circle{border-radius: 50%;}
+                }
+            }
+
+            .btns-group .btn{margin-bottom: 0;}
+        }
+    }
+    /*======== Card Widget ========*/
+    &.widget {
+        .content-box {
+            @extend %flexbox;
+            @extend .align-center-y ;
+            padding:1.25rem;
+            height: auto;
+            position: relative;
+            /*==== icons Button ====*/
+            .icon-btn{ 
+                width:1.875rem;
+                height: 1.875rem;
+                color:#6e6d6d;
+                text-align: center;
+                line-height: 1.75rem;
+                &::before{font-size:0.875rem;display: inline;margin: 0;}
+                border-radius: 50%;
+                display: inline-block;
+                padding:0;
+                &%ti-heart{color:var(--danger-color);}
+                &.primary{background: var(--primary-color);color:var(--dark-reverse);}
+                &.secondary{background: var(--secondary-color);color:var(--dark-reverse);}
+            }
+
+            /*==== Widget Image ====*/
+            .widget-image {
+                display: block;
+                width:4.375rem;
+                height: 4.375rem;
+                img { width:4.375rem;height: 4.375rem; }
+                /*==== Circle Image ====*/
+                &.circle{
+                    border-radius: 50%;
+                    img{ border-radius: 50%; }
+                }
+            }
+
+            /*==== Widget Content ====*/
+            .widget-content {
+                width:calc(100% - 4.375rem);
+                padding-#{$direction}:0.9375rem;
+                h3 {
+                    font-size:1rem;
+                    line-height: 1;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    color:var(--primary-color);
+                    margin: 0;
+                    padding: 0;
+                }
+                h2 {
+                    font-size:1rem;
+                    line-height: 1;
+                    color:var(--primary-color);
+                    margin: 0;
+                    padding: 0;
+                    span {
+                        display: block;
+                        font-size:0.8125rem;
+                        line-height: 1.25rem;
+                        color:var(--component-color);
+                        opacity: 0.9;
+                        font-weight: normal;
+                    }
+                }
+                p {
+                    font-size:0.8125rem;
+                    line-height: 1.25rem;
+                    color:var(--component-color);
+                    opacity: 0.9;
+                    margin: 0;
+                    padding: 0;
+                    margin-top: 8px;
+                }
+            }
+
+            /*==== Action Footer ====*/
+            .action-footer {
+                width:calc(100% + 2.5rem);
+                margin:-1.25rem;
+                margin-top: 1.25rem;
+            }
+
+            //==== Floating Modes ====//
+            .floating-drt { //====> Floating To The Page Direction Reverse [ Right ] Top
+                position: absolute;
+                top:5px;
+                #{$directionReverse}:5px;
+                &.primary,&.secondary {
+                    top: 0.9375rem;
+                    #{$directionReverse}: 0.9375rem;
+                }
+            } 
+
+            //====> Floating To The Page Direction [ Left ] Top
+            .floating-dt {  
+                position: absolute;
+                top: 5px;
+                #{$direction}: 5px;
+                &.primary,&.secondary{
+                    top:0.9375rem;
+                    #{$directionReverse}:0.9375rem;
+                }
+            }
+
+            //====> Floating To The Page Direction Reverse [ Right ] Bottom
+            .floating-drb { 
+                position: absolute;
+                bottom: 5px;
+                #{$directionReverse}: 5px;
+                &.primary,&.secondary{
+                    bottom:0.9375rem;
+                    #{$directionReverse}:0.9375rem;
+                }
+            } 
+
+            //====> Floating To The Page Direction [ Left ] Bottom
+            .floating-db {
+                position: absolute;
+                bottom: 5px;
+                #{$direction}: 5px;
+                &.primary,&.secondary{
+                    bottom:0.9375rem;
+                    #{$directionReverse}:0.9375rem;
+                }
+            }
+        }
+    }
+}

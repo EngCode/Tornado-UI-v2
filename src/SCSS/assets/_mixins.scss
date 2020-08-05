@@ -1,0 +1,409 @@
+/**======> Referance By Comment <======
+ * ===> 01 - Extra Small Screen Mixin 0 ==> 420px
+ * ===> 02 - Small Screen Mixin 576px ==> 640px
+ * ===> 03 - Medium Screen Mixin 768px ==> 920px
+ * ===> 04 - Large Screen Mixin 1024px ==> 1366px
+ * ===> 05 - Extra Large Screen Mixin 1366px ==> 1600px
+ * ===> 06 - Navigation Menu Mixin
+ * ===> 07 - Nested Menu Mixin
+ * ===> 08 - Mobile Menu Mixin
+ * ===> 09 - Header Mixin
+ * ===> 10 - Breadcrumb Mixin
+*/
+
+/*=====> Extra Small Screen Mixin 0 ==> 420px <========*/
+@mixin xSmall($up) {
+    @if ($up) {
+        @media (min-width: $small-base) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $small-ceil) {
+            @content;
+        }
+    };
+}
+
+/*=====> Small Screen Mixin 576px ==> 640px <========*/
+@mixin small($up) {
+    @if ($up) {
+        @media (min-width: $small-min) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $small-max) {
+            @content;
+        }
+    };
+}
+
+/*=====> Medium Screen Mixin 768px ==> 920px <========*/
+@mixin medium($up) {
+    @if ($up) {
+        @media (min-width: $medium-min) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $medium-max) {
+            @content;
+        }
+    };
+}
+
+/*=====> Large Screen Mixin 1024px ==> 1366px <========*/
+@mixin large($up) {
+    @if ($up) {
+        @media (min-width: $large-min) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $large-max) {
+            @content;
+        }
+    };
+}
+
+/*=====> Extra Large Screen Mixin 1366px ==> 1600px <========*/
+@mixin xlarge($up) {
+    @if ($up) {
+        @media (min-width: $xlarge-min) {
+            @content;
+        }
+    } @else {
+        @media (max-width: $xlarge-max) {
+            @content;
+        }
+    };
+}
+
+/*======== Navigation Menu Mixin ========*/
+@mixin custom-navigation (
+    $height:null,// Height
+    $font-size:null,// Font-size
+    $font-weight:null,// Font Weight
+    $item-gutter: null,
+    $color:null,// Text Color
+    $hvr-color:null,// Hover Color
+    $hvr-bg:null,// Hover Background
+    // submenu
+    $sub-color:null,// Submenu Color
+    $sub-bg:null,// Submenu Background
+    $sub-font-size:null,// Submenu Font-size
+    $sub-height:null,// Submenu Height
+    $sub-hvr-bg:null,// Submenu Hover Background
+    $sub-hvr-color:null// Submenu Hover Color
+    ) {
+    //=== Menu Theme ===//
+    > ul > li {
+        @if ($font-size) {font-size:$font-size;}
+        @if ($font-weight) { font-weight: $font-weight; }
+        @if ($color) { color:$color; }
+        @if ($height) { line-height: $height; }
+        @if ($item-gutter) { padding: 0 $item-gutter/2; }
+        //==== Hover Theme ====//
+        &:hover,&.active,&.current-menu-parent,&.current-menu-item{ 
+            @if ($hvr-color) { color:$hvr-color; }
+            @if ($hvr-bg) { background:$hvr-bg; }
+        }
+        //=== Nested Menus ===//
+        ul {
+            @if ($sub-bg) {background: $sub-bg;}
+            //==== Nested Menus Items ====//
+            li {
+                @if ($sub-font-size) { font-size:$sub-font-size; }
+                @if ($sub-height) { line-height:$sub-height; }
+                @if ($sub-color) { color:$sub-color; }
+                @if ($item-gutter) { padding: 0 $item-gutter/2; }
+                &:hover,&.active,&.current-menu-parent,&.current-menu-item{
+                    @if ($sub-hvr-bg) { background:$sub-hvr-bg; }
+                    @if ($sub-hvr-color) { color:$sub-hvr-color; }
+                }
+            }
+        }
+    }
+}
+
+/*======== Mobile Menu Mixin ========*/
+@mixin mobile-menu (
+    $menu-width : null, //====> Menu Width
+    $menu-background : null, //====> Menu Background
+    $item-padding : null, //====> Menu Item Padding
+    $item-height : null, //====> Item Height
+    $item-font-size : null, //===> Item Font Size
+    $item-active-bg : null, //====> Activated Item Background
+    $item-active-color : null, //===> Activated Item Color
+    $sub-height : null, //====> Sub Item Height
+    $sub-font-size : null, //====> Sub Item Font Size
+    $sub-bg : null, //===> Sub Item Background
+    $sub-color : null, //===> Sub Item Color
+    $divider-color : null, //====> Menu Item Border Color
+    $icon-size : null, //====> Menu Item Icons Font Size
+    $menu-direction:null, //====> Menu Direction
+) {
+    /*======== Menu Wrapper ========*/
+    .menu-content {
+        width:$menu-width;
+        background:$menu-background;
+        margin-#{$direction}:-$menu-width;
+    }
+
+    /*======== Menu Logo ========*/
+    .logo { border-bottom: 1px solid $divider-color; }
+    
+    //==== Activated Effects =====//
+    &.active .menu-content{margin-#{$menu-direction}:0;}
+
+    /*======== Menu Theme ========*/
+    ul {
+        //======== Menu Icons ========//
+        [class*="ti-"]:not(.dropdown-toggle)::before {
+            margin-#{$direction}:-#{$item-padding};
+            font-size:$icon-size;
+        }
+        /*======== Menu Items ========*/
+        li{
+            padding:0 $item-padding;
+            border-bottom:1px solid $divider-color;
+            line-height: $item-height;
+            //=== Activated Item ===//
+            &.active{
+                background:$item-active-bg;
+                color:$item-active-color;
+                ul,.megamenu{
+                    background:$sub-bg;
+                    color:$sub-color;
+                    margin-top: $item-padding/2;
+                    margin-bottom: -$item-padding/2;
+                    border-top:1px solid $divider-color;
+                    li {
+                        line-height: $sub-height;
+                        font-size:$sub-font-size
+                    }
+                }
+            }
+        }
+
+        //==== Nested Menus Button =====//
+        .dropdown-toggle {
+            height:$item-height;
+            line-height: $item-height;
+        }
+
+        /*======== Nested Menu Core ========*/
+        ul,.megamenu {
+            margin-#{$direction}:-$item-padding;
+            margin-#{$directionReverse}:-$item-padding;
+        }
+    }
+    
+    //==== Overlaps Nested Theme ====//
+    &.overlaps ul {
+        ul,.megamenu { #{$direction}:-100%; }
+        //======== Activated ========//
+        .dropdown-item.active {
+            > ul,.megamenu {
+                #{$direction}:10%;
+                background: $menu-background;
+            }
+            .dropdown-toggle {
+                #{$direction}:0;
+                background: var(--danger-color);
+                color:var(--dark-reverse);
+            }
+        }
+    }
+}
+
+/*======== Nested Menu Mixin ========*/
+@mixin nested-menu (
+    $height:null,// Height
+    $font-size:null,// Font-size
+    $font-weight:null,// Font Weight
+    $color:null,// Text Color
+    $hvr-color:null,// Hover Color
+    $hvr-bg:null,// Hover Background
+    $space-size:null, // Gutter Size
+    // submenu
+    $sub-color:null,// Submenu Color
+    $sub-bg:null,// Submenu Background
+    $sub-font-size:null,// Submenu Font-size
+    $sub-height:null,// Submenu Height
+    $sub-hvr-bg:null,// Submenu Hover Background
+    $sub-hvr-color:null // Submenu Hover Color
+) {
+    > ul {
+        > li {
+            @if ($font-size) { font-size:$font-size; }
+            @if ($height) { line-height:$height; }
+            @if ($color) { color:$color; }
+            @if ($space-size) { padding:0 $space-size; }
+            //== Submenu Item Arrow ==//
+            .submenu::before{
+                @if ($height) { line-height: $height; }
+                font-size:0.8em;
+            }
+            //== Hover Theme ==//
+            &:hover {
+                @if ($hvr-color) {color:$hvr-color;}
+                @if ($hvr-bg) {background:$hvr-bg;}
+            }
+            //== Nested Menus ==//
+            ul {
+                @if($sub-bg) {background-color:$sub-bg;}
+                @if($space-size) {margin:0 -#{$space-size};}
+                //== Nested Menus Items ==//
+                li {
+                    @if ($sub-color) {color:$sub-color;}
+                    @if ($space-size) {padding:0 $space-size;}
+                    @if ($sub-font-size) {font-size:$sub-font-size;}
+                    @if ($sub-height) {line-height: $sub-height;}
+                    //== Nested Menus Item Hover ==//
+                    &:hover {
+                        @if ($sub-hvr-color) {color:$sub-hvr-color;}
+                        @if ($sub-hvr-bg) {background:$sub-hvr-bg;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*======== Header Mixin ========*/
+@mixin header(
+    $height : null, //====> the Minimum Height
+    $background : null, //====> Header Bacground
+    $color : null, //====> Header Text Color
+    $font-size : null, //====> Header Text/Menu Font Size
+    //====> Menu Options All Required <======//
+    $menu-background-hvr : null, //====> Menu Links Hover Background
+    $menu-color-hvr : null, //====> Menu Links Hover Color
+    $dropdown-background : null, //====> Dropdown Menu Background
+    $dropdown-background-hvr:null, //====> Dropdown Menu Background Hover
+    $dropdown-color : null, //====> Dropdown Menu Links Color
+    $dropdown-color-hvr : null, //====> Dropdown Menu Links Color Hover
+    //====> Icons buttons <======//
+    $icon-btn-size : null, //====> Icon Button Width/Height
+    $icon-size : null, //=====> Icon Button Font Size
+    $icon-background:null, //====> Icon Button Background 
+    $icon-color:null,  //====> Icon Button Color
+    $icon-background-hvr:null, //====> Icon Button Background 
+    $icon-color-hvr:null,  //====> Icon Button Color
+) {
+    z-index: 100;
+    position: relative;
+    @extend %fast-motion;
+    /*==== Background and Color ====*/
+    @if($background) { background: $background; }
+    @if($color) {color:$color;}
+    /*==== Height ====*/
+    .container,.container-fluid,.container-xl{min-height:$height;} 
+    //=== Navigation Menu ===//
+    .navigation-menu {
+        background-color: transparent;
+        border: 0 none;
+        margin: 0;
+        @include custom-navigation (
+            $height:$height,
+            $font-size:$font-size,
+            $color:$color,
+            $hvr-color:$menu-color-hvr,
+            $hvr-bg:$menu-background-hvr,
+            $sub-color:$dropdown-color,
+            $sub-bg:$dropdown-background,
+            $sub-hvr-bg:$dropdown-background-hvr,
+            $sub-hvr-color:$dropdown-color-hvr,
+        )
+    }
+    /*=== Icons Buttons ===*/
+    .action-btns .icon-btn {
+        @if ($icon-btn-size) {
+            width: $icon-btn-size;
+            height: $icon-btn-size;
+            line-height: $icon-btn-size;
+        }
+
+        @if($icon-size) { font-size: $icon-size; }
+        @if($icon-background) { background: $icon-background; }
+        @if($icon-color) { color: $icon-color; }
+
+        &:hover {
+            @if($icon-background-hvr) { background: $icon-background-hvr; }
+            @if($icon-color-hvr) { color: $icon-color-hvr; }
+        }  
+    }
+}
+
+/*====== Breadcrumb Mixin =======*/
+@mixin breadcrumb (
+    $backgroundColor:null, //====> Background Color
+    $border:null, //====> Box Border
+    $padding:null, //=====> Box Padding
+    $color:null, //=====> Text Color
+    $fontSize:null, //=====> Text Font Size
+    $lineHeight:null, //====> Text Line Height
+    $iconSize:null, //====> Icons Font Size
+    $colorActive:null, //=====> Active Text Color
+    $ActiveBackground:null, //====> Active Background Color
+) {
+    //====> Box Ruls <====
+    @if ($backgroundColor) { background-color:$backgroundColor; }
+    @if ($padding) { padding:$padding; }
+    @if ($border) { border:$border; }
+    //====> Text <====//
+    @if ($color) { color:$color; }
+    @if ($fontSize) { font-size:$fontSize; }
+    @if ($lineHeight) { line-height:$lineHeight; }
+    //====> Icons Font Size <====//
+    @if ($iconSize) { [class*="ti-"]::before { font-size:$iconSize; } }
+    //============== Pointing Theme ==============//
+    &.pointing {
+        @if($ActiveBackground) {background-color:$ActiveBackground;}
+        @if($colorActive) {color:$colorActive;}
+        >a,>span {
+            vertical-align: middle;
+            @if ($color) { color:$color; }
+            @if ($backgroundColor) {
+                background-color: $backgroundColor;
+                &::after{border-#{$direction}-color:$backgroundColor;}
+            }
+            &:last-child {
+                @if($ActiveBackground) {background-color:$ActiveBackground;}
+                @if($colorActive) {color:$colorActive;}
+            }
+        }
+    }
+    //============== Curving Theme ==============//
+    &.curving {
+        @if($ActiveBackground) {background-color:$ActiveBackground;}
+        @if($colorActive) {color:$colorActive;}
+        >a,>span {
+            vertical-align: middle;
+            @if ($color) { color:$color; }
+            @if ($backgroundColor) {
+                background-color: $backgroundColor;
+                &::after{background-color:$backgroundColor;}
+            }
+            &:last-child {
+                @if($ActiveBackground) {background-color:$ActiveBackground;}
+                @if($colorActive) {color:$colorActive;}
+            }
+        }
+    }
+    //============== Skewed Theme ==============//
+    &.skewed {
+        @if($ActiveBackground) {background-color:$ActiveBackground;}
+        @if($colorActive) {color:$colorActive;}
+        >a,>span {
+            vertical-align: middle;
+            @if ($color) { color:$color; }
+            @if ($backgroundColor) {
+                background-color: $backgroundColor;
+                &::after{background-color:$backgroundColor;}
+            }
+            &:last-child {
+                @if($ActiveBackground) {background-color:$ActiveBackground;}
+                @if($colorActive) {color:$colorActive;}
+            }
+        }
+    }
+}

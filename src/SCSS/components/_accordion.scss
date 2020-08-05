@@ -1,0 +1,92 @@
+/**======> Referance By Comment <======
+ * ===> Accordion List
+ * ======> Accordion Item
+ * ======> Accordion Title
+ * ======> Title Arrow || Plus
+ * ======> unActive Mode
+ * ======> Active Mode
+ * ======> Torando Theme
+ * =========> Accordion Item
+ * =========> Accordion Title
+ * =========> Title Arrow || Plus
+ * =========> Items Divider
+ * =========> Active Mode
+*/
+
+/*======= Accordion List =======*/
+.accordion {
+    @extend %reset;
+    margin-bottom: 1.875rem;
+    /*======== Accordion Item ========*/
+    .accordion-item {
+        font-size:0.875rem;
+        margin-bottom: 0;
+        /*======== Accordion Title ========*/
+        .accordion-title{
+            font-size:1rem;
+            line-height:2.2;
+            cursor: pointer;
+            /*======== Title Arrow || Plus ========*/
+            &::before {
+                font-size:0.6875rem;
+                margin-#{$directionReverse}:5px;
+                display: inline-block;
+                @extend %fast-motion;
+                vertical-align: middle;
+                @if ( $page-dir == 'ltr' ) {
+                    -webkit-transform: rotate(-90deg);
+                        transform: rotate(-90deg);
+                } @else {
+                    -webkit-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                }
+            }
+        }
+        /*======== unActive Mode ========*/
+        &:not(.active) .accordion-content {display: none;}
+        /*==== Active Mode ====*/
+        &.active {
+            .accordion-title::before {
+                -webkit-transform: rotate(0);
+                transform: rotate(0);
+            }
+        }
+    }
+
+    /*======== Torando Theme ========*/
+    &.tornado-accordion {
+        border:var(--component-border);
+        border-bottom: 0 none;
+        /*======== Accordion Item ========*/
+        .accordion-item {
+            background: var(--component-background);
+            /*======== Accordion Title ========*/
+            .accordion-title{
+                margin-bottom: 0;
+                padding:0 calc(var(--component-padding) + 5px);
+                font-size:0.9375rem;
+                line-height:2.875rem;
+                border-bottom: var(--component-border);
+                /*======== Title Arrow || Plus ========*/
+                &::before{
+                    float:$directionReverse;
+                    line-height:2.875rem;
+                    font-size:0.875rem;
+                    -webkit-transform: rotate(0deg);
+                        transform: rotate(0deg);
+                }
+            }
+
+            .accordion-content {padding:1.25rem;}
+
+            /*======== Items Divider ========*/
+            &:not(:last-child){border-bottom: var(--component-border);}
+
+            /*==== Active Mode ====*/
+            &.active .accordion-title {
+                background: var(--component-darker-bg);
+                &::before{line-height:2.875rem;}
+            }
+        }
+    }
+}

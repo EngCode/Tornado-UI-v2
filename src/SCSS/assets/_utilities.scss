@@ -26,19 +26,11 @@ iframe {
     border: 0 none;
 }
 
-hr {
-    height: 1px;
-    opacity: 1;
-    border: 0 none;
-    background: var(--components-border);
-    margin: 0.9375rem 0;
-}
-
 .no-padding {padding: 0;}
 .fluid,.block-lvl,.fluid-block,.line-break {width: 100%;display: block}
-.block-center {display: block;margin: auto;}
+.block-center {margin-right: auto;margin-left: auto;}
 .inline-block {display: inline-block;}
-
+.display-block {display: block;}
 /*======== Float Elements ========*/
 .float-start {float: $direction;}
 .float-end {float: $directionReverse;}
@@ -238,11 +230,13 @@ hr {
 
 /*==== Margin Utilities ====*/
 .mb30 {margin-bottom: 30px;}
-.mb10 {margin-bottom: 10px;}
+.mb20 {margin-bottom: 20px;}
 .mb15 {margin-bottom: 15px;}
+.mb10 {margin-bottom: 10px;}
 .mt30 {margin-top: 30px;}
-.mt10 {margin-top: 10px;}
+.mt20 {margin-top: 20px;}
 .mt15 {margin-top: 15px;}
+.mt10 {margin-top: 10px;}
 
 /*==== Padding Utilities ====*/
 .pt10{padding-top:10px ;}
@@ -296,3 +290,7 @@ hr {
     //====> Arrows Controls <====//
     .tns-controls button {opacity: 1;}
 }
+
+/*==== Forced Directions ====*/
+.ltr {direction: ltr;}
+.rtl {direction: rtl;}

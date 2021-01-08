@@ -13,7 +13,6 @@ import Tornado from './Tornado';
  * ===> 09 - Advanced Uploader
  * ===> 10 - Form Repeater
  * ===> 11 - Form Rating Control
- * ===> 12 - Tornado Forms Assets
 */
 
 //=====> Form UI Methods <=====//
@@ -431,18 +430,18 @@ const Forms = {
                 if (element.matches('[placeholder]')) Forms.placeholder(element);
                 //===> Reset Select <===//
                 if (element.matches('select')) {
-                    element.classList.remove('tsdone');
+                    element.classList.remove('asdone');
                     Tornado.getNextSibling({element:element,filter:'.tornado-select'})?.remove();
                     Forms.advancedSelect(element);
                 }
                 //===> Reset File Uploader <===//
                 if (element.parentNode.matches('.file-input')) {
-                    element.classList.remove('tsdone');
+                    element.classList.remove('fudone');
                     Forms.fileUploader(element);
                 }
                 //===> Reset Advanced Uploader <===//
                 if (element.parentNode.matches('.advanced-uploader')) {
-                    element.classList.remove('tsdone');
+                    element.classList.remove('afudone');
                     element.classList.remove('image-mode');
                     element.classList.remove('video-mode');
                     element.removeAttribute('data-src');
@@ -477,7 +476,11 @@ const Forms = {
         var ratingElements = element.querySelectorAll('.rate-icon');
         //====> Loop Throgh Rating Elements <====//
         ratingElements.forEach((rateElement, index) => {
+            //===> Activate From Current Value <===//
             if (parseInt(input.value)-1 >= index) rateElement.classList.add('active');
+            //===> Catche Actvated Stars as Elements <===//
+            var activated = rateElement.parentNode.querySelectorAll('.rate-icon.active');
+            input.addEventListener('change', event => activated = rateElement.parentNode.querySelectorAll('.rate-icon.active'));
             //===> Hover Effect <===//
             rateElement.addEventListener('mouseenter', event => {
                 //===> Activate Elements <===//
@@ -486,11 +489,9 @@ const Forms = {
                 event.target.classList.add('active');
                 //===> When Mouse Leaves Element <===//
                 rateElement.addEventListener('mouseleave', event => {
-                    var currentValue = parseInt(input.value) || -1;
                     //===> unactivate Elements <===//
-                    element.querySelectorAll('.rate-icon').forEach((item, i) => {
-                        if (i > currentValue-1) item.classList.remove('active');
-                    });
+                    element.querySelectorAll('.rate-icon').forEach((item, i) => item.classList.remove('active'));
+                    activated.forEach((item, i) => item.classList.add('active'));
                 });
             });
             //===> Toggle Rate <===//
@@ -510,40 +511,6 @@ const Forms = {
         element.classList.add('rtdone');
     },
 }
-
-/*===== Tornado Forms Assets =====*/
-document.addEventListener('DOMContentLoaded', domReady => {
-    //=====> Buttons Accessibility <=====//
-    Tornado.getElements('.btn').forEach(element => {
-        Tornado.setAttributes(element,{
-            "tabindex":0,
-            "role":"button",
-            "aria-pressed":"false",
-        })
-    });
-    //=====> Activate Placeholder <=====//
-    Tornado.getElements('[placeholder]').forEach(element => Forms.placeholder(element));
-    //=====> File Uploader <=====//
-    Tornado.getElements('.file-input input[type="file"]').forEach(element => Forms.fileUploader(element));
-    //=====> Progress Bars <=====//
-    Forms.progress('.progress-bar:not(.circle):not(.radial)');
-    Forms.progress('.progress-bar.circle', {type:'circle'});
-    Forms.progress('.progress-bar.radial', {type:'radial'});
-    //======> Realtime Validate <======//
-    Tornado.getElements('.required,[aria-required="true"],[required]').forEach(element => element.addEventListener('blur', event => Forms.validate(event.target)));
-    //======> on Submit Validate <======//
-    // Tornado.getElements('form:not(.no-vali),.wp7').forEach(element => Forms.formValidate(element));
-    //======> Advanced Select <======//
-    Forms.advancedSelect('.form-ui select,select.form-control');
-    //======> Fix Controls Sizes <======//
-    Tornado.getElements('.control-icon,.form-repeater,.form-ui .btn,.rating-control').forEach(element => Forms.fixSizes(element));
-    //======> Advanced Uploader <======//
-    Tornado.getElements('.advanced-uploader input[type="file"]').forEach(element => Forms.advancedUploader(element));
-    /*=====> Form Repeater <=====*/
-    Tornado.getElements('.form-repeater').forEach(element => Forms.repeater(element));
-    /*=====> Form Rating Control <=====*/
-    Tornado.getElements('.rating-control').forEach(element => Forms.rating(element));
-});
 
 //=====> Export Form UI Methods <=====//
 export default Forms;

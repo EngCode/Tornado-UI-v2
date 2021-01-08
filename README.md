@@ -44,11 +44,18 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	https://unpkg.com/tornado-ui@2.5.0/dist/js/tornado.min.js
 
 --------------------
-#### Upcoming Update V2.6.☯ Advanced Multimedia || 08/2020
+#### Upcoming Update V2.6.☯ Advanced Multimedia || 01/2021
+	#01 - [new] New Utlilites Classes
+	#02 - [fix] Navigation Menu - Megamenu
+	#03 - [fix] Counter Type Fixed
+	#04 - [fix] Form Repeaters [Advanced Controls]
+	#05 - [fix] Form Rating Hover
+	#06 - [fix] First View Activate [Lazyloading, VP Animations].
 	#-- - [new] Advanced Video Player
 	#-- - [new] Advanced Audio Player
 	#-- - [new] Form Range Slider Control
 	#-- - [upgrade] Data Tables Advanced Options
+	#-- - [Doc] React Components for all UI Elements
 
 --------------------
 #### Lateast Update V2.5.☯ Super 🦸‍♂️ Tornado || 07/2020

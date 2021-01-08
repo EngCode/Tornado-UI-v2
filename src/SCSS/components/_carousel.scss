@@ -20,7 +20,10 @@
     [hidden] {display: none ;}
     [aria-controls],[data-action] {cursor: pointer;}
     .row {margin: 0}
-    &.grid-mode {margin: 0 -$gutter-math;}
+    &.grid-mode {
+        margin-right: -$gutter-math;
+        margin-left: -$gutter-math;
+    }
     .tns-visually-hidden {display: none;}
     .tns-item {direction: $page-dir;}
 }

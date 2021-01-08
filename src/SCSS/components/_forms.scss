@@ -1003,12 +1003,13 @@ label {
     box-shadow: var(--forms-btns-shadow) rgba(#000,0.05);
     &.default{border:var(--forms-border);}
     &::before{top:-2px;}
+    &.rounded {border-radius: 50px;}
     //======> Outline Theme <======//
     &.outline{ 
         background: transparent;
         color:var(--typography-color);
-        line-height: calc(var(--forms-height) - 2px);
-        border:var(--forms-border);
+        line-height: calc(var(--forms-height) - 3px);
+        border:2px solid rgba(0,0,0, 0.1);
         box-shadow: var(--forms-btns-shadow) rgba(#000,0.05);
     }
 
@@ -1017,7 +1018,7 @@ label {
         height: var(--forms-height-small);
         line-height: var(--forms-height-small);
         /*==== Outline Mode ====*/
-        &.outline {line-height: calc(var(--forms-height-small) - 2px);}
+        &.outline {line-height: calc(var(--forms-height-small) - 3px);}
     }
 
     //===== Large Button ====//
@@ -1032,6 +1033,14 @@ label {
     //===== Circle Button ====//
     &.circle{
         border-radius:50%;
+        width:var(--forms-height);
+        padding:0;
+        &.small{width: var(--forms-height-small);}
+        &.large{width: var(--forms-height-large);}
+    }
+
+    //===== Square Button ====//
+    &.square{
         width:var(--forms-height);
         padding:0;
         &.small{width: var(--forms-height-small);}
@@ -1396,13 +1405,31 @@ label {
 /*======== Form Groups ========*/
 .form-group {
     @extend %flexbox;
-    #{$input_elements},.btn {
-        border-radius: 0;
+
+    /*==== Reset Controls ====*/
+    #{$input_elements},.btn {border-radius: 0;}
+
+    /*==== Normal Controls ====*/
+    > #{$input_elements},> .btn {   
         &:first-child {
-            @if ($page-dir == 'ltr') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
             @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
         }
-        &:last-child {
+
+        &:last-child  {
+            @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+        }
+    }
+
+    /*==== Iconic Controls ====*/
+    .control-icon {
+        &:first-child #{$input_elements} {
+            @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+        }
+
+        &:last-child #{$input_elements} {
             @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
             @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
         }

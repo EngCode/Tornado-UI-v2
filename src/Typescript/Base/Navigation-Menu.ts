@@ -19,11 +19,18 @@ const Menus = {
             if(element.classList.contains('ngdone')) return;
 
             //===> Marking Dropdown Sub Menus <===//
-            element.querySelectorAll('li ul,li .megamenu').forEach(SubMenu => {
+            element.querySelectorAll('li > ul,li > .megamenu').forEach(SubMenu => {
                 SubMenu.classList.add('dropdown-menu');
                 SubMenu.parentNode.classList.add('dropdown-item');
                 //===> Create Dropdown Toggle Button <===//
-                Tornado.insBefore(`<a href="javascript:void(0);" class="dropdown-toggle ti-arrow-down-chevron"></a>`, SubMenu);
+                if (SubMenu.parentNode.querySelector('a')) {
+                    SubMenu.parentNode.querySelector('a').classList.add('dropdown-toggle','ti-angle-down');
+                } else {
+                    SubMenu.parentNode.classList.add('dropdown-toggle','ti-angle-down');
+                }
+
+                //===> Megamenu Fix <===//
+                if(SubMenu.classList.contains('megamenu')) SubMenu.parentNode.style.position = 'static';
             });
 
             //===> Get Menu ID <===//
@@ -117,7 +124,7 @@ const Menus = {
                 //===> Catch SubMenu Button <===//
                 var SubMenuBtn = Tornado.getPrevSibling({element:SubMenuList, filter:'a'});
                 SubMenuBtn.classList.add('submenu');
-                SubMenuBtn.classList.add('ti-arrow-down-chevron');
+                SubMenuBtn.classList.add('ti-angle-down');
                 //===> When Click on the Button <===//
                 SubMenuBtn.addEventListener('click', event => {
                     //==> Prevent Default Behavor <==//

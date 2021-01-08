@@ -1,8 +1,10 @@
 //======> Import Tornado UI Helpers <=======//
 import Tornado from './Tornado';
 import DataTable from './DataTable';
+import Forms from './Forms';
 
 /**======> Referance By Comment <======
+ * ===> 00 - Buttons Accessibility
  * ===> 01 - Item Remover
  * ===> 02 - Dynamic Backgrounds
  * ===> 03 - Images lazyLoading
@@ -19,19 +21,27 @@ import DataTable from './DataTable';
  * ===> 14 - Activate Accordion 
  * ===> 15 - Activate Dropdowns
  * ===> 16 - Activate Popups
+ * ===> 19 - Activate Placeholder
+ * ===> 20 - File Uploader
+ * ===> 21 - Progress Bars
+ * ===> 22 - Realtime Validate
+ * ===> 23 - on Submit Validate
+ * ===> 24 - Advanced Select
+ * ===> 25 - Fix Controls Sizes
+ * ===> 26 - Advanced Uploader
+ * ===> 27 - Form Repeater
+ * ===> 28 - Form Rating Control
 */
 
 document.addEventListener('DOMContentLoaded', domReady => {
-    //======> Remove ITem Access <======//
-    Tornado.getElements('.remove-item')?.forEach(element => {
-        //=====> Accessibility <=====//
+    //=====> Buttons Accessibility <=====//
+    Tornado.getElements('.btn,.remove-item').forEach(element => {
         Tornado.setAttributes(element,{
             "tabindex":0,
             "role":"button",
             "aria-pressed":"false",
-        });
+        })
     });
-
     //======> Item Remover <======//
     Tornado.liveEvent('.remove-item', 'click', event => {
         event.preventDefault();
@@ -52,17 +62,13 @@ document.addEventListener('DOMContentLoaded', domReady => {
             thisButton.parentNode.remove();
         }
     });
-
     //====> Dynamic Backgrounds <====//
     Tornado.setBackground('[data-src]:not(.lazyactive)',false);
     Tornado.setBackground('[data-src].lazyactive',true);
-
     //====> Images lazyLoading <====//
     Tornado.lazyLoading('[data-lazyload]');
-
     //====> Sticky Elements <====//
     Tornado.sticky('[data-sticky]');
-
     //======> Responsive Tooltips <======//
     (function responsiveTooltips() {
         //======> Responsive X Tooltip <======//
@@ -95,7 +101,6 @@ document.addEventListener('DOMContentLoaded', domReady => {
             }
         });
     }());
-
     //======> Animated Counters <======//
     (function animatedCounter() {
         Tornado.getElements('[data-counter]').forEach(element => {
@@ -119,7 +124,6 @@ document.addEventListener('DOMContentLoaded', domReady => {
             window.addEventListener('scroll', event => animateNumbers());
         });
     }());
-
     //======> ViewPort Detactor <======//
     (function ViewPortDetactor () {
         Tornado.getElements('.view-status').forEach(element => {
@@ -137,41 +141,55 @@ document.addEventListener('DOMContentLoaded', domReady => {
                     if (animDelay) element.style.animationDelay = animDelay;
                 }
             }
+            activateView();
             //====> Activate While Scroll
             window.addEventListener('scroll', event => activateView());
         });
     }());
-
     //====> Activate Smoth Scroll <====//
     Tornado.smothScroll({
         selector : '.smoth-scroll',
         duration : 1500,
     });
-
     //====> Activate Scroll Spy <====//
     Tornado.scrollSpy({
         selector : '.scrollspy',
         duration : 1500,
     });
-
     //====> Activate Date Counter <====//
     Tornado.dateCounter({selector : '.date-counter'});
-
     //====> Activate Data Tables <====//
     DataTable('.data-table');
-    
     //====> Activate Tabs <====//
     Tornado.tabs('.tabs-menu [data-tab]');
-
     //====> Activate Accordion <====//
     Tornado.accordion('.accordion-item .accordion-title');
-
     //====> Activate Dropdowns <====//
-    Tornado.dropdown('.dropdown .dropdown-btn');
-
+    Tornado.dropdown('.dropdown');
     //====> Activate Popups <====//
     Tornado.popup('.modal-box');
-
     //====> Activate Lightbox <====//
     Tornado.lightbox('[data-lightbox]');
+    //=====> Activate Placeholder <=====//
+    Tornado.getElements('[placeholder]').forEach(element => Forms.placeholder(element));
+    //=====> File Uploader <=====//
+    Tornado.getElements('.file-input input[type="file"]').forEach(element => Forms.fileUploader(element));
+    //=====> Progress Bars <=====//
+    Forms.progress('.progress-bar:not(.circle):not(.radial)');
+    Forms.progress('.progress-bar.circle', {type:'circle'});
+    Forms.progress('.progress-bar.radial', {type:'radial'});
+    //======> Realtime Validate <======//
+    Tornado.getElements('.required,[aria-required="true"],[required]').forEach(element => element.addEventListener('blur', event => Forms.validate(event.target)));
+    //======> on Submit Validate <======//
+    // Tornado.getElements('form:not(.no-vali),.wp7').forEach(element => Forms.formValidate(element));
+    //======> Advanced Select <======//
+    Forms.advancedSelect('.form-ui select,select.form-control');
+    //======> Fix Controls Sizes <======//
+    Tornado.getElements('.control-icon,.form-repeater,.form-ui .btn,.rating-control').forEach(element => Forms.fixSizes(element));
+    //======> Advanced Uploader <======//
+    Tornado.getElements('.advanced-uploader input[type="file"]').forEach(element => Forms.advancedUploader(element));
+    /*=====> Form Repeater <=====*/
+    Tornado.getElements('.form-repeater').forEach(element => Forms.repeater(element));
+    /*=====> Form Rating Control <=====*/
+    Tornado.getElements('.rating-control').forEach(element => Forms.rating(element));
 });

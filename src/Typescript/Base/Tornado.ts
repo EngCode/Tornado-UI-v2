@@ -49,6 +49,7 @@ const Tornado = {
      * ===> 32 - Lightbox Modal
      * ===> 33 - Design Options
      * ===> 34 - Theme Switcher
+     * ===> 35 - Viewport Info
     */
 
     //======> get Elements <=======//
@@ -357,7 +358,7 @@ const Tornado = {
     },
 
     //=======> Animated Counter <=======//
-    "counter" : (options) => {
+    "counter" : function (options) {
         if(options.element.classList.contains('coudone')) return;
         //====> Get Element <===//
         var element = options.element,
@@ -486,15 +487,17 @@ const Tornado = {
             
             setMediaImages();
             //====> Check if Target in Slider <====//
-            var sliderDetact = Tornado.parentsUntil(element,'.tns-outer');
+            var sliderDetact = Tornado.parentsUntil(element,'.tns-outer') || Tornado.parentsUntil(element,'[class*="-slider"]');
 
             //====> Scroll Event <====//
             window.addEventListener('scroll', event => {
                 if (sliderDetact) {
-                    var sliderItems = sliderDetact.querySelectorAll('[data-lazyload]');
-                    Array.from(sliderItems).forEach(item => {
-                        var lazydata = element.getAttribute('data-lazyload');
-                            element.setAttribute('src',lazydata);
+                    window.addEventListener('load', event => {
+                        var sliderItems = sliderDetact.querySelectorAll('[data-lazyload]');
+                        Array.from(sliderItems).forEach(item => {
+                            var lazydata = element.getAttribute('data-lazyload');
+                                element.setAttribute('src',lazydata);
+                        });
                     });
                 } else {
                     setMediaImages();
@@ -1331,6 +1334,12 @@ const Tornado = {
             //====> Done <====//
             element.classList.add('tsd-done');
         });
+    },
+
+    //=====> Viewport Info <=====//
+    "viewport" : {
+        "width" : () => Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
+        "height" : () => Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
     }
 };
 

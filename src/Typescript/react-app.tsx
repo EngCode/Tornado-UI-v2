@@ -16,7 +16,7 @@ class TornadoApp extends React.Component {
     /*====> App Render Function <====*/
     render() {
         //===> Form Control Event Handler <===//
-        function chHandler () {
+        function chHandler (event) {
             const eventTarget = event.target as HTMLInputElement;
             console.log(eventTarget.value);
         }

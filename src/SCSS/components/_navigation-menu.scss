@@ -21,6 +21,7 @@
     box-shadow: var(--component-shadow);
     //=== Primary Menu List ===//
     ul { @extend %reset; }
+
     > ul {
         word-spacing: -5px;
         //=== Items Reset ===//
@@ -35,6 +36,7 @@
             position: relative;
             //=== List item Link ===//
             a {
+                @extend %inline-block;
                 color:inherit;
                 font-weight: inherit;
                 font-family: inherit;
@@ -46,18 +48,8 @@
                 position:relative;
                 line-height:inherit;
                 @extend %fast-motion;
-                font-size:0.7em;
+                font-size:0.8em;
                 top:0;
-            }
-            //=== Nested Setup ===//
-            ul {
-                width:220px;
-                position: absolute;
-                border:1px solid rgba(0,0,0,.15);
-                visibility: hidden;
-                /*==== Closing Animation ====*/
-                -webkit-animation: dropClose 0.5s both;
-                        animation: dropClose 0.5s both;
             }
             //=== Nested List ===//
             > ul {
@@ -69,6 +61,7 @@
                     position: relative;
                     font-weight:normal;
                     padding:0 0.9375rem;
+                    a{display: block;}
                     &:not(:last-child) { border-bottom:1px solid rgba(0,0,0,.15); }
                     /*==== Nested Lvl >= 3 ====*/
                     ul {
@@ -92,10 +85,65 @@
             }
         }
         //=== Hover Dropdown ===//
-        li:hover > ul { 
+        li:hover > ul,li:hover > .megamenu { 
             -webkit-animation: dropOpen 0.5s both; 
                 animation: dropOpen 0.5s both;
             visibility: visible;
+        }
+        //=== Nested Setup ===//
+        li > ul,li > .megamenu {
+            width:100%;
+            &:not(.megamenu) {width:220px;}
+            position: absolute;
+            border:1px solid rgba(0,0,0,.15);
+            visibility: hidden;
+            /*==== Closing Animation ====*/
+            -webkit-animation: dropClose 0.5s both;
+                    animation: dropClose 0.5s both;
+        }
+    }
+
+    /*==== Megamenu ====*/
+    .megamenu {
+        @extend %flexbox;
+        padding:25px 5px;
+        padding-bottom: 20px;
+        top:100%;
+        #{$direction}:$gutter-math;
+        .col-12 {padding:0 15px;}
+        h3,h2,h4 {
+            font-size:1rem;
+            @extend .tx-uppercase;
+            line-height: 1;
+            margin-bottom: 5px;
+            border-bottom: 1px solid rgba(0,0,0,.1);
+            /*==== icon ====*/
+            &::before {
+                font-size:1.1em;
+                margin-#{$directionReverse}:5px;
+            }
+            /*==== Line ====*/
+            &::after {
+                display: block;
+                content: '';
+                height: 3px;
+                width:45px;
+                background-color: var(--primary-color);
+                margin-top: 10px;
+                margin-bottom: -2px;
+            }
+        }
+        ul {
+            margin-bottom: 0;
+            li {
+                margin-bottom: 0;
+                border-bottom : varr(--component-border);
+                color:var(--gray-color);
+                font-weight: normal;
+                line-height: 32px;
+                font-size: 14px;
+                &:hover { color:var(--primary-color); }
+            }
         }
     }
 
@@ -103,7 +151,7 @@
     @include custom-navigation (
         $height:44px,                 //==> Height
         $font-size:16px,              //==> Font-size
-        $font-weight:var(--medium-weight),  //==> Font Weight
+        $font-weight:var(--strong-weight),  //==> Font Weight
         $item-gutter : 20px,          //==> Space Between Items
         $color:var(--component-color),           //==> Text Color
         $hvr-color:var(--component-active-bg),    //==> Hover Color
@@ -195,22 +243,24 @@
     &.active{
         visibility:visible;
         .overlay-close {opacity: 1;}
+        ul li.active {
+            ul,.megamenu {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .megamenu {padding:0 15px;}
+        }
     }
 
     /*======== Menu Theme ========*/
     ul {
         @extend %reset;
-        //======== Menu Icons ========//
-        [class*="ti-"]:not(.dropdown-toggle)::before {
-            display: inline-block;
-            vertical-align: middle;
-            width:2.5rem;
-            text-align: center;
-        }
         /*======== Menu Items ========*/
         li{
             position: relative;
             margin-bottom: 0;
+            border-bottom: 1px solid rgba(#000, 0.1);
             //=== List item Link ===//
             a {
                 display: block;
@@ -227,19 +277,19 @@
             }
         }
 
-        //==== Nested Menus Button =====//
-        .dropdown-toggle {
-            position: absolute;
-            width:2.813rem;
-            font-size:0.8em;
-            text-align: center;
-            display: block;
-            cursor: pointer;
-            #{$directionReverse}:0;
-            top:0;
+        //=== List item Arrow ===//
+        .dropdown-toggle:before {
+            float:$directionReverse;
+            margin-#{$direction}:5px;
+            position:relative;
+            line-height:inherit;
             @extend %fast-motion;
+            font-size:0.8em;
+            top:0;
         }
     }
+
+    
 
     *[calss*="col-"],*[calss*="box-"] {width: 100%;}
 

@@ -1,6 +1,6 @@
 {
   "name": "tornado-ui",
-  "version": "2.4.0",
+  "version": "2.6.0",
   "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
   "main": "/dist/js/tornado.min.js",
   "exports": {
@@ -12,9 +12,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "tornado-ts": "webpack --config typescript.webpack.js --watch",
-    "tornado-sass": "node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
-    "tornado-react": "webpack --config react.webpack.js --watch"
+    "tornado-ts": "npx webpack --config typescript.webpack.js --watch",
+    "tornado-sass": "npx node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
+    "tornado-react": "npx webpack --config react.webpack.js --watch"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   "homepage": "https://tornado.phenixthemes.com",
   "dependencies": {
     "@reach/router": "^1.3.4",
-    "axios": "^0.20.0",
+    "axios": "^0.23.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.3"

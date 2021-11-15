@@ -191,7 +191,7 @@ const Forms = {
                 <!-- Selected -->
                 <div class="selected-option form-control"></div>
                 <!-- Arrow Icon -->
-                <i class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48"><path class="arrow-color" d="M14.83 16.42L24 25.59l9.17-9.17L36 19.25l-12 12-12-12z"/><path d="M0-.75h48v48H0z" fill="none"/></svg></i>
+                <i class="arrow-icon ti-arrow-down-chevron"></i>
                 <!-- Options List -->
                 <ul class="options-list">
                     <li class="filter-select ti-search"> <input type="text" placeholder="filter" /> </li>
@@ -258,7 +258,18 @@ const Forms = {
                 //=====> Show/Hide options <=====//
                 selectedOption.addEventListener('click', event => selectList.classList.add('active'));
                 arrowIcon.addEventListener('click', event => selectList.classList.add('active'));
-                selectWraper.addEventListener('mouseout', event => selectList.classList.remove('active'));
+                
+                window.onclick = blank => {
+                    if (!blank.target.matches('.tornado-select') && !blank.target.matches('.tornado-select > *') && !blank.target.matches('.filter-select input')) {
+                        Tornado.getElements('.options-list.active').forEach(close => close.classList.remove('active'));
+                    }
+                };
+
+                window.onmouseover = blank => {
+                    if (!blank.target.matches('.tornado-select') && !blank.target.matches('.tornado-select *')) {
+                        Tornado.getElements('.options-list.active').forEach(close => close.classList.remove('active'));
+                    }
+                };
             }
             //=====> get and set the Selected Value <=====//
             selectList.querySelectorAll('li').forEach((item,index) => {
@@ -317,6 +328,10 @@ const Forms = {
                     }
                 });
             });
+            //=====> Hide Filter <=====//
+            if(element.querySelectorAll('option').length < 15) {
+                selectWraper.querySelector('.filter-select')?.classList.add('hidden');
+            }
             //===> Done <===//
             element.classList.add('asdone');
         });
@@ -466,12 +481,9 @@ const Forms = {
         //====> Get Data <====//
         var input = element.querySelector('input'),
             maxRate:any = parseInt(input.getAttribute('max')) || 5,
-            text = maxRate < 10 ? `${maxRate}.0` : maxRate,
             iconName = element.getAttribute('data-icon') || 'ti-star';
         //====> Create Elements <====//
         for (let i = 1; maxRate >= i; i++) Tornado.insertAfter(`<a href="javascript:void(0)" class="${iconName} rate-icon" tabindex="0" role="button" aria-pressed="false"></a>`, input);
-        //====> Create Text Element <====//
-        Tornado.insertAfter(`<span class="text">${text}</span>`, element.querySelector('.rate-icon:last-child'));
         //====> get the New Elements <====//
         var ratingElements = element.querySelectorAll('.rate-icon');
         //====> Loop Throgh Rating Elements <====//

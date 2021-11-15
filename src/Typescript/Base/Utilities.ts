@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', domReady => {
     //====> Activate Accordion <====//
     Tornado.accordion('.accordion-item .accordion-title');
     //====> Activate Dropdowns <====//
-    Tornado.dropdown('.dropdown');
+    Tornado.dropdown('.dropdown .dropdown-btn');
     //====> Activate Popups <====//
     Tornado.popup('.modal-box');
     //====> Activate Lightbox <====//

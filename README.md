@@ -32,33 +32,40 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 #### Quick CDN Links
 
 	====== Tornado CSS [LTR] =====
-	https://unpkg.com/tornado-ui@2.5.0/dist/css/tornado.css
+	https://unpkg.com/tornado-ui@2.6.0/dist/css/tornado.css
 
 	====== Tornado CSS [RTL] =====
-	https://unpkg.com/tornado-ui@2.5.0/dist/css/tornado-rtl.css
+	https://unpkg.com/tornado-ui@2.6.0/dist/css/tornado-rtl.css
 
 	====== Tornado [ICONS] CSS =====
-	https://unpkg.com/tornado-ui@2.5.0/dist/css/tornado-icons.css
+	https://unpkg.com/tornado-ui@2.6.0/dist/css/tornado-icons.css
 
 	====== Tornado JS =====
-	https://unpkg.com/tornado-ui@2.5.0/dist/js/tornado.min.js
+	https://unpkg.com/tornado-ui@2.6.0/dist/js/tornado.min.js
 
 --------------------
-#### Upcoming Update V2.6.☯ Advanced Multimedia || 01/2021
+#### Lateast Update V2.6.0 For Backenders w/♥ || 11/2021
 	#01 - [new] New Utlilites Classes
 	#02 - [fix] Navigation Menu - Megamenu
 	#03 - [fix] Counter Type Fixed
 	#04 - [fix] Form Repeaters [Advanced Controls]
 	#05 - [fix] Form Rating Hover
 	#06 - [fix] First View Activate [Lazyloading, VP Animations].
+	#-- - []
+	#-- - []
+	#-- - []
+	#-- - [new] API Handler Method
 	#-- - [new] Advanced Video Player
 	#-- - [new] Advanced Audio Player
 	#-- - [new] Form Range Slider Control
-	#-- - [upgrade] Data Tables Advanced Options
 	#-- - [Doc] React Components for all UI Elements
+	#-- - [Bugs] Fixed [Repeater, Advanced Select, Dropdowns]
+	#-- - [upgrade] Data Tables Advanced Options
+	#-- - [upgrade] Manual Mode any TS Utilities 
+	#-- - [Doc] Documenting React Components
 
 --------------------
-#### Lateast Update V2.5.☯ Super 🦸‍♂️ Tornado || 07/2020
+#### Ex-Update V2.5.☯ Super 🦸‍♂️ Tornado || 07/2020
 	#01 - [new] Convert all Javascript from Babel to Typescript
 	#02 - [new] React Components for all UI Elements
 	#03 - [new] Seperate Icons Font CSS from Tornado CSS.
@@ -83,8 +90,7 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#22 - [new] Tornado Theme Switcher Method
 	#23 - [doc] Documenting Typescript Methods
 	#24 - [fix] JS Dynamic Page Direction for WP-Admin
-	#25 - [Deprecated] Remove Lined Theme Form
-	#26 - [doc] Documenting React Components
+	#25 - [Deprecated] Remove Form Lined Theme
 
 --------------------
 #### Credits

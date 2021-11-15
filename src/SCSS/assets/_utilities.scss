@@ -93,6 +93,7 @@ iframe {
         &::before {
             left:50%;
             bottom: 100%;
+            margin-bottom: -5px;
             @extend %position-center-x;
             border-top-color: rgba(0,0,0,0.75);
         }
@@ -153,7 +154,7 @@ iframe {
     &:not([class*="ti-"]) {
         &::after {margin-#{$direction}: 5px;}
         &::before {
-            margin-#{$direction}: -5px;
+            margin-#{$direction}: -4px;
             #{$direction}:100%;
             top: 50%;
             @extend %position-center-y;
@@ -229,14 +230,43 @@ iframe {
 }
 
 /*==== Margin Utilities ====*/
-.mb30 {margin-bottom: 30px;}
-.mb20 {margin-bottom: 20px;}
-.mb15 {margin-bottom: 15px;}
+.mb5 {margin-bottom: 5px;}
 .mb10 {margin-bottom: 10px;}
-.mt30 {margin-top: 30px;}
-.mt20 {margin-top: 20px;}
-.mt15 {margin-top: 15px;}
+.mb15 {margin-bottom: 15px;}
+.mb20 {margin-bottom: 20px;}
+.mb30 {margin-bottom: 30px;}
+.mb35 {margin-bottom: 35px;}
+.mb40 {margin-bottom: 40px;}
+.mb50 {margin-bottom: 50px;}
+/*==== .... ====*/
+.mt5 {margin-top: 5px;}
 .mt10 {margin-top: 10px;}
+.mt15 {margin-top: 15px;}
+.mt20 {margin-top: 20px;}
+.mt30 {margin-top: 30px;}
+.mt35 {margin-top: 35px;}
+.mt40 {margin-top: 40px;}
+.mt50 {margin-top: 50px;}
+/*==== .... ====*/
+.ms-auto {margin-#{$direction}:auto;}
+.ms5 {margin-#{$direction} : 5px;}
+.ms10 {margin-#{$direction}: 10px;}
+.ms15 {margin-#{$direction}: 15px;}
+.ms20 {margin-#{$direction}: 20px;}
+.ms30 {margin-#{$direction}: 30px;}
+.ms35 {margin-#{$direction}: 35px;}
+.ms40 {margin-#{$direction}: 40px;}
+.ms50 {margin-#{$direction}: 50px;}
+/*==== .... ====*/
+.me-auto {margin-#{$directionReverse}:auto;}
+.me5 {margin-#{$directionReverse} : 5px;}
+.me10 {margin-#{$directionReverse}: 10px;}
+.me15 {margin-#{$directionReverse}: 15px;}
+.me20 {margin-#{$directionReverse}: 20px;}
+.me30 {margin-#{$directionReverse}: 30px;}
+.me35 {margin-#{$directionReverse}: 35px;}
+.me40 {margin-#{$directionReverse}: 40px;}
+.me50 {margin-#{$directionReverse}: 50px;}
 
 /*==== Padding Utilities ====*/
 .pt10{padding-top:10px ;}
@@ -294,3 +324,65 @@ iframe {
 /*==== Forced Directions ====*/
 .ltr {direction: ltr;}
 .rtl {direction: rtl;}
+
+/*==== Collection ====*/
+.overflow {overflow: hidden;}
+.color-inherit {color: inherit;}
+
+/*==== Max Sizes ====*/
+.mxw-1024 {max-width: 1024px;}
+.mxw-768 {max-width: 768px;}
+.mxw-640 {max-width: 640px;}
+.mxw-480 {max-width: 480px;}
+.mxw-360 {max-width: 360px;}
+.mxw-200 {max-width: 200px;}
+.mxw-180 {max-width: 180px;}
+.mxw-120 {max-width: 120px;}
+
+/*==== Min Sizes ====*/
+.miw-1024 {min-width: 1024px;}
+.miw-768 {min-width: 768px;}
+.miw-640 {min-width: 640px;}
+.miw-480 {min-width: 480px;}
+.miw-360 {min-width: 360px;}
+.miw-200 {min-width: 200px;}
+.miw-180 {min-width: 180px;}
+.miw-120 {min-width: 120px;}
+
+/*==== Overlay ====*/
+[class*="overlay-"] {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+}
+
+.overlay-dark::before {
+    background-color: #000;
+    opacity: 0.25;
+}
+
+.overlay-light::before {
+    background-color: #000;
+    opacity: 0.25;
+}
+
+.overlay-darker::before {
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.overlay-lighter::before {
+    background-color: #000;
+    opacity: 0.5;
+}
+
+/*==== ViewPort Animations Fix ====*/
+.wp-admin .view-status {visibility: visible;}

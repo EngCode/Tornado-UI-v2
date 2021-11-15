@@ -113,6 +113,9 @@
     border-color: $github-color;
 }
 
+.white-border {
+    border-color:#FFF;
+}
 /*======== Text Colors ========*/
 .success-color {
     color: var(--success-color);
@@ -220,6 +223,10 @@
 
 .github-color {
     color: $github-color;
+}
+
+.white-color {
+    color:#FFF;
 }
 
 /*======== Backgrounds Colors ========*/
@@ -458,10 +465,4 @@
     color:var(--dark-color);
 }
 
-.white-color {
-    color:#FFF;
-}
-
-.white-border {
-    border-color:#FFF;
-}
+.transparent {background-color: transparent;}

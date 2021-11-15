@@ -5,8 +5,9 @@
  * ===> 03 - Nested Menu Component
  * ===> 04 - Form UI Component
  * ===> 05 - DataTable Component
- * ===> 06 - Allow Access to Tornado Methods
- * ===> 07 - Tornado UI Utilities
+ * ===> 06 - Connect [API Handler]
+ * ===> 07 - Allow Access to Tornado Methods
+ * ===> 08 - Tornado UI Utilities
 */
 
 //======> TinySlider <=======//
@@ -50,6 +51,7 @@ const Tornado = {
      * ===> 33 - Design Options
      * ===> 34 - Theme Switcher
      * ===> 35 - Viewport Info
+     * ===> 36 - API Handler
     */
 
     //======> get Elements <=======//
@@ -61,11 +63,12 @@ const Tornado = {
     //======> get Page Direction <=======//
     "direction" : property => {
         //======> Default Directions <======//
-        var pageDirection = 'ltr',
+        let pageDirection = 'ltr',
             startDirection = 'left',
-            endDirection = 'right';
+            endDirection = 'right',
+            documentClasses = document.body.classList;
         //======> Detact Page Direction <======//
-        if (!document.body.classList.contains('wp-admin')) pageDirection = getComputedStyle(document.body).direction;
+        if (!documentClasses.contains('wp-admin')) pageDirection = getComputedStyle(document.body).direction;
         //======> Change Directions if RTL <======//
         if (pageDirection === 'rtl') {
             startDirection = 'right';
@@ -85,7 +88,7 @@ const Tornado = {
     "liveEvent" : (selector, event, func) => {
         //==== interval for Checking new Elements ====//
         if (selector !== null) {
-            var timerLoop = setInterval(() => {
+            let timerLoop = setInterval(() => {
                 //==== Check if its Node Object =====//
                 if (typeof(selector) === 'object') {
                     selector.addEventListener(event, func);
@@ -94,6 +97,8 @@ const Tornado = {
                     Tornado.getElements(selector).forEach(element => element.addEventListener(event, func));
                 }
             }, 500);
+            //=== Return the Timeloop ===//
+            return timerLoop;
         }
     },
 
@@ -259,46 +264,14 @@ const Tornado = {
     //=======> Slide Toggle <=======//
     "slideToggle" : (element,time) => {
         //======> Get Element Height and Current Display <=======//
-        var origDisplay = element.style.display || getComputedStyle(element).display,
-            eleHeight = Tornado.getHeight(element);
+        var origDisplay = element.style.display || getComputedStyle(element).display;
         if (!time) time = 300;
         //===> Slide Up <===//
         if (origDisplay && origDisplay !== 'none')  {
-            //====== Prepare Element for Animation =======//
-            element.style.overflow = "hidden";
-            element.style.height = eleHeight + 'px';
-            //====== Slide Up Animation =======//
-            var keyframes = [
-                { height: eleHeight + 'px' },
-                { height: '0px' }
-            ]
-            element.animate(keyframes, {duration: time,});
-            //====== After Animation Reset to Default =======//
-            setTimeout(()=> {
-                element.style.display = "none";
-                element.style.height = null;
-                element.style.overflow = null;
-            },time);
+            Tornado.slideUp(element,time);
         //===> Slide Down <===//
         } else {
-            //====== Prepare Element for Animation =======//
-            element.style.overflow = "hidden";
-            element.style.display = "block";
-            element.style.height = 0;
-            //====== Set Height With Animation =======//
-            setTimeout(()=>{
-                //====== Slide Down Animation =======//
-                var keyframes = [
-                    { height: '0px' },
-                    { height: eleHeight + 'px' }
-                ]
-                element.animate(keyframes, {duration: time,});
-            },5);
-            //====== After Animation Reset to Default =======//
-            setTimeout(()=>{
-                element.style.height = null;
-                element.style.overflow = null;
-            },time);
+            Tornado.slideDown(element,time);
         }
     },
 
@@ -318,7 +291,7 @@ const Tornado = {
                 { height: eleHeight + 'px' },
                 { height: '0px' }
             ]
-            element.animate(keyframes, {duration: time,});
+            element.animate(keyframes, {duration: time,easing: 'linear'});
             //====== After Animation Reset to Default =======//
             setTimeout(()=> {
                 element.style.display = "none";
@@ -339,7 +312,7 @@ const Tornado = {
             //====== Prepare Element for Animation =======//
             element.style.overflow = "hidden";
             element.style.display = "block";
-            element.style.height = 0;
+            element.style.height = '0px';
             //====== Set Height With Animation =======//
             setTimeout(()=>{
                 //====== Slide Down Animation =======//
@@ -347,7 +320,7 @@ const Tornado = {
                     { height: '0px' },
                     { height: eleHeight + 'px' }
                 ]
-                element.animate(keyframes, {duration: time,});
+                element.animate(keyframes, {duration: time,easing: 'linear'});
             },5);
             //====== After Animation Reset to Default =======//
             setTimeout(()=>{
@@ -448,7 +421,7 @@ const Tornado = {
                     if (Tornado.inView(element)) {
                         if (sliderDetact) {
                             var sliderItems = sliderDetact.querySelectorAll('[data-src]');
-                            Array.from(sliderItems).forEach(item => setBackground(item));
+                            sliderItems.forEach(item => setBackground(item));
                         } else {
                             setBackground(element);
                         }
@@ -494,7 +467,7 @@ const Tornado = {
                 if (sliderDetact) {
                     window.addEventListener('load', event => {
                         var sliderItems = sliderDetact.querySelectorAll('[data-lazyload]');
-                        Array.from(sliderItems).forEach(item => {
+                        sliderItems.forEach(item => {
                             var lazydata = element.getAttribute('data-lazyload');
                                 element.setAttribute('src',lazydata);
                         });
@@ -710,11 +683,12 @@ const Tornado = {
             });
 
             //===> Deactivate on Blank <===//
-            window.onclick = blank => {
-                if (!blank.target.matches('.dropdown') && !blank.target.matches('.dropdown *')) {
+            window.addEventListener('click', blank => {
+                let event = blank.target as Element;
+                if (!event.matches('.dropdown') && !event.matches('.dropdown *')) {
                     Tornado.getElements('.dropdown.active').forEach(close => close.classList.remove('active'));
                 }
-            };
+            });
 
             //===> Done <===//
             element.classList.add('dd-done');
@@ -1340,7 +1314,7 @@ const Tornado = {
     "viewport" : {
         "width" : () => Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0),
         "height" : () => Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-    }
+    },
 };
 
 export default Tornado;
@@ -1357,12 +1331,17 @@ import Forms from "./Forms";
 import './DataTable';
 import DataTable from "./DataTable";
 
+//======> Connect [API Handler] <=======//
+import './Connect';
+import Connect from "./Connect";
+
 //=====> Allow Access to Tornado Methods <=====//
 declare global {interface Window {Tornado: any;}}
 window.Tornado = window.Tornado || Tornado;
 window.Tornado.forms = window.Tornado.forms || Forms;
 window.Tornado.menus = window.Tornado.menus || Menus;
 window.Tornado.DataTable = window.Tornado.DataTable || DataTable;
+window.Tornado.Connect = window.Tornado.connect || Connect;
 
 //======> Tornado UI Utilities <=======//
 import './Utilities';

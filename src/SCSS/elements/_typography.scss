@@ -46,6 +46,10 @@ h3,.h3 {font-size: 1.375rem;}
 h4,.h4 {font-size: 1.25rem;}
 h5,.h5 {font-size: 1.125rem;}
 h6,.h6 {font-size: 1rem;}
+.display-h0 {font-size: 5rem;}
+.display-h1 {font-size: 4rem;}
+.display-h2 {font-size: 3rem;}
+.display-h3 {font-size: 2rem;}
 
 /*==== Text Sizes ====*/
 .large-text {font-size: 1.125rem;}
@@ -64,6 +68,18 @@ h6,.h6 {font-size: 1rem;}
 .tx-align-left{text-align: left;}
 .tx-align-center{text-align: center;}
 .tx-align-justify{text-align:justify;}
+.tx-nowrap {@extend %nowrap;}
+
+/*==== Font Weight ====*/
+.strong-weight {font-weight: var(--strong-weight);}
+.medium-weight {font-weight: var(--medium-weight);}
+.normal-weight {font-weight: var(--normal-weight);}
+
+/*==== Line Height ====*/
+.lineheight-1 {line-height: 1;}
+.lineheight-130 {line-height: 1.3;}
+.lineheight-150 {line-height: 1.5;}
+.lineheight-160 {line-height: 1.6;}
 
 /*==== Default Lists ====*/
 ul,ol,dl{

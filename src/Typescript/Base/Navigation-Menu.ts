@@ -30,7 +30,12 @@ const Menus = {
                 }
 
                 //===> Megamenu Fix <===//
-                if(SubMenu.classList.contains('megamenu')) SubMenu.parentNode.style.position = 'static';
+                if(SubMenu.classList.contains('megamenu')) {
+                    SubMenu.parentNode.style.position = 'static';
+                    SubMenu.querySelectorAll('ul').forEach(element => {
+                        element.classList.add('megalist');
+                    });
+                }
             });
 
             //===> Get Menu ID <===//
@@ -38,7 +43,7 @@ const Menus = {
                 //===> Get Menu Toggle Button <===//
                 toggleButton = Tornado.getElement(`.menu-btn[data-id="${MenuID}"]`),
                 //===> Get the Menu List Elements <===//
-                MenuList = element.querySelectorAll('ul:not(.dropdown-menu)'),
+                MenuList = element.querySelectorAll('ul:not(.dropdown-menu):not(.megalist)'),
                 //===> Wraper Elemets <===//
                 MenuElements = `<div class="menu-content"></div><a href="javascript:void(0)" class="overlay-close" title="Close Menu" tabindex="0" role="button" aria-pressed="false"></a>`;
 

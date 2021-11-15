@@ -288,7 +288,7 @@ label {
         max-height: 280px;
         overflow-y: auto;
         &.reverse-pos{top:auto;bottom: 100%;}
-        &:hover,&.active {display: block;}
+        &.active {display: block;}
 
         /*==== Item ====*/
         li {
@@ -1001,8 +1001,7 @@ label {
     border-radius: var(--forms-radius);
     border:0 none;
     box-shadow: var(--forms-btns-shadow) rgba(#000,0.05);
-    &.default{border:var(--forms-border);}
-    &::before{top:-2px;}
+    &.default{border:var(--forms-border);border-width: 2px;}
     &.rounded {border-radius: 50px;}
     //======> Outline Theme <======//
     &.outline{ 
@@ -1291,6 +1290,25 @@ label {
             }
         }
     }
+    
+    &.light{
+        background: var(--dark-reverse);
+        color:var(--dark-color);
+        box-shadow: var(--forms-btns-shadow) var(--dark-color);
+        /*==== Outline Mode ====*/
+        &.outline {
+            background: transparent;
+            border-color: var(--dark-reverse);
+            color:var(--dark-reverse);
+            box-shadow: none;
+            &::before{border-color:var(--dark-reverse);}
+            &:hover {
+                background: var(--dark-reverse);
+                color: var(--dark-color);
+                box-shadow: var(--forms-btns-shadow) var(--dark-color);
+            }
+        }
+    }
 }
 
 /*======== Dropdown Button ========*/
@@ -1411,25 +1429,47 @@ label {
 
     /*==== Normal Controls ====*/
     > #{$input_elements},> .btn {   
-        &:first-child {
-            @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+        &:not(.form-control):first-child {
+            @if ($page-dir == 'ltr') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
             @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
         }
 
-        &:last-child  {
+        &:not(.form-control):last-child  {
             @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
             @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
         }
     }
 
+    /*==== Select ====*/
+    > .tornado-select:first-child .selected-option {
+        @if ($page-dir == 'ltr') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+        @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+    }
+
+    > .tornado-select:last-child .selected-option {
+        @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+        @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+    }
+
     /*==== Iconic Controls ====*/
     .control-icon {
-        &:first-child #{$input_elements} {
+        &:first-child #{$input_elements}:not(.form-control) {
+            @if ($page-dir == 'ltr') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+        }
+
+        &:last-child #{$input_elements}:not(.form-control) {
             @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
             @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
         }
 
-        &:last-child #{$input_elements} {
+        /*==== Select ====*/
+        > .tornado-select:first-child .selected-option {
+            @if ($page-dir == 'ltr') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
+            @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
+        }
+
+        > .tornado-select:last-child .selected-option {
             @if ($page-dir == 'rtl') {border-radius: var(--forms-radius) 0 0 var(--forms-radius);}
             @else {border-radius: 0 var(--forms-radius) var(--forms-radius) 0;}
         }

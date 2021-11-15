@@ -63,11 +63,11 @@
         /*==== Columns ====*/
         td,th {border: var(--table-border);}
         /*==== Head ====*/
-        thead:not([class*="-bg"]) {
+        thead tr:not([class*="-bg"]) {
             td,th{background:var(--table-head-bg);}
         }
         /*==== Striped BG ====*/
-        &.striped thead tr:nth-child(odd) {
+        &.striped thead tr:not([class*="-bg"]):nth-child(odd) {
             td,th {background:var(--table-head-bg);}
         }
     }

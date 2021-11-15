@@ -19,7 +19,9 @@ figure {margin:0;}
 
 hr,.hr {
     display: block;
-    background: rgba(0, 0, 0, .15);
+    opacity: 0.1;
+    margin-bottom: 15px;
+    margin-top: 15px;
     height: 1px;
     overflow: visible;
 }

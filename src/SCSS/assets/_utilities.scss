@@ -197,7 +197,8 @@ iframe {
 }
 
 .lazyloader {
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     background-size: auto 100%;
     background-color: #F1F2F3;
 }
@@ -350,7 +351,7 @@ iframe {
 .miw-120 {min-width: 120px;}
 
 /*==== Overlay ====*/
-[class*="overlay-"] {
+%overlay {
     position: relative;
     &::before {
         content: '';
@@ -364,24 +365,14 @@ iframe {
     }
 }
 
-.overlay-dark::before {
-    background-color: #000;
-    opacity: 0.25;
+.overlay-dark {
+    @extend %overlay;
+    &::before {background-color: #000;}
 }
 
-.overlay-light::before {
-    background-color: #000;
-    opacity: 0.25;
-}
-
-.overlay-darker::before {
-    background-color: #000;
-    opacity: 0.5;
-}
-
-.overlay-lighter::before {
-    background-color: #000;
-    opacity: 0.5;
+.overlay-light {
+    @extend %overlay;
+    &::before {background-color: #FFF;}
 }
 
 /*==== ViewPort Animations Fix ====*/

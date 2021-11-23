@@ -14,7 +14,7 @@
   },
   "scripts": {
     "tornado-ts": "npx webpack --config typescript.webpack.js --watch",
-    "tornado-sass": "npx node-sass --watch src/SCSS -o dist/css --output-style compressed --source-map true",
+    "tornado-sass": "npx node-sass --watch src/sass -o dist/css --output-style compressed --source-map true",
     "tornado-start": "concurrently --kill-others \"npm run tornado-sass\" \"npm run tornado-ts\""
   },
   "repository": {

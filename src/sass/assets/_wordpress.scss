@@ -1,0 +1,74 @@
+/*======== Wordpress Adminbar ========*/
+body:not(.wp-admin) #wpadminbar{
+    @media screen and (max-width:360px) { overflow: hidden; }
+    @extend %fast-motion;
+    top:-32px!important;
+    padding-#{$direction}:32px;
+    @media screen and (max-width:768px) {
+        top:-46px!important;
+        padding-#{$direction}:46px;
+    }
+    #wp-admin-bar-wp-logo {
+        position: fixed;
+        top:0;
+        #{$direction}:0;
+        background: var(--dark-color);
+        .ab-submenu{display: none!important;}
+    }
+    &:hover{
+        top:0!important;
+        #wp-admin-bar-wp-logo {
+            background: transparent;
+            .ab-submenu{display: none!important;}
+        }
+    }
+}
+
+html{margin: 0!important;}
+
+/*======== REQUIRED CSS ========*/
+.wp-caption,.gallery-caption {
+    color:var(--gray-color);
+    font-size:14px;
+    margin-bottom: 15px;
+}
+
+.wp-caption-text {
+    max-width:100%;
+    @extend %nowrap;
+    padding: 5px;
+    background:var(--dark-light);
+    color:var(--dark-reverse);
+}
+
+.sticky {position: relative;}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.bypostauthor {
+    @extend %reset;
+}
+
+.alignleft {
+	float: $direction;
+	margin-#{$directionReverse}: 1.5em;
+}
+
+.alignright {
+	float: $directionReverse;
+	margin-#{$direction}: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

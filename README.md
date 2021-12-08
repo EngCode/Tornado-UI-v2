@@ -52,9 +52,8 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 	#05 - [fix] Form Rating Hover
 	#06 - [fix] First View Activate [Lazyloading, VP Animations].
 	#-- - []
-	#-- - [Bugs] Fixed [Repeater, Advanced Select, Dropdowns]
+	#-- - [fix] [Repeater, Advanced Select, Dropdowns]
 	#-- - [upgrade] Manual Mode any TS Utilities 
-	#-- - [Doc] Documenting React Components
 
 --------------------
 #### Ex-Update V2.5.☯ Super 🦸‍♂️ Tornado || 07/2020

@@ -30,7 +30,7 @@
   "dependencies": {
     "tiny-slider": "^2.9.4",
     "concurrently": "^6.4.0",
-    "node-sass": "^7.0.1",
+    "node-sass": "^7.0.3",
     "ts-loader": "^9.4.2",
     "typescript": "^3.9.7",
     "webpack": "^5.76.0",

@@ -1,6 +1,6 @@
 {
   "name": "tornado-ui",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and dynamic easy to control elements Builded With Sass for Easy Customizing and Overriding Every Thing.",
   "main": "/dist/js/tornado.min.js",
   "exports": {
@@ -13,9 +13,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "tornado-ts": "npx webpack --config typescript.webpack.js --watch",
-    "tornado-sass": "npx node-sass --watch src/sass -o dist/css --output-style compressed --source-map true",
-    "tornado-start": "concurrently --kill-others \"npm run tornado-sass\" \"npm run tornado-ts\""
+    "tornado-ts": "pnpx webpack --config typescript.webpack.js --watch",
+    "tornado-sass": "pnpx node-sass --watch src/sass -o dist/css --output-style compressed --source-map true",
+    "tornado-start": "concurrently --kill-others \"pnpm run tornado-sass\" \"pnpm run tornado-ts\""
   },
   "repository": {
     "type": "git",
@@ -28,16 +28,19 @@
   },
   "homepage": "https://tornado.phenixthemes.com",
   "dependencies": {
-    "tiny-slider": "^2.9.4",
-    "concurrently": "^6.4.0",
-    "node-sass": "^6.0.1",
-    "ts-loader": "^7.0.5",
-    "typescript": "^3.9.7",
-    "webpack": "^5.64.1",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.5.0"
+    "tiny-slider": "^2.9.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "node-sass": "^6.0.1",
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.10",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+
   "keywords": [
     "tornado ui",
     "framework",

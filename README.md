@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/build-v2.0.6-blue.svg) ![](https://img.shields.io/github/languages/code-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/repo-size/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/issues/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/github/license/EngCode/Tornado-UI-v2.svg?style=flat) ![](https://img.shields.io/badge/%40typescript-v3.9.5-blue.svg) ![](https://img.shields.io/badge/Sass-v4.13.0-blue.svg)
 
 ## Welcome to Tornado UI v2
-Tornado is an Open Source Framework for Forntend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and easy to control elements Builded With Sass and TypeScript for Easy Customizing.
+Tornado is an Open Source Framework for Frontend and UI/UX Designers made with love from a designer to designers the Main Goal of this framework is to make web design more simple and providing the best performance and easy to control elements Builded With Sass and TypeScript for Easy Customizing.
 
 --------------------
 #### browser support
@@ -91,3 +91,11 @@ after that you will need to install Node.JS and SASS the Ruby version for compil
 --------------------
 #### License
 Copyright (c) 2016-present, [Abdullah Ramadan](https://www.facebook.com/Eng.AbdallahPS). Licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+
+----
+
+<a href="https://phenixthemes.com" target="_blank" rel="external">Phenix Themes - فينكس ثيمز</a>
+<a href="https://phenixthemes.com/portfolio/" target="_blank" rel="external">Portfolio - اعمال ابداعية</a>
+<a href="https://phenixthemes.com/services/" target="_blank" rel="external">تصميم وتطوير المواقع وقوالب وتطبيقات الويب  - Web Design and Development Services</a>
+<a href="https://phenixthemes.com/demo/" target="_blank" rel="external">Phenix Design System - نظام تصميم فينكس</a>

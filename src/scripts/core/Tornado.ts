@@ -386,7 +386,7 @@ const Tornado = {
         element.classList.add('coudone');
     },
 
-    //======> Set Background <======//
+    //======> Set Background [Phenix] <======//
     "setBackground" : (selector,lazy?) => {
         //====> Check if Selector or Element <====//
         typeof(selector) === 'object' ? selector = [selector] : selector = Tornado.getElements(selector || '[data-src]');
